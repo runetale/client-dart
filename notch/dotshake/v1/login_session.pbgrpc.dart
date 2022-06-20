@@ -11,23 +11,23 @@ import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
 import '../../../google/protobuf/empty.pb.dart' as $0;
-import 'login_session.pb.dart' as $2;
+import 'login_session.pb.dart' as $3;
 export 'login_session.pb.dart';
 
 class LoginSessionServiceClient extends $grpc.Client {
   static final _$streamPeerLoginSession =
-      $grpc.ClientMethod<$0.Empty, $2.PeerLoginSessionResponse>(
+      $grpc.ClientMethod<$0.Empty, $3.PeerLoginSessionResponse>(
           '/protos.LoginSessionService/StreamPeerLoginSession',
           ($0.Empty value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $2.PeerLoginSessionResponse.fromBuffer(value));
+              $3.PeerLoginSessionResponse.fromBuffer(value));
 
   LoginSessionServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseStream<$2.PeerLoginSessionResponse> streamPeerLoginSession(
+  $grpc.ResponseStream<$3.PeerLoginSessionResponse> streamPeerLoginSession(
       $async.Stream<$0.Empty> request,
       {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$streamPeerLoginSession, request,
@@ -39,15 +39,15 @@ abstract class LoginSessionServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.LoginSessionService';
 
   LoginSessionServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.Empty, $2.PeerLoginSessionResponse>(
+    $addMethod($grpc.ServiceMethod<$0.Empty, $3.PeerLoginSessionResponse>(
         'StreamPeerLoginSession',
         streamPeerLoginSession,
         true,
         true,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($2.PeerLoginSessionResponse value) => value.writeToBuffer()));
+        ($3.PeerLoginSessionResponse value) => value.writeToBuffer()));
   }
 
-  $async.Stream<$2.PeerLoginSessionResponse> streamPeerLoginSession(
+  $async.Stream<$3.PeerLoginSessionResponse> streamPeerLoginSession(
       $grpc.ServiceCall call, $async.Stream<$0.Empty> request);
 }

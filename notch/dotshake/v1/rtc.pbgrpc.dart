@@ -11,23 +11,23 @@ import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
 import '../../../google/protobuf/empty.pb.dart' as $0;
-import 'rtc.pb.dart' as $5;
+import 'rtc.pb.dart' as $6;
 export 'rtc.pb.dart';
 
 class RtcServiceClient extends $grpc.Client {
   static final _$getStunTurnConfig =
-      $grpc.ClientMethod<$0.Empty, $5.GetStunTurnConfigResponse>(
+      $grpc.ClientMethod<$0.Empty, $6.GetStunTurnConfigResponse>(
           '/protos.RtcService/GetStunTurnConfig',
           ($0.Empty value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
-              $5.GetStunTurnConfigResponse.fromBuffer(value));
+              $6.GetStunTurnConfigResponse.fromBuffer(value));
 
   RtcServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseFuture<$5.GetStunTurnConfigResponse> getStunTurnConfig(
+  $grpc.ResponseFuture<$6.GetStunTurnConfigResponse> getStunTurnConfig(
       $0.Empty request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getStunTurnConfig, request, options: options);
@@ -38,20 +38,20 @@ abstract class RtcServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.RtcService';
 
   RtcServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.Empty, $5.GetStunTurnConfigResponse>(
+    $addMethod($grpc.ServiceMethod<$0.Empty, $6.GetStunTurnConfigResponse>(
         'GetStunTurnConfig',
         getStunTurnConfig_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($5.GetStunTurnConfigResponse value) => value.writeToBuffer()));
+        ($6.GetStunTurnConfigResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$5.GetStunTurnConfigResponse> getStunTurnConfig_Pre(
+  $async.Future<$6.GetStunTurnConfigResponse> getStunTurnConfig_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return getStunTurnConfig(call, await request);
   }
 
-  $async.Future<$5.GetStunTurnConfigResponse> getStunTurnConfig(
+  $async.Future<$6.GetStunTurnConfigResponse> getStunTurnConfig(
       $grpc.ServiceCall call, $0.Empty request);
 }
