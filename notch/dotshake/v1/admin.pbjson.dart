@@ -33,3 +33,14 @@ const GetMachinesResponse$json = const {
 
 /// Descriptor for `GetMachinesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getMachinesResponseDescriptor = $convert.base64Decode('ChNHZXRNYWNoaW5lc1Jlc3BvbnNlEisKCG1hY2hpbmVzGAEgAygLMg8ucHJvdG9zLk1hY2hpbmVSCG1hY2hpbmVz');
+@$core.Deprecated('Use getMeResponseDescriptor instead')
+const GetMeResponse$json = const {
+  '1': 'GetMeResponse',
+  '2': const [
+    const {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
+    const {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+  ],
+};
+
+/// Descriptor for `GetMeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMeResponseDescriptor = $convert.base64Decode('Cg1HZXRNZVJlc3BvbnNlEhoKCHVzZXJuYW1lGAEgASgJUgh1c2VybmFtZRIUCgVlbWFpbBgCIAEoCVIFZW1haWw=');
