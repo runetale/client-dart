@@ -21,6 +21,10 @@ class AdminServiceClient extends $grpc.Client {
           ($0.Empty value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $1.GetMachinesResponse.fromBuffer(value));
+  static final _$getMe = $grpc.ClientMethod<$0.Empty, $1.GetMeResponse>(
+      '/protos.AdminService/GetMe',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetMeResponse.fromBuffer(value));
 
   AdminServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -30,6 +34,11 @@ class AdminServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$1.GetMachinesResponse> getMachines($0.Empty request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMachines, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.GetMeResponse> getMe($0.Empty request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getMe, request, options: options);
   }
 }
 
@@ -44,6 +53,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.GetMachinesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GetMeResponse>(
+        'GetMe',
+        getMe_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.GetMeResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.GetMachinesResponse> getMachines_Pre(
@@ -51,6 +67,13 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getMachines(call, await request);
   }
 
+  $async.Future<$1.GetMeResponse> getMe_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getMe(call, await request);
+  }
+
   $async.Future<$1.GetMachinesResponse> getMachines(
+      $grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.GetMeResponse> getMe(
       $grpc.ServiceCall call, $0.Empty request);
 }

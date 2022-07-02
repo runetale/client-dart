@@ -59,17 +59,17 @@ class SignInRequest extends $pb.GeneratedMessage {
 
 class SignInResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SignInResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protos'), createEmptyInstance: create)
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isFirst', protoName: 'isFirst')
+    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isFirstLogin', protoName: 'isFirstLogin')
     ..hasRequiredFields = false
   ;
 
   SignInResponse._() : super();
   factory SignInResponse({
-    $core.bool? isFirst,
+    $core.bool? isFirstLogin,
   }) {
     final _result = create();
-    if (isFirst != null) {
-      _result.isFirst = isFirst;
+    if (isFirstLogin != null) {
+      _result.isFirstLogin = isFirstLogin;
     }
     return _result;
   }
@@ -95,13 +95,13 @@ class SignInResponse extends $pb.GeneratedMessage {
   static SignInResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get isFirst => $_getBF(0);
+  $core.bool get isFirstLogin => $_getBF(0);
   @$pb.TagNumber(1)
-  set isFirst($core.bool v) { $_setBool(0, v); }
+  set isFirstLogin($core.bool v) { $_setBool(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasIsFirst() => $_has(0);
+  $core.bool hasIsFirstLogin() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIsFirst() => clearField(1);
+  void clearIsFirstLogin() => clearField(1);
 }
 
 class SignUpRequest extends $pb.GeneratedMessage {

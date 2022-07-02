@@ -22,12 +22,12 @@ final $typed_data.Uint8List signInRequestDescriptor = $convert.base64Decode('Cg1
 const SignInResponse$json = const {
   '1': 'SignInResponse',
   '2': const [
-    const {'1': 'isFirst', '3': 1, '4': 1, '5': 8, '10': 'isFirst'},
+    const {'1': 'isFirstLogin', '3': 1, '4': 1, '5': 8, '10': 'isFirstLogin'},
   ],
 };
 
 /// Descriptor for `SignInResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signInResponseDescriptor = $convert.base64Decode('Cg5TaWduSW5SZXNwb25zZRIYCgdpc0ZpcnN0GAEgASgIUgdpc0ZpcnN0');
+final $typed_data.Uint8List signInResponseDescriptor = $convert.base64Decode('Cg5TaWduSW5SZXNwb25zZRIiCgxpc0ZpcnN0TG9naW4YASABKAhSDGlzRmlyc3RMb2dpbg==');
 @$core.Deprecated('Use signUpRequestDescriptor instead')
 const SignUpRequest$json = const {
   '1': 'SignUpRequest',
