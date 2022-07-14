@@ -25,6 +25,10 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetMe',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.GetMeResponse.fromBuffer(value));
+  static final _$getUsers = $grpc.ClientMethod<$0.Empty, $1.GetUsersResponse>(
+      '/protos.AdminService/GetUsers',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetUsersResponse.fromBuffer(value));
 
   AdminServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -39,6 +43,11 @@ class AdminServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$1.GetMeResponse> getMe($0.Empty request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMe, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.GetUsersResponse> getUsers($0.Empty request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getUsers, request, options: options);
   }
 }
 
@@ -60,6 +69,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.GetMeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GetUsersResponse>(
+        'GetUsers',
+        getUsers_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.GetUsersResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.GetMachinesResponse> getMachines_Pre(
@@ -72,8 +88,15 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getMe(call, await request);
   }
 
+  $async.Future<$1.GetUsersResponse> getUsers_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getUsers(call, await request);
+  }
+
   $async.Future<$1.GetMachinesResponse> getMachines(
       $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.GetMeResponse> getMe(
+      $grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.GetUsersResponse> getUsers(
       $grpc.ServiceCall call, $0.Empty request);
 }
