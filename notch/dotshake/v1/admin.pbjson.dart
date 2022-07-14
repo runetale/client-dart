@@ -44,3 +44,26 @@ const GetMeResponse$json = const {
 
 /// Descriptor for `GetMeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getMeResponseDescriptor = $convert.base64Decode('Cg1HZXRNZVJlc3BvbnNlEhoKCHVzZXJuYW1lGAEgASgJUgh1c2VybmFtZRIUCgVlbWFpbBgCIAEoCVIFZW1haWw=');
+@$core.Deprecated('Use userDescriptor instead')
+const User$json = const {
+  '1': 'User',
+  '2': const [
+    const {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
+    const {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+    const {'1': 'joined', '3': 3, '4': 1, '5': 9, '10': 'joined'},
+    const {'1': 'picture', '3': 4, '4': 1, '5': 9, '10': 'picture'},
+  ],
+};
+
+/// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEhoKCHVzZXJuYW1lGAEgASgJUgh1c2VybmFtZRIUCgVlbWFpbBgCIAEoCVIFZW1haWwSFgoGam9pbmVkGAMgASgJUgZqb2luZWQSGAoHcGljdHVyZRgEIAEoCVIHcGljdHVyZQ==');
+@$core.Deprecated('Use getUsersResponseDescriptor instead')
+const GetUsersResponse$json = const {
+  '1': 'GetUsersResponse',
+  '2': const [
+    const {'1': 'users', '3': 1, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
+  ],
+};
+
+/// Descriptor for `GetUsersResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUsersResponseDescriptor = $convert.base64Decode('ChBHZXRVc2Vyc1Jlc3BvbnNlEiIKBXVzZXJzGAEgAygLMgwucHJvdG9zLlVzZXJSBXVzZXJz');
