@@ -233,7 +233,8 @@ class User extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'username')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'joined')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'picture')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'picture')
     ..hasRequiredFields = false
   ;
 
@@ -242,6 +243,7 @@ class User extends $pb.GeneratedMessage {
     $core.String? username,
     $core.String? email,
     $core.String? joined,
+    $core.String? lastSeen,
     $core.String? picture,
   }) {
     final _result = create();
@@ -253,6 +255,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (joined != null) {
       _result.joined = joined;
+    }
+    if (lastSeen != null) {
+      _result.lastSeen = lastSeen;
     }
     if (picture != null) {
       _result.picture = picture;
@@ -308,13 +313,22 @@ class User extends $pb.GeneratedMessage {
   void clearJoined() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get picture => $_getSZ(3);
+  $core.String get lastSeen => $_getSZ(3);
   @$pb.TagNumber(4)
-  set picture($core.String v) { $_setString(3, v); }
+  set lastSeen($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPicture() => $_has(3);
+  $core.bool hasLastSeen() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPicture() => clearField(4);
+  void clearLastSeen() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get picture => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set picture($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPicture() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPicture() => clearField(5);
 }
 
 class GetUsersResponse extends $pb.GeneratedMessage {

@@ -51,12 +51,13 @@ const User$json = const {
     const {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
     const {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
     const {'1': 'joined', '3': 3, '4': 1, '5': 9, '10': 'joined'},
-    const {'1': 'picture', '3': 4, '4': 1, '5': 9, '10': 'picture'},
+    const {'1': 'lastSeen', '3': 4, '4': 1, '5': 9, '10': 'lastSeen'},
+    const {'1': 'picture', '3': 5, '4': 1, '5': 9, '10': 'picture'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEhoKCHVzZXJuYW1lGAEgASgJUgh1c2VybmFtZRIUCgVlbWFpbBgCIAEoCVIFZW1haWwSFgoGam9pbmVkGAMgASgJUgZqb2luZWQSGAoHcGljdHVyZRgEIAEoCVIHcGljdHVyZQ==');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEhoKCHVzZXJuYW1lGAEgASgJUgh1c2VybmFtZRIUCgVlbWFpbBgCIAEoCVIFZW1haWwSFgoGam9pbmVkGAMgASgJUgZqb2luZWQSGgoIbGFzdFNlZW4YBCABKAlSCGxhc3RTZWVuEhgKB3BpY3R1cmUYBSABKAlSB3BpY3R1cmU=');
 @$core.Deprecated('Use getUsersResponseDescriptor instead')
 const GetUsersResponse$json = const {
   '1': 'GetUsersResponse',
