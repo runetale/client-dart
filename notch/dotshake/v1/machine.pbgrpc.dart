@@ -27,18 +27,6 @@ class MachineServiceClient extends $grpc.Client {
           ($0.Empty value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $4.SyncMachinesResponse.fromBuffer(value));
-  static final _$connectToHangoutMachines =
-      $grpc.ClientMethod<$0.Empty, $4.HangOutMachinesResponse>(
-          '/protos.MachineService/ConnectToHangoutMachines',
-          ($0.Empty value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $4.HangOutMachinesResponse.fromBuffer(value));
-  static final _$joinHangOutMachines =
-      $grpc.ClientMethod<$0.Empty, $4.HangOutMachinesResponse>(
-          '/protos.MachineService/JoinHangOutMachines',
-          ($0.Empty value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $4.HangOutMachinesResponse.fromBuffer(value));
 
   MachineServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -55,20 +43,6 @@ class MachineServiceClient extends $grpc.Client {
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$syncRemoteMachinesConfig, request,
         options: options);
-  }
-
-  $grpc.ResponseStream<$4.HangOutMachinesResponse> connectToHangoutMachines(
-      $0.Empty request,
-      {$grpc.CallOptions? options}) {
-    return $createStreamingCall(
-        _$connectToHangoutMachines, $async.Stream.fromIterable([request]),
-        options: options);
-  }
-
-  $grpc.ResponseFuture<$4.HangOutMachinesResponse> joinHangOutMachines(
-      $0.Empty request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$joinHangOutMachines, request, options: options);
   }
 }
 
@@ -90,20 +64,6 @@ abstract class MachineServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($4.SyncMachinesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $4.HangOutMachinesResponse>(
-        'ConnectToHangoutMachines',
-        connectToHangoutMachines_Pre,
-        false,
-        true,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($4.HangOutMachinesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $4.HangOutMachinesResponse>(
-        'JoinHangOutMachines',
-        joinHangOutMachines_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($4.HangOutMachinesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$4.GetMachineResponse> getMachine_Pre(
@@ -116,22 +76,8 @@ abstract class MachineServiceBase extends $grpc.Service {
     return syncRemoteMachinesConfig(call, await request);
   }
 
-  $async.Stream<$4.HangOutMachinesResponse> connectToHangoutMachines_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async* {
-    yield* connectToHangoutMachines(call, await request);
-  }
-
-  $async.Future<$4.HangOutMachinesResponse> joinHangOutMachines_Pre(
-      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return joinHangOutMachines(call, await request);
-  }
-
   $async.Future<$4.GetMachineResponse> getMachine(
       $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$4.SyncMachinesResponse> syncRemoteMachinesConfig(
-      $grpc.ServiceCall call, $0.Empty request);
-  $async.Stream<$4.HangOutMachinesResponse> connectToHangoutMachines(
-      $grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$4.HangOutMachinesResponse> joinHangOutMachines(
       $grpc.ServiceCall call, $0.Empty request);
 }

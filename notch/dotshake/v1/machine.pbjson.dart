@@ -59,17 +59,3 @@ const RemotePeer$json = const {
 
 /// Descriptor for `RemotePeer`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List remotePeerDescriptor = $convert.base64Decode('CgpSZW1vdGVQZWVyEjYKFnJlbW90ZUNsaWVudE1hY2hpbmVLZXkYASABKAlSFnJlbW90ZUNsaWVudE1hY2hpbmVLZXkSJgoOcmVtb3RlV2dQdWJLZXkYAiABKAlSDnJlbW90ZVdnUHViS2V5Eh4KCmFsbG93ZWRJUHMYAyADKAlSCmFsbG93ZWRJUHM=');
-@$core.Deprecated('Use hangOutMachinesResponseDescriptor instead')
-const HangOutMachinesResponse$json = const {
-  '1': 'HangOutMachinesResponse',
-  '2': const [
-    const {'1': 'remotePeers', '3': 1, '4': 3, '5': 11, '6': '.protos.RemotePeer', '10': 'remotePeers'},
-    const {'1': 'ip', '3': 2, '4': 1, '5': 9, '10': 'ip'},
-    const {'1': 'cidr', '3': 3, '4': 1, '5': 9, '10': 'cidr'},
-    const {'1': 'hangOutType', '3': 4, '4': 1, '5': 14, '6': '.protos.HangOutType', '10': 'hangOutType'},
-    const {'1': 'targetMachineKey', '3': 5, '4': 1, '5': 9, '10': 'targetMachineKey'},
-  ],
-};
-
-/// Descriptor for `HangOutMachinesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List hangOutMachinesResponseDescriptor = $convert.base64Decode('ChdIYW5nT3V0TWFjaGluZXNSZXNwb25zZRI0CgtyZW1vdGVQZWVycxgBIAMoCzISLnByb3Rvcy5SZW1vdGVQZWVyUgtyZW1vdGVQZWVycxIOCgJpcBgCIAEoCVICaXASEgoEY2lkchgDIAEoCVIEY2lkchI1CgtoYW5nT3V0VHlwZRgEIAEoDjITLnByb3Rvcy5IYW5nT3V0VHlwZVILaGFuZ091dFR5cGUSKgoQdGFyZ2V0TWFjaGluZUtleRgFIAEoCVIQdGFyZ2V0TWFjaGluZUtleQ==');
