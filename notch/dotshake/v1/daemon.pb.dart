@@ -9,57 +9,6 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'daemon.pbenum.dart';
-
-export 'daemon.pbenum.dart';
-
-class DaemonServiceRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DaemonServiceRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protos'), createEmptyInstance: create)
-    ..e<DaemonServiceType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'daemonServiceType', $pb.PbFieldType.OE, protoName: 'daemonServiceType', defaultOrMaker: DaemonServiceType.ConnectionStatus, valueOf: DaemonServiceType.valueOf, enumValues: DaemonServiceType.values)
-    ..hasRequiredFields = false
-  ;
-
-  DaemonServiceRequest._() : super();
-  factory DaemonServiceRequest({
-    DaemonServiceType? daemonServiceType,
-  }) {
-    final _result = create();
-    if (daemonServiceType != null) {
-      _result.daemonServiceType = daemonServiceType;
-    }
-    return _result;
-  }
-  factory DaemonServiceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DaemonServiceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  DaemonServiceRequest clone() => DaemonServiceRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  DaemonServiceRequest copyWith(void Function(DaemonServiceRequest) updates) => super.copyWith((message) => updates(message as DaemonServiceRequest)) as DaemonServiceRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static DaemonServiceRequest create() => DaemonServiceRequest._();
-  DaemonServiceRequest createEmptyInstance() => create();
-  static $pb.PbList<DaemonServiceRequest> createRepeated() => $pb.PbList<DaemonServiceRequest>();
-  @$core.pragma('dart2js:noInline')
-  static DaemonServiceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DaemonServiceRequest>(create);
-  static DaemonServiceRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  DaemonServiceType get daemonServiceType => $_getN(0);
-  @$pb.TagNumber(1)
-  set daemonServiceType(DaemonServiceType v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasDaemonServiceType() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearDaemonServiceType() => clearField(1);
-}
-
 class GetConnectionStatusResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetConnectionStatusResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'IsConnected', protoName: 'IsConnected')
