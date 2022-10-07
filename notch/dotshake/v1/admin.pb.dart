@@ -16,6 +16,7 @@ class Machine extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cidr')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'host')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'os')
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isConnect', protoName: 'isConnect')
     ..hasRequiredFields = false
   ;
 
@@ -26,6 +27,7 @@ class Machine extends $pb.GeneratedMessage {
     $core.String? cidr,
     $core.String? host,
     $core.String? os,
+    $core.bool? isConnect,
   }) {
     final _result = create();
     if (domain != null) {
@@ -42,6 +44,9 @@ class Machine extends $pb.GeneratedMessage {
     }
     if (os != null) {
       _result.os = os;
+    }
+    if (isConnect != null) {
+      _result.isConnect = isConnect;
     }
     return _result;
   }
@@ -110,6 +115,15 @@ class Machine extends $pb.GeneratedMessage {
   $core.bool hasOs() => $_has(4);
   @$pb.TagNumber(5)
   void clearOs() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get isConnect => $_getBF(5);
+  @$pb.TagNumber(6)
+  set isConnect($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasIsConnect() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIsConnect() => clearField(6);
 }
 
 class GetMachinesResponse extends $pb.GeneratedMessage {

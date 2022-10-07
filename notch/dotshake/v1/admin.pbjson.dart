@@ -17,11 +17,12 @@ const Machine$json = const {
     const {'1': 'cidr', '3': 3, '4': 1, '5': 9, '10': 'cidr'},
     const {'1': 'host', '3': 4, '4': 1, '5': 9, '10': 'host'},
     const {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
+    const {'1': 'isConnect', '3': 6, '4': 1, '5': 8, '10': 'isConnect'},
   ],
 };
 
 /// Descriptor for `Machine`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List machineDescriptor = $convert.base64Decode('CgdNYWNoaW5lEhYKBmRvbWFpbhgBIAEoCVIGZG9tYWluEg4KAmlwGAIgASgJUgJpcBISCgRjaWRyGAMgASgJUgRjaWRyEhIKBGhvc3QYBCABKAlSBGhvc3QSDgoCb3MYBSABKAlSAm9z');
+final $typed_data.Uint8List machineDescriptor = $convert.base64Decode('CgdNYWNoaW5lEhYKBmRvbWFpbhgBIAEoCVIGZG9tYWluEg4KAmlwGAIgASgJUgJpcBISCgRjaWRyGAMgASgJUgRjaWRyEhIKBGhvc3QYBCABKAlSBGhvc3QSDgoCb3MYBSABKAlSAm9zEhwKCWlzQ29ubmVjdBgGIAEoCFIJaXNDb25uZWN0');
 @$core.Deprecated('Use getMachinesResponseDescriptor instead')
 const GetMachinesResponse$json = const {
   '1': 'GetMachinesResponse',
