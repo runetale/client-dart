@@ -39,10 +39,9 @@ class DaemonServiceClient extends $grpc.Client {
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseStream<$2.GetConnectionStatusResponse> connect(
-      $async.Stream<$0.Empty> request,
+  $grpc.ResponseFuture<$2.GetConnectionStatusResponse> connect($0.Empty request,
       {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$connect, request, options: options);
+    return $createUnaryCall(_$connect, request, options: options);
   }
 
   $grpc.ResponseFuture<$2.GetConnectionStatusResponse> disconnect(
@@ -64,9 +63,9 @@ abstract class DaemonServiceBase extends $grpc.Service {
   DaemonServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.Empty, $2.GetConnectionStatusResponse>(
         'Connect',
-        connect,
-        true,
-        true,
+        connect_Pre,
+        false,
+        false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($2.GetConnectionStatusResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $2.GetConnectionStatusResponse>(
@@ -85,6 +84,11 @@ abstract class DaemonServiceBase extends $grpc.Service {
         ($2.GetConnectionStatusResponse value) => value.writeToBuffer()));
   }
 
+  $async.Future<$2.GetConnectionStatusResponse> connect_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return connect(call, await request);
+  }
+
   $async.Future<$2.GetConnectionStatusResponse> disconnect_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return disconnect(call, await request);
@@ -95,8 +99,8 @@ abstract class DaemonServiceBase extends $grpc.Service {
     return getConnectionStatus(call, await request);
   }
 
-  $async.Stream<$2.GetConnectionStatusResponse> connect(
-      $grpc.ServiceCall call, $async.Stream<$0.Empty> request);
+  $async.Future<$2.GetConnectionStatusResponse> connect(
+      $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$2.GetConnectionStatusResponse> disconnect(
       $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$2.GetConnectionStatusResponse> getConnectionStatus(
