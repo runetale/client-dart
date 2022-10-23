@@ -19,9 +19,9 @@ const HangOutType$json = const {
 
 /// Descriptor for `HangOutType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List hangOutTypeDescriptor = $convert.base64Decode('CgtIYW5nT3V0VHlwZRILCgdDT05ORUNUEAASDgoKRElTQ09OTkVDVBAB');
-@$core.Deprecated('Use getMachineResponseDescriptor instead')
-const GetMachineResponse$json = const {
-  '1': 'GetMachineResponse',
+@$core.Deprecated('Use loginResponseDescriptor instead')
+const LoginResponse$json = const {
+  '1': 'LoginResponse',
   '2': const [
     const {'1': 'isRegistered', '3': 1, '4': 1, '5': 8, '10': 'isRegistered'},
     const {'1': 'loginUrl', '3': 2, '4': 1, '5': 9, '10': 'loginUrl'},
@@ -32,8 +32,8 @@ const GetMachineResponse$json = const {
   ],
 };
 
-/// Descriptor for `GetMachineResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getMachineResponseDescriptor = $convert.base64Decode('ChJHZXRNYWNoaW5lUmVzcG9uc2USIgoMaXNSZWdpc3RlcmVkGAEgASgIUgxpc1JlZ2lzdGVyZWQSGgoIbG9naW5VcmwYAiABKAlSCGxvZ2luVXJsEg4KAmlwGAMgASgJUgJpcBISCgRjaWRyGAQgASgJUgRjaWRyEh4KCnNpZ25hbEhvc3QYBSABKAlSCnNpZ25hbEhvc3QSHgoKc2lnbmFsUG9ydBgGIAEoBFIKc2lnbmFsUG9ydA==');
+/// Descriptor for `LoginResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode('Cg1Mb2dpblJlc3BvbnNlEiIKDGlzUmVnaXN0ZXJlZBgBIAEoCFIMaXNSZWdpc3RlcmVkEhoKCGxvZ2luVXJsGAIgASgJUghsb2dpblVybBIOCgJpcBgDIAEoCVICaXASEgoEY2lkchgEIAEoCVIEY2lkchIeCgpzaWduYWxIb3N0GAUgASgJUgpzaWduYWxIb3N0Eh4KCnNpZ25hbFBvcnQYBiABKARSCnNpZ25hbFBvcnQ=');
 @$core.Deprecated('Use syncMachinesResponseDescriptor instead')
 const SyncMachinesResponse$json = const {
   '1': 'SyncMachinesResponse',
