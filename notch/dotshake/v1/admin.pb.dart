@@ -375,21 +375,21 @@ class GetUsersResponse extends $pb.GeneratedMessage {
 class Group extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Group', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..pc<Machine>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'machines', $pb.PbFieldType.PM, subBuilder: Machine.create)
+    ..pc<User>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..hasRequiredFields = false
   ;
 
   Group._() : super();
   factory Group({
     $core.String? name,
-    $core.Iterable<Machine>? machines,
+    $core.Iterable<User>? users,
   }) {
     final _result = create();
     if (name != null) {
       _result.name = name;
     }
-    if (machines != null) {
-      _result.machines.addAll(machines);
+    if (users != null) {
+      _result.users.addAll(users);
     }
     return _result;
   }
@@ -424,7 +424,7 @@ class Group extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<Machine> get machines => $_getList(1);
+  $core.List<User> get users => $_getList(1);
 }
 
 class CreateGroupResponse extends $pb.GeneratedMessage {

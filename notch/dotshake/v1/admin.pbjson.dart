@@ -73,12 +73,12 @@ const Group$json = const {
   '1': 'Group',
   '2': const [
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'machines', '3': 2, '4': 3, '5': 11, '6': '.protos.Machine', '10': 'machines'},
+    const {'1': 'users', '3': 2, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
   ],
 };
 
 /// Descriptor for `Group`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List groupDescriptor = $convert.base64Decode('CgVHcm91cBISCgRuYW1lGAEgASgJUgRuYW1lEisKCG1hY2hpbmVzGAIgAygLMg8ucHJvdG9zLk1hY2hpbmVSCG1hY2hpbmVz');
+final $typed_data.Uint8List groupDescriptor = $convert.base64Decode('CgVHcm91cBISCgRuYW1lGAEgASgJUgRuYW1lEiIKBXVzZXJzGAIgAygLMgwucHJvdG9zLlVzZXJSBXVzZXJz');
 @$core.Deprecated('Use createGroupResponseDescriptor instead')
 const CreateGroupResponse$json = const {
   '1': 'CreateGroupResponse',
