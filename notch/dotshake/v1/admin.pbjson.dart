@@ -206,8 +206,9 @@ const GroupsResponse$json = const {
   '1': 'GroupsResponse',
   '2': const [
     const {'1': 'groups', '3': 1, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
+    const {'1': 'users', '3': 2, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
   ],
 };
 
 /// Descriptor for `GroupsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List groupsResponseDescriptor = $convert.base64Decode('Cg5Hcm91cHNSZXNwb25zZRIlCgZncm91cHMYASADKAsyDS5wcm90b3MuR3JvdXBSBmdyb3Vwcw==');
+final $typed_data.Uint8List groupsResponseDescriptor = $convert.base64Decode('Cg5Hcm91cHNSZXNwb25zZRIlCgZncm91cHMYASADKAsyDS5wcm90b3MuR3JvdXBSBmdyb3VwcxIiCgV1c2VycxgCIAMoCzIMLnByb3Rvcy5Vc2VyUgV1c2Vycw==');
