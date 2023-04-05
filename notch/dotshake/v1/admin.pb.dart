@@ -1101,16 +1101,21 @@ class GroupResponse extends $pb.GeneratedMessage {
 class GroupsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GroupsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protos'), createEmptyInstance: create)
     ..pc<Group>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..pc<User>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..hasRequiredFields = false
   ;
 
   GroupsResponse._() : super();
   factory GroupsResponse({
     $core.Iterable<Group>? groups,
+    $core.Iterable<User>? users,
   }) {
     final _result = create();
     if (groups != null) {
       _result.groups.addAll(groups);
+    }
+    if (users != null) {
+      _result.users.addAll(users);
     }
     return _result;
   }
@@ -1137,5 +1142,8 @@ class GroupsResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<Group> get groups => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<User> get users => $_getList(1);
 }
 

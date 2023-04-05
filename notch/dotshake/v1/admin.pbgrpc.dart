@@ -58,6 +58,11 @@ class AdminServiceClient extends $grpc.Client {
           '/protos.AdminService/DeleteGroup',
           ($1.DeleteGroupRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $1.GroupResponse.fromBuffer(value));
+  static final _$getGroupAndUsers =
+      $grpc.ClientMethod<$0.Empty, $1.GroupsResponse>(
+          '/protos.AdminService/GetGroupAndUsers',
+          ($0.Empty value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $1.GroupsResponse.fromBuffer(value));
   static final _$getGroup = $grpc.ClientMethod<$0.Empty, $1.GroupsResponse>(
       '/protos.AdminService/GetGroup',
       ($0.Empty value) => value.writeToBuffer(),
@@ -118,6 +123,11 @@ class AdminServiceClient extends $grpc.Client {
       $1.DeleteGroupRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteGroup, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.GroupsResponse> getGroupAndUsers($0.Empty request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getGroupAndUsers, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.GroupsResponse> getGroup($0.Empty request,
@@ -202,6 +212,13 @@ abstract class AdminServiceBase extends $grpc.Service {
             $1.DeleteGroupRequest.fromBuffer(value),
         ($1.GroupResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $1.GroupsResponse>(
+        'GetGroupAndUsers',
+        getGroupAndUsers_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.GroupsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GroupsResponse>(
         'GetGroup',
         getGroup_Pre,
         false,
@@ -262,6 +279,11 @@ abstract class AdminServiceBase extends $grpc.Service {
     return deleteGroup(call, await request);
   }
 
+  $async.Future<$1.GroupsResponse> getGroupAndUsers_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getGroupAndUsers(call, await request);
+  }
+
   $async.Future<$1.GroupsResponse> getGroup_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return getGroup(call, await request);
@@ -290,6 +312,8 @@ abstract class AdminServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $1.CreateGroupRequest request);
   $async.Future<$1.GroupResponse> deleteGroup(
       $grpc.ServiceCall call, $1.DeleteGroupRequest request);
+  $async.Future<$1.GroupsResponse> getGroupAndUsers(
+      $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.GroupsResponse> getGroup(
       $grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.GroupResponse> patchGroup(
