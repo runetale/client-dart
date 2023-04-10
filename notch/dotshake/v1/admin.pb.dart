@@ -445,9 +445,9 @@ class Acl extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Acl', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOM<Route>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'src', subBuilder: Route.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'srcName')
+    ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'srcGroups')
     ..aOM<Route>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dst', subBuilder: Route.create)
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dstName')
+    ..pPS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dstGroups')
     ..hasRequiredFields = false
   ;
 
@@ -455,9 +455,9 @@ class Acl extends $pb.GeneratedMessage {
   factory Acl({
     $core.String? name,
     Route? src,
-    $core.String? srcName,
+    $core.Iterable<$core.String>? srcGroups,
     Route? dst,
-    $core.String? dstName,
+    $core.Iterable<$core.String>? dstGroups,
   }) {
     final _result = create();
     if (name != null) {
@@ -466,14 +466,14 @@ class Acl extends $pb.GeneratedMessage {
     if (src != null) {
       _result.src = src;
     }
-    if (srcName != null) {
-      _result.srcName = srcName;
+    if (srcGroups != null) {
+      _result.srcGroups.addAll(srcGroups);
     }
     if (dst != null) {
       _result.dst = dst;
     }
-    if (dstName != null) {
-      _result.dstName = dstName;
+    if (dstGroups != null) {
+      _result.dstGroups.addAll(dstGroups);
     }
     return _result;
   }
@@ -519,13 +519,7 @@ class Acl extends $pb.GeneratedMessage {
   Route ensureSrc() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.String get srcName => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set srcName($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasSrcName() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearSrcName() => clearField(3);
+  $core.List<$core.String> get srcGroups => $_getList(2);
 
   @$pb.TagNumber(4)
   Route get dst => $_getN(3);
@@ -539,13 +533,7 @@ class Acl extends $pb.GeneratedMessage {
   Route ensureDst() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $core.String get dstName => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set dstName($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasDstName() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearDstName() => clearField(5);
+  $core.List<$core.String> get dstGroups => $_getList(4);
 }
 
 class Route extends $pb.GeneratedMessage {
