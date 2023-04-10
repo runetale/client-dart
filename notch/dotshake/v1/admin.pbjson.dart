@@ -86,14 +86,14 @@ const Acl$json = const {
   '2': const [
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     const {'1': 'src', '3': 2, '4': 1, '5': 11, '6': '.protos.Route', '10': 'src'},
-    const {'1': 'src_name', '3': 3, '4': 1, '5': 9, '10': 'srcName'},
+    const {'1': 'src_groups', '3': 3, '4': 3, '5': 9, '10': 'srcGroups'},
     const {'1': 'dst', '3': 4, '4': 1, '5': 11, '6': '.protos.Route', '10': 'dst'},
-    const {'1': 'dst_name', '3': 5, '4': 1, '5': 9, '10': 'dstName'},
+    const {'1': 'dst_groups', '3': 5, '4': 3, '5': 9, '10': 'dstGroups'},
   ],
 };
 
 /// Descriptor for `Acl`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List aclDescriptor = $convert.base64Decode('CgNBY2wSEgoEbmFtZRgBIAEoCVIEbmFtZRIfCgNzcmMYAiABKAsyDS5wcm90b3MuUm91dGVSA3NyYxIZCghzcmNfbmFtZRgDIAEoCVIHc3JjTmFtZRIfCgNkc3QYBCABKAsyDS5wcm90b3MuUm91dGVSA2RzdBIZCghkc3RfbmFtZRgFIAEoCVIHZHN0TmFtZQ==');
+final $typed_data.Uint8List aclDescriptor = $convert.base64Decode('CgNBY2wSEgoEbmFtZRgBIAEoCVIEbmFtZRIfCgNzcmMYAiABKAsyDS5wcm90b3MuUm91dGVSA3NyYxIdCgpzcmNfZ3JvdXBzGAMgAygJUglzcmNHcm91cHMSHwoDZHN0GAQgASgLMg0ucHJvdG9zLlJvdXRlUgNkc3QSHQoKZHN0X2dyb3VwcxgFIAMoCVIJZHN0R3JvdXBz');
 @$core.Deprecated('Use routeDescriptor instead')
 const Route$json = const {
   '1': 'Route',
