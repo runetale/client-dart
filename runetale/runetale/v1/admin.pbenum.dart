@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: google/protobuf/empty.proto
+//  source: runetale/runetale/v1/admin.proto
 //
 // @dart = 2.12
 
