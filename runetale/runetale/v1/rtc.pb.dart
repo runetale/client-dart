@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,7 +14,23 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class StunHost extends $pb.GeneratedMessage {
-  factory StunHost() => create();
+  factory StunHost({
+    $core.String? url,
+    $core.String? username,
+    $core.String? password,
+  }) {
+    final $result = create();
+    if (url != null) {
+      $result.url = url;
+    }
+    if (username != null) {
+      $result.username = username;
+    }
+    if (password != null) {
+      $result.password = password;
+    }
+    return $result;
+  }
   StunHost._() : super();
   factory StunHost.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StunHost.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -76,7 +92,23 @@ class StunHost extends $pb.GeneratedMessage {
 }
 
 class TurnHost extends $pb.GeneratedMessage {
-  factory TurnHost() => create();
+  factory TurnHost({
+    $core.String? url,
+    $core.String? username,
+    $core.String? password,
+  }) {
+    final $result = create();
+    if (url != null) {
+      $result.url = url;
+    }
+    if (username != null) {
+      $result.username = username;
+    }
+    if (password != null) {
+      $result.password = password;
+    }
+    return $result;
+  }
   TurnHost._() : super();
   factory TurnHost.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TurnHost.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -138,7 +170,19 @@ class TurnHost extends $pb.GeneratedMessage {
 }
 
 class RtcConfig extends $pb.GeneratedMessage {
-  factory RtcConfig() => create();
+  factory RtcConfig({
+    TurnHost? turnHost,
+    StunHost? stunHost,
+  }) {
+    final $result = create();
+    if (turnHost != null) {
+      $result.turnHost = turnHost;
+    }
+    if (stunHost != null) {
+      $result.stunHost = stunHost;
+    }
+    return $result;
+  }
   RtcConfig._() : super();
   factory RtcConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RtcConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -194,7 +238,15 @@ class RtcConfig extends $pb.GeneratedMessage {
 }
 
 class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
-  factory GetStunTurnConfigResponse() => create();
+  factory GetStunTurnConfigResponse({
+    RtcConfig? rtcConfig,
+  }) {
+    final $result = create();
+    if (rtcConfig != null) {
+      $result.rtcConfig = rtcConfig;
+    }
+    return $result;
+  }
   GetStunTurnConfigResponse._() : super();
   factory GetStunTurnConfigResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetStunTurnConfigResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

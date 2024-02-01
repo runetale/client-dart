@@ -1,0 +1,42 @@
+//
+//  Generated code. Do not modify.
+//  source: runetale/runetale/v1/oidc.proto
+//
+// @dart = 2.12
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+
+@$core.Deprecated('Use loginResponseDescriptor instead')
+const LoginResponse$json = {
+  '1': 'LoginResponse',
+};
+
+/// Descriptor for `LoginResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode(
+    'Cg1Mb2dpblJlc3BvbnNl');
+
+@$core.Deprecated('Use loginRequestDescriptor instead')
+const LoginRequest$json = {
+  '1': 'LoginRequest',
+  '2': [
+    {'1': 'sub', '3': 1, '4': 1, '5': 9, '10': 'sub'},
+    {'1': 'tenantID', '3': 2, '4': 1, '5': 9, '10': 'tenantID'},
+    {'1': 'doamin', '3': 3, '4': 1, '5': 9, '10': 'doamin'},
+    {'1': 'providerID', '3': 4, '4': 1, '5': 9, '10': 'providerID'},
+    {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
+  ],
+};
+
+/// Descriptor for `LoginRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loginRequestDescriptor = $convert.base64Decode(
+    'CgxMb2dpblJlcXVlc3QSEAoDc3ViGAEgASgJUgNzdWISGgoIdGVuYW50SUQYAiABKAlSCHRlbm'
+    'FudElEEhYKBmRvYW1pbhgDIAEoCVIGZG9hbWluEh4KCnByb3ZpZGVySUQYBCABKAlSCnByb3Zp'
+    'ZGVySUQSFAoFZW1haWwYBSABKAlSBWVtYWls');
+

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,7 +15,35 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class PeerLoginSessionResponse extends $pb.GeneratedMessage {
-  factory PeerLoginSessionResponse() => create();
+  factory PeerLoginSessionResponse({
+    $core.String? ip,
+    $core.String? cidr,
+    $core.String? host,
+    $core.String? os,
+    $core.String? signalServerHost,
+    $fixnum.Int64? signalServerPort,
+  }) {
+    final $result = create();
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    if (host != null) {
+      $result.host = host;
+    }
+    if (os != null) {
+      $result.os = os;
+    }
+    if (signalServerHost != null) {
+      $result.signalServerHost = signalServerHost;
+    }
+    if (signalServerPort != null) {
+      $result.signalServerPort = signalServerPort;
+    }
+    return $result;
+  }
   PeerLoginSessionResponse._() : super();
   factory PeerLoginSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PeerLoginSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -51,6 +79,7 @@ class PeerLoginSessionResponse extends $pb.GeneratedMessage {
   static PeerLoginSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PeerLoginSessionResponse>(create);
   static PeerLoginSessionResponse? _defaultInstance;
 
+  /// host ip
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -60,6 +89,7 @@ class PeerLoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIp() => clearField(1);
 
+  /// host wireguard cidr
   @$pb.TagNumber(2)
   $core.String get cidr => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -69,6 +99,7 @@ class PeerLoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearCidr() => clearField(2);
 
+  /// host name
   @$pb.TagNumber(3)
   $core.String get host => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -78,6 +109,7 @@ class PeerLoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearHost() => clearField(3);
 
+  /// host os
   @$pb.TagNumber(4)
   $core.String get os => $_getSZ(3);
   @$pb.TagNumber(4)

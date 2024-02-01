@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -16,13 +16,41 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 export 'machine.pbenum.dart';
 
-class LoginResponse extends $pb.GeneratedMessage {
-  factory LoginResponse() => create();
-  LoginResponse._() : super();
-  factory LoginResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LoginResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class JoinResponse extends $pb.GeneratedMessage {
+  factory JoinResponse({
+    $core.bool? isRegistered,
+    $core.String? loginUrl,
+    $core.String? ip,
+    $core.String? cidr,
+    $core.String? signalHost,
+    $fixnum.Int64? signalPort,
+  }) {
+    final $result = create();
+    if (isRegistered != null) {
+      $result.isRegistered = isRegistered;
+    }
+    if (loginUrl != null) {
+      $result.loginUrl = loginUrl;
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    if (signalHost != null) {
+      $result.signalHost = signalHost;
+    }
+    if (signalPort != null) {
+      $result.signalPort = signalPort;
+    }
+    return $result;
+  }
+  JoinResponse._() : super();
+  factory JoinResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JoinResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JoinResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..aOS(2, _omitFieldNames ? '' : 'loginUrl', protoName: 'loginUrl')
     ..aOS(3, _omitFieldNames ? '' : 'ip')
@@ -36,22 +64,22 @@ class LoginResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  LoginResponse clone() => LoginResponse()..mergeFromMessage(this);
+  JoinResponse clone() => JoinResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  LoginResponse copyWith(void Function(LoginResponse) updates) => super.copyWith((message) => updates(message as LoginResponse)) as LoginResponse;
+  JoinResponse copyWith(void Function(JoinResponse) updates) => super.copyWith((message) => updates(message as JoinResponse)) as JoinResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static LoginResponse create() => LoginResponse._();
-  LoginResponse createEmptyInstance() => create();
-  static $pb.PbList<LoginResponse> createRepeated() => $pb.PbList<LoginResponse>();
+  static JoinResponse create() => JoinResponse._();
+  JoinResponse createEmptyInstance() => create();
+  static $pb.PbList<JoinResponse> createRepeated() => $pb.PbList<JoinResponse>();
   @$core.pragma('dart2js:noInline')
-  static LoginResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginResponse>(create);
-  static LoginResponse? _defaultInstance;
+  static JoinResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JoinResponse>(create);
+  static JoinResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get isRegistered => $_getBF(0);
@@ -109,7 +137,27 @@ class LoginResponse extends $pb.GeneratedMessage {
 }
 
 class SyncMachinesResponse extends $pb.GeneratedMessage {
-  factory SyncMachinesResponse() => create();
+  factory SyncMachinesResponse({
+    $core.bool? isEmpty,
+    $core.Iterable<RemotePeer>? remotePeers,
+    $core.String? ip,
+    $core.String? cidr,
+  }) {
+    final $result = create();
+    if (isEmpty != null) {
+      $result.isEmpty = isEmpty;
+    }
+    if (remotePeers != null) {
+      $result.remotePeers.addAll(remotePeers);
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    return $result;
+  }
   SyncMachinesResponse._() : super();
   factory SyncMachinesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SyncMachinesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -175,7 +223,23 @@ class SyncMachinesResponse extends $pb.GeneratedMessage {
 }
 
 class RemotePeer extends $pb.GeneratedMessage {
-  factory RemotePeer() => create();
+  factory RemotePeer({
+    $core.String? remoteClientMachineKey,
+    $core.String? remoteWgPubKey,
+    $core.Iterable<$core.String>? allowedIPs,
+  }) {
+    final $result = create();
+    if (remoteClientMachineKey != null) {
+      $result.remoteClientMachineKey = remoteClientMachineKey;
+    }
+    if (remoteWgPubKey != null) {
+      $result.remoteWgPubKey = remoteWgPubKey;
+    }
+    if (allowedIPs != null) {
+      $result.allowedIPs.addAll(allowedIPs);
+    }
+    return $result;
+  }
   RemotePeer._() : super();
   factory RemotePeer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RemotePeer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

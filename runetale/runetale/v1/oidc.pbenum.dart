@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/session.proto
+//  source: runetale/runetale/v1/oidc.proto
 //
 // @dart = 2.12
 

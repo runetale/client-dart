@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -15,7 +15,15 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class SignInRequest extends $pb.GeneratedMessage {
-  factory SignInRequest() => create();
+  factory SignInRequest({
+    $core.String? email,
+  }) {
+    final $result = create();
+    if (email != null) {
+      $result.email = email;
+    }
+    return $result;
+  }
   SignInRequest._() : super();
   factory SignInRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignInRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -46,6 +54,7 @@ class SignInRequest extends $pb.GeneratedMessage {
   static SignInRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignInRequest>(create);
   static SignInRequest? _defaultInstance;
 
+  /// auth0 email address
   @$pb.TagNumber(1)
   $core.String get email => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -57,7 +66,15 @@ class SignInRequest extends $pb.GeneratedMessage {
 }
 
 class SignInResponse extends $pb.GeneratedMessage {
-  factory SignInResponse() => create();
+  factory SignInResponse({
+    $core.bool? isFirstLogin,
+  }) {
+    final $result = create();
+    if (isFirstLogin != null) {
+      $result.isFirstLogin = isFirstLogin;
+    }
+    return $result;
+  }
   SignInResponse._() : super();
   factory SignInResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignInResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -88,6 +105,7 @@ class SignInResponse extends $pb.GeneratedMessage {
   static SignInResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignInResponse>(create);
   static SignInResponse? _defaultInstance;
 
+  /// 初回ログインがどうかを判断するフラグ
   @$pb.TagNumber(1)
   $core.bool get isFirstLogin => $_getBF(0);
   @$pb.TagNumber(1)
@@ -99,7 +117,23 @@ class SignInResponse extends $pb.GeneratedMessage {
 }
 
 class SignUpRequest extends $pb.GeneratedMessage {
-  factory SignUpRequest() => create();
+  factory SignUpRequest({
+    $core.String? userID,
+    $core.String? host,
+    $core.String? os,
+  }) {
+    final $result = create();
+    if (userID != null) {
+      $result.userID = userID;
+    }
+    if (host != null) {
+      $result.host = host;
+    }
+    if (os != null) {
+      $result.os = os;
+    }
+    return $result;
+  }
   SignUpRequest._() : super();
   factory SignUpRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignUpRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -132,6 +166,7 @@ class SignUpRequest extends $pb.GeneratedMessage {
   static SignUpRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignUpRequest>(create);
   static SignUpRequest? _defaultInstance;
 
+  /// auth0 userID
   @$pb.TagNumber(1)
   $core.String get userID => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -141,6 +176,7 @@ class SignUpRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearUserID() => clearField(1);
 
+  /// host name
   @$pb.TagNumber(2)
   $core.String get host => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -150,6 +186,7 @@ class SignUpRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearHost() => clearField(2);
 
+  /// host os
   @$pb.TagNumber(3)
   $core.String get os => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -161,7 +198,27 @@ class SignUpRequest extends $pb.GeneratedMessage {
 }
 
 class SignUpResponse extends $pb.GeneratedMessage {
-  factory SignUpResponse() => create();
+  factory SignUpResponse({
+    $core.String? ip,
+    $core.String? cidr,
+    $core.String? signalServerHost,
+    $fixnum.Int64? signalServerPort,
+  }) {
+    final $result = create();
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    if (signalServerHost != null) {
+      $result.signalServerHost = signalServerHost;
+    }
+    if (signalServerPort != null) {
+      $result.signalServerPort = signalServerPort;
+    }
+    return $result;
+  }
   SignUpResponse._() : super();
   factory SignUpResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignUpResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -195,6 +252,7 @@ class SignUpResponse extends $pb.GeneratedMessage {
   static SignUpResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignUpResponse>(create);
   static SignUpResponse? _defaultInstance;
 
+  /// host wireguard ip
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -204,6 +262,7 @@ class SignUpResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIp() => clearField(1);
 
+  /// host wireguard cidr
   @$pb.TagNumber(2)
   $core.String get cidr => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -233,7 +292,15 @@ class SignUpResponse extends $pb.GeneratedMessage {
 }
 
 class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
-  factory VerifyPeerLoginSessionRequest() => create();
+  factory VerifyPeerLoginSessionRequest({
+    $core.String? sessionID,
+  }) {
+    final $result = create();
+    if (sessionID != null) {
+      $result.sessionID = sessionID;
+    }
+    return $result;
+  }
   VerifyPeerLoginSessionRequest._() : super();
   factory VerifyPeerLoginSessionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VerifyPeerLoginSessionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -264,6 +331,7 @@ class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
   static VerifyPeerLoginSessionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifyPeerLoginSessionRequest>(create);
   static VerifyPeerLoginSessionRequest? _defaultInstance;
 
+  /// jwt session id for etcd
   @$pb.TagNumber(1)
   $core.String get sessionID => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -275,7 +343,23 @@ class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
 }
 
 class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
-  factory VerifyPeerLoginSessionResponse() => create();
+  factory VerifyPeerLoginSessionResponse({
+    $core.String? ip,
+    $core.String? host,
+    $core.String? os,
+  }) {
+    final $result = create();
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (host != null) {
+      $result.host = host;
+    }
+    if (os != null) {
+      $result.os = os;
+    }
+    return $result;
+  }
   VerifyPeerLoginSessionResponse._() : super();
   factory VerifyPeerLoginSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VerifyPeerLoginSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -308,6 +392,7 @@ class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
   static VerifyPeerLoginSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifyPeerLoginSessionResponse>(create);
   static VerifyPeerLoginSessionResponse? _defaultInstance;
 
+  /// host ip
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -317,6 +402,7 @@ class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIp() => clearField(1);
 
+  /// host name
   @$pb.TagNumber(2)
   $core.String get host => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -326,6 +412,7 @@ class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearHost() => clearField(2);
 
+  /// host os
   @$pb.TagNumber(3)
   $core.String get os => $_getSZ(2);
   @$pb.TagNumber(3)

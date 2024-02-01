@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -14,7 +14,35 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class Machine extends $pb.GeneratedMessage {
-  factory Machine() => create();
+  factory Machine({
+    $core.String? domain,
+    $core.String? ip,
+    $core.String? cidr,
+    $core.String? host,
+    $core.String? os,
+    $core.bool? isConnect,
+  }) {
+    final $result = create();
+    if (domain != null) {
+      $result.domain = domain;
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    if (host != null) {
+      $result.host = host;
+    }
+    if (os != null) {
+      $result.os = os;
+    }
+    if (isConnect != null) {
+      $result.isConnect = isConnect;
+    }
+    return $result;
+  }
   Machine._() : super();
   factory Machine.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Machine.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -106,7 +134,15 @@ class Machine extends $pb.GeneratedMessage {
 }
 
 class GetMachinesResponse extends $pb.GeneratedMessage {
-  factory GetMachinesResponse() => create();
+  factory GetMachinesResponse({
+    $core.Iterable<Machine>? machines,
+  }) {
+    final $result = create();
+    if (machines != null) {
+      $result.machines.addAll(machines);
+    }
+    return $result;
+  }
   GetMachinesResponse._() : super();
   factory GetMachinesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMachinesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -142,7 +178,19 @@ class GetMachinesResponse extends $pb.GeneratedMessage {
 }
 
 class GetMeResponse extends $pb.GeneratedMessage {
-  factory GetMeResponse() => create();
+  factory GetMeResponse({
+    $core.String? username,
+    $core.String? email,
+  }) {
+    final $result = create();
+    if (username != null) {
+      $result.username = username;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    return $result;
+  }
   GetMeResponse._() : super();
   factory GetMeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetMeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -194,7 +242,35 @@ class GetMeResponse extends $pb.GeneratedMessage {
 }
 
 class User extends $pb.GeneratedMessage {
-  factory User() => create();
+  factory User({
+    $core.String? userId,
+    $core.String? username,
+    $core.String? email,
+    $core.String? joined,
+    $core.String? lastSeen,
+    $core.String? picture,
+  }) {
+    final $result = create();
+    if (userId != null) {
+      $result.userId = userId;
+    }
+    if (username != null) {
+      $result.username = username;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (joined != null) {
+      $result.joined = joined;
+    }
+    if (lastSeen != null) {
+      $result.lastSeen = lastSeen;
+    }
+    if (picture != null) {
+      $result.picture = picture;
+    }
+    return $result;
+  }
   User._() : super();
   factory User.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory User.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -286,7 +362,15 @@ class User extends $pb.GeneratedMessage {
 }
 
 class GetUsersResponse extends $pb.GeneratedMessage {
-  factory GetUsersResponse() => create();
+  factory GetUsersResponse({
+    $core.Iterable<User>? users,
+  }) {
+    final $result = create();
+    if (users != null) {
+      $result.users.addAll(users);
+    }
+    return $result;
+  }
   GetUsersResponse._() : super();
   factory GetUsersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetUsersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -322,7 +406,19 @@ class GetUsersResponse extends $pb.GeneratedMessage {
 }
 
 class Group extends $pb.GeneratedMessage {
-  factory Group() => create();
+  factory Group({
+    $core.String? name,
+    $core.Iterable<User>? users,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (users != null) {
+      $result.users.addAll(users);
+    }
+    return $result;
+  }
   Group._() : super();
   factory Group.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Group.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -368,7 +464,31 @@ class Group extends $pb.GeneratedMessage {
 }
 
 class Acl extends $pb.GeneratedMessage {
-  factory Acl() => create();
+  factory Acl({
+    $core.String? name,
+    Route? src,
+    $core.Iterable<$core.String>? srcGroups,
+    Route? dst,
+    $core.Iterable<$core.String>? dstGroups,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (src != null) {
+      $result.src = src;
+    }
+    if (srcGroups != null) {
+      $result.srcGroups.addAll(srcGroups);
+    }
+    if (dst != null) {
+      $result.dst = dst;
+    }
+    if (dstGroups != null) {
+      $result.dstGroups.addAll(dstGroups);
+    }
+    return $result;
+  }
   Acl._() : super();
   factory Acl.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Acl.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -442,7 +562,19 @@ class Acl extends $pb.GeneratedMessage {
 }
 
 class Route extends $pb.GeneratedMessage {
-  factory Route() => create();
+  factory Route({
+    $core.Iterable<$core.String>? userIds,
+    $core.Iterable<$core.String>? groupIds,
+  }) {
+    final $result = create();
+    if (userIds != null) {
+      $result.userIds.addAll(userIds);
+    }
+    if (groupIds != null) {
+      $result.groupIds.addAll(groupIds);
+    }
+    return $result;
+  }
   Route._() : super();
   factory Route.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Route.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -482,7 +614,23 @@ class Route extends $pb.GeneratedMessage {
 }
 
 class CreateAclRequest extends $pb.GeneratedMessage {
-  factory CreateAclRequest() => create();
+  factory CreateAclRequest({
+    $core.String? aclName,
+    Route? src,
+    Route? dst,
+  }) {
+    final $result = create();
+    if (aclName != null) {
+      $result.aclName = aclName;
+    }
+    if (src != null) {
+      $result.src = src;
+    }
+    if (dst != null) {
+      $result.dst = dst;
+    }
+    return $result;
+  }
   CreateAclRequest._() : super();
   factory CreateAclRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -548,7 +696,15 @@ class CreateAclRequest extends $pb.GeneratedMessage {
 }
 
 class DeleteAclRequest extends $pb.GeneratedMessage {
-  factory DeleteAclRequest() => create();
+  factory DeleteAclRequest({
+    $core.String? aclId,
+  }) {
+    final $result = create();
+    if (aclId != null) {
+      $result.aclId = aclId;
+    }
+    return $result;
+  }
   DeleteAclRequest._() : super();
   factory DeleteAclRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -590,7 +746,23 @@ class DeleteAclRequest extends $pb.GeneratedMessage {
 }
 
 class PatchAclRequest extends $pb.GeneratedMessage {
-  factory PatchAclRequest() => create();
+  factory PatchAclRequest({
+    $core.String? aclId,
+    Route? src,
+    Route? dst,
+  }) {
+    final $result = create();
+    if (aclId != null) {
+      $result.aclId = aclId;
+    }
+    if (src != null) {
+      $result.src = src;
+    }
+    if (dst != null) {
+      $result.dst = dst;
+    }
+    return $result;
+  }
   PatchAclRequest._() : super();
   factory PatchAclRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PatchAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -656,7 +828,15 @@ class PatchAclRequest extends $pb.GeneratedMessage {
 }
 
 class AclResponse extends $pb.GeneratedMessage {
-  factory AclResponse() => create();
+  factory AclResponse({
+    Acl? acl,
+  }) {
+    final $result = create();
+    if (acl != null) {
+      $result.acl = acl;
+    }
+    return $result;
+  }
   AclResponse._() : super();
   factory AclResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AclResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -700,7 +880,15 @@ class AclResponse extends $pb.GeneratedMessage {
 }
 
 class AclsResponse extends $pb.GeneratedMessage {
-  factory AclsResponse() => create();
+  factory AclsResponse({
+    $core.Iterable<Acl>? acls,
+  }) {
+    final $result = create();
+    if (acls != null) {
+      $result.acls.addAll(acls);
+    }
+    return $result;
+  }
   AclsResponse._() : super();
   factory AclsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AclsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -736,7 +924,19 @@ class AclsResponse extends $pb.GeneratedMessage {
 }
 
 class CreateGroupRequest extends $pb.GeneratedMessage {
-  factory CreateGroupRequest() => create();
+  factory CreateGroupRequest({
+    $core.String? groupName,
+    $core.Iterable<User>? users,
+  }) {
+    final $result = create();
+    if (groupName != null) {
+      $result.groupName = groupName;
+    }
+    if (users != null) {
+      $result.users.addAll(users);
+    }
+    return $result;
+  }
   CreateGroupRequest._() : super();
   factory CreateGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CreateGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -782,7 +982,15 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
 }
 
 class DeleteGroupRequest extends $pb.GeneratedMessage {
-  factory DeleteGroupRequest() => create();
+  factory DeleteGroupRequest({
+    $core.String? groupId,
+  }) {
+    final $result = create();
+    if (groupId != null) {
+      $result.groupId = groupId;
+    }
+    return $result;
+  }
   DeleteGroupRequest._() : super();
   factory DeleteGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DeleteGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -824,7 +1032,19 @@ class DeleteGroupRequest extends $pb.GeneratedMessage {
 }
 
 class PatchGroupRequest extends $pb.GeneratedMessage {
-  factory PatchGroupRequest() => create();
+  factory PatchGroupRequest({
+    $core.String? groupId,
+    $core.Iterable<User>? users,
+  }) {
+    final $result = create();
+    if (groupId != null) {
+      $result.groupId = groupId;
+    }
+    if (users != null) {
+      $result.users.addAll(users);
+    }
+    return $result;
+  }
   PatchGroupRequest._() : super();
   factory PatchGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PatchGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -870,7 +1090,15 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
 }
 
 class GroupResponse extends $pb.GeneratedMessage {
-  factory GroupResponse() => create();
+  factory GroupResponse({
+    Group? group,
+  }) {
+    final $result = create();
+    if (group != null) {
+      $result.group = group;
+    }
+    return $result;
+  }
   GroupResponse._() : super();
   factory GroupResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -914,7 +1142,19 @@ class GroupResponse extends $pb.GeneratedMessage {
 }
 
 class GroupsResponse extends $pb.GeneratedMessage {
-  factory GroupsResponse() => create();
+  factory GroupsResponse({
+    $core.Iterable<Group>? groups,
+    $core.Iterable<User>? users,
+  }) {
+    final $result = create();
+    if (groups != null) {
+      $result.groups.addAll(groups);
+    }
+    if (users != null) {
+      $result.users.addAll(users);
+    }
+    return $result;
+  }
   GroupsResponse._() : super();
   factory GroupsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GroupsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

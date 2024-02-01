@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -18,7 +18,35 @@ import 'negotiation.pbenum.dart';
 export 'negotiation.pbenum.dart';
 
 class NegotiationRequest extends $pb.GeneratedMessage {
-  factory NegotiationRequest() => create();
+  factory NegotiationRequest({
+    NegotiationType? type,
+    $core.String? dstPeerMachineKey,
+    $core.String? srcWgPubKey,
+    $core.String? uFlag,
+    $core.String? pwd,
+    $core.String? candidate,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (dstPeerMachineKey != null) {
+      $result.dstPeerMachineKey = dstPeerMachineKey;
+    }
+    if (srcWgPubKey != null) {
+      $result.srcWgPubKey = srcWgPubKey;
+    }
+    if (uFlag != null) {
+      $result.uFlag = uFlag;
+    }
+    if (pwd != null) {
+      $result.pwd = pwd;
+    }
+    if (candidate != null) {
+      $result.candidate = candidate;
+    }
+    return $result;
+  }
   NegotiationRequest._() : super();
   factory NegotiationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NegotiationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -110,7 +138,31 @@ class NegotiationRequest extends $pb.GeneratedMessage {
 }
 
 class NegotiationResponse extends $pb.GeneratedMessage {
-  factory NegotiationResponse() => create();
+  factory NegotiationResponse({
+    NegotiationType? type,
+    $core.String? dstPeerMachineKey,
+    $core.String? uFlag,
+    $core.String? pwd,
+    $core.String? candidate,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (dstPeerMachineKey != null) {
+      $result.dstPeerMachineKey = dstPeerMachineKey;
+    }
+    if (uFlag != null) {
+      $result.uFlag = uFlag;
+    }
+    if (pwd != null) {
+      $result.pwd = pwd;
+    }
+    if (candidate != null) {
+      $result.candidate = candidate;
+    }
+    return $result;
+  }
   NegotiationResponse._() : super();
   factory NegotiationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NegotiationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -192,7 +244,27 @@ class NegotiationResponse extends $pb.GeneratedMessage {
 }
 
 class HandshakeRequest extends $pb.GeneratedMessage {
-  factory HandshakeRequest() => create();
+  factory HandshakeRequest({
+    $core.String? dstPeerMachineKey,
+    $core.String? srcPeerMachineKey,
+    $core.String? uFlag,
+    $core.String? pwd,
+  }) {
+    final $result = create();
+    if (dstPeerMachineKey != null) {
+      $result.dstPeerMachineKey = dstPeerMachineKey;
+    }
+    if (srcPeerMachineKey != null) {
+      $result.srcPeerMachineKey = srcPeerMachineKey;
+    }
+    if (uFlag != null) {
+      $result.uFlag = uFlag;
+    }
+    if (pwd != null) {
+      $result.pwd = pwd;
+    }
+    return $result;
+  }
   HandshakeRequest._() : super();
   factory HandshakeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HandshakeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
@@ -264,7 +336,23 @@ class HandshakeRequest extends $pb.GeneratedMessage {
 }
 
 class CandidateRequest extends $pb.GeneratedMessage {
-  factory CandidateRequest() => create();
+  factory CandidateRequest({
+    $core.String? dstPeerMachineKey,
+    $core.String? srcPeerMachineKey,
+    $core.String? candidate,
+  }) {
+    final $result = create();
+    if (dstPeerMachineKey != null) {
+      $result.dstPeerMachineKey = dstPeerMachineKey;
+    }
+    if (srcPeerMachineKey != null) {
+      $result.srcPeerMachineKey = srcPeerMachineKey;
+    }
+    if (candidate != null) {
+      $result.candidate = candidate;
+    }
+    return $result;
+  }
   CandidateRequest._() : super();
   factory CandidateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CandidateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);

@@ -4,7 +4,7 @@
 //
 // @dart = 2.12
 
-// ignore_for_file: annotate_overrides, camel_case_types
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 // ignore_for_file: unnecessary_import, unnecessary_this, unused_import
@@ -26,9 +26,9 @@ const HangOutType$json = {
 final $typed_data.Uint8List hangOutTypeDescriptor = $convert.base64Decode(
     'CgtIYW5nT3V0VHlwZRILCgdDT05ORUNUEAASDgoKRElTQ09OTkVDVBAB');
 
-@$core.Deprecated('Use loginResponseDescriptor instead')
-const LoginResponse$json = {
-  '1': 'LoginResponse',
+@$core.Deprecated('Use joinResponseDescriptor instead')
+const JoinResponse$json = {
+  '1': 'JoinResponse',
   '2': [
     {'1': 'isRegistered', '3': 1, '4': 1, '5': 8, '10': 'isRegistered'},
     {'1': 'loginUrl', '3': 2, '4': 1, '5': 9, '10': 'loginUrl'},
@@ -39,12 +39,12 @@ const LoginResponse$json = {
   ],
 };
 
-/// Descriptor for `LoginResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode(
-    'Cg1Mb2dpblJlc3BvbnNlEiIKDGlzUmVnaXN0ZXJlZBgBIAEoCFIMaXNSZWdpc3RlcmVkEhoKCG'
-    'xvZ2luVXJsGAIgASgJUghsb2dpblVybBIOCgJpcBgDIAEoCVICaXASEgoEY2lkchgEIAEoCVIE'
-    'Y2lkchIeCgpzaWduYWxIb3N0GAUgASgJUgpzaWduYWxIb3N0Eh4KCnNpZ25hbFBvcnQYBiABKA'
-    'RSCnNpZ25hbFBvcnQ=');
+/// Descriptor for `JoinResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List joinResponseDescriptor = $convert.base64Decode(
+    'CgxKb2luUmVzcG9uc2USIgoMaXNSZWdpc3RlcmVkGAEgASgIUgxpc1JlZ2lzdGVyZWQSGgoIbG'
+    '9naW5VcmwYAiABKAlSCGxvZ2luVXJsEg4KAmlwGAMgASgJUgJpcBISCgRjaWRyGAQgASgJUgRj'
+    'aWRyEh4KCnNpZ25hbEhvc3QYBSABKAlSCnNpZ25hbEhvc3QSHgoKc2lnbmFsUG9ydBgGIAEoBF'
+    'IKc2lnbmFsUG9ydA==');
 
 @$core.Deprecated('Use syncMachinesResponseDescriptor instead')
 const SyncMachinesResponse$json = {
