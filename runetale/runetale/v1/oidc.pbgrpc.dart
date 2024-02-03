@@ -19,14 +19,14 @@ import 'oidc.pb.dart' as $7;
 
 export 'oidc.pb.dart';
 
-@$pb.GrpcServiceName('protos.LoginService')
-class LoginServiceClient extends $grpc.Client {
+@$pb.GrpcServiceName('protos.OIDCService')
+class OIDCServiceClient extends $grpc.Client {
   static final _$login = $grpc.ClientMethod<$7.LoginRequest, $7.LoginResponse>(
-      '/protos.LoginService/Login',
+      '/protos.OIDCService/Login',
       ($7.LoginRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $7.LoginResponse.fromBuffer(value));
 
-  LoginServiceClient($grpc.ClientChannel channel,
+  OIDCServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options,
@@ -37,11 +37,11 @@ class LoginServiceClient extends $grpc.Client {
   }
 }
 
-@$pb.GrpcServiceName('protos.LoginService')
-abstract class LoginServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.LoginService';
+@$pb.GrpcServiceName('protos.OIDCService')
+abstract class OIDCServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.OIDCService';
 
-  LoginServiceBase() {
+  OIDCServiceBase() {
     $addMethod($grpc.ServiceMethod<$7.LoginRequest, $7.LoginResponse>(
         'Login',
         login_Pre,
