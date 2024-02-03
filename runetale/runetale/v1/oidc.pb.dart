@@ -14,12 +14,46 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class LoginResponse extends $pb.GeneratedMessage {
-  factory LoginResponse() => create();
+  factory LoginResponse({
+    $core.String? sub,
+    $core.String? tenantID,
+    $core.String? doamin,
+    $core.String? providerID,
+    $core.String? email,
+    $core.String? username,
+  }) {
+    final $result = create();
+    if (sub != null) {
+      $result.sub = sub;
+    }
+    if (tenantID != null) {
+      $result.tenantID = tenantID;
+    }
+    if (doamin != null) {
+      $result.doamin = doamin;
+    }
+    if (providerID != null) {
+      $result.providerID = providerID;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (username != null) {
+      $result.username = username;
+    }
+    return $result;
+  }
   LoginResponse._() : super();
   factory LoginResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LoginResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sub')
+    ..aOS(2, _omitFieldNames ? '' : 'tenantID', protoName: 'tenantID')
+    ..aOS(3, _omitFieldNames ? '' : 'doamin')
+    ..aOS(4, _omitFieldNames ? '' : 'providerID', protoName: 'providerID')
+    ..aOS(5, _omitFieldNames ? '' : 'email')
+    ..aOS(6, _omitFieldNames ? '' : 'username')
     ..hasRequiredFields = false
   ;
 
@@ -43,6 +77,60 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static LoginResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginResponse>(create);
   static LoginResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get sub => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sub($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSub() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSub() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get tenantID => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set tenantID($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasTenantID() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTenantID() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get doamin => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set doamin($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDoamin() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDoamin() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get providerID => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set providerID($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasProviderID() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProviderID() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get email => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set email($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEmail() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEmail() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get username => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set username($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasUsername() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUsername() => clearField(6);
 }
 
 class LoginRequest extends $pb.GeneratedMessage {
