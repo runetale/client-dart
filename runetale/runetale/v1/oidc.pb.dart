@@ -52,6 +52,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     $core.String? doamin,
     $core.String? providerID,
     $core.String? email,
+    $core.String? username,
   }) {
     final $result = create();
     if (sub != null) {
@@ -69,6 +70,9 @@ class LoginRequest extends $pb.GeneratedMessage {
     if (email != null) {
       $result.email = email;
     }
+    if (username != null) {
+      $result.username = username;
+    }
     return $result;
   }
   LoginRequest._() : super();
@@ -81,6 +85,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'doamin')
     ..aOS(4, _omitFieldNames ? '' : 'providerID', protoName: 'providerID')
     ..aOS(5, _omitFieldNames ? '' : 'email')
+    ..aOS(6, _omitFieldNames ? '' : 'username')
     ..hasRequiredFields = false
   ;
 
@@ -149,6 +154,15 @@ class LoginRequest extends $pb.GeneratedMessage {
   $core.bool hasEmail() => $_has(4);
   @$pb.TagNumber(5)
   void clearEmail() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get username => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set username($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasUsername() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearUsername() => clearField(6);
 }
 
 
