@@ -53,3 +53,18 @@ final $typed_data.Uint8List loginRequestDescriptor = $convert.base64Decode(
     'ZGVySUQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhoKCHVzZXJuYW1lGAYgASgJUgh1c2VybmFtZQ'
     '==');
 
+@$core.Deprecated('Use authenticateResponseDescriptor instead')
+const AuthenticateResponse$json = {
+  '1': 'AuthenticateResponse',
+  '2': [
+    {'1': 'doamin', '3': 1, '4': 1, '5': 9, '10': 'doamin'},
+    {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'username', '3': 3, '4': 1, '5': 9, '10': 'username'},
+  ],
+};
+
+/// Descriptor for `AuthenticateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List authenticateResponseDescriptor = $convert.base64Decode(
+    'ChRBdXRoZW50aWNhdGVSZXNwb25zZRIWCgZkb2FtaW4YASABKAlSBmRvYW1pbhIUCgVlbWFpbB'
+    'gCIAEoCVIFZW1haWwSGgoIdXNlcm5hbWUYAyABKAlSCHVzZXJuYW1l');
+

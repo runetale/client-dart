@@ -253,6 +253,84 @@ class LoginRequest extends $pb.GeneratedMessage {
   void clearUsername() => clearField(6);
 }
 
+class AuthenticateResponse extends $pb.GeneratedMessage {
+  factory AuthenticateResponse({
+    $core.String? doamin,
+    $core.String? email,
+    $core.String? username,
+  }) {
+    final $result = create();
+    if (doamin != null) {
+      $result.doamin = doamin;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (username != null) {
+      $result.username = username;
+    }
+    return $result;
+  }
+  AuthenticateResponse._() : super();
+  factory AuthenticateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AuthenticateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthenticateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'doamin')
+    ..aOS(2, _omitFieldNames ? '' : 'email')
+    ..aOS(3, _omitFieldNames ? '' : 'username')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AuthenticateResponse clone() => AuthenticateResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AuthenticateResponse copyWith(void Function(AuthenticateResponse) updates) => super.copyWith((message) => updates(message as AuthenticateResponse)) as AuthenticateResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AuthenticateResponse create() => AuthenticateResponse._();
+  AuthenticateResponse createEmptyInstance() => create();
+  static $pb.PbList<AuthenticateResponse> createRepeated() => $pb.PbList<AuthenticateResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AuthenticateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthenticateResponse>(create);
+  static AuthenticateResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get doamin => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set doamin($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDoamin() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDoamin() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get email => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set email($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasEmail() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEmail() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get username => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set username($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasUsername() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUsername() => clearField(3);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

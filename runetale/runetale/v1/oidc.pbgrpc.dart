@@ -26,10 +26,10 @@ class OIDCServiceClient extends $grpc.Client {
       '/protos.OIDCService/Login',
       ($7.LoginRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $7.LoginResponse.fromBuffer(value));
-  static final _$authenticate = $grpc.ClientMethod<$0.Empty, $0.Empty>(
+  static final _$authenticate = $grpc.ClientMethod<$0.Empty, $7.AuthenticateResponse>(
       '/protos.OIDCService/Authenticate',
       ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+      ($core.List<$core.int> value) => $7.AuthenticateResponse.fromBuffer(value));
 
   OIDCServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -41,7 +41,7 @@ class OIDCServiceClient extends $grpc.Client {
     return $createUnaryCall(_$login, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Empty> authenticate($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.AuthenticateResponse> authenticate($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$authenticate, request, options: options);
   }
 }
@@ -58,23 +58,23 @@ abstract class OIDCServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $7.LoginRequest.fromBuffer(value),
         ($7.LoginResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$0.Empty, $7.AuthenticateResponse>(
         'Authenticate',
         authenticate_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($7.AuthenticateResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$7.LoginResponse> login_Pre($grpc.ServiceCall call, $async.Future<$7.LoginRequest> request) async {
     return login(call, await request);
   }
 
-  $async.Future<$0.Empty> authenticate_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$7.AuthenticateResponse> authenticate_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return authenticate(call, await request);
   }
 
   $async.Future<$7.LoginResponse> login($grpc.ServiceCall call, $7.LoginRequest request);
-  $async.Future<$0.Empty> authenticate($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$7.AuthenticateResponse> authenticate($grpc.ServiceCall call, $0.Empty request);
 }
