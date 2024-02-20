@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/login_session.proto
+//  source: runetale/runetale/v1/login.proto
 //
 // @dart = 2.12
 
@@ -16,29 +16,29 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/empty.pb.dart' as $0;
-import 'login_session.pb.dart' as $4;
+import 'login.pb.dart' as $4;
 
-export 'login_session.pb.dart';
+export 'login.pb.dart';
 
-@$pb.GrpcServiceName('protos.LoginSessionService')
-class LoginSessionServiceClient extends $grpc.Client {
-  static final _$join = $grpc.ClientMethod<$0.Empty, $4.JoinResponse>(
-      '/protos.LoginSessionService/Join',
+@$pb.GrpcServiceName('protos.LoginService')
+class LoginServiceClient extends $grpc.Client {
+  static final _$loginMachine = $grpc.ClientMethod<$0.Empty, $4.LoginMachineResponse>(
+      '/protos.LoginService/LoginMachine',
       ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $4.JoinResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $4.LoginMachineResponse.fromBuffer(value));
   static final _$streamPeerLoginSession = $grpc.ClientMethod<$0.Empty, $4.PeerLoginSessionResponse>(
-      '/protos.LoginSessionService/StreamPeerLoginSession',
+      '/protos.LoginService/StreamPeerLoginSession',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.PeerLoginSessionResponse.fromBuffer(value));
 
-  LoginSessionServiceClient($grpc.ClientChannel channel,
+  LoginServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$4.JoinResponse> join($0.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$join, request, options: options);
+  $grpc.ResponseFuture<$4.LoginMachineResponse> loginMachine($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$loginMachine, request, options: options);
   }
 
   $grpc.ResponseStream<$4.PeerLoginSessionResponse> streamPeerLoginSession($async.Stream<$0.Empty> request, {$grpc.CallOptions? options}) {
@@ -46,18 +46,18 @@ class LoginSessionServiceClient extends $grpc.Client {
   }
 }
 
-@$pb.GrpcServiceName('protos.LoginSessionService')
-abstract class LoginSessionServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.LoginSessionService';
+@$pb.GrpcServiceName('protos.LoginService')
+abstract class LoginServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.LoginService';
 
-  LoginSessionServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.Empty, $4.JoinResponse>(
-        'Join',
-        join_Pre,
+  LoginServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.Empty, $4.LoginMachineResponse>(
+        'LoginMachine',
+        loginMachine_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($4.JoinResponse value) => value.writeToBuffer()));
+        ($4.LoginMachineResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $4.PeerLoginSessionResponse>(
         'StreamPeerLoginSession',
         streamPeerLoginSession,
@@ -67,10 +67,10 @@ abstract class LoginSessionServiceBase extends $grpc.Service {
         ($4.PeerLoginSessionResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$4.JoinResponse> join_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return join(call, await request);
+  $async.Future<$4.LoginMachineResponse> loginMachine_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return loginMachine(call, await request);
   }
 
-  $async.Future<$4.JoinResponse> join($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$4.LoginMachineResponse> loginMachine($grpc.ServiceCall call, $0.Empty request);
   $async.Stream<$4.PeerLoginSessionResponse> streamPeerLoginSession($grpc.ServiceCall call, $async.Stream<$0.Empty> request);
 }

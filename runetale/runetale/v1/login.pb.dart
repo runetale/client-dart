@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/login_session.proto
+//  source: runetale/runetale/v1/login.proto
 //
 // @dart = 2.12
 
@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class JoinResponse extends $pb.GeneratedMessage {
-  factory JoinResponse({
+class LoginMachineResponse extends $pb.GeneratedMessage {
+  factory LoginMachineResponse({
     $core.bool? isRegistered,
     $core.String? loginUrl,
     $core.String? ip,
@@ -44,11 +44,11 @@ class JoinResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  JoinResponse._() : super();
-  factory JoinResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory JoinResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  LoginMachineResponse._() : super();
+  factory LoginMachineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LoginMachineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JoinResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginMachineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..aOS(2, _omitFieldNames ? '' : 'loginUrl', protoName: 'loginUrl')
     ..aOS(3, _omitFieldNames ? '' : 'ip')
@@ -62,22 +62,22 @@ class JoinResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  JoinResponse clone() => JoinResponse()..mergeFromMessage(this);
+  LoginMachineResponse clone() => LoginMachineResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  JoinResponse copyWith(void Function(JoinResponse) updates) => super.copyWith((message) => updates(message as JoinResponse)) as JoinResponse;
+  LoginMachineResponse copyWith(void Function(LoginMachineResponse) updates) => super.copyWith((message) => updates(message as LoginMachineResponse)) as LoginMachineResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static JoinResponse create() => JoinResponse._();
-  JoinResponse createEmptyInstance() => create();
-  static $pb.PbList<JoinResponse> createRepeated() => $pb.PbList<JoinResponse>();
+  static LoginMachineResponse create() => LoginMachineResponse._();
+  LoginMachineResponse createEmptyInstance() => create();
+  static $pb.PbList<LoginMachineResponse> createRepeated() => $pb.PbList<LoginMachineResponse>();
   @$core.pragma('dart2js:noInline')
-  static JoinResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JoinResponse>(create);
-  static JoinResponse? _defaultInstance;
+  static LoginMachineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginMachineResponse>(create);
+  static LoginMachineResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get isRegistered => $_getBF(0);

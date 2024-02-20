@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/login_session.proto
+//  source: runetale/runetale/v1/login.proto
 //
 // @dart = 2.12
 
@@ -13,9 +13,9 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use joinResponseDescriptor instead')
-const JoinResponse$json = {
-  '1': 'JoinResponse',
+@$core.Deprecated('Use loginMachineResponseDescriptor instead')
+const LoginMachineResponse$json = {
+  '1': 'LoginMachineResponse',
   '2': [
     {'1': 'isRegistered', '3': 1, '4': 1, '5': 8, '10': 'isRegistered'},
     {'1': 'loginUrl', '3': 2, '4': 1, '5': 9, '10': 'loginUrl'},
@@ -26,12 +26,12 @@ const JoinResponse$json = {
   ],
 };
 
-/// Descriptor for `JoinResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List joinResponseDescriptor = $convert.base64Decode(
-    'CgxKb2luUmVzcG9uc2USIgoMaXNSZWdpc3RlcmVkGAEgASgIUgxpc1JlZ2lzdGVyZWQSGgoIbG'
-    '9naW5VcmwYAiABKAlSCGxvZ2luVXJsEg4KAmlwGAMgASgJUgJpcBISCgRjaWRyGAQgASgJUgRj'
-    'aWRyEh4KCnNpZ25hbEhvc3QYBSABKAlSCnNpZ25hbEhvc3QSHgoKc2lnbmFsUG9ydBgGIAEoBF'
-    'IKc2lnbmFsUG9ydA==');
+/// Descriptor for `LoginMachineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List loginMachineResponseDescriptor = $convert.base64Decode(
+    'ChRMb2dpbk1hY2hpbmVSZXNwb25zZRIiCgxpc1JlZ2lzdGVyZWQYASABKAhSDGlzUmVnaXN0ZX'
+    'JlZBIaCghsb2dpblVybBgCIAEoCVIIbG9naW5VcmwSDgoCaXAYAyABKAlSAmlwEhIKBGNpZHIY'
+    'BCABKAlSBGNpZHISHgoKc2lnbmFsSG9zdBgFIAEoCVIKc2lnbmFsSG9zdBIeCgpzaWduYWxQb3'
+    'J0GAYgASgEUgpzaWduYWxQb3J0');
 
 @$core.Deprecated('Use peerLoginSessionResponseDescriptor instead')
 const PeerLoginSessionResponse$json = {
