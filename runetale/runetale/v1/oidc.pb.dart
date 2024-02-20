@@ -21,6 +21,7 @@ class LoginResponse extends $pb.GeneratedMessage {
     $core.String? providerID,
     $core.String? email,
     $core.String? username,
+    $core.String? picture,
   }) {
     final $result = create();
     if (sub != null) {
@@ -41,6 +42,9 @@ class LoginResponse extends $pb.GeneratedMessage {
     if (username != null) {
       $result.username = username;
     }
+    if (picture != null) {
+      $result.picture = picture;
+    }
     return $result;
   }
   LoginResponse._() : super();
@@ -54,6 +58,7 @@ class LoginResponse extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'providerID', protoName: 'providerID')
     ..aOS(5, _omitFieldNames ? '' : 'email')
     ..aOS(6, _omitFieldNames ? '' : 'username')
+    ..aOS(7, _omitFieldNames ? '' : 'picture')
     ..hasRequiredFields = false
   ;
 
@@ -131,6 +136,15 @@ class LoginResponse extends $pb.GeneratedMessage {
   $core.bool hasUsername() => $_has(5);
   @$pb.TagNumber(6)
   void clearUsername() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get picture => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set picture($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPicture() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPicture() => clearField(7);
 }
 
 class LoginRequest extends $pb.GeneratedMessage {
