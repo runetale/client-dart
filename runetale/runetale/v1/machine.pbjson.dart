@@ -13,39 +13,6 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use hangOutTypeDescriptor instead')
-const HangOutType$json = {
-  '1': 'HangOutType',
-  '2': [
-    {'1': 'CONNECT', '2': 0},
-    {'1': 'DISCONNECT', '2': 1},
-  ],
-};
-
-/// Descriptor for `HangOutType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List hangOutTypeDescriptor = $convert.base64Decode(
-    'CgtIYW5nT3V0VHlwZRILCgdDT05ORUNUEAASDgoKRElTQ09OTkVDVBAB');
-
-@$core.Deprecated('Use joinResponseDescriptor instead')
-const JoinResponse$json = {
-  '1': 'JoinResponse',
-  '2': [
-    {'1': 'isRegistered', '3': 1, '4': 1, '5': 8, '10': 'isRegistered'},
-    {'1': 'loginUrl', '3': 2, '4': 1, '5': 9, '10': 'loginUrl'},
-    {'1': 'ip', '3': 3, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'cidr', '3': 4, '4': 1, '5': 9, '10': 'cidr'},
-    {'1': 'signalHost', '3': 5, '4': 1, '5': 9, '10': 'signalHost'},
-    {'1': 'signalPort', '3': 6, '4': 1, '5': 4, '10': 'signalPort'},
-  ],
-};
-
-/// Descriptor for `JoinResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List joinResponseDescriptor = $convert.base64Decode(
-    'CgxKb2luUmVzcG9uc2USIgoMaXNSZWdpc3RlcmVkGAEgASgIUgxpc1JlZ2lzdGVyZWQSGgoIbG'
-    '9naW5VcmwYAiABKAlSCGxvZ2luVXJsEg4KAmlwGAMgASgJUgJpcBISCgRjaWRyGAQgASgJUgRj'
-    'aWRyEh4KCnNpZ25hbEhvc3QYBSABKAlSCnNpZ25hbEhvc3QSHgoKc2lnbmFsUG9ydBgGIAEoBF'
-    'IKc2lnbmFsUG9ydA==');
-
 @$core.Deprecated('Use syncMachinesResponseDescriptor instead')
 const SyncMachinesResponse$json = {
   '1': 'SyncMachinesResponse',

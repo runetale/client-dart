@@ -14,6 +14,126 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class JoinResponse extends $pb.GeneratedMessage {
+  factory JoinResponse({
+    $core.bool? isRegistered,
+    $core.String? loginUrl,
+    $core.String? ip,
+    $core.String? cidr,
+    $core.String? signalHost,
+    $fixnum.Int64? signalPort,
+  }) {
+    final $result = create();
+    if (isRegistered != null) {
+      $result.isRegistered = isRegistered;
+    }
+    if (loginUrl != null) {
+      $result.loginUrl = loginUrl;
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    if (signalHost != null) {
+      $result.signalHost = signalHost;
+    }
+    if (signalPort != null) {
+      $result.signalPort = signalPort;
+    }
+    return $result;
+  }
+  JoinResponse._() : super();
+  factory JoinResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JoinResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JoinResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
+    ..aOS(2, _omitFieldNames ? '' : 'loginUrl', protoName: 'loginUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'ip')
+    ..aOS(4, _omitFieldNames ? '' : 'cidr')
+    ..aOS(5, _omitFieldNames ? '' : 'signalHost', protoName: 'signalHost')
+    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'signalPort', $pb.PbFieldType.OU6, protoName: 'signalPort', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JoinResponse clone() => JoinResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JoinResponse copyWith(void Function(JoinResponse) updates) => super.copyWith((message) => updates(message as JoinResponse)) as JoinResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JoinResponse create() => JoinResponse._();
+  JoinResponse createEmptyInstance() => create();
+  static $pb.PbList<JoinResponse> createRepeated() => $pb.PbList<JoinResponse>();
+  @$core.pragma('dart2js:noInline')
+  static JoinResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JoinResponse>(create);
+  static JoinResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get isRegistered => $_getBF(0);
+  @$pb.TagNumber(1)
+  set isRegistered($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIsRegistered() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIsRegistered() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get loginUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set loginUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLoginUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLoginUrl() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get ip => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set ip($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasIp() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIp() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get cidr => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set cidr($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCidr() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCidr() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get signalHost => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set signalHost($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSignalHost() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSignalHost() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get signalPort => $_getI64(5);
+  @$pb.TagNumber(6)
+  set signalPort($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasSignalPort() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSignalPort() => clearField(6);
+}
+
 class PeerLoginSessionResponse extends $pb.GeneratedMessage {
   factory PeerLoginSessionResponse({
     $core.String? ip,

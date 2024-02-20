@@ -22,10 +22,6 @@ export 'machine.pb.dart';
 
 @$pb.GrpcServiceName('protos.MachineService')
 class MachineServiceClient extends $grpc.Client {
-  static final _$join = $grpc.ClientMethod<$0.Empty, $5.JoinResponse>(
-      '/protos.MachineService/Join',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.JoinResponse.fromBuffer(value));
   static final _$syncRemoteMachinesConfig = $grpc.ClientMethod<$0.Empty, $5.SyncMachinesResponse>(
       '/protos.MachineService/SyncRemoteMachinesConfig',
       ($0.Empty value) => value.writeToBuffer(),
@@ -37,10 +33,6 @@ class MachineServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$5.JoinResponse> join($0.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$join, request, options: options);
-  }
-
   $grpc.ResponseFuture<$5.SyncMachinesResponse> syncRemoteMachinesConfig($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$syncRemoteMachinesConfig, request, options: options);
   }
@@ -51,13 +43,6 @@ abstract class MachineServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.MachineService';
 
   MachineServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.Empty, $5.JoinResponse>(
-        'Join',
-        join_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($5.JoinResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $5.SyncMachinesResponse>(
         'SyncRemoteMachinesConfig',
         syncRemoteMachinesConfig_Pre,
@@ -67,14 +52,9 @@ abstract class MachineServiceBase extends $grpc.Service {
         ($5.SyncMachinesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$5.JoinResponse> join_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return join(call, await request);
-  }
-
   $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return syncRemoteMachinesConfig(call, await request);
   }
 
-  $async.Future<$5.JoinResponse> join($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig($grpc.ServiceCall call, $0.Empty request);
 }
