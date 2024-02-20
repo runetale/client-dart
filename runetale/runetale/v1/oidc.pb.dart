@@ -258,6 +258,8 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     $core.String? doamin,
     $core.String? email,
     $core.String? username,
+    $core.String? sub,
+    $core.String? isRegistered,
   }) {
     final $result = create();
     if (doamin != null) {
@@ -269,6 +271,12 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     if (username != null) {
       $result.username = username;
     }
+    if (sub != null) {
+      $result.sub = sub;
+    }
+    if (isRegistered != null) {
+      $result.isRegistered = isRegistered;
+    }
     return $result;
   }
   AuthenticateResponse._() : super();
@@ -279,6 +287,8 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'doamin')
     ..aOS(2, _omitFieldNames ? '' : 'email')
     ..aOS(3, _omitFieldNames ? '' : 'username')
+    ..aOS(4, _omitFieldNames ? '' : 'sub')
+    ..aOS(5, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..hasRequiredFields = false
   ;
 
@@ -329,6 +339,24 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   $core.bool hasUsername() => $_has(2);
   @$pb.TagNumber(3)
   void clearUsername() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get sub => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set sub($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSub() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSub() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get isRegistered => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set isRegistered($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasIsRegistered() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsRegistered() => clearField(5);
 }
 
 
