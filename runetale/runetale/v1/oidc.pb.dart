@@ -259,7 +259,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? username,
     $core.String? sub,
-    $core.String? isRegistered,
+    $core.bool? isRegistered,
   }) {
     final $result = create();
     if (doamin != null) {
@@ -288,7 +288,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'email')
     ..aOS(3, _omitFieldNames ? '' : 'username')
     ..aOS(4, _omitFieldNames ? '' : 'sub')
-    ..aOS(5, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
+    ..aOB(5, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..hasRequiredFields = false
   ;
 
@@ -350,9 +350,9 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   void clearSub() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get isRegistered => $_getSZ(4);
+  $core.bool get isRegistered => $_getBF(4);
   @$pb.TagNumber(5)
-  set isRegistered($core.String v) { $_setString(4, v); }
+  set isRegistered($core.bool v) { $_setBool(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasIsRegistered() => $_has(4);
   @$pb.TagNumber(5)
