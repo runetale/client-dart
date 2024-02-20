@@ -44,6 +44,7 @@ const LoginRequest$json = {
     {'1': 'providerID', '3': 4, '4': 1, '5': 9, '10': 'providerID'},
     {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
     {'1': 'username', '3': 6, '4': 1, '5': 9, '10': 'username'},
+    {'1': 'picture', '3': 7, '4': 1, '5': 9, '10': 'picture'},
   ],
 };
 
@@ -51,8 +52,8 @@ const LoginRequest$json = {
 final $typed_data.Uint8List loginRequestDescriptor = $convert.base64Decode(
     'CgxMb2dpblJlcXVlc3QSEAoDc3ViGAEgASgJUgNzdWISGgoIdGVuYW50SUQYAiABKAlSCHRlbm'
     'FudElEEhYKBmRvYW1pbhgDIAEoCVIGZG9hbWluEh4KCnByb3ZpZGVySUQYBCABKAlSCnByb3Zp'
-    'ZGVySUQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhoKCHVzZXJuYW1lGAYgASgJUgh1c2VybmFtZQ'
-    '==');
+    'ZGVySUQSFAoFZW1haWwYBSABKAlSBWVtYWlsEhoKCHVzZXJuYW1lGAYgASgJUgh1c2VybmFtZR'
+    'IYCgdwaWN0dXJlGAcgASgJUgdwaWN0dXJl');
 
 @$core.Deprecated('Use authenticateResponseDescriptor instead')
 const AuthenticateResponse$json = {
