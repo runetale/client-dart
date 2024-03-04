@@ -181,6 +181,7 @@ class GetMeResponse extends $pb.GeneratedMessage {
   factory GetMeResponse({
     $core.String? username,
     $core.String? email,
+    $core.String? picture,
   }) {
     final $result = create();
     if (username != null) {
@@ -188,6 +189,9 @@ class GetMeResponse extends $pb.GeneratedMessage {
     }
     if (email != null) {
       $result.email = email;
+    }
+    if (picture != null) {
+      $result.picture = picture;
     }
     return $result;
   }
@@ -198,6 +202,7 @@ class GetMeResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetMeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'username')
     ..aOS(2, _omitFieldNames ? '' : 'email')
+    ..aOS(3, _omitFieldNames ? '' : 'picture')
     ..hasRequiredFields = false
   ;
 
@@ -239,6 +244,15 @@ class GetMeResponse extends $pb.GeneratedMessage {
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
   void clearEmail() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get picture => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set picture($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPicture() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPicture() => clearField(3);
 }
 
 class User extends $pb.GeneratedMessage {

@@ -51,13 +51,14 @@ const GetMeResponse$json = {
   '2': [
     {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'picture', '3': 3, '4': 1, '5': 9, '10': 'picture'},
   ],
 };
 
 /// Descriptor for `GetMeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getMeResponseDescriptor = $convert.base64Decode(
     'Cg1HZXRNZVJlc3BvbnNlEhoKCHVzZXJuYW1lGAEgASgJUgh1c2VybmFtZRIUCgVlbWFpbBgCIA'
-    'EoCVIFZW1haWw=');
+    'EoCVIFZW1haWwSGAoHcGljdHVyZRgDIAEoCVIHcGljdHVyZQ==');
 
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {
