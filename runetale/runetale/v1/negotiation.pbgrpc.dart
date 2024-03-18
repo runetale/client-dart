@@ -34,8 +34,8 @@ class NegotiationServiceClient extends $grpc.Client {
       '/protos.NegotiationService/Candidate',
       ($6.CandidateRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
-  static final _$startConnect = $grpc.ClientMethod<$6.NegotiationRequest, $6.NegotiationRequest>(
-      '/protos.NegotiationService/StartConnect',
+  static final _$connect = $grpc.ClientMethod<$6.NegotiationRequest, $6.NegotiationRequest>(
+      '/protos.NegotiationService/Connect',
       ($6.NegotiationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.NegotiationRequest.fromBuffer(value));
 
@@ -57,8 +57,8 @@ class NegotiationServiceClient extends $grpc.Client {
     return $createUnaryCall(_$candidate, request, options: options);
   }
 
-  $grpc.ResponseStream<$6.NegotiationRequest> startConnect($async.Stream<$6.NegotiationRequest> request, {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$startConnect, request, options: options);
+  $grpc.ResponseStream<$6.NegotiationRequest> connect($async.Stream<$6.NegotiationRequest> request, {$grpc.CallOptions? options}) {
+    return $createStreamingCall(_$connect, request, options: options);
   }
 }
 
@@ -89,8 +89,8 @@ abstract class NegotiationServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $6.CandidateRequest.fromBuffer(value),
         ($0.Empty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$6.NegotiationRequest, $6.NegotiationRequest>(
-        'StartConnect',
-        startConnect,
+        'Connect',
+        connect,
         true,
         true,
         ($core.List<$core.int> value) => $6.NegotiationRequest.fromBuffer(value),
@@ -112,5 +112,5 @@ abstract class NegotiationServiceBase extends $grpc.Service {
   $async.Future<$0.Empty> offer($grpc.ServiceCall call, $6.HandshakeRequest request);
   $async.Future<$0.Empty> answer($grpc.ServiceCall call, $6.HandshakeRequest request);
   $async.Future<$0.Empty> candidate($grpc.ServiceCall call, $6.CandidateRequest request);
-  $async.Stream<$6.NegotiationRequest> startConnect($grpc.ServiceCall call, $async.Stream<$6.NegotiationRequest> request);
+  $async.Stream<$6.NegotiationRequest> connect($grpc.ServiceCall call, $async.Stream<$6.NegotiationRequest> request);
 }
