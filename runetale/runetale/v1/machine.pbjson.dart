@@ -37,6 +37,8 @@ const RemotePeer$json = {
     {'1': 'remoteClientMachineKey', '3': 1, '4': 1, '5': 9, '10': 'remoteClientMachineKey'},
     {'1': 'remoteWgPubKey', '3': 2, '4': 1, '5': 9, '10': 'remoteWgPubKey'},
     {'1': 'allowedIPs', '3': 3, '4': 3, '5': 9, '10': 'allowedIPs'},
+    {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'cidr', '3': 5, '4': 1, '5': 9, '10': 'cidr'},
   ],
 };
 
@@ -44,5 +46,6 @@ const RemotePeer$json = {
 final $typed_data.Uint8List remotePeerDescriptor = $convert.base64Decode(
     'CgpSZW1vdGVQZWVyEjYKFnJlbW90ZUNsaWVudE1hY2hpbmVLZXkYASABKAlSFnJlbW90ZUNsaW'
     'VudE1hY2hpbmVLZXkSJgoOcmVtb3RlV2dQdWJLZXkYAiABKAlSDnJlbW90ZVdnUHViS2V5Eh4K'
-    'CmFsbG93ZWRJUHMYAyADKAlSCmFsbG93ZWRJUHM=');
+    'CmFsbG93ZWRJUHMYAyADKAlSCmFsbG93ZWRJUHMSDgoCaXAYBCABKAlSAmlwEhIKBGNpZHIYBS'
+    'ABKAlSBGNpZHI=');
 

@@ -104,6 +104,8 @@ class RemotePeer extends $pb.GeneratedMessage {
     $core.String? remoteClientMachineKey,
     $core.String? remoteWgPubKey,
     $core.Iterable<$core.String>? allowedIPs,
+    $core.String? ip,
+    $core.String? cidr,
   }) {
     final $result = create();
     if (remoteClientMachineKey != null) {
@@ -115,6 +117,12 @@ class RemotePeer extends $pb.GeneratedMessage {
     if (allowedIPs != null) {
       $result.allowedIPs.addAll(allowedIPs);
     }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
     return $result;
   }
   RemotePeer._() : super();
@@ -125,6 +133,8 @@ class RemotePeer extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'remoteClientMachineKey', protoName: 'remoteClientMachineKey')
     ..aOS(2, _omitFieldNames ? '' : 'remoteWgPubKey', protoName: 'remoteWgPubKey')
     ..pPS(3, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
+    ..aOS(4, _omitFieldNames ? '' : 'ip')
+    ..aOS(5, _omitFieldNames ? '' : 'cidr')
     ..hasRequiredFields = false
   ;
 
@@ -169,6 +179,24 @@ class RemotePeer extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<$core.String> get allowedIPs => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get ip => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set ip($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIp() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIp() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get cidr => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set cidr($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCidr() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCidr() => clearField(5);
 }
 
 
