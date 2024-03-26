@@ -15,7 +15,7 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/empty.pb.dart' as $0;
+import '../../../google/protobuf/empty.pb.dart' as $1;
 import 'oidc.pb.dart' as $7;
 
 export 'oidc.pb.dart';
@@ -26,9 +26,9 @@ class OIDCServiceClient extends $grpc.Client {
       '/protos.OIDCService/Login',
       ($7.LoginRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $7.LoginResponse.fromBuffer(value));
-  static final _$authenticate = $grpc.ClientMethod<$0.Empty, $7.AuthenticateResponse>(
+  static final _$authenticate = $grpc.ClientMethod<$1.Empty, $7.AuthenticateResponse>(
       '/protos.OIDCService/Authenticate',
-      ($0.Empty value) => value.writeToBuffer(),
+      ($1.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $7.AuthenticateResponse.fromBuffer(value));
 
   OIDCServiceClient($grpc.ClientChannel channel,
@@ -41,7 +41,7 @@ class OIDCServiceClient extends $grpc.Client {
     return $createUnaryCall(_$login, request, options: options);
   }
 
-  $grpc.ResponseFuture<$7.AuthenticateResponse> authenticate($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.AuthenticateResponse> authenticate($1.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$authenticate, request, options: options);
   }
 }
@@ -58,12 +58,12 @@ abstract class OIDCServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $7.LoginRequest.fromBuffer(value),
         ($7.LoginResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $7.AuthenticateResponse>(
+    $addMethod($grpc.ServiceMethod<$1.Empty, $7.AuthenticateResponse>(
         'Authenticate',
         authenticate_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
         ($7.AuthenticateResponse value) => value.writeToBuffer()));
   }
 
@@ -71,10 +71,10 @@ abstract class OIDCServiceBase extends $grpc.Service {
     return login(call, await request);
   }
 
-  $async.Future<$7.AuthenticateResponse> authenticate_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$7.AuthenticateResponse> authenticate_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
     return authenticate(call, await request);
   }
 
   $async.Future<$7.LoginResponse> login($grpc.ServiceCall call, $7.LoginRequest request);
-  $async.Future<$7.AuthenticateResponse> authenticate($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$7.AuthenticateResponse> authenticate($grpc.ServiceCall call, $1.Empty request);
 }

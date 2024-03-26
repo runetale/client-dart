@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/empty.pb.dart' as $0;
+import '../../../google/protobuf/empty.pb.dart' as $1;
 import 'machine.pb.dart' as $5;
 
 export 'machine.pb.dart';
 
 @$pb.GrpcServiceName('protos.MachineService')
 class MachineServiceClient extends $grpc.Client {
-  static final _$syncRemoteMachinesConfig = $grpc.ClientMethod<$0.Empty, $5.SyncMachinesResponse>(
+  static final _$syncRemoteMachinesConfig = $grpc.ClientMethod<$1.Empty, $5.SyncMachinesResponse>(
       '/protos.MachineService/SyncRemoteMachinesConfig',
-      ($0.Empty value) => value.writeToBuffer(),
+      ($1.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $5.SyncMachinesResponse.fromBuffer(value));
 
   MachineServiceClient($grpc.ClientChannel channel,
@@ -33,7 +33,7 @@ class MachineServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$5.SyncMachinesResponse> syncRemoteMachinesConfig($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.SyncMachinesResponse> syncRemoteMachinesConfig($1.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$syncRemoteMachinesConfig, request, options: options);
   }
 }
@@ -43,18 +43,18 @@ abstract class MachineServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.MachineService';
 
   MachineServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.Empty, $5.SyncMachinesResponse>(
+    $addMethod($grpc.ServiceMethod<$1.Empty, $5.SyncMachinesResponse>(
         'SyncRemoteMachinesConfig',
         syncRemoteMachinesConfig_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
         ($5.SyncMachinesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
     return syncRemoteMachinesConfig(call, await request);
   }
 
-  $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig($grpc.ServiceCall call, $1.Empty request);
 }
