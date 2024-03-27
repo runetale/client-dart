@@ -421,11 +421,11 @@ class GetUsersResponse extends $pb.GeneratedMessage {
 
 class GetGroupsResponse extends $pb.GeneratedMessage {
   factory GetGroupsResponse({
-    $core.Iterable<User>? users,
+    $core.Iterable<Group>? groups,
   }) {
     final $result = create();
-    if (users != null) {
-      $result.users.addAll(users);
+    if (groups != null) {
+      $result.groups.addAll(groups);
     }
     return $result;
   }
@@ -434,7 +434,7 @@ class GetGroupsResponse extends $pb.GeneratedMessage {
   factory GetGroupsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetGroupsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..pc<User>(1, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..pc<Group>(1, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..hasRequiredFields = false
   ;
 
@@ -460,7 +460,7 @@ class GetGroupsResponse extends $pb.GeneratedMessage {
   static GetGroupsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<User> get users => $_getList(0);
+  $core.List<Group> get groups => $_getList(0);
 }
 
 class Group extends $pb.GeneratedMessage {
