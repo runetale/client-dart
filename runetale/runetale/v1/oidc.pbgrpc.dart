@@ -30,10 +30,6 @@ class OIDCServiceClient extends $grpc.Client {
       '/protos.OIDCService/Authenticate',
       ($1.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $7.AuthenticateResponse.fromBuffer(value));
-  static final _$refreshToken = $grpc.ClientMethod<$1.Empty, $1.Empty>(
-      '/protos.OIDCService/RefreshToken',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.Empty.fromBuffer(value));
 
   OIDCServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -47,10 +43,6 @@ class OIDCServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$7.AuthenticateResponse> authenticate($1.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$authenticate, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$1.Empty> refreshToken($1.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$refreshToken, request, options: options);
   }
 }
 
@@ -73,13 +65,6 @@ abstract class OIDCServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
         ($7.AuthenticateResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $1.Empty>(
-        'RefreshToken',
-        refreshToken_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($1.Empty value) => value.writeToBuffer()));
   }
 
   $async.Future<$7.LoginResponse> login_Pre($grpc.ServiceCall call, $async.Future<$7.LoginRequest> request) async {
@@ -90,11 +75,6 @@ abstract class OIDCServiceBase extends $grpc.Service {
     return authenticate(call, await request);
   }
 
-  $async.Future<$1.Empty> refreshToken_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return refreshToken(call, await request);
-  }
-
   $async.Future<$7.LoginResponse> login($grpc.ServiceCall call, $7.LoginRequest request);
   $async.Future<$7.AuthenticateResponse> authenticate($grpc.ServiceCall call, $1.Empty request);
-  $async.Future<$1.Empty> refreshToken($grpc.ServiceCall call, $1.Empty request);
 }
