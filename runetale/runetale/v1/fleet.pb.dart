@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/acl.proto
+//  source: runetale/runetale/v1/fleet.proto
 //
 // @dart = 2.12
 
@@ -14,11 +14,11 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class CreateAclRequest extends $pb.GeneratedMessage {
-  factory CreateAclRequest({
+class CreateFleetRequest extends $pb.GeneratedMessage {
+  factory CreateFleetRequest({
     $core.String? name,
-    $core.Iterable<$core.String>? src,
     $core.Iterable<$core.String>? dst,
+    $core.Iterable<$core.String>? src,
     $core.String? proto,
     $core.String? port,
   }) {
@@ -26,11 +26,11 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (src != null) {
-      $result.src.addAll(src);
-    }
     if (dst != null) {
       $result.dst.addAll(dst);
+    }
+    if (src != null) {
+      $result.src.addAll(src);
     }
     if (proto != null) {
       $result.proto = proto;
@@ -40,14 +40,14 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  CreateAclRequest._() : super();
-  factory CreateAclRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  CreateFleetRequest._() : super();
+  factory CreateFleetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateFleetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..pPS(2, _omitFieldNames ? '' : 'src')
-    ..pPS(3, _omitFieldNames ? '' : 'dst')
+    ..pPS(2, _omitFieldNames ? '' : 'dst')
+    ..pPS(3, _omitFieldNames ? '' : 'src')
     ..aOS(4, _omitFieldNames ? '' : 'proto')
     ..aOS(5, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
@@ -57,22 +57,22 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  CreateAclRequest clone() => CreateAclRequest()..mergeFromMessage(this);
+  CreateFleetRequest clone() => CreateFleetRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateAclRequest copyWith(void Function(CreateAclRequest) updates) => super.copyWith((message) => updates(message as CreateAclRequest)) as CreateAclRequest;
+  CreateFleetRequest copyWith(void Function(CreateFleetRequest) updates) => super.copyWith((message) => updates(message as CreateFleetRequest)) as CreateFleetRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CreateAclRequest create() => CreateAclRequest._();
-  CreateAclRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateAclRequest> createRepeated() => $pb.PbList<CreateAclRequest>();
+  static CreateFleetRequest create() => CreateFleetRequest._();
+  CreateFleetRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateFleetRequest> createRepeated() => $pb.PbList<CreateFleetRequest>();
   @$core.pragma('dart2js:noInline')
-  static CreateAclRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateAclRequest>(create);
-  static CreateAclRequest? _defaultInstance;
+  static CreateFleetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateFleetRequest>(create);
+  static CreateFleetRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -84,10 +84,10 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get src => $_getList(1);
+  $core.List<$core.String> get dst => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get dst => $_getList(2);
+  $core.List<$core.String> get src => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get proto => $_getSZ(3);
@@ -108,11 +108,11 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   void clearPort() => clearField(5);
 }
 
-class PatchAclRequest extends $pb.GeneratedMessage {
-  factory PatchAclRequest({
+class PatchFleetRequest extends $pb.GeneratedMessage {
+  factory PatchFleetRequest({
     $core.String? name,
-    $core.Iterable<$core.String>? src,
     $core.Iterable<$core.String>? dst,
+    $core.Iterable<$core.String>? src,
     $core.String? proto,
     $core.String? port,
   }) {
@@ -120,11 +120,11 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (src != null) {
-      $result.src.addAll(src);
-    }
     if (dst != null) {
       $result.dst.addAll(dst);
+    }
+    if (src != null) {
+      $result.src.addAll(src);
     }
     if (proto != null) {
       $result.proto = proto;
@@ -134,14 +134,14 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  PatchAclRequest._() : super();
-  factory PatchAclRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PatchAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PatchFleetRequest._() : super();
+  factory PatchFleetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PatchFleetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..pPS(2, _omitFieldNames ? '' : 'src')
-    ..pPS(3, _omitFieldNames ? '' : 'dst')
+    ..pPS(2, _omitFieldNames ? '' : 'dst')
+    ..pPS(3, _omitFieldNames ? '' : 'src')
     ..aOS(4, _omitFieldNames ? '' : 'proto')
     ..aOS(5, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
@@ -151,22 +151,22 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PatchAclRequest clone() => PatchAclRequest()..mergeFromMessage(this);
+  PatchFleetRequest clone() => PatchFleetRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PatchAclRequest copyWith(void Function(PatchAclRequest) updates) => super.copyWith((message) => updates(message as PatchAclRequest)) as PatchAclRequest;
+  PatchFleetRequest copyWith(void Function(PatchFleetRequest) updates) => super.copyWith((message) => updates(message as PatchFleetRequest)) as PatchFleetRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PatchAclRequest create() => PatchAclRequest._();
-  PatchAclRequest createEmptyInstance() => create();
-  static $pb.PbList<PatchAclRequest> createRepeated() => $pb.PbList<PatchAclRequest>();
+  static PatchFleetRequest create() => PatchFleetRequest._();
+  PatchFleetRequest createEmptyInstance() => create();
+  static $pb.PbList<PatchFleetRequest> createRepeated() => $pb.PbList<PatchFleetRequest>();
   @$core.pragma('dart2js:noInline')
-  static PatchAclRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchAclRequest>(create);
-  static PatchAclRequest? _defaultInstance;
+  static PatchFleetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchFleetRequest>(create);
+  static PatchFleetRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -178,10 +178,10 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get src => $_getList(1);
+  $core.List<$core.String> get dst => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get dst => $_getList(2);
+  $core.List<$core.String> get src => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get proto => $_getSZ(3);
@@ -202,8 +202,8 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   void clearPort() => clearField(5);
 }
 
-class GetAclRequest extends $pb.GeneratedMessage {
-  factory GetAclRequest({
+class GetFleetRequest extends $pb.GeneratedMessage {
+  factory GetFleetRequest({
     $fixnum.Int64? id,
   }) {
     final $result = create();
@@ -212,11 +212,11 @@ class GetAclRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetAclRequest._() : super();
-  factory GetAclRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetFleetRequest._() : super();
+  factory GetFleetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFleetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -225,22 +225,22 @@ class GetAclRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetAclRequest clone() => GetAclRequest()..mergeFromMessage(this);
+  GetFleetRequest clone() => GetFleetRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetAclRequest copyWith(void Function(GetAclRequest) updates) => super.copyWith((message) => updates(message as GetAclRequest)) as GetAclRequest;
+  GetFleetRequest copyWith(void Function(GetFleetRequest) updates) => super.copyWith((message) => updates(message as GetFleetRequest)) as GetFleetRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetAclRequest create() => GetAclRequest._();
-  GetAclRequest createEmptyInstance() => create();
-  static $pb.PbList<GetAclRequest> createRepeated() => $pb.PbList<GetAclRequest>();
+  static GetFleetRequest create() => GetFleetRequest._();
+  GetFleetRequest createEmptyInstance() => create();
+  static $pb.PbList<GetFleetRequest> createRepeated() => $pb.PbList<GetFleetRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetAclRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAclRequest>(create);
-  static GetAclRequest? _defaultInstance;
+  static GetFleetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFleetRequest>(create);
+  static GetFleetRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
@@ -252,22 +252,22 @@ class GetAclRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
-class GetAclsResponse extends $pb.GeneratedMessage {
-  factory GetAclsResponse({
-    $core.Iterable<AclResponse>? acls,
+class GetFleetsResponse extends $pb.GeneratedMessage {
+  factory GetFleetsResponse({
+    $core.Iterable<FleetResponse>? fleets,
   }) {
     final $result = create();
-    if (acls != null) {
-      $result.acls.addAll(acls);
+    if (fleets != null) {
+      $result.fleets.addAll(fleets);
     }
     return $result;
   }
-  GetAclsResponse._() : super();
-  factory GetAclsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetAclsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetFleetsResponse._() : super();
+  factory GetFleetsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetFleetsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAclsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..pc<AclResponse>(1, _omitFieldNames ? '' : 'acls', $pb.PbFieldType.PM, subBuilder: AclResponse.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFleetsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<FleetResponse>(1, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: FleetResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -275,29 +275,29 @@ class GetAclsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetAclsResponse clone() => GetAclsResponse()..mergeFromMessage(this);
+  GetFleetsResponse clone() => GetFleetsResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetAclsResponse copyWith(void Function(GetAclsResponse) updates) => super.copyWith((message) => updates(message as GetAclsResponse)) as GetAclsResponse;
+  GetFleetsResponse copyWith(void Function(GetFleetsResponse) updates) => super.copyWith((message) => updates(message as GetFleetsResponse)) as GetFleetsResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetAclsResponse create() => GetAclsResponse._();
-  GetAclsResponse createEmptyInstance() => create();
-  static $pb.PbList<GetAclsResponse> createRepeated() => $pb.PbList<GetAclsResponse>();
+  static GetFleetsResponse create() => GetFleetsResponse._();
+  GetFleetsResponse createEmptyInstance() => create();
+  static $pb.PbList<GetFleetsResponse> createRepeated() => $pb.PbList<GetFleetsResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetAclsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAclsResponse>(create);
-  static GetAclsResponse? _defaultInstance;
+  static GetFleetsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetFleetsResponse>(create);
+  static GetFleetsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<AclResponse> get acls => $_getList(0);
+  $core.List<FleetResponse> get fleets => $_getList(0);
 }
 
-class AclResponse extends $pb.GeneratedMessage {
-  factory AclResponse({
+class FleetResponse extends $pb.GeneratedMessage {
+  factory FleetResponse({
     $fixnum.Int64? id,
     $core.String? name,
     $core.Iterable<$core.String>? src,
@@ -326,11 +326,11 @@ class AclResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  AclResponse._() : super();
-  factory AclResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AclResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  FleetResponse._() : super();
+  factory FleetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FleetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FleetResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..pPS(3, _omitFieldNames ? '' : 'src')
@@ -344,22 +344,22 @@ class AclResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AclResponse clone() => AclResponse()..mergeFromMessage(this);
+  FleetResponse clone() => FleetResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AclResponse copyWith(void Function(AclResponse) updates) => super.copyWith((message) => updates(message as AclResponse)) as AclResponse;
+  FleetResponse copyWith(void Function(FleetResponse) updates) => super.copyWith((message) => updates(message as FleetResponse)) as FleetResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AclResponse create() => AclResponse._();
-  AclResponse createEmptyInstance() => create();
-  static $pb.PbList<AclResponse> createRepeated() => $pb.PbList<AclResponse>();
+  static FleetResponse create() => FleetResponse._();
+  FleetResponse createEmptyInstance() => create();
+  static $pb.PbList<FleetResponse> createRepeated() => $pb.PbList<FleetResponse>();
   @$core.pragma('dart2js:noInline')
-  static AclResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AclResponse>(create);
-  static AclResponse? _defaultInstance;
+  static FleetResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FleetResponse>(create);
+  static FleetResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);

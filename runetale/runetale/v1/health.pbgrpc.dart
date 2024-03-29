@@ -16,16 +16,16 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/empty.pb.dart' as $1;
-import 'health.pb.dart' as $3;
+import 'health.pb.dart' as $4;
 
 export 'health.pb.dart';
 
 @$pb.GrpcServiceName('protos.HealthService')
 class HealthServiceClient extends $grpc.Client {
-  static final _$health = $grpc.ClientMethod<$1.Empty, $3.HealthResponse>(
+  static final _$health = $grpc.ClientMethod<$1.Empty, $4.HealthResponse>(
       '/protos.HealthService/Health',
       ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $3.HealthResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $4.HealthResponse.fromBuffer(value));
 
   HealthServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -33,7 +33,7 @@ class HealthServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$3.HealthResponse> health($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$4.HealthResponse> health($1.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$health, request, options: options);
   }
 }
@@ -43,18 +43,18 @@ abstract class HealthServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.HealthService';
 
   HealthServiceBase() {
-    $addMethod($grpc.ServiceMethod<$1.Empty, $3.HealthResponse>(
+    $addMethod($grpc.ServiceMethod<$1.Empty, $4.HealthResponse>(
         'Health',
         health_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($3.HealthResponse value) => value.writeToBuffer()));
+        ($4.HealthResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$3.HealthResponse> health_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+  $async.Future<$4.HealthResponse> health_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
     return health(call, await request);
   }
 
-  $async.Future<$3.HealthResponse> health($grpc.ServiceCall call, $1.Empty request);
+  $async.Future<$4.HealthResponse> health($grpc.ServiceCall call, $1.Empty request);
 }
