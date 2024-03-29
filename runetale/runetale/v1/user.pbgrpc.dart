@@ -16,28 +16,24 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/empty.pb.dart' as $1;
-import 'user.pb.dart' as $11;
+import 'user.pb.dart' as $14;
 
 export 'user.pb.dart';
 
 @$pb.GrpcServiceName('protos.UserService')
 class UserServiceClient extends $grpc.Client {
-  static final _$getMachines = $grpc.ClientMethod<$1.Empty, $11.GetMachinesResponse>(
-      '/protos.UserService/GetMachines',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $11.GetMachinesResponse.fromBuffer(value));
-  static final _$getMe = $grpc.ClientMethod<$1.Empty, $11.GetMeResponse>(
+  static final _$getMe = $grpc.ClientMethod<$1.Empty, $14.GetMeResponse>(
       '/protos.UserService/GetMe',
       ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $11.GetMeResponse.fromBuffer(value));
-  static final _$getUsers = $grpc.ClientMethod<$1.Empty, $11.GetUsersResponse>(
+      ($core.List<$core.int> value) => $14.GetMeResponse.fromBuffer(value));
+  static final _$getUser = $grpc.ClientMethod<$14.GetUserRequest, $14.User>(
+      '/protos.UserService/GetUser',
+      ($14.GetUserRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.User.fromBuffer(value));
+  static final _$getUsers = $grpc.ClientMethod<$1.Empty, $14.GetUsersResponse>(
       '/protos.UserService/GetUsers',
       ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $11.GetUsersResponse.fromBuffer(value));
-  static final _$getGroups = $grpc.ClientMethod<$1.Empty, $11.GetGroupsResponse>(
-      '/protos.UserService/GetGroups',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $11.GetGroupsResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $14.GetUsersResponse.fromBuffer(value));
 
   UserServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -45,20 +41,16 @@ class UserServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$11.GetMachinesResponse> getMachines($1.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getMachines, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$11.GetMeResponse> getMe($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.GetMeResponse> getMe($1.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMe, request, options: options);
   }
 
-  $grpc.ResponseFuture<$11.GetUsersResponse> getUsers($1.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getUsers, request, options: options);
+  $grpc.ResponseFuture<$14.User> getUser($14.GetUserRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$11.GetGroupsResponse> getGroups($1.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getGroups, request, options: options);
+  $grpc.ResponseFuture<$14.GetUsersResponse> getUsers($1.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getUsers, request, options: options);
   }
 }
 
@@ -67,54 +59,42 @@ abstract class UserServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.UserService';
 
   UserServiceBase() {
-    $addMethod($grpc.ServiceMethod<$1.Empty, $11.GetMachinesResponse>(
-        'GetMachines',
-        getMachines_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($11.GetMachinesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $11.GetMeResponse>(
+    $addMethod($grpc.ServiceMethod<$1.Empty, $14.GetMeResponse>(
         'GetMe',
         getMe_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($11.GetMeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $11.GetUsersResponse>(
+        ($14.GetMeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$14.GetUserRequest, $14.User>(
+        'GetUser',
+        getUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $14.GetUserRequest.fromBuffer(value),
+        ($14.User value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.Empty, $14.GetUsersResponse>(
         'GetUsers',
         getUsers_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($11.GetUsersResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $11.GetGroupsResponse>(
-        'GetGroups',
-        getGroups_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($11.GetGroupsResponse value) => value.writeToBuffer()));
+        ($14.GetUsersResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$11.GetMachinesResponse> getMachines_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getMachines(call, await request);
-  }
-
-  $async.Future<$11.GetMeResponse> getMe_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+  $async.Future<$14.GetMeResponse> getMe_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
     return getMe(call, await request);
   }
 
-  $async.Future<$11.GetUsersResponse> getUsers_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+  $async.Future<$14.User> getUser_Pre($grpc.ServiceCall call, $async.Future<$14.GetUserRequest> request) async {
+    return getUser(call, await request);
+  }
+
+  $async.Future<$14.GetUsersResponse> getUsers_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
     return getUsers(call, await request);
   }
 
-  $async.Future<$11.GetGroupsResponse> getGroups_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getGroups(call, await request);
-  }
-
-  $async.Future<$11.GetMachinesResponse> getMachines($grpc.ServiceCall call, $1.Empty request);
-  $async.Future<$11.GetMeResponse> getMe($grpc.ServiceCall call, $1.Empty request);
-  $async.Future<$11.GetUsersResponse> getUsers($grpc.ServiceCall call, $1.Empty request);
-  $async.Future<$11.GetGroupsResponse> getGroups($grpc.ServiceCall call, $1.Empty request);
+  $async.Future<$14.GetMeResponse> getMe($grpc.ServiceCall call, $1.Empty request);
+  $async.Future<$14.User> getUser($grpc.ServiceCall call, $14.GetUserRequest request);
+  $async.Future<$14.GetUsersResponse> getUsers($grpc.ServiceCall call, $1.Empty request);
 }

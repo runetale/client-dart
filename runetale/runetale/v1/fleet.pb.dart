@@ -17,8 +17,10 @@ import 'package:protobuf/protobuf.dart' as $pb;
 class CreateFleetRequest extends $pb.GeneratedMessage {
   factory CreateFleetRequest({
     $core.String? name,
-    $core.Iterable<$core.String>? dst,
-    $core.Iterable<$core.String>? src,
+    $core.String? desc,
+    $core.Iterable<$fixnum.Int64>? src,
+    $fixnum.Int64? dstFleetID,
+    $core.Iterable<$fixnum.Int64>? dstResourceIDs,
     $core.String? proto,
     $core.String? port,
   }) {
@@ -26,11 +28,17 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (dst != null) {
-      $result.dst.addAll(dst);
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (src != null) {
       $result.src.addAll(src);
+    }
+    if (dstFleetID != null) {
+      $result.dstFleetID = dstFleetID;
+    }
+    if (dstResourceIDs != null) {
+      $result.dstResourceIDs.addAll(dstResourceIDs);
     }
     if (proto != null) {
       $result.proto = proto;
@@ -46,10 +54,12 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..pPS(2, _omitFieldNames ? '' : 'dst')
-    ..pPS(3, _omitFieldNames ? '' : 'src')
-    ..aOS(4, _omitFieldNames ? '' : 'proto')
-    ..aOS(5, _omitFieldNames ? '' : 'port')
+    ..aOS(2, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
+    ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'dstFleetID', $pb.PbFieldType.OU6, protoName: 'dstFleetID', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'dstResourceIDs', $pb.PbFieldType.KU6, protoName: 'dstResourceIDs')
+    ..aOS(6, _omitFieldNames ? '' : 'proto')
+    ..aOS(7, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
   ;
 
@@ -84,47 +94,77 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get dst => $_getList(1);
+  $core.String get desc => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set desc($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDesc() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get src => $_getList(2);
+  $core.List<$fixnum.Int64> get src => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.String get proto => $_getSZ(3);
+  $fixnum.Int64 get dstFleetID => $_getI64(3);
   @$pb.TagNumber(4)
-  set proto($core.String v) { $_setString(3, v); }
+  set dstFleetID($fixnum.Int64 v) { $_setInt64(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasProto() => $_has(3);
+  $core.bool hasDstFleetID() => $_has(3);
   @$pb.TagNumber(4)
-  void clearProto() => clearField(4);
+  void clearDstFleetID() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get port => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set port($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasPort() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearPort() => clearField(5);
+  $core.List<$fixnum.Int64> get dstResourceIDs => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get proto => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set proto($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasProto() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearProto() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get port => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set port($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPort() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPort() => clearField(7);
 }
 
 class PatchFleetRequest extends $pb.GeneratedMessage {
   factory PatchFleetRequest({
+    $fixnum.Int64? id,
     $core.String? name,
-    $core.Iterable<$core.String>? dst,
-    $core.Iterable<$core.String>? src,
+    $core.String? desc,
+    $core.Iterable<$fixnum.Int64>? src,
+    $fixnum.Int64? dstFleetID,
+    $core.Iterable<$fixnum.Int64>? dstResourceIDs,
     $core.String? proto,
     $core.String? port,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (name != null) {
       $result.name = name;
     }
-    if (dst != null) {
-      $result.dst.addAll(dst);
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (src != null) {
       $result.src.addAll(src);
+    }
+    if (dstFleetID != null) {
+      $result.dstFleetID = dstFleetID;
+    }
+    if (dstResourceIDs != null) {
+      $result.dstResourceIDs.addAll(dstResourceIDs);
     }
     if (proto != null) {
       $result.proto = proto;
@@ -139,11 +179,14 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   factory PatchFleetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..pPS(2, _omitFieldNames ? '' : 'dst')
-    ..pPS(3, _omitFieldNames ? '' : 'src')
-    ..aOS(4, _omitFieldNames ? '' : 'proto')
-    ..aOS(5, _omitFieldNames ? '' : 'port')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'dstFleetID', $pb.PbFieldType.OU6, protoName: 'dstFleetID', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(6, _omitFieldNames ? '' : 'dstResourceIDs', $pb.PbFieldType.KU6, protoName: 'dstResourceIDs')
+    ..aOS(7, _omitFieldNames ? '' : 'proto')
+    ..aOS(8, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
   ;
 
@@ -169,37 +212,64 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   static PatchFleetRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get dst => $_getList(1);
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get src => $_getList(2);
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get proto => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set proto($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasProto() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearProto() => clearField(4);
+  $core.List<$fixnum.Int64> get src => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.String get port => $_getSZ(4);
+  $fixnum.Int64 get dstFleetID => $_getI64(4);
   @$pb.TagNumber(5)
-  set port($core.String v) { $_setString(4, v); }
+  set dstFleetID($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPort() => $_has(4);
+  $core.bool hasDstFleetID() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPort() => clearField(5);
+  void clearDstFleetID() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$fixnum.Int64> get dstResourceIDs => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.String get proto => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set proto($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasProto() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProto() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get port => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set port($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPort() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPort() => clearField(8);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -300,10 +370,13 @@ class FleetResponse extends $pb.GeneratedMessage {
   factory FleetResponse({
     $fixnum.Int64? id,
     $core.String? name,
-    $core.Iterable<$core.String>? src,
-    $core.Iterable<$core.String>? dst,
+    $core.String? desc,
+    $core.Iterable<$fixnum.Int64>? src,
+    $fixnum.Int64? dstFleetID,
+    $core.Iterable<$fixnum.Int64>? dstResourceIDs,
     $core.String? proto,
     $core.String? port,
+    $core.String? age,
   }) {
     final $result = create();
     if (id != null) {
@@ -312,17 +385,26 @@ class FleetResponse extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
+    if (desc != null) {
+      $result.desc = desc;
+    }
     if (src != null) {
       $result.src.addAll(src);
     }
-    if (dst != null) {
-      $result.dst.addAll(dst);
+    if (dstFleetID != null) {
+      $result.dstFleetID = dstFleetID;
+    }
+    if (dstResourceIDs != null) {
+      $result.dstResourceIDs.addAll(dstResourceIDs);
     }
     if (proto != null) {
       $result.proto = proto;
     }
     if (port != null) {
       $result.port = port;
+    }
+    if (age != null) {
+      $result.age = age;
     }
     return $result;
   }
@@ -333,10 +415,13 @@ class FleetResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FleetResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..pPS(3, _omitFieldNames ? '' : 'src')
-    ..pPS(4, _omitFieldNames ? '' : 'dst')
-    ..aOS(5, _omitFieldNames ? '' : 'proto')
-    ..aOS(6, _omitFieldNames ? '' : 'port')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'dstFleetID', $pb.PbFieldType.OU6, protoName: 'dstFleetID', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(6, _omitFieldNames ? '' : 'dstResourceIDs', $pb.PbFieldType.KU6, protoName: 'dstResourceIDs')
+    ..aOS(7, _omitFieldNames ? '' : 'proto')
+    ..aOS(8, _omitFieldNames ? '' : 'port')
+    ..aOS(9, _omitFieldNames ? '' : 'age')
     ..hasRequiredFields = false
   ;
 
@@ -380,28 +465,55 @@ class FleetResponse extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get src => $_getList(2);
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get dst => $_getList(3);
+  $core.List<$fixnum.Int64> get src => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.String get proto => $_getSZ(4);
+  $fixnum.Int64 get dstFleetID => $_getI64(4);
   @$pb.TagNumber(5)
-  set proto($core.String v) { $_setString(4, v); }
+  set dstFleetID($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasProto() => $_has(4);
+  $core.bool hasDstFleetID() => $_has(4);
   @$pb.TagNumber(5)
-  void clearProto() => clearField(5);
+  void clearDstFleetID() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get port => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set port($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasPort() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearPort() => clearField(6);
+  $core.List<$fixnum.Int64> get dstResourceIDs => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.String get proto => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set proto($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasProto() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearProto() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get port => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set port($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPort() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPort() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get age => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set age($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasAge() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAge() => clearField(9);
 }
 
 
