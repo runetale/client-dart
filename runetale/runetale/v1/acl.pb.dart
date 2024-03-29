@@ -17,8 +17,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 class CreateAclRequest extends $pb.GeneratedMessage {
   factory CreateAclRequest({
     $core.String? name,
-    $core.Iterable<$core.String>? src,
-    $core.Iterable<$core.String>? dst,
+    $core.Iterable<$fixnum.Int64>? src,
+    $core.Iterable<$fixnum.Int64>? dst,
     $core.String? proto,
     $core.String? port,
   }) {
@@ -46,8 +46,8 @@ class CreateAclRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..pPS(2, _omitFieldNames ? '' : 'src')
-    ..pPS(3, _omitFieldNames ? '' : 'dst')
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.KU6)
     ..aOS(4, _omitFieldNames ? '' : 'proto')
     ..aOS(5, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
@@ -84,10 +84,10 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get src => $_getList(1);
+  $core.List<$fixnum.Int64> get src => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get dst => $_getList(2);
+  $core.List<$fixnum.Int64> get dst => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get proto => $_getSZ(3);
@@ -110,13 +110,17 @@ class CreateAclRequest extends $pb.GeneratedMessage {
 
 class PatchAclRequest extends $pb.GeneratedMessage {
   factory PatchAclRequest({
+    $fixnum.Int64? id,
     $core.String? name,
-    $core.Iterable<$core.String>? src,
-    $core.Iterable<$core.String>? dst,
+    $core.Iterable<$fixnum.Int64>? src,
+    $core.Iterable<$fixnum.Int64>? dst,
     $core.String? proto,
     $core.String? port,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (name != null) {
       $result.name = name;
     }
@@ -139,11 +143,12 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   factory PatchAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..pPS(2, _omitFieldNames ? '' : 'src')
-    ..pPS(3, _omitFieldNames ? '' : 'dst')
-    ..aOS(4, _omitFieldNames ? '' : 'proto')
-    ..aOS(5, _omitFieldNames ? '' : 'port')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.KU6)
+    ..aOS(5, _omitFieldNames ? '' : 'proto')
+    ..aOS(6, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
   ;
 
@@ -169,37 +174,46 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   static PatchAclRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get src => $_getList(1);
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get dst => $_getList(2);
+  $core.List<$fixnum.Int64> get src => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.String get proto => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set proto($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasProto() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearProto() => clearField(4);
+  $core.List<$fixnum.Int64> get dst => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.String get port => $_getSZ(4);
+  $core.String get proto => $_getSZ(4);
   @$pb.TagNumber(5)
-  set port($core.String v) { $_setString(4, v); }
+  set proto($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPort() => $_has(4);
+  $core.bool hasProto() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPort() => clearField(5);
+  void clearProto() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get port => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set port($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPort() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPort() => clearField(6);
 }
 
 class GetAclRequest extends $pb.GeneratedMessage {
@@ -300,10 +314,11 @@ class AclResponse extends $pb.GeneratedMessage {
   factory AclResponse({
     $fixnum.Int64? id,
     $core.String? name,
-    $core.Iterable<$core.String>? src,
-    $core.Iterable<$core.String>? dst,
+    $core.Iterable<$fixnum.Int64>? src,
+    $core.Iterable<$fixnum.Int64>? dst,
     $core.String? proto,
     $core.String? port,
+    $core.String? age,
   }) {
     final $result = create();
     if (id != null) {
@@ -324,6 +339,9 @@ class AclResponse extends $pb.GeneratedMessage {
     if (port != null) {
       $result.port = port;
     }
+    if (age != null) {
+      $result.age = age;
+    }
     return $result;
   }
   AclResponse._() : super();
@@ -333,10 +351,11 @@ class AclResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..pPS(3, _omitFieldNames ? '' : 'src')
-    ..pPS(4, _omitFieldNames ? '' : 'dst')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.KU6)
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
+    ..aOS(7, _omitFieldNames ? '' : 'age')
     ..hasRequiredFields = false
   ;
 
@@ -380,10 +399,10 @@ class AclResponse extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get src => $_getList(2);
+  $core.List<$fixnum.Int64> get src => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get dst => $_getList(3);
+  $core.List<$fixnum.Int64> get dst => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.String get proto => $_getSZ(4);
@@ -402,6 +421,15 @@ class AclResponse extends $pb.GeneratedMessage {
   $core.bool hasPort() => $_has(5);
   @$pb.TagNumber(6)
   void clearPort() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get age => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set age($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAge() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAge() => clearField(7);
 }
 
 
