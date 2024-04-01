@@ -15,16 +15,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'session.pb.dart' as $13;
+import 'session.pb.dart' as $14;
 
 export 'session.pb.dart';
 
 @$pb.GrpcServiceName('protos.SessionService')
 class SessionServiceClient extends $grpc.Client {
-  static final _$verifyPeerLoginSession = $grpc.ClientMethod<$13.VerifyPeerLoginSessionRequest, $13.VerifyPeerLoginSessionResponse>(
+  static final _$verifyPeerLoginSession = $grpc.ClientMethod<$14.VerifyPeerLoginSessionRequest, $14.VerifyPeerLoginSessionResponse>(
       '/protos.SessionService/VerifyPeerLoginSession',
-      ($13.VerifyPeerLoginSessionRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $13.VerifyPeerLoginSessionResponse.fromBuffer(value));
+      ($14.VerifyPeerLoginSessionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $14.VerifyPeerLoginSessionResponse.fromBuffer(value));
 
   SessionServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -32,7 +32,7 @@ class SessionServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$13.VerifyPeerLoginSessionResponse> verifyPeerLoginSession($13.VerifyPeerLoginSessionRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$14.VerifyPeerLoginSessionResponse> verifyPeerLoginSession($14.VerifyPeerLoginSessionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$verifyPeerLoginSession, request, options: options);
   }
 }
@@ -42,18 +42,18 @@ abstract class SessionServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.SessionService';
 
   SessionServiceBase() {
-    $addMethod($grpc.ServiceMethod<$13.VerifyPeerLoginSessionRequest, $13.VerifyPeerLoginSessionResponse>(
+    $addMethod($grpc.ServiceMethod<$14.VerifyPeerLoginSessionRequest, $14.VerifyPeerLoginSessionResponse>(
         'VerifyPeerLoginSession',
         verifyPeerLoginSession_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $13.VerifyPeerLoginSessionRequest.fromBuffer(value),
-        ($13.VerifyPeerLoginSessionResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $14.VerifyPeerLoginSessionRequest.fromBuffer(value),
+        ($14.VerifyPeerLoginSessionResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$13.VerifyPeerLoginSessionResponse> verifyPeerLoginSession_Pre($grpc.ServiceCall call, $async.Future<$13.VerifyPeerLoginSessionRequest> request) async {
+  $async.Future<$14.VerifyPeerLoginSessionResponse> verifyPeerLoginSession_Pre($grpc.ServiceCall call, $async.Future<$14.VerifyPeerLoginSessionRequest> request) async {
     return verifyPeerLoginSession(call, await request);
   }
 
-  $async.Future<$13.VerifyPeerLoginSessionResponse> verifyPeerLoginSession($grpc.ServiceCall call, $13.VerifyPeerLoginSessionRequest request);
+  $async.Future<$14.VerifyPeerLoginSessionResponse> verifyPeerLoginSession($grpc.ServiceCall call, $14.VerifyPeerLoginSessionRequest request);
 }

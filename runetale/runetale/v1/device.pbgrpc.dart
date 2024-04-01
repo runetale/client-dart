@@ -15,21 +15,21 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/empty.pb.dart' as $1;
-import 'device.pb.dart' as $3;
+import '../../../google/protobuf/empty.pb.dart' as $2;
+import 'device.pb.dart' as $4;
 
 export 'device.pb.dart';
 
 @$pb.GrpcServiceName('protos.DeviceService')
 class DeviceServiceClient extends $grpc.Client {
-  static final _$getDevice = $grpc.ClientMethod<$3.GetDevicesRequest, $3.DeviceResponse>(
+  static final _$getDevice = $grpc.ClientMethod<$4.GetDevicesRequest, $4.DeviceResponse>(
       '/protos.DeviceService/GetDevice',
-      ($3.GetDevicesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $3.DeviceResponse.fromBuffer(value));
-  static final _$getDevices = $grpc.ClientMethod<$1.Empty, $3.GetDevicesResponse>(
+      ($4.GetDevicesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.DeviceResponse.fromBuffer(value));
+  static final _$getDevices = $grpc.ClientMethod<$2.Empty, $4.GetDevicesResponse>(
       '/protos.DeviceService/GetDevices',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $3.GetDevicesResponse.fromBuffer(value));
+      ($2.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetDevicesResponse.fromBuffer(value));
 
   DeviceServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -37,11 +37,11 @@ class DeviceServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$3.DeviceResponse> getDevice($3.GetDevicesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$4.DeviceResponse> getDevice($4.GetDevicesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDevice, request, options: options);
   }
 
-  $grpc.ResponseFuture<$3.GetDevicesResponse> getDevices($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$4.GetDevicesResponse> getDevices($2.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDevices, request, options: options);
   }
 }
@@ -51,30 +51,30 @@ abstract class DeviceServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.DeviceService';
 
   DeviceServiceBase() {
-    $addMethod($grpc.ServiceMethod<$3.GetDevicesRequest, $3.DeviceResponse>(
+    $addMethod($grpc.ServiceMethod<$4.GetDevicesRequest, $4.DeviceResponse>(
         'GetDevice',
         getDevice_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $3.GetDevicesRequest.fromBuffer(value),
-        ($3.DeviceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $3.GetDevicesResponse>(
+        ($core.List<$core.int> value) => $4.GetDevicesRequest.fromBuffer(value),
+        ($4.DeviceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.Empty, $4.GetDevicesResponse>(
         'GetDevices',
         getDevices_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($3.GetDevicesResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $2.Empty.fromBuffer(value),
+        ($4.GetDevicesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$3.DeviceResponse> getDevice_Pre($grpc.ServiceCall call, $async.Future<$3.GetDevicesRequest> request) async {
+  $async.Future<$4.DeviceResponse> getDevice_Pre($grpc.ServiceCall call, $async.Future<$4.GetDevicesRequest> request) async {
     return getDevice(call, await request);
   }
 
-  $async.Future<$3.GetDevicesResponse> getDevices_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+  $async.Future<$4.GetDevicesResponse> getDevices_Pre($grpc.ServiceCall call, $async.Future<$2.Empty> request) async {
     return getDevices(call, await request);
   }
 
-  $async.Future<$3.DeviceResponse> getDevice($grpc.ServiceCall call, $3.GetDevicesRequest request);
-  $async.Future<$3.GetDevicesResponse> getDevices($grpc.ServiceCall call, $1.Empty request);
+  $async.Future<$4.DeviceResponse> getDevice($grpc.ServiceCall call, $4.GetDevicesRequest request);
+  $async.Future<$4.GetDevicesResponse> getDevices($grpc.ServiceCall call, $2.Empty request);
 }

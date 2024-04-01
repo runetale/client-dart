@@ -104,19 +104,6 @@ final $typed_data.Uint8List getResourcesResponseDescriptor = $convert.base64Deco
     'ChRHZXRSZXNvdXJjZXNSZXNwb25zZRI2CglyZXNvdXJjZXMYASADKAsyGC5wcm90b3MuUmVzb3'
     'VyY2VSZXNwb25zZVIJcmVzb3VyY2Vz');
 
-@$core.Deprecated('Use keyValueDescriptor instead')
-const KeyValue$json = {
-  '1': 'KeyValue',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-  ],
-};
-
-/// Descriptor for `KeyValue`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List keyValueDescriptor = $convert.base64Decode(
-    'CghLZXlWYWx1ZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZQ==');
-
 @$core.Deprecated('Use resourceResponseDescriptor instead')
 const ResourceResponse$json = {
   '1': 'ResourceResponse',

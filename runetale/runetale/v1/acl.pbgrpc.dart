@@ -15,29 +15,29 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/empty.pb.dart' as $1;
-import 'acl.pb.dart' as $0;
+import '../../../google/protobuf/empty.pb.dart' as $2;
+import 'acl.pb.dart' as $1;
 
 export 'acl.pb.dart';
 
 @$pb.GrpcServiceName('protos.AclService')
 class AclServiceClient extends $grpc.Client {
-  static final _$createAcl = $grpc.ClientMethod<$0.CreateAclRequest, $0.AclResponse>(
+  static final _$createAcl = $grpc.ClientMethod<$1.CreateAclRequest, $1.AclResponse>(
       '/protos.AclService/CreateAcl',
-      ($0.CreateAclRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
-  static final _$patchAcl = $grpc.ClientMethod<$0.PatchAclRequest, $0.AclResponse>(
+      ($1.CreateAclRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.AclResponse.fromBuffer(value));
+  static final _$patchAcl = $grpc.ClientMethod<$1.PatchAclRequest, $1.AclResponse>(
       '/protos.AclService/PatchAcl',
-      ($0.PatchAclRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
-  static final _$getAcl = $grpc.ClientMethod<$0.GetAclRequest, $0.AclResponse>(
+      ($1.PatchAclRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.AclResponse.fromBuffer(value));
+  static final _$getAcl = $grpc.ClientMethod<$1.GetAclRequest, $1.AclResponse>(
       '/protos.AclService/GetAcl',
-      ($0.GetAclRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
-  static final _$getAcls = $grpc.ClientMethod<$1.Empty, $0.GetAclsResponse>(
+      ($1.GetAclRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.AclResponse.fromBuffer(value));
+  static final _$getAcls = $grpc.ClientMethod<$2.Empty, $1.GetAclsResponse>(
       '/protos.AclService/GetAcls',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetAclsResponse.fromBuffer(value));
+      ($2.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetAclsResponse.fromBuffer(value));
 
   AclServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -45,19 +45,19 @@ class AclServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.AclResponse> createAcl($0.CreateAclRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.AclResponse> createAcl($1.CreateAclRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createAcl, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.AclResponse> patchAcl($0.PatchAclRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.AclResponse> patchAcl($1.PatchAclRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchAcl, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.AclResponse> getAcl($0.GetAclRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.AclResponse> getAcl($1.GetAclRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAcl, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GetAclsResponse> getAcls($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.GetAclsResponse> getAcls($2.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAcls, request, options: options);
   }
 }
@@ -67,54 +67,54 @@ abstract class AclServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.AclService';
 
   AclServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateAclRequest, $0.AclResponse>(
+    $addMethod($grpc.ServiceMethod<$1.CreateAclRequest, $1.AclResponse>(
         'CreateAcl',
         createAcl_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.CreateAclRequest.fromBuffer(value),
-        ($0.AclResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PatchAclRequest, $0.AclResponse>(
+        ($core.List<$core.int> value) => $1.CreateAclRequest.fromBuffer(value),
+        ($1.AclResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.PatchAclRequest, $1.AclResponse>(
         'PatchAcl',
         patchAcl_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.PatchAclRequest.fromBuffer(value),
-        ($0.AclResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetAclRequest, $0.AclResponse>(
+        ($core.List<$core.int> value) => $1.PatchAclRequest.fromBuffer(value),
+        ($1.AclResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetAclRequest, $1.AclResponse>(
         'GetAcl',
         getAcl_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetAclRequest.fromBuffer(value),
-        ($0.AclResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.GetAclsResponse>(
+        ($core.List<$core.int> value) => $1.GetAclRequest.fromBuffer(value),
+        ($1.AclResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.Empty, $1.GetAclsResponse>(
         'GetAcls',
         getAcls_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.GetAclsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $2.Empty.fromBuffer(value),
+        ($1.GetAclsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.AclResponse> createAcl_Pre($grpc.ServiceCall call, $async.Future<$0.CreateAclRequest> request) async {
+  $async.Future<$1.AclResponse> createAcl_Pre($grpc.ServiceCall call, $async.Future<$1.CreateAclRequest> request) async {
     return createAcl(call, await request);
   }
 
-  $async.Future<$0.AclResponse> patchAcl_Pre($grpc.ServiceCall call, $async.Future<$0.PatchAclRequest> request) async {
+  $async.Future<$1.AclResponse> patchAcl_Pre($grpc.ServiceCall call, $async.Future<$1.PatchAclRequest> request) async {
     return patchAcl(call, await request);
   }
 
-  $async.Future<$0.AclResponse> getAcl_Pre($grpc.ServiceCall call, $async.Future<$0.GetAclRequest> request) async {
+  $async.Future<$1.AclResponse> getAcl_Pre($grpc.ServiceCall call, $async.Future<$1.GetAclRequest> request) async {
     return getAcl(call, await request);
   }
 
-  $async.Future<$0.GetAclsResponse> getAcls_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+  $async.Future<$1.GetAclsResponse> getAcls_Pre($grpc.ServiceCall call, $async.Future<$2.Empty> request) async {
     return getAcls(call, await request);
   }
 
-  $async.Future<$0.AclResponse> createAcl($grpc.ServiceCall call, $0.CreateAclRequest request);
-  $async.Future<$0.AclResponse> patchAcl($grpc.ServiceCall call, $0.PatchAclRequest request);
-  $async.Future<$0.AclResponse> getAcl($grpc.ServiceCall call, $0.GetAclRequest request);
-  $async.Future<$0.GetAclsResponse> getAcls($grpc.ServiceCall call, $1.Empty request);
+  $async.Future<$1.AclResponse> createAcl($grpc.ServiceCall call, $1.CreateAclRequest request);
+  $async.Future<$1.AclResponse> patchAcl($grpc.ServiceCall call, $1.PatchAclRequest request);
+  $async.Future<$1.AclResponse> getAcl($grpc.ServiceCall call, $1.GetAclRequest request);
+  $async.Future<$1.GetAclsResponse> getAcls($grpc.ServiceCall call, $2.Empty request);
 }
