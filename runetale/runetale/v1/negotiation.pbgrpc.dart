@@ -16,28 +16,28 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/empty.pb.dart' as $2;
-import 'negotiation.pb.dart' as $10;
+import 'negotiation.pb.dart' as $11;
 
 export 'negotiation.pb.dart';
 
 @$pb.GrpcServiceName('protos.NegotiationService')
 class NegotiationServiceClient extends $grpc.Client {
-  static final _$offer = $grpc.ClientMethod<$10.HandshakeRequest, $2.Empty>(
+  static final _$offer = $grpc.ClientMethod<$11.HandshakeRequest, $2.Empty>(
       '/protos.NegotiationService/Offer',
-      ($10.HandshakeRequest value) => value.writeToBuffer(),
+      ($11.HandshakeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
-  static final _$answer = $grpc.ClientMethod<$10.HandshakeRequest, $2.Empty>(
+  static final _$answer = $grpc.ClientMethod<$11.HandshakeRequest, $2.Empty>(
       '/protos.NegotiationService/Answer',
-      ($10.HandshakeRequest value) => value.writeToBuffer(),
+      ($11.HandshakeRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
-  static final _$candidate = $grpc.ClientMethod<$10.CandidateRequest, $2.Empty>(
+  static final _$candidate = $grpc.ClientMethod<$11.CandidateRequest, $2.Empty>(
       '/protos.NegotiationService/Candidate',
-      ($10.CandidateRequest value) => value.writeToBuffer(),
+      ($11.CandidateRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
-  static final _$connect = $grpc.ClientMethod<$10.NegotiationRequest, $10.NegotiationRequest>(
+  static final _$connect = $grpc.ClientMethod<$11.NegotiationRequest, $11.NegotiationRequest>(
       '/protos.NegotiationService/Connect',
-      ($10.NegotiationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $10.NegotiationRequest.fromBuffer(value));
+      ($11.NegotiationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $11.NegotiationRequest.fromBuffer(value));
 
   NegotiationServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -45,19 +45,19 @@ class NegotiationServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$2.Empty> offer($10.HandshakeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.Empty> offer($11.HandshakeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$offer, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.Empty> answer($10.HandshakeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.Empty> answer($11.HandshakeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$answer, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.Empty> candidate($10.CandidateRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.Empty> candidate($11.CandidateRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$candidate, request, options: options);
   }
 
-  $grpc.ResponseStream<$10.NegotiationRequest> connect($async.Stream<$10.NegotiationRequest> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$11.NegotiationRequest> connect($async.Stream<$11.NegotiationRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$connect, request, options: options);
   }
 }
@@ -67,50 +67,50 @@ abstract class NegotiationServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.NegotiationService';
 
   NegotiationServiceBase() {
-    $addMethod($grpc.ServiceMethod<$10.HandshakeRequest, $2.Empty>(
+    $addMethod($grpc.ServiceMethod<$11.HandshakeRequest, $2.Empty>(
         'Offer',
         offer_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.HandshakeRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $11.HandshakeRequest.fromBuffer(value),
         ($2.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.HandshakeRequest, $2.Empty>(
+    $addMethod($grpc.ServiceMethod<$11.HandshakeRequest, $2.Empty>(
         'Answer',
         answer_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.HandshakeRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $11.HandshakeRequest.fromBuffer(value),
         ($2.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.CandidateRequest, $2.Empty>(
+    $addMethod($grpc.ServiceMethod<$11.CandidateRequest, $2.Empty>(
         'Candidate',
         candidate_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $10.CandidateRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $11.CandidateRequest.fromBuffer(value),
         ($2.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$10.NegotiationRequest, $10.NegotiationRequest>(
+    $addMethod($grpc.ServiceMethod<$11.NegotiationRequest, $11.NegotiationRequest>(
         'Connect',
         connect,
         true,
         true,
-        ($core.List<$core.int> value) => $10.NegotiationRequest.fromBuffer(value),
-        ($10.NegotiationRequest value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $11.NegotiationRequest.fromBuffer(value),
+        ($11.NegotiationRequest value) => value.writeToBuffer()));
   }
 
-  $async.Future<$2.Empty> offer_Pre($grpc.ServiceCall call, $async.Future<$10.HandshakeRequest> request) async {
+  $async.Future<$2.Empty> offer_Pre($grpc.ServiceCall call, $async.Future<$11.HandshakeRequest> request) async {
     return offer(call, await request);
   }
 
-  $async.Future<$2.Empty> answer_Pre($grpc.ServiceCall call, $async.Future<$10.HandshakeRequest> request) async {
+  $async.Future<$2.Empty> answer_Pre($grpc.ServiceCall call, $async.Future<$11.HandshakeRequest> request) async {
     return answer(call, await request);
   }
 
-  $async.Future<$2.Empty> candidate_Pre($grpc.ServiceCall call, $async.Future<$10.CandidateRequest> request) async {
+  $async.Future<$2.Empty> candidate_Pre($grpc.ServiceCall call, $async.Future<$11.CandidateRequest> request) async {
     return candidate(call, await request);
   }
 
-  $async.Future<$2.Empty> offer($grpc.ServiceCall call, $10.HandshakeRequest request);
-  $async.Future<$2.Empty> answer($grpc.ServiceCall call, $10.HandshakeRequest request);
-  $async.Future<$2.Empty> candidate($grpc.ServiceCall call, $10.CandidateRequest request);
-  $async.Stream<$10.NegotiationRequest> connect($grpc.ServiceCall call, $async.Stream<$10.NegotiationRequest> request);
+  $async.Future<$2.Empty> offer($grpc.ServiceCall call, $11.HandshakeRequest request);
+  $async.Future<$2.Empty> answer($grpc.ServiceCall call, $11.HandshakeRequest request);
+  $async.Future<$2.Empty> candidate($grpc.ServiceCall call, $11.CandidateRequest request);
+  $async.Stream<$11.NegotiationRequest> connect($grpc.ServiceCall call, $async.Stream<$11.NegotiationRequest> request);
 }

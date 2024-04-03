@@ -16,28 +16,28 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/empty.pb.dart' as $2;
-import 'group.pb.dart' as $6;
+import 'group.pb.dart' as $7;
 
 export 'group.pb.dart';
 
 @$pb.GrpcServiceName('protos.GroupService')
 class GroupServiceClient extends $grpc.Client {
-  static final _$createGroup = $grpc.ClientMethod<$6.CreateGroupRequest, $6.GroupResponse>(
+  static final _$createGroup = $grpc.ClientMethod<$7.CreateGroupRequest, $7.GroupResponse>(
       '/protos.GroupService/CreateGroup',
-      ($6.CreateGroupRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.GroupResponse.fromBuffer(value));
-  static final _$patchGroup = $grpc.ClientMethod<$6.PatchGroupRequest, $6.GroupResponse>(
+      ($7.CreateGroupRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.GroupResponse.fromBuffer(value));
+  static final _$patchGroup = $grpc.ClientMethod<$7.PatchGroupRequest, $7.GroupResponse>(
       '/protos.GroupService/PatchGroup',
-      ($6.PatchGroupRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.GroupResponse.fromBuffer(value));
-  static final _$getGroup = $grpc.ClientMethod<$6.GetGroupRequest, $6.GroupResponse>(
+      ($7.PatchGroupRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.GroupResponse.fromBuffer(value));
+  static final _$getGroup = $grpc.ClientMethod<$7.GetGroupRequest, $7.GroupResponse>(
       '/protos.GroupService/GetGroup',
-      ($6.GetGroupRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.GroupResponse.fromBuffer(value));
-  static final _$getGroups = $grpc.ClientMethod<$2.Empty, $6.GetGroupsResponse>(
+      ($7.GetGroupRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $7.GroupResponse.fromBuffer(value));
+  static final _$getGroups = $grpc.ClientMethod<$2.Empty, $7.GetGroupsResponse>(
       '/protos.GroupService/GetGroups',
       ($2.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.GetGroupsResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $7.GetGroupsResponse.fromBuffer(value));
 
   GroupServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -45,19 +45,19 @@ class GroupServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$6.GroupResponse> createGroup($6.CreateGroupRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.GroupResponse> createGroup($7.CreateGroupRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createGroup, request, options: options);
   }
 
-  $grpc.ResponseFuture<$6.GroupResponse> patchGroup($6.PatchGroupRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.GroupResponse> patchGroup($7.PatchGroupRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchGroup, request, options: options);
   }
 
-  $grpc.ResponseFuture<$6.GroupResponse> getGroup($6.GetGroupRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.GroupResponse> getGroup($7.GetGroupRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGroup, request, options: options);
   }
 
-  $grpc.ResponseFuture<$6.GetGroupsResponse> getGroups($2.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.GetGroupsResponse> getGroups($2.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGroups, request, options: options);
   }
 }
@@ -67,54 +67,54 @@ abstract class GroupServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.GroupService';
 
   GroupServiceBase() {
-    $addMethod($grpc.ServiceMethod<$6.CreateGroupRequest, $6.GroupResponse>(
+    $addMethod($grpc.ServiceMethod<$7.CreateGroupRequest, $7.GroupResponse>(
         'CreateGroup',
         createGroup_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $6.CreateGroupRequest.fromBuffer(value),
-        ($6.GroupResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.PatchGroupRequest, $6.GroupResponse>(
+        ($core.List<$core.int> value) => $7.CreateGroupRequest.fromBuffer(value),
+        ($7.GroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$7.PatchGroupRequest, $7.GroupResponse>(
         'PatchGroup',
         patchGroup_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $6.PatchGroupRequest.fromBuffer(value),
-        ($6.GroupResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.GetGroupRequest, $6.GroupResponse>(
+        ($core.List<$core.int> value) => $7.PatchGroupRequest.fromBuffer(value),
+        ($7.GroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$7.GetGroupRequest, $7.GroupResponse>(
         'GetGroup',
         getGroup_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $6.GetGroupRequest.fromBuffer(value),
-        ($6.GroupResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$2.Empty, $6.GetGroupsResponse>(
+        ($core.List<$core.int> value) => $7.GetGroupRequest.fromBuffer(value),
+        ($7.GroupResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.Empty, $7.GetGroupsResponse>(
         'GetGroups',
         getGroups_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $2.Empty.fromBuffer(value),
-        ($6.GetGroupsResponse value) => value.writeToBuffer()));
+        ($7.GetGroupsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$6.GroupResponse> createGroup_Pre($grpc.ServiceCall call, $async.Future<$6.CreateGroupRequest> request) async {
+  $async.Future<$7.GroupResponse> createGroup_Pre($grpc.ServiceCall call, $async.Future<$7.CreateGroupRequest> request) async {
     return createGroup(call, await request);
   }
 
-  $async.Future<$6.GroupResponse> patchGroup_Pre($grpc.ServiceCall call, $async.Future<$6.PatchGroupRequest> request) async {
+  $async.Future<$7.GroupResponse> patchGroup_Pre($grpc.ServiceCall call, $async.Future<$7.PatchGroupRequest> request) async {
     return patchGroup(call, await request);
   }
 
-  $async.Future<$6.GroupResponse> getGroup_Pre($grpc.ServiceCall call, $async.Future<$6.GetGroupRequest> request) async {
+  $async.Future<$7.GroupResponse> getGroup_Pre($grpc.ServiceCall call, $async.Future<$7.GetGroupRequest> request) async {
     return getGroup(call, await request);
   }
 
-  $async.Future<$6.GetGroupsResponse> getGroups_Pre($grpc.ServiceCall call, $async.Future<$2.Empty> request) async {
+  $async.Future<$7.GetGroupsResponse> getGroups_Pre($grpc.ServiceCall call, $async.Future<$2.Empty> request) async {
     return getGroups(call, await request);
   }
 
-  $async.Future<$6.GroupResponse> createGroup($grpc.ServiceCall call, $6.CreateGroupRequest request);
-  $async.Future<$6.GroupResponse> patchGroup($grpc.ServiceCall call, $6.PatchGroupRequest request);
-  $async.Future<$6.GroupResponse> getGroup($grpc.ServiceCall call, $6.GetGroupRequest request);
-  $async.Future<$6.GetGroupsResponse> getGroups($grpc.ServiceCall call, $2.Empty request);
+  $async.Future<$7.GroupResponse> createGroup($grpc.ServiceCall call, $7.CreateGroupRequest request);
+  $async.Future<$7.GroupResponse> patchGroup($grpc.ServiceCall call, $7.PatchGroupRequest request);
+  $async.Future<$7.GroupResponse> getGroup($grpc.ServiceCall call, $7.GetGroupRequest request);
+  $async.Future<$7.GetGroupsResponse> getGroups($grpc.ServiceCall call, $2.Empty request);
 }

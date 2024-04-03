@@ -22,6 +22,7 @@ const CreateFleetRequest$json = {
     {'1': 'resource_ids', '3': 3, '4': 3, '5': 4, '10': 'resourceIds'},
     {'1': 'proto', '3': 4, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 5, '4': 1, '5': 9, '10': 'port'},
+    {'1': 'type', '3': 6, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'type'},
   ],
 };
 
@@ -29,7 +30,8 @@ const CreateFleetRequest$json = {
 final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVGbGVldFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgASgJUg'
     'RkZXNjEiEKDHJlc291cmNlX2lkcxgDIAMoBFILcmVzb3VyY2VJZHMSFAoFcHJvdG8YBCABKAlS'
-    'BXByb3RvEhIKBHBvcnQYBSABKAlSBHBvcnQ=');
+    'BXByb3RvEhIKBHBvcnQYBSABKAlSBHBvcnQSLAoEdHlwZRgGIAEoDjIYLnByb3Rvcy5EZXBsb3'
+    'ltZW50TWV0aG9kUgR0eXBl');
 
 @$core.Deprecated('Use patchFleetRequestDescriptor instead')
 const PatchFleetRequest$json = {
