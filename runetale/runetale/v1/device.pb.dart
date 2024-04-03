@@ -148,7 +148,7 @@ class DeviceResponse extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'ip')
     ..aOS(4, _omitFieldNames ? '' : 'os')
     ..aOB(5, _omitFieldNames ? '' : 'status')
-    ..aOS(6, _omitFieldNames ? '' : 'lastSeen')
+    ..aOS(6, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
     ..hasRequiredFields = false
   ;
 

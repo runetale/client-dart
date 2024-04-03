@@ -50,20 +50,24 @@ const User$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
     {'1': 'role', '3': 4, '4': 1, '5': 9, '10': 'role'},
-    {'1': 'devices', '3': 5, '4': 1, '5': 4, '10': 'devices'},
-    {'1': 'groups', '3': 6, '4': 1, '5': 4, '10': 'groups'},
-    {'1': 'resources', '3': 7, '4': 1, '5': 4, '10': 'resources'},
-    {'1': 'joined', '3': 8, '4': 1, '5': 9, '10': 'joined'},
-    {'1': 'lastSeen', '3': 9, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'joined', '3': 5, '4': 1, '5': 9, '10': 'joined'},
+    {'1': 'lastSeen', '3': 6, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'fleets', '3': 7, '4': 3, '5': 11, '6': '.protos.FleetResponse', '10': 'fleets'},
+    {'1': 'resources', '3': 8, '4': 3, '5': 11, '6': '.protos.ResourceResponse', '10': 'resources'},
+    {'1': 'devices', '3': 9, '4': 3, '5': 11, '6': '.protos.DeviceResponse', '10': 'devices'},
+    {'1': 'groups', '3': 10, '4': 3, '5': 11, '6': '.protos.GroupResponse', '10': 'groups'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'CgRVc2VyEg4KAmlkGAEgASgEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhQKBWVtYWlsGAMgAS'
-    'gJUgVlbWFpbBISCgRyb2xlGAQgASgJUgRyb2xlEhgKB2RldmljZXMYBSABKARSB2RldmljZXMS'
-    'FgoGZ3JvdXBzGAYgASgEUgZncm91cHMSHAoJcmVzb3VyY2VzGAcgASgEUglyZXNvdXJjZXMSFg'
-    'oGam9pbmVkGAggASgJUgZqb2luZWQSGgoIbGFzdFNlZW4YCSABKAlSCGxhc3RTZWVu');
+    'gJUgVlbWFpbBISCgRyb2xlGAQgASgJUgRyb2xlEhYKBmpvaW5lZBgFIAEoCVIGam9pbmVkEhoK'
+    'CGxhc3RTZWVuGAYgASgJUghsYXN0U2VlbhItCgZmbGVldHMYByADKAsyFS5wcm90b3MuRmxlZX'
+    'RSZXNwb25zZVIGZmxlZXRzEjYKCXJlc291cmNlcxgIIAMoCzIYLnByb3Rvcy5SZXNvdXJjZVJl'
+    'c3BvbnNlUglyZXNvdXJjZXMSMAoHZGV2aWNlcxgJIAMoCzIWLnByb3Rvcy5EZXZpY2VSZXNwb2'
+    '5zZVIHZGV2aWNlcxItCgZncm91cHMYCiADKAsyFS5wcm90b3MuR3JvdXBSZXNwb25zZVIGZ3Jv'
+    'dXBz');
 
 @$core.Deprecated('Use getUsersResponseDescriptor instead')
 const GetUsersResponse$json = {

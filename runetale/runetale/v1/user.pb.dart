@@ -14,6 +14,11 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'device.pb.dart' as $4;
+import 'fleet.pb.dart' as $6;
+import 'group.pb.dart' as $7;
+import 'resource.pb.dart' as $5;
+
 class GetMeResponse extends $pb.GeneratedMessage {
   factory GetMeResponse({
     $core.String? username,
@@ -162,11 +167,12 @@ class User extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? email,
     $core.String? role,
-    $fixnum.Int64? devices,
-    $fixnum.Int64? groups,
-    $fixnum.Int64? resources,
     $core.String? joined,
     $core.String? lastSeen,
+    $core.Iterable<$6.FleetResponse>? fleets,
+    $core.Iterable<$5.ResourceResponse>? resources,
+    $core.Iterable<$4.DeviceResponse>? devices,
+    $core.Iterable<$7.GroupResponse>? groups,
   }) {
     final $result = create();
     if (id != null) {
@@ -181,20 +187,23 @@ class User extends $pb.GeneratedMessage {
     if (role != null) {
       $result.role = role;
     }
-    if (devices != null) {
-      $result.devices = devices;
-    }
-    if (groups != null) {
-      $result.groups = groups;
-    }
-    if (resources != null) {
-      $result.resources = resources;
-    }
     if (joined != null) {
       $result.joined = joined;
     }
     if (lastSeen != null) {
       $result.lastSeen = lastSeen;
+    }
+    if (fleets != null) {
+      $result.fleets.addAll(fleets);
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (devices != null) {
+      $result.devices.addAll(devices);
+    }
+    if (groups != null) {
+      $result.groups.addAll(groups);
     }
     return $result;
   }
@@ -207,11 +216,12 @@ class User extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'email')
     ..aOS(4, _omitFieldNames ? '' : 'role')
-    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(8, _omitFieldNames ? '' : 'joined')
-    ..aOS(9, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(5, _omitFieldNames ? '' : 'joined')
+    ..aOS(6, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..pc<$6.FleetResponse>(7, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: $6.FleetResponse.create)
+    ..pc<$5.ResourceResponse>(8, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: $5.ResourceResponse.create)
+    ..pc<$4.DeviceResponse>(9, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: $4.DeviceResponse.create)
+    ..pc<$7.GroupResponse>(10, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: $7.GroupResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -273,49 +283,34 @@ class User extends $pb.GeneratedMessage {
   void clearRole() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get devices => $_getI64(4);
+  $core.String get joined => $_getSZ(4);
   @$pb.TagNumber(5)
-  set devices($fixnum.Int64 v) { $_setInt64(4, v); }
+  set joined($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDevices() => $_has(4);
+  $core.bool hasJoined() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDevices() => clearField(5);
+  void clearJoined() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get groups => $_getI64(5);
+  $core.String get lastSeen => $_getSZ(5);
   @$pb.TagNumber(6)
-  set groups($fixnum.Int64 v) { $_setInt64(5, v); }
+  set lastSeen($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasGroups() => $_has(5);
+  $core.bool hasLastSeen() => $_has(5);
   @$pb.TagNumber(6)
-  void clearGroups() => clearField(6);
+  void clearLastSeen() => clearField(6);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get resources => $_getI64(6);
-  @$pb.TagNumber(7)
-  set resources($fixnum.Int64 v) { $_setInt64(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasResources() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearResources() => clearField(7);
+  $core.List<$6.FleetResponse> get fleets => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.String get joined => $_getSZ(7);
-  @$pb.TagNumber(8)
-  set joined($core.String v) { $_setString(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasJoined() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearJoined() => clearField(8);
+  $core.List<$5.ResourceResponse> get resources => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.String get lastSeen => $_getSZ(8);
-  @$pb.TagNumber(9)
-  set lastSeen($core.String v) { $_setString(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasLastSeen() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearLastSeen() => clearField(9);
+  $core.List<$4.DeviceResponse> get devices => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.List<$7.GroupResponse> get groups => $_getList(9);
 }
 
 class GetUsersResponse extends $pb.GeneratedMessage {

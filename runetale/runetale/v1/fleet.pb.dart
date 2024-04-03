@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'key_value.pb.dart' as $16;
 import 'resource.pbenum.dart' as $5;
 
 class CreateFleetRequest extends $pb.GeneratedMessage {
@@ -53,7 +54,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6)
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
     ..aOS(4, _omitFieldNames ? '' : 'proto')
     ..aOS(5, _omitFieldNames ? '' : 'port')
     ..e<$5.DeploymentMethod>(6, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $5.DeploymentMethod.DOCKER, valueOf: $5.DeploymentMethod.valueOf, enumValues: $5.DeploymentMethod.values)
@@ -168,7 +169,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6)
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
@@ -343,9 +344,10 @@ class FleetResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? id,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? resourceIds,
+    $core.Iterable<$16.KeyValue>? resources,
     $core.String? proto,
     $core.String? port,
+    $core.String? domain,
     $core.String? age,
   }) {
     final $result = create();
@@ -358,14 +360,17 @@ class FleetResponse extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (resourceIds != null) {
-      $result.resourceIds.addAll(resourceIds);
+    if (resources != null) {
+      $result.resources.addAll(resources);
     }
     if (proto != null) {
       $result.proto = proto;
     }
     if (port != null) {
       $result.port = port;
+    }
+    if (domain != null) {
+      $result.domain = domain;
     }
     if (age != null) {
       $result.age = age;
@@ -380,10 +385,11 @@ class FleetResponse extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6)
+    ..pc<$16.KeyValue>(4, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: $16.KeyValue.create)
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
-    ..aOS(7, _omitFieldNames ? '' : 'age')
+    ..aOS(7, _omitFieldNames ? '' : 'domain')
+    ..aOS(8, _omitFieldNames ? '' : 'age')
     ..hasRequiredFields = false
   ;
 
@@ -436,7 +442,7 @@ class FleetResponse extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get resourceIds => $_getList(3);
+  $core.List<$16.KeyValue> get resources => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.String get proto => $_getSZ(4);
@@ -457,13 +463,22 @@ class FleetResponse extends $pb.GeneratedMessage {
   void clearPort() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get age => $_getSZ(6);
+  $core.String get domain => $_getSZ(6);
   @$pb.TagNumber(7)
-  set age($core.String v) { $_setString(6, v); }
+  set domain($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAge() => $_has(6);
+  $core.bool hasDomain() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAge() => clearField(7);
+  void clearDomain() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get age => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set age($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAge() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAge() => clearField(8);
 }
 
 class AddNewSourcesForFleetRequest extends $pb.GeneratedMessage {
