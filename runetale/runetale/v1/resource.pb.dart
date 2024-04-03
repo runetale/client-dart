@@ -19,6 +19,130 @@ import 'resource.pbenum.dart';
 
 export 'resource.pbenum.dart';
 
+class AddNewSourcesForResourceRequest extends $pb.GeneratedMessage {
+  factory AddNewSourcesForResourceRequest({
+    $fixnum.Int64? id,
+    $core.Iterable<$fixnum.Int64>? userIds,
+    $core.Iterable<$fixnum.Int64>? groupIds,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (userIds != null) {
+      $result.userIds.addAll(userIds);
+    }
+    if (groupIds != null) {
+      $result.groupIds.addAll(groupIds);
+    }
+    return $result;
+  }
+  AddNewSourcesForResourceRequest._() : super();
+  factory AddNewSourcesForResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddNewSourcesForResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewSourcesForResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'userIds', $pb.PbFieldType.KU6, protoName: 'userIds')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'groupIds', $pb.PbFieldType.KU6, protoName: 'groupIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddNewSourcesForResourceRequest clone() => AddNewSourcesForResourceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddNewSourcesForResourceRequest copyWith(void Function(AddNewSourcesForResourceRequest) updates) => super.copyWith((message) => updates(message as AddNewSourcesForResourceRequest)) as AddNewSourcesForResourceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddNewSourcesForResourceRequest create() => AddNewSourcesForResourceRequest._();
+  AddNewSourcesForResourceRequest createEmptyInstance() => create();
+  static $pb.PbList<AddNewSourcesForResourceRequest> createRepeated() => $pb.PbList<AddNewSourcesForResourceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddNewSourcesForResourceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddNewSourcesForResourceRequest>(create);
+  static AddNewSourcesForResourceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$fixnum.Int64> get userIds => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get groupIds => $_getList(2);
+}
+
+class AddFleetsRequest extends $pb.GeneratedMessage {
+  factory AddFleetsRequest({
+    $fixnum.Int64? id,
+    $core.Iterable<$fixnum.Int64>? fleetIds,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (fleetIds != null) {
+      $result.fleetIds.addAll(fleetIds);
+    }
+    return $result;
+  }
+  AddFleetsRequest._() : super();
+  factory AddFleetsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddFleetsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddFleetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'fleetIds', $pb.PbFieldType.KU6, protoName: 'fleetIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddFleetsRequest clone() => AddFleetsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddFleetsRequest copyWith(void Function(AddFleetsRequest) updates) => super.copyWith((message) => updates(message as AddFleetsRequest)) as AddFleetsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddFleetsRequest create() => AddFleetsRequest._();
+  AddFleetsRequest createEmptyInstance() => create();
+  static $pb.PbList<AddFleetsRequest> createRepeated() => $pb.PbList<AddFleetsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddFleetsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddFleetsRequest>(create);
+  static AddFleetsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get fleetIds => $_getList(1);
+}
+
 class CreateResourceRequest extends $pb.GeneratedMessage {
   factory CreateResourceRequest({
     $core.String? name,
@@ -58,6 +182,56 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static CreateResourceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateResourceRequest>(create);
   static CreateResourceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+}
+
+class CreateResourceResponse extends $pb.GeneratedMessage {
+  factory CreateResourceResponse({
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  CreateResourceResponse._() : super();
+  factory CreateResourceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateResourceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateResourceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateResourceResponse clone() => CreateResourceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateResourceResponse copyWith(void Function(CreateResourceResponse) updates) => super.copyWith((message) => updates(message as CreateResourceResponse)) as CreateResourceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateResourceResponse create() => CreateResourceResponse._();
+  CreateResourceResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateResourceResponse> createRepeated() => $pb.PbList<CreateResourceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateResourceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateResourceResponse>(create);
+  static CreateResourceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -318,7 +492,7 @@ class ResourceResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? id,
     $core.String? name,
     $core.String? ip,
-    $core.Iterable<$16.KeyValue>? fleets,
+    $core.Iterable<$16.KeyValue>? resources,
     $core.String? os,
     $core.bool? status,
     $core.String? createdBy,
@@ -333,8 +507,8 @@ class ResourceResponse extends $pb.GeneratedMessage {
     if (ip != null) {
       $result.ip = ip;
     }
-    if (fleets != null) {
-      $result.fleets.addAll(fleets);
+    if (resources != null) {
+      $result.resources.addAll(resources);
     }
     if (os != null) {
       $result.os = os;
@@ -355,7 +529,7 @@ class ResourceResponse extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'ip')
-    ..pc<$16.KeyValue>(4, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: $16.KeyValue.create)
+    ..pc<$16.KeyValue>(4, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: $16.KeyValue.create)
     ..aOS(5, _omitFieldNames ? '' : 'os')
     ..aOB(6, _omitFieldNames ? '' : 'status')
     ..aOS(7, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
@@ -411,7 +585,7 @@ class ResourceResponse extends $pb.GeneratedMessage {
   void clearIp() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$16.KeyValue> get fleets => $_getList(3);
+  $core.List<$16.KeyValue> get resources => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.String get os => $_getSZ(4);

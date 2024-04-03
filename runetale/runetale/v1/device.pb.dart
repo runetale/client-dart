@@ -115,6 +115,7 @@ class DeviceResponse extends $pb.GeneratedMessage {
     $core.String? ip,
     $core.String? os,
     $core.bool? status,
+    $core.String? lastSeen,
   }) {
     final $result = create();
     if (id != null) {
@@ -132,6 +133,9 @@ class DeviceResponse extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
+    if (lastSeen != null) {
+      $result.lastSeen = lastSeen;
+    }
     return $result;
   }
   DeviceResponse._() : super();
@@ -144,6 +148,7 @@ class DeviceResponse extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'ip')
     ..aOS(4, _omitFieldNames ? '' : 'os')
     ..aOB(5, _omitFieldNames ? '' : 'status')
+    ..aOS(6, _omitFieldNames ? '' : 'lastSeen')
     ..hasRequiredFields = false
   ;
 
@@ -212,6 +217,15 @@ class DeviceResponse extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(4);
   @$pb.TagNumber(5)
   void clearStatus() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get lastSeen => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set lastSeen($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasLastSeen() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastSeen() => clearField(6);
 }
 
 

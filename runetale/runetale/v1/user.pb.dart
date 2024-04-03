@@ -19,6 +19,7 @@ class GetMeResponse extends $pb.GeneratedMessage {
     $core.String? username,
     $core.String? email,
     $core.String? picture,
+    $core.bool? isOwner,
   }) {
     final $result = create();
     if (username != null) {
@@ -30,6 +31,9 @@ class GetMeResponse extends $pb.GeneratedMessage {
     if (picture != null) {
       $result.picture = picture;
     }
+    if (isOwner != null) {
+      $result.isOwner = isOwner;
+    }
     return $result;
   }
   GetMeResponse._() : super();
@@ -40,6 +44,7 @@ class GetMeResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'username')
     ..aOS(2, _omitFieldNames ? '' : 'email')
     ..aOS(3, _omitFieldNames ? '' : 'picture')
+    ..aOB(4, _omitFieldNames ? '' : 'isOwner', protoName: 'isOwner')
     ..hasRequiredFields = false
   ;
 
@@ -90,6 +95,15 @@ class GetMeResponse extends $pb.GeneratedMessage {
   $core.bool hasPicture() => $_has(2);
   @$pb.TagNumber(3)
   void clearPicture() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get isOwner => $_getBF(3);
+  @$pb.TagNumber(4)
+  set isOwner($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIsOwner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIsOwner() => clearField(4);
 }
 
 class GetUserRequest extends $pb.GeneratedMessage {

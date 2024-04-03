@@ -47,11 +47,13 @@ const DeviceResponse$json = {
     {'1': 'ip', '3': 3, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'os', '3': 4, '4': 1, '5': 9, '10': 'os'},
     {'1': 'status', '3': 5, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'last_seen', '3': 6, '4': 1, '5': 9, '10': 'lastSeen'},
   ],
 };
 
 /// Descriptor for `DeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceResponseDescriptor = $convert.base64Decode(
     'Cg5EZXZpY2VSZXNwb25zZRIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIOCg'
-    'JpcBgDIAEoCVICaXASDgoCb3MYBCABKAlSAm9zEhYKBnN0YXR1cxgFIAEoCFIGc3RhdHVz');
+    'JpcBgDIAEoCVICaXASDgoCb3MYBCABKAlSAm9zEhYKBnN0YXR1cxgFIAEoCFIGc3RhdHVzEhsK'
+    'CWxhc3Rfc2VlbhgGIAEoCVIIbGFzdFNlZW4=');
 
