@@ -14,6 +14,10 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'fleet.pb.dart' as $5;
+import 'group.pb.dart' as $6;
+import 'resource.pb.dart' as $4;
+
 class GetDevicesRequest extends $pb.GeneratedMessage {
   factory GetDevicesRequest({
     $fixnum.Int64? id,
@@ -117,6 +121,14 @@ class DeviceResponse extends $pb.GeneratedMessage {
     $core.String? os,
     $core.bool? status,
     $core.String? lastSeen,
+    $core.String? createdBy,
+    $core.String? version,
+    $core.String? nodeKey,
+    $core.String? createdAt,
+    $core.String? keyExpiry,
+    $core.Iterable<$5.FleetResponse>? fleets,
+    $core.Iterable<$4.ResourceResponse>? resources,
+    $core.Iterable<$6.GroupResponse>? groups,
   }) {
     final $result = create();
     if (id != null) {
@@ -140,6 +152,30 @@ class DeviceResponse extends $pb.GeneratedMessage {
     if (lastSeen != null) {
       $result.lastSeen = lastSeen;
     }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (nodeKey != null) {
+      $result.nodeKey = nodeKey;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (keyExpiry != null) {
+      $result.keyExpiry = keyExpiry;
+    }
+    if (fleets != null) {
+      $result.fleets.addAll(fleets);
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (groups != null) {
+      $result.groups.addAll(groups);
+    }
     return $result;
   }
   DeviceResponse._() : super();
@@ -154,6 +190,14 @@ class DeviceResponse extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'os')
     ..aOB(6, _omitFieldNames ? '' : 'status')
     ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(8, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(9, _omitFieldNames ? '' : 'version')
+    ..aOS(10, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..aOS(11, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
+    ..aOS(12, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
+    ..pc<$5.FleetResponse>(13, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: $5.FleetResponse.create)
+    ..pc<$4.ResourceResponse>(14, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: $4.ResourceResponse.create)
+    ..pc<$6.GroupResponse>(15, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: $6.GroupResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -240,6 +284,60 @@ class DeviceResponse extends $pb.GeneratedMessage {
   $core.bool hasLastSeen() => $_has(6);
   @$pb.TagNumber(7)
   void clearLastSeen() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get createdBy => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set createdBy($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedBy() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedBy() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get version => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set version($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearVersion() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get nodeKey => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set nodeKey($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasNodeKey() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearNodeKey() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get createdAt => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set createdAt($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasCreatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearCreatedAt() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get keyExpiry => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set keyExpiry($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasKeyExpiry() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearKeyExpiry() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.List<$5.FleetResponse> get fleets => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $core.List<$4.ResourceResponse> get resources => $_getList(13);
+
+  @$pb.TagNumber(15)
+  $core.List<$6.GroupResponse> get groups => $_getList(14);
 }
 
 

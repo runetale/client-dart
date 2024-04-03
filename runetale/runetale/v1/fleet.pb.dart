@@ -15,7 +15,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'key_value.pb.dart' as $16;
-import 'resource.pbenum.dart' as $5;
+import 'resource.pbenum.dart' as $4;
 
 class CreateFleetRequest extends $pb.GeneratedMessage {
   factory CreateFleetRequest({
@@ -24,7 +24,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     $core.Iterable<$fixnum.Int64>? resourceIds,
     $core.String? proto,
     $core.String? port,
-    $5.DeploymentMethod? type,
+    $4.DeploymentMethod? type,
   }) {
     final $result = create();
     if (name != null) {
@@ -57,7 +57,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
     ..aOS(4, _omitFieldNames ? '' : 'proto')
     ..aOS(5, _omitFieldNames ? '' : 'port')
-    ..e<$5.DeploymentMethod>(6, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $5.DeploymentMethod.DOCKER, valueOf: $5.DeploymentMethod.valueOf, enumValues: $5.DeploymentMethod.values)
+    ..e<$4.DeploymentMethod>(6, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $4.DeploymentMethod.DOCKER, valueOf: $4.DeploymentMethod.valueOf, enumValues: $4.DeploymentMethod.values)
     ..hasRequiredFields = false
   ;
 
@@ -122,9 +122,9 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   void clearPort() => clearField(5);
 
   @$pb.TagNumber(6)
-  $5.DeploymentMethod get type => $_getN(5);
+  $4.DeploymentMethod get type => $_getN(5);
   @$pb.TagNumber(6)
-  set type($5.DeploymentMethod v) { setField(6, v); }
+  set type($4.DeploymentMethod v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasType() => $_has(5);
   @$pb.TagNumber(6)

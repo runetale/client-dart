@@ -14,10 +14,10 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'device.pb.dart' as $4;
-import 'fleet.pb.dart' as $6;
-import 'group.pb.dart' as $7;
-import 'resource.pb.dart' as $5;
+import 'device.pb.dart' as $7;
+import 'fleet.pb.dart' as $5;
+import 'group.pb.dart' as $6;
+import 'resource.pb.dart' as $4;
 
 class GetMeResponse extends $pb.GeneratedMessage {
   factory GetMeResponse({
@@ -170,10 +170,10 @@ class User extends $pb.GeneratedMessage {
     $core.String? role,
     $core.String? joined,
     $core.String? lastSeen,
-    $core.Iterable<$6.FleetResponse>? fleets,
-    $core.Iterable<$5.ResourceResponse>? resources,
-    $core.Iterable<$4.DeviceResponse>? devices,
-    $core.Iterable<$7.GroupResponse>? groups,
+    $core.Iterable<$5.FleetResponse>? fleets,
+    $core.Iterable<$4.ResourceResponse>? resources,
+    $core.Iterable<$7.DeviceResponse>? devices,
+    $core.Iterable<$6.GroupResponse>? groups,
   }) {
     final $result = create();
     if (id != null) {
@@ -223,10 +223,10 @@ class User extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'role')
     ..aOS(6, _omitFieldNames ? '' : 'joined')
     ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..pc<$6.FleetResponse>(8, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: $6.FleetResponse.create)
-    ..pc<$5.ResourceResponse>(9, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: $5.ResourceResponse.create)
-    ..pc<$4.DeviceResponse>(10, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: $4.DeviceResponse.create)
-    ..pc<$7.GroupResponse>(11, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: $7.GroupResponse.create)
+    ..pc<$5.FleetResponse>(8, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: $5.FleetResponse.create)
+    ..pc<$4.ResourceResponse>(9, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: $4.ResourceResponse.create)
+    ..pc<$7.DeviceResponse>(10, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: $7.DeviceResponse.create)
+    ..pc<$6.GroupResponse>(11, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: $6.GroupResponse.create)
     ..hasRequiredFields = false
   ;
 
@@ -315,16 +315,16 @@ class User extends $pb.GeneratedMessage {
   void clearLastSeen() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$6.FleetResponse> get fleets => $_getList(7);
+  $core.List<$5.FleetResponse> get fleets => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.List<$5.ResourceResponse> get resources => $_getList(8);
+  $core.List<$4.ResourceResponse> get resources => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.List<$4.DeviceResponse> get devices => $_getList(9);
+  $core.List<$7.DeviceResponse> get devices => $_getList(9);
 
   @$pb.TagNumber(11)
-  $core.List<$7.GroupResponse> get groups => $_getList(10);
+  $core.List<$6.GroupResponse> get groups => $_getList(10);
 }
 
 class GetUsersResponse extends $pb.GeneratedMessage {
