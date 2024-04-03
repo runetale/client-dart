@@ -322,6 +322,7 @@ class GroupResponse extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<UserWithPicture>? users,
     $fixnum.Int64? resources,
+    $fixnum.Int64? fleets,
     $core.String? age,
   }) {
     final $result = create();
@@ -337,6 +338,9 @@ class GroupResponse extends $pb.GeneratedMessage {
     if (resources != null) {
       $result.resources = resources;
     }
+    if (fleets != null) {
+      $result.fleets = fleets;
+    }
     if (age != null) {
       $result.age = age;
     }
@@ -351,7 +355,8 @@ class GroupResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..pc<UserWithPicture>(3, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: UserWithPicture.create)
     ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(5, _omitFieldNames ? '' : 'age')
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(6, _omitFieldNames ? '' : 'age')
     ..hasRequiredFields = false
   ;
 
@@ -407,13 +412,88 @@ class GroupResponse extends $pb.GeneratedMessage {
   void clearResources() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get age => $_getSZ(4);
+  $fixnum.Int64 get fleets => $_getI64(4);
   @$pb.TagNumber(5)
-  set age($core.String v) { $_setString(4, v); }
+  set fleets($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasAge() => $_has(4);
+  $core.bool hasFleets() => $_has(4);
   @$pb.TagNumber(5)
-  void clearAge() => clearField(5);
+  void clearFleets() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get age => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set age($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAge() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAge() => clearField(6);
+}
+
+class AddNewDstForGroupRequest extends $pb.GeneratedMessage {
+  factory AddNewDstForGroupRequest({
+    $fixnum.Int64? id,
+    $core.Iterable<$fixnum.Int64>? resourceIds,
+    $core.Iterable<$fixnum.Int64>? fleetIds,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (resourceIds != null) {
+      $result.resourceIds.addAll(resourceIds);
+    }
+    if (fleetIds != null) {
+      $result.fleetIds.addAll(fleetIds);
+    }
+    return $result;
+  }
+  AddNewDstForGroupRequest._() : super();
+  factory AddNewDstForGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddNewDstForGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewDstForGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'fleetIds', $pb.PbFieldType.KU6, protoName: 'fleetIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddNewDstForGroupRequest clone() => AddNewDstForGroupRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddNewDstForGroupRequest copyWith(void Function(AddNewDstForGroupRequest) updates) => super.copyWith((message) => updates(message as AddNewDstForGroupRequest)) as AddNewDstForGroupRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddNewDstForGroupRequest create() => AddNewDstForGroupRequest._();
+  AddNewDstForGroupRequest createEmptyInstance() => create();
+  static $pb.PbList<AddNewDstForGroupRequest> createRepeated() => $pb.PbList<AddNewDstForGroupRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddNewDstForGroupRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddNewDstForGroupRequest>(create);
+  static AddNewDstForGroupRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$fixnum.Int64> get resourceIds => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get fleetIds => $_getList(2);
 }
 
 

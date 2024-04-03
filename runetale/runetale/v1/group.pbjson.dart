@@ -90,7 +90,8 @@ const GroupResponse$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'users', '3': 3, '4': 3, '5': 11, '6': '.protos.UserWithPicture', '10': 'users'},
     {'1': 'resources', '3': 4, '4': 1, '5': 4, '10': 'resources'},
-    {'1': 'age', '3': 5, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'fleets', '3': 5, '4': 1, '5': 4, '10': 'fleets'},
+    {'1': 'age', '3': 6, '4': 1, '5': 9, '10': 'age'},
   ],
 };
 
@@ -98,5 +99,21 @@ const GroupResponse$json = {
 final $typed_data.Uint8List groupResponseDescriptor = $convert.base64Decode(
     'Cg1Hcm91cFJlc3BvbnNlEg4KAmlkGAEgASgEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEi0KBX'
     'VzZXJzGAMgAygLMhcucHJvdG9zLlVzZXJXaXRoUGljdHVyZVIFdXNlcnMSHAoJcmVzb3VyY2Vz'
-    'GAQgASgEUglyZXNvdXJjZXMSEAoDYWdlGAUgASgJUgNhZ2U=');
+    'GAQgASgEUglyZXNvdXJjZXMSFgoGZmxlZXRzGAUgASgEUgZmbGVldHMSEAoDYWdlGAYgASgJUg'
+    'NhZ2U=');
+
+@$core.Deprecated('Use addNewDstForGroupRequestDescriptor instead')
+const AddNewDstForGroupRequest$json = {
+  '1': 'AddNewDstForGroupRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'resourceIds', '3': 2, '4': 3, '5': 4, '10': 'resourceIds'},
+    {'1': 'fleetIds', '3': 3, '4': 3, '5': 4, '10': 'fleetIds'},
+  ],
+};
+
+/// Descriptor for `AddNewDstForGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addNewDstForGroupRequestDescriptor = $convert.base64Decode(
+    'ChhBZGROZXdEc3RGb3JHcm91cFJlcXVlc3QSDgoCaWQYASABKARSAmlkEiAKC3Jlc291cmNlSW'
+    'RzGAIgAygEUgtyZXNvdXJjZUlkcxIaCghmbGVldElkcxgDIAMoBFIIZmxlZXRJZHM=');
 

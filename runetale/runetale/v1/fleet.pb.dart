@@ -547,64 +547,6 @@ class AddNewSourcesForFleetRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get groupIds => $_getList(2);
 }
 
-class AddResourcesRequest extends $pb.GeneratedMessage {
-  factory AddResourcesRequest({
-    $fixnum.Int64? id,
-    $core.Iterable<$fixnum.Int64>? resourceIds,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (resourceIds != null) {
-      $result.resourceIds.addAll(resourceIds);
-    }
-    return $result;
-  }
-  AddResourcesRequest._() : super();
-  factory AddResourcesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddResourcesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddResourcesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AddResourcesRequest clone() => AddResourcesRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AddResourcesRequest copyWith(void Function(AddResourcesRequest) updates) => super.copyWith((message) => updates(message as AddResourcesRequest)) as AddResourcesRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AddResourcesRequest create() => AddResourcesRequest._();
-  AddResourcesRequest createEmptyInstance() => create();
-  static $pb.PbList<AddResourcesRequest> createRepeated() => $pb.PbList<AddResourcesRequest>();
-  @$core.pragma('dart2js:noInline')
-  static AddResourcesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddResourcesRequest>(create);
-  static AddResourcesRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
-  @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get resourceIds => $_getList(1);
-}
-
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

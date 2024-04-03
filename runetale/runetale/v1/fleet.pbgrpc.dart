@@ -124,10 +124,6 @@ class FleetDetailServiceClient extends $grpc.Client {
       '/protos.FleetDetailService/AddNewSourcesForFleet',
       ($6.AddNewSourcesForFleetRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
-  static final _$addResources = $grpc.ClientMethod<$6.AddResourcesRequest, $2.Empty>(
-      '/protos.FleetDetailService/AddResources',
-      ($6.AddResourcesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
 
   FleetDetailServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -137,10 +133,6 @@ class FleetDetailServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$2.Empty> addNewSourcesForFleet($6.AddNewSourcesForFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$addNewSourcesForFleet, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$2.Empty> addResources($6.AddResourcesRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$addResources, request, options: options);
   }
 }
 
@@ -156,23 +148,11 @@ abstract class FleetDetailServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $6.AddNewSourcesForFleetRequest.fromBuffer(value),
         ($2.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.AddResourcesRequest, $2.Empty>(
-        'AddResources',
-        addResources_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $6.AddResourcesRequest.fromBuffer(value),
-        ($2.Empty value) => value.writeToBuffer()));
   }
 
   $async.Future<$2.Empty> addNewSourcesForFleet_Pre($grpc.ServiceCall call, $async.Future<$6.AddNewSourcesForFleetRequest> request) async {
     return addNewSourcesForFleet(call, await request);
   }
 
-  $async.Future<$2.Empty> addResources_Pre($grpc.ServiceCall call, $async.Future<$6.AddResourcesRequest> request) async {
-    return addResources(call, await request);
-  }
-
   $async.Future<$2.Empty> addNewSourcesForFleet($grpc.ServiceCall call, $6.AddNewSourcesForFleetRequest request);
-  $async.Future<$2.Empty> addResources($grpc.ServiceCall call, $6.AddResourcesRequest request);
 }

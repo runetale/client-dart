@@ -118,3 +118,41 @@ abstract class GroupServiceBase extends $grpc.Service {
   $async.Future<$7.GroupResponse> getGroup($grpc.ServiceCall call, $7.GetGroupRequest request);
   $async.Future<$7.GetGroupsResponse> getGroups($grpc.ServiceCall call, $2.Empty request);
 }
+@$pb.GrpcServiceName('protos.GroupDetailService')
+class GroupDetailServiceClient extends $grpc.Client {
+  static final _$addNewDstForGroup = $grpc.ClientMethod<$7.AddNewDstForGroupRequest, $2.Empty>(
+      '/protos.GroupDetailService/AddNewDstForGroup',
+      ($7.AddNewDstForGroupRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
+
+  GroupDetailServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options,
+        interceptors: interceptors);
+
+  $grpc.ResponseFuture<$2.Empty> addNewDstForGroup($7.AddNewDstForGroupRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addNewDstForGroup, request, options: options);
+  }
+}
+
+@$pb.GrpcServiceName('protos.GroupDetailService')
+abstract class GroupDetailServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.GroupDetailService';
+
+  GroupDetailServiceBase() {
+    $addMethod($grpc.ServiceMethod<$7.AddNewDstForGroupRequest, $2.Empty>(
+        'AddNewDstForGroup',
+        addNewDstForGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $7.AddNewDstForGroupRequest.fromBuffer(value),
+        ($2.Empty value) => value.writeToBuffer()));
+  }
+
+  $async.Future<$2.Empty> addNewDstForGroup_Pre($grpc.ServiceCall call, $async.Future<$7.AddNewDstForGroupRequest> request) async {
+    return addNewDstForGroup(call, await request);
+  }
+
+  $async.Future<$2.Empty> addNewDstForGroup($grpc.ServiceCall call, $7.AddNewDstForGroupRequest request);
+}
