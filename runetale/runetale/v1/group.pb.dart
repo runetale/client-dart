@@ -238,13 +238,90 @@ class GetGroupsResponse extends $pb.GeneratedMessage {
   $core.List<GroupResponse> get groups => $_getList(0);
 }
 
+class UserWithPicture extends $pb.GeneratedMessage {
+  factory UserWithPicture({
+    $core.String? id,
+    $core.String? name,
+    $core.String? picture,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (picture != null) {
+      $result.picture = picture;
+    }
+    return $result;
+  }
+  UserWithPicture._() : super();
+  factory UserWithPicture.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserWithPicture.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserWithPicture', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'picture')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UserWithPicture clone() => UserWithPicture()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserWithPicture copyWith(void Function(UserWithPicture) updates) => super.copyWith((message) => updates(message as UserWithPicture)) as UserWithPicture;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UserWithPicture create() => UserWithPicture._();
+  UserWithPicture createEmptyInstance() => create();
+  static $pb.PbList<UserWithPicture> createRepeated() => $pb.PbList<UserWithPicture>();
+  @$core.pragma('dart2js:noInline')
+  static UserWithPicture getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserWithPicture>(create);
+  static UserWithPicture? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get picture => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set picture($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasPicture() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPicture() => clearField(3);
+}
+
 class GroupResponse extends $pb.GeneratedMessage {
   factory GroupResponse({
     $fixnum.Int64? id,
     $core.String? name,
-    $core.Iterable<$core.String>? users,
+    $core.Iterable<UserWithPicture>? users,
     $fixnum.Int64? resources,
-    $fixnum.Int64? linkers,
     $core.String? age,
   }) {
     final $result = create();
@@ -260,9 +337,6 @@ class GroupResponse extends $pb.GeneratedMessage {
     if (resources != null) {
       $result.resources = resources;
     }
-    if (linkers != null) {
-      $result.linkers = linkers;
-    }
     if (age != null) {
       $result.age = age;
     }
@@ -275,10 +349,9 @@ class GroupResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GroupResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..pPS(3, _omitFieldNames ? '' : 'users')
+    ..pc<UserWithPicture>(3, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: UserWithPicture.create)
     ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'linkers', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(6, _omitFieldNames ? '' : 'age')
+    ..aOS(5, _omitFieldNames ? '' : 'age')
     ..hasRequiredFields = false
   ;
 
@@ -322,7 +395,7 @@ class GroupResponse extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get users => $_getList(2);
+  $core.List<UserWithPicture> get users => $_getList(2);
 
   @$pb.TagNumber(4)
   $fixnum.Int64 get resources => $_getI64(3);
@@ -334,22 +407,13 @@ class GroupResponse extends $pb.GeneratedMessage {
   void clearResources() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get linkers => $_getI64(4);
+  $core.String get age => $_getSZ(4);
   @$pb.TagNumber(5)
-  set linkers($fixnum.Int64 v) { $_setInt64(4, v); }
+  set age($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasLinkers() => $_has(4);
+  $core.bool hasAge() => $_has(4);
   @$pb.TagNumber(5)
-  void clearLinkers() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get age => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set age($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasAge() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearAge() => clearField(6);
+  void clearAge() => clearField(5);
 }
 
 

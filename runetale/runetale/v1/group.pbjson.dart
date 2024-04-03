@@ -67,22 +67,36 @@ final $typed_data.Uint8List getGroupsResponseDescriptor = $convert.base64Decode(
     'ChFHZXRHcm91cHNSZXNwb25zZRItCgZncm91cHMYASADKAsyFS5wcm90b3MuR3JvdXBSZXNwb2'
     '5zZVIGZ3JvdXBz');
 
+@$core.Deprecated('Use userWithPictureDescriptor instead')
+const UserWithPicture$json = {
+  '1': 'UserWithPicture',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'picture', '3': 3, '4': 1, '5': 9, '10': 'picture'},
+  ],
+};
+
+/// Descriptor for `UserWithPicture`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userWithPictureDescriptor = $convert.base64Decode(
+    'Cg9Vc2VyV2l0aFBpY3R1cmUSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGA'
+    'oHcGljdHVyZRgDIAEoCVIHcGljdHVyZQ==');
+
 @$core.Deprecated('Use groupResponseDescriptor instead')
 const GroupResponse$json = {
   '1': 'GroupResponse',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'users', '3': 3, '4': 3, '5': 9, '10': 'users'},
+    {'1': 'users', '3': 3, '4': 3, '5': 11, '6': '.protos.UserWithPicture', '10': 'users'},
     {'1': 'resources', '3': 4, '4': 1, '5': 4, '10': 'resources'},
-    {'1': 'linkers', '3': 5, '4': 1, '5': 4, '10': 'linkers'},
-    {'1': 'age', '3': 6, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'age', '3': 5, '4': 1, '5': 9, '10': 'age'},
   ],
 };
 
 /// Descriptor for `GroupResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List groupResponseDescriptor = $convert.base64Decode(
-    'Cg1Hcm91cFJlc3BvbnNlEg4KAmlkGAEgASgEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhQKBX'
-    'VzZXJzGAMgAygJUgV1c2VycxIcCglyZXNvdXJjZXMYBCABKARSCXJlc291cmNlcxIYCgdsaW5r'
-    'ZXJzGAUgASgEUgdsaW5rZXJzEhAKA2FnZRgGIAEoCVIDYWdl');
+    'Cg1Hcm91cFJlc3BvbnNlEg4KAmlkGAEgASgEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEi0KBX'
+    'VzZXJzGAMgAygLMhcucHJvdG9zLlVzZXJXaXRoUGljdHVyZVIFdXNlcnMSHAoJcmVzb3VyY2Vz'
+    'GAQgASgEUglyZXNvdXJjZXMSEAoDYWdlGAUgASgJUgNhZ2U=');
 
