@@ -98,3 +98,32 @@ final $typed_data.Uint8List fleetResponseDescriptor = $convert.base64Decode(
     'cm90bxgFIAEoCVIFcHJvdG8SEgoEcG9ydBgGIAEoCVIEcG9ydBIQCgNhZ2UYByABKAlSA2FnZQ'
     '==');
 
+@$core.Deprecated('Use addNewSourcesForFleetRequestDescriptor instead')
+const AddNewSourcesForFleetRequest$json = {
+  '1': 'AddNewSourcesForFleetRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'userIds', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
+    {'1': 'groupIds', '3': 3, '4': 3, '5': 4, '10': 'groupIds'},
+  ],
+};
+
+/// Descriptor for `AddNewSourcesForFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addNewSourcesForFleetRequestDescriptor = $convert.base64Decode(
+    'ChxBZGROZXdTb3VyY2VzRm9yRmxlZXRSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIYCgd1c2VySW'
+    'RzGAIgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElkcw==');
+
+@$core.Deprecated('Use addResourcesRequestDescriptor instead')
+const AddResourcesRequest$json = {
+  '1': 'AddResourcesRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'resourceIds', '3': 2, '4': 3, '5': 4, '10': 'resourceIds'},
+  ],
+};
+
+/// Descriptor for `AddResourcesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addResourcesRequestDescriptor = $convert.base64Decode(
+    'ChNBZGRSZXNvdXJjZXNSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIgCgtyZXNvdXJjZUlkcxgCIA'
+    'MoBFILcmVzb3VyY2VJZHM=');
+
