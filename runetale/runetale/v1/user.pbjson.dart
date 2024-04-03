@@ -42,43 +42,44 @@ const GetUserRequest$json = {
 final $typed_data.Uint8List getUserRequestDescriptor = $convert.base64Decode(
     'Cg5HZXRVc2VyUmVxdWVzdBIOCgJpZBgBIAEoBFICaWQ=');
 
-@$core.Deprecated('Use userDescriptor instead')
-const User$json = {
-  '1': 'User',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'picture', '3': 3, '4': 1, '5': 9, '10': 'picture'},
-    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'role', '3': 5, '4': 1, '5': 9, '10': 'role'},
-    {'1': 'joined', '3': 6, '4': 1, '5': 9, '10': 'joined'},
-    {'1': 'lastSeen', '3': 7, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'fleets', '3': 8, '4': 3, '5': 11, '6': '.protos.FleetResponse', '10': 'fleets'},
-    {'1': 'resources', '3': 9, '4': 3, '5': 11, '6': '.protos.ResourceResponse', '10': 'resources'},
-    {'1': 'devices', '3': 10, '4': 3, '5': 11, '6': '.protos.DeviceResponse', '10': 'devices'},
-    {'1': 'groups', '3': 11, '4': 3, '5': 11, '6': '.protos.GroupResponse', '10': 'groups'},
-  ],
-};
-
-/// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
-    'CgRVc2VyEg4KAmlkGAEgASgEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhgKB3BpY3R1cmUYAy'
-    'ABKAlSB3BpY3R1cmUSFAoFZW1haWwYBCABKAlSBWVtYWlsEhIKBHJvbGUYBSABKAlSBHJvbGUS'
-    'FgoGam9pbmVkGAYgASgJUgZqb2luZWQSGgoIbGFzdFNlZW4YByABKAlSCGxhc3RTZWVuEi0KBm'
-    'ZsZWV0cxgIIAMoCzIVLnByb3Rvcy5GbGVldFJlc3BvbnNlUgZmbGVldHMSNgoJcmVzb3VyY2Vz'
-    'GAkgAygLMhgucHJvdG9zLlJlc291cmNlUmVzcG9uc2VSCXJlc291cmNlcxIwCgdkZXZpY2VzGA'
-    'ogAygLMhYucHJvdG9zLkRldmljZVJlc3BvbnNlUgdkZXZpY2VzEi0KBmdyb3VwcxgLIAMoCzIV'
-    'LnByb3Rvcy5Hcm91cFJlc3BvbnNlUgZncm91cHM=');
-
-@$core.Deprecated('Use getUsersResponseDescriptor instead')
-const GetUsersResponse$json = {
-  '1': 'GetUsersResponse',
+@$core.Deprecated('Use usersDescriptor instead')
+const Users$json = {
+  '1': 'Users',
   '2': [
     {'1': 'users', '3': 1, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
   ],
 };
 
-/// Descriptor for `GetUsersResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getUsersResponseDescriptor = $convert.base64Decode(
-    'ChBHZXRVc2Vyc1Jlc3BvbnNlEiIKBXVzZXJzGAEgAygLMgwucHJvdG9zLlVzZXJSBXVzZXJz');
+/// Descriptor for `Users`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List usersDescriptor = $convert.base64Decode(
+    'CgVVc2VycxIiCgV1c2VycxgBIAMoCzIMLnByb3Rvcy5Vc2VyUgV1c2Vycw==');
+
+@$core.Deprecated('Use addNewDstsForUserRequestDescriptor instead')
+const AddNewDstsForUserRequest$json = {
+  '1': 'AddNewDstsForUserRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'resourceIds', '3': 2, '4': 3, '5': 4, '10': 'resourceIds'},
+    {'1': 'fleetIds', '3': 3, '4': 3, '5': 4, '10': 'fleetIds'},
+  ],
+};
+
+/// Descriptor for `AddNewDstsForUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addNewDstsForUserRequestDescriptor = $convert.base64Decode(
+    'ChhBZGROZXdEc3RzRm9yVXNlclJlcXVlc3QSDgoCaWQYASABKARSAmlkEiAKC3Jlc291cmNlSW'
+    'RzGAIgAygEUgtyZXNvdXJjZUlkcxIaCghmbGVldElkcxgDIAMoBFIIZmxlZXRJZHM=');
+
+@$core.Deprecated('Use addGroupsRequestDescriptor instead')
+const AddGroupsRequest$json = {
+  '1': 'AddGroupsRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'userIds', '3': 3, '4': 3, '5': 4, '10': 'userIds'},
+  ],
+};
+
+/// Descriptor for `AddGroupsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addGroupsRequestDescriptor = $convert.base64Decode(
+    'ChBBZGRHcm91cHNSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIYCgd1c2VySWRzGAMgAygEUgd1c2'
+    'VySWRz');
 

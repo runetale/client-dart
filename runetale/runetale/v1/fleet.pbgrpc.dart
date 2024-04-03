@@ -16,28 +16,29 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/empty.pb.dart' as $2;
-import 'fleet.pb.dart' as $5;
+import 'common.pb.dart' as $5;
+import 'fleet.pb.dart' as $6;
 
 export 'fleet.pb.dart';
 
 @$pb.GrpcServiceName('protos.FleetService')
 class FleetServiceClient extends $grpc.Client {
-  static final _$createFleet = $grpc.ClientMethod<$5.CreateFleetRequest, $5.FleetResponse>(
+  static final _$createFleet = $grpc.ClientMethod<$6.CreateFleetRequest, $5.Fleet>(
       '/protos.FleetService/CreateFleet',
-      ($5.CreateFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.FleetResponse.fromBuffer(value));
-  static final _$patchFleet = $grpc.ClientMethod<$5.PatchFleetRequest, $5.FleetResponse>(
+      ($6.CreateFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.Fleet.fromBuffer(value));
+  static final _$patchFleet = $grpc.ClientMethod<$6.PatchFleetRequest, $5.Fleet>(
       '/protos.FleetService/PatchFleet',
-      ($5.PatchFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.FleetResponse.fromBuffer(value));
-  static final _$getFleet = $grpc.ClientMethod<$5.GetFleetRequest, $5.FleetResponse>(
+      ($6.PatchFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.Fleet.fromBuffer(value));
+  static final _$getFleet = $grpc.ClientMethod<$6.GetFleetRequest, $5.Fleet>(
       '/protos.FleetService/GetFleet',
-      ($5.GetFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.FleetResponse.fromBuffer(value));
-  static final _$getFleets = $grpc.ClientMethod<$2.Empty, $5.GetFleetsResponse>(
+      ($6.GetFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.Fleet.fromBuffer(value));
+  static final _$getFleets = $grpc.ClientMethod<$2.Empty, $6.Fleets>(
       '/protos.FleetService/GetFleets',
       ($2.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.GetFleetsResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $6.Fleets.fromBuffer(value));
 
   FleetServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -45,19 +46,19 @@ class FleetServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$5.FleetResponse> createFleet($5.CreateFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.Fleet> createFleet($6.CreateFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createFleet, request, options: options);
   }
 
-  $grpc.ResponseFuture<$5.FleetResponse> patchFleet($5.PatchFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.Fleet> patchFleet($6.PatchFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchFleet, request, options: options);
   }
 
-  $grpc.ResponseFuture<$5.FleetResponse> getFleet($5.GetFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$5.Fleet> getFleet($6.GetFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFleet, request, options: options);
   }
 
-  $grpc.ResponseFuture<$5.GetFleetsResponse> getFleets($2.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$6.Fleets> getFleets($2.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFleets, request, options: options);
   }
 }
@@ -67,62 +68,62 @@ abstract class FleetServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.FleetService';
 
   FleetServiceBase() {
-    $addMethod($grpc.ServiceMethod<$5.CreateFleetRequest, $5.FleetResponse>(
+    $addMethod($grpc.ServiceMethod<$6.CreateFleetRequest, $5.Fleet>(
         'CreateFleet',
         createFleet_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $5.CreateFleetRequest.fromBuffer(value),
-        ($5.FleetResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$5.PatchFleetRequest, $5.FleetResponse>(
+        ($core.List<$core.int> value) => $6.CreateFleetRequest.fromBuffer(value),
+        ($5.Fleet value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.PatchFleetRequest, $5.Fleet>(
         'PatchFleet',
         patchFleet_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $5.PatchFleetRequest.fromBuffer(value),
-        ($5.FleetResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$5.GetFleetRequest, $5.FleetResponse>(
+        ($core.List<$core.int> value) => $6.PatchFleetRequest.fromBuffer(value),
+        ($5.Fleet value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.GetFleetRequest, $5.Fleet>(
         'GetFleet',
         getFleet_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $5.GetFleetRequest.fromBuffer(value),
-        ($5.FleetResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$2.Empty, $5.GetFleetsResponse>(
+        ($core.List<$core.int> value) => $6.GetFleetRequest.fromBuffer(value),
+        ($5.Fleet value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$2.Empty, $6.Fleets>(
         'GetFleets',
         getFleets_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $2.Empty.fromBuffer(value),
-        ($5.GetFleetsResponse value) => value.writeToBuffer()));
+        ($6.Fleets value) => value.writeToBuffer()));
   }
 
-  $async.Future<$5.FleetResponse> createFleet_Pre($grpc.ServiceCall call, $async.Future<$5.CreateFleetRequest> request) async {
+  $async.Future<$5.Fleet> createFleet_Pre($grpc.ServiceCall call, $async.Future<$6.CreateFleetRequest> request) async {
     return createFleet(call, await request);
   }
 
-  $async.Future<$5.FleetResponse> patchFleet_Pre($grpc.ServiceCall call, $async.Future<$5.PatchFleetRequest> request) async {
+  $async.Future<$5.Fleet> patchFleet_Pre($grpc.ServiceCall call, $async.Future<$6.PatchFleetRequest> request) async {
     return patchFleet(call, await request);
   }
 
-  $async.Future<$5.FleetResponse> getFleet_Pre($grpc.ServiceCall call, $async.Future<$5.GetFleetRequest> request) async {
+  $async.Future<$5.Fleet> getFleet_Pre($grpc.ServiceCall call, $async.Future<$6.GetFleetRequest> request) async {
     return getFleet(call, await request);
   }
 
-  $async.Future<$5.GetFleetsResponse> getFleets_Pre($grpc.ServiceCall call, $async.Future<$2.Empty> request) async {
+  $async.Future<$6.Fleets> getFleets_Pre($grpc.ServiceCall call, $async.Future<$2.Empty> request) async {
     return getFleets(call, await request);
   }
 
-  $async.Future<$5.FleetResponse> createFleet($grpc.ServiceCall call, $5.CreateFleetRequest request);
-  $async.Future<$5.FleetResponse> patchFleet($grpc.ServiceCall call, $5.PatchFleetRequest request);
-  $async.Future<$5.FleetResponse> getFleet($grpc.ServiceCall call, $5.GetFleetRequest request);
-  $async.Future<$5.GetFleetsResponse> getFleets($grpc.ServiceCall call, $2.Empty request);
+  $async.Future<$5.Fleet> createFleet($grpc.ServiceCall call, $6.CreateFleetRequest request);
+  $async.Future<$5.Fleet> patchFleet($grpc.ServiceCall call, $6.PatchFleetRequest request);
+  $async.Future<$5.Fleet> getFleet($grpc.ServiceCall call, $6.GetFleetRequest request);
+  $async.Future<$6.Fleets> getFleets($grpc.ServiceCall call, $2.Empty request);
 }
 @$pb.GrpcServiceName('protos.FleetDetailService')
 class FleetDetailServiceClient extends $grpc.Client {
-  static final _$addNewSourcesForFleet = $grpc.ClientMethod<$5.AddNewSourcesForFleetRequest, $2.Empty>(
-      '/protos.FleetDetailService/AddNewSourcesForFleet',
-      ($5.AddNewSourcesForFleetRequest value) => value.writeToBuffer(),
+  static final _$addNewSrcsForFleet = $grpc.ClientMethod<$6.AddNewSrcsForFleetRequest, $2.Empty>(
+      '/protos.FleetDetailService/AddNewSrcsForFleet',
+      ($6.AddNewSrcsForFleetRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.Empty.fromBuffer(value));
 
   FleetDetailServiceClient($grpc.ClientChannel channel,
@@ -131,8 +132,8 @@ class FleetDetailServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$2.Empty> addNewSourcesForFleet($5.AddNewSourcesForFleetRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$addNewSourcesForFleet, request, options: options);
+  $grpc.ResponseFuture<$2.Empty> addNewSrcsForFleet($6.AddNewSrcsForFleetRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addNewSrcsForFleet, request, options: options);
   }
 }
 
@@ -141,18 +142,18 @@ abstract class FleetDetailServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.FleetDetailService';
 
   FleetDetailServiceBase() {
-    $addMethod($grpc.ServiceMethod<$5.AddNewSourcesForFleetRequest, $2.Empty>(
-        'AddNewSourcesForFleet',
-        addNewSourcesForFleet_Pre,
+    $addMethod($grpc.ServiceMethod<$6.AddNewSrcsForFleetRequest, $2.Empty>(
+        'AddNewSrcsForFleet',
+        addNewSrcsForFleet_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $5.AddNewSourcesForFleetRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $6.AddNewSrcsForFleetRequest.fromBuffer(value),
         ($2.Empty value) => value.writeToBuffer()));
   }
 
-  $async.Future<$2.Empty> addNewSourcesForFleet_Pre($grpc.ServiceCall call, $async.Future<$5.AddNewSourcesForFleetRequest> request) async {
-    return addNewSourcesForFleet(call, await request);
+  $async.Future<$2.Empty> addNewSrcsForFleet_Pre($grpc.ServiceCall call, $async.Future<$6.AddNewSrcsForFleetRequest> request) async {
+    return addNewSrcsForFleet(call, await request);
   }
 
-  $async.Future<$2.Empty> addNewSourcesForFleet($grpc.ServiceCall call, $5.AddNewSourcesForFleetRequest request);
+  $async.Future<$2.Empty> addNewSrcsForFleet($grpc.ServiceCall call, $6.AddNewSrcsForFleetRequest request);
 }

@@ -14,10 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'device.pb.dart' as $7;
-import 'fleet.pb.dart' as $5;
-import 'group.pb.dart' as $6;
-import 'resource.pb.dart' as $4;
+import 'common.pb.dart' as $5;
 
 class GetMeResponse extends $pb.GeneratedMessage {
   factory GetMeResponse({
@@ -161,72 +158,22 @@ class GetUserRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
-class User extends $pb.GeneratedMessage {
-  factory User({
-    $fixnum.Int64? id,
-    $core.String? name,
-    $core.String? picture,
-    $core.String? email,
-    $core.String? role,
-    $core.String? joined,
-    $core.String? lastSeen,
-    $core.Iterable<$5.FleetResponse>? fleets,
-    $core.Iterable<$4.ResourceResponse>? resources,
-    $core.Iterable<$7.DeviceResponse>? devices,
-    $core.Iterable<$6.GroupResponse>? groups,
+class Users extends $pb.GeneratedMessage {
+  factory Users({
+    $core.Iterable<$5.User>? users,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (picture != null) {
-      $result.picture = picture;
-    }
-    if (email != null) {
-      $result.email = email;
-    }
-    if (role != null) {
-      $result.role = role;
-    }
-    if (joined != null) {
-      $result.joined = joined;
-    }
-    if (lastSeen != null) {
-      $result.lastSeen = lastSeen;
-    }
-    if (fleets != null) {
-      $result.fleets.addAll(fleets);
-    }
-    if (resources != null) {
-      $result.resources.addAll(resources);
-    }
-    if (devices != null) {
-      $result.devices.addAll(devices);
-    }
-    if (groups != null) {
-      $result.groups.addAll(groups);
+    if (users != null) {
+      $result.users.addAll(users);
     }
     return $result;
   }
-  User._() : super();
-  factory User.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory User.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Users._() : super();
+  factory Users.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Users.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'User', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'picture')
-    ..aOS(4, _omitFieldNames ? '' : 'email')
-    ..aOS(5, _omitFieldNames ? '' : 'role')
-    ..aOS(6, _omitFieldNames ? '' : 'joined')
-    ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..pc<$5.FleetResponse>(8, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: $5.FleetResponse.create)
-    ..pc<$4.ResourceResponse>(9, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: $4.ResourceResponse.create)
-    ..pc<$7.DeviceResponse>(10, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: $7.DeviceResponse.create)
-    ..pc<$6.GroupResponse>(11, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: $6.GroupResponse.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Users', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<$5.User>(1, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: $5.User.create)
     ..hasRequiredFields = false
   ;
 
@@ -234,22 +181,76 @@ class User extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  User clone() => User()..mergeFromMessage(this);
+  Users clone() => Users()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  User copyWith(void Function(User) updates) => super.copyWith((message) => updates(message as User)) as User;
+  Users copyWith(void Function(Users) updates) => super.copyWith((message) => updates(message as Users)) as Users;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static User create() => User._();
-  User createEmptyInstance() => create();
-  static $pb.PbList<User> createRepeated() => $pb.PbList<User>();
+  static Users create() => Users._();
+  Users createEmptyInstance() => create();
+  static $pb.PbList<Users> createRepeated() => $pb.PbList<Users>();
   @$core.pragma('dart2js:noInline')
-  static User getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<User>(create);
-  static User? _defaultInstance;
+  static Users getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Users>(create);
+  static Users? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$5.User> get users => $_getList(0);
+}
+
+class AddNewDstsForUserRequest extends $pb.GeneratedMessage {
+  factory AddNewDstsForUserRequest({
+    $fixnum.Int64? id,
+    $core.Iterable<$fixnum.Int64>? resourceIds,
+    $core.Iterable<$fixnum.Int64>? fleetIds,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (resourceIds != null) {
+      $result.resourceIds.addAll(resourceIds);
+    }
+    if (fleetIds != null) {
+      $result.fleetIds.addAll(fleetIds);
+    }
+    return $result;
+  }
+  AddNewDstsForUserRequest._() : super();
+  factory AddNewDstsForUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddNewDstsForUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewDstsForUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'fleetIds', $pb.PbFieldType.KU6, protoName: 'fleetIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddNewDstsForUserRequest clone() => AddNewDstsForUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddNewDstsForUserRequest copyWith(void Function(AddNewDstsForUserRequest) updates) => super.copyWith((message) => updates(message as AddNewDstsForUserRequest)) as AddNewDstsForUserRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddNewDstsForUserRequest create() => AddNewDstsForUserRequest._();
+  AddNewDstsForUserRequest createEmptyInstance() => create();
+  static $pb.PbList<AddNewDstsForUserRequest> createRepeated() => $pb.PbList<AddNewDstsForUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddNewDstsForUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddNewDstsForUserRequest>(create);
+  static AddNewDstsForUserRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
@@ -261,88 +262,33 @@ class User extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  $core.List<$fixnum.Int64> get resourceIds => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.String get picture => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set picture($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasPicture() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPicture() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get email => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set email($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasEmail() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearEmail() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get role => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set role($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasRole() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearRole() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get joined => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set joined($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasJoined() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearJoined() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.String get lastSeen => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set lastSeen($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasLastSeen() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearLastSeen() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $core.List<$5.FleetResponse> get fleets => $_getList(7);
-
-  @$pb.TagNumber(9)
-  $core.List<$4.ResourceResponse> get resources => $_getList(8);
-
-  @$pb.TagNumber(10)
-  $core.List<$7.DeviceResponse> get devices => $_getList(9);
-
-  @$pb.TagNumber(11)
-  $core.List<$6.GroupResponse> get groups => $_getList(10);
+  $core.List<$fixnum.Int64> get fleetIds => $_getList(2);
 }
 
-class GetUsersResponse extends $pb.GeneratedMessage {
-  factory GetUsersResponse({
-    $core.Iterable<User>? users,
+class AddGroupsRequest extends $pb.GeneratedMessage {
+  factory AddGroupsRequest({
+    $fixnum.Int64? id,
+    $core.Iterable<$fixnum.Int64>? userIds,
   }) {
     final $result = create();
-    if (users != null) {
-      $result.users.addAll(users);
+    if (id != null) {
+      $result.id = id;
+    }
+    if (userIds != null) {
+      $result.userIds.addAll(userIds);
     }
     return $result;
   }
-  GetUsersResponse._() : super();
-  factory GetUsersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetUsersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  AddGroupsRequest._() : super();
+  factory AddGroupsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddGroupsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUsersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..pc<User>(1, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddGroupsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'userIds', $pb.PbFieldType.KU6, protoName: 'userIds')
     ..hasRequiredFields = false
   ;
 
@@ -350,25 +296,34 @@ class GetUsersResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetUsersResponse clone() => GetUsersResponse()..mergeFromMessage(this);
+  AddGroupsRequest clone() => AddGroupsRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetUsersResponse copyWith(void Function(GetUsersResponse) updates) => super.copyWith((message) => updates(message as GetUsersResponse)) as GetUsersResponse;
+  AddGroupsRequest copyWith(void Function(AddGroupsRequest) updates) => super.copyWith((message) => updates(message as AddGroupsRequest)) as AddGroupsRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetUsersResponse create() => GetUsersResponse._();
-  GetUsersResponse createEmptyInstance() => create();
-  static $pb.PbList<GetUsersResponse> createRepeated() => $pb.PbList<GetUsersResponse>();
+  static AddGroupsRequest create() => AddGroupsRequest._();
+  AddGroupsRequest createEmptyInstance() => create();
+  static $pb.PbList<AddGroupsRequest> createRepeated() => $pb.PbList<AddGroupsRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetUsersResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetUsersResponse>(create);
-  static GetUsersResponse? _defaultInstance;
+  static AddGroupsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddGroupsRequest>(create);
+  static AddGroupsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<User> get users => $_getList(0);
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get userIds => $_getList(1);
 }
 
 

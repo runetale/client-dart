@@ -54,18 +54,17 @@ const GetGroupRequest$json = {
 final $typed_data.Uint8List getGroupRequestDescriptor = $convert.base64Decode(
     'Cg9HZXRHcm91cFJlcXVlc3QSDgoCaWQYASABKARSAmlk');
 
-@$core.Deprecated('Use getGroupsResponseDescriptor instead')
-const GetGroupsResponse$json = {
-  '1': 'GetGroupsResponse',
+@$core.Deprecated('Use groupsDescriptor instead')
+const Groups$json = {
+  '1': 'Groups',
   '2': [
-    {'1': 'groups', '3': 1, '4': 3, '5': 11, '6': '.protos.GroupResponse', '10': 'groups'},
+    {'1': 'groups', '3': 1, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
   ],
 };
 
-/// Descriptor for `GetGroupsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getGroupsResponseDescriptor = $convert.base64Decode(
-    'ChFHZXRHcm91cHNSZXNwb25zZRItCgZncm91cHMYASADKAsyFS5wcm90b3MuR3JvdXBSZXNwb2'
-    '5zZVIGZ3JvdXBz');
+/// Descriptor for `Groups`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List groupsDescriptor = $convert.base64Decode(
+    'CgZHcm91cHMSJQoGZ3JvdXBzGAEgAygLMg0ucHJvdG9zLkdyb3VwUgZncm91cHM=');
 
 @$core.Deprecated('Use userWithPictureDescriptor instead')
 const UserWithPicture$json = {
@@ -81,26 +80,6 @@ const UserWithPicture$json = {
 final $typed_data.Uint8List userWithPictureDescriptor = $convert.base64Decode(
     'Cg9Vc2VyV2l0aFBpY3R1cmUSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGA'
     'oHcGljdHVyZRgDIAEoCVIHcGljdHVyZQ==');
-
-@$core.Deprecated('Use groupResponseDescriptor instead')
-const GroupResponse$json = {
-  '1': 'GroupResponse',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'users', '3': 3, '4': 3, '5': 11, '6': '.protos.UserWithPicture', '10': 'users'},
-    {'1': 'resources', '3': 4, '4': 1, '5': 4, '10': 'resources'},
-    {'1': 'fleets', '3': 5, '4': 1, '5': 4, '10': 'fleets'},
-    {'1': 'age', '3': 6, '4': 1, '5': 9, '10': 'age'},
-  ],
-};
-
-/// Descriptor for `GroupResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List groupResponseDescriptor = $convert.base64Decode(
-    'Cg1Hcm91cFJlc3BvbnNlEg4KAmlkGAEgASgEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEi0KBX'
-    'VzZXJzGAMgAygLMhcucHJvdG9zLlVzZXJXaXRoUGljdHVyZVIFdXNlcnMSHAoJcmVzb3VyY2Vz'
-    'GAQgASgEUglyZXNvdXJjZXMSFgoGZmxlZXRzGAUgASgEUgZmbGVldHMSEAoDYWdlGAYgASgJUg'
-    'NhZ2U=');
 
 @$core.Deprecated('Use addNewDstForGroupRequestDescriptor instead')
 const AddNewDstForGroupRequest$json = {

@@ -13,26 +13,9 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use deploymentMethodDescriptor instead')
-const DeploymentMethod$json = {
-  '1': 'DeploymentMethod',
-  '2': [
-    {'1': 'DOCKER', '2': 0},
-    {'1': 'CLI', '2': 1},
-    {'1': 'LINUX', '2': 2},
-    {'1': 'GCP', '2': 3},
-    {'1': 'MANUAL', '2': 4},
-  ],
-};
-
-/// Descriptor for `DeploymentMethod`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List deploymentMethodDescriptor = $convert.base64Decode(
-    'ChBEZXBsb3ltZW50TWV0aG9kEgoKBkRPQ0tFUhAAEgcKA0NMSRABEgkKBUxJTlVYEAISBwoDR0'
-    'NQEAMSCgoGTUFOVUFMEAQ=');
-
-@$core.Deprecated('Use addNewSourcesForResourceRequestDescriptor instead')
-const AddNewSourcesForResourceRequest$json = {
-  '1': 'AddNewSourcesForResourceRequest',
+@$core.Deprecated('Use addNewSrcsForResourceRequestDescriptor instead')
+const AddNewSrcsForResourceRequest$json = {
+  '1': 'AddNewSrcsForResourceRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
     {'1': 'userIds', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
@@ -40,10 +23,10 @@ const AddNewSourcesForResourceRequest$json = {
   ],
 };
 
-/// Descriptor for `AddNewSourcesForResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addNewSourcesForResourceRequestDescriptor = $convert.base64Decode(
-    'Ch9BZGROZXdTb3VyY2VzRm9yUmVzb3VyY2VSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIYCgd1c2'
-    'VySWRzGAIgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElkcw==');
+/// Descriptor for `AddNewSrcsForResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addNewSrcsForResourceRequestDescriptor = $convert.base64Decode(
+    'ChxBZGROZXdTcmNzRm9yUmVzb3VyY2VSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIYCgd1c2VySW'
+    'RzGAIgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElkcw==');
 
 @$core.Deprecated('Use addFleetsRequestDescriptor instead')
 const AddFleetsRequest$json = {
@@ -132,37 +115,16 @@ const GetResourceRequest$json = {
 final $typed_data.Uint8List getResourceRequestDescriptor = $convert.base64Decode(
     'ChJHZXRSZXNvdXJjZVJlcXVlc3QSDgoCaWQYASABKARSAmlk');
 
-@$core.Deprecated('Use getResourcesResponseDescriptor instead')
-const GetResourcesResponse$json = {
-  '1': 'GetResourcesResponse',
+@$core.Deprecated('Use resourcesDescriptor instead')
+const Resources$json = {
+  '1': 'Resources',
   '2': [
-    {'1': 'resources', '3': 1, '4': 3, '5': 11, '6': '.protos.ResourceResponse', '10': 'resources'},
+    {'1': 'resources', '3': 1, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
   ],
 };
 
-/// Descriptor for `GetResourcesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getResourcesResponseDescriptor = $convert.base64Decode(
-    'ChRHZXRSZXNvdXJjZXNSZXNwb25zZRI2CglyZXNvdXJjZXMYASADKAsyGC5wcm90b3MuUmVzb3'
-    'VyY2VSZXNwb25zZVIJcmVzb3VyY2Vz');
-
-@$core.Deprecated('Use resourceResponseDescriptor instead')
-const ResourceResponse$json = {
-  '1': 'ResourceResponse',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'ip', '3': 3, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'resources', '3': 4, '4': 3, '5': 11, '6': '.protos.KeyValue', '10': 'resources'},
-    {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'status', '3': 6, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'createdBy', '3': 7, '4': 1, '5': 9, '10': 'createdBy'},
-  ],
-};
-
-/// Descriptor for `ResourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List resourceResponseDescriptor = $convert.base64Decode(
-    'ChBSZXNvdXJjZVJlc3BvbnNlEg4KAmlkGAEgASgEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEg'
-    '4KAmlwGAMgASgJUgJpcBIuCglyZXNvdXJjZXMYBCADKAsyEC5wcm90b3MuS2V5VmFsdWVSCXJl'
-    'c291cmNlcxIOCgJvcxgFIAEoCVICb3MSFgoGc3RhdHVzGAYgASgIUgZzdGF0dXMSHAoJY3JlYX'
-    'RlZEJ5GAcgASgJUgljcmVhdGVkQnk=');
+/// Descriptor for `Resources`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resourcesDescriptor = $convert.base64Decode(
+    'CglSZXNvdXJjZXMSLgoJcmVzb3VyY2VzGAEgAygLMhAucHJvdG9zLlJlc291cmNlUglyZXNvdX'
+    'JjZXM=');
 

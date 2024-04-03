@@ -14,9 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'fleet.pb.dart' as $5;
-import 'group.pb.dart' as $6;
-import 'resource.pb.dart' as $4;
+import 'common.pb.dart' as $5;
 
 class GetDevicesRequest extends $pb.GeneratedMessage {
   factory GetDevicesRequest({
@@ -68,9 +66,9 @@ class GetDevicesRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
-class GetDevicesResponse extends $pb.GeneratedMessage {
-  factory GetDevicesResponse({
-    $core.Iterable<DeviceResponse>? devices,
+class Devices extends $pb.GeneratedMessage {
+  factory Devices({
+    $core.Iterable<$5.Device>? devices,
   }) {
     final $result = create();
     if (devices != null) {
@@ -78,12 +76,12 @@ class GetDevicesResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetDevicesResponse._() : super();
-  factory GetDevicesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetDevicesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Devices._() : super();
+  factory Devices.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Devices.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..pc<DeviceResponse>(1, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: DeviceResponse.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Devices', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<$5.Device>(1, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: $5.Device.create)
     ..hasRequiredFields = false
   ;
 
@@ -91,253 +89,25 @@ class GetDevicesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetDevicesResponse clone() => GetDevicesResponse()..mergeFromMessage(this);
+  Devices clone() => Devices()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetDevicesResponse copyWith(void Function(GetDevicesResponse) updates) => super.copyWith((message) => updates(message as GetDevicesResponse)) as GetDevicesResponse;
+  Devices copyWith(void Function(Devices) updates) => super.copyWith((message) => updates(message as Devices)) as Devices;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetDevicesResponse create() => GetDevicesResponse._();
-  GetDevicesResponse createEmptyInstance() => create();
-  static $pb.PbList<GetDevicesResponse> createRepeated() => $pb.PbList<GetDevicesResponse>();
+  static Devices create() => Devices._();
+  Devices createEmptyInstance() => create();
+  static $pb.PbList<Devices> createRepeated() => $pb.PbList<Devices>();
   @$core.pragma('dart2js:noInline')
-  static GetDevicesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicesResponse>(create);
-  static GetDevicesResponse? _defaultInstance;
+  static Devices getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Devices>(create);
+  static Devices? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<DeviceResponse> get devices => $_getList(0);
-}
-
-class DeviceResponse extends $pb.GeneratedMessage {
-  factory DeviceResponse({
-    $fixnum.Int64? id,
-    $core.String? name,
-    $core.String? email,
-    $core.String? ip,
-    $core.String? os,
-    $core.bool? status,
-    $core.String? lastSeen,
-    $core.String? createdBy,
-    $core.String? version,
-    $core.String? nodeKey,
-    $core.String? createdAt,
-    $core.String? keyExpiry,
-    $core.Iterable<$5.FleetResponse>? fleets,
-    $core.Iterable<$4.ResourceResponse>? resources,
-    $core.Iterable<$6.GroupResponse>? groups,
-  }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (email != null) {
-      $result.email = email;
-    }
-    if (ip != null) {
-      $result.ip = ip;
-    }
-    if (os != null) {
-      $result.os = os;
-    }
-    if (status != null) {
-      $result.status = status;
-    }
-    if (lastSeen != null) {
-      $result.lastSeen = lastSeen;
-    }
-    if (createdBy != null) {
-      $result.createdBy = createdBy;
-    }
-    if (version != null) {
-      $result.version = version;
-    }
-    if (nodeKey != null) {
-      $result.nodeKey = nodeKey;
-    }
-    if (createdAt != null) {
-      $result.createdAt = createdAt;
-    }
-    if (keyExpiry != null) {
-      $result.keyExpiry = keyExpiry;
-    }
-    if (fleets != null) {
-      $result.fleets.addAll(fleets);
-    }
-    if (resources != null) {
-      $result.resources.addAll(resources);
-    }
-    if (groups != null) {
-      $result.groups.addAll(groups);
-    }
-    return $result;
-  }
-  DeviceResponse._() : super();
-  factory DeviceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeviceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'email')
-    ..aOS(4, _omitFieldNames ? '' : 'ip')
-    ..aOS(5, _omitFieldNames ? '' : 'os')
-    ..aOB(6, _omitFieldNames ? '' : 'status')
-    ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOS(8, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
-    ..aOS(9, _omitFieldNames ? '' : 'version')
-    ..aOS(10, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
-    ..aOS(11, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
-    ..aOS(12, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
-    ..pc<$5.FleetResponse>(13, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: $5.FleetResponse.create)
-    ..pc<$4.ResourceResponse>(14, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: $4.ResourceResponse.create)
-    ..pc<$6.GroupResponse>(15, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: $6.GroupResponse.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  DeviceResponse clone() => DeviceResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  DeviceResponse copyWith(void Function(DeviceResponse) updates) => super.copyWith((message) => updates(message as DeviceResponse)) as DeviceResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static DeviceResponse create() => DeviceResponse._();
-  DeviceResponse createEmptyInstance() => create();
-  static $pb.PbList<DeviceResponse> createRepeated() => $pb.PbList<DeviceResponse>();
-  @$core.pragma('dart2js:noInline')
-  static DeviceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeviceResponse>(create);
-  static DeviceResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
-  @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearName() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get email => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set email($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasEmail() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearEmail() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get ip => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set ip($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasIp() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearIp() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get os => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set os($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasOs() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearOs() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.bool get status => $_getBF(5);
-  @$pb.TagNumber(6)
-  set status($core.bool v) { $_setBool(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasStatus() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearStatus() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.String get lastSeen => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set lastSeen($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasLastSeen() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearLastSeen() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $core.String get createdBy => $_getSZ(7);
-  @$pb.TagNumber(8)
-  set createdBy($core.String v) { $_setString(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasCreatedBy() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearCreatedBy() => clearField(8);
-
-  @$pb.TagNumber(9)
-  $core.String get version => $_getSZ(8);
-  @$pb.TagNumber(9)
-  set version($core.String v) { $_setString(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasVersion() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearVersion() => clearField(9);
-
-  @$pb.TagNumber(10)
-  $core.String get nodeKey => $_getSZ(9);
-  @$pb.TagNumber(10)
-  set nodeKey($core.String v) { $_setString(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasNodeKey() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearNodeKey() => clearField(10);
-
-  @$pb.TagNumber(11)
-  $core.String get createdAt => $_getSZ(10);
-  @$pb.TagNumber(11)
-  set createdAt($core.String v) { $_setString(10, v); }
-  @$pb.TagNumber(11)
-  $core.bool hasCreatedAt() => $_has(10);
-  @$pb.TagNumber(11)
-  void clearCreatedAt() => clearField(11);
-
-  @$pb.TagNumber(12)
-  $core.String get keyExpiry => $_getSZ(11);
-  @$pb.TagNumber(12)
-  set keyExpiry($core.String v) { $_setString(11, v); }
-  @$pb.TagNumber(12)
-  $core.bool hasKeyExpiry() => $_has(11);
-  @$pb.TagNumber(12)
-  void clearKeyExpiry() => clearField(12);
-
-  @$pb.TagNumber(13)
-  $core.List<$5.FleetResponse> get fleets => $_getList(12);
-
-  @$pb.TagNumber(14)
-  $core.List<$4.ResourceResponse> get resources => $_getList(13);
-
-  @$pb.TagNumber(15)
-  $core.List<$6.GroupResponse> get groups => $_getList(14);
+  $core.List<$5.Device> get devices => $_getList(0);
 }
 
 
