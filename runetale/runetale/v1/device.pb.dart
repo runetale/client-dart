@@ -112,6 +112,7 @@ class DeviceResponse extends $pb.GeneratedMessage {
   factory DeviceResponse({
     $fixnum.Int64? id,
     $core.String? name,
+    $core.String? email,
     $core.String? ip,
     $core.String? os,
     $core.bool? status,
@@ -123,6 +124,9 @@ class DeviceResponse extends $pb.GeneratedMessage {
     }
     if (name != null) {
       $result.name = name;
+    }
+    if (email != null) {
+      $result.email = email;
     }
     if (ip != null) {
       $result.ip = ip;
@@ -145,10 +149,11 @@ class DeviceResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'ip')
-    ..aOS(4, _omitFieldNames ? '' : 'os')
-    ..aOB(5, _omitFieldNames ? '' : 'status')
-    ..aOS(6, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(3, _omitFieldNames ? '' : 'email')
+    ..aOS(4, _omitFieldNames ? '' : 'ip')
+    ..aOS(5, _omitFieldNames ? '' : 'os')
+    ..aOB(6, _omitFieldNames ? '' : 'status')
+    ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
     ..hasRequiredFields = false
   ;
 
@@ -192,40 +197,49 @@ class DeviceResponse extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get ip => $_getSZ(2);
+  $core.String get email => $_getSZ(2);
   @$pb.TagNumber(3)
-  set ip($core.String v) { $_setString(2, v); }
+  set email($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasIp() => $_has(2);
+  $core.bool hasEmail() => $_has(2);
   @$pb.TagNumber(3)
-  void clearIp() => clearField(3);
+  void clearEmail() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get os => $_getSZ(3);
+  $core.String get ip => $_getSZ(3);
   @$pb.TagNumber(4)
-  set os($core.String v) { $_setString(3, v); }
+  set ip($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasOs() => $_has(3);
+  $core.bool hasIp() => $_has(3);
   @$pb.TagNumber(4)
-  void clearOs() => clearField(4);
+  void clearIp() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get status => $_getBF(4);
+  $core.String get os => $_getSZ(4);
   @$pb.TagNumber(5)
-  set status($core.bool v) { $_setBool(4, v); }
+  set os($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasStatus() => $_has(4);
+  $core.bool hasOs() => $_has(4);
   @$pb.TagNumber(5)
-  void clearStatus() => clearField(5);
+  void clearOs() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get lastSeen => $_getSZ(5);
+  $core.bool get status => $_getBF(5);
   @$pb.TagNumber(6)
-  set lastSeen($core.String v) { $_setString(5, v); }
+  set status($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasLastSeen() => $_has(5);
+  $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
-  void clearLastSeen() => clearField(6);
+  void clearStatus() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get lastSeen => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set lastSeen($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasLastSeen() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearLastSeen() => clearField(7);
 }
 
 
