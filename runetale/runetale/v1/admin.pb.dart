@@ -2478,6 +2478,7 @@ class User extends $pb.GeneratedMessage {
     $core.String? role,
     $core.String? joined,
     $core.String? lastSeen,
+    $core.bool? status,
     $core.Iterable<Fleet>? fleets,
     $core.Iterable<Resource>? resources,
     $core.Iterable<Device>? devices,
@@ -2505,6 +2506,9 @@ class User extends $pb.GeneratedMessage {
     if (lastSeen != null) {
       $result.lastSeen = lastSeen;
     }
+    if (status != null) {
+      $result.status = status;
+    }
     if (fleets != null) {
       $result.fleets.addAll(fleets);
     }
@@ -2531,10 +2535,11 @@ class User extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'role')
     ..aOS(6, _omitFieldNames ? '' : 'joined')
     ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..pc<Fleet>(8, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
-    ..pc<Resource>(9, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..pc<Device>(10, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
-    ..pc<Group>(11, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..aOB(8, _omitFieldNames ? '' : 'status')
+    ..pc<Fleet>(9, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<Resource>(10, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<Device>(11, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<Group>(12, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..hasRequiredFields = false
   ;
 
@@ -2623,16 +2628,25 @@ class User extends $pb.GeneratedMessage {
   void clearLastSeen() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<Fleet> get fleets => $_getList(7);
+  $core.bool get status => $_getBF(7);
+  @$pb.TagNumber(8)
+  set status($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasStatus() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearStatus() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<Resource> get resources => $_getList(8);
+  $core.List<Fleet> get fleets => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.List<Device> get devices => $_getList(9);
+  $core.List<Resource> get resources => $_getList(9);
 
   @$pb.TagNumber(11)
-  $core.List<Group> get groups => $_getList(10);
+  $core.List<Device> get devices => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.List<Group> get groups => $_getList(11);
 }
 
 class Device extends $pb.GeneratedMessage {
