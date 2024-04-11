@@ -2229,6 +2229,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? ip,
     $core.String? os,
     $core.bool? status,
+    $core.String? lastSeen,
     $core.String? createdBy,
     $core.Iterable<Fleet>? fleets,
     $core.Iterable<User>? users,
@@ -2249,6 +2250,9 @@ class Resource extends $pb.GeneratedMessage {
     }
     if (status != null) {
       $result.status = status;
+    }
+    if (lastSeen != null) {
+      $result.lastSeen = lastSeen;
     }
     if (createdBy != null) {
       $result.createdBy = createdBy;
@@ -2274,10 +2278,11 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'ip')
     ..aOS(4, _omitFieldNames ? '' : 'os')
     ..aOB(5, _omitFieldNames ? '' : 'status')
-    ..aOS(6, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
-    ..pc<Fleet>(7, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
-    ..pc<User>(8, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
-    ..pc<Group>(9, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..aOS(6, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(7, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..pc<Fleet>(8, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<User>(9, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..pc<Group>(10, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..hasRequiredFields = false
   ;
 
@@ -2348,22 +2353,31 @@ class Resource extends $pb.GeneratedMessage {
   void clearStatus() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get createdBy => $_getSZ(5);
+  $core.String get lastSeen => $_getSZ(5);
   @$pb.TagNumber(6)
-  set createdBy($core.String v) { $_setString(5, v); }
+  set lastSeen($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasCreatedBy() => $_has(5);
+  $core.bool hasLastSeen() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCreatedBy() => clearField(6);
+  void clearLastSeen() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<Fleet> get fleets => $_getList(6);
+  $core.String get createdBy => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set createdBy($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedBy() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedBy() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<User> get users => $_getList(7);
+  $core.List<Fleet> get fleets => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.List<Group> get groups => $_getList(8);
+  $core.List<User> get users => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.List<Group> get groups => $_getList(9);
 }
 
 class Group extends $pb.GeneratedMessage {
