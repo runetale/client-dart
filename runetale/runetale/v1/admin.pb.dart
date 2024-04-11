@@ -2463,7 +2463,6 @@ class Group extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
-  /// 参照できるようにする
   @$pb.TagNumber(3)
   $core.List<User> get users => $_getList(2);
 
