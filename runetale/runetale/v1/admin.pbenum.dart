@@ -19,6 +19,10 @@ class DeploymentMethod extends $pb.ProtobufEnum {
   static const DeploymentMethod LINUX = DeploymentMethod._(2, _omitEnumNames ? '' : 'LINUX');
   static const DeploymentMethod GCP = DeploymentMethod._(3, _omitEnumNames ? '' : 'GCP');
   static const DeploymentMethod MANUAL = DeploymentMethod._(4, _omitEnumNames ? '' : 'MANUAL');
+  static const DeploymentMethod AWS = DeploymentMethod._(5, _omitEnumNames ? '' : 'AWS');
+  static const DeploymentMethod Azure = DeploymentMethod._(6, _omitEnumNames ? '' : 'Azure');
+  static const DeploymentMethod Onprem = DeploymentMethod._(7, _omitEnumNames ? '' : 'Onprem');
+  static const DeploymentMethod Other = DeploymentMethod._(8, _omitEnumNames ? '' : 'Other');
 
   static const $core.List<DeploymentMethod> values = <DeploymentMethod> [
     DOCKER,
@@ -26,6 +30,10 @@ class DeploymentMethod extends $pb.ProtobufEnum {
     LINUX,
     GCP,
     MANUAL,
+    AWS,
+    Azure,
+    Onprem,
+    Other,
   ];
 
   static final $core.Map<$core.int, DeploymentMethod> _byValue = $pb.ProtobufEnum.initByValue(values);

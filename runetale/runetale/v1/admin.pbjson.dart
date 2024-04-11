@@ -22,13 +22,18 @@ const DeploymentMethod$json = {
     {'1': 'LINUX', '2': 2},
     {'1': 'GCP', '2': 3},
     {'1': 'MANUAL', '2': 4},
+    {'1': 'AWS', '2': 5},
+    {'1': 'Azure', '2': 6},
+    {'1': 'Onprem', '2': 7},
+    {'1': 'Other', '2': 8},
   ],
 };
 
 /// Descriptor for `DeploymentMethod`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List deploymentMethodDescriptor = $convert.base64Decode(
     'ChBEZXBsb3ltZW50TWV0aG9kEgoKBkRPQ0tFUhAAEgcKA0NMSRABEgkKBUxJTlVYEAISBwoDR0'
-    'NQEAMSCgoGTUFOVUFMEAQ=');
+    'NQEAMSCgoGTUFOVUFMEAQSBwoDQVdTEAUSCQoFQXp1cmUQBhIKCgZPbnByZW0QBxIJCgVPdGhl'
+    'chAI');
 
 @$core.Deprecated('Use createAclRequestDescriptor instead')
 const CreateAclRequest$json = {
