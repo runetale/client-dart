@@ -622,130 +622,6 @@ class Users extends $pb.GeneratedMessage {
   $core.List<User> get users => $_getList(0);
 }
 
-class AddNewDstsForUserRequest extends $pb.GeneratedMessage {
-  factory AddNewDstsForUserRequest({
-    $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? machineIds,
-    $core.Iterable<$core.String>? fleetIds,
-  }) {
-    final $result = create();
-    if (aclID != null) {
-      $result.aclID = aclID;
-    }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
-    }
-    if (fleetIds != null) {
-      $result.fleetIds.addAll(fleetIds);
-    }
-    return $result;
-  }
-  AddNewDstsForUserRequest._() : super();
-  factory AddNewDstsForUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddNewDstsForUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewDstsForUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..pPS(3, _omitFieldNames ? '' : 'fleetIds', protoName: 'fleetIds')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AddNewDstsForUserRequest clone() => AddNewDstsForUserRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AddNewDstsForUserRequest copyWith(void Function(AddNewDstsForUserRequest) updates) => super.copyWith((message) => updates(message as AddNewDstsForUserRequest)) as AddNewDstsForUserRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AddNewDstsForUserRequest create() => AddNewDstsForUserRequest._();
-  AddNewDstsForUserRequest createEmptyInstance() => create();
-  static $pb.PbList<AddNewDstsForUserRequest> createRepeated() => $pb.PbList<AddNewDstsForUserRequest>();
-  @$core.pragma('dart2js:noInline')
-  static AddNewDstsForUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddNewDstsForUserRequest>(create);
-  static AddNewDstsForUserRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get aclID => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set aclID($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAclID() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAclID() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
-
-  @$pb.TagNumber(3)
-  $core.List<$core.String> get fleetIds => $_getList(2);
-}
-
-class AddGroupsRequest extends $pb.GeneratedMessage {
-  factory AddGroupsRequest({
-    $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? machineIds,
-  }) {
-    final $result = create();
-    if (aclID != null) {
-      $result.aclID = aclID;
-    }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
-    }
-    return $result;
-  }
-  AddGroupsRequest._() : super();
-  factory AddGroupsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddGroupsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddGroupsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AddGroupsRequest clone() => AddGroupsRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AddGroupsRequest copyWith(void Function(AddGroupsRequest) updates) => super.copyWith((message) => updates(message as AddGroupsRequest)) as AddGroupsRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AddGroupsRequest create() => AddGroupsRequest._();
-  AddGroupsRequest createEmptyInstance() => create();
-  static $pb.PbList<AddGroupsRequest> createRepeated() => $pb.PbList<AddGroupsRequest>();
-  @$core.pragma('dart2js:noInline')
-  static AddGroupsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddGroupsRequest>(create);
-  static AddGroupsRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get aclID => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set aclID($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAclID() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAclID() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
-}
-
 class CreateGroupRequest extends $pb.GeneratedMessage {
   factory CreateGroupRequest({
     $core.String? name,
@@ -802,78 +678,6 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(2)
   $core.List<$fixnum.Int64> get machineIds => $_getList(1);
-}
-
-class PatchGroupRequest extends $pb.GeneratedMessage {
-  factory PatchGroupRequest({
-    $core.String? aclID,
-    $core.String? name,
-    $core.Iterable<$fixnum.Int64>? machineIds,
-  }) {
-    final $result = create();
-    if (aclID != null) {
-      $result.aclID = aclID;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
-    }
-    return $result;
-  }
-  PatchGroupRequest._() : super();
-  factory PatchGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PatchGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  PatchGroupRequest clone() => PatchGroupRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  PatchGroupRequest copyWith(void Function(PatchGroupRequest) updates) => super.copyWith((message) => updates(message as PatchGroupRequest)) as PatchGroupRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static PatchGroupRequest create() => PatchGroupRequest._();
-  PatchGroupRequest createEmptyInstance() => create();
-  static $pb.PbList<PatchGroupRequest> createRepeated() => $pb.PbList<PatchGroupRequest>();
-  @$core.pragma('dart2js:noInline')
-  static PatchGroupRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchGroupRequest>(create);
-  static PatchGroupRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get aclID => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set aclID($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAclID() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAclID() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearName() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
 }
 
 class GetGroupRequest extends $pb.GeneratedMessage {
@@ -1048,32 +852,27 @@ class UserWithPicture extends $pb.GeneratedMessage {
   void clearPicture() => clearField(3);
 }
 
-class AddNewDstForGroupRequest extends $pb.GeneratedMessage {
-  factory AddNewDstForGroupRequest({
-    $core.String? aclID,
+class PatchGroupRequest extends $pb.GeneratedMessage {
+  factory PatchGroupRequest({
+    $core.String? name,
     $core.Iterable<$fixnum.Int64>? machineIds,
-    $core.Iterable<$core.String>? fleetIds,
   }) {
     final $result = create();
-    if (aclID != null) {
-      $result.aclID = aclID;
+    if (name != null) {
+      $result.name = name;
     }
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
     }
-    if (fleetIds != null) {
-      $result.fleetIds.addAll(fleetIds);
-    }
     return $result;
   }
-  AddNewDstForGroupRequest._() : super();
-  factory AddNewDstForGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddNewDstForGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PatchGroupRequest._() : super();
+  factory PatchGroupRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PatchGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewDstForGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
     ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..pPS(3, _omitFieldNames ? '' : 'fleetIds', protoName: 'fleetIds')
     ..hasRequiredFields = false
   ;
 
@@ -1081,37 +880,34 @@ class AddNewDstForGroupRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AddNewDstForGroupRequest clone() => AddNewDstForGroupRequest()..mergeFromMessage(this);
+  PatchGroupRequest clone() => PatchGroupRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddNewDstForGroupRequest copyWith(void Function(AddNewDstForGroupRequest) updates) => super.copyWith((message) => updates(message as AddNewDstForGroupRequest)) as AddNewDstForGroupRequest;
+  PatchGroupRequest copyWith(void Function(PatchGroupRequest) updates) => super.copyWith((message) => updates(message as PatchGroupRequest)) as PatchGroupRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AddNewDstForGroupRequest create() => AddNewDstForGroupRequest._();
-  AddNewDstForGroupRequest createEmptyInstance() => create();
-  static $pb.PbList<AddNewDstForGroupRequest> createRepeated() => $pb.PbList<AddNewDstForGroupRequest>();
+  static PatchGroupRequest create() => PatchGroupRequest._();
+  PatchGroupRequest createEmptyInstance() => create();
+  static $pb.PbList<PatchGroupRequest> createRepeated() => $pb.PbList<PatchGroupRequest>();
   @$core.pragma('dart2js:noInline')
-  static AddNewDstForGroupRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddNewDstForGroupRequest>(create);
-  static AddNewDstForGroupRequest? _defaultInstance;
+  static PatchGroupRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchGroupRequest>(create);
+  static PatchGroupRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get aclID => $_getSZ(0);
+  $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set aclID($core.String v) { $_setString(0, v); }
+  set name($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasAclID() => $_has(0);
+  $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAclID() => clearField(1);
+  void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.List<$fixnum.Int64> get machineIds => $_getList(1);
-
-  @$pb.TagNumber(3)
-  $core.List<$core.String> get fleetIds => $_getList(2);
 }
 
 class GetDevicesRequest extends $pb.GeneratedMessage {
@@ -1408,56 +1204,6 @@ class GenerateTokenResponse extends $pb.GeneratedMessage {
   void clearToken() => clearField(1);
 }
 
-class PatchResourceRequest extends $pb.GeneratedMessage {
-  factory PatchResourceRequest({
-    $core.String? name,
-  }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    return $result;
-  }
-  PatchResourceRequest._() : super();
-  factory PatchResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PatchResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  PatchResourceRequest clone() => PatchResourceRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  PatchResourceRequest copyWith(void Function(PatchResourceRequest) updates) => super.copyWith((message) => updates(message as PatchResourceRequest)) as PatchResourceRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static PatchResourceRequest create() => PatchResourceRequest._();
-  PatchResourceRequest createEmptyInstance() => create();
-  static $pb.PbList<PatchResourceRequest> createRepeated() => $pb.PbList<PatchResourceRequest>();
-  @$core.pragma('dart2js:noInline')
-  static PatchResourceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchResourceRequest>(create);
-  static PatchResourceRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearName() => clearField(1);
-}
-
 class GetResourceRequest extends $pb.GeneratedMessage {
   factory GetResourceRequest({
     $fixnum.Int64? id,
@@ -1552,137 +1298,11 @@ class Resources extends $pb.GeneratedMessage {
   $core.List<Resource> get resources => $_getList(0);
 }
 
-class AddNewSrcsForResourceRequest extends $pb.GeneratedMessage {
-  factory AddNewSrcsForResourceRequest({
-    $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? machineIds,
-    $core.Iterable<$core.String>? groupIds,
-  }) {
-    final $result = create();
-    if (aclID != null) {
-      $result.aclID = aclID;
-    }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
-    }
-    if (groupIds != null) {
-      $result.groupIds.addAll(groupIds);
-    }
-    return $result;
-  }
-  AddNewSrcsForResourceRequest._() : super();
-  factory AddNewSrcsForResourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddNewSrcsForResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewSrcsForResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..pPS(3, _omitFieldNames ? '' : 'groupIds', protoName: 'groupIds')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AddNewSrcsForResourceRequest clone() => AddNewSrcsForResourceRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AddNewSrcsForResourceRequest copyWith(void Function(AddNewSrcsForResourceRequest) updates) => super.copyWith((message) => updates(message as AddNewSrcsForResourceRequest)) as AddNewSrcsForResourceRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AddNewSrcsForResourceRequest create() => AddNewSrcsForResourceRequest._();
-  AddNewSrcsForResourceRequest createEmptyInstance() => create();
-  static $pb.PbList<AddNewSrcsForResourceRequest> createRepeated() => $pb.PbList<AddNewSrcsForResourceRequest>();
-  @$core.pragma('dart2js:noInline')
-  static AddNewSrcsForResourceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddNewSrcsForResourceRequest>(create);
-  static AddNewSrcsForResourceRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get aclID => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set aclID($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAclID() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAclID() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
-
-  @$pb.TagNumber(3)
-  $core.List<$core.String> get groupIds => $_getList(2);
-}
-
-class AddFleetsRequest extends $pb.GeneratedMessage {
-  factory AddFleetsRequest({
-    $core.String? aclID,
-    $core.Iterable<$core.String>? fleetIds,
-  }) {
-    final $result = create();
-    if (aclID != null) {
-      $result.aclID = aclID;
-    }
-    if (fleetIds != null) {
-      $result.fleetIds.addAll(fleetIds);
-    }
-    return $result;
-  }
-  AddFleetsRequest._() : super();
-  factory AddFleetsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddFleetsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddFleetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..pPS(2, _omitFieldNames ? '' : 'fleetIds', protoName: 'fleetIds')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  AddFleetsRequest clone() => AddFleetsRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  AddFleetsRequest copyWith(void Function(AddFleetsRequest) updates) => super.copyWith((message) => updates(message as AddFleetsRequest)) as AddFleetsRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static AddFleetsRequest create() => AddFleetsRequest._();
-  AddFleetsRequest createEmptyInstance() => create();
-  static $pb.PbList<AddFleetsRequest> createRepeated() => $pb.PbList<AddFleetsRequest>();
-  @$core.pragma('dart2js:noInline')
-  static AddFleetsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddFleetsRequest>(create);
-  static AddFleetsRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get aclID => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set aclID($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAclID() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAclID() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.List<$core.String> get fleetIds => $_getList(1);
-}
-
 class CreateFleetRequest extends $pb.GeneratedMessage {
   factory CreateFleetRequest({
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
-    $core.String? proto,
-    $core.String? port,
     DeploymentMethod? type,
   }) {
     final $result = create();
@@ -1694,12 +1314,6 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     }
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
-    }
-    if (proto != null) {
-      $result.proto = proto;
-    }
-    if (port != null) {
-      $result.port = port;
     }
     if (type != null) {
       $result.type = type;
@@ -1714,9 +1328,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..aOS(4, _omitFieldNames ? '' : 'proto')
-    ..aOS(5, _omitFieldNames ? '' : 'port')
-    ..e<DeploymentMethod>(6, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..e<DeploymentMethod>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..hasRequiredFields = false
   ;
 
@@ -1763,145 +1375,13 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get machineIds => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.String get proto => $_getSZ(3);
+  DeploymentMethod get type => $_getN(3);
   @$pb.TagNumber(4)
-  set proto($core.String v) { $_setString(3, v); }
+  set type(DeploymentMethod v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasProto() => $_has(3);
+  $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
-  void clearProto() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get port => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set port($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasPort() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearPort() => clearField(5);
-
-  @$pb.TagNumber(6)
-  DeploymentMethod get type => $_getN(5);
-  @$pb.TagNumber(6)
-  set type(DeploymentMethod v) { setField(6, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasType() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearType() => clearField(6);
-}
-
-class PatchFleetRequest extends $pb.GeneratedMessage {
-  factory PatchFleetRequest({
-    $core.String? aclID,
-    $core.String? name,
-    $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? machineIds,
-    $core.String? proto,
-    $core.String? port,
-  }) {
-    final $result = create();
-    if (aclID != null) {
-      $result.aclID = aclID;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (desc != null) {
-      $result.desc = desc;
-    }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
-    }
-    if (proto != null) {
-      $result.proto = proto;
-    }
-    if (port != null) {
-      $result.port = port;
-    }
-    return $result;
-  }
-  PatchFleetRequest._() : super();
-  factory PatchFleetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PatchFleetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..aOS(5, _omitFieldNames ? '' : 'proto')
-    ..aOS(6, _omitFieldNames ? '' : 'port')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  PatchFleetRequest clone() => PatchFleetRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  PatchFleetRequest copyWith(void Function(PatchFleetRequest) updates) => super.copyWith((message) => updates(message as PatchFleetRequest)) as PatchFleetRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static PatchFleetRequest create() => PatchFleetRequest._();
-  PatchFleetRequest createEmptyInstance() => create();
-  static $pb.PbList<PatchFleetRequest> createRepeated() => $pb.PbList<PatchFleetRequest>();
-  @$core.pragma('dart2js:noInline')
-  static PatchFleetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchFleetRequest>(create);
-  static PatchFleetRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get aclID => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set aclID($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAclID() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAclID() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearName() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get desc => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set desc($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasDesc() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(3);
-
-  @$pb.TagNumber(5)
-  $core.String get proto => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set proto($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasProto() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearProto() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get port => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set port($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasPort() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearPort() => clearField(6);
+  void clearType() => clearField(4);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -1998,32 +1478,37 @@ class Fleets extends $pb.GeneratedMessage {
   $core.List<Fleet> get fleets => $_getList(0);
 }
 
-class AddNewSrcsForFleetRequest extends $pb.GeneratedMessage {
-  factory AddNewSrcsForFleetRequest({
-    $core.String? aclID,
+class PatchFleetRequest extends $pb.GeneratedMessage {
+  factory PatchFleetRequest({
+    $core.String? name,
+    $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
-    $core.Iterable<$core.String>? groupIds,
+    DeploymentMethod? type,
   }) {
     final $result = create();
-    if (aclID != null) {
-      $result.aclID = aclID;
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
     }
-    if (groupIds != null) {
-      $result.groupIds.addAll(groupIds);
+    if (type != null) {
+      $result.type = type;
     }
     return $result;
   }
-  AddNewSrcsForFleetRequest._() : super();
-  factory AddNewSrcsForFleetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddNewSrcsForFleetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PatchFleetRequest._() : super();
+  factory PatchFleetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PatchFleetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewSrcsForFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..pPS(3, _omitFieldNames ? '' : 'groupIds', protoName: 'groupIds')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..e<DeploymentMethod>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..hasRequiredFields = false
   ;
 
@@ -2031,37 +1516,52 @@ class AddNewSrcsForFleetRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  AddNewSrcsForFleetRequest clone() => AddNewSrcsForFleetRequest()..mergeFromMessage(this);
+  PatchFleetRequest clone() => PatchFleetRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AddNewSrcsForFleetRequest copyWith(void Function(AddNewSrcsForFleetRequest) updates) => super.copyWith((message) => updates(message as AddNewSrcsForFleetRequest)) as AddNewSrcsForFleetRequest;
+  PatchFleetRequest copyWith(void Function(PatchFleetRequest) updates) => super.copyWith((message) => updates(message as PatchFleetRequest)) as PatchFleetRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static AddNewSrcsForFleetRequest create() => AddNewSrcsForFleetRequest._();
-  AddNewSrcsForFleetRequest createEmptyInstance() => create();
-  static $pb.PbList<AddNewSrcsForFleetRequest> createRepeated() => $pb.PbList<AddNewSrcsForFleetRequest>();
+  static PatchFleetRequest create() => PatchFleetRequest._();
+  PatchFleetRequest createEmptyInstance() => create();
+  static $pb.PbList<PatchFleetRequest> createRepeated() => $pb.PbList<PatchFleetRequest>();
   @$core.pragma('dart2js:noInline')
-  static AddNewSrcsForFleetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddNewSrcsForFleetRequest>(create);
-  static AddNewSrcsForFleetRequest? _defaultInstance;
+  static PatchFleetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchFleetRequest>(create);
+  static PatchFleetRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get aclID => $_getSZ(0);
+  $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set aclID($core.String v) { $_setString(0, v); }
+  set name($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasAclID() => $_has(0);
+  $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAclID() => clearField(1);
+  void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
+  $core.String get desc => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set desc($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDesc() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get groupIds => $_getList(2);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
+
+  @$pb.TagNumber(4)
+  DeploymentMethod get type => $_getN(3);
+  @$pb.TagNumber(4)
+  set type(DeploymentMethod v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearType() => clearField(4);
 }
 
 class Fleet extends $pb.GeneratedMessage {
@@ -2208,6 +1708,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.Iterable<Fleet>? fleets,
     $core.Iterable<User>? users,
     $core.Iterable<Group>? groups,
+    $core.Iterable<Resource>? resources,
   }) {
     final $result = create();
     if (machineId != null) {
@@ -2246,6 +1747,9 @@ class Resource extends $pb.GeneratedMessage {
     if (groups != null) {
       $result.groups.addAll(groups);
     }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
     return $result;
   }
   Resource._() : super();
@@ -2265,6 +1769,7 @@ class Resource extends $pb.GeneratedMessage {
     ..pc<Fleet>(10, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
     ..pc<User>(11, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..pc<Group>(12, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..pc<Resource>(13, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
     ..hasRequiredFields = false
   ;
 
@@ -2378,6 +1883,9 @@ class Resource extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(12)
   $core.List<Group> get groups => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $core.List<Resource> get resources => $_getList(12);
 }
 
 class Group extends $pb.GeneratedMessage {
@@ -2388,6 +1896,7 @@ class Group extends $pb.GeneratedMessage {
     $core.Iterable<Fleet>? fleets,
     $core.Iterable<Resource>? resources,
     $core.String? age,
+    GroupType? type,
   }) {
     final $result = create();
     if (id != null) {
@@ -2408,6 +1917,9 @@ class Group extends $pb.GeneratedMessage {
     if (age != null) {
       $result.age = age;
     }
+    if (type != null) {
+      $result.type = type;
+    }
     return $result;
   }
   Group._() : super();
@@ -2421,6 +1933,7 @@ class Group extends $pb.GeneratedMessage {
     ..pc<Fleet>(4, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
     ..pc<Resource>(5, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
     ..aOS(6, _omitFieldNames ? '' : 'age')
+    ..e<GroupType>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: GroupType.Default, valueOf: GroupType.valueOf, enumValues: GroupType.values)
     ..hasRequiredFields = false
   ;
 
@@ -2480,6 +1993,15 @@ class Group extends $pb.GeneratedMessage {
   $core.bool hasAge() => $_has(5);
   @$pb.TagNumber(6)
   void clearAge() => clearField(6);
+
+  @$pb.TagNumber(7)
+  GroupType get type => $_getN(6);
+  @$pb.TagNumber(7)
+  set type(GroupType v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearType() => clearField(7);
 }
 
 class User extends $pb.GeneratedMessage {
@@ -2679,6 +2201,7 @@ class Device extends $pb.GeneratedMessage {
     $core.Iterable<Fleet>? fleets,
     $core.Iterable<Resource>? resources,
     $core.Iterable<Group>? groups,
+    $core.Iterable<Device>? devices,
   }) {
     final $result = create();
     if (machineId != null) {
@@ -2726,6 +2249,9 @@ class Device extends $pb.GeneratedMessage {
     if (groups != null) {
       $result.groups.addAll(groups);
     }
+    if (devices != null) {
+      $result.devices.addAll(devices);
+    }
     return $result;
   }
   Device._() : super();
@@ -2748,6 +2274,7 @@ class Device extends $pb.GeneratedMessage {
     ..pc<Fleet>(13, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
     ..pc<Resource>(14, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
     ..pc<Group>(15, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..pc<Device>(16, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
     ..hasRequiredFields = false
   ;
 
@@ -2888,6 +2415,9 @@ class Device extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(15)
   $core.List<Group> get groups => $_getList(14);
+
+  @$pb.TagNumber(16)
+  $core.List<Device> get devices => $_getList(15);
 }
 
 

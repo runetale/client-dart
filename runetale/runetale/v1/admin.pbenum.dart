@@ -42,5 +42,20 @@ class DeploymentMethod extends $pb.ProtobufEnum {
   const DeploymentMethod._($core.int v, $core.String n) : super(v, n);
 }
 
+class GroupType extends $pb.ProtobufEnum {
+  static const GroupType Default = GroupType._(0, _omitEnumNames ? '' : 'Default');
+  static const GroupType Custom = GroupType._(1, _omitEnumNames ? '' : 'Custom');
+
+  static const $core.List<GroupType> values = <GroupType> [
+    Default,
+    Custom,
+  ];
+
+  static final $core.Map<$core.int, GroupType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static GroupType? valueOf($core.int value) => _byValue[value];
+
+  const GroupType._($core.int v, $core.String n) : super(v, n);
+}
+
 
 const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
