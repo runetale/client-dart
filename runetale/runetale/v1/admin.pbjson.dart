@@ -163,43 +163,43 @@ const AddNewDstsForUserRequest$json = {
   '1': 'AddNewDstsForUserRequest',
   '2': [
     {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
-    {'1': 'resourceIds', '3': 2, '4': 3, '5': 4, '10': 'resourceIds'},
-    {'1': 'fleetIds', '3': 3, '4': 3, '5': 4, '10': 'fleetIds'},
+    {'1': 'machineIds', '3': 2, '4': 3, '5': 4, '10': 'machineIds'},
+    {'1': 'fleetIds', '3': 3, '4': 3, '5': 9, '10': 'fleetIds'},
   ],
 };
 
 /// Descriptor for `AddNewDstsForUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addNewDstsForUserRequestDescriptor = $convert.base64Decode(
-    'ChhBZGROZXdEc3RzRm9yVXNlclJlcXVlc3QSFAoFYWNsSUQYASABKAlSBWFjbElEEiAKC3Jlc2'
-    '91cmNlSWRzGAIgAygEUgtyZXNvdXJjZUlkcxIaCghmbGVldElkcxgDIAMoBFIIZmxlZXRJZHM=');
+    'ChhBZGROZXdEc3RzRm9yVXNlclJlcXVlc3QSFAoFYWNsSUQYASABKAlSBWFjbElEEh4KCm1hY2'
+    'hpbmVJZHMYAiADKARSCm1hY2hpbmVJZHMSGgoIZmxlZXRJZHMYAyADKAlSCGZsZWV0SWRz');
 
 @$core.Deprecated('Use addGroupsRequestDescriptor instead')
 const AddGroupsRequest$json = {
   '1': 'AddGroupsRequest',
   '2': [
     {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
-    {'1': 'userIds', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
+    {'1': 'machineIds', '3': 2, '4': 3, '5': 4, '10': 'machineIds'},
   ],
 };
 
 /// Descriptor for `AddGroupsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addGroupsRequestDescriptor = $convert.base64Decode(
-    'ChBBZGRHcm91cHNSZXF1ZXN0EhQKBWFjbElEGAEgASgJUgVhY2xJRBIYCgd1c2VySWRzGAIgAy'
-    'gEUgd1c2VySWRz');
+    'ChBBZGRHcm91cHNSZXF1ZXN0EhQKBWFjbElEGAEgASgJUgVhY2xJRBIeCgptYWNoaW5lSWRzGA'
+    'IgAygEUgptYWNoaW5lSWRz');
 
 @$core.Deprecated('Use createGroupRequestDescriptor instead')
 const CreateGroupRequest$json = {
   '1': 'CreateGroupRequest',
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'user_ids', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
+    {'1': 'machineIds', '3': 2, '4': 3, '5': 4, '10': 'machineIds'},
   ],
 };
 
 /// Descriptor for `CreateGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createGroupRequestDescriptor = $convert.base64Decode(
-    'ChJDcmVhdGVHcm91cFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIZCgh1c2VyX2lkcxgCIA'
-    'MoBFIHdXNlcklkcw==');
+    'ChJDcmVhdGVHcm91cFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRIeCgptYWNoaW5lSWRzGA'
+    'IgAygEUgptYWNoaW5lSWRz');
 
 @$core.Deprecated('Use patchGroupRequestDescriptor instead')
 const PatchGroupRequest$json = {
@@ -207,14 +207,14 @@ const PatchGroupRequest$json = {
   '2': [
     {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'user_ids', '3': 3, '4': 3, '5': 4, '10': 'userIds'},
+    {'1': 'machineIds', '3': 3, '4': 3, '5': 4, '10': 'machineIds'},
   ],
 };
 
 /// Descriptor for `PatchGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchGroupRequestDescriptor = $convert.base64Decode(
     'ChFQYXRjaEdyb3VwUmVxdWVzdBIUCgVhY2xJRBgBIAEoCVIFYWNsSUQSEgoEbmFtZRgCIAEoCV'
-    'IEbmFtZRIZCgh1c2VyX2lkcxgDIAMoBFIHdXNlcklkcw==');
+    'IEbmFtZRIeCgptYWNoaW5lSWRzGAMgAygEUgptYWNoaW5lSWRz');
 
 @$core.Deprecated('Use getGroupRequestDescriptor instead')
 const GetGroupRequest$json = {
@@ -260,15 +260,15 @@ const AddNewDstForGroupRequest$json = {
   '1': 'AddNewDstForGroupRequest',
   '2': [
     {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
-    {'1': 'resourceIds', '3': 2, '4': 3, '5': 4, '10': 'resourceIds'},
-    {'1': 'fleetIds', '3': 3, '4': 3, '5': 4, '10': 'fleetIds'},
+    {'1': 'machineIds', '3': 2, '4': 3, '5': 4, '10': 'machineIds'},
+    {'1': 'fleetIds', '3': 3, '4': 3, '5': 9, '10': 'fleetIds'},
   ],
 };
 
 /// Descriptor for `AddNewDstForGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addNewDstForGroupRequestDescriptor = $convert.base64Decode(
-    'ChhBZGROZXdEc3RGb3JHcm91cFJlcXVlc3QSFAoFYWNsSUQYASABKAlSBWFjbElEEiAKC3Jlc2'
-    '91cmNlSWRzGAIgAygEUgtyZXNvdXJjZUlkcxIaCghmbGVldElkcxgDIAMoBFIIZmxlZXRJZHM=');
+    'ChhBZGROZXdEc3RGb3JHcm91cFJlcXVlc3QSFAoFYWNsSUQYASABKAlSBWFjbElEEh4KCm1hY2'
+    'hpbmVJZHMYAiADKARSCm1hY2hpbmVJZHMSGgoIZmxlZXRJZHMYAyADKAlSCGZsZWV0SWRz');
 
 @$core.Deprecated('Use getDevicesRequestDescriptor instead')
 const GetDevicesRequest$json = {
@@ -385,29 +385,30 @@ const AddNewSrcsForResourceRequest$json = {
   '1': 'AddNewSrcsForResourceRequest',
   '2': [
     {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
-    {'1': 'userIds', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
-    {'1': 'groupIds', '3': 3, '4': 3, '5': 4, '10': 'groupIds'},
+    {'1': 'machineIds', '3': 2, '4': 3, '5': 4, '10': 'machineIds'},
+    {'1': 'groupIds', '3': 3, '4': 3, '5': 9, '10': 'groupIds'},
   ],
 };
 
 /// Descriptor for `AddNewSrcsForResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addNewSrcsForResourceRequestDescriptor = $convert.base64Decode(
-    'ChxBZGROZXdTcmNzRm9yUmVzb3VyY2VSZXF1ZXN0EhQKBWFjbElEGAEgASgJUgVhY2xJRBIYCg'
-    'd1c2VySWRzGAIgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElkcw==');
+    'ChxBZGROZXdTcmNzRm9yUmVzb3VyY2VSZXF1ZXN0EhQKBWFjbElEGAEgASgJUgVhY2xJRBIeCg'
+    'ptYWNoaW5lSWRzGAIgAygEUgptYWNoaW5lSWRzEhoKCGdyb3VwSWRzGAMgAygJUghncm91cElk'
+    'cw==');
 
 @$core.Deprecated('Use addFleetsRequestDescriptor instead')
 const AddFleetsRequest$json = {
   '1': 'AddFleetsRequest',
   '2': [
     {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
-    {'1': 'fleetIds', '3': 2, '4': 3, '5': 4, '10': 'fleetIds'},
+    {'1': 'fleetIds', '3': 2, '4': 3, '5': 9, '10': 'fleetIds'},
   ],
 };
 
 /// Descriptor for `AddFleetsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addFleetsRequestDescriptor = $convert.base64Decode(
     'ChBBZGRGbGVldHNSZXF1ZXN0EhQKBWFjbElEGAEgASgJUgVhY2xJRBIaCghmbGVldElkcxgCIA'
-    'MoBFIIZmxlZXRJZHM=');
+    'MoCVIIZmxlZXRJZHM=');
 
 @$core.Deprecated('Use createFleetRequestDescriptor instead')
 const CreateFleetRequest$json = {
@@ -415,7 +416,7 @@ const CreateFleetRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'resourceIds', '3': 3, '4': 3, '5': 4, '10': 'resourceIds'},
+    {'1': 'machineIds', '3': 3, '4': 3, '5': 4, '10': 'machineIds'},
     {'1': 'proto', '3': 4, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 5, '4': 1, '5': 9, '10': 'port'},
     {'1': 'type', '3': 6, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'type'},
@@ -425,9 +426,9 @@ const CreateFleetRequest$json = {
 /// Descriptor for `CreateFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVGbGVldFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgASgJUg'
-    'RkZXNjEiAKC3Jlc291cmNlSWRzGAMgAygEUgtyZXNvdXJjZUlkcxIUCgVwcm90bxgEIAEoCVIF'
-    'cHJvdG8SEgoEcG9ydBgFIAEoCVIEcG9ydBIsCgR0eXBlGAYgASgOMhgucHJvdG9zLkRlcGxveW'
-    '1lbnRNZXRob2RSBHR5cGU=');
+    'RkZXNjEh4KCm1hY2hpbmVJZHMYAyADKARSCm1hY2hpbmVJZHMSFAoFcHJvdG8YBCABKAlSBXBy'
+    'b3RvEhIKBHBvcnQYBSABKAlSBHBvcnQSLAoEdHlwZRgGIAEoDjIYLnByb3Rvcy5EZXBsb3ltZW'
+    '50TWV0aG9kUgR0eXBl');
 
 @$core.Deprecated('Use patchFleetRequestDescriptor instead')
 const PatchFleetRequest$json = {
@@ -436,7 +437,7 @@ const PatchFleetRequest$json = {
     {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'resourceIds', '3': 4, '4': 3, '5': 4, '10': 'resourceIds'},
+    {'1': 'machineIds', '3': 4, '4': 3, '5': 4, '10': 'machineIds'},
     {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
   ],
@@ -445,8 +446,8 @@ const PatchFleetRequest$json = {
 /// Descriptor for `PatchFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
     'ChFQYXRjaEZsZWV0UmVxdWVzdBIUCgVhY2xJRBgBIAEoCVIFYWNsSUQSEgoEbmFtZRgCIAEoCV'
-    'IEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEiAKC3Jlc291cmNlSWRzGAQgAygEUgtyZXNvdXJj'
-    'ZUlkcxIUCgVwcm90bxgFIAEoCVIFcHJvdG8SEgoEcG9ydBgGIAEoCVIEcG9ydA==');
+    'IEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEh4KCm1hY2hpbmVJZHMYBCADKARSCm1hY2hpbmVJ'
+    'ZHMSFAoFcHJvdG8YBSABKAlSBXByb3RvEhIKBHBvcnQYBiABKAlSBHBvcnQ=');
 
 @$core.Deprecated('Use getFleetRequestDescriptor instead')
 const GetFleetRequest$json = {
@@ -477,71 +478,72 @@ const AddNewSrcsForFleetRequest$json = {
   '1': 'AddNewSrcsForFleetRequest',
   '2': [
     {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
-    {'1': 'userIds', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
-    {'1': 'groupIds', '3': 3, '4': 3, '5': 4, '10': 'groupIds'},
+    {'1': 'machineIds', '3': 2, '4': 3, '5': 4, '10': 'machineIds'},
+    {'1': 'groupIds', '3': 3, '4': 3, '5': 9, '10': 'groupIds'},
   ],
 };
 
 /// Descriptor for `AddNewSrcsForFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addNewSrcsForFleetRequestDescriptor = $convert.base64Decode(
-    'ChlBZGROZXdTcmNzRm9yRmxlZXRSZXF1ZXN0EhQKBWFjbElEGAEgASgJUgVhY2xJRBIYCgd1c2'
-    'VySWRzGAIgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElkcw==');
+    'ChlBZGROZXdTcmNzRm9yRmxlZXRSZXF1ZXN0EhQKBWFjbElEGAEgASgJUgVhY2xJRBIeCgptYW'
+    'NoaW5lSWRzGAIgAygEUgptYWNoaW5lSWRzEhoKCGdyb3VwSWRzGAMgAygJUghncm91cElkcw==');
 
 @$core.Deprecated('Use fleetDescriptor instead')
 const Fleet$json = {
   '1': 'Fleet',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'proto', '3': 4, '4': 1, '5': 9, '10': 'proto'},
-    {'1': 'port', '3': 5, '4': 1, '5': 9, '10': 'port'},
-    {'1': 'domain', '3': 6, '4': 1, '5': 9, '10': 'domain'},
-    {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'resources', '3': 8, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
-    {'1': 'users', '3': 9, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
-    {'1': 'groups', '3': 10, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
+    {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
+    {'1': 'age', '3': 5, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'resources', '3': 6, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'users', '3': 7, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
+    {'1': 'groups', '3': 8, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
   ],
 };
 
 /// Descriptor for `Fleet`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fleetDescriptor = $convert.base64Decode(
-    'CgVGbGVldBIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgAS'
-    'gJUgRkZXNjEhQKBXByb3RvGAQgASgJUgVwcm90bxISCgRwb3J0GAUgASgJUgRwb3J0EhYKBmRv'
-    'bWFpbhgGIAEoCVIGZG9tYWluEhAKA2FnZRgHIAEoCVIDYWdlEi4KCXJlc291cmNlcxgIIAMoCz'
-    'IQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2VzEiIKBXVzZXJzGAkgAygLMgwucHJvdG9zLlVz'
-    'ZXJSBXVzZXJzEiUKBmdyb3VwcxgKIAMoCzINLnByb3Rvcy5Hcm91cFIGZ3JvdXBz');
+    'CgVGbGVldBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgAS'
+    'gJUgRkZXNjEhYKBmRvbWFpbhgEIAEoCVIGZG9tYWluEhAKA2FnZRgFIAEoCVIDYWdlEi4KCXJl'
+    'c291cmNlcxgGIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2VzEiIKBXVzZXJzGAcgAy'
+    'gLMgwucHJvdG9zLlVzZXJSBXVzZXJzEiUKBmdyb3VwcxgIIAMoCzINLnByb3Rvcy5Hcm91cFIG'
+    'Z3JvdXBz');
 
 @$core.Deprecated('Use resourceDescriptor instead')
 const Resource$json = {
   '1': 'Resource',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'machineId', '3': 1, '4': 1, '5': 4, '10': 'machineId'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'ip', '3': 3, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'os', '3': 4, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'status', '3': 5, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'lastSeen', '3': 6, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'createdBy', '3': 7, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'fleets', '3': 8, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
-    {'1': 'users', '3': 9, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
-    {'1': 'groups', '3': 10, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
+    {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
+    {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
+    {'1': 'status', '3': 7, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'lastSeen', '3': 8, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'fleets', '3': 10, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
+    {'1': 'users', '3': 11, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
+    {'1': 'groups', '3': 12, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
   ],
 };
 
 /// Descriptor for `Resource`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
-    'CghSZXNvdXJjZRIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIOCgJpcBgDIA'
-    'EoCVICaXASDgoCb3MYBCABKAlSAm9zEhYKBnN0YXR1cxgFIAEoCFIGc3RhdHVzEhoKCGxhc3RT'
-    'ZWVuGAYgASgJUghsYXN0U2VlbhIcCgljcmVhdGVkQnkYByABKAlSCWNyZWF0ZWRCeRIlCgZmbG'
-    'VldHMYCCADKAsyDS5wcm90b3MuRmxlZXRSBmZsZWV0cxIiCgV1c2VycxgJIAMoCzIMLnByb3Rv'
-    'cy5Vc2VyUgV1c2VycxIlCgZncm91cHMYCiADKAsyDS5wcm90b3MuR3JvdXBSBmdyb3Vwcw==');
+    'CghSZXNvdXJjZRIcCgltYWNoaW5lSWQYASABKARSCW1hY2hpbmVJZBISCgRuYW1lGAIgASgJUg'
+    'RuYW1lEg4KAmlwGAMgASgJUgJpcBIOCgJvcxgEIAEoCVICb3MSFAoFcHJvdG8YBSABKAlSBXBy'
+    'b3RvEhIKBHBvcnQYBiABKAlSBHBvcnQSFgoGc3RhdHVzGAcgASgIUgZzdGF0dXMSGgoIbGFzdF'
+    'NlZW4YCCABKAlSCGxhc3RTZWVuEhwKCWNyZWF0ZWRCeRgJIAEoCVIJY3JlYXRlZEJ5EiUKBmZs'
+    'ZWV0cxgKIAMoCzINLnByb3Rvcy5GbGVldFIGZmxlZXRzEiIKBXVzZXJzGAsgAygLMgwucHJvdG'
+    '9zLlVzZXJSBXVzZXJzEiUKBmdyb3VwcxgMIAMoCzINLnByb3Rvcy5Hcm91cFIGZ3JvdXBz');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
   '1': 'Group',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'users', '3': 3, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
     {'1': 'fleets', '3': 4, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
@@ -552,7 +554,7 @@ const Group$json = {
 
 /// Descriptor for `Group`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List groupDescriptor = $convert.base64Decode(
-    'CgVHcm91cBIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIiCgV1c2VycxgDIA'
+    'CgVHcm91cBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIiCgV1c2VycxgDIA'
     'MoCzIMLnByb3Rvcy5Vc2VyUgV1c2VycxIlCgZmbGVldHMYBCADKAsyDS5wcm90b3MuRmxlZXRS'
     'BmZsZWV0cxIuCglyZXNvdXJjZXMYBSADKAsyEC5wcm90b3MuUmVzb3VyY2VSCXJlc291cmNlcx'
     'IQCgNhZ2UYBiABKAlSA2FnZQ==');
@@ -590,7 +592,7 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
 const Device$json = {
   '1': 'Device',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'machineId', '3': 1, '4': 1, '5': 4, '10': 'machineId'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
     {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
@@ -610,12 +612,12 @@ const Device$json = {
 
 /// Descriptor for `Device`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceDescriptor = $convert.base64Decode(
-    'CgZEZXZpY2USDgoCaWQYASABKARSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSFAoFZW1haWwYAy'
-    'ABKAlSBWVtYWlsEg4KAmlwGAQgASgJUgJpcBIOCgJvcxgFIAEoCVICb3MSFgoGc3RhdHVzGAYg'
-    'ASgIUgZzdGF0dXMSGgoIbGFzdFNlZW4YByABKAlSCGxhc3RTZWVuEhwKCWNyZWF0ZWRCeRgIIA'
-    'EoCVIJY3JlYXRlZEJ5EhgKB3ZlcnNpb24YCSABKAlSB3ZlcnNpb24SGAoHbm9kZUtleRgKIAEo'
-    'CVIHbm9kZUtleRIcCgljcmVhdGVkQXQYCyABKAlSCWNyZWF0ZWRBdBIcCglrZXlFeHBpcnkYDC'
-    'ABKAlSCWtleUV4cGlyeRIlCgZmbGVldHMYDSADKAsyDS5wcm90b3MuRmxlZXRSBmZsZWV0cxIu'
-    'CglyZXNvdXJjZXMYDiADKAsyEC5wcm90b3MuUmVzb3VyY2VSCXJlc291cmNlcxIlCgZncm91cH'
-    'MYDyADKAsyDS5wcm90b3MuR3JvdXBSBmdyb3Vwcw==');
+    'CgZEZXZpY2USHAoJbWFjaGluZUlkGAEgASgEUgltYWNoaW5lSWQSEgoEbmFtZRgCIAEoCVIEbm'
+    'FtZRIUCgVlbWFpbBgDIAEoCVIFZW1haWwSDgoCaXAYBCABKAlSAmlwEg4KAm9zGAUgASgJUgJv'
+    'cxIWCgZzdGF0dXMYBiABKAhSBnN0YXR1cxIaCghsYXN0U2VlbhgHIAEoCVIIbGFzdFNlZW4SHA'
+    'oJY3JlYXRlZEJ5GAggASgJUgljcmVhdGVkQnkSGAoHdmVyc2lvbhgJIAEoCVIHdmVyc2lvbhIY'
+    'Cgdub2RlS2V5GAogASgJUgdub2RlS2V5EhwKCWNyZWF0ZWRBdBgLIAEoCVIJY3JlYXRlZEF0Eh'
+    'wKCWtleUV4cGlyeRgMIAEoCVIJa2V5RXhwaXJ5EiUKBmZsZWV0cxgNIAMoCzINLnByb3Rvcy5G'
+    'bGVldFIGZmxlZXRzEi4KCXJlc291cmNlcxgOIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3'
+    'VyY2VzEiUKBmdyb3VwcxgPIAMoCzINLnByb3Rvcy5Hcm91cFIGZ3JvdXBz');
 

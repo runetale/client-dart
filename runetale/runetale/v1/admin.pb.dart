@@ -625,15 +625,15 @@ class Users extends $pb.GeneratedMessage {
 class AddNewDstsForUserRequest extends $pb.GeneratedMessage {
   factory AddNewDstsForUserRequest({
     $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? resourceIds,
-    $core.Iterable<$fixnum.Int64>? fleetIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$core.String>? fleetIds,
   }) {
     final $result = create();
     if (aclID != null) {
       $result.aclID = aclID;
     }
-    if (resourceIds != null) {
-      $result.resourceIds.addAll(resourceIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     if (fleetIds != null) {
       $result.fleetIds.addAll(fleetIds);
@@ -646,8 +646,8 @@ class AddNewDstsForUserRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewDstsForUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'fleetIds', $pb.PbFieldType.KU6, protoName: 'fleetIds')
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..pPS(3, _omitFieldNames ? '' : 'fleetIds', protoName: 'fleetIds')
     ..hasRequiredFields = false
   ;
 
@@ -682,23 +682,23 @@ class AddNewDstsForUserRequest extends $pb.GeneratedMessage {
   void clearAclID() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get resourceIds => $_getList(1);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get fleetIds => $_getList(2);
+  $core.List<$core.String> get fleetIds => $_getList(2);
 }
 
 class AddGroupsRequest extends $pb.GeneratedMessage {
   factory AddGroupsRequest({
     $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? userIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
   }) {
     final $result = create();
     if (aclID != null) {
       $result.aclID = aclID;
     }
-    if (userIds != null) {
-      $result.userIds.addAll(userIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     return $result;
   }
@@ -708,7 +708,7 @@ class AddGroupsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddGroupsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'userIds', $pb.PbFieldType.KU6, protoName: 'userIds')
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..hasRequiredFields = false
   ;
 
@@ -743,20 +743,20 @@ class AddGroupsRequest extends $pb.GeneratedMessage {
   void clearAclID() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get userIds => $_getList(1);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
 }
 
 class CreateGroupRequest extends $pb.GeneratedMessage {
   factory CreateGroupRequest({
     $core.String? name,
-    $core.Iterable<$fixnum.Int64>? userIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
     }
-    if (userIds != null) {
-      $result.userIds.addAll(userIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     return $result;
   }
@@ -766,7 +766,7 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'userIds', $pb.PbFieldType.KU6)
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..hasRequiredFields = false
   ;
 
@@ -801,14 +801,14 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get userIds => $_getList(1);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
 }
 
 class PatchGroupRequest extends $pb.GeneratedMessage {
   factory PatchGroupRequest({
     $core.String? aclID,
     $core.String? name,
-    $core.Iterable<$fixnum.Int64>? userIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
   }) {
     final $result = create();
     if (aclID != null) {
@@ -817,8 +817,8 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
     if (name != null) {
       $result.name = name;
     }
-    if (userIds != null) {
-      $result.userIds.addAll(userIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     return $result;
   }
@@ -829,7 +829,7 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'userIds', $pb.PbFieldType.KU6)
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..hasRequiredFields = false
   ;
 
@@ -873,7 +873,7 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get userIds => $_getList(2);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
 }
 
 class GetGroupRequest extends $pb.GeneratedMessage {
@@ -1051,15 +1051,15 @@ class UserWithPicture extends $pb.GeneratedMessage {
 class AddNewDstForGroupRequest extends $pb.GeneratedMessage {
   factory AddNewDstForGroupRequest({
     $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? resourceIds,
-    $core.Iterable<$fixnum.Int64>? fleetIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$core.String>? fleetIds,
   }) {
     final $result = create();
     if (aclID != null) {
       $result.aclID = aclID;
     }
-    if (resourceIds != null) {
-      $result.resourceIds.addAll(resourceIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     if (fleetIds != null) {
       $result.fleetIds.addAll(fleetIds);
@@ -1072,8 +1072,8 @@ class AddNewDstForGroupRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewDstForGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'fleetIds', $pb.PbFieldType.KU6, protoName: 'fleetIds')
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..pPS(3, _omitFieldNames ? '' : 'fleetIds', protoName: 'fleetIds')
     ..hasRequiredFields = false
   ;
 
@@ -1108,10 +1108,10 @@ class AddNewDstForGroupRequest extends $pb.GeneratedMessage {
   void clearAclID() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get resourceIds => $_getList(1);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get fleetIds => $_getList(2);
+  $core.List<$core.String> get fleetIds => $_getList(2);
 }
 
 class GetDevicesRequest extends $pb.GeneratedMessage {
@@ -1555,15 +1555,15 @@ class Resources extends $pb.GeneratedMessage {
 class AddNewSrcsForResourceRequest extends $pb.GeneratedMessage {
   factory AddNewSrcsForResourceRequest({
     $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? userIds,
-    $core.Iterable<$fixnum.Int64>? groupIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$core.String>? groupIds,
   }) {
     final $result = create();
     if (aclID != null) {
       $result.aclID = aclID;
     }
-    if (userIds != null) {
-      $result.userIds.addAll(userIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     if (groupIds != null) {
       $result.groupIds.addAll(groupIds);
@@ -1576,8 +1576,8 @@ class AddNewSrcsForResourceRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewSrcsForResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'userIds', $pb.PbFieldType.KU6, protoName: 'userIds')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'groupIds', $pb.PbFieldType.KU6, protoName: 'groupIds')
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..pPS(3, _omitFieldNames ? '' : 'groupIds', protoName: 'groupIds')
     ..hasRequiredFields = false
   ;
 
@@ -1612,16 +1612,16 @@ class AddNewSrcsForResourceRequest extends $pb.GeneratedMessage {
   void clearAclID() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get userIds => $_getList(1);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get groupIds => $_getList(2);
+  $core.List<$core.String> get groupIds => $_getList(2);
 }
 
 class AddFleetsRequest extends $pb.GeneratedMessage {
   factory AddFleetsRequest({
     $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? fleetIds,
+    $core.Iterable<$core.String>? fleetIds,
   }) {
     final $result = create();
     if (aclID != null) {
@@ -1638,7 +1638,7 @@ class AddFleetsRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddFleetsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'fleetIds', $pb.PbFieldType.KU6, protoName: 'fleetIds')
+    ..pPS(2, _omitFieldNames ? '' : 'fleetIds', protoName: 'fleetIds')
     ..hasRequiredFields = false
   ;
 
@@ -1673,14 +1673,14 @@ class AddFleetsRequest extends $pb.GeneratedMessage {
   void clearAclID() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get fleetIds => $_getList(1);
+  $core.List<$core.String> get fleetIds => $_getList(1);
 }
 
 class CreateFleetRequest extends $pb.GeneratedMessage {
   factory CreateFleetRequest({
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? resourceIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
     $core.String? proto,
     $core.String? port,
     DeploymentMethod? type,
@@ -1692,8 +1692,8 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (resourceIds != null) {
-      $result.resourceIds.addAll(resourceIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     if (proto != null) {
       $result.proto = proto;
@@ -1713,7 +1713,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..aOS(4, _omitFieldNames ? '' : 'proto')
     ..aOS(5, _omitFieldNames ? '' : 'port')
     ..e<DeploymentMethod>(6, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
@@ -1760,7 +1760,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get resourceIds => $_getList(2);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get proto => $_getSZ(3);
@@ -1795,7 +1795,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.String? aclID,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? resourceIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
     $core.String? proto,
     $core.String? port,
   }) {
@@ -1809,8 +1809,8 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (resourceIds != null) {
-      $result.resourceIds.addAll(resourceIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     if (proto != null) {
       $result.proto = proto;
@@ -1828,7 +1828,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'resourceIds', $pb.PbFieldType.KU6, protoName: 'resourceIds')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
@@ -1883,7 +1883,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get resourceIds => $_getList(3);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.String get proto => $_getSZ(4);
@@ -2001,15 +2001,15 @@ class Fleets extends $pb.GeneratedMessage {
 class AddNewSrcsForFleetRequest extends $pb.GeneratedMessage {
   factory AddNewSrcsForFleetRequest({
     $core.String? aclID,
-    $core.Iterable<$fixnum.Int64>? userIds,
-    $core.Iterable<$fixnum.Int64>? groupIds,
+    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$core.String>? groupIds,
   }) {
     final $result = create();
     if (aclID != null) {
       $result.aclID = aclID;
     }
-    if (userIds != null) {
-      $result.userIds.addAll(userIds);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
     }
     if (groupIds != null) {
       $result.groupIds.addAll(groupIds);
@@ -2022,8 +2022,8 @@ class AddNewSrcsForFleetRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddNewSrcsForFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'aclID', protoName: 'aclID')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'userIds', $pb.PbFieldType.KU6, protoName: 'userIds')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'groupIds', $pb.PbFieldType.KU6, protoName: 'groupIds')
+    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..pPS(3, _omitFieldNames ? '' : 'groupIds', protoName: 'groupIds')
     ..hasRequiredFields = false
   ;
 
@@ -2058,19 +2058,17 @@ class AddNewSrcsForFleetRequest extends $pb.GeneratedMessage {
   void clearAclID() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get userIds => $_getList(1);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get groupIds => $_getList(2);
+  $core.List<$core.String> get groupIds => $_getList(2);
 }
 
 class Fleet extends $pb.GeneratedMessage {
   factory Fleet({
-    $fixnum.Int64? id,
+    $core.String? id,
     $core.String? name,
     $core.String? desc,
-    $core.String? proto,
-    $core.String? port,
     $core.String? domain,
     $core.String? age,
     $core.Iterable<Resource>? resources,
@@ -2086,12 +2084,6 @@ class Fleet extends $pb.GeneratedMessage {
     }
     if (desc != null) {
       $result.desc = desc;
-    }
-    if (proto != null) {
-      $result.proto = proto;
-    }
-    if (port != null) {
-      $result.port = port;
     }
     if (domain != null) {
       $result.domain = domain;
@@ -2115,16 +2107,14 @@ class Fleet extends $pb.GeneratedMessage {
   factory Fleet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Fleet', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..aOS(4, _omitFieldNames ? '' : 'proto')
-    ..aOS(5, _omitFieldNames ? '' : 'port')
-    ..aOS(6, _omitFieldNames ? '' : 'domain')
-    ..aOS(7, _omitFieldNames ? '' : 'age')
-    ..pc<Resource>(8, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..pc<User>(9, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
-    ..pc<Group>(10, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..aOS(4, _omitFieldNames ? '' : 'domain')
+    ..aOS(5, _omitFieldNames ? '' : 'age')
+    ..pc<Resource>(6, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<User>(7, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..pc<Group>(8, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..hasRequiredFields = false
   ;
 
@@ -2150,9 +2140,9 @@ class Fleet extends $pb.GeneratedMessage {
   static Fleet? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -2177,57 +2167,41 @@ class Fleet extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get proto => $_getSZ(3);
+  $core.String get domain => $_getSZ(3);
   @$pb.TagNumber(4)
-  set proto($core.String v) { $_setString(3, v); }
+  set domain($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasProto() => $_has(3);
+  $core.bool hasDomain() => $_has(3);
   @$pb.TagNumber(4)
-  void clearProto() => clearField(4);
+  void clearDomain() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get port => $_getSZ(4);
+  $core.String get age => $_getSZ(4);
   @$pb.TagNumber(5)
-  set port($core.String v) { $_setString(4, v); }
+  set age($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPort() => $_has(4);
+  $core.bool hasAge() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPort() => clearField(5);
+  void clearAge() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get domain => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set domain($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasDomain() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearDomain() => clearField(6);
+  $core.List<Resource> get resources => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.String get age => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set age($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasAge() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearAge() => clearField(7);
+  $core.List<User> get users => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.List<Resource> get resources => $_getList(7);
-
-  @$pb.TagNumber(9)
-  $core.List<User> get users => $_getList(8);
-
-  @$pb.TagNumber(10)
-  $core.List<Group> get groups => $_getList(9);
+  $core.List<Group> get groups => $_getList(7);
 }
 
 class Resource extends $pb.GeneratedMessage {
   factory Resource({
-    $fixnum.Int64? id,
+    $fixnum.Int64? machineId,
     $core.String? name,
     $core.String? ip,
     $core.String? os,
+    $core.String? proto,
+    $core.String? port,
     $core.bool? status,
     $core.String? lastSeen,
     $core.String? createdBy,
@@ -2236,8 +2210,8 @@ class Resource extends $pb.GeneratedMessage {
     $core.Iterable<Group>? groups,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (machineId != null) {
+      $result.machineId = machineId;
     }
     if (name != null) {
       $result.name = name;
@@ -2247,6 +2221,12 @@ class Resource extends $pb.GeneratedMessage {
     }
     if (os != null) {
       $result.os = os;
+    }
+    if (proto != null) {
+      $result.proto = proto;
+    }
+    if (port != null) {
+      $result.port = port;
     }
     if (status != null) {
       $result.status = status;
@@ -2273,16 +2253,18 @@ class Resource extends $pb.GeneratedMessage {
   factory Resource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resource', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'ip')
     ..aOS(4, _omitFieldNames ? '' : 'os')
-    ..aOB(5, _omitFieldNames ? '' : 'status')
-    ..aOS(6, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOS(7, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
-    ..pc<Fleet>(8, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
-    ..pc<User>(9, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
-    ..pc<Group>(10, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..aOS(5, _omitFieldNames ? '' : 'proto')
+    ..aOS(6, _omitFieldNames ? '' : 'port')
+    ..aOB(7, _omitFieldNames ? '' : 'status')
+    ..aOS(8, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(9, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..pc<Fleet>(10, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<User>(11, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..pc<Group>(12, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..hasRequiredFields = false
   ;
 
@@ -2308,13 +2290,13 @@ class Resource extends $pb.GeneratedMessage {
   static Resource? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $fixnum.Int64 get machineId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set machineId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasMachineId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearMachineId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -2344,45 +2326,63 @@ class Resource extends $pb.GeneratedMessage {
   void clearOs() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get status => $_getBF(4);
+  $core.String get proto => $_getSZ(4);
   @$pb.TagNumber(5)
-  set status($core.bool v) { $_setBool(4, v); }
+  set proto($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasStatus() => $_has(4);
+  $core.bool hasProto() => $_has(4);
   @$pb.TagNumber(5)
-  void clearStatus() => clearField(5);
+  void clearProto() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get lastSeen => $_getSZ(5);
+  $core.String get port => $_getSZ(5);
   @$pb.TagNumber(6)
-  set lastSeen($core.String v) { $_setString(5, v); }
+  set port($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasLastSeen() => $_has(5);
+  $core.bool hasPort() => $_has(5);
   @$pb.TagNumber(6)
-  void clearLastSeen() => clearField(6);
+  void clearPort() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get createdBy => $_getSZ(6);
+  $core.bool get status => $_getBF(6);
   @$pb.TagNumber(7)
-  set createdBy($core.String v) { $_setString(6, v); }
+  set status($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasCreatedBy() => $_has(6);
+  $core.bool hasStatus() => $_has(6);
   @$pb.TagNumber(7)
-  void clearCreatedBy() => clearField(7);
+  void clearStatus() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<Fleet> get fleets => $_getList(7);
+  $core.String get lastSeen => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set lastSeen($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasLastSeen() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLastSeen() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<User> get users => $_getList(8);
+  $core.String get createdBy => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set createdBy($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasCreatedBy() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatedBy() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.List<Group> get groups => $_getList(9);
+  $core.List<Fleet> get fleets => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $core.List<User> get users => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.List<Group> get groups => $_getList(11);
 }
 
 class Group extends $pb.GeneratedMessage {
   factory Group({
-    $fixnum.Int64? id,
+    $core.String? id,
     $core.String? name,
     $core.Iterable<User>? users,
     $core.Iterable<Fleet>? fleets,
@@ -2415,7 +2415,7 @@ class Group extends $pb.GeneratedMessage {
   factory Group.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Group', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..pc<User>(3, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..pc<Fleet>(4, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
@@ -2446,9 +2446,9 @@ class Group extends $pb.GeneratedMessage {
   static Group? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -2664,7 +2664,7 @@ class User extends $pb.GeneratedMessage {
 
 class Device extends $pb.GeneratedMessage {
   factory Device({
-    $fixnum.Int64? id,
+    $fixnum.Int64? machineId,
     $core.String? name,
     $core.String? email,
     $core.String? ip,
@@ -2681,8 +2681,8 @@ class Device extends $pb.GeneratedMessage {
     $core.Iterable<Group>? groups,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (machineId != null) {
+      $result.machineId = machineId;
     }
     if (name != null) {
       $result.name = name;
@@ -2733,7 +2733,7 @@ class Device extends $pb.GeneratedMessage {
   factory Device.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Device', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'email')
     ..aOS(4, _omitFieldNames ? '' : 'ip')
@@ -2773,13 +2773,13 @@ class Device extends $pb.GeneratedMessage {
   static Device? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $fixnum.Int64 get machineId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set machineId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasMachineId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearMachineId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
