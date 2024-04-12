@@ -162,7 +162,7 @@ final $typed_data.Uint8List usersDescriptor = $convert.base64Decode(
 const AddNewDstsForUserRequest$json = {
   '1': 'AddNewDstsForUserRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
     {'1': 'resourceIds', '3': 2, '4': 3, '5': 4, '10': 'resourceIds'},
     {'1': 'fleetIds', '3': 3, '4': 3, '5': 4, '10': 'fleetIds'},
   ],
@@ -170,22 +170,23 @@ const AddNewDstsForUserRequest$json = {
 
 /// Descriptor for `AddNewDstsForUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addNewDstsForUserRequestDescriptor = $convert.base64Decode(
-    'ChhBZGROZXdEc3RzRm9yVXNlclJlcXVlc3QSDgoCaWQYASABKARSAmlkEiAKC3Jlc291cmNlSW'
-    'RzGAIgAygEUgtyZXNvdXJjZUlkcxIaCghmbGVldElkcxgDIAMoBFIIZmxlZXRJZHM=');
+    'ChhBZGROZXdEc3RzRm9yVXNlclJlcXVlc3QSGgoIcG9saWN5SUQYASABKAlSCHBvbGljeUlEEi'
+    'AKC3Jlc291cmNlSWRzGAIgAygEUgtyZXNvdXJjZUlkcxIaCghmbGVldElkcxgDIAMoBFIIZmxl'
+    'ZXRJZHM=');
 
 @$core.Deprecated('Use addGroupsRequestDescriptor instead')
 const AddGroupsRequest$json = {
   '1': 'AddGroupsRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
-    {'1': 'userIds', '3': 3, '4': 3, '5': 4, '10': 'userIds'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
+    {'1': 'userIds', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
   ],
 };
 
 /// Descriptor for `AddGroupsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addGroupsRequestDescriptor = $convert.base64Decode(
-    'ChBBZGRHcm91cHNSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIYCgd1c2VySWRzGAMgAygEUgd1c2'
-    'VySWRz');
+    'ChBBZGRHcm91cHNSZXF1ZXN0EhoKCHBvbGljeUlEGAEgASgJUghwb2xpY3lJRBIYCgd1c2VySW'
+    'RzGAIgAygEUgd1c2VySWRz');
 
 @$core.Deprecated('Use createGroupRequestDescriptor instead')
 const CreateGroupRequest$json = {
@@ -205,7 +206,7 @@ final $typed_data.Uint8List createGroupRequestDescriptor = $convert.base64Decode
 const PatchGroupRequest$json = {
   '1': 'PatchGroupRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'user_ids', '3': 3, '4': 3, '5': 4, '10': 'userIds'},
   ],
@@ -213,20 +214,20 @@ const PatchGroupRequest$json = {
 
 /// Descriptor for `PatchGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchGroupRequestDescriptor = $convert.base64Decode(
-    'ChFQYXRjaEdyb3VwUmVxdWVzdBIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
-    'IZCgh1c2VyX2lkcxgDIAMoBFIHdXNlcklkcw==');
+    'ChFQYXRjaEdyb3VwUmVxdWVzdBIaCghwb2xpY3lJRBgBIAEoCVIIcG9saWN5SUQSEgoEbmFtZR'
+    'gCIAEoCVIEbmFtZRIZCgh1c2VyX2lkcxgDIAMoBFIHdXNlcklkcw==');
 
 @$core.Deprecated('Use getGroupRequestDescriptor instead')
 const GetGroupRequest$json = {
   '1': 'GetGroupRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
   ],
 };
 
 /// Descriptor for `GetGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getGroupRequestDescriptor = $convert.base64Decode(
-    'Cg9HZXRHcm91cFJlcXVlc3QSDgoCaWQYASABKARSAmlk');
+    'Cg9HZXRHcm91cFJlcXVlc3QSGgoIcG9saWN5SUQYASABKAlSCHBvbGljeUlE');
 
 @$core.Deprecated('Use groupsDescriptor instead')
 const Groups$json = {
@@ -259,7 +260,7 @@ final $typed_data.Uint8List userWithPictureDescriptor = $convert.base64Decode(
 const AddNewDstForGroupRequest$json = {
   '1': 'AddNewDstForGroupRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
     {'1': 'resourceIds', '3': 2, '4': 3, '5': 4, '10': 'resourceIds'},
     {'1': 'fleetIds', '3': 3, '4': 3, '5': 4, '10': 'fleetIds'},
   ],
@@ -267,8 +268,9 @@ const AddNewDstForGroupRequest$json = {
 
 /// Descriptor for `AddNewDstForGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addNewDstForGroupRequestDescriptor = $convert.base64Decode(
-    'ChhBZGROZXdEc3RGb3JHcm91cFJlcXVlc3QSDgoCaWQYASABKARSAmlkEiAKC3Jlc291cmNlSW'
-    'RzGAIgAygEUgtyZXNvdXJjZUlkcxIaCghmbGVldElkcxgDIAMoBFIIZmxlZXRJZHM=');
+    'ChhBZGROZXdEc3RGb3JHcm91cFJlcXVlc3QSGgoIcG9saWN5SUQYASABKAlSCHBvbGljeUlEEi'
+    'AKC3Jlc291cmNlSWRzGAIgAygEUgtyZXNvdXJjZUlkcxIaCghmbGVldElkcxgDIAMoBFIIZmxl'
+    'ZXRJZHM=');
 
 @$core.Deprecated('Use getDevicesRequestDescriptor instead')
 const GetDevicesRequest$json = {
@@ -384,7 +386,7 @@ final $typed_data.Uint8List resourcesDescriptor = $convert.base64Decode(
 const AddNewSrcsForResourceRequest$json = {
   '1': 'AddNewSrcsForResourceRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
     {'1': 'userIds', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
     {'1': 'groupIds', '3': 3, '4': 3, '5': 4, '10': 'groupIds'},
   ],
@@ -392,22 +394,23 @@ const AddNewSrcsForResourceRequest$json = {
 
 /// Descriptor for `AddNewSrcsForResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addNewSrcsForResourceRequestDescriptor = $convert.base64Decode(
-    'ChxBZGROZXdTcmNzRm9yUmVzb3VyY2VSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIYCgd1c2VySW'
-    'RzGAIgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElkcw==');
+    'ChxBZGROZXdTcmNzRm9yUmVzb3VyY2VSZXF1ZXN0EhoKCHBvbGljeUlEGAEgASgJUghwb2xpY3'
+    'lJRBIYCgd1c2VySWRzGAIgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElk'
+    'cw==');
 
 @$core.Deprecated('Use addFleetsRequestDescriptor instead')
 const AddFleetsRequest$json = {
   '1': 'AddFleetsRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
-    {'1': 'fleetIds', '3': 3, '4': 3, '5': 4, '10': 'fleetIds'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
+    {'1': 'fleetIds', '3': 2, '4': 3, '5': 4, '10': 'fleetIds'},
   ],
 };
 
 /// Descriptor for `AddFleetsRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addFleetsRequestDescriptor = $convert.base64Decode(
-    'ChBBZGRGbGVldHNSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIaCghmbGVldElkcxgDIAMoBFIIZm'
-    'xlZXRJZHM=');
+    'ChBBZGRGbGVldHNSZXF1ZXN0EhoKCHBvbGljeUlEGAEgASgJUghwb2xpY3lJRBIaCghmbGVldE'
+    'lkcxgCIAMoBFIIZmxlZXRJZHM=');
 
 @$core.Deprecated('Use createFleetRequestDescriptor instead')
 const CreateFleetRequest$json = {
@@ -433,7 +436,7 @@ final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode
 const PatchFleetRequest$json = {
   '1': 'PatchFleetRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'resourceIds', '3': 4, '4': 3, '5': 4, '10': 'resourceIds'},
@@ -444,21 +447,21 @@ const PatchFleetRequest$json = {
 
 /// Descriptor for `PatchFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
-    'ChFQYXRjaEZsZWV0UmVxdWVzdBIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
-    'ISCgRkZXNjGAMgASgJUgRkZXNjEiAKC3Jlc291cmNlSWRzGAQgAygEUgtyZXNvdXJjZUlkcxIU'
-    'CgVwcm90bxgFIAEoCVIFcHJvdG8SEgoEcG9ydBgGIAEoCVIEcG9ydA==');
+    'ChFQYXRjaEZsZWV0UmVxdWVzdBIaCghwb2xpY3lJRBgBIAEoCVIIcG9saWN5SUQSEgoEbmFtZR'
+    'gCIAEoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEiAKC3Jlc291cmNlSWRzGAQgAygEUgty'
+    'ZXNvdXJjZUlkcxIUCgVwcm90bxgFIAEoCVIFcHJvdG8SEgoEcG9ydBgGIAEoCVIEcG9ydA==');
 
 @$core.Deprecated('Use getFleetRequestDescriptor instead')
 const GetFleetRequest$json = {
   '1': 'GetFleetRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
   ],
 };
 
 /// Descriptor for `GetFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getFleetRequestDescriptor = $convert.base64Decode(
-    'Cg9HZXRGbGVldFJlcXVlc3QSDgoCaWQYASABKARSAmlk');
+    'Cg9HZXRGbGVldFJlcXVlc3QSGgoIcG9saWN5SUQYASABKAlSCHBvbGljeUlE');
 
 @$core.Deprecated('Use fleetsDescriptor instead')
 const Fleets$json = {
@@ -476,7 +479,7 @@ final $typed_data.Uint8List fleetsDescriptor = $convert.base64Decode(
 const AddNewSrcsForFleetRequest$json = {
   '1': 'AddNewSrcsForFleetRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'policyID', '3': 1, '4': 1, '5': 9, '10': 'policyID'},
     {'1': 'userIds', '3': 2, '4': 3, '5': 4, '10': 'userIds'},
     {'1': 'groupIds', '3': 3, '4': 3, '5': 4, '10': 'groupIds'},
   ],
@@ -484,8 +487,8 @@ const AddNewSrcsForFleetRequest$json = {
 
 /// Descriptor for `AddNewSrcsForFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List addNewSrcsForFleetRequestDescriptor = $convert.base64Decode(
-    'ChlBZGROZXdTcmNzRm9yRmxlZXRSZXF1ZXN0Eg4KAmlkGAEgASgEUgJpZBIYCgd1c2VySWRzGA'
-    'IgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElkcw==');
+    'ChlBZGROZXdTcmNzRm9yRmxlZXRSZXF1ZXN0EhoKCHBvbGljeUlEGAEgASgJUghwb2xpY3lJRB'
+    'IYCgd1c2VySWRzGAIgAygEUgd1c2VySWRzEhoKCGdyb3VwSWRzGAMgAygEUghncm91cElkcw==');
 
 @$core.Deprecated('Use fleetDescriptor instead')
 const Fleet$json = {
