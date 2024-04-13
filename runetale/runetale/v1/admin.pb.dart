@@ -1480,12 +1480,16 @@ class Fleets extends $pb.GeneratedMessage {
 
 class PatchFleetRequest extends $pb.GeneratedMessage {
   factory PatchFleetRequest({
+    $core.String? id,
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
     DeploymentMethod? type,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (name != null) {
       $result.name = name;
     }
@@ -1505,10 +1509,11 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   factory PatchFleetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..e<DeploymentMethod>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..e<DeploymentMethod>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..hasRequiredFields = false
   ;
 
@@ -1534,34 +1539,43 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   static PatchFleetRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get desc => $_getSZ(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set desc($core.String v) { $_setString(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDesc() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDesc() => clearField(2);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  DeploymentMethod get type => $_getN(3);
-  @$pb.TagNumber(4)
-  set type(DeploymentMethod v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasType() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearType() => clearField(4);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(3);
+
+  @$pb.TagNumber(5)
+  DeploymentMethod get type => $_getN(4);
+  @$pb.TagNumber(5)
+  set type(DeploymentMethod v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasType() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearType() => clearField(5);
 }
 
 class Fleet extends $pb.GeneratedMessage {
@@ -1572,8 +1586,6 @@ class Fleet extends $pb.GeneratedMessage {
     $core.String? domain,
     $core.String? age,
     $core.Iterable<Resource>? resources,
-    $core.Iterable<User>? users,
-    $core.Iterable<Group>? groups,
   }) {
     final $result = create();
     if (id != null) {
@@ -1594,12 +1606,6 @@ class Fleet extends $pb.GeneratedMessage {
     if (resources != null) {
       $result.resources.addAll(resources);
     }
-    if (users != null) {
-      $result.users.addAll(users);
-    }
-    if (groups != null) {
-      $result.groups.addAll(groups);
-    }
     return $result;
   }
   Fleet._() : super();
@@ -1613,8 +1619,6 @@ class Fleet extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'domain')
     ..aOS(5, _omitFieldNames ? '' : 'age')
     ..pc<Resource>(6, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..pc<User>(7, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
-    ..pc<Group>(8, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..hasRequiredFields = false
   ;
 
@@ -1686,12 +1690,6 @@ class Fleet extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<Resource> get resources => $_getList(5);
-
-  @$pb.TagNumber(7)
-  $core.List<User> get users => $_getList(6);
-
-  @$pb.TagNumber(8)
-  $core.List<Group> get groups => $_getList(7);
 }
 
 class Resource extends $pb.GeneratedMessage {

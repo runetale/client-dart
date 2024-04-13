@@ -381,18 +381,19 @@ final $typed_data.Uint8List fleetsDescriptor = $convert.base64Decode(
 const PatchFleetRequest$json = {
   '1': 'PatchFleetRequest',
   '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'machineIds', '3': 3, '4': 3, '5': 4, '10': 'machineIds'},
-    {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'type'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'machineIds', '3': 4, '4': 3, '5': 4, '10': 'machineIds'},
+    {'1': 'type', '3': 5, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'type'},
   ],
 };
 
 /// Descriptor for `PatchFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
-    'ChFQYXRjaEZsZWV0UmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEhIKBGRlc2MYAiABKAlSBG'
-    'Rlc2MSHgoKbWFjaGluZUlkcxgDIAMoBFIKbWFjaGluZUlkcxIsCgR0eXBlGAQgASgOMhgucHJv'
-    'dG9zLkRlcGxveW1lbnRNZXRob2RSBHR5cGU=');
+    'ChFQYXRjaEZsZWV0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
+    'ISCgRkZXNjGAMgASgJUgRkZXNjEh4KCm1hY2hpbmVJZHMYBCADKARSCm1hY2hpbmVJZHMSLAoE'
+    'dHlwZRgFIAEoDjIYLnByb3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBl');
 
 @$core.Deprecated('Use fleetDescriptor instead')
 const Fleet$json = {
@@ -404,8 +405,6 @@ const Fleet$json = {
     {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
     {'1': 'age', '3': 5, '4': 1, '5': 9, '10': 'age'},
     {'1': 'resources', '3': 6, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
-    {'1': 'users', '3': 7, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
-    {'1': 'groups', '3': 8, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
   ],
 };
 
@@ -413,9 +412,7 @@ const Fleet$json = {
 final $typed_data.Uint8List fleetDescriptor = $convert.base64Decode(
     'CgVGbGVldBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgAS'
     'gJUgRkZXNjEhYKBmRvbWFpbhgEIAEoCVIGZG9tYWluEhAKA2FnZRgFIAEoCVIDYWdlEi4KCXJl'
-    'c291cmNlcxgGIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2VzEiIKBXVzZXJzGAcgAy'
-    'gLMgwucHJvdG9zLlVzZXJSBXVzZXJzEiUKBmdyb3VwcxgIIAMoCzINLnByb3Rvcy5Hcm91cFIG'
-    'Z3JvdXBz');
+    'c291cmNlcxgGIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2Vz');
 
 @$core.Deprecated('Use resourceDescriptor instead')
 const Resource$json = {
