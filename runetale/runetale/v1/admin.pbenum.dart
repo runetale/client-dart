@@ -13,6 +13,21 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class Action extends $pb.ProtobufEnum {
+  static const Action Accept = Action._(0, _omitEnumNames ? '' : 'Accept');
+  static const Action Denied = Action._(1, _omitEnumNames ? '' : 'Denied');
+
+  static const $core.List<Action> values = <Action> [
+    Accept,
+    Denied,
+  ];
+
+  static final $core.Map<$core.int, Action> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static Action? valueOf($core.int value) => _byValue[value];
+
+  const Action._($core.int v, $core.String n) : super(v, n);
+}
+
 class DeploymentMethod extends $pb.ProtobufEnum {
   static const DeploymentMethod DOCKER = DeploymentMethod._(0, _omitEnumNames ? '' : 'DOCKER');
   static const DeploymentMethod CLI = DeploymentMethod._(1, _omitEnumNames ? '' : 'CLI');

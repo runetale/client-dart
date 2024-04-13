@@ -13,6 +13,19 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use actionDescriptor instead')
+const Action$json = {
+  '1': 'Action',
+  '2': [
+    {'1': 'Accept', '2': 0},
+    {'1': 'Denied', '2': 1},
+  ],
+};
+
+/// Descriptor for `Action`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List actionDescriptor = $convert.base64Decode(
+    'CgZBY3Rpb24SCgoGQWNjZXB0EAASCgoGRGVuaWVkEAE=');
+
 @$core.Deprecated('Use deploymentMethodDescriptor instead')
 const DeploymentMethod$json = {
   '1': 'DeploymentMethod',
@@ -344,6 +357,7 @@ const CreateFleetRequest$json = {
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'machineIds', '3': 3, '4': 3, '5': 4, '10': 'machineIds'},
     {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'type'},
+    {'1': 'action', '3': 5, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
 
@@ -351,7 +365,8 @@ const CreateFleetRequest$json = {
 final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVGbGVldFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgASgJUg'
     'RkZXNjEh4KCm1hY2hpbmVJZHMYAyADKARSCm1hY2hpbmVJZHMSLAoEdHlwZRgEIAEoDjIYLnBy'
-    'b3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBl');
+    'b3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBlEiYKBmFjdGlvbhgFIAEoDjIOLnByb3Rvcy5BY3'
+    'Rpb25SBmFjdGlvbg==');
 
 @$core.Deprecated('Use getFleetRequestDescriptor instead')
 const GetFleetRequest$json = {
@@ -386,6 +401,7 @@ const PatchFleetRequest$json = {
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'machineIds', '3': 4, '4': 3, '5': 4, '10': 'machineIds'},
     {'1': 'type', '3': 5, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'type'},
+    {'1': 'action', '3': 6, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
 
@@ -393,7 +409,8 @@ const PatchFleetRequest$json = {
 final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
     'ChFQYXRjaEZsZWV0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
     'ISCgRkZXNjGAMgASgJUgRkZXNjEh4KCm1hY2hpbmVJZHMYBCADKARSCm1hY2hpbmVJZHMSLAoE'
-    'dHlwZRgFIAEoDjIYLnByb3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBl');
+    'dHlwZRgFIAEoDjIYLnByb3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBlEiYKBmFjdGlvbhgGIA'
+    'EoDjIOLnByb3Rvcy5BY3Rpb25SBmFjdGlvbg==');
 
 @$core.Deprecated('Use fleetDescriptor instead')
 const Fleet$json = {

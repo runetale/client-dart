@@ -1304,6 +1304,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
     DeploymentMethod? type,
+    Action? action,
   }) {
     final $result = create();
     if (name != null) {
@@ -1318,6 +1319,9 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
+    if (action != null) {
+      $result.action = action;
+    }
     return $result;
   }
   CreateFleetRequest._() : super();
@@ -1329,6 +1333,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..e<DeploymentMethod>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..e<Action>(5, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -1382,6 +1387,15 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
   void clearType() => clearField(4);
+
+  @$pb.TagNumber(5)
+  Action get action => $_getN(4);
+  @$pb.TagNumber(5)
+  set action(Action v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAction() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAction() => clearField(5);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -1485,6 +1499,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
     DeploymentMethod? type,
+    Action? action,
   }) {
     final $result = create();
     if (id != null) {
@@ -1502,6 +1517,9 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
+    if (action != null) {
+      $result.action = action;
+    }
     return $result;
   }
   PatchFleetRequest._() : super();
@@ -1514,6 +1532,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..e<DeploymentMethod>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..e<Action>(6, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -1576,6 +1595,15 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   $core.bool hasType() => $_has(4);
   @$pb.TagNumber(5)
   void clearType() => clearField(5);
+
+  @$pb.TagNumber(6)
+  Action get action => $_getN(5);
+  @$pb.TagNumber(6)
+  set action(Action v) { setField(6, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAction() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAction() => clearField(6);
 }
 
 class Fleet extends $pb.GeneratedMessage {
