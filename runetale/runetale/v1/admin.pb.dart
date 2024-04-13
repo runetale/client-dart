@@ -1614,6 +1614,8 @@ class Fleet extends $pb.GeneratedMessage {
     $core.String? domain,
     $core.String? age,
     $core.Iterable<Resource>? resources,
+    $core.Iterable<User>? users,
+    $core.Iterable<Group>? groups,
   }) {
     final $result = create();
     if (id != null) {
@@ -1634,6 +1636,12 @@ class Fleet extends $pb.GeneratedMessage {
     if (resources != null) {
       $result.resources.addAll(resources);
     }
+    if (users != null) {
+      $result.users.addAll(users);
+    }
+    if (groups != null) {
+      $result.groups.addAll(groups);
+    }
     return $result;
   }
   Fleet._() : super();
@@ -1647,6 +1655,8 @@ class Fleet extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'domain')
     ..aOS(5, _omitFieldNames ? '' : 'age')
     ..pc<Resource>(6, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<User>(7, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..pc<Group>(8, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..hasRequiredFields = false
   ;
 
@@ -1718,6 +1728,12 @@ class Fleet extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<Resource> get resources => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<User> get users => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.List<Group> get groups => $_getList(7);
 }
 
 class Resource extends $pb.GeneratedMessage {

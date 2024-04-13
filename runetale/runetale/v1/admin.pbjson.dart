@@ -422,6 +422,8 @@ const Fleet$json = {
     {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
     {'1': 'age', '3': 5, '4': 1, '5': 9, '10': 'age'},
     {'1': 'resources', '3': 6, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'users', '3': 7, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
+    {'1': 'groups', '3': 8, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
   ],
 };
 
@@ -429,7 +431,9 @@ const Fleet$json = {
 final $typed_data.Uint8List fleetDescriptor = $convert.base64Decode(
     'CgVGbGVldBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgAS'
     'gJUgRkZXNjEhYKBmRvbWFpbhgEIAEoCVIGZG9tYWluEhAKA2FnZRgFIAEoCVIDYWdlEi4KCXJl'
-    'c291cmNlcxgGIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2Vz');
+    'c291cmNlcxgGIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2VzEiIKBXVzZXJzGAcgAy'
+    'gLMgwucHJvdG9zLlVzZXJSBXVzZXJzEiUKBmdyb3VwcxgIIAMoCzINLnByb3Rvcy5Hcm91cFIG'
+    'Z3JvdXBz');
 
 @$core.Deprecated('Use resourceDescriptor instead')
 const Resource$json = {
