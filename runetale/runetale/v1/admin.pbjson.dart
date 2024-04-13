@@ -372,13 +372,13 @@ final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode
 const GetFleetRequest$json = {
   '1': 'GetFleetRequest',
   '2': [
-    {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
   ],
 };
 
 /// Descriptor for `GetFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getFleetRequestDescriptor = $convert.base64Decode(
-    'Cg9HZXRGbGVldFJlcXVlc3QSFAoFYWNsSUQYASABKAlSBWFjbElE');
+    'Cg9HZXRGbGVldFJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
 
 @$core.Deprecated('Use fleetsDescriptor instead')
 const Fleets$json = {
