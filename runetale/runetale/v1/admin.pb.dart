@@ -696,7 +696,7 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
 
 class GetGroupRequest extends $pb.GeneratedMessage {
   factory GetGroupRequest({
-    $fixnum.Int64? id,
+    $core.String? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -709,7 +709,7 @@ class GetGroupRequest extends $pb.GeneratedMessage {
   factory GetGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
@@ -735,9 +735,9 @@ class GetGroupRequest extends $pb.GeneratedMessage {
   static GetGroupRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
