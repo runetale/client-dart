@@ -190,13 +190,13 @@ final $typed_data.Uint8List createGroupRequestDescriptor = $convert.base64Decode
 const GetGroupRequest$json = {
   '1': 'GetGroupRequest',
   '2': [
-    {'1': 'aclID', '3': 1, '4': 1, '5': 9, '10': 'aclID'},
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
   ],
 };
 
 /// Descriptor for `GetGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getGroupRequestDescriptor = $convert.base64Decode(
-    'Cg9HZXRHcm91cFJlcXVlc3QSFAoFYWNsSUQYASABKAlSBWFjbElE');
+    'Cg9HZXRHcm91cFJlcXVlc3QSDgoCaWQYASABKARSAmlk');
 
 @$core.Deprecated('Use groupsDescriptor instead')
 const Groups$json = {
