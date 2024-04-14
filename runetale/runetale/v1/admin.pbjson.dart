@@ -229,15 +229,17 @@ final $typed_data.Uint8List userWithPictureDescriptor = $convert.base64Decode(
 const PatchGroupRequest$json = {
   '1': 'PatchGroupRequest',
   '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'machineIds', '3': 2, '4': 3, '5': 4, '10': 'machineIds'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'machineIds', '3': 4, '4': 3, '5': 4, '10': 'machineIds'},
   ],
 };
 
 /// Descriptor for `PatchGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchGroupRequestDescriptor = $convert.base64Decode(
-    'ChFQYXRjaEdyb3VwUmVxdWVzdBISCgRuYW1lGAEgASgJUgRuYW1lEh4KCm1hY2hpbmVJZHMYAi'
-    'ADKARSCm1hY2hpbmVJZHM=');
+    'ChFQYXRjaEdyb3VwUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
+    'ISCgRkZXNjGAMgASgJUgRkZXNjEh4KCm1hY2hpbmVJZHMYBCADKARSCm1hY2hpbmVJZHM=');
 
 @$core.Deprecated('Use getDevicesRequestDescriptor instead')
 const GetDevicesRequest$json = {

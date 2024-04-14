@@ -868,12 +868,20 @@ class UserWithPicture extends $pb.GeneratedMessage {
 
 class PatchGroupRequest extends $pb.GeneratedMessage {
   factory PatchGroupRequest({
+    $core.String? id,
     $core.String? name,
+    $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (name != null) {
       $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
@@ -885,8 +893,10 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   factory PatchGroupRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..hasRequiredFields = false
   ;
 
@@ -912,16 +922,34 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   static PatchGroupRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$fixnum.Int64> get machineIds => $_getList(3);
 }
 
 class GetDevicesRequest extends $pb.GeneratedMessage {
