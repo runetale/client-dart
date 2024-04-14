@@ -48,19 +48,6 @@ final $typed_data.Uint8List deploymentMethodDescriptor = $convert.base64Decode(
     'NQEAMSCgoGTUFOVUFMEAQSBwoDQVdTEAUSCQoFQXp1cmUQBhIKCgZPbnByZW0QBxIJCgVPdGhl'
     'chAI');
 
-@$core.Deprecated('Use groupTypeDescriptor instead')
-const GroupType$json = {
-  '1': 'GroupType',
-  '2': [
-    {'1': 'Default', '2': 0},
-    {'1': 'Custom', '2': 1},
-  ],
-};
-
-/// Descriptor for `GroupType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List groupTypeDescriptor = $convert.base64Decode(
-    'CglHcm91cFR5cGUSCwoHRGVmYXVsdBAAEgoKBkN1c3RvbRAB');
-
 @$core.Deprecated('Use createAclRequestDescriptor instead')
 const CreateAclRequest$json = {
   '1': 'CreateAclRequest',
@@ -476,7 +463,7 @@ const Group$json = {
     {'1': 'fleets', '3': 4, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
     {'1': 'resources', '3': 5, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
     {'1': 'age', '3': 6, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'type', '3': 7, '4': 1, '5': 14, '6': '.protos.GroupType', '10': 'type'},
+    {'1': 'type', '3': 7, '4': 1, '5': 9, '10': 'type'},
   ],
 };
 
@@ -485,8 +472,7 @@ final $typed_data.Uint8List groupDescriptor = $convert.base64Decode(
     'CgVHcm91cBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIiCgV1c2VycxgDIA'
     'MoCzIMLnByb3Rvcy5Vc2VyUgV1c2VycxIlCgZmbGVldHMYBCADKAsyDS5wcm90b3MuRmxlZXRS'
     'BmZsZWV0cxIuCglyZXNvdXJjZXMYBSADKAsyEC5wcm90b3MuUmVzb3VyY2VSCXJlc291cmNlcx'
-    'IQCgNhZ2UYBiABKAlSA2FnZRIlCgR0eXBlGAcgASgOMhEucHJvdG9zLkdyb3VwVHlwZVIEdHlw'
-    'ZQ==');
+    'IQCgNhZ2UYBiABKAlSA2FnZRISCgR0eXBlGAcgASgJUgR0eXBl');
 
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {

@@ -1952,7 +1952,7 @@ class Group extends $pb.GeneratedMessage {
     $core.Iterable<Fleet>? fleets,
     $core.Iterable<Resource>? resources,
     $core.String? age,
-    GroupType? type,
+    $core.String? type,
   }) {
     final $result = create();
     if (id != null) {
@@ -1989,7 +1989,7 @@ class Group extends $pb.GeneratedMessage {
     ..pc<Fleet>(4, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
     ..pc<Resource>(5, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
     ..aOS(6, _omitFieldNames ? '' : 'age')
-    ..e<GroupType>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: GroupType.Default, valueOf: GroupType.valueOf, enumValues: GroupType.values)
+    ..aOS(7, _omitFieldNames ? '' : 'type')
     ..hasRequiredFields = false
   ;
 
@@ -2051,9 +2051,9 @@ class Group extends $pb.GeneratedMessage {
   void clearAge() => clearField(6);
 
   @$pb.TagNumber(7)
-  GroupType get type => $_getN(6);
+  $core.String get type => $_getSZ(6);
   @$pb.TagNumber(7)
-  set type(GroupType v) { setField(7, v); }
+  set type($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
   $core.bool hasType() => $_has(6);
   @$pb.TagNumber(7)
