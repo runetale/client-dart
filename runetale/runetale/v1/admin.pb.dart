@@ -625,11 +625,15 @@ class Users extends $pb.GeneratedMessage {
 class CreateGroupRequest extends $pb.GeneratedMessage {
   factory CreateGroupRequest({
     $core.String? name,
+    $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
   }) {
     final $result = create();
     if (name != null) {
       $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
@@ -642,7 +646,8 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..aOS(2, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
     ..hasRequiredFields = false
   ;
 
@@ -677,7 +682,16 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(1);
+  $core.String get desc => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set desc($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDesc() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDesc() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
 }
 
 class GetGroupRequest extends $pb.GeneratedMessage {
