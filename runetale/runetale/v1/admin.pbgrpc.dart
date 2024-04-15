@@ -370,6 +370,122 @@ abstract class DeviceServiceBase extends $grpc.Service {
   $async.Future<$0.Device> getDevice($grpc.ServiceCall call, $0.GetDevicesRequest request);
   $async.Future<$0.Devices> getDevices($grpc.ServiceCall call, $1.Empty request);
 }
+@$pb.GrpcServiceName('protos.InkService')
+class InkServiceClient extends $grpc.Client {
+  static final _$createInk = $grpc.ClientMethod<$0.CreateFleetRequest, $0.Ink>(
+      '/protos.InkService/CreateInk',
+      ($0.CreateFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
+  static final _$getInk = $grpc.ClientMethod<$0.GetFleetRequest, $0.Ink>(
+      '/protos.InkService/GetInk',
+      ($0.GetFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
+  static final _$getInks = $grpc.ClientMethod<$1.Empty, $0.Inks>(
+      '/protos.InkService/GetInks',
+      ($1.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Inks.fromBuffer(value));
+
+  InkServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options,
+        interceptors: interceptors);
+
+  $grpc.ResponseFuture<$0.Ink> createInk($0.CreateFleetRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createInk, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.Ink> getInk($0.GetFleetRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getInk, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.Inks> getInks($1.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getInks, request, options: options);
+  }
+}
+
+@$pb.GrpcServiceName('protos.InkService')
+abstract class InkServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.InkService';
+
+  InkServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.CreateFleetRequest, $0.Ink>(
+        'CreateInk',
+        createInk_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.CreateFleetRequest.fromBuffer(value),
+        ($0.Ink value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetFleetRequest, $0.Ink>(
+        'GetInk',
+        getInk_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetFleetRequest.fromBuffer(value),
+        ($0.Ink value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Inks>(
+        'GetInks',
+        getInks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
+        ($0.Inks value) => value.writeToBuffer()));
+  }
+
+  $async.Future<$0.Ink> createInk_Pre($grpc.ServiceCall call, $async.Future<$0.CreateFleetRequest> request) async {
+    return createInk(call, await request);
+  }
+
+  $async.Future<$0.Ink> getInk_Pre($grpc.ServiceCall call, $async.Future<$0.GetFleetRequest> request) async {
+    return getInk(call, await request);
+  }
+
+  $async.Future<$0.Inks> getInks_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+    return getInks(call, await request);
+  }
+
+  $async.Future<$0.Ink> createInk($grpc.ServiceCall call, $0.CreateFleetRequest request);
+  $async.Future<$0.Ink> getInk($grpc.ServiceCall call, $0.GetFleetRequest request);
+  $async.Future<$0.Inks> getInks($grpc.ServiceCall call, $1.Empty request);
+}
+@$pb.GrpcServiceName('protos.InkDetailService')
+class InkDetailServiceClient extends $grpc.Client {
+  static final _$patchInk = $grpc.ClientMethod<$0.PatchFleetRequest, $0.Ink>(
+      '/protos.InkDetailService/PatchInk',
+      ($0.PatchFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
+
+  InkDetailServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options,
+        interceptors: interceptors);
+
+  $grpc.ResponseFuture<$0.Ink> patchInk($0.PatchFleetRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$patchInk, request, options: options);
+  }
+}
+
+@$pb.GrpcServiceName('protos.InkDetailService')
+abstract class InkDetailServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.InkDetailService';
+
+  InkDetailServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.PatchFleetRequest, $0.Ink>(
+        'PatchInk',
+        patchInk_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PatchFleetRequest.fromBuffer(value),
+        ($0.Ink value) => value.writeToBuffer()));
+  }
+
+  $async.Future<$0.Ink> patchInk_Pre($grpc.ServiceCall call, $async.Future<$0.PatchFleetRequest> request) async {
+    return patchInk(call, await request);
+  }
+
+  $async.Future<$0.Ink> patchInk($grpc.ServiceCall call, $0.PatchFleetRequest request);
+}
 @$pb.GrpcServiceName('protos.ResourceService')
 class ResourceServiceClient extends $grpc.Client {
   static final _$createResource = $grpc.ClientMethod<$0.CreateResourceRequest, $0.CreateResourceResponse>(
@@ -583,120 +699,4 @@ abstract class FleetDetailServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.Group> patchFleet($grpc.ServiceCall call, $0.PatchFleetRequest request);
-}
-@$pb.GrpcServiceName('protos.InkService')
-class InkServiceClient extends $grpc.Client {
-  static final _$createInk = $grpc.ClientMethod<$0.CreateFleetRequest, $0.Fleet>(
-      '/protos.InkService/CreateInk',
-      ($0.CreateFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Fleet.fromBuffer(value));
-  static final _$getInk = $grpc.ClientMethod<$0.GetFleetRequest, $0.Fleet>(
-      '/protos.InkService/GetInk',
-      ($0.GetFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Fleet.fromBuffer(value));
-  static final _$getInks = $grpc.ClientMethod<$1.Empty, $0.Fleets>(
-      '/protos.InkService/GetInks',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Fleets.fromBuffer(value));
-
-  InkServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Fleet> createInk($0.CreateFleetRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createInk, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.Fleet> getInk($0.GetFleetRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getInk, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.Fleets> getInks($1.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getInks, request, options: options);
-  }
-}
-
-@$pb.GrpcServiceName('protos.InkService')
-abstract class InkServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.InkService';
-
-  InkServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateFleetRequest, $0.Fleet>(
-        'CreateInk',
-        createInk_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.CreateFleetRequest.fromBuffer(value),
-        ($0.Fleet value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetFleetRequest, $0.Fleet>(
-        'GetInk',
-        getInk_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetFleetRequest.fromBuffer(value),
-        ($0.Fleet value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Fleets>(
-        'GetInks',
-        getInks_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.Fleets value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.Fleet> createInk_Pre($grpc.ServiceCall call, $async.Future<$0.CreateFleetRequest> request) async {
-    return createInk(call, await request);
-  }
-
-  $async.Future<$0.Fleet> getInk_Pre($grpc.ServiceCall call, $async.Future<$0.GetFleetRequest> request) async {
-    return getInk(call, await request);
-  }
-
-  $async.Future<$0.Fleets> getInks_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getInks(call, await request);
-  }
-
-  $async.Future<$0.Fleet> createInk($grpc.ServiceCall call, $0.CreateFleetRequest request);
-  $async.Future<$0.Fleet> getInk($grpc.ServiceCall call, $0.GetFleetRequest request);
-  $async.Future<$0.Fleets> getInks($grpc.ServiceCall call, $1.Empty request);
-}
-@$pb.GrpcServiceName('protos.InkDetailService')
-class InkDetailServiceClient extends $grpc.Client {
-  static final _$patchInk = $grpc.ClientMethod<$0.PatchFleetRequest, $0.Group>(
-      '/protos.InkDetailService/PatchInk',
-      ($0.PatchFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Group.fromBuffer(value));
-
-  InkDetailServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Group> patchInk($0.PatchFleetRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$patchInk, request, options: options);
-  }
-}
-
-@$pb.GrpcServiceName('protos.InkDetailService')
-abstract class InkDetailServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.InkDetailService';
-
-  InkDetailServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.PatchFleetRequest, $0.Group>(
-        'PatchInk',
-        patchInk_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PatchFleetRequest.fromBuffer(value),
-        ($0.Group value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.Group> patchInk_Pre($grpc.ServiceCall call, $async.Future<$0.PatchFleetRequest> request) async {
-    return patchInk(call, await request);
-  }
-
-  $async.Future<$0.Group> patchInk($grpc.ServiceCall call, $0.PatchFleetRequest request);
 }

@@ -265,6 +265,41 @@ const Devices$json = {
 final $typed_data.Uint8List devicesDescriptor = $convert.base64Decode(
     'CgdEZXZpY2VzEigKB2RldmljZXMYASADKAsyDi5wcm90b3MuRGV2aWNlUgdkZXZpY2Vz');
 
+@$core.Deprecated('Use inksDescriptor instead')
+const Inks$json = {
+  '1': 'Inks',
+  '2': [
+    {'1': 'inks', '3': 1, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
+  ],
+};
+
+/// Descriptor for `Inks`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List inksDescriptor = $convert.base64Decode(
+    'CgRJbmtzEh8KBGlua3MYASADKAsyCy5wcm90b3MuSW5rUgRpbmtz');
+
+@$core.Deprecated('Use inkDescriptor instead')
+const Ink$json = {
+  '1': 'Ink',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
+    {'1': 'devices', '3': 5, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
+    {'1': 'fleets', '3': 6, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
+    {'1': 'resources', '3': 7, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'age', '3': 8, '4': 1, '5': 9, '10': 'age'},
+  ],
+};
+
+/// Descriptor for `Ink`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List inkDescriptor = $convert.base64Decode(
+    'CgNJbmsSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCV'
+    'IEZGVzYxIWCgZkb21haW4YBCABKAlSBmRvbWFpbhIoCgdkZXZpY2VzGAUgAygLMg4ucHJvdG9z'
+    'LkRldmljZVIHZGV2aWNlcxIlCgZmbGVldHMYBiADKAsyDS5wcm90b3MuRmxlZXRSBmZsZWV0cx'
+    'IuCglyZXNvdXJjZXMYByADKAsyEC5wcm90b3MuUmVzb3VyY2VSCXJlc291cmNlcxIQCgNhZ2UY'
+    'CCABKAlSA2FnZQ==');
+
 @$core.Deprecated('Use createResourceRequestDescriptor instead')
 const CreateResourceRequest$json = {
   '1': 'CreateResourceRequest',

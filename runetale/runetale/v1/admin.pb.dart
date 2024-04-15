@@ -1046,6 +1046,180 @@ class Devices extends $pb.GeneratedMessage {
   $core.List<Device> get devices => $_getList(0);
 }
 
+class Inks extends $pb.GeneratedMessage {
+  factory Inks({
+    $core.Iterable<Ink>? inks,
+  }) {
+    final $result = create();
+    if (inks != null) {
+      $result.inks.addAll(inks);
+    }
+    return $result;
+  }
+  Inks._() : super();
+  factory Inks.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Inks.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Inks', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<Ink>(1, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Inks clone() => Inks()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Inks copyWith(void Function(Inks) updates) => super.copyWith((message) => updates(message as Inks)) as Inks;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Inks create() => Inks._();
+  Inks createEmptyInstance() => create();
+  static $pb.PbList<Inks> createRepeated() => $pb.PbList<Inks>();
+  @$core.pragma('dart2js:noInline')
+  static Inks getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Inks>(create);
+  static Inks? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Ink> get inks => $_getList(0);
+}
+
+class Ink extends $pb.GeneratedMessage {
+  factory Ink({
+    $core.String? id,
+    $core.String? name,
+    $core.String? desc,
+    $core.String? domain,
+    $core.Iterable<Device>? devices,
+    $core.Iterable<Fleet>? fleets,
+    $core.Iterable<Resource>? resources,
+    $core.String? age,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (domain != null) {
+      $result.domain = domain;
+    }
+    if (devices != null) {
+      $result.devices.addAll(devices);
+    }
+    if (fleets != null) {
+      $result.fleets.addAll(fleets);
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (age != null) {
+      $result.age = age;
+    }
+    return $result;
+  }
+  Ink._() : super();
+  factory Ink.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Ink.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Ink', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..aOS(4, _omitFieldNames ? '' : 'domain')
+    ..pc<Device>(5, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<Fleet>(6, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<Resource>(7, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..aOS(8, _omitFieldNames ? '' : 'age')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Ink clone() => Ink()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Ink copyWith(void Function(Ink) updates) => super.copyWith((message) => updates(message as Ink)) as Ink;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Ink create() => Ink._();
+  Ink createEmptyInstance() => create();
+  static $pb.PbList<Ink> createRepeated() => $pb.PbList<Ink>();
+  @$core.pragma('dart2js:noInline')
+  static Ink getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Ink>(create);
+  static Ink? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get domain => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set domain($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDomain() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDomain() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<Device> get devices => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.List<Fleet> get fleets => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<Resource> get resources => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get age => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set age($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAge() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAge() => clearField(8);
+}
+
 class CreateResourceRequest extends $pb.GeneratedMessage {
   factory CreateResourceRequest({
     $core.String? name,
