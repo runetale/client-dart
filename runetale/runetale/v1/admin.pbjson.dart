@@ -265,6 +265,49 @@ const Devices$json = {
 final $typed_data.Uint8List devicesDescriptor = $convert.base64Decode(
     'CgdEZXZpY2VzEigKB2RldmljZXMYASADKAsyDi5wcm90b3MuRGV2aWNlUgdkZXZpY2Vz');
 
+@$core.Deprecated('Use createInkRequestDescriptor instead')
+const CreateInkRequest$json = {
+  '1': 'CreateInkRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'machineIds', '3': 3, '4': 3, '5': 4, '10': 'machineIds'},
+  ],
+};
+
+/// Descriptor for `CreateInkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createInkRequestDescriptor = $convert.base64Decode(
+    'ChBDcmVhdGVJbmtSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYxgCIAEoCVIEZG'
+    'VzYxIeCgptYWNoaW5lSWRzGAMgAygEUgptYWNoaW5lSWRz');
+
+@$core.Deprecated('Use getInkRequestDescriptor instead')
+const GetInkRequest$json = {
+  '1': 'GetInkRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetInkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getInkRequestDescriptor = $convert.base64Decode(
+    'Cg1HZXRJbmtSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
+@$core.Deprecated('Use patchInkRequestDescriptor instead')
+const PatchInkRequest$json = {
+  '1': 'PatchInkRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'machineIds', '3': 4, '4': 3, '5': 4, '10': 'machineIds'},
+  ],
+};
+
+/// Descriptor for `PatchInkRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List patchInkRequestDescriptor = $convert.base64Decode(
+    'Cg9QYXRjaElua1JlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEg'
+    'oEZGVzYxgDIAEoCVIEZGVzYxIeCgptYWNoaW5lSWRzGAQgAygEUgptYWNoaW5lSWRz');
+
 @$core.Deprecated('Use inksDescriptor instead')
 const Inks$json = {
   '1': 'Inks',

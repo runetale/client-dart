@@ -372,13 +372,13 @@ abstract class DeviceServiceBase extends $grpc.Service {
 }
 @$pb.GrpcServiceName('protos.InkService')
 class InkServiceClient extends $grpc.Client {
-  static final _$createInk = $grpc.ClientMethod<$0.CreateFleetRequest, $0.Ink>(
+  static final _$createInk = $grpc.ClientMethod<$0.CreateInkRequest, $0.Ink>(
       '/protos.InkService/CreateInk',
-      ($0.CreateFleetRequest value) => value.writeToBuffer(),
+      ($0.CreateInkRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
-  static final _$getInk = $grpc.ClientMethod<$0.GetFleetRequest, $0.Ink>(
+  static final _$getInk = $grpc.ClientMethod<$0.GetInkRequest, $0.Ink>(
       '/protos.InkService/GetInk',
-      ($0.GetFleetRequest value) => value.writeToBuffer(),
+      ($0.GetInkRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
   static final _$getInks = $grpc.ClientMethod<$1.Empty, $0.Inks>(
       '/protos.InkService/GetInks',
@@ -391,11 +391,11 @@ class InkServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.Ink> createInk($0.CreateFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.Ink> createInk($0.CreateInkRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createInk, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Ink> getInk($0.GetFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.Ink> getInk($0.GetInkRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getInk, request, options: options);
   }
 
@@ -409,19 +409,19 @@ abstract class InkServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.InkService';
 
   InkServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateFleetRequest, $0.Ink>(
+    $addMethod($grpc.ServiceMethod<$0.CreateInkRequest, $0.Ink>(
         'CreateInk',
         createInk_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.CreateFleetRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.CreateInkRequest.fromBuffer(value),
         ($0.Ink value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetFleetRequest, $0.Ink>(
+    $addMethod($grpc.ServiceMethod<$0.GetInkRequest, $0.Ink>(
         'GetInk',
         getInk_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.GetFleetRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.GetInkRequest.fromBuffer(value),
         ($0.Ink value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.Empty, $0.Inks>(
         'GetInks',
@@ -432,11 +432,11 @@ abstract class InkServiceBase extends $grpc.Service {
         ($0.Inks value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Ink> createInk_Pre($grpc.ServiceCall call, $async.Future<$0.CreateFleetRequest> request) async {
+  $async.Future<$0.Ink> createInk_Pre($grpc.ServiceCall call, $async.Future<$0.CreateInkRequest> request) async {
     return createInk(call, await request);
   }
 
-  $async.Future<$0.Ink> getInk_Pre($grpc.ServiceCall call, $async.Future<$0.GetFleetRequest> request) async {
+  $async.Future<$0.Ink> getInk_Pre($grpc.ServiceCall call, $async.Future<$0.GetInkRequest> request) async {
     return getInk(call, await request);
   }
 
@@ -444,15 +444,15 @@ abstract class InkServiceBase extends $grpc.Service {
     return getInks(call, await request);
   }
 
-  $async.Future<$0.Ink> createInk($grpc.ServiceCall call, $0.CreateFleetRequest request);
-  $async.Future<$0.Ink> getInk($grpc.ServiceCall call, $0.GetFleetRequest request);
+  $async.Future<$0.Ink> createInk($grpc.ServiceCall call, $0.CreateInkRequest request);
+  $async.Future<$0.Ink> getInk($grpc.ServiceCall call, $0.GetInkRequest request);
   $async.Future<$0.Inks> getInks($grpc.ServiceCall call, $1.Empty request);
 }
 @$pb.GrpcServiceName('protos.InkDetailService')
 class InkDetailServiceClient extends $grpc.Client {
-  static final _$patchInk = $grpc.ClientMethod<$0.PatchFleetRequest, $0.Ink>(
+  static final _$patchInk = $grpc.ClientMethod<$0.PatchInkRequest, $0.Ink>(
       '/protos.InkDetailService/PatchInk',
-      ($0.PatchFleetRequest value) => value.writeToBuffer(),
+      ($0.PatchInkRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
 
   InkDetailServiceClient($grpc.ClientChannel channel,
@@ -461,7 +461,7 @@ class InkDetailServiceClient extends $grpc.Client {
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.Ink> patchInk($0.PatchFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.Ink> patchInk($0.PatchInkRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchInk, request, options: options);
   }
 }
@@ -471,20 +471,20 @@ abstract class InkDetailServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.InkDetailService';
 
   InkDetailServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.PatchFleetRequest, $0.Ink>(
+    $addMethod($grpc.ServiceMethod<$0.PatchInkRequest, $0.Ink>(
         'PatchInk',
         patchInk_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.PatchFleetRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $0.PatchInkRequest.fromBuffer(value),
         ($0.Ink value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Ink> patchInk_Pre($grpc.ServiceCall call, $async.Future<$0.PatchFleetRequest> request) async {
+  $async.Future<$0.Ink> patchInk_Pre($grpc.ServiceCall call, $async.Future<$0.PatchInkRequest> request) async {
     return patchInk(call, await request);
   }
 
-  $async.Future<$0.Ink> patchInk($grpc.ServiceCall call, $0.PatchFleetRequest request);
+  $async.Future<$0.Ink> patchInk($grpc.ServiceCall call, $0.PatchInkRequest request);
 }
 @$pb.GrpcServiceName('protos.ResourceService')
 class ResourceServiceClient extends $grpc.Client {

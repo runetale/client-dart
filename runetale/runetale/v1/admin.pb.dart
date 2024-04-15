@@ -1046,6 +1046,214 @@ class Devices extends $pb.GeneratedMessage {
   $core.List<Device> get devices => $_getList(0);
 }
 
+class CreateInkRequest extends $pb.GeneratedMessage {
+  factory CreateInkRequest({
+    $core.String? name,
+    $core.String? desc,
+    $core.Iterable<$fixnum.Int64>? machineIds,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
+    }
+    return $result;
+  }
+  CreateInkRequest._() : super();
+  factory CreateInkRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateInkRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateInkRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateInkRequest clone() => CreateInkRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateInkRequest copyWith(void Function(CreateInkRequest) updates) => super.copyWith((message) => updates(message as CreateInkRequest)) as CreateInkRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateInkRequest create() => CreateInkRequest._();
+  CreateInkRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateInkRequest> createRepeated() => $pb.PbList<CreateInkRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateInkRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateInkRequest>(create);
+  static CreateInkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get desc => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set desc($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDesc() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDesc() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
+}
+
+class GetInkRequest extends $pb.GeneratedMessage {
+  factory GetInkRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  GetInkRequest._() : super();
+  factory GetInkRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetInkRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInkRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetInkRequest clone() => GetInkRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetInkRequest copyWith(void Function(GetInkRequest) updates) => super.copyWith((message) => updates(message as GetInkRequest)) as GetInkRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetInkRequest create() => GetInkRequest._();
+  GetInkRequest createEmptyInstance() => create();
+  static $pb.PbList<GetInkRequest> createRepeated() => $pb.PbList<GetInkRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetInkRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetInkRequest>(create);
+  static GetInkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
+class PatchInkRequest extends $pb.GeneratedMessage {
+  factory PatchInkRequest({
+    $core.String? id,
+    $core.String? name,
+    $core.String? desc,
+    $core.Iterable<$fixnum.Int64>? machineIds,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
+    }
+    return $result;
+  }
+  PatchInkRequest._() : super();
+  factory PatchInkRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PatchInkRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchInkRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PatchInkRequest clone() => PatchInkRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PatchInkRequest copyWith(void Function(PatchInkRequest) updates) => super.copyWith((message) => updates(message as PatchInkRequest)) as PatchInkRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PatchInkRequest create() => PatchInkRequest._();
+  PatchInkRequest createEmptyInstance() => create();
+  static $pb.PbList<PatchInkRequest> createRepeated() => $pb.PbList<PatchInkRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PatchInkRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchInkRequest>(create);
+  static PatchInkRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$fixnum.Int64> get machineIds => $_getList(3);
+}
+
 class Inks extends $pb.GeneratedMessage {
   factory Inks({
     $core.Iterable<Ink>? inks,
