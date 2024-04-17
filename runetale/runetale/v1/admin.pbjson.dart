@@ -523,8 +523,8 @@ const Node$json = {
     {'1': 'resources', '3': 2, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
     {'1': 'groups', '3': 3, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
     {'1': 'users', '3': 4, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
-    {'1': 'Inks', '3': 5, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'Inks'},
-    {'1': 'deivces', '3': 6, '4': 3, '5': 11, '6': '.protos.Device', '10': 'deivces'},
+    {'1': 'inks', '3': 5, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
+    {'1': 'devices', '3': 6, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
   ],
 };
 
@@ -533,8 +533,8 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'CgROb2RlEiUKBmZsZWV0cxgBIAMoCzINLnByb3Rvcy5GbGVldFIGZmxlZXRzEi4KCXJlc291cm'
     'NlcxgCIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2VzEiUKBmdyb3VwcxgDIAMoCzIN'
     'LnByb3Rvcy5Hcm91cFIGZ3JvdXBzEiIKBXVzZXJzGAQgAygLMgwucHJvdG9zLlVzZXJSBXVzZX'
-    'JzEh8KBElua3MYBSADKAsyCy5wcm90b3MuSW5rUgRJbmtzEigKB2RlaXZjZXMYBiADKAsyDi5w'
-    'cm90b3MuRGV2aWNlUgdkZWl2Y2Vz');
+    'JzEh8KBGlua3MYBSADKAsyCy5wcm90b3MuSW5rUgRpbmtzEigKB2RldmljZXMYBiADKAsyDi5w'
+    'cm90b3MuRGV2aWNlUgdkZXZpY2Vz');
 
 @$core.Deprecated('Use fleetDescriptor instead')
 const Fleet$json = {
