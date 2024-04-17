@@ -2131,7 +2131,7 @@ class Node extends $pb.GeneratedMessage {
     $core.Iterable<Group>? groups,
     $core.Iterable<User>? users,
     $core.Iterable<Ink>? inks,
-    $core.Iterable<Device>? deivces,
+    $core.Iterable<Device>? devices,
   }) {
     final $result = create();
     if (fleets != null) {
@@ -2149,8 +2149,8 @@ class Node extends $pb.GeneratedMessage {
     if (inks != null) {
       $result.inks.addAll(inks);
     }
-    if (deivces != null) {
-      $result.deivces.addAll(deivces);
+    if (devices != null) {
+      $result.devices.addAll(devices);
     }
     return $result;
   }
@@ -2163,8 +2163,8 @@ class Node extends $pb.GeneratedMessage {
     ..pc<Resource>(2, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
     ..pc<Group>(3, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..pc<User>(4, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
-    ..pc<Ink>(5, _omitFieldNames ? '' : 'Inks', $pb.PbFieldType.PM, protoName: 'Inks', subBuilder: Ink.create)
-    ..pc<Device>(6, _omitFieldNames ? '' : 'deivces', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<Ink>(5, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
+    ..pc<Device>(6, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
     ..hasRequiredFields = false
   ;
 
@@ -2205,7 +2205,7 @@ class Node extends $pb.GeneratedMessage {
   $core.List<Ink> get inks => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.List<Device> get deivces => $_getList(5);
+  $core.List<Device> get devices => $_getList(5);
 }
 
 class Fleet extends $pb.GeneratedMessage {
