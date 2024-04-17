@@ -26,10 +26,6 @@ class AclServiceClient extends $grpc.Client {
       '/protos.AclService/CreateAcl',
       ($0.CreateAclRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
-  static final _$patchAcl = $grpc.ClientMethod<$0.PatchAclRequest, $0.AclResponse>(
-      '/protos.AclService/PatchAcl',
-      ($0.PatchAclRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
   static final _$getAcl = $grpc.ClientMethod<$0.GetAclRequest, $0.AclResponse>(
       '/protos.AclService/GetAcl',
       ($0.GetAclRequest value) => value.writeToBuffer(),
@@ -47,10 +43,6 @@ class AclServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.AclResponse> createAcl($0.CreateAclRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createAcl, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.AclResponse> patchAcl($0.PatchAclRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$patchAcl, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.AclResponse> getAcl($0.GetAclRequest request, {$grpc.CallOptions? options}) {
@@ -74,13 +66,6 @@ abstract class AclServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.CreateAclRequest.fromBuffer(value),
         ($0.AclResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PatchAclRequest, $0.AclResponse>(
-        'PatchAcl',
-        patchAcl_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PatchAclRequest.fromBuffer(value),
-        ($0.AclResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetAclRequest, $0.AclResponse>(
         'GetAcl',
         getAcl_Pre,
@@ -101,10 +86,6 @@ abstract class AclServiceBase extends $grpc.Service {
     return createAcl(call, await request);
   }
 
-  $async.Future<$0.AclResponse> patchAcl_Pre($grpc.ServiceCall call, $async.Future<$0.PatchAclRequest> request) async {
-    return patchAcl(call, await request);
-  }
-
   $async.Future<$0.AclResponse> getAcl_Pre($grpc.ServiceCall call, $async.Future<$0.GetAclRequest> request) async {
     return getAcl(call, await request);
   }
@@ -114,9 +95,46 @@ abstract class AclServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.AclResponse> createAcl($grpc.ServiceCall call, $0.CreateAclRequest request);
-  $async.Future<$0.AclResponse> patchAcl($grpc.ServiceCall call, $0.PatchAclRequest request);
   $async.Future<$0.AclResponse> getAcl($grpc.ServiceCall call, $0.GetAclRequest request);
   $async.Future<$0.GetAclsResponse> getAcls($grpc.ServiceCall call, $1.Empty request);
+}
+@$pb.GrpcServiceName('protos.AclDetailService')
+class AclDetailServiceClient extends $grpc.Client {
+  static final _$patchAcl = $grpc.ClientMethod<$0.PatchAclRequest, $0.AclResponse>(
+      '/protos.AclDetailService/PatchAcl',
+      ($0.PatchAclRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
+
+  AclDetailServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options,
+        interceptors: interceptors);
+
+  $grpc.ResponseFuture<$0.AclResponse> patchAcl($0.PatchAclRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$patchAcl, request, options: options);
+  }
+}
+
+@$pb.GrpcServiceName('protos.AclDetailService')
+abstract class AclDetailServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.AclDetailService';
+
+  AclDetailServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.PatchAclRequest, $0.AclResponse>(
+        'PatchAcl',
+        patchAcl_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.PatchAclRequest.fromBuffer(value),
+        ($0.AclResponse value) => value.writeToBuffer()));
+  }
+
+  $async.Future<$0.AclResponse> patchAcl_Pre($grpc.ServiceCall call, $async.Future<$0.PatchAclRequest> request) async {
+    return patchAcl(call, await request);
+  }
+
+  $async.Future<$0.AclResponse> patchAcl($grpc.ServiceCall call, $0.PatchAclRequest request);
 }
 @$pb.GrpcServiceName('protos.UserService')
 class UserServiceClient extends $grpc.Client {

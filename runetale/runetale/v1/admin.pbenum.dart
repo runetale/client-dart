@@ -13,6 +13,29 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class AclResourceType extends $pb.ProtobufEnum {
+  static const AclResourceType FLEET = AclResourceType._(0, _omitEnumNames ? '' : 'FLEET');
+  static const AclResourceType RESOURCE = AclResourceType._(1, _omitEnumNames ? '' : 'RESOURCE');
+  static const AclResourceType GROUP = AclResourceType._(2, _omitEnumNames ? '' : 'GROUP');
+  static const AclResourceType USER = AclResourceType._(3, _omitEnumNames ? '' : 'USER');
+  static const AclResourceType INK = AclResourceType._(4, _omitEnumNames ? '' : 'INK');
+  static const AclResourceType DEVICE = AclResourceType._(5, _omitEnumNames ? '' : 'DEVICE');
+
+  static const $core.List<AclResourceType> values = <AclResourceType> [
+    FLEET,
+    RESOURCE,
+    GROUP,
+    USER,
+    INK,
+    DEVICE,
+  ];
+
+  static final $core.Map<$core.int, AclResourceType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AclResourceType? valueOf($core.int value) => _byValue[value];
+
+  const AclResourceType._($core.int v, $core.String n) : super(v, n);
+}
+
 class Action extends $pb.ProtobufEnum {
   static const Action Accept = Action._(0, _omitEnumNames ? '' : 'Accept');
   static const Action Denied = Action._(1, _omitEnumNames ? '' : 'Denied');

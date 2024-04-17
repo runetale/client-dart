@@ -112,12 +112,76 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   void clearPort() => clearField(5);
 }
 
+class AclResources extends $pb.GeneratedMessage {
+  factory AclResources({
+    $fixnum.Int64? id,
+    AclResourceType? type,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    return $result;
+  }
+  AclResources._() : super();
+  factory AclResources.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AclResources.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResources', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..e<AclResourceType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AclResourceType.FLEET, valueOf: AclResourceType.valueOf, enumValues: AclResourceType.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AclResources clone() => AclResources()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AclResources copyWith(void Function(AclResources) updates) => super.copyWith((message) => updates(message as AclResources)) as AclResources;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AclResources create() => AclResources._();
+  AclResources createEmptyInstance() => create();
+  static $pb.PbList<AclResources> createRepeated() => $pb.PbList<AclResources>();
+  @$core.pragma('dart2js:noInline')
+  static AclResources getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AclResources>(create);
+  static AclResources? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  AclResourceType get type => $_getN(1);
+  @$pb.TagNumber(2)
+  set type(AclResourceType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => clearField(2);
+}
+
 class PatchAclRequest extends $pb.GeneratedMessage {
   factory PatchAclRequest({
     $fixnum.Int64? id,
     $core.String? name,
-    $core.Iterable<$fixnum.Int64>? src,
-    $core.Iterable<$fixnum.Int64>? dst,
+    $core.Iterable<AclResources>? src,
+    $core.Iterable<AclResources>? dst,
     $core.String? proto,
     $core.String? port,
   }) {
@@ -149,8 +213,8 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.KU6)
+    ..pc<AclResources>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
+    ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
@@ -196,10 +260,10 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get src => $_getList(2);
+  $core.List<AclResources> get src => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get dst => $_getList(3);
+  $core.List<AclResources> get dst => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.String get proto => $_getSZ(4);
@@ -323,6 +387,7 @@ class AclResponse extends $pb.GeneratedMessage {
     $core.String? proto,
     $core.String? port,
     $core.String? age,
+    $core.String? type,
   }) {
     final $result = create();
     if (id != null) {
@@ -346,6 +411,9 @@ class AclResponse extends $pb.GeneratedMessage {
     if (age != null) {
       $result.age = age;
     }
+    if (type != null) {
+      $result.type = type;
+    }
     return $result;
   }
   AclResponse._() : super();
@@ -360,6 +428,7 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
     ..aOS(7, _omitFieldNames ? '' : 'age')
+    ..aOS(8, _omitFieldNames ? '' : 'type')
     ..hasRequiredFields = false
   ;
 
@@ -450,6 +519,15 @@ class AclResponse extends $pb.GeneratedMessage {
   $core.bool hasAge() => $_has(6);
   @$pb.TagNumber(7)
   void clearAge() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get type => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set type($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasType() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearType() => clearField(8);
 }
 
 class GetMeResponse extends $pb.GeneratedMessage {

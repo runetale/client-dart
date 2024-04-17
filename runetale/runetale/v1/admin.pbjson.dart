@@ -13,6 +13,24 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use aclResourceTypeDescriptor instead')
+const AclResourceType$json = {
+  '1': 'AclResourceType',
+  '2': [
+    {'1': 'FLEET', '2': 0},
+    {'1': 'RESOURCE', '2': 1},
+    {'1': 'GROUP', '2': 2},
+    {'1': 'USER', '2': 3},
+    {'1': 'INK', '2': 4},
+    {'1': 'DEVICE', '2': 5},
+  ],
+};
+
+/// Descriptor for `AclResourceType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List aclResourceTypeDescriptor = $convert.base64Decode(
+    'Cg9BY2xSZXNvdXJjZVR5cGUSCQoFRkxFRVQQABIMCghSRVNPVVJDRRABEgkKBUdST1VQEAISCA'
+    'oEVVNFUhADEgcKA0lOSxAEEgoKBkRFVklDRRAF');
+
 @$core.Deprecated('Use actionDescriptor instead')
 const Action$json = {
   '1': 'Action',
@@ -66,14 +84,28 @@ final $typed_data.Uint8List createAclRequestDescriptor = $convert.base64Decode(
     'MSEAoDZHN0GAMgAygEUgNkc3QSFAoFcHJvdG8YBCABKAlSBXByb3RvEhIKBHBvcnQYBSABKAlS'
     'BHBvcnQ=');
 
+@$core.Deprecated('Use aclResourcesDescriptor instead')
+const AclResources$json = {
+  '1': 'AclResources',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.protos.AclResourceType', '10': 'type'},
+  ],
+};
+
+/// Descriptor for `AclResources`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List aclResourcesDescriptor = $convert.base64Decode(
+    'CgxBY2xSZXNvdXJjZXMSDgoCaWQYASABKARSAmlkEisKBHR5cGUYAiABKA4yFy5wcm90b3MuQW'
+    'NsUmVzb3VyY2VUeXBlUgR0eXBl');
+
 @$core.Deprecated('Use patchAclRequestDescriptor instead')
 const PatchAclRequest$json = {
   '1': 'PatchAclRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'src', '3': 3, '4': 3, '5': 4, '10': 'src'},
-    {'1': 'dst', '3': 4, '4': 3, '5': 4, '10': 'dst'},
+    {'1': 'src', '3': 3, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
+    {'1': 'dst', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
     {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
   ],
@@ -81,9 +113,10 @@ const PatchAclRequest$json = {
 
 /// Descriptor for `PatchAclRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchAclRequestDescriptor = $convert.base64Decode(
-    'Cg9QYXRjaEFjbFJlcXVlc3QSDgoCaWQYASABKARSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEA'
-    'oDc3JjGAMgAygEUgNzcmMSEAoDZHN0GAQgAygEUgNkc3QSFAoFcHJvdG8YBSABKAlSBXByb3Rv'
-    'EhIKBHBvcnQYBiABKAlSBHBvcnQ=');
+    'Cg9QYXRjaEFjbFJlcXVlc3QSDgoCaWQYASABKARSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSJg'
+    'oDc3JjGAMgAygLMhQucHJvdG9zLkFjbFJlc291cmNlc1IDc3JjEiYKA2RzdBgEIAMoCzIULnBy'
+    'b3Rvcy5BY2xSZXNvdXJjZXNSA2RzdBIUCgVwcm90bxgFIAEoCVIFcHJvdG8SEgoEcG9ydBgGIA'
+    'EoCVIEcG9ydA==');
 
 @$core.Deprecated('Use getAclRequestDescriptor instead')
 const GetAclRequest$json = {
@@ -121,6 +154,7 @@ const AclResponse$json = {
     {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
     {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'type', '3': 8, '4': 1, '5': 9, '10': 'type'},
   ],
 };
 
@@ -129,7 +163,7 @@ final $typed_data.Uint8List aclResponseDescriptor = $convert.base64Decode(
     'CgtBY2xSZXNwb25zZRIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIeCgNzcm'
     'MYAyABKAsyDC5wcm90b3MuTm9kZVIDc3JjEh4KA2RzdBgEIAEoCzIMLnByb3Rvcy5Ob2RlUgNk'
     'c3QSFAoFcHJvdG8YBSABKAlSBXByb3RvEhIKBHBvcnQYBiABKAlSBHBvcnQSEAoDYWdlGAcgAS'
-    'gJUgNhZ2U=');
+    'gJUgNhZ2USEgoEdHlwZRgIIAEoCVIEdHlwZQ==');
 
 @$core.Deprecated('Use getMeResponseDescriptor instead')
 const GetMeResponse$json = {
