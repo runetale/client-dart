@@ -116,8 +116,8 @@ const AclResponse$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'src', '3': 3, '4': 3, '5': 4, '10': 'src'},
-    {'1': 'dst', '3': 4, '4': 3, '5': 4, '10': 'dst'},
+    {'1': 'src', '3': 3, '4': 1, '5': 11, '6': '.protos.Node', '10': 'src'},
+    {'1': 'dst', '3': 4, '4': 1, '5': 11, '6': '.protos.Node', '10': 'dst'},
     {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
     {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
@@ -126,9 +126,10 @@ const AclResponse$json = {
 
 /// Descriptor for `AclResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List aclResponseDescriptor = $convert.base64Decode(
-    'CgtBY2xSZXNwb25zZRIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIQCgNzcm'
-    'MYAyADKARSA3NyYxIQCgNkc3QYBCADKARSA2RzdBIUCgVwcm90bxgFIAEoCVIFcHJvdG8SEgoE'
-    'cG9ydBgGIAEoCVIEcG9ydBIQCgNhZ2UYByABKAlSA2FnZQ==');
+    'CgtBY2xSZXNwb25zZRIOCgJpZBgBIAEoBFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIeCgNzcm'
+    'MYAyABKAsyDC5wcm90b3MuTm9kZVIDc3JjEh4KA2RzdBgEIAEoCzIMLnByb3Rvcy5Ob2RlUgNk'
+    'c3QSFAoFcHJvdG8YBSABKAlSBXByb3RvEhIKBHBvcnQYBiABKAlSBHBvcnQSEAoDYWdlGAcgAS'
+    'gJUgNhZ2U=');
 
 @$core.Deprecated('Use getMeResponseDescriptor instead')
 const GetMeResponse$json = {
@@ -479,6 +480,27 @@ final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
     'ISCgRkZXNjGAMgASgJUgRkZXNjEh4KCm1hY2hpbmVJZHMYBCADKARSCm1hY2hpbmVJZHMSLAoE'
     'dHlwZRgFIAEoDjIYLnByb3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBlEiYKBmFjdGlvbhgGIA'
     'EoDjIOLnByb3Rvcy5BY3Rpb25SBmFjdGlvbg==');
+
+@$core.Deprecated('Use nodeDescriptor instead')
+const Node$json = {
+  '1': 'Node',
+  '2': [
+    {'1': 'fleets', '3': 1, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
+    {'1': 'resources', '3': 2, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'groups', '3': 3, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
+    {'1': 'users', '3': 4, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
+    {'1': 'Inks', '3': 5, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'Inks'},
+    {'1': 'deivces', '3': 6, '4': 3, '5': 11, '6': '.protos.Device', '10': 'deivces'},
+  ],
+};
+
+/// Descriptor for `Node`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
+    'CgROb2RlEiUKBmZsZWV0cxgBIAMoCzINLnByb3Rvcy5GbGVldFIGZmxlZXRzEi4KCXJlc291cm'
+    'NlcxgCIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2VzEiUKBmdyb3VwcxgDIAMoCzIN'
+    'LnByb3Rvcy5Hcm91cFIGZ3JvdXBzEiIKBXVzZXJzGAQgAygLMgwucHJvdG9zLlVzZXJSBXVzZX'
+    'JzEh8KBElua3MYBSADKAsyCy5wcm90b3MuSW5rUgRJbmtzEigKB2RlaXZjZXMYBiADKAsyDi5w'
+    'cm90b3MuRGV2aWNlUgdkZWl2Y2Vz');
 
 @$core.Deprecated('Use fleetDescriptor instead')
 const Fleet$json = {

@@ -318,8 +318,8 @@ class AclResponse extends $pb.GeneratedMessage {
   factory AclResponse({
     $fixnum.Int64? id,
     $core.String? name,
-    $core.Iterable<$fixnum.Int64>? src,
-    $core.Iterable<$fixnum.Int64>? dst,
+    Node? src,
+    Node? dst,
     $core.String? proto,
     $core.String? port,
     $core.String? age,
@@ -332,10 +332,10 @@ class AclResponse extends $pb.GeneratedMessage {
       $result.name = name;
     }
     if (src != null) {
-      $result.src.addAll(src);
+      $result.src = src;
     }
     if (dst != null) {
-      $result.dst.addAll(dst);
+      $result.dst = dst;
     }
     if (proto != null) {
       $result.proto = proto;
@@ -355,8 +355,8 @@ class AclResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.KU6)
+    ..aOM<Node>(3, _omitFieldNames ? '' : 'src', subBuilder: Node.create)
+    ..aOM<Node>(4, _omitFieldNames ? '' : 'dst', subBuilder: Node.create)
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
     ..aOS(7, _omitFieldNames ? '' : 'age')
@@ -403,10 +403,26 @@ class AclResponse extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get src => $_getList(2);
+  Node get src => $_getN(2);
+  @$pb.TagNumber(3)
+  set src(Node v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSrc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSrc() => clearField(3);
+  @$pb.TagNumber(3)
+  Node ensureSrc() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get dst => $_getList(3);
+  Node get dst => $_getN(3);
+  @$pb.TagNumber(4)
+  set dst(Node v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDst() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDst() => clearField(4);
+  @$pb.TagNumber(4)
+  Node ensureDst() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.String get proto => $_getSZ(4);
@@ -2028,6 +2044,90 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   $core.bool hasAction() => $_has(5);
   @$pb.TagNumber(6)
   void clearAction() => clearField(6);
+}
+
+class Node extends $pb.GeneratedMessage {
+  factory Node({
+    $core.Iterable<Fleet>? fleets,
+    $core.Iterable<Resource>? resources,
+    $core.Iterable<Group>? groups,
+    $core.Iterable<User>? users,
+    $core.Iterable<Ink>? inks,
+    $core.Iterable<Device>? deivces,
+  }) {
+    final $result = create();
+    if (fleets != null) {
+      $result.fleets.addAll(fleets);
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (groups != null) {
+      $result.groups.addAll(groups);
+    }
+    if (users != null) {
+      $result.users.addAll(users);
+    }
+    if (inks != null) {
+      $result.inks.addAll(inks);
+    }
+    if (deivces != null) {
+      $result.deivces.addAll(deivces);
+    }
+    return $result;
+  }
+  Node._() : super();
+  factory Node.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Node.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Node', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<Fleet>(1, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<Resource>(2, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<Group>(3, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..pc<User>(4, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..pc<Ink>(5, _omitFieldNames ? '' : 'Inks', $pb.PbFieldType.PM, protoName: 'Inks', subBuilder: Ink.create)
+    ..pc<Device>(6, _omitFieldNames ? '' : 'deivces', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Node clone() => Node()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Node copyWith(void Function(Node) updates) => super.copyWith((message) => updates(message as Node)) as Node;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Node create() => Node._();
+  Node createEmptyInstance() => create();
+  static $pb.PbList<Node> createRepeated() => $pb.PbList<Node>();
+  @$core.pragma('dart2js:noInline')
+  static Node getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Node>(create);
+  static Node? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Fleet> get fleets => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<Resource> get resources => $_getList(1);
+
+  @$pb.TagNumber(3)
+  $core.List<Group> get groups => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.List<User> get users => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.List<Ink> get inks => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.List<Device> get deivces => $_getList(5);
 }
 
 class Fleet extends $pb.GeneratedMessage {
