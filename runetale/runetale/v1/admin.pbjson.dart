@@ -108,6 +108,7 @@ const PatchAclRequest$json = {
     {'1': 'dst', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
     {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
+    {'1': 'action', '3': 7, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
 
@@ -116,7 +117,7 @@ final $typed_data.Uint8List patchAclRequestDescriptor = $convert.base64Decode(
     'Cg9QYXRjaEFjbFJlcXVlc3QSDgoCaWQYASABKARSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSJg'
     'oDc3JjGAMgAygLMhQucHJvdG9zLkFjbFJlc291cmNlc1IDc3JjEiYKA2RzdBgEIAMoCzIULnBy'
     'b3Rvcy5BY2xSZXNvdXJjZXNSA2RzdBIUCgVwcm90bxgFIAEoCVIFcHJvdG8SEgoEcG9ydBgGIA'
-    'EoCVIEcG9ydA==');
+    'EoCVIEcG9ydBImCgZhY3Rpb24YByABKA4yDi5wcm90b3MuQWN0aW9uUgZhY3Rpb24=');
 
 @$core.Deprecated('Use getAclRequestDescriptor instead')
 const GetAclRequest$json = {
@@ -460,7 +461,6 @@ const CreateFleetRequest$json = {
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'machineIds', '3': 3, '4': 3, '5': 4, '10': 'machineIds'},
     {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'type'},
-    {'1': 'action', '3': 5, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
 
@@ -468,8 +468,7 @@ const CreateFleetRequest$json = {
 final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVGbGVldFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgASgJUg'
     'RkZXNjEh4KCm1hY2hpbmVJZHMYAyADKARSCm1hY2hpbmVJZHMSLAoEdHlwZRgEIAEoDjIYLnBy'
-    'b3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBlEiYKBmFjdGlvbhgFIAEoDjIOLnByb3Rvcy5BY3'
-    'Rpb25SBmFjdGlvbg==');
+    'b3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBl');
 
 @$core.Deprecated('Use getFleetRequestDescriptor instead')
 const GetFleetRequest$json = {
