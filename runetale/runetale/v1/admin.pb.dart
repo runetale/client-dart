@@ -2650,7 +2650,7 @@ class Group extends $pb.GeneratedMessage {
 
 class User extends $pb.GeneratedMessage {
   factory User({
-    $fixnum.Int64? id,
+    $fixnum.Int64? machineId,
     $core.String? name,
     $core.String? picture,
     $core.String? email,
@@ -2664,8 +2664,8 @@ class User extends $pb.GeneratedMessage {
     $core.Iterable<Group>? groups,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (machineId != null) {
+      $result.machineId = machineId;
     }
     if (name != null) {
       $result.name = name;
@@ -2707,7 +2707,7 @@ class User extends $pb.GeneratedMessage {
   factory User.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'User', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'picture')
     ..aOS(4, _omitFieldNames ? '' : 'email')
@@ -2744,13 +2744,13 @@ class User extends $pb.GeneratedMessage {
   static User? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $fixnum.Int64 get machineId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set machineId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasMachineId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearMachineId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);

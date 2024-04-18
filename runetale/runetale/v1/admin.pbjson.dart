@@ -613,7 +613,7 @@ final $typed_data.Uint8List groupDescriptor = $convert.base64Decode(
 const User$json = {
   '1': 'User',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'machineId', '3': 1, '4': 1, '5': 4, '10': 'machineId'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'picture', '3': 3, '4': 1, '5': 9, '10': 'picture'},
     {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
@@ -630,13 +630,13 @@ const User$json = {
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
-    'CgRVc2VyEg4KAmlkGAEgASgEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhgKB3BpY3R1cmUYAy'
-    'ABKAlSB3BpY3R1cmUSFAoFZW1haWwYBCABKAlSBWVtYWlsEhIKBHJvbGUYBSABKAlSBHJvbGUS'
-    'FgoGam9pbmVkGAYgASgJUgZqb2luZWQSGgoIbGFzdFNlZW4YByABKAlSCGxhc3RTZWVuEhYKBn'
-    'N0YXR1cxgIIAEoCFIGc3RhdHVzEiUKBmZsZWV0cxgJIAMoCzINLnByb3Rvcy5GbGVldFIGZmxl'
-    'ZXRzEi4KCXJlc291cmNlcxgKIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2VzEigKB2'
-    'RldmljZXMYCyADKAsyDi5wcm90b3MuRGV2aWNlUgdkZXZpY2VzEiUKBmdyb3VwcxgMIAMoCzIN'
-    'LnByb3Rvcy5Hcm91cFIGZ3JvdXBz');
+    'CgRVc2VyEhwKCW1hY2hpbmVJZBgBIAEoBFIJbWFjaGluZUlkEhIKBG5hbWUYAiABKAlSBG5hbW'
+    'USGAoHcGljdHVyZRgDIAEoCVIHcGljdHVyZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSEgoEcm9s'
+    'ZRgFIAEoCVIEcm9sZRIWCgZqb2luZWQYBiABKAlSBmpvaW5lZBIaCghsYXN0U2VlbhgHIAEoCV'
+    'IIbGFzdFNlZW4SFgoGc3RhdHVzGAggASgIUgZzdGF0dXMSJQoGZmxlZXRzGAkgAygLMg0ucHJv'
+    'dG9zLkZsZWV0UgZmbGVldHMSLgoJcmVzb3VyY2VzGAogAygLMhAucHJvdG9zLlJlc291cmNlUg'
+    'lyZXNvdXJjZXMSKAoHZGV2aWNlcxgLIAMoCzIOLnByb3Rvcy5EZXZpY2VSB2RldmljZXMSJQoG'
+    'Z3JvdXBzGAwgAygLMg0ucHJvdG9zLkdyb3VwUgZncm91cHM=');
 
 @$core.Deprecated('Use deviceDescriptor instead')
 const Device$json = {
