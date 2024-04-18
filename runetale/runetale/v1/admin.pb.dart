@@ -21,6 +21,7 @@ export 'admin.pbenum.dart';
 class CreateAclRequest extends $pb.GeneratedMessage {
   factory CreateAclRequest({
     $core.String? name,
+    $core.String? desc,
     $core.Iterable<$fixnum.Int64>? src,
     $core.Iterable<$fixnum.Int64>? dst,
     $core.String? proto,
@@ -29,6 +30,9 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     final $result = create();
     if (name != null) {
       $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (src != null) {
       $result.src.addAll(src);
@@ -50,10 +54,11 @@ class CreateAclRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..p<$fixnum.Int64>(2, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.KU6)
-    ..aOS(4, _omitFieldNames ? '' : 'proto')
-    ..aOS(5, _omitFieldNames ? '' : 'port')
+    ..aOS(2, _omitFieldNames ? '' : 'desc')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.KU6)
+    ..aOS(5, _omitFieldNames ? '' : 'proto')
+    ..aOS(6, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
   ;
 
@@ -88,28 +93,37 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$fixnum.Int64> get src => $_getList(1);
+  $core.String get desc => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set desc($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDesc() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get dst => $_getList(2);
+  $core.List<$fixnum.Int64> get src => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.String get proto => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set proto($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasProto() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearProto() => clearField(4);
+  $core.List<$fixnum.Int64> get dst => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.String get port => $_getSZ(4);
+  $core.String get proto => $_getSZ(4);
   @$pb.TagNumber(5)
-  set port($core.String v) { $_setString(4, v); }
+  set proto($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPort() => $_has(4);
+  $core.bool hasProto() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPort() => clearField(5);
+  void clearProto() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get port => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set port($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPort() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPort() => clearField(6);
 }
 
 class AclResources extends $pb.GeneratedMessage {
@@ -180,6 +194,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   factory PatchAclRequest({
     $fixnum.Int64? id,
     $core.String? name,
+    $core.String? desc,
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
     $core.String? proto,
@@ -192,6 +207,9 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     }
     if (name != null) {
       $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (src != null) {
       $result.src.addAll(src);
@@ -217,11 +235,12 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..pc<AclResources>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
-    ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
-    ..aOS(5, _omitFieldNames ? '' : 'proto')
-    ..aOS(6, _omitFieldNames ? '' : 'port')
-    ..e<Action>(7, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..pc<AclResources>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
+    ..pc<AclResources>(5, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
+    ..aOS(6, _omitFieldNames ? '' : 'proto')
+    ..aOS(7, _omitFieldNames ? '' : 'port')
+    ..e<Action>(8, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -265,37 +284,46 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<AclResources> get src => $_getList(2);
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<AclResources> get dst => $_getList(3);
+  $core.List<AclResources> get src => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.String get proto => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set proto($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasProto() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearProto() => clearField(5);
+  $core.List<AclResources> get dst => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.String get port => $_getSZ(5);
+  $core.String get proto => $_getSZ(5);
   @$pb.TagNumber(6)
-  set port($core.String v) { $_setString(5, v); }
+  set proto($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasPort() => $_has(5);
+  $core.bool hasProto() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPort() => clearField(6);
+  void clearProto() => clearField(6);
 
   @$pb.TagNumber(7)
-  Action get action => $_getN(6);
+  $core.String get port => $_getSZ(6);
   @$pb.TagNumber(7)
-  set action(Action v) { setField(7, v); }
+  set port($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAction() => $_has(6);
+  $core.bool hasPort() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAction() => clearField(7);
+  void clearPort() => clearField(7);
+
+  @$pb.TagNumber(8)
+  Action get action => $_getN(7);
+  @$pb.TagNumber(8)
+  set action(Action v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAction() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAction() => clearField(8);
 }
 
 class GetAclRequest extends $pb.GeneratedMessage {
@@ -396,6 +424,7 @@ class AclResponse extends $pb.GeneratedMessage {
   factory AclResponse({
     $fixnum.Int64? id,
     $core.String? name,
+    $core.String? desc,
     Node? src,
     Node? dst,
     $core.String? proto,
@@ -409,6 +438,9 @@ class AclResponse extends $pb.GeneratedMessage {
     }
     if (name != null) {
       $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (src != null) {
       $result.src = src;
@@ -437,12 +469,13 @@ class AclResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOM<Node>(3, _omitFieldNames ? '' : 'src', subBuilder: Node.create)
-    ..aOM<Node>(4, _omitFieldNames ? '' : 'dst', subBuilder: Node.create)
-    ..aOS(5, _omitFieldNames ? '' : 'proto')
-    ..aOS(6, _omitFieldNames ? '' : 'port')
-    ..aOS(7, _omitFieldNames ? '' : 'age')
-    ..aOS(8, _omitFieldNames ? '' : 'type')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..aOM<Node>(4, _omitFieldNames ? '' : 'src', subBuilder: Node.create)
+    ..aOM<Node>(5, _omitFieldNames ? '' : 'dst', subBuilder: Node.create)
+    ..aOS(6, _omitFieldNames ? '' : 'proto')
+    ..aOS(7, _omitFieldNames ? '' : 'port')
+    ..aOS(8, _omitFieldNames ? '' : 'age')
+    ..aOS(9, _omitFieldNames ? '' : 'type')
     ..hasRequiredFields = false
   ;
 
@@ -486,62 +519,71 @@ class AclResponse extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  Node get src => $_getN(2);
+  $core.String get desc => $_getSZ(2);
   @$pb.TagNumber(3)
-  set src(Node v) { setField(3, v); }
+  set desc($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSrc() => $_has(2);
+  $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSrc() => clearField(3);
-  @$pb.TagNumber(3)
-  Node ensureSrc() => $_ensure(2);
+  void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  Node get dst => $_getN(3);
+  Node get src => $_getN(3);
   @$pb.TagNumber(4)
-  set dst(Node v) { setField(4, v); }
+  set src(Node v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasDst() => $_has(3);
+  $core.bool hasSrc() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDst() => clearField(4);
+  void clearSrc() => clearField(4);
   @$pb.TagNumber(4)
-  Node ensureDst() => $_ensure(3);
+  Node ensureSrc() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $core.String get proto => $_getSZ(4);
+  Node get dst => $_getN(4);
   @$pb.TagNumber(5)
-  set proto($core.String v) { $_setString(4, v); }
+  set dst(Node v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasProto() => $_has(4);
+  $core.bool hasDst() => $_has(4);
   @$pb.TagNumber(5)
-  void clearProto() => clearField(5);
+  void clearDst() => clearField(5);
+  @$pb.TagNumber(5)
+  Node ensureDst() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.String get port => $_getSZ(5);
+  $core.String get proto => $_getSZ(5);
   @$pb.TagNumber(6)
-  set port($core.String v) { $_setString(5, v); }
+  set proto($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasPort() => $_has(5);
+  $core.bool hasProto() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPort() => clearField(6);
+  void clearProto() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get age => $_getSZ(6);
+  $core.String get port => $_getSZ(6);
   @$pb.TagNumber(7)
-  set age($core.String v) { $_setString(6, v); }
+  set port($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAge() => $_has(6);
+  $core.bool hasPort() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAge() => clearField(7);
+  void clearPort() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get type => $_getSZ(7);
+  $core.String get age => $_getSZ(7);
   @$pb.TagNumber(8)
-  set type($core.String v) { $_setString(7, v); }
+  set age($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasType() => $_has(7);
+  $core.bool hasAge() => $_has(7);
   @$pb.TagNumber(8)
-  void clearType() => clearField(8);
+  void clearAge() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get type => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set type($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasType() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearType() => clearField(9);
 }
 
 class GetMeResponse extends $pb.GeneratedMessage {
