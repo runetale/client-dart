@@ -26,6 +26,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? dst,
     $core.String? proto,
     $core.String? port,
+    Action? action,
   }) {
     final $result = create();
     if (name != null) {
@@ -46,6 +47,9 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     if (port != null) {
       $result.port = port;
     }
+    if (action != null) {
+      $result.action = action;
+    }
     return $result;
   }
   CreateAclRequest._() : super();
@@ -59,6 +63,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
+    ..e<Action>(7, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -124,6 +129,15 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   $core.bool hasPort() => $_has(5);
   @$pb.TagNumber(6)
   void clearPort() => clearField(6);
+
+  @$pb.TagNumber(7)
+  Action get action => $_getN(6);
+  @$pb.TagNumber(7)
+  set action(Action v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAction() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAction() => clearField(7);
 }
 
 class AclResources extends $pb.GeneratedMessage {

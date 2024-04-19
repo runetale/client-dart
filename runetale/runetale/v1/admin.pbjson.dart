@@ -76,6 +76,7 @@ const CreateAclRequest$json = {
     {'1': 'dst', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
     {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
+    {'1': 'action', '3': 7, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
 
@@ -84,7 +85,7 @@ final $typed_data.Uint8List createAclRequestDescriptor = $convert.base64Decode(
     'ChBDcmVhdGVBY2xSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYxgCIAEoCVIEZG'
     'VzYxImCgNzcmMYAyADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNzcmMSJgoDZHN0GAQgAygL'
     'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAUgASgJUgVwcm90bxISCgRwb3'
-    'J0GAYgASgJUgRwb3J0');
+    'J0GAYgASgJUgRwb3J0EiYKBmFjdGlvbhgHIAEoDjIOLnByb3Rvcy5BY3Rpb25SBmFjdGlvbg==');
 
 @$core.Deprecated('Use aclResourcesDescriptor instead')
 const AclResources$json = {
