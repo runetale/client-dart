@@ -450,7 +450,7 @@ class AclResponse extends $pb.GeneratedMessage {
     Node? src,
     Node? dst,
     $core.String? proto,
-    $core.String? port,
+    $fixnum.Int64? port,
     $core.String? age,
     $core.String? type,
   }) {
@@ -495,7 +495,7 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOM<Node>(4, _omitFieldNames ? '' : 'src', subBuilder: Node.create)
     ..aOM<Node>(5, _omitFieldNames ? '' : 'dst', subBuilder: Node.create)
     ..aOS(6, _omitFieldNames ? '' : 'proto')
-    ..aOS(7, _omitFieldNames ? '' : 'port')
+    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(8, _omitFieldNames ? '' : 'age')
     ..aOS(9, _omitFieldNames ? '' : 'type')
     ..hasRequiredFields = false
@@ -581,9 +581,9 @@ class AclResponse extends $pb.GeneratedMessage {
   void clearProto() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get port => $_getSZ(6);
+  $fixnum.Int64 get port => $_getI64(6);
   @$pb.TagNumber(7)
-  set port($core.String v) { $_setString(6, v); }
+  set port($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
   $core.bool hasPort() => $_has(6);
   @$pb.TagNumber(7)
