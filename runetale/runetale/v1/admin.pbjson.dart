@@ -72,8 +72,8 @@ const CreateAclRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'src', '3': 3, '4': 3, '5': 4, '10': 'src'},
-    {'1': 'dst', '3': 4, '4': 3, '5': 4, '10': 'dst'},
+    {'1': 'src', '3': 3, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
+    {'1': 'dst', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
     {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
   ],
@@ -82,8 +82,9 @@ const CreateAclRequest$json = {
 /// Descriptor for `CreateAclRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createAclRequestDescriptor = $convert.base64Decode(
     'ChBDcmVhdGVBY2xSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYxgCIAEoCVIEZG'
-    'VzYxIQCgNzcmMYAyADKARSA3NyYxIQCgNkc3QYBCADKARSA2RzdBIUCgVwcm90bxgFIAEoCVIF'
-    'cHJvdG8SEgoEcG9ydBgGIAEoCVIEcG9ydA==');
+    'VzYxImCgNzcmMYAyADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNzcmMSJgoDZHN0GAQgAygL'
+    'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAUgASgJUgVwcm90bxISCgRwb3'
+    'J0GAYgASgJUgRwb3J0');
 
 @$core.Deprecated('Use aclResourcesDescriptor instead')
 const AclResources$json = {

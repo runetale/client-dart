@@ -22,8 +22,8 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   factory CreateAclRequest({
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? src,
-    $core.Iterable<$fixnum.Int64>? dst,
+    $core.Iterable<AclResources>? src,
+    $core.Iterable<AclResources>? dst,
     $core.String? proto,
     $core.String? port,
   }) {
@@ -55,8 +55,8 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.KU6)
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.KU6)
+    ..pc<AclResources>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
+    ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..aOS(5, _omitFieldNames ? '' : 'proto')
     ..aOS(6, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
@@ -102,10 +102,10 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get src => $_getList(2);
+  $core.List<AclResources> get src => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get dst => $_getList(3);
+  $core.List<AclResources> get dst => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.String get proto => $_getSZ(4);
