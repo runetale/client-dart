@@ -128,12 +128,12 @@ class CreateAclRequest extends $pb.GeneratedMessage {
 
 class AclResources extends $pb.GeneratedMessage {
   factory AclResources({
-    $fixnum.Int64? id,
+    $core.Iterable<$fixnum.Int64>? id,
     AclResourceType? type,
   }) {
     final $result = create();
     if (id != null) {
-      $result.id = id;
+      $result.id.addAll(id);
     }
     if (type != null) {
       $result.type = type;
@@ -145,7 +145,7 @@ class AclResources extends $pb.GeneratedMessage {
   factory AclResources.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResources', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.KU6)
     ..e<AclResourceType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AclResourceType.FLEET, valueOf: AclResourceType.valueOf, enumValues: AclResourceType.values)
     ..hasRequiredFields = false
   ;
@@ -172,13 +172,7 @@ class AclResources extends $pb.GeneratedMessage {
   static AclResources? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
-  @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  $core.List<$fixnum.Int64> get id => $_getList(0);
 
   @$pb.TagNumber(2)
   AclResourceType get type => $_getN(1);
