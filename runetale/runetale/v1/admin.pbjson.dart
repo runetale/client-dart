@@ -91,15 +91,17 @@ final $typed_data.Uint8List createAclRequestDescriptor = $convert.base64Decode(
 const AclResources$json = {
   '1': 'AclResources',
   '2': [
-    {'1': 'id', '3': 1, '4': 3, '5': 4, '10': 'id'},
-    {'1': 'type', '3': 2, '4': 1, '5': 14, '6': '.protos.AclResourceType', '10': 'type'},
+    {'1': 'machineIds', '3': 1, '4': 3, '5': 4, '10': 'machineIds'},
+    {'1': 'policyId', '3': 2, '4': 1, '5': 9, '10': 'policyId'},
+    {'1': 'type', '3': 3, '4': 1, '5': 14, '6': '.protos.AclResourceType', '10': 'type'},
   ],
 };
 
 /// Descriptor for `AclResources`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List aclResourcesDescriptor = $convert.base64Decode(
-    'CgxBY2xSZXNvdXJjZXMSDgoCaWQYASADKARSAmlkEisKBHR5cGUYAiABKA4yFy5wcm90b3MuQW'
-    'NsUmVzb3VyY2VUeXBlUgR0eXBl');
+    'CgxBY2xSZXNvdXJjZXMSHgoKbWFjaGluZUlkcxgBIAMoBFIKbWFjaGluZUlkcxIaCghwb2xpY3'
+    'lJZBgCIAEoCVIIcG9saWN5SWQSKwoEdHlwZRgDIAEoDjIXLnByb3Rvcy5BY2xSZXNvdXJjZVR5'
+    'cGVSBHR5cGU=');
 
 @$core.Deprecated('Use patchAclRequestDescriptor instead')
 const PatchAclRequest$json = {

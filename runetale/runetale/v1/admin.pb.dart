@@ -142,12 +142,16 @@ class CreateAclRequest extends $pb.GeneratedMessage {
 
 class AclResources extends $pb.GeneratedMessage {
   factory AclResources({
-    $core.Iterable<$fixnum.Int64>? id,
+    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.String? policyId,
     AclResourceType? type,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id.addAll(id);
+    if (machineIds != null) {
+      $result.machineIds.addAll(machineIds);
+    }
+    if (policyId != null) {
+      $result.policyId = policyId;
     }
     if (type != null) {
       $result.type = type;
@@ -159,8 +163,9 @@ class AclResources extends $pb.GeneratedMessage {
   factory AclResources.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResources', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.KU6)
-    ..e<AclResourceType>(2, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AclResourceType.FLEET, valueOf: AclResourceType.valueOf, enumValues: AclResourceType.values)
+    ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..aOS(2, _omitFieldNames ? '' : 'policyId', protoName: 'policyId')
+    ..e<AclResourceType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AclResourceType.FLEET, valueOf: AclResourceType.valueOf, enumValues: AclResourceType.values)
     ..hasRequiredFields = false
   ;
 
@@ -186,16 +191,25 @@ class AclResources extends $pb.GeneratedMessage {
   static AclResources? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$fixnum.Int64> get id => $_getList(0);
+  $core.List<$fixnum.Int64> get machineIds => $_getList(0);
 
   @$pb.TagNumber(2)
-  AclResourceType get type => $_getN(1);
+  $core.String get policyId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set type(AclResourceType v) { setField(2, v); }
+  set policyId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasType() => $_has(1);
+  $core.bool hasPolicyId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearType() => clearField(2);
+  void clearPolicyId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  AclResourceType get type => $_getN(2);
+  @$pb.TagNumber(3)
+  set type(AclResourceType v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearType() => clearField(3);
 }
 
 class PatchAclRequest extends $pb.GeneratedMessage {
