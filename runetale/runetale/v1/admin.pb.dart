@@ -25,7 +25,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
     $core.String? proto,
-    $core.String? port,
+    $fixnum.Int64? port,
     Action? action,
   }) {
     final $result = create();
@@ -62,7 +62,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..aOS(5, _omitFieldNames ? '' : 'proto')
-    ..aOS(6, _omitFieldNames ? '' : 'port')
+    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..e<Action>(7, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -122,9 +122,9 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   void clearProto() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get port => $_getSZ(5);
+  $fixnum.Int64 get port => $_getI64(5);
   @$pb.TagNumber(6)
-  set port($core.String v) { $_setString(5, v); }
+  set port($fixnum.Int64 v) { $_setInt64(5, v); }
   @$pb.TagNumber(6)
   $core.bool hasPort() => $_has(5);
   @$pb.TagNumber(6)
@@ -220,7 +220,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
     $core.String? proto,
-    $core.String? port,
+    $fixnum.Int64? port,
     Action? action,
   }) {
     final $result = create();
@@ -261,7 +261,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(5, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..aOS(6, _omitFieldNames ? '' : 'proto')
-    ..aOS(7, _omitFieldNames ? '' : 'port')
+    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..e<Action>(8, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -330,9 +330,9 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   void clearProto() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get port => $_getSZ(6);
+  $fixnum.Int64 get port => $_getI64(6);
   @$pb.TagNumber(7)
-  set port($core.String v) { $_setString(6, v); }
+  set port($fixnum.Int64 v) { $_setInt64(6, v); }
   @$pb.TagNumber(7)
   $core.bool hasPort() => $_has(6);
   @$pb.TagNumber(7)
