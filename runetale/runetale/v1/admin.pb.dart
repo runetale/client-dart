@@ -214,7 +214,7 @@ class AclResources extends $pb.GeneratedMessage {
 
 class PatchAclRequest extends $pb.GeneratedMessage {
   factory PatchAclRequest({
-    $fixnum.Int64? id,
+    $core.String? id,
     $core.String? name,
     $core.String? desc,
     $core.Iterable<AclResources>? src,
@@ -255,7 +255,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   factory PatchAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
@@ -288,9 +288,9 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   static PatchAclRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -350,7 +350,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
 
 class GetAclRequest extends $pb.GeneratedMessage {
   factory GetAclRequest({
-    $fixnum.Int64? id,
+    $core.String? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -363,7 +363,7 @@ class GetAclRequest extends $pb.GeneratedMessage {
   factory GetAclRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAclRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
@@ -389,9 +389,9 @@ class GetAclRequest extends $pb.GeneratedMessage {
   static GetAclRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
