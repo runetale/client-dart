@@ -2714,6 +2714,7 @@ class Group extends $pb.GeneratedMessage {
 
 class User extends $pb.GeneratedMessage {
   factory User({
+    $fixnum.Int64? id,
     $fixnum.Int64? machineId,
     $core.String? name,
     $core.String? picture,
@@ -2728,6 +2729,9 @@ class User extends $pb.GeneratedMessage {
     $core.Iterable<Group>? groups,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (machineId != null) {
       $result.machineId = machineId;
     }
@@ -2771,18 +2775,19 @@ class User extends $pb.GeneratedMessage {
   factory User.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'User', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'picture')
-    ..aOS(4, _omitFieldNames ? '' : 'email')
-    ..aOS(5, _omitFieldNames ? '' : 'role')
-    ..aOS(6, _omitFieldNames ? '' : 'joined')
-    ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOB(8, _omitFieldNames ? '' : 'status')
-    ..pc<Fleet>(9, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
-    ..pc<Resource>(10, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..pc<Device>(11, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
-    ..pc<Group>(12, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'picture')
+    ..aOS(5, _omitFieldNames ? '' : 'email')
+    ..aOS(6, _omitFieldNames ? '' : 'role')
+    ..aOS(7, _omitFieldNames ? '' : 'joined')
+    ..aOS(8, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOB(9, _omitFieldNames ? '' : 'status')
+    ..pc<Fleet>(10, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<Resource>(11, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<Device>(12, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<Group>(13, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
     ..hasRequiredFields = false
   ;
 
@@ -2808,88 +2813,97 @@ class User extends $pb.GeneratedMessage {
   static User? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get machineId => $_getI64(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set machineId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasMachineId() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearMachineId() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
+  $fixnum.Int64 get machineId => $_getI64(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set machineId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
+  $core.bool hasMachineId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearMachineId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get picture => $_getSZ(2);
+  $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set picture($core.String v) { $_setString(2, v); }
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasPicture() => $_has(2);
+  $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPicture() => clearField(3);
+  void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get email => $_getSZ(3);
+  $core.String get picture => $_getSZ(3);
   @$pb.TagNumber(4)
-  set email($core.String v) { $_setString(3, v); }
+  set picture($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasEmail() => $_has(3);
+  $core.bool hasPicture() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEmail() => clearField(4);
+  void clearPicture() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get role => $_getSZ(4);
+  $core.String get email => $_getSZ(4);
   @$pb.TagNumber(5)
-  set role($core.String v) { $_setString(4, v); }
+  set email($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasRole() => $_has(4);
+  $core.bool hasEmail() => $_has(4);
   @$pb.TagNumber(5)
-  void clearRole() => clearField(5);
+  void clearEmail() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get joined => $_getSZ(5);
+  $core.String get role => $_getSZ(5);
   @$pb.TagNumber(6)
-  set joined($core.String v) { $_setString(5, v); }
+  set role($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasJoined() => $_has(5);
+  $core.bool hasRole() => $_has(5);
   @$pb.TagNumber(6)
-  void clearJoined() => clearField(6);
+  void clearRole() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get lastSeen => $_getSZ(6);
+  $core.String get joined => $_getSZ(6);
   @$pb.TagNumber(7)
-  set lastSeen($core.String v) { $_setString(6, v); }
+  set joined($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasLastSeen() => $_has(6);
+  $core.bool hasJoined() => $_has(6);
   @$pb.TagNumber(7)
-  void clearLastSeen() => clearField(7);
+  void clearJoined() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get status => $_getBF(7);
+  $core.String get lastSeen => $_getSZ(7);
   @$pb.TagNumber(8)
-  set status($core.bool v) { $_setBool(7, v); }
+  set lastSeen($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasStatus() => $_has(7);
+  $core.bool hasLastSeen() => $_has(7);
   @$pb.TagNumber(8)
-  void clearStatus() => clearField(8);
+  void clearLastSeen() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<Fleet> get fleets => $_getList(8);
+  $core.bool get status => $_getBF(8);
+  @$pb.TagNumber(9)
+  set status($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasStatus() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearStatus() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.List<Resource> get resources => $_getList(9);
+  $core.List<Fleet> get fleets => $_getList(9);
 
   @$pb.TagNumber(11)
-  $core.List<Device> get devices => $_getList(10);
+  $core.List<Resource> get resources => $_getList(10);
 
   @$pb.TagNumber(12)
-  $core.List<Group> get groups => $_getList(11);
+  $core.List<Device> get devices => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $core.List<Group> get groups => $_getList(12);
 }
 
 class Device extends $pb.GeneratedMessage {

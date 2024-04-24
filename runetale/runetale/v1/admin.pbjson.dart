@@ -621,30 +621,31 @@ final $typed_data.Uint8List groupDescriptor = $convert.base64Decode(
 const User$json = {
   '1': 'User',
   '2': [
-    {'1': 'machineId', '3': 1, '4': 1, '5': 4, '10': 'machineId'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'picture', '3': 3, '4': 1, '5': 9, '10': 'picture'},
-    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'role', '3': 5, '4': 1, '5': 9, '10': 'role'},
-    {'1': 'joined', '3': 6, '4': 1, '5': 9, '10': 'joined'},
-    {'1': 'lastSeen', '3': 7, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'status', '3': 8, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'fleets', '3': 9, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
-    {'1': 'resources', '3': 10, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
-    {'1': 'devices', '3': 11, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
-    {'1': 'groups', '3': 12, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'machineId', '3': 2, '4': 1, '5': 4, '10': 'machineId'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'picture', '3': 4, '4': 1, '5': 9, '10': 'picture'},
+    {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'role', '3': 6, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'joined', '3': 7, '4': 1, '5': 9, '10': 'joined'},
+    {'1': 'lastSeen', '3': 8, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'status', '3': 9, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'fleets', '3': 10, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
+    {'1': 'resources', '3': 11, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'devices', '3': 12, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
+    {'1': 'groups', '3': 13, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
-    'CgRVc2VyEhwKCW1hY2hpbmVJZBgBIAEoBFIJbWFjaGluZUlkEhIKBG5hbWUYAiABKAlSBG5hbW'
-    'USGAoHcGljdHVyZRgDIAEoCVIHcGljdHVyZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSEgoEcm9s'
-    'ZRgFIAEoCVIEcm9sZRIWCgZqb2luZWQYBiABKAlSBmpvaW5lZBIaCghsYXN0U2VlbhgHIAEoCV'
-    'IIbGFzdFNlZW4SFgoGc3RhdHVzGAggASgIUgZzdGF0dXMSJQoGZmxlZXRzGAkgAygLMg0ucHJv'
-    'dG9zLkZsZWV0UgZmbGVldHMSLgoJcmVzb3VyY2VzGAogAygLMhAucHJvdG9zLlJlc291cmNlUg'
-    'lyZXNvdXJjZXMSKAoHZGV2aWNlcxgLIAMoCzIOLnByb3Rvcy5EZXZpY2VSB2RldmljZXMSJQoG'
-    'Z3JvdXBzGAwgAygLMg0ucHJvdG9zLkdyb3VwUgZncm91cHM=');
+    'CgRVc2VyEg4KAmlkGAEgASgEUgJpZBIcCgltYWNoaW5lSWQYAiABKARSCW1hY2hpbmVJZBISCg'
+    'RuYW1lGAMgASgJUgRuYW1lEhgKB3BpY3R1cmUYBCABKAlSB3BpY3R1cmUSFAoFZW1haWwYBSAB'
+    'KAlSBWVtYWlsEhIKBHJvbGUYBiABKAlSBHJvbGUSFgoGam9pbmVkGAcgASgJUgZqb2luZWQSGg'
+    'oIbGFzdFNlZW4YCCABKAlSCGxhc3RTZWVuEhYKBnN0YXR1cxgJIAEoCFIGc3RhdHVzEiUKBmZs'
+    'ZWV0cxgKIAMoCzINLnByb3Rvcy5GbGVldFIGZmxlZXRzEi4KCXJlc291cmNlcxgLIAMoCzIQLn'
+    'Byb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2VzEigKB2RldmljZXMYDCADKAsyDi5wcm90b3MuRGV2'
+    'aWNlUgdkZXZpY2VzEiUKBmdyb3VwcxgNIAMoCzINLnByb3Rvcy5Hcm91cFIGZ3JvdXBz');
 
 @$core.Deprecated('Use deviceDescriptor instead')
 const Device$json = {
