@@ -34,6 +34,10 @@ class AclServiceClient extends $grpc.Client {
       '/protos.AclService/GetAcls',
       ($1.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetAclsResponse.fromBuffer(value));
+  static final _$getAclsJson = $grpc.ClientMethod<$1.Empty, $0.GetAclsJsonResponse>(
+      '/protos.AclService/GetAclsJson',
+      ($1.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.GetAclsJsonResponse.fromBuffer(value));
 
   AclServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -51,6 +55,10 @@ class AclServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetAclsResponse> getAcls($1.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAcls, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetAclsJsonResponse> getAclsJson($1.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAclsJson, request, options: options);
   }
 }
 
@@ -80,6 +88,13 @@ abstract class AclServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
         ($0.GetAclsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.Empty, $0.GetAclsJsonResponse>(
+        'GetAclsJson',
+        getAclsJson_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
+        ($0.GetAclsJsonResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.AclResponse> createAcl_Pre($grpc.ServiceCall call, $async.Future<$0.CreateAclRequest> request) async {
@@ -94,9 +109,14 @@ abstract class AclServiceBase extends $grpc.Service {
     return getAcls(call, await request);
   }
 
+  $async.Future<$0.GetAclsJsonResponse> getAclsJson_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+    return getAclsJson(call, await request);
+  }
+
   $async.Future<$0.AclResponse> createAcl($grpc.ServiceCall call, $0.CreateAclRequest request);
   $async.Future<$0.AclResponse> getAcl($grpc.ServiceCall call, $0.GetAclRequest request);
   $async.Future<$0.GetAclsResponse> getAcls($grpc.ServiceCall call, $1.Empty request);
+  $async.Future<$0.GetAclsJsonResponse> getAclsJson($grpc.ServiceCall call, $1.Empty request);
 }
 @$pb.GrpcServiceName('protos.AclDetailService')
 class AclDetailServiceClient extends $grpc.Client {

@@ -442,6 +442,56 @@ class GetAclsResponse extends $pb.GeneratedMessage {
   $core.List<AclResponse> get acls => $_getList(0);
 }
 
+class GetAclsJsonResponse extends $pb.GeneratedMessage {
+  factory GetAclsJsonResponse({
+    $core.String? json,
+  }) {
+    final $result = create();
+    if (json != null) {
+      $result.json = json;
+    }
+    return $result;
+  }
+  GetAclsJsonResponse._() : super();
+  factory GetAclsJsonResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetAclsJsonResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAclsJsonResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'json')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetAclsJsonResponse clone() => GetAclsJsonResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetAclsJsonResponse copyWith(void Function(GetAclsJsonResponse) updates) => super.copyWith((message) => updates(message as GetAclsJsonResponse)) as GetAclsJsonResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetAclsJsonResponse create() => GetAclsJsonResponse._();
+  GetAclsJsonResponse createEmptyInstance() => create();
+  static $pb.PbList<GetAclsJsonResponse> createRepeated() => $pb.PbList<GetAclsJsonResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetAclsJsonResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAclsJsonResponse>(create);
+  static GetAclsJsonResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get json => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set json($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasJson() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearJson() => clearField(1);
+}
+
 class AclResponse extends $pb.GeneratedMessage {
   factory AclResponse({
     $core.String? id,

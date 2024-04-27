@@ -151,6 +151,18 @@ final $typed_data.Uint8List getAclsResponseDescriptor = $convert.base64Decode(
     'Cg9HZXRBY2xzUmVzcG9uc2USJwoEYWNscxgBIAMoCzITLnByb3Rvcy5BY2xSZXNwb25zZVIEYW'
     'Nscw==');
 
+@$core.Deprecated('Use getAclsJsonResponseDescriptor instead')
+const GetAclsJsonResponse$json = {
+  '1': 'GetAclsJsonResponse',
+  '2': [
+    {'1': 'json', '3': 1, '4': 1, '5': 9, '10': 'json'},
+  ],
+};
+
+/// Descriptor for `GetAclsJsonResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getAclsJsonResponseDescriptor = $convert.base64Decode(
+    'ChNHZXRBY2xzSnNvblJlc3BvbnNlEhIKBGpzb24YASABKAlSBGpzb24=');
+
 @$core.Deprecated('Use aclResponseDescriptor instead')
 const AclResponse$json = {
   '1': 'AclResponse',
