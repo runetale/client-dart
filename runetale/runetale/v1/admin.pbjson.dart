@@ -534,6 +534,23 @@ final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
     'dHlwZRgFIAEoDjIYLnByb3Rvcy5EZXBsb3ltZW50TWV0aG9kUgR0eXBlEiYKBmFjdGlvbhgGIA'
     'EoDjIOLnByb3Rvcy5BY3Rpb25SBmFjdGlvbg==');
 
+@$core.Deprecated('Use overviewDescriptor instead')
+const Overview$json = {
+  '1': 'Overview',
+  '2': [
+    {'1': 'devicesAmount', '3': 1, '4': 1, '5': 4, '10': 'devicesAmount'},
+    {'1': 'usersAmount', '3': 2, '4': 1, '5': 4, '10': 'usersAmount'},
+    {'1': 'fleetsAmount', '3': 3, '4': 1, '5': 4, '10': 'fleetsAmount'},
+    {'1': 'resourcesAmount', '3': 4, '4': 1, '5': 4, '10': 'resourcesAmount'},
+  ],
+};
+
+/// Descriptor for `Overview`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List overviewDescriptor = $convert.base64Decode(
+    'CghPdmVydmlldxIkCg1kZXZpY2VzQW1vdW50GAEgASgEUg1kZXZpY2VzQW1vdW50EiAKC3VzZX'
+    'JzQW1vdW50GAIgASgEUgt1c2Vyc0Ftb3VudBIiCgxmbGVldHNBbW91bnQYAyABKARSDGZsZWV0'
+    'c0Ftb3VudBIoCg9yZXNvdXJjZXNBbW91bnQYBCABKARSD3Jlc291cmNlc0Ftb3VudA==');
+
 @$core.Deprecated('Use nodeDescriptor instead')
 const Node$json = {
   '1': 'Node',

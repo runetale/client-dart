@@ -738,3 +738,41 @@ abstract class FleetDetailServiceBase extends $grpc.Service {
 
   $async.Future<$0.Group> patchFleet($grpc.ServiceCall call, $0.PatchFleetRequest request);
 }
+@$pb.GrpcServiceName('protos.OverviewService')
+class OverviewServiceClient extends $grpc.Client {
+  static final _$getOverview = $grpc.ClientMethod<$1.Empty, $0.Overview>(
+      '/protos.OverviewService/GetOverview',
+      ($1.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Overview.fromBuffer(value));
+
+  OverviewServiceClient($grpc.ClientChannel channel,
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
+      : super(channel, options: options,
+        interceptors: interceptors);
+
+  $grpc.ResponseFuture<$0.Overview> getOverview($1.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getOverview, request, options: options);
+  }
+}
+
+@$pb.GrpcServiceName('protos.OverviewService')
+abstract class OverviewServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.OverviewService';
+
+  OverviewServiceBase() {
+    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Overview>(
+        'GetOverview',
+        getOverview_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
+        ($0.Overview value) => value.writeToBuffer()));
+  }
+
+  $async.Future<$0.Overview> getOverview_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+    return getOverview(call, await request);
+  }
+
+  $async.Future<$0.Overview> getOverview($grpc.ServiceCall call, $1.Empty request);
+}

@@ -2238,6 +2238,98 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   void clearAction() => clearField(6);
 }
 
+class Overview extends $pb.GeneratedMessage {
+  factory Overview({
+    $fixnum.Int64? devicesAmount,
+    $fixnum.Int64? usersAmount,
+    $fixnum.Int64? fleetsAmount,
+    $fixnum.Int64? resourcesAmount,
+  }) {
+    final $result = create();
+    if (devicesAmount != null) {
+      $result.devicesAmount = devicesAmount;
+    }
+    if (usersAmount != null) {
+      $result.usersAmount = usersAmount;
+    }
+    if (fleetsAmount != null) {
+      $result.fleetsAmount = fleetsAmount;
+    }
+    if (resourcesAmount != null) {
+      $result.resourcesAmount = resourcesAmount;
+    }
+    return $result;
+  }
+  Overview._() : super();
+  factory Overview.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Overview.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Overview', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'devicesAmount', $pb.PbFieldType.OU6, protoName: 'devicesAmount', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'usersAmount', $pb.PbFieldType.OU6, protoName: 'usersAmount', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'fleetsAmount', $pb.PbFieldType.OU6, protoName: 'fleetsAmount', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'resourcesAmount', $pb.PbFieldType.OU6, protoName: 'resourcesAmount', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Overview clone() => Overview()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Overview copyWith(void Function(Overview) updates) => super.copyWith((message) => updates(message as Overview)) as Overview;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Overview create() => Overview._();
+  Overview createEmptyInstance() => create();
+  static $pb.PbList<Overview> createRepeated() => $pb.PbList<Overview>();
+  @$core.pragma('dart2js:noInline')
+  static Overview getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Overview>(create);
+  static Overview? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get devicesAmount => $_getI64(0);
+  @$pb.TagNumber(1)
+  set devicesAmount($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasDevicesAmount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDevicesAmount() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get usersAmount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set usersAmount($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUsersAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUsersAmount() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get fleetsAmount => $_getI64(2);
+  @$pb.TagNumber(3)
+  set fleetsAmount($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFleetsAmount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFleetsAmount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get resourcesAmount => $_getI64(3);
+  @$pb.TagNumber(4)
+  set resourcesAmount($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasResourcesAmount() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearResourcesAmount() => clearField(4);
+}
+
 class Node extends $pb.GeneratedMessage {
   factory Node({
     $core.Iterable<Fleet>? fleets,
