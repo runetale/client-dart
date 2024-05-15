@@ -2330,26 +2330,26 @@ class Overview extends $pb.GeneratedMessage {
   void clearResourcesAmount() => clearField(4);
 }
 
-class Onbording extends $pb.GeneratedMessage {
-  factory Onbording({
-    $core.bool? isOnbording,
+class Onboarding extends $pb.GeneratedMessage {
+  factory Onboarding({
+    $core.bool? isOnboarding,
     $core.String? inviteLink,
   }) {
     final $result = create();
-    if (isOnbording != null) {
-      $result.isOnbording = isOnbording;
+    if (isOnboarding != null) {
+      $result.isOnboarding = isOnboarding;
     }
     if (inviteLink != null) {
       $result.inviteLink = inviteLink;
     }
     return $result;
   }
-  Onbording._() : super();
-  factory Onbording.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Onbording.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Onboarding._() : super();
+  factory Onboarding.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Onboarding.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Onbording', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'isOnbording', protoName: 'isOnbording')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Onboarding', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'isOnboarding', protoName: 'isOnboarding')
     ..aOS(2, _omitFieldNames ? '' : 'inviteLink', protoName: 'inviteLink')
     ..hasRequiredFields = false
   ;
@@ -2358,31 +2358,31 @@ class Onbording extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Onbording clone() => Onbording()..mergeFromMessage(this);
+  Onboarding clone() => Onboarding()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Onbording copyWith(void Function(Onbording) updates) => super.copyWith((message) => updates(message as Onbording)) as Onbording;
+  Onboarding copyWith(void Function(Onboarding) updates) => super.copyWith((message) => updates(message as Onboarding)) as Onboarding;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static Onbording create() => Onbording._();
-  Onbording createEmptyInstance() => create();
-  static $pb.PbList<Onbording> createRepeated() => $pb.PbList<Onbording>();
+  static Onboarding create() => Onboarding._();
+  Onboarding createEmptyInstance() => create();
+  static $pb.PbList<Onboarding> createRepeated() => $pb.PbList<Onboarding>();
   @$core.pragma('dart2js:noInline')
-  static Onbording getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Onbording>(create);
-  static Onbording? _defaultInstance;
+  static Onboarding getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Onboarding>(create);
+  static Onboarding? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get isOnbording => $_getBF(0);
+  $core.bool get isOnboarding => $_getBF(0);
   @$pb.TagNumber(1)
-  set isOnbording($core.bool v) { $_setBool(0, v); }
+  set isOnboarding($core.bool v) { $_setBool(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasIsOnbording() => $_has(0);
+  $core.bool hasIsOnboarding() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIsOnbording() => clearField(1);
+  void clearIsOnboarding() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get inviteLink => $_getSZ(1);

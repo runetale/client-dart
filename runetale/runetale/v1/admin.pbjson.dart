@@ -551,19 +551,19 @@ final $typed_data.Uint8List overviewDescriptor = $convert.base64Decode(
     'JzQW1vdW50GAIgASgEUgt1c2Vyc0Ftb3VudBIiCgxmbGVldHNBbW91bnQYAyABKARSDGZsZWV0'
     'c0Ftb3VudBIoCg9yZXNvdXJjZXNBbW91bnQYBCABKARSD3Jlc291cmNlc0Ftb3VudA==');
 
-@$core.Deprecated('Use onbordingDescriptor instead')
-const Onbording$json = {
-  '1': 'Onbording',
+@$core.Deprecated('Use onboardingDescriptor instead')
+const Onboarding$json = {
+  '1': 'Onboarding',
   '2': [
-    {'1': 'isOnbording', '3': 1, '4': 1, '5': 8, '10': 'isOnbording'},
+    {'1': 'isOnboarding', '3': 1, '4': 1, '5': 8, '10': 'isOnboarding'},
     {'1': 'inviteLink', '3': 2, '4': 1, '5': 9, '10': 'inviteLink'},
   ],
 };
 
-/// Descriptor for `Onbording`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List onbordingDescriptor = $convert.base64Decode(
-    'CglPbmJvcmRpbmcSIAoLaXNPbmJvcmRpbmcYASABKAhSC2lzT25ib3JkaW5nEh4KCmludml0ZU'
-    'xpbmsYAiABKAlSCmludml0ZUxpbms=');
+/// Descriptor for `Onboarding`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List onboardingDescriptor = $convert.base64Decode(
+    'CgpPbmJvYXJkaW5nEiIKDGlzT25ib2FyZGluZxgBIAEoCFIMaXNPbmJvYXJkaW5nEh4KCmludm'
+    'l0ZUxpbmsYAiABKAlSCmludml0ZUxpbms=');
 
 @$core.Deprecated('Use nodeDescriptor instead')
 const Node$json = {
