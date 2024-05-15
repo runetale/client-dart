@@ -15,764 +15,566 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/empty.pb.dart' as $1;
-import 'admin.pb.dart' as $0;
+import '../../../google/protobuf/empty.pb.dart' as $0;
+import 'admin.pb.dart' as $1;
 
 export 'admin.pb.dart';
 
-@$pb.GrpcServiceName('protos.AclService')
-class AclServiceClient extends $grpc.Client {
-  static final _$createAcl = $grpc.ClientMethod<$0.CreateAclRequest, $0.AclResponse>(
-      '/protos.AclService/CreateAcl',
-      ($0.CreateAclRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
-  static final _$getAcl = $grpc.ClientMethod<$0.GetAclRequest, $0.AclResponse>(
-      '/protos.AclService/GetAcl',
-      ($0.GetAclRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
-  static final _$getAcls = $grpc.ClientMethod<$1.Empty, $0.GetAclsResponse>(
-      '/protos.AclService/GetAcls',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetAclsResponse.fromBuffer(value));
-  static final _$getAclsJson = $grpc.ClientMethod<$1.Empty, $0.GetAclsJsonResponse>(
-      '/protos.AclService/GetAclsJson',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetAclsJsonResponse.fromBuffer(value));
+@$pb.GrpcServiceName('protos.AdminService')
+class AdminServiceClient extends $grpc.Client {
+  static final _$getMe = $grpc.ClientMethod<$0.Empty, $1.GetMeResponse>(
+      '/protos.AdminService/GetMe',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetMeResponse.fromBuffer(value));
+  static final _$getUser = $grpc.ClientMethod<$1.GetUserRequest, $1.User>(
+      '/protos.AdminService/GetUser',
+      ($1.GetUserRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.User.fromBuffer(value));
+  static final _$getUsers = $grpc.ClientMethod<$0.Empty, $1.Users>(
+      '/protos.AdminService/GetUsers',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Users.fromBuffer(value));
+  static final _$createAcl = $grpc.ClientMethod<$1.CreateAclRequest, $1.AclResponse>(
+      '/protos.AdminService/CreateAcl',
+      ($1.CreateAclRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.AclResponse.fromBuffer(value));
+  static final _$getAcl = $grpc.ClientMethod<$1.GetAclRequest, $1.AclResponse>(
+      '/protos.AdminService/GetAcl',
+      ($1.GetAclRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.AclResponse.fromBuffer(value));
+  static final _$getAcls = $grpc.ClientMethod<$0.Empty, $1.GetAclsResponse>(
+      '/protos.AdminService/GetAcls',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetAclsResponse.fromBuffer(value));
+  static final _$getAclsJson = $grpc.ClientMethod<$0.Empty, $1.GetAclsJsonResponse>(
+      '/protos.AdminService/GetAclsJson',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetAclsJsonResponse.fromBuffer(value));
+  static final _$patchAcl = $grpc.ClientMethod<$1.PatchAclRequest, $1.AclResponse>(
+      '/protos.AdminService/PatchAcl',
+      ($1.PatchAclRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.AclResponse.fromBuffer(value));
+  static final _$createGroup = $grpc.ClientMethod<$1.CreateGroupRequest, $1.Group>(
+      '/protos.AdminService/CreateGroup',
+      ($1.CreateGroupRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Group.fromBuffer(value));
+  static final _$getGroup = $grpc.ClientMethod<$1.GetGroupRequest, $1.Group>(
+      '/protos.AdminService/GetGroup',
+      ($1.GetGroupRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Group.fromBuffer(value));
+  static final _$getGroups = $grpc.ClientMethod<$0.Empty, $1.Groups>(
+      '/protos.AdminService/GetGroups',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Groups.fromBuffer(value));
+  static final _$patchGroup = $grpc.ClientMethod<$1.PatchGroupRequest, $1.Group>(
+      '/protos.AdminService/PatchGroup',
+      ($1.PatchGroupRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Group.fromBuffer(value));
+  static final _$getDevice = $grpc.ClientMethod<$1.GetDevicesRequest, $1.Device>(
+      '/protos.AdminService/GetDevice',
+      ($1.GetDevicesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Device.fromBuffer(value));
+  static final _$getDevices = $grpc.ClientMethod<$0.Empty, $1.Devices>(
+      '/protos.AdminService/GetDevices',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Devices.fromBuffer(value));
+  static final _$createResource = $grpc.ClientMethod<$1.CreateResourceRequest, $1.CreateResourceResponse>(
+      '/protos.AdminService/CreateResource',
+      ($1.CreateResourceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.CreateResourceResponse.fromBuffer(value));
+  static final _$generateToken = $grpc.ClientMethod<$1.GenerateTokenRequest, $1.GenerateTokenResponse>(
+      '/protos.AdminService/GenerateToken',
+      ($1.GenerateTokenRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GenerateTokenResponse.fromBuffer(value));
+  static final _$getResource = $grpc.ClientMethod<$1.GetResourceRequest, $1.Resource>(
+      '/protos.AdminService/GetResource',
+      ($1.GetResourceRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Resource.fromBuffer(value));
+  static final _$getResources = $grpc.ClientMethod<$0.Empty, $1.Resources>(
+      '/protos.AdminService/GetResources',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Resources.fromBuffer(value));
+  static final _$createFleet = $grpc.ClientMethod<$1.CreateFleetRequest, $1.Fleet>(
+      '/protos.AdminService/CreateFleet',
+      ($1.CreateFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Fleet.fromBuffer(value));
+  static final _$getFleet = $grpc.ClientMethod<$1.GetFleetRequest, $1.Fleet>(
+      '/protos.AdminService/GetFleet',
+      ($1.GetFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Fleet.fromBuffer(value));
+  static final _$getFleets = $grpc.ClientMethod<$0.Empty, $1.Fleets>(
+      '/protos.AdminService/GetFleets',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Fleets.fromBuffer(value));
+  static final _$patchFleet = $grpc.ClientMethod<$1.PatchFleetRequest, $1.Group>(
+      '/protos.AdminService/PatchFleet',
+      ($1.PatchFleetRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Group.fromBuffer(value));
+  static final _$createInk = $grpc.ClientMethod<$1.CreateInkRequest, $1.Ink>(
+      '/protos.AdminService/CreateInk',
+      ($1.CreateInkRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Ink.fromBuffer(value));
+  static final _$getInk = $grpc.ClientMethod<$1.GetInkRequest, $1.Ink>(
+      '/protos.AdminService/GetInk',
+      ($1.GetInkRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Ink.fromBuffer(value));
+  static final _$getInks = $grpc.ClientMethod<$0.Empty, $1.Inks>(
+      '/protos.AdminService/GetInks',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Inks.fromBuffer(value));
+  static final _$patchInk = $grpc.ClientMethod<$1.PatchInkRequest, $1.Ink>(
+      '/protos.AdminService/PatchInk',
+      ($1.PatchInkRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Ink.fromBuffer(value));
+  static final _$getOverview = $grpc.ClientMethod<$0.Empty, $1.Overview>(
+      '/protos.AdminService/GetOverview',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.Overview.fromBuffer(value));
 
-  AclServiceClient($grpc.ClientChannel channel,
+  AdminServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options,
         interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.AclResponse> createAcl($0.CreateAclRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createAcl, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.AclResponse> getAcl($0.GetAclRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getAcl, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.GetAclsResponse> getAcls($1.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getAcls, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.GetAclsJsonResponse> getAclsJson($1.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getAclsJson, request, options: options);
-  }
-}
-
-@$pb.GrpcServiceName('protos.AclService')
-abstract class AclServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.AclService';
-
-  AclServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateAclRequest, $0.AclResponse>(
-        'CreateAcl',
-        createAcl_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.CreateAclRequest.fromBuffer(value),
-        ($0.AclResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetAclRequest, $0.AclResponse>(
-        'GetAcl',
-        getAcl_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetAclRequest.fromBuffer(value),
-        ($0.AclResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.GetAclsResponse>(
-        'GetAcls',
-        getAcls_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.GetAclsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.GetAclsJsonResponse>(
-        'GetAclsJson',
-        getAclsJson_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.GetAclsJsonResponse value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.AclResponse> createAcl_Pre($grpc.ServiceCall call, $async.Future<$0.CreateAclRequest> request) async {
-    return createAcl(call, await request);
-  }
-
-  $async.Future<$0.AclResponse> getAcl_Pre($grpc.ServiceCall call, $async.Future<$0.GetAclRequest> request) async {
-    return getAcl(call, await request);
-  }
-
-  $async.Future<$0.GetAclsResponse> getAcls_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getAcls(call, await request);
-  }
-
-  $async.Future<$0.GetAclsJsonResponse> getAclsJson_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getAclsJson(call, await request);
-  }
-
-  $async.Future<$0.AclResponse> createAcl($grpc.ServiceCall call, $0.CreateAclRequest request);
-  $async.Future<$0.AclResponse> getAcl($grpc.ServiceCall call, $0.GetAclRequest request);
-  $async.Future<$0.GetAclsResponse> getAcls($grpc.ServiceCall call, $1.Empty request);
-  $async.Future<$0.GetAclsJsonResponse> getAclsJson($grpc.ServiceCall call, $1.Empty request);
-}
-@$pb.GrpcServiceName('protos.AclDetailService')
-class AclDetailServiceClient extends $grpc.Client {
-  static final _$patchAcl = $grpc.ClientMethod<$0.PatchAclRequest, $0.AclResponse>(
-      '/protos.AclDetailService/PatchAcl',
-      ($0.PatchAclRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.AclResponse.fromBuffer(value));
-
-  AclDetailServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.AclResponse> patchAcl($0.PatchAclRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$patchAcl, request, options: options);
-  }
-}
-
-@$pb.GrpcServiceName('protos.AclDetailService')
-abstract class AclDetailServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.AclDetailService';
-
-  AclDetailServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.PatchAclRequest, $0.AclResponse>(
-        'PatchAcl',
-        patchAcl_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PatchAclRequest.fromBuffer(value),
-        ($0.AclResponse value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.AclResponse> patchAcl_Pre($grpc.ServiceCall call, $async.Future<$0.PatchAclRequest> request) async {
-    return patchAcl(call, await request);
-  }
-
-  $async.Future<$0.AclResponse> patchAcl($grpc.ServiceCall call, $0.PatchAclRequest request);
-}
-@$pb.GrpcServiceName('protos.UserService')
-class UserServiceClient extends $grpc.Client {
-  static final _$getMe = $grpc.ClientMethod<$1.Empty, $0.GetMeResponse>(
-      '/protos.UserService/GetMe',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GetMeResponse.fromBuffer(value));
-  static final _$getUser = $grpc.ClientMethod<$0.GetUserRequest, $0.User>(
-      '/protos.UserService/GetUser',
-      ($0.GetUserRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.User.fromBuffer(value));
-  static final _$getUsers = $grpc.ClientMethod<$1.Empty, $0.Users>(
-      '/protos.UserService/GetUsers',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Users.fromBuffer(value));
-
-  UserServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.GetMeResponse> getMe($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.GetMeResponse> getMe($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMe, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.User> getUser($0.GetUserRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.User> getUser($1.GetUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Users> getUsers($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Users> getUsers($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getUsers, request, options: options);
   }
-}
 
-@$pb.GrpcServiceName('protos.UserService')
-abstract class UserServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.UserService';
-
-  UserServiceBase() {
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.GetMeResponse>(
-        'GetMe',
-        getMe_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.GetMeResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetUserRequest, $0.User>(
-        'GetUser',
-        getUser_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetUserRequest.fromBuffer(value),
-        ($0.User value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Users>(
-        'GetUsers',
-        getUsers_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.Users value) => value.writeToBuffer()));
+  $grpc.ResponseFuture<$1.AclResponse> createAcl($1.CreateAclRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createAcl, request, options: options);
   }
 
-  $async.Future<$0.GetMeResponse> getMe_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getMe(call, await request);
+  $grpc.ResponseFuture<$1.AclResponse> getAcl($1.GetAclRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAcl, request, options: options);
   }
 
-  $async.Future<$0.User> getUser_Pre($grpc.ServiceCall call, $async.Future<$0.GetUserRequest> request) async {
-    return getUser(call, await request);
+  $grpc.ResponseFuture<$1.GetAclsResponse> getAcls($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAcls, request, options: options);
   }
 
-  $async.Future<$0.Users> getUsers_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getUsers(call, await request);
+  $grpc.ResponseFuture<$1.GetAclsJsonResponse> getAclsJson($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getAclsJson, request, options: options);
   }
 
-  $async.Future<$0.GetMeResponse> getMe($grpc.ServiceCall call, $1.Empty request);
-  $async.Future<$0.User> getUser($grpc.ServiceCall call, $0.GetUserRequest request);
-  $async.Future<$0.Users> getUsers($grpc.ServiceCall call, $1.Empty request);
-}
-@$pb.GrpcServiceName('protos.GroupService')
-class GroupServiceClient extends $grpc.Client {
-  static final _$createGroup = $grpc.ClientMethod<$0.CreateGroupRequest, $0.Group>(
-      '/protos.GroupService/CreateGroup',
-      ($0.CreateGroupRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Group.fromBuffer(value));
-  static final _$getGroup = $grpc.ClientMethod<$0.GetGroupRequest, $0.Group>(
-      '/protos.GroupService/GetGroup',
-      ($0.GetGroupRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Group.fromBuffer(value));
-  static final _$getGroups = $grpc.ClientMethod<$1.Empty, $0.Groups>(
-      '/protos.GroupService/GetGroups',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Groups.fromBuffer(value));
+  $grpc.ResponseFuture<$1.AclResponse> patchAcl($1.PatchAclRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$patchAcl, request, options: options);
+  }
 
-  GroupServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Group> createGroup($0.CreateGroupRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Group> createGroup($1.CreateGroupRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createGroup, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Group> getGroup($0.GetGroupRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Group> getGroup($1.GetGroupRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGroup, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Groups> getGroups($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Groups> getGroups($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getGroups, request, options: options);
   }
-}
 
-@$pb.GrpcServiceName('protos.GroupService')
-abstract class GroupServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.GroupService';
-
-  GroupServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateGroupRequest, $0.Group>(
-        'CreateGroup',
-        createGroup_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.CreateGroupRequest.fromBuffer(value),
-        ($0.Group value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetGroupRequest, $0.Group>(
-        'GetGroup',
-        getGroup_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetGroupRequest.fromBuffer(value),
-        ($0.Group value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Groups>(
-        'GetGroups',
-        getGroups_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.Groups value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.Group> createGroup_Pre($grpc.ServiceCall call, $async.Future<$0.CreateGroupRequest> request) async {
-    return createGroup(call, await request);
-  }
-
-  $async.Future<$0.Group> getGroup_Pre($grpc.ServiceCall call, $async.Future<$0.GetGroupRequest> request) async {
-    return getGroup(call, await request);
-  }
-
-  $async.Future<$0.Groups> getGroups_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getGroups(call, await request);
-  }
-
-  $async.Future<$0.Group> createGroup($grpc.ServiceCall call, $0.CreateGroupRequest request);
-  $async.Future<$0.Group> getGroup($grpc.ServiceCall call, $0.GetGroupRequest request);
-  $async.Future<$0.Groups> getGroups($grpc.ServiceCall call, $1.Empty request);
-}
-@$pb.GrpcServiceName('protos.GroupDetailService')
-class GroupDetailServiceClient extends $grpc.Client {
-  static final _$patchGroup = $grpc.ClientMethod<$0.PatchGroupRequest, $0.Group>(
-      '/protos.GroupDetailService/PatchGroup',
-      ($0.PatchGroupRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Group.fromBuffer(value));
-
-  GroupDetailServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Group> patchGroup($0.PatchGroupRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Group> patchGroup($1.PatchGroupRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchGroup, request, options: options);
   }
-}
 
-@$pb.GrpcServiceName('protos.GroupDetailService')
-abstract class GroupDetailServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.GroupDetailService';
-
-  GroupDetailServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.PatchGroupRequest, $0.Group>(
-        'PatchGroup',
-        patchGroup_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PatchGroupRequest.fromBuffer(value),
-        ($0.Group value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.Group> patchGroup_Pre($grpc.ServiceCall call, $async.Future<$0.PatchGroupRequest> request) async {
-    return patchGroup(call, await request);
-  }
-
-  $async.Future<$0.Group> patchGroup($grpc.ServiceCall call, $0.PatchGroupRequest request);
-}
-@$pb.GrpcServiceName('protos.DeviceService')
-class DeviceServiceClient extends $grpc.Client {
-  static final _$getDevice = $grpc.ClientMethod<$0.GetDevicesRequest, $0.Device>(
-      '/protos.DeviceService/GetDevice',
-      ($0.GetDevicesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Device.fromBuffer(value));
-  static final _$getDevices = $grpc.ClientMethod<$1.Empty, $0.Devices>(
-      '/protos.DeviceService/GetDevices',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Devices.fromBuffer(value));
-
-  DeviceServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Device> getDevice($0.GetDevicesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Device> getDevice($1.GetDevicesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDevice, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Devices> getDevices($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Devices> getDevices($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDevices, request, options: options);
   }
-}
 
-@$pb.GrpcServiceName('protos.DeviceService')
-abstract class DeviceServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.DeviceService';
-
-  DeviceServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.GetDevicesRequest, $0.Device>(
-        'GetDevice',
-        getDevice_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetDevicesRequest.fromBuffer(value),
-        ($0.Device value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Devices>(
-        'GetDevices',
-        getDevices_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.Devices value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.Device> getDevice_Pre($grpc.ServiceCall call, $async.Future<$0.GetDevicesRequest> request) async {
-    return getDevice(call, await request);
-  }
-
-  $async.Future<$0.Devices> getDevices_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getDevices(call, await request);
-  }
-
-  $async.Future<$0.Device> getDevice($grpc.ServiceCall call, $0.GetDevicesRequest request);
-  $async.Future<$0.Devices> getDevices($grpc.ServiceCall call, $1.Empty request);
-}
-@$pb.GrpcServiceName('protos.InkService')
-class InkServiceClient extends $grpc.Client {
-  static final _$createInk = $grpc.ClientMethod<$0.CreateInkRequest, $0.Ink>(
-      '/protos.InkService/CreateInk',
-      ($0.CreateInkRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
-  static final _$getInk = $grpc.ClientMethod<$0.GetInkRequest, $0.Ink>(
-      '/protos.InkService/GetInk',
-      ($0.GetInkRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
-  static final _$getInks = $grpc.ClientMethod<$1.Empty, $0.Inks>(
-      '/protos.InkService/GetInks',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Inks.fromBuffer(value));
-
-  InkServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Ink> createInk($0.CreateInkRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createInk, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.Ink> getInk($0.GetInkRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getInk, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.Inks> getInks($1.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getInks, request, options: options);
-  }
-}
-
-@$pb.GrpcServiceName('protos.InkService')
-abstract class InkServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.InkService';
-
-  InkServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateInkRequest, $0.Ink>(
-        'CreateInk',
-        createInk_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.CreateInkRequest.fromBuffer(value),
-        ($0.Ink value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetInkRequest, $0.Ink>(
-        'GetInk',
-        getInk_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetInkRequest.fromBuffer(value),
-        ($0.Ink value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Inks>(
-        'GetInks',
-        getInks_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.Inks value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.Ink> createInk_Pre($grpc.ServiceCall call, $async.Future<$0.CreateInkRequest> request) async {
-    return createInk(call, await request);
-  }
-
-  $async.Future<$0.Ink> getInk_Pre($grpc.ServiceCall call, $async.Future<$0.GetInkRequest> request) async {
-    return getInk(call, await request);
-  }
-
-  $async.Future<$0.Inks> getInks_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getInks(call, await request);
-  }
-
-  $async.Future<$0.Ink> createInk($grpc.ServiceCall call, $0.CreateInkRequest request);
-  $async.Future<$0.Ink> getInk($grpc.ServiceCall call, $0.GetInkRequest request);
-  $async.Future<$0.Inks> getInks($grpc.ServiceCall call, $1.Empty request);
-}
-@$pb.GrpcServiceName('protos.InkDetailService')
-class InkDetailServiceClient extends $grpc.Client {
-  static final _$patchInk = $grpc.ClientMethod<$0.PatchInkRequest, $0.Ink>(
-      '/protos.InkDetailService/PatchInk',
-      ($0.PatchInkRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Ink.fromBuffer(value));
-
-  InkDetailServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Ink> patchInk($0.PatchInkRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$patchInk, request, options: options);
-  }
-}
-
-@$pb.GrpcServiceName('protos.InkDetailService')
-abstract class InkDetailServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.InkDetailService';
-
-  InkDetailServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.PatchInkRequest, $0.Ink>(
-        'PatchInk',
-        patchInk_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PatchInkRequest.fromBuffer(value),
-        ($0.Ink value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.Ink> patchInk_Pre($grpc.ServiceCall call, $async.Future<$0.PatchInkRequest> request) async {
-    return patchInk(call, await request);
-  }
-
-  $async.Future<$0.Ink> patchInk($grpc.ServiceCall call, $0.PatchInkRequest request);
-}
-@$pb.GrpcServiceName('protos.ResourceService')
-class ResourceServiceClient extends $grpc.Client {
-  static final _$createResource = $grpc.ClientMethod<$0.CreateResourceRequest, $0.CreateResourceResponse>(
-      '/protos.ResourceService/CreateResource',
-      ($0.CreateResourceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.CreateResourceResponse.fromBuffer(value));
-  static final _$generateToken = $grpc.ClientMethod<$0.GenerateTokenRequest, $0.GenerateTokenResponse>(
-      '/protos.ResourceService/GenerateToken',
-      ($0.GenerateTokenRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.GenerateTokenResponse.fromBuffer(value));
-  static final _$getResource = $grpc.ClientMethod<$0.GetResourceRequest, $0.Resource>(
-      '/protos.ResourceService/GetResource',
-      ($0.GetResourceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Resource.fromBuffer(value));
-  static final _$getResources = $grpc.ClientMethod<$1.Empty, $0.Resources>(
-      '/protos.ResourceService/GetResources',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Resources.fromBuffer(value));
-
-  ResourceServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.CreateResourceResponse> createResource($0.CreateResourceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.CreateResourceResponse> createResource($1.CreateResourceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createResource, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.GenerateTokenResponse> generateToken($0.GenerateTokenRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.GenerateTokenResponse> generateToken($1.GenerateTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$generateToken, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Resource> getResource($0.GetResourceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Resource> getResource($1.GetResourceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getResource, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Resources> getResources($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Resources> getResources($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getResources, request, options: options);
   }
-}
 
-@$pb.GrpcServiceName('protos.ResourceService')
-abstract class ResourceServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.ResourceService';
-
-  ResourceServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateResourceRequest, $0.CreateResourceResponse>(
-        'CreateResource',
-        createResource_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.CreateResourceRequest.fromBuffer(value),
-        ($0.CreateResourceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GenerateTokenRequest, $0.GenerateTokenResponse>(
-        'GenerateToken',
-        generateToken_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GenerateTokenRequest.fromBuffer(value),
-        ($0.GenerateTokenResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetResourceRequest, $0.Resource>(
-        'GetResource',
-        getResource_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetResourceRequest.fromBuffer(value),
-        ($0.Resource value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Resources>(
-        'GetResources',
-        getResources_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.Resources value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.CreateResourceResponse> createResource_Pre($grpc.ServiceCall call, $async.Future<$0.CreateResourceRequest> request) async {
-    return createResource(call, await request);
-  }
-
-  $async.Future<$0.GenerateTokenResponse> generateToken_Pre($grpc.ServiceCall call, $async.Future<$0.GenerateTokenRequest> request) async {
-    return generateToken(call, await request);
-  }
-
-  $async.Future<$0.Resource> getResource_Pre($grpc.ServiceCall call, $async.Future<$0.GetResourceRequest> request) async {
-    return getResource(call, await request);
-  }
-
-  $async.Future<$0.Resources> getResources_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getResources(call, await request);
-  }
-
-  $async.Future<$0.CreateResourceResponse> createResource($grpc.ServiceCall call, $0.CreateResourceRequest request);
-  $async.Future<$0.GenerateTokenResponse> generateToken($grpc.ServiceCall call, $0.GenerateTokenRequest request);
-  $async.Future<$0.Resource> getResource($grpc.ServiceCall call, $0.GetResourceRequest request);
-  $async.Future<$0.Resources> getResources($grpc.ServiceCall call, $1.Empty request);
-}
-@$pb.GrpcServiceName('protos.FleetService')
-class FleetServiceClient extends $grpc.Client {
-  static final _$createFleet = $grpc.ClientMethod<$0.CreateFleetRequest, $0.Fleet>(
-      '/protos.FleetService/CreateFleet',
-      ($0.CreateFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Fleet.fromBuffer(value));
-  static final _$getFleet = $grpc.ClientMethod<$0.GetFleetRequest, $0.Fleet>(
-      '/protos.FleetService/GetFleet',
-      ($0.GetFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Fleet.fromBuffer(value));
-  static final _$getFleets = $grpc.ClientMethod<$1.Empty, $0.Fleets>(
-      '/protos.FleetService/GetFleets',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Fleets.fromBuffer(value));
-
-  FleetServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Fleet> createFleet($0.CreateFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Fleet> createFleet($1.CreateFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createFleet, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Fleet> getFleet($0.GetFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Fleet> getFleet($1.GetFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFleet, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Fleets> getFleets($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Fleets> getFleets($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFleets, request, options: options);
   }
-}
 
-@$pb.GrpcServiceName('protos.FleetService')
-abstract class FleetServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.FleetService';
-
-  FleetServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateFleetRequest, $0.Fleet>(
-        'CreateFleet',
-        createFleet_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.CreateFleetRequest.fromBuffer(value),
-        ($0.Fleet value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetFleetRequest, $0.Fleet>(
-        'GetFleet',
-        getFleet_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetFleetRequest.fromBuffer(value),
-        ($0.Fleet value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Fleets>(
-        'GetFleets',
-        getFleets_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.Fleets value) => value.writeToBuffer()));
-  }
-
-  $async.Future<$0.Fleet> createFleet_Pre($grpc.ServiceCall call, $async.Future<$0.CreateFleetRequest> request) async {
-    return createFleet(call, await request);
-  }
-
-  $async.Future<$0.Fleet> getFleet_Pre($grpc.ServiceCall call, $async.Future<$0.GetFleetRequest> request) async {
-    return getFleet(call, await request);
-  }
-
-  $async.Future<$0.Fleets> getFleets_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
-    return getFleets(call, await request);
-  }
-
-  $async.Future<$0.Fleet> createFleet($grpc.ServiceCall call, $0.CreateFleetRequest request);
-  $async.Future<$0.Fleet> getFleet($grpc.ServiceCall call, $0.GetFleetRequest request);
-  $async.Future<$0.Fleets> getFleets($grpc.ServiceCall call, $1.Empty request);
-}
-@$pb.GrpcServiceName('protos.FleetDetailService')
-class FleetDetailServiceClient extends $grpc.Client {
-  static final _$patchFleet = $grpc.ClientMethod<$0.PatchFleetRequest, $0.Group>(
-      '/protos.FleetDetailService/PatchFleet',
-      ($0.PatchFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Group.fromBuffer(value));
-
-  FleetDetailServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
-
-  $grpc.ResponseFuture<$0.Group> patchFleet($0.PatchFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Group> patchFleet($1.PatchFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchFleet, request, options: options);
   }
-}
 
-@$pb.GrpcServiceName('protos.FleetDetailService')
-abstract class FleetDetailServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.FleetDetailService';
-
-  FleetDetailServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.PatchFleetRequest, $0.Group>(
-        'PatchFleet',
-        patchFleet_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.PatchFleetRequest.fromBuffer(value),
-        ($0.Group value) => value.writeToBuffer()));
+  $grpc.ResponseFuture<$1.Ink> createInk($1.CreateInkRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createInk, request, options: options);
   }
 
-  $async.Future<$0.Group> patchFleet_Pre($grpc.ServiceCall call, $async.Future<$0.PatchFleetRequest> request) async {
-    return patchFleet(call, await request);
+  $grpc.ResponseFuture<$1.Ink> getInk($1.GetInkRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getInk, request, options: options);
   }
 
-  $async.Future<$0.Group> patchFleet($grpc.ServiceCall call, $0.PatchFleetRequest request);
-}
-@$pb.GrpcServiceName('protos.OverviewService')
-class OverviewServiceClient extends $grpc.Client {
-  static final _$getOverview = $grpc.ClientMethod<$1.Empty, $0.Overview>(
-      '/protos.OverviewService/GetOverview',
-      ($1.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Overview.fromBuffer(value));
+  $grpc.ResponseFuture<$1.Inks> getInks($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getInks, request, options: options);
+  }
 
-  OverviewServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  $grpc.ResponseFuture<$1.Ink> patchInk($1.PatchInkRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$patchInk, request, options: options);
+  }
 
-  $grpc.ResponseFuture<$0.Overview> getOverview($1.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Overview> getOverview($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOverview, request, options: options);
   }
 }
 
-@$pb.GrpcServiceName('protos.OverviewService')
-abstract class OverviewServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.OverviewService';
+@$pb.GrpcServiceName('protos.AdminService')
+abstract class AdminServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.AdminService';
 
-  OverviewServiceBase() {
-    $addMethod($grpc.ServiceMethod<$1.Empty, $0.Overview>(
+  AdminServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GetMeResponse>(
+        'GetMe',
+        getMe_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.GetMeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetUserRequest, $1.User>(
+        'GetUser',
+        getUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetUserRequest.fromBuffer(value),
+        ($1.User value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Users>(
+        'GetUsers',
+        getUsers_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.Users value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.CreateAclRequest, $1.AclResponse>(
+        'CreateAcl',
+        createAcl_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.CreateAclRequest.fromBuffer(value),
+        ($1.AclResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetAclRequest, $1.AclResponse>(
+        'GetAcl',
+        getAcl_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetAclRequest.fromBuffer(value),
+        ($1.AclResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GetAclsResponse>(
+        'GetAcls',
+        getAcls_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.GetAclsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GetAclsJsonResponse>(
+        'GetAclsJson',
+        getAclsJson_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.GetAclsJsonResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.PatchAclRequest, $1.AclResponse>(
+        'PatchAcl',
+        patchAcl_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.PatchAclRequest.fromBuffer(value),
+        ($1.AclResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.CreateGroupRequest, $1.Group>(
+        'CreateGroup',
+        createGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.CreateGroupRequest.fromBuffer(value),
+        ($1.Group value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetGroupRequest, $1.Group>(
+        'GetGroup',
+        getGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetGroupRequest.fromBuffer(value),
+        ($1.Group value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Groups>(
+        'GetGroups',
+        getGroups_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.Groups value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.PatchGroupRequest, $1.Group>(
+        'PatchGroup',
+        patchGroup_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.PatchGroupRequest.fromBuffer(value),
+        ($1.Group value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetDevicesRequest, $1.Device>(
+        'GetDevice',
+        getDevice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetDevicesRequest.fromBuffer(value),
+        ($1.Device value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Devices>(
+        'GetDevices',
+        getDevices_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.Devices value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.CreateResourceRequest, $1.CreateResourceResponse>(
+        'CreateResource',
+        createResource_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.CreateResourceRequest.fromBuffer(value),
+        ($1.CreateResourceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GenerateTokenRequest, $1.GenerateTokenResponse>(
+        'GenerateToken',
+        generateToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GenerateTokenRequest.fromBuffer(value),
+        ($1.GenerateTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetResourceRequest, $1.Resource>(
+        'GetResource',
+        getResource_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetResourceRequest.fromBuffer(value),
+        ($1.Resource value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Resources>(
+        'GetResources',
+        getResources_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.Resources value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.CreateFleetRequest, $1.Fleet>(
+        'CreateFleet',
+        createFleet_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.CreateFleetRequest.fromBuffer(value),
+        ($1.Fleet value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetFleetRequest, $1.Fleet>(
+        'GetFleet',
+        getFleet_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetFleetRequest.fromBuffer(value),
+        ($1.Fleet value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Fleets>(
+        'GetFleets',
+        getFleets_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.Fleets value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.PatchFleetRequest, $1.Group>(
+        'PatchFleet',
+        patchFleet_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.PatchFleetRequest.fromBuffer(value),
+        ($1.Group value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.CreateInkRequest, $1.Ink>(
+        'CreateInk',
+        createInk_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.CreateInkRequest.fromBuffer(value),
+        ($1.Ink value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetInkRequest, $1.Ink>(
+        'GetInk',
+        getInk_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetInkRequest.fromBuffer(value),
+        ($1.Ink value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Inks>(
+        'GetInks',
+        getInks_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.Inks value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.PatchInkRequest, $1.Ink>(
+        'PatchInk',
+        patchInk_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.PatchInkRequest.fromBuffer(value),
+        ($1.Ink value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Overview>(
         'GetOverview',
         getOverview_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.Empty.fromBuffer(value),
-        ($0.Overview value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.Overview value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Overview> getOverview_Pre($grpc.ServiceCall call, $async.Future<$1.Empty> request) async {
+  $async.Future<$1.GetMeResponse> getMe_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getMe(call, await request);
+  }
+
+  $async.Future<$1.User> getUser_Pre($grpc.ServiceCall call, $async.Future<$1.GetUserRequest> request) async {
+    return getUser(call, await request);
+  }
+
+  $async.Future<$1.Users> getUsers_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getUsers(call, await request);
+  }
+
+  $async.Future<$1.AclResponse> createAcl_Pre($grpc.ServiceCall call, $async.Future<$1.CreateAclRequest> request) async {
+    return createAcl(call, await request);
+  }
+
+  $async.Future<$1.AclResponse> getAcl_Pre($grpc.ServiceCall call, $async.Future<$1.GetAclRequest> request) async {
+    return getAcl(call, await request);
+  }
+
+  $async.Future<$1.GetAclsResponse> getAcls_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getAcls(call, await request);
+  }
+
+  $async.Future<$1.GetAclsJsonResponse> getAclsJson_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getAclsJson(call, await request);
+  }
+
+  $async.Future<$1.AclResponse> patchAcl_Pre($grpc.ServiceCall call, $async.Future<$1.PatchAclRequest> request) async {
+    return patchAcl(call, await request);
+  }
+
+  $async.Future<$1.Group> createGroup_Pre($grpc.ServiceCall call, $async.Future<$1.CreateGroupRequest> request) async {
+    return createGroup(call, await request);
+  }
+
+  $async.Future<$1.Group> getGroup_Pre($grpc.ServiceCall call, $async.Future<$1.GetGroupRequest> request) async {
+    return getGroup(call, await request);
+  }
+
+  $async.Future<$1.Groups> getGroups_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getGroups(call, await request);
+  }
+
+  $async.Future<$1.Group> patchGroup_Pre($grpc.ServiceCall call, $async.Future<$1.PatchGroupRequest> request) async {
+    return patchGroup(call, await request);
+  }
+
+  $async.Future<$1.Device> getDevice_Pre($grpc.ServiceCall call, $async.Future<$1.GetDevicesRequest> request) async {
+    return getDevice(call, await request);
+  }
+
+  $async.Future<$1.Devices> getDevices_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getDevices(call, await request);
+  }
+
+  $async.Future<$1.CreateResourceResponse> createResource_Pre($grpc.ServiceCall call, $async.Future<$1.CreateResourceRequest> request) async {
+    return createResource(call, await request);
+  }
+
+  $async.Future<$1.GenerateTokenResponse> generateToken_Pre($grpc.ServiceCall call, $async.Future<$1.GenerateTokenRequest> request) async {
+    return generateToken(call, await request);
+  }
+
+  $async.Future<$1.Resource> getResource_Pre($grpc.ServiceCall call, $async.Future<$1.GetResourceRequest> request) async {
+    return getResource(call, await request);
+  }
+
+  $async.Future<$1.Resources> getResources_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getResources(call, await request);
+  }
+
+  $async.Future<$1.Fleet> createFleet_Pre($grpc.ServiceCall call, $async.Future<$1.CreateFleetRequest> request) async {
+    return createFleet(call, await request);
+  }
+
+  $async.Future<$1.Fleet> getFleet_Pre($grpc.ServiceCall call, $async.Future<$1.GetFleetRequest> request) async {
+    return getFleet(call, await request);
+  }
+
+  $async.Future<$1.Fleets> getFleets_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getFleets(call, await request);
+  }
+
+  $async.Future<$1.Group> patchFleet_Pre($grpc.ServiceCall call, $async.Future<$1.PatchFleetRequest> request) async {
+    return patchFleet(call, await request);
+  }
+
+  $async.Future<$1.Ink> createInk_Pre($grpc.ServiceCall call, $async.Future<$1.CreateInkRequest> request) async {
+    return createInk(call, await request);
+  }
+
+  $async.Future<$1.Ink> getInk_Pre($grpc.ServiceCall call, $async.Future<$1.GetInkRequest> request) async {
+    return getInk(call, await request);
+  }
+
+  $async.Future<$1.Inks> getInks_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getInks(call, await request);
+  }
+
+  $async.Future<$1.Ink> patchInk_Pre($grpc.ServiceCall call, $async.Future<$1.PatchInkRequest> request) async {
+    return patchInk(call, await request);
+  }
+
+  $async.Future<$1.Overview> getOverview_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return getOverview(call, await request);
   }
 
-  $async.Future<$0.Overview> getOverview($grpc.ServiceCall call, $1.Empty request);
+  $async.Future<$1.GetMeResponse> getMe($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.User> getUser($grpc.ServiceCall call, $1.GetUserRequest request);
+  $async.Future<$1.Users> getUsers($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.AclResponse> createAcl($grpc.ServiceCall call, $1.CreateAclRequest request);
+  $async.Future<$1.AclResponse> getAcl($grpc.ServiceCall call, $1.GetAclRequest request);
+  $async.Future<$1.GetAclsResponse> getAcls($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.GetAclsJsonResponse> getAclsJson($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.AclResponse> patchAcl($grpc.ServiceCall call, $1.PatchAclRequest request);
+  $async.Future<$1.Group> createGroup($grpc.ServiceCall call, $1.CreateGroupRequest request);
+  $async.Future<$1.Group> getGroup($grpc.ServiceCall call, $1.GetGroupRequest request);
+  $async.Future<$1.Groups> getGroups($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.Group> patchGroup($grpc.ServiceCall call, $1.PatchGroupRequest request);
+  $async.Future<$1.Device> getDevice($grpc.ServiceCall call, $1.GetDevicesRequest request);
+  $async.Future<$1.Devices> getDevices($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.CreateResourceResponse> createResource($grpc.ServiceCall call, $1.CreateResourceRequest request);
+  $async.Future<$1.GenerateTokenResponse> generateToken($grpc.ServiceCall call, $1.GenerateTokenRequest request);
+  $async.Future<$1.Resource> getResource($grpc.ServiceCall call, $1.GetResourceRequest request);
+  $async.Future<$1.Resources> getResources($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.Fleet> createFleet($grpc.ServiceCall call, $1.CreateFleetRequest request);
+  $async.Future<$1.Fleet> getFleet($grpc.ServiceCall call, $1.GetFleetRequest request);
+  $async.Future<$1.Fleets> getFleets($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.Group> patchFleet($grpc.ServiceCall call, $1.PatchFleetRequest request);
+  $async.Future<$1.Ink> createInk($grpc.ServiceCall call, $1.CreateInkRequest request);
+  $async.Future<$1.Ink> getInk($grpc.ServiceCall call, $1.GetInkRequest request);
+  $async.Future<$1.Inks> getInks($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.Ink> patchInk($grpc.ServiceCall call, $1.PatchInkRequest request);
+  $async.Future<$1.Overview> getOverview($grpc.ServiceCall call, $0.Empty request);
 }
