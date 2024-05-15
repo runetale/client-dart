@@ -106,10 +106,10 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetFleets',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Fleets.fromBuffer(value));
-  static final _$patchFleet = $grpc.ClientMethod<$1.PatchFleetRequest, $1.Group>(
+  static final _$patchFleet = $grpc.ClientMethod<$1.PatchFleetRequest, $1.Fleet>(
       '/protos.AdminService/PatchFleet',
       ($1.PatchFleetRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.Group.fromBuffer(value));
+      ($core.List<$core.int> value) => $1.Fleet.fromBuffer(value));
   static final _$createInk = $grpc.ClientMethod<$1.CreateInkRequest, $1.Ink>(
       '/protos.AdminService/CreateInk',
       ($1.CreateInkRequest value) => value.writeToBuffer(),
@@ -221,7 +221,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getFleets, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.Group> patchFleet($1.PatchFleetRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Fleet> patchFleet($1.PatchFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchFleet, request, options: options);
   }
 
@@ -398,13 +398,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.Fleets value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.PatchFleetRequest, $1.Group>(
+    $addMethod($grpc.ServiceMethod<$1.PatchFleetRequest, $1.Fleet>(
         'PatchFleet',
         patchFleet_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $1.PatchFleetRequest.fromBuffer(value),
-        ($1.Group value) => value.writeToBuffer()));
+        ($1.Fleet value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateInkRequest, $1.Ink>(
         'CreateInk',
         createInk_Pre,
@@ -526,7 +526,7 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getFleets(call, await request);
   }
 
-  $async.Future<$1.Group> patchFleet_Pre($grpc.ServiceCall call, $async.Future<$1.PatchFleetRequest> request) async {
+  $async.Future<$1.Fleet> patchFleet_Pre($grpc.ServiceCall call, $async.Future<$1.PatchFleetRequest> request) async {
     return patchFleet(call, await request);
   }
 
@@ -571,7 +571,7 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Fleet> createFleet($grpc.ServiceCall call, $1.CreateFleetRequest request);
   $async.Future<$1.Fleet> getFleet($grpc.ServiceCall call, $1.GetFleetRequest request);
   $async.Future<$1.Fleets> getFleets($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$1.Group> patchFleet($grpc.ServiceCall call, $1.PatchFleetRequest request);
+  $async.Future<$1.Fleet> patchFleet($grpc.ServiceCall call, $1.PatchFleetRequest request);
   $async.Future<$1.Ink> createInk($grpc.ServiceCall call, $1.CreateInkRequest request);
   $async.Future<$1.Ink> getInk($grpc.ServiceCall call, $1.GetInkRequest request);
   $async.Future<$1.Inks> getInks($grpc.ServiceCall call, $0.Empty request);
