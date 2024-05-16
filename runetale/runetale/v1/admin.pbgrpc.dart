@@ -130,10 +130,6 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetOverview',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Overview.fromBuffer(value));
-  static final _$getOnboarding = $grpc.ClientMethod<$0.Empty, $1.Onboarding>(
-      '/protos.AdminService/GetOnboarding',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.Onboarding.fromBuffer(value));
 
   AdminServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -247,10 +243,6 @@ class AdminServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.Overview> getOverview($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOverview, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$1.Onboarding> getOnboarding($0.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getOnboarding, request, options: options);
   }
 }
 
@@ -448,13 +440,6 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.Overview value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Onboarding>(
-        'GetOnboarding',
-        getOnboarding_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($1.Onboarding value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.GetMeResponse> getMe_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
@@ -565,10 +550,6 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getOverview(call, await request);
   }
 
-  $async.Future<$1.Onboarding> getOnboarding_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getOnboarding(call, await request);
-  }
-
   $async.Future<$1.GetMeResponse> getMe($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.User> getUser($grpc.ServiceCall call, $1.GetUserRequest request);
   $async.Future<$1.Users> getUsers($grpc.ServiceCall call, $0.Empty request);
@@ -596,5 +577,4 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Inks> getInks($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.Ink> patchInk($grpc.ServiceCall call, $1.PatchInkRequest request);
   $async.Future<$1.Overview> getOverview($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$1.Onboarding> getOnboarding($grpc.ServiceCall call, $0.Empty request);
 }

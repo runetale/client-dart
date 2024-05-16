@@ -2244,6 +2244,8 @@ class Overview extends $pb.GeneratedMessage {
     $fixnum.Int64? usersAmount,
     $fixnum.Int64? fleetsAmount,
     $fixnum.Int64? resourcesAmount,
+    $core.bool? isOnboarding,
+    $core.String? inviteLink,
   }) {
     final $result = create();
     if (devicesAmount != null) {
@@ -2258,6 +2260,12 @@ class Overview extends $pb.GeneratedMessage {
     if (resourcesAmount != null) {
       $result.resourcesAmount = resourcesAmount;
     }
+    if (isOnboarding != null) {
+      $result.isOnboarding = isOnboarding;
+    }
+    if (inviteLink != null) {
+      $result.inviteLink = inviteLink;
+    }
     return $result;
   }
   Overview._() : super();
@@ -2269,6 +2277,8 @@ class Overview extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'usersAmount', $pb.PbFieldType.OU6, protoName: 'usersAmount', defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'fleetsAmount', $pb.PbFieldType.OU6, protoName: 'fleetsAmount', defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'resourcesAmount', $pb.PbFieldType.OU6, protoName: 'resourcesAmount', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOB(5, _omitFieldNames ? '' : 'isOnboarding', protoName: 'isOnboarding')
+    ..aOS(6, _omitFieldNames ? '' : 'inviteLink', protoName: 'inviteLink')
     ..hasRequiredFields = false
   ;
 
@@ -2328,70 +2338,24 @@ class Overview extends $pb.GeneratedMessage {
   $core.bool hasResourcesAmount() => $_has(3);
   @$pb.TagNumber(4)
   void clearResourcesAmount() => clearField(4);
-}
 
-class Onboarding extends $pb.GeneratedMessage {
-  factory Onboarding({
-    $core.bool? isOnboarding,
-    $core.String? inviteLink,
-  }) {
-    final $result = create();
-    if (isOnboarding != null) {
-      $result.isOnboarding = isOnboarding;
-    }
-    if (inviteLink != null) {
-      $result.inviteLink = inviteLink;
-    }
-    return $result;
-  }
-  Onboarding._() : super();
-  factory Onboarding.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Onboarding.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$pb.TagNumber(5)
+  $core.bool get isOnboarding => $_getBF(4);
+  @$pb.TagNumber(5)
+  set isOnboarding($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasIsOnboarding() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsOnboarding() => clearField(5);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Onboarding', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'isOnboarding', protoName: 'isOnboarding')
-    ..aOS(2, _omitFieldNames ? '' : 'inviteLink', protoName: 'inviteLink')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Onboarding clone() => Onboarding()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Onboarding copyWith(void Function(Onboarding) updates) => super.copyWith((message) => updates(message as Onboarding)) as Onboarding;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static Onboarding create() => Onboarding._();
-  Onboarding createEmptyInstance() => create();
-  static $pb.PbList<Onboarding> createRepeated() => $pb.PbList<Onboarding>();
-  @$core.pragma('dart2js:noInline')
-  static Onboarding getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Onboarding>(create);
-  static Onboarding? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.bool get isOnboarding => $_getBF(0);
-  @$pb.TagNumber(1)
-  set isOnboarding($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasIsOnboarding() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearIsOnboarding() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get inviteLink => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set inviteLink($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasInviteLink() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearInviteLink() => clearField(2);
+  @$pb.TagNumber(6)
+  $core.String get inviteLink => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set inviteLink($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasInviteLink() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearInviteLink() => clearField(6);
 }
 
 class Node extends $pb.GeneratedMessage {

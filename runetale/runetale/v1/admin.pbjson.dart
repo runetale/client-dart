@@ -542,6 +542,8 @@ const Overview$json = {
     {'1': 'usersAmount', '3': 2, '4': 1, '5': 4, '10': 'usersAmount'},
     {'1': 'fleetsAmount', '3': 3, '4': 1, '5': 4, '10': 'fleetsAmount'},
     {'1': 'resourcesAmount', '3': 4, '4': 1, '5': 4, '10': 'resourcesAmount'},
+    {'1': 'isOnboarding', '3': 5, '4': 1, '5': 8, '10': 'isOnboarding'},
+    {'1': 'inviteLink', '3': 6, '4': 1, '5': 9, '10': 'inviteLink'},
   ],
 };
 
@@ -549,21 +551,9 @@ const Overview$json = {
 final $typed_data.Uint8List overviewDescriptor = $convert.base64Decode(
     'CghPdmVydmlldxIkCg1kZXZpY2VzQW1vdW50GAEgASgEUg1kZXZpY2VzQW1vdW50EiAKC3VzZX'
     'JzQW1vdW50GAIgASgEUgt1c2Vyc0Ftb3VudBIiCgxmbGVldHNBbW91bnQYAyABKARSDGZsZWV0'
-    'c0Ftb3VudBIoCg9yZXNvdXJjZXNBbW91bnQYBCABKARSD3Jlc291cmNlc0Ftb3VudA==');
-
-@$core.Deprecated('Use onboardingDescriptor instead')
-const Onboarding$json = {
-  '1': 'Onboarding',
-  '2': [
-    {'1': 'isOnboarding', '3': 1, '4': 1, '5': 8, '10': 'isOnboarding'},
-    {'1': 'inviteLink', '3': 2, '4': 1, '5': 9, '10': 'inviteLink'},
-  ],
-};
-
-/// Descriptor for `Onboarding`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List onboardingDescriptor = $convert.base64Decode(
-    'CgpPbmJvYXJkaW5nEiIKDGlzT25ib2FyZGluZxgBIAEoCFIMaXNPbmJvYXJkaW5nEh4KCmludm'
-    'l0ZUxpbmsYAiABKAlSCmludml0ZUxpbms=');
+    'c0Ftb3VudBIoCg9yZXNvdXJjZXNBbW91bnQYBCABKARSD3Jlc291cmNlc0Ftb3VudBIiCgxpc0'
+    '9uYm9hcmRpbmcYBSABKAhSDGlzT25ib2FyZGluZxIeCgppbnZpdGVMaW5rGAYgASgJUgppbnZp'
+    'dGVMaW5r');
 
 @$core.Deprecated('Use nodeDescriptor instead')
 const Node$json = {
