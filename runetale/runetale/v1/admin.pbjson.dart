@@ -604,8 +604,9 @@ const Machine$json = {
     {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'domain', '3': 6, '4': 1, '5': 9, '10': 'domain'},
-    {'1': 'updatedAt', '3': 7, '4': 1, '5': 9, '10': 'updatedAt'},
-    {'1': 'createdBy', '3': 8, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'status', '3': 7, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'updatedAt', '3': 8, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
@@ -613,8 +614,8 @@ const Machine$json = {
 final $typed_data.Uint8List machineDescriptor = $convert.base64Decode(
     'CgdNYWNoaW5lEhwKCW1hY2hpbmVJZBgBIAEoBFIJbWFjaGluZUlkEhIKBG5hbWUYAiABKAlSBG'
     '5hbWUSFAoFZW1haWwYAyABKAlSBWVtYWlsEg4KAmlwGAQgASgJUgJpcBIOCgJvcxgFIAEoCVIC'
-    'b3MSFgoGZG9tYWluGAYgASgJUgZkb21haW4SHAoJdXBkYXRlZEF0GAcgASgJUgl1cGRhdGVkQX'
-    'QSHAoJY3JlYXRlZEJ5GAggASgJUgljcmVhdGVkQnk=');
+    'b3MSFgoGZG9tYWluGAYgASgJUgZkb21haW4SFgoGc3RhdHVzGAcgASgIUgZzdGF0dXMSHAoJdX'
+    'BkYXRlZEF0GAggASgJUgl1cGRhdGVkQXQSHAoJY3JlYXRlZEJ5GAkgASgJUgljcmVhdGVkQnk=');
 
 @$core.Deprecated('Use resourceDescriptor instead')
 const Resource$json = {
