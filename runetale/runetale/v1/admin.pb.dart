@@ -2569,7 +2569,6 @@ class Machine extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? ip,
     $core.String? os,
-    $core.String? host,
     $core.String? domain,
     $core.String? updatedAt,
     $core.String? createdBy,
@@ -2589,9 +2588,6 @@ class Machine extends $pb.GeneratedMessage {
     }
     if (os != null) {
       $result.os = os;
-    }
-    if (host != null) {
-      $result.host = host;
     }
     if (domain != null) {
       $result.domain = domain;
@@ -2614,10 +2610,9 @@ class Machine extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'email')
     ..aOS(4, _omitFieldNames ? '' : 'ip')
     ..aOS(5, _omitFieldNames ? '' : 'os')
-    ..aOS(6, _omitFieldNames ? '' : 'host')
-    ..aOS(7, _omitFieldNames ? '' : 'domain')
-    ..aOS(8, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt')
-    ..aOS(9, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(6, _omitFieldNames ? '' : 'domain')
+    ..aOS(7, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt')
+    ..aOS(8, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..hasRequiredFields = false
   ;
 
@@ -2688,40 +2683,31 @@ class Machine extends $pb.GeneratedMessage {
   void clearOs() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get host => $_getSZ(5);
+  $core.String get domain => $_getSZ(5);
   @$pb.TagNumber(6)
-  set host($core.String v) { $_setString(5, v); }
+  set domain($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasHost() => $_has(5);
+  $core.bool hasDomain() => $_has(5);
   @$pb.TagNumber(6)
-  void clearHost() => clearField(6);
+  void clearDomain() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get domain => $_getSZ(6);
+  $core.String get updatedAt => $_getSZ(6);
   @$pb.TagNumber(7)
-  set domain($core.String v) { $_setString(6, v); }
+  set updatedAt($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasDomain() => $_has(6);
+  $core.bool hasUpdatedAt() => $_has(6);
   @$pb.TagNumber(7)
-  void clearDomain() => clearField(7);
+  void clearUpdatedAt() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get updatedAt => $_getSZ(7);
+  $core.String get createdBy => $_getSZ(7);
   @$pb.TagNumber(8)
-  set updatedAt($core.String v) { $_setString(7, v); }
+  set createdBy($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasUpdatedAt() => $_has(7);
+  $core.bool hasCreatedBy() => $_has(7);
   @$pb.TagNumber(8)
-  void clearUpdatedAt() => clearField(8);
-
-  @$pb.TagNumber(9)
-  $core.String get createdBy => $_getSZ(8);
-  @$pb.TagNumber(9)
-  set createdBy($core.String v) { $_setString(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasCreatedBy() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearCreatedBy() => clearField(9);
+  void clearCreatedBy() => clearField(8);
 }
 
 class Resource extends $pb.GeneratedMessage {
