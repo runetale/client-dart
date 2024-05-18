@@ -2718,7 +2718,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? proto,
     $fixnum.Int64? port,
     $core.String? age,
-    DeploymentMethod? type,
+    $core.String? type,
   }) {
     final $result = create();
     if (id != null) {
@@ -2755,7 +2755,7 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'proto')
     ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(6, _omitFieldNames ? '' : 'age')
-    ..e<DeploymentMethod>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..aOS(7, _omitFieldNames ? '' : 'type')
     ..hasRequiredFields = false
   ;
 
@@ -2829,9 +2829,9 @@ class Resource extends $pb.GeneratedMessage {
   void clearAge() => clearField(6);
 
   @$pb.TagNumber(7)
-  DeploymentMethod get type => $_getN(6);
+  $core.String get type => $_getSZ(6);
   @$pb.TagNumber(7)
-  set type(DeploymentMethod v) { setField(7, v); }
+  set type($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
   $core.bool hasType() => $_has(6);
   @$pb.TagNumber(7)
