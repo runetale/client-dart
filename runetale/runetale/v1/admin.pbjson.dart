@@ -607,11 +607,10 @@ const Resource$json = {
     {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
     {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'domain', '3': 6, '4': 1, '5': 9, '10': 'domain'},
-    {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'type', '3': 8, '4': 1, '5': 9, '10': 'type'},
-    {'1': 'status', '3': 9, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'createdBy', '3': 10, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'age', '3': 6, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'type', '3': 7, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'status', '3': 8, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
@@ -619,9 +618,8 @@ const Resource$json = {
 final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
     'CghSZXNvdXJjZRIcCgltYWNoaW5lSWQYASABKARSCW1hY2hpbmVJZBISCgRuYW1lGAIgASgJUg'
     'RuYW1lEhQKBWVtYWlsGAMgASgJUgVlbWFpbBIOCgJpcBgEIAEoCVICaXASDgoCb3MYBSABKAlS'
-    'Am9zEhYKBmRvbWFpbhgGIAEoCVIGZG9tYWluEhAKA2FnZRgHIAEoCVIDYWdlEhIKBHR5cGUYCC'
-    'ABKAlSBHR5cGUSFgoGc3RhdHVzGAkgASgIUgZzdGF0dXMSHAoJY3JlYXRlZEJ5GAogASgJUglj'
-    'cmVhdGVkQnk=');
+    'Am9zEhAKA2FnZRgGIAEoCVIDYWdlEhIKBHR5cGUYByABKAlSBHR5cGUSFgoGc3RhdHVzGAggAS'
+    'gIUgZzdGF0dXMSHAoJY3JlYXRlZEJ5GAkgASgJUgljcmVhdGVkQnk=');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {

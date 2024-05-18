@@ -2611,7 +2611,6 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? ip,
     $core.String? os,
-    $core.String? domain,
     $core.String? age,
     $core.String? type,
     $core.bool? status,
@@ -2632,9 +2631,6 @@ class Resource extends $pb.GeneratedMessage {
     }
     if (os != null) {
       $result.os = os;
-    }
-    if (domain != null) {
-      $result.domain = domain;
     }
     if (age != null) {
       $result.age = age;
@@ -2660,11 +2656,10 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'email')
     ..aOS(4, _omitFieldNames ? '' : 'ip')
     ..aOS(5, _omitFieldNames ? '' : 'os')
-    ..aOS(6, _omitFieldNames ? '' : 'domain')
-    ..aOS(7, _omitFieldNames ? '' : 'age')
-    ..aOS(8, _omitFieldNames ? '' : 'type')
-    ..aOB(9, _omitFieldNames ? '' : 'status')
-    ..aOS(10, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(6, _omitFieldNames ? '' : 'age')
+    ..aOS(7, _omitFieldNames ? '' : 'type')
+    ..aOB(8, _omitFieldNames ? '' : 'status')
+    ..aOS(9, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..hasRequiredFields = false
   ;
 
@@ -2735,49 +2730,40 @@ class Resource extends $pb.GeneratedMessage {
   void clearOs() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get domain => $_getSZ(5);
+  $core.String get age => $_getSZ(5);
   @$pb.TagNumber(6)
-  set domain($core.String v) { $_setString(5, v); }
+  set age($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasDomain() => $_has(5);
+  $core.bool hasAge() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDomain() => clearField(6);
+  void clearAge() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get age => $_getSZ(6);
+  $core.String get type => $_getSZ(6);
   @$pb.TagNumber(7)
-  set age($core.String v) { $_setString(6, v); }
+  set type($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasAge() => $_has(6);
+  $core.bool hasType() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAge() => clearField(7);
+  void clearType() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get type => $_getSZ(7);
+  $core.bool get status => $_getBF(7);
   @$pb.TagNumber(8)
-  set type($core.String v) { $_setString(7, v); }
+  set status($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasType() => $_has(7);
+  $core.bool hasStatus() => $_has(7);
   @$pb.TagNumber(8)
-  void clearType() => clearField(8);
+  void clearStatus() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.bool get status => $_getBF(8);
+  $core.String get createdBy => $_getSZ(8);
   @$pb.TagNumber(9)
-  set status($core.bool v) { $_setBool(8, v); }
+  set createdBy($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasStatus() => $_has(8);
+  $core.bool hasCreatedBy() => $_has(8);
   @$pb.TagNumber(9)
-  void clearStatus() => clearField(9);
-
-  @$pb.TagNumber(10)
-  $core.String get createdBy => $_getSZ(9);
-  @$pb.TagNumber(10)
-  set createdBy($core.String v) { $_setString(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasCreatedBy() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearCreatedBy() => clearField(10);
+  void clearCreatedBy() => clearField(9);
 }
 
 class Group extends $pb.GeneratedMessage {
