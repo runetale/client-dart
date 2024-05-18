@@ -2730,7 +2730,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<Machine>? machines,
     $core.String? proto,
-    $fixnum.Int64? port,
+    $core.String? port,
     $core.String? age,
     $core.String? type,
     $core.String? createdBy,
@@ -2771,7 +2771,7 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..pc<Machine>(3, _omitFieldNames ? '' : 'machines', $pb.PbFieldType.PM, subBuilder: Machine.create)
     ..aOS(4, _omitFieldNames ? '' : 'proto')
-    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(5, _omitFieldNames ? '' : 'port')
     ..aOS(6, _omitFieldNames ? '' : 'age')
     ..aOS(7, _omitFieldNames ? '' : 'type')
     ..aOS(8, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
@@ -2830,9 +2830,9 @@ class Resource extends $pb.GeneratedMessage {
   void clearProto() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get port => $_getI64(4);
+  $core.String get port => $_getSZ(4);
   @$pb.TagNumber(5)
-  set port($fixnum.Int64 v) { $_setInt64(4, v); }
+  set port($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasPort() => $_has(4);
   @$pb.TagNumber(5)
