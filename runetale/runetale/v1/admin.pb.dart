@@ -2733,6 +2733,7 @@ class Resource extends $pb.GeneratedMessage {
     $fixnum.Int64? port,
     $core.String? age,
     $core.String? type,
+    $core.String? createdBy,
   }) {
     final $result = create();
     if (id != null) {
@@ -2756,6 +2757,9 @@ class Resource extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
     return $result;
   }
   Resource._() : super();
@@ -2770,6 +2774,7 @@ class Resource extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(6, _omitFieldNames ? '' : 'age')
     ..aOS(7, _omitFieldNames ? '' : 'type')
+    ..aOS(8, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..hasRequiredFields = false
   ;
 
@@ -2850,6 +2855,15 @@ class Resource extends $pb.GeneratedMessage {
   $core.bool hasType() => $_has(6);
   @$pb.TagNumber(7)
   void clearType() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get createdBy => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set createdBy($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedBy() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedBy() => clearField(8);
 }
 
 class Group extends $pb.GeneratedMessage {

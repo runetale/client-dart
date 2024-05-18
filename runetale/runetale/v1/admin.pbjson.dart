@@ -628,6 +628,7 @@ const Resource$json = {
     {'1': 'port', '3': 5, '4': 1, '5': 4, '10': 'port'},
     {'1': 'age', '3': 6, '4': 1, '5': 9, '10': 'age'},
     {'1': 'type', '3': 7, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'createdBy', '3': 8, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
@@ -636,7 +637,7 @@ final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
     'CghSZXNvdXJjZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIrCghtYWNoaW'
     '5lcxgDIAMoCzIPLnByb3Rvcy5NYWNoaW5lUghtYWNoaW5lcxIUCgVwcm90bxgEIAEoCVIFcHJv'
     'dG8SEgoEcG9ydBgFIAEoBFIEcG9ydBIQCgNhZ2UYBiABKAlSA2FnZRISCgR0eXBlGAcgASgJUg'
-    'R0eXBl');
+    'R0eXBlEhwKCWNyZWF0ZWRCeRgIIAEoCVIJY3JlYXRlZEJ5');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
