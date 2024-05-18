@@ -594,30 +594,46 @@ final $typed_data.Uint8List fleetDescriptor = $convert.base64Decode(
     'gJUgRkZXNjEhYKBmRvbWFpbhgEIAEoCVIGZG9tYWluEhAKA2FnZRgFIAEoCVIDYWdlEi4KCXJl'
     'c291cmNlcxgGIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2Vz');
 
+@$core.Deprecated('Use machineDescriptor instead')
+const Machine$json = {
+  '1': 'Machine',
+  '2': [
+    {'1': 'machineId', '3': 1, '4': 1, '5': 4, '10': 'machineId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'host', '3': 6, '4': 1, '5': 9, '10': 'host'},
+    {'1': 'domain', '3': 7, '4': 1, '5': 9, '10': 'domain'},
+    {'1': 'updatedAt', '3': 8, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
+  ],
+};
+
+/// Descriptor for `Machine`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List machineDescriptor = $convert.base64Decode(
+    'CgdNYWNoaW5lEhwKCW1hY2hpbmVJZBgBIAEoBFIJbWFjaGluZUlkEhIKBG5hbWUYAiABKAlSBG'
+    '5hbWUSFAoFZW1haWwYAyABKAlSBWVtYWlsEg4KAmlwGAQgASgJUgJpcBIOCgJvcxgFIAEoCVIC'
+    'b3MSEgoEaG9zdBgGIAEoCVIEaG9zdBIWCgZkb21haW4YByABKAlSBmRvbWFpbhIcCgl1cGRhdG'
+    'VkQXQYCCABKAlSCXVwZGF0ZWRBdBIcCgljcmVhdGVkQnkYCSABKAlSCWNyZWF0ZWRCeQ==');
+
 @$core.Deprecated('Use resourceDescriptor instead')
 const Resource$json = {
   '1': 'Resource',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'machineId', '3': 2, '4': 1, '5': 4, '10': 'machineId'},
-    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'proto', '3': 6, '4': 1, '5': 9, '10': 'proto'},
-    {'1': 'port', '3': 7, '4': 1, '5': 9, '10': 'port'},
-    {'1': 'status', '3': 8, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'lastSeen', '3': 9, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'createdBy', '3': 10, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'machines', '3': 3, '4': 3, '5': 11, '6': '.protos.Machine', '10': 'machines'},
+    {'1': 'age', '3': 4, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'type', '3': 5, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'type'},
   ],
 };
 
 /// Descriptor for `Resource`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
-    'CghSZXNvdXJjZRIOCgJpZBgBIAEoCVICaWQSHAoJbWFjaGluZUlkGAIgASgEUgltYWNoaW5lSW'
-    'QSEgoEbmFtZRgDIAEoCVIEbmFtZRIOCgJpcBgEIAEoCVICaXASDgoCb3MYBSABKAlSAm9zEhQK'
-    'BXByb3RvGAYgASgJUgVwcm90bxISCgRwb3J0GAcgASgJUgRwb3J0EhYKBnN0YXR1cxgIIAEoCF'
-    'IGc3RhdHVzEhoKCGxhc3RTZWVuGAkgASgJUghsYXN0U2VlbhIcCgljcmVhdGVkQnkYCiABKAlS'
-    'CWNyZWF0ZWRCeQ==');
+    'CghSZXNvdXJjZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIrCghtYWNoaW'
+    '5lcxgDIAMoCzIPLnByb3Rvcy5NYWNoaW5lUghtYWNoaW5lcxIQCgNhZ2UYBCABKAlSA2FnZRIs'
+    'CgR0eXBlGAUgASgOMhgucHJvdG9zLkRlcGxveW1lbnRNZXRob2RSBHR5cGU=');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {

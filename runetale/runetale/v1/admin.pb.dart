@@ -2562,28 +2562,27 @@ class Fleet extends $pb.GeneratedMessage {
   $core.List<Resource> get resources => $_getList(5);
 }
 
-class Resource extends $pb.GeneratedMessage {
-  factory Resource({
-    $core.String? id,
+class Machine extends $pb.GeneratedMessage {
+  factory Machine({
     $fixnum.Int64? machineId,
     $core.String? name,
+    $core.String? email,
     $core.String? ip,
     $core.String? os,
-    $core.String? proto,
-    $core.String? port,
-    $core.bool? status,
-    $core.String? lastSeen,
+    $core.String? host,
+    $core.String? domain,
+    $core.String? updatedAt,
     $core.String? createdBy,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
     if (machineId != null) {
       $result.machineId = machineId;
     }
     if (name != null) {
       $result.name = name;
+    }
+    if (email != null) {
+      $result.email = email;
     }
     if (ip != null) {
       $result.ip = ip;
@@ -2591,20 +2590,163 @@ class Resource extends $pb.GeneratedMessage {
     if (os != null) {
       $result.os = os;
     }
-    if (proto != null) {
-      $result.proto = proto;
+    if (host != null) {
+      $result.host = host;
     }
-    if (port != null) {
-      $result.port = port;
+    if (domain != null) {
+      $result.domain = domain;
     }
-    if (status != null) {
-      $result.status = status;
-    }
-    if (lastSeen != null) {
-      $result.lastSeen = lastSeen;
+    if (updatedAt != null) {
+      $result.updatedAt = updatedAt;
     }
     if (createdBy != null) {
       $result.createdBy = createdBy;
+    }
+    return $result;
+  }
+  Machine._() : super();
+  factory Machine.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Machine.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Machine', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'email')
+    ..aOS(4, _omitFieldNames ? '' : 'ip')
+    ..aOS(5, _omitFieldNames ? '' : 'os')
+    ..aOS(6, _omitFieldNames ? '' : 'host')
+    ..aOS(7, _omitFieldNames ? '' : 'domain')
+    ..aOS(8, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt')
+    ..aOS(9, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Machine clone() => Machine()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Machine copyWith(void Function(Machine) updates) => super.copyWith((message) => updates(message as Machine)) as Machine;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Machine create() => Machine._();
+  Machine createEmptyInstance() => create();
+  static $pb.PbList<Machine> createRepeated() => $pb.PbList<Machine>();
+  @$core.pragma('dart2js:noInline')
+  static Machine getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Machine>(create);
+  static Machine? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get machineId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set machineId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMachineId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMachineId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get email => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set email($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasEmail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEmail() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get ip => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set ip($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIp() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIp() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get os => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set os($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasOs() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOs() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get host => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set host($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasHost() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHost() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get domain => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set domain($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasDomain() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDomain() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get updatedAt => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set updatedAt($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasUpdatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUpdatedAt() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get createdBy => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set createdBy($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasCreatedBy() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearCreatedBy() => clearField(9);
+}
+
+class Resource extends $pb.GeneratedMessage {
+  factory Resource({
+    $core.String? id,
+    $core.String? name,
+    $core.Iterable<Machine>? machines,
+    $core.String? age,
+    DeploymentMethod? type,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (machines != null) {
+      $result.machines.addAll(machines);
+    }
+    if (age != null) {
+      $result.age = age;
+    }
+    if (type != null) {
+      $result.type = type;
     }
     return $result;
   }
@@ -2614,15 +2756,10 @@ class Resource extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resource', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, _omitFieldNames ? '' : 'name')
-    ..aOS(4, _omitFieldNames ? '' : 'ip')
-    ..aOS(5, _omitFieldNames ? '' : 'os')
-    ..aOS(6, _omitFieldNames ? '' : 'proto')
-    ..aOS(7, _omitFieldNames ? '' : 'port')
-    ..aOB(8, _omitFieldNames ? '' : 'status')
-    ..aOS(9, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOS(10, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..pc<Machine>(3, _omitFieldNames ? '' : 'machines', $pb.PbFieldType.PM, subBuilder: Machine.create)
+    ..aOS(4, _omitFieldNames ? '' : 'age')
+    ..e<DeploymentMethod>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..hasRequiredFields = false
   ;
 
@@ -2657,85 +2794,34 @@ class Resource extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get machineId => $_getI64(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set machineId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasMachineId() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearMachineId() => clearField(2);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get name => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set name($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasName() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  $core.List<Machine> get machines => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.String get ip => $_getSZ(3);
+  $core.String get age => $_getSZ(3);
   @$pb.TagNumber(4)
-  set ip($core.String v) { $_setString(3, v); }
+  set age($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasIp() => $_has(3);
+  $core.bool hasAge() => $_has(3);
   @$pb.TagNumber(4)
-  void clearIp() => clearField(4);
+  void clearAge() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get os => $_getSZ(4);
+  DeploymentMethod get type => $_getN(4);
   @$pb.TagNumber(5)
-  set os($core.String v) { $_setString(4, v); }
+  set type(DeploymentMethod v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasOs() => $_has(4);
+  $core.bool hasType() => $_has(4);
   @$pb.TagNumber(5)
-  void clearOs() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get proto => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set proto($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasProto() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearProto() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.String get port => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set port($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasPort() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearPort() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $core.bool get status => $_getBF(7);
-  @$pb.TagNumber(8)
-  set status($core.bool v) { $_setBool(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasStatus() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearStatus() => clearField(8);
-
-  @$pb.TagNumber(9)
-  $core.String get lastSeen => $_getSZ(8);
-  @$pb.TagNumber(9)
-  set lastSeen($core.String v) { $_setString(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasLastSeen() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearLastSeen() => clearField(9);
-
-  @$pb.TagNumber(10)
-  $core.String get createdBy => $_getSZ(9);
-  @$pb.TagNumber(10)
-  set createdBy($core.String v) { $_setString(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasCreatedBy() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearCreatedBy() => clearField(10);
+  void clearType() => clearField(5);
 }
 
 class Group extends $pb.GeneratedMessage {
