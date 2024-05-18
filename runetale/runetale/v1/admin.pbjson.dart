@@ -582,21 +582,25 @@ const Fleet$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
-    {'1': 'age', '3': 5, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'resources', '3': 6, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'resources', '3': 4, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'proto', '3': 5, '4': 1, '5': 9, '10': 'proto'},
+    {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
+    {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'type', '3': 8, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
 /// Descriptor for `Fleet`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fleetDescriptor = $convert.base64Decode(
     'CgVGbGVldBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgAS'
-    'gJUgRkZXNjEhYKBmRvbWFpbhgEIAEoCVIGZG9tYWluEhAKA2FnZRgFIAEoCVIDYWdlEi4KCXJl'
-    'c291cmNlcxgGIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2Vz');
+    'gJUgRkZXNjEi4KCXJlc291cmNlcxgEIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2Vz'
+    'EhQKBXByb3RvGAUgASgJUgVwcm90bxISCgRwb3J0GAYgASgJUgRwb3J0EhAKA2FnZRgHIAEoCV'
+    'IDYWdlEhIKBHR5cGUYCCABKAlSBHR5cGUSHAoJY3JlYXRlZEJ5GAkgASgJUgljcmVhdGVkQnk=');
 
-@$core.Deprecated('Use machineDescriptor instead')
-const Machine$json = {
-  '1': 'Machine',
+@$core.Deprecated('Use resourceDescriptor instead')
+const Resource$json = {
+  '1': 'Resource',
   '2': [
     {'1': 'machineId', '3': 1, '4': 1, '5': 4, '10': 'machineId'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
@@ -604,40 +608,20 @@ const Machine$json = {
     {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'domain', '3': 6, '4': 1, '5': 9, '10': 'domain'},
-    {'1': 'status', '3': 7, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'updatedAt', '3': 8, '4': 1, '5': 9, '10': 'updatedAt'},
-    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
-  ],
-};
-
-/// Descriptor for `Machine`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List machineDescriptor = $convert.base64Decode(
-    'CgdNYWNoaW5lEhwKCW1hY2hpbmVJZBgBIAEoBFIJbWFjaGluZUlkEhIKBG5hbWUYAiABKAlSBG'
-    '5hbWUSFAoFZW1haWwYAyABKAlSBWVtYWlsEg4KAmlwGAQgASgJUgJpcBIOCgJvcxgFIAEoCVIC'
-    'b3MSFgoGZG9tYWluGAYgASgJUgZkb21haW4SFgoGc3RhdHVzGAcgASgIUgZzdGF0dXMSHAoJdX'
-    'BkYXRlZEF0GAggASgJUgl1cGRhdGVkQXQSHAoJY3JlYXRlZEJ5GAkgASgJUgljcmVhdGVkQnk=');
-
-@$core.Deprecated('Use resourceDescriptor instead')
-const Resource$json = {
-  '1': 'Resource',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'machines', '3': 3, '4': 3, '5': 11, '6': '.protos.Machine', '10': 'machines'},
-    {'1': 'proto', '3': 4, '4': 1, '5': 9, '10': 'proto'},
-    {'1': 'port', '3': 5, '4': 1, '5': 9, '10': 'port'},
-    {'1': 'age', '3': 6, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'type', '3': 7, '4': 1, '5': 9, '10': 'type'},
-    {'1': 'createdBy', '3': 8, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'type', '3': 8, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'status', '3': 9, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'createdBy', '3': 10, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
 /// Descriptor for `Resource`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
-    'CghSZXNvdXJjZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIrCghtYWNoaW'
-    '5lcxgDIAMoCzIPLnByb3Rvcy5NYWNoaW5lUghtYWNoaW5lcxIUCgVwcm90bxgEIAEoCVIFcHJv'
-    'dG8SEgoEcG9ydBgFIAEoCVIEcG9ydBIQCgNhZ2UYBiABKAlSA2FnZRISCgR0eXBlGAcgASgJUg'
-    'R0eXBlEhwKCWNyZWF0ZWRCeRgIIAEoCVIJY3JlYXRlZEJ5');
+    'CghSZXNvdXJjZRIcCgltYWNoaW5lSWQYASABKARSCW1hY2hpbmVJZBISCgRuYW1lGAIgASgJUg'
+    'RuYW1lEhQKBWVtYWlsGAMgASgJUgVlbWFpbBIOCgJpcBgEIAEoCVICaXASDgoCb3MYBSABKAlS'
+    'Am9zEhYKBmRvbWFpbhgGIAEoCVIGZG9tYWluEhAKA2FnZRgHIAEoCVIDYWdlEhIKBHR5cGUYCC'
+    'ABKAlSBHR5cGUSFgoGc3RhdHVzGAkgASgIUgZzdGF0dXMSHAoJY3JlYXRlZEJ5GAogASgJUglj'
+    'cmVhdGVkQnk=');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
