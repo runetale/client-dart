@@ -2729,6 +2729,8 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.Iterable<Machine>? machines,
+    $core.String? proto,
+    $fixnum.Int64? port,
     $core.String? age,
     DeploymentMethod? type,
   }) {
@@ -2741,6 +2743,12 @@ class Resource extends $pb.GeneratedMessage {
     }
     if (machines != null) {
       $result.machines.addAll(machines);
+    }
+    if (proto != null) {
+      $result.proto = proto;
+    }
+    if (port != null) {
+      $result.port = port;
     }
     if (age != null) {
       $result.age = age;
@@ -2758,8 +2766,10 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..pc<Machine>(3, _omitFieldNames ? '' : 'machines', $pb.PbFieldType.PM, subBuilder: Machine.create)
-    ..aOS(4, _omitFieldNames ? '' : 'age')
-    ..e<DeploymentMethod>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..aOS(4, _omitFieldNames ? '' : 'proto')
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(6, _omitFieldNames ? '' : 'age')
+    ..e<DeploymentMethod>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..hasRequiredFields = false
   ;
 
@@ -2806,22 +2816,40 @@ class Resource extends $pb.GeneratedMessage {
   $core.List<Machine> get machines => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.String get age => $_getSZ(3);
+  $core.String get proto => $_getSZ(3);
   @$pb.TagNumber(4)
-  set age($core.String v) { $_setString(3, v); }
+  set proto($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasAge() => $_has(3);
+  $core.bool hasProto() => $_has(3);
   @$pb.TagNumber(4)
-  void clearAge() => clearField(4);
+  void clearProto() => clearField(4);
 
   @$pb.TagNumber(5)
-  DeploymentMethod get type => $_getN(4);
+  $fixnum.Int64 get port => $_getI64(4);
   @$pb.TagNumber(5)
-  set type(DeploymentMethod v) { setField(5, v); }
+  set port($fixnum.Int64 v) { $_setInt64(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasType() => $_has(4);
+  $core.bool hasPort() => $_has(4);
   @$pb.TagNumber(5)
-  void clearType() => clearField(5);
+  void clearPort() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get age => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set age($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasAge() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAge() => clearField(6);
+
+  @$pb.TagNumber(7)
+  DeploymentMethod get type => $_getN(6);
+  @$pb.TagNumber(7)
+  set type(DeploymentMethod v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearType() => clearField(7);
 }
 
 class Group extends $pb.GeneratedMessage {
