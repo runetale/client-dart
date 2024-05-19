@@ -26,6 +26,10 @@ class MachineServiceClient extends $grpc.Client {
       '/protos.MachineService/SyncRemoteMachinesConfig',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $5.SyncMachinesResponse.fromBuffer(value));
+  static final _$createMachine = $grpc.ClientMethod<$0.Empty, $5.CreateMachineResponse>(
+      '/protos.MachineService/CreateMachine',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $5.CreateMachineResponse.fromBuffer(value));
 
   MachineServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -35,6 +39,10 @@ class MachineServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$5.SyncMachinesResponse> syncRemoteMachinesConfig($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$syncRemoteMachinesConfig, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$5.CreateMachineResponse> createMachine($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createMachine, request, options: options);
   }
 }
 
@@ -50,11 +58,23 @@ abstract class MachineServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($5.SyncMachinesResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $5.CreateMachineResponse>(
+        'CreateMachine',
+        createMachine_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($5.CreateMachineResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return syncRemoteMachinesConfig(call, await request);
   }
 
+  $async.Future<$5.CreateMachineResponse> createMachine_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return createMachine(call, await request);
+  }
+
   $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$5.CreateMachineResponse> createMachine($grpc.ServiceCall call, $0.Empty request);
 }

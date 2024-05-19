@@ -49,3 +49,17 @@ final $typed_data.Uint8List remotePeerDescriptor = $convert.base64Decode(
     'CmFsbG93ZWRJUHMYAyADKAlSCmFsbG93ZWRJUHMSDgoCaXAYBCABKAlSAmlwEhIKBGNpZHIYBS'
     'ABKAlSBGNpZHI=');
 
+@$core.Deprecated('Use createMachineResponseDescriptor instead')
+const CreateMachineResponse$json = {
+  '1': 'CreateMachineResponse',
+  '2': [
+    {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'cidr', '3': 2, '4': 1, '5': 9, '10': 'cidr'},
+  ],
+};
+
+/// Descriptor for `CreateMachineResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createMachineResponseDescriptor = $convert.base64Decode(
+    'ChVDcmVhdGVNYWNoaW5lUmVzcG9uc2USDgoCaXAYASABKAlSAmlwEhIKBGNpZHIYAiABKAlSBG'
+    'NpZHI=');
+

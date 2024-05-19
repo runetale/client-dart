@@ -199,6 +199,70 @@ class RemotePeer extends $pb.GeneratedMessage {
   void clearCidr() => clearField(5);
 }
 
+class CreateMachineResponse extends $pb.GeneratedMessage {
+  factory CreateMachineResponse({
+    $core.String? ip,
+    $core.String? cidr,
+  }) {
+    final $result = create();
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    return $result;
+  }
+  CreateMachineResponse._() : super();
+  factory CreateMachineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateMachineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateMachineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ip')
+    ..aOS(2, _omitFieldNames ? '' : 'cidr')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateMachineResponse clone() => CreateMachineResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateMachineResponse copyWith(void Function(CreateMachineResponse) updates) => super.copyWith((message) => updates(message as CreateMachineResponse)) as CreateMachineResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateMachineResponse create() => CreateMachineResponse._();
+  CreateMachineResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateMachineResponse> createRepeated() => $pb.PbList<CreateMachineResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateMachineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateMachineResponse>(create);
+  static CreateMachineResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ip => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ip($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIp() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get cidr => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set cidr($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCidr() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCidr() => clearField(2);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
