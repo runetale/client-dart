@@ -1759,10 +1759,14 @@ class CreateResourceResponse extends $pb.GeneratedMessage {
 class GenerateTokenRequest extends $pb.GeneratedMessage {
   factory GenerateTokenRequest({
     DeploymentMethod? deploymentMethod,
+    $fixnum.Int64? expirelyTime,
   }) {
     final $result = create();
     if (deploymentMethod != null) {
       $result.deploymentMethod = deploymentMethod;
+    }
+    if (expirelyTime != null) {
+      $result.expirelyTime = expirelyTime;
     }
     return $result;
   }
@@ -1772,6 +1776,7 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<DeploymentMethod>(1, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'ExpirelyTime', $pb.PbFieldType.OU6, protoName: 'ExpirelyTime', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -1804,6 +1809,15 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   $core.bool hasDeploymentMethod() => $_has(0);
   @$pb.TagNumber(1)
   void clearDeploymentMethod() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get expirelyTime => $_getI64(1);
+  @$pb.TagNumber(2)
+  set expirelyTime($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasExpirelyTime() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpirelyTime() => clearField(2);
 }
 
 class GenerateTokenResponse extends $pb.GeneratedMessage {

@@ -427,13 +427,15 @@ const GenerateTokenRequest$json = {
   '1': 'GenerateTokenRequest',
   '2': [
     {'1': 'deploymentMethod', '3': 1, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
+    {'1': 'ExpirelyTime', '3': 2, '4': 1, '5': 4, '10': 'ExpirelyTime'},
   ],
 };
 
 /// Descriptor for `GenerateTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List generateTokenRequestDescriptor = $convert.base64Decode(
     'ChRHZW5lcmF0ZVRva2VuUmVxdWVzdBJEChBkZXBsb3ltZW50TWV0aG9kGAEgASgOMhgucHJvdG'
-    '9zLkRlcGxveW1lbnRNZXRob2RSEGRlcGxveW1lbnRNZXRob2Q=');
+    '9zLkRlcGxveW1lbnRNZXRob2RSEGRlcGxveW1lbnRNZXRob2QSIgoMRXhwaXJlbHlUaW1lGAIg'
+    'ASgEUgxFeHBpcmVseVRpbWU=');
 
 @$core.Deprecated('Use generateTokenResponseDescriptor instead')
 const GenerateTokenResponse$json = {
