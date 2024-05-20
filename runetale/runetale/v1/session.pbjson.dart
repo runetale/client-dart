@@ -18,13 +18,14 @@ const VerifyPeerLoginSessionRequest$json = {
   '1': 'VerifyPeerLoginSessionRequest',
   '2': [
     {'1': 'sessionID', '3': 1, '4': 1, '5': 9, '10': 'sessionID'},
+    {'1': 'deploymentMethod', '3': 2, '4': 1, '5': 9, '10': 'deploymentMethod'},
   ],
 };
 
 /// Descriptor for `VerifyPeerLoginSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List verifyPeerLoginSessionRequestDescriptor = $convert.base64Decode(
     'Ch1WZXJpZnlQZWVyTG9naW5TZXNzaW9uUmVxdWVzdBIcCglzZXNzaW9uSUQYASABKAlSCXNlc3'
-    'Npb25JRA==');
+    'Npb25JRBIqChBkZXBsb3ltZW50TWV0aG9kGAIgASgJUhBkZXBsb3ltZW50TWV0aG9k');
 
 @$core.Deprecated('Use verifyPeerLoginSessionResponseDescriptor instead')
 const VerifyPeerLoginSessionResponse$json = {

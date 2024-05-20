@@ -16,10 +16,14 @@ import 'package:protobuf/protobuf.dart' as $pb;
 class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
   factory VerifyPeerLoginSessionRequest({
     $core.String? sessionID,
+    $core.String? deploymentMethod,
   }) {
     final $result = create();
     if (sessionID != null) {
       $result.sessionID = sessionID;
+    }
+    if (deploymentMethod != null) {
+      $result.deploymentMethod = deploymentMethod;
     }
     return $result;
   }
@@ -29,6 +33,7 @@ class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyPeerLoginSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sessionID', protoName: 'sessionID')
+    ..aOS(2, _omitFieldNames ? '' : 'deploymentMethod', protoName: 'deploymentMethod')
     ..hasRequiredFields = false
   ;
 
@@ -62,6 +67,16 @@ class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
   $core.bool hasSessionID() => $_has(0);
   @$pb.TagNumber(1)
   void clearSessionID() => clearField(1);
+
+  /// DeploymentMethod, for `enum Deployment Method`` on `admin.proto``
+  @$pb.TagNumber(2)
+  $core.String get deploymentMethod => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set deploymentMethod($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDeploymentMethod() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDeploymentMethod() => clearField(2);
 }
 
 class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
