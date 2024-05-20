@@ -58,6 +58,7 @@ const DeploymentMethod$json = {
     {'1': 'Onprem', '2': 7},
     {'1': 'MacOS', '2': 8},
     {'1': 'Windows', '2': 9},
+    {'1': 'Onbording', '2': 10},
     {'1': 'Other', '2': 11},
   ],
 };
@@ -66,7 +67,7 @@ const DeploymentMethod$json = {
 final $typed_data.Uint8List deploymentMethodDescriptor = $convert.base64Decode(
     'ChBEZXBsb3ltZW50TWV0aG9kEgoKBkRPQ0tFUhAAEgcKA0NMSRABEgkKBUxJTlVYEAISBwoDR0'
     'NQEAMSCgoGTUFOVUFMEAQSBwoDQVdTEAUSCQoFQXp1cmUQBhIKCgZPbnByZW0QBxIJCgVNYWNP'
-    'UxAIEgsKB1dpbmRvd3MQCRIJCgVPdGhlchAL');
+    'UxAIEgsKB1dpbmRvd3MQCRINCglPbmJvcmRpbmcQChIJCgVPdGhlchAL');
 
 @$core.Deprecated('Use createAclRequestDescriptor instead')
 const CreateAclRequest$json = {
