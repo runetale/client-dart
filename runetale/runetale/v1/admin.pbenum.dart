@@ -60,7 +60,9 @@ class DeploymentMethod extends $pb.ProtobufEnum {
   static const DeploymentMethod AWS = DeploymentMethod._(5, _omitEnumNames ? '' : 'AWS');
   static const DeploymentMethod Azure = DeploymentMethod._(6, _omitEnumNames ? '' : 'Azure');
   static const DeploymentMethod Onprem = DeploymentMethod._(7, _omitEnumNames ? '' : 'Onprem');
-  static const DeploymentMethod Other = DeploymentMethod._(8, _omitEnumNames ? '' : 'Other');
+  static const DeploymentMethod MacOS = DeploymentMethod._(8, _omitEnumNames ? '' : 'MacOS');
+  static const DeploymentMethod Windows = DeploymentMethod._(9, _omitEnumNames ? '' : 'Windows');
+  static const DeploymentMethod Other = DeploymentMethod._(11, _omitEnumNames ? '' : 'Other');
 
   static const $core.List<DeploymentMethod> values = <DeploymentMethod> [
     DOCKER,
@@ -71,6 +73,8 @@ class DeploymentMethod extends $pb.ProtobufEnum {
     AWS,
     Azure,
     Onprem,
+    MacOS,
+    Windows,
     Other,
   ];
 
