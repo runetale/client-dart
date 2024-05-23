@@ -1756,17 +1756,32 @@ class CreateResourceResponse extends $pb.GeneratedMessage {
   void clearName() => clearField(1);
 }
 
+enum GenerateTokenRequest_ExpirelyTime {
+  thirty, 
+  sixty, 
+  ninety, 
+  notSet
+}
+
 class GenerateTokenRequest extends $pb.GeneratedMessage {
   factory GenerateTokenRequest({
     DeploymentMethod? deploymentMethod,
-    $fixnum.Int64? expirelyTime,
+    $core.String? thirty,
+    $core.String? sixty,
+    $core.String? ninety,
   }) {
     final $result = create();
     if (deploymentMethod != null) {
       $result.deploymentMethod = deploymentMethod;
     }
-    if (expirelyTime != null) {
-      $result.expirelyTime = expirelyTime;
+    if (thirty != null) {
+      $result.thirty = thirty;
+    }
+    if (sixty != null) {
+      $result.sixty = sixty;
+    }
+    if (ninety != null) {
+      $result.ninety = ninety;
     }
     return $result;
   }
@@ -1774,9 +1789,18 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   factory GenerateTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GenerateTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
+  static const $core.Map<$core.int, GenerateTokenRequest_ExpirelyTime> _GenerateTokenRequest_ExpirelyTimeByTag = {
+    2 : GenerateTokenRequest_ExpirelyTime.thirty,
+    3 : GenerateTokenRequest_ExpirelyTime.sixty,
+    4 : GenerateTokenRequest_ExpirelyTime.ninety,
+    0 : GenerateTokenRequest_ExpirelyTime.notSet
+  };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..oo(0, [2, 3, 4])
     ..e<DeploymentMethod>(1, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'ExpirelyTime', $pb.PbFieldType.OU6, protoName: 'ExpirelyTime', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'thirty')
+    ..aOS(3, _omitFieldNames ? '' : 'sixty')
+    ..aOS(4, _omitFieldNames ? '' : 'ninety')
     ..hasRequiredFields = false
   ;
 
@@ -1801,6 +1825,9 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   static GenerateTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateTokenRequest>(create);
   static GenerateTokenRequest? _defaultInstance;
 
+  GenerateTokenRequest_ExpirelyTime whichExpirelyTime() => _GenerateTokenRequest_ExpirelyTimeByTag[$_whichOneof(0)]!;
+  void clearExpirelyTime() => clearField($_whichOneof(0));
+
   @$pb.TagNumber(1)
   DeploymentMethod get deploymentMethod => $_getN(0);
   @$pb.TagNumber(1)
@@ -1811,13 +1838,31 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   void clearDeploymentMethod() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get expirelyTime => $_getI64(1);
+  $core.String get thirty => $_getSZ(1);
   @$pb.TagNumber(2)
-  set expirelyTime($fixnum.Int64 v) { $_setInt64(1, v); }
+  set thirty($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasExpirelyTime() => $_has(1);
+  $core.bool hasThirty() => $_has(1);
   @$pb.TagNumber(2)
-  void clearExpirelyTime() => clearField(2);
+  void clearThirty() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sixty => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sixty($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSixty() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSixty() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get ninety => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set ninety($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasNinety() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNinety() => clearField(4);
 }
 
 class GenerateTokenResponse extends $pb.GeneratedMessage {
