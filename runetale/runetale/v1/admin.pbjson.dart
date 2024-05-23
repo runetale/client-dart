@@ -31,6 +31,21 @@ final $typed_data.Uint8List aclResourceTypeDescriptor = $convert.base64Decode(
     'Cg9BY2xSZXNvdXJjZVR5cGUSCQoFRkxFRVQQABIMCghSRVNPVVJDRRABEgkKBUdST1VQEAISCA'
     'oEVVNFUhADEgcKA0lOSxAEEgoKBkRFVklDRRAF');
 
+@$core.Deprecated('Use expirelyTimeDescriptor instead')
+const ExpirelyTime$json = {
+  '1': 'ExpirelyTime',
+  '2': [
+    {'1': 'ONEMONTH', '2': 0},
+    {'1': 'TWOMONTH', '2': 1},
+    {'1': 'THREEMONTH', '2': 2},
+  ],
+};
+
+/// Descriptor for `ExpirelyTime`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List expirelyTimeDescriptor = $convert.base64Decode(
+    'CgxFeHBpcmVseVRpbWUSDAoIT05FTU9OVEgQABIMCghUV09NT05USBABEg4KClRIUkVFTU9OVE'
+    'gQAg==');
+
 @$core.Deprecated('Use actionDescriptor instead')
 const Action$json = {
   '1': 'Action',
@@ -430,21 +445,15 @@ const GenerateTokenRequest$json = {
   '1': 'GenerateTokenRequest',
   '2': [
     {'1': 'deploymentMethod', '3': 1, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
-    {'1': 'thirty', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'thirty'},
-    {'1': 'sixty', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'sixty'},
-    {'1': 'ninety', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'ninety'},
-  ],
-  '8': [
-    {'1': 'expirelyTime'},
+    {'1': 'expirelyTime', '3': 2, '4': 1, '5': 14, '6': '.protos.ExpirelyTime', '10': 'expirelyTime'},
   ],
 };
 
 /// Descriptor for `GenerateTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List generateTokenRequestDescriptor = $convert.base64Decode(
     'ChRHZW5lcmF0ZVRva2VuUmVxdWVzdBJEChBkZXBsb3ltZW50TWV0aG9kGAEgASgOMhgucHJvdG'
-    '9zLkRlcGxveW1lbnRNZXRob2RSEGRlcGxveW1lbnRNZXRob2QSGAoGdGhpcnR5GAIgASgJSABS'
-    'BnRoaXJ0eRIWCgVzaXh0eRgDIAEoCUgAUgVzaXh0eRIYCgZuaW5ldHkYBCABKAlIAFIGbmluZX'
-    'R5Qg4KDGV4cGlyZWx5VGltZQ==');
+    '9zLkRlcGxveW1lbnRNZXRob2RSEGRlcGxveW1lbnRNZXRob2QSOAoMZXhwaXJlbHlUaW1lGAIg'
+    'ASgOMhQucHJvdG9zLkV4cGlyZWx5VGltZVIMZXhwaXJlbHlUaW1l');
 
 @$core.Deprecated('Use generateTokenResponseDescriptor instead')
 const GenerateTokenResponse$json = {

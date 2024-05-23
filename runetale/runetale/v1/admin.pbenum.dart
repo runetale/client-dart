@@ -36,6 +36,23 @@ class AclResourceType extends $pb.ProtobufEnum {
   const AclResourceType._($core.int v, $core.String n) : super(v, n);
 }
 
+class ExpirelyTime extends $pb.ProtobufEnum {
+  static const ExpirelyTime ONEMONTH = ExpirelyTime._(0, _omitEnumNames ? '' : 'ONEMONTH');
+  static const ExpirelyTime TWOMONTH = ExpirelyTime._(1, _omitEnumNames ? '' : 'TWOMONTH');
+  static const ExpirelyTime THREEMONTH = ExpirelyTime._(2, _omitEnumNames ? '' : 'THREEMONTH');
+
+  static const $core.List<ExpirelyTime> values = <ExpirelyTime> [
+    ONEMONTH,
+    TWOMONTH,
+    THREEMONTH,
+  ];
+
+  static final $core.Map<$core.int, ExpirelyTime> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static ExpirelyTime? valueOf($core.int value) => _byValue[value];
+
+  const ExpirelyTime._($core.int v, $core.String n) : super(v, n);
+}
+
 class Action extends $pb.ProtobufEnum {
   static const Action Accept = Action._(0, _omitEnumNames ? '' : 'Accept');
   static const Action Denied = Action._(1, _omitEnumNames ? '' : 'Denied');
