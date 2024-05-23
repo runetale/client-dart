@@ -1870,6 +1870,128 @@ class GenerateTokenResponse extends $pb.GeneratedMessage {
   void clearToken() => clearField(1);
 }
 
+class GetTokensResponse_token extends $pb.GeneratedMessage {
+  factory GetTokensResponse_token({
+    $core.String? token,
+    $core.String? expiredAt,
+    $core.String? createdBy,
+  }) {
+    final $result = create();
+    if (token != null) {
+      $result.token = token;
+    }
+    if (expiredAt != null) {
+      $result.expiredAt = expiredAt;
+    }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    return $result;
+  }
+  GetTokensResponse_token._() : super();
+  factory GetTokensResponse_token.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTokensResponse_token.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTokensResponse.token', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..aOS(2, _omitFieldNames ? '' : 'expiredAt', protoName: 'expiredAt')
+    ..aOS(3, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTokensResponse_token clone() => GetTokensResponse_token()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTokensResponse_token copyWith(void Function(GetTokensResponse_token) updates) => super.copyWith((message) => updates(message as GetTokensResponse_token)) as GetTokensResponse_token;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTokensResponse_token create() => GetTokensResponse_token._();
+  GetTokensResponse_token createEmptyInstance() => create();
+  static $pb.PbList<GetTokensResponse_token> createRepeated() => $pb.PbList<GetTokensResponse_token>();
+  @$core.pragma('dart2js:noInline')
+  static GetTokensResponse_token getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTokensResponse_token>(create);
+  static GetTokensResponse_token? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get token => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set token($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToken() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get expiredAt => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set expiredAt($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasExpiredAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearExpiredAt() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get createdBy => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set createdBy($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCreatedBy() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCreatedBy() => clearField(3);
+}
+
+class GetTokensResponse extends $pb.GeneratedMessage {
+  factory GetTokensResponse({
+    $core.Iterable<GetTokensResponse_token>? tokens,
+  }) {
+    final $result = create();
+    if (tokens != null) {
+      $result.tokens.addAll(tokens);
+    }
+    return $result;
+  }
+  GetTokensResponse._() : super();
+  factory GetTokensResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetTokensResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTokensResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<GetTokensResponse_token>(1, _omitFieldNames ? '' : 'tokens', $pb.PbFieldType.PM, subBuilder: GetTokensResponse_token.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetTokensResponse clone() => GetTokensResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetTokensResponse copyWith(void Function(GetTokensResponse) updates) => super.copyWith((message) => updates(message as GetTokensResponse)) as GetTokensResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetTokensResponse create() => GetTokensResponse._();
+  GetTokensResponse createEmptyInstance() => create();
+  static $pb.PbList<GetTokensResponse> createRepeated() => $pb.PbList<GetTokensResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetTokensResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTokensResponse>(create);
+  static GetTokensResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<GetTokensResponse_token> get tokens => $_getList(0);
+}
+
 class GetResourceRequest extends $pb.GeneratedMessage {
   factory GetResourceRequest({
     $fixnum.Int64? id,

@@ -94,6 +94,10 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GenerateToken',
       ($1.GenerateTokenRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.GenerateTokenResponse.fromBuffer(value));
+  static final _$getTokens = $grpc.ClientMethod<$0.Empty, $1.GetTokensResponse>(
+      '/protos.AdminService/GetTokens',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetTokensResponse.fromBuffer(value));
   static final _$createFleet = $grpc.ClientMethod<$1.CreateFleetRequest, $1.Fleet>(
       '/protos.AdminService/CreateFleet',
       ($1.CreateFleetRequest value) => value.writeToBuffer(),
@@ -207,6 +211,10 @@ class AdminServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.GenerateTokenResponse> generateToken($1.GenerateTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$generateToken, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.GetTokensResponse> getTokens($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getTokens, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.Fleet> createFleet($1.CreateFleetRequest request, {$grpc.CallOptions? options}) {
@@ -377,6 +385,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.GenerateTokenRequest.fromBuffer(value),
         ($1.GenerateTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GetTokensResponse>(
+        'GetTokens',
+        getTokens_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.GetTokensResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateFleetRequest, $1.Fleet>(
         'CreateFleet',
         createFleet_Pre,
@@ -514,6 +529,10 @@ abstract class AdminServiceBase extends $grpc.Service {
     return generateToken(call, await request);
   }
 
+  $async.Future<$1.GetTokensResponse> getTokens_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getTokens(call, await request);
+  }
+
   $async.Future<$1.Fleet> createFleet_Pre($grpc.ServiceCall call, $async.Future<$1.CreateFleetRequest> request) async {
     return createFleet(call, await request);
   }
@@ -568,6 +587,7 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Resource> getResource($grpc.ServiceCall call, $1.GetResourceRequest request);
   $async.Future<$1.Resources> getResources($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.GenerateTokenResponse> generateToken($grpc.ServiceCall call, $1.GenerateTokenRequest request);
+  $async.Future<$1.GetTokensResponse> getTokens($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.Fleet> createFleet($grpc.ServiceCall call, $1.CreateFleetRequest request);
   $async.Future<$1.Fleet> getFleet($grpc.ServiceCall call, $1.GetFleetRequest request);
   $async.Future<$1.Fleets> getFleets($grpc.ServiceCall call, $0.Empty request);
