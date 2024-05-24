@@ -1874,6 +1874,7 @@ class GetTokensResponse_token extends $pb.GeneratedMessage {
   factory GetTokensResponse_token({
     $core.String? token,
     $core.String? expiredAt,
+    $core.bool? hasExpied,
     $core.String? createdBy,
   }) {
     final $result = create();
@@ -1882,6 +1883,9 @@ class GetTokensResponse_token extends $pb.GeneratedMessage {
     }
     if (expiredAt != null) {
       $result.expiredAt = expiredAt;
+    }
+    if (hasExpied != null) {
+      $result.hasExpied = hasExpied;
     }
     if (createdBy != null) {
       $result.createdBy = createdBy;
@@ -1895,7 +1899,8 @@ class GetTokensResponse_token extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTokensResponse.token', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'token')
     ..aOS(2, _omitFieldNames ? '' : 'expiredAt', protoName: 'expiredAt')
-    ..aOS(3, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOB(3, _omitFieldNames ? '' : 'hasExpied', protoName: 'hasExpied')
+    ..aOS(4, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..hasRequiredFields = false
   ;
 
@@ -1939,13 +1944,22 @@ class GetTokensResponse_token extends $pb.GeneratedMessage {
   void clearExpiredAt() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get createdBy => $_getSZ(2);
+  $core.bool get hasExpied => $_getBF(2);
   @$pb.TagNumber(3)
-  set createdBy($core.String v) { $_setString(2, v); }
+  set hasExpied($core.bool v) { $_setBool(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCreatedBy() => $_has(2);
+  $core.bool hasHasExpied() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCreatedBy() => clearField(3);
+  void clearHasExpied() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get createdBy => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set createdBy($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCreatedBy() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCreatedBy() => clearField(4);
 }
 
 class GetTokensResponse extends $pb.GeneratedMessage {

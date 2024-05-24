@@ -482,16 +482,17 @@ const GetTokensResponse_token$json = {
   '2': [
     {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
     {'1': 'expiredAt', '3': 2, '4': 1, '5': 9, '10': 'expiredAt'},
-    {'1': 'createdBy', '3': 3, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'hasExpied', '3': 3, '4': 1, '5': 8, '10': 'hasExpied'},
+    {'1': 'createdBy', '3': 4, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
 /// Descriptor for `GetTokensResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getTokensResponseDescriptor = $convert.base64Decode(
     'ChFHZXRUb2tlbnNSZXNwb25zZRI3CgZ0b2tlbnMYASADKAsyHy5wcm90b3MuR2V0VG9rZW5zUm'
-    'VzcG9uc2UudG9rZW5SBnRva2VucxpZCgV0b2tlbhIUCgV0b2tlbhgBIAEoCVIFdG9rZW4SHAoJ'
-    'ZXhwaXJlZEF0GAIgASgJUglleHBpcmVkQXQSHAoJY3JlYXRlZEJ5GAMgASgJUgljcmVhdGVkQn'
-    'k=');
+    'VzcG9uc2UudG9rZW5SBnRva2Vucxp3CgV0b2tlbhIUCgV0b2tlbhgBIAEoCVIFdG9rZW4SHAoJ'
+    'ZXhwaXJlZEF0GAIgASgJUglleHBpcmVkQXQSHAoJaGFzRXhwaWVkGAMgASgIUgloYXNFeHBpZW'
+    'QSHAoJY3JlYXRlZEJ5GAQgASgJUgljcmVhdGVkQnk=');
 
 @$core.Deprecated('Use getResourceRequestDescriptor instead')
 const GetResourceRequest$json = {
