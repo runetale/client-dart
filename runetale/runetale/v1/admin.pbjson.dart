@@ -490,13 +490,13 @@ final $typed_data.Uint8List getTokensResponseDescriptor = $convert.base64Decode(
 const GetResourceRequest$json = {
   '1': 'GetResourceRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
   ],
 };
 
 /// Descriptor for `GetResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getResourceRequestDescriptor = $convert.base64Decode(
-    'ChJHZXRSZXNvdXJjZVJlcXVlc3QSDgoCaWQYASABKARSAmlk');
+    'ChJHZXRSZXNvdXJjZVJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
 
 @$core.Deprecated('Use resourcesDescriptor instead')
 const Resources$json = {
