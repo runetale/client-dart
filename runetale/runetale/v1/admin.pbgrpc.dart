@@ -78,10 +78,10 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetDevices',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Devices.fromBuffer(value));
-  static final _$createResource = $grpc.ClientMethod<$1.CreateResourceRequest, $1.CreateResourceResponse>(
+  static final _$createResource = $grpc.ClientMethod<$1.CreateResourceRequest, $1.Resource>(
       '/protos.AdminService/CreateResource',
       ($1.CreateResourceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.CreateResourceResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $1.Resource.fromBuffer(value));
   static final _$getResource = $grpc.ClientMethod<$1.GetResourceRequest, $1.Resource>(
       '/protos.AdminService/GetResource',
       ($1.GetResourceRequest value) => value.writeToBuffer(),
@@ -197,7 +197,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getDevices, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.CreateResourceResponse> createResource($1.CreateResourceRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Resource> createResource($1.CreateResourceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createResource, request, options: options);
   }
 
@@ -357,13 +357,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.Devices value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.CreateResourceRequest, $1.CreateResourceResponse>(
+    $addMethod($grpc.ServiceMethod<$1.CreateResourceRequest, $1.Resource>(
         'CreateResource',
         createResource_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $1.CreateResourceRequest.fromBuffer(value),
-        ($1.CreateResourceResponse value) => value.writeToBuffer()));
+        ($1.Resource value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.GetResourceRequest, $1.Resource>(
         'GetResource',
         getResource_Pre,
@@ -513,7 +513,7 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getDevices(call, await request);
   }
 
-  $async.Future<$1.CreateResourceResponse> createResource_Pre($grpc.ServiceCall call, $async.Future<$1.CreateResourceRequest> request) async {
+  $async.Future<$1.Resource> createResource_Pre($grpc.ServiceCall call, $async.Future<$1.CreateResourceRequest> request) async {
     return createResource(call, await request);
   }
 
@@ -583,7 +583,7 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Group> patchGroup($grpc.ServiceCall call, $1.PatchGroupRequest request);
   $async.Future<$1.Device> getDevice($grpc.ServiceCall call, $1.GetDevicesRequest request);
   $async.Future<$1.Devices> getDevices($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$1.CreateResourceResponse> createResource($grpc.ServiceCall call, $1.CreateResourceRequest request);
+  $async.Future<$1.Resource> createResource($grpc.ServiceCall call, $1.CreateResourceRequest request);
   $async.Future<$1.Resource> getResource($grpc.ServiceCall call, $1.GetResourceRequest request);
   $async.Future<$1.Resources> getResources($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.GenerateTokenResponse> generateToken($grpc.ServiceCall call, $1.GenerateTokenRequest request);

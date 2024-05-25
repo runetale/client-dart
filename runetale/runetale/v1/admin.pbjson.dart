@@ -428,18 +428,6 @@ final $typed_data.Uint8List createResourceRequestDescriptor = $convert.base64Dec
     'ChVDcmVhdGVSZXNvdXJjZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgAS'
     'gJUgRkZXNjEh4KCm1hY2hpbmVJZHMYAyADKARSCm1hY2hpbmVJZHM=');
 
-@$core.Deprecated('Use createResourceResponseDescriptor instead')
-const CreateResourceResponse$json = {
-  '1': 'CreateResourceResponse',
-  '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-  ],
-};
-
-/// Descriptor for `CreateResourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createResourceResponseDescriptor = $convert.base64Decode(
-    'ChZDcmVhdGVSZXNvdXJjZVJlc3BvbnNlEhIKBG5hbWUYASABKAlSBG5hbWU=');
-
 @$core.Deprecated('Use generateTokenRequestDescriptor instead')
 const GenerateTokenRequest$json = {
   '1': 'GenerateTokenRequest',
