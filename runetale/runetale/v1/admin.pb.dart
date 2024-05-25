@@ -2055,7 +2055,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
-    DeploymentMethod? type,
+    DeploymentMethod? deploymentMethod,
   }) {
     final $result = create();
     if (name != null) {
@@ -2067,8 +2067,8 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
     }
-    if (type != null) {
-      $result.type = type;
+    if (deploymentMethod != null) {
+      $result.deploymentMethod = deploymentMethod;
     }
     return $result;
   }
@@ -2080,7 +2080,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..e<DeploymentMethod>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..e<DeploymentMethod>(4, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..hasRequiredFields = false
   ;
 
@@ -2127,13 +2127,13 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get machineIds => $_getList(2);
 
   @$pb.TagNumber(4)
-  DeploymentMethod get type => $_getN(3);
+  DeploymentMethod get deploymentMethod => $_getN(3);
   @$pb.TagNumber(4)
-  set type(DeploymentMethod v) { setField(4, v); }
+  set deploymentMethod(DeploymentMethod v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasType() => $_has(3);
+  $core.bool hasDeploymentMethod() => $_has(3);
   @$pb.TagNumber(4)
-  void clearType() => clearField(4);
+  void clearDeploymentMethod() => clearField(4);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -2236,7 +2236,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
-    DeploymentMethod? type,
+    DeploymentMethod? deploymentMethod,
     Action? action,
   }) {
     final $result = create();
@@ -2252,8 +2252,8 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
     }
-    if (type != null) {
-      $result.type = type;
+    if (deploymentMethod != null) {
+      $result.deploymentMethod = deploymentMethod;
     }
     if (action != null) {
       $result.action = action;
@@ -2269,7 +2269,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..e<DeploymentMethod>(5, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..e<DeploymentMethod>(5, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..e<Action>(6, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -2326,13 +2326,13 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get machineIds => $_getList(3);
 
   @$pb.TagNumber(5)
-  DeploymentMethod get type => $_getN(4);
+  DeploymentMethod get deploymentMethod => $_getN(4);
   @$pb.TagNumber(5)
-  set type(DeploymentMethod v) { setField(5, v); }
+  set deploymentMethod(DeploymentMethod v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasType() => $_has(4);
+  $core.bool hasDeploymentMethod() => $_has(4);
   @$pb.TagNumber(5)
-  void clearType() => clearField(5);
+  void clearDeploymentMethod() => clearField(5);
 
   @$pb.TagNumber(6)
   Action get action => $_getN(5);
@@ -2713,7 +2713,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? ip,
     $core.String? os,
     $core.String? age,
-    $core.String? type,
+    DeploymentMethod? deploymentMethod,
     $core.bool? status,
     $core.String? createdBy,
   }) {
@@ -2739,8 +2739,8 @@ class Resource extends $pb.GeneratedMessage {
     if (age != null) {
       $result.age = age;
     }
-    if (type != null) {
-      $result.type = type;
+    if (deploymentMethod != null) {
+      $result.deploymentMethod = deploymentMethod;
     }
     if (status != null) {
       $result.status = status;
@@ -2762,7 +2762,7 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'ip')
     ..aOS(6, _omitFieldNames ? '' : 'os')
     ..aOS(7, _omitFieldNames ? '' : 'age')
-    ..aOS(8, _omitFieldNames ? '' : 'type')
+    ..e<DeploymentMethod>(8, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..aOB(9, _omitFieldNames ? '' : 'status')
     ..aOS(10, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..hasRequiredFields = false
@@ -2853,13 +2853,13 @@ class Resource extends $pb.GeneratedMessage {
   void clearAge() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get type => $_getSZ(7);
+  DeploymentMethod get deploymentMethod => $_getN(7);
   @$pb.TagNumber(8)
-  set type($core.String v) { $_setString(7, v); }
+  set deploymentMethod(DeploymentMethod v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasType() => $_has(7);
+  $core.bool hasDeploymentMethod() => $_has(7);
   @$pb.TagNumber(8)
-  void clearType() => clearField(8);
+  void clearDeploymentMethod() => clearField(8);
 
   @$pb.TagNumber(9)
   $core.bool get status => $_getBF(8);
