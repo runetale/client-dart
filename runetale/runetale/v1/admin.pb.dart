@@ -1638,7 +1638,7 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
   factory CreateResourceRequest({
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? machineIds,
+    $fixnum.Int64? machineId,
   }) {
     final $result = create();
     if (name != null) {
@@ -1647,8 +1647,8 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
+    if (machineId != null) {
+      $result.machineId = machineId;
     }
     return $result;
   }
@@ -1659,7 +1659,7 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -1703,7 +1703,13 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
+  $fixnum.Int64 get machineId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set machineId($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMachineId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMachineId() => clearField(3);
 }
 
 class GenerateTokenRequest extends $pb.GeneratedMessage {
