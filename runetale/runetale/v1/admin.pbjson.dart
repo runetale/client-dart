@@ -644,7 +644,7 @@ const Resource$json = {
     {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'os', '3': 6, '4': 1, '5': 9, '10': 'os'},
     {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'deploymentMethod', '3': 8, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
+    {'1': 'deploymentMethod', '3': 8, '4': 1, '5': 9, '10': 'deploymentMethod'},
     {'1': 'status', '3': 9, '4': 1, '5': 8, '10': 'status'},
     {'1': 'createdBy', '3': 10, '4': 1, '5': 9, '10': 'createdBy'},
   ],
@@ -654,9 +654,9 @@ const Resource$json = {
 final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
     'CghSZXNvdXJjZRIOCgJpZBgBIAEoCVICaWQSHAoJbWFjaGluZUlkGAIgASgEUgltYWNoaW5lSW'
     'QSEgoEbmFtZRgDIAEoCVIEbmFtZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSDgoCaXAYBSABKAlS'
-    'AmlwEg4KAm9zGAYgASgJUgJvcxIQCgNhZ2UYByABKAlSA2FnZRJEChBkZXBsb3ltZW50TWV0aG'
-    '9kGAggASgOMhgucHJvdG9zLkRlcGxveW1lbnRNZXRob2RSEGRlcGxveW1lbnRNZXRob2QSFgoG'
-    'c3RhdHVzGAkgASgIUgZzdGF0dXMSHAoJY3JlYXRlZEJ5GAogASgJUgljcmVhdGVkQnk=');
+    'AmlwEg4KAm9zGAYgASgJUgJvcxIQCgNhZ2UYByABKAlSA2FnZRIqChBkZXBsb3ltZW50TWV0aG'
+    '9kGAggASgJUhBkZXBsb3ltZW50TWV0aG9kEhYKBnN0YXR1cxgJIAEoCFIGc3RhdHVzEhwKCWNy'
+    'ZWF0ZWRCeRgKIAEoCVIJY3JlYXRlZEJ5');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {

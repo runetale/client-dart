@@ -2713,7 +2713,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? ip,
     $core.String? os,
     $core.String? age,
-    DeploymentMethod? deploymentMethod,
+    $core.String? deploymentMethod,
     $core.bool? status,
     $core.String? createdBy,
   }) {
@@ -2762,7 +2762,7 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'ip')
     ..aOS(6, _omitFieldNames ? '' : 'os')
     ..aOS(7, _omitFieldNames ? '' : 'age')
-    ..e<DeploymentMethod>(8, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..aOS(8, _omitFieldNames ? '' : 'deploymentMethod', protoName: 'deploymentMethod')
     ..aOB(9, _omitFieldNames ? '' : 'status')
     ..aOS(10, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..hasRequiredFields = false
@@ -2853,9 +2853,9 @@ class Resource extends $pb.GeneratedMessage {
   void clearAge() => clearField(7);
 
   @$pb.TagNumber(8)
-  DeploymentMethod get deploymentMethod => $_getN(7);
+  $core.String get deploymentMethod => $_getSZ(7);
   @$pb.TagNumber(8)
-  set deploymentMethod(DeploymentMethod v) { setField(8, v); }
+  set deploymentMethod($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
   $core.bool hasDeploymentMethod() => $_has(7);
   @$pb.TagNumber(8)
