@@ -419,14 +419,18 @@ const CreateResourceRequest$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'machineId', '3': 3, '4': 1, '5': 4, '10': 'machineId'},
+    {'1': 'deploymentMethod', '3': 3, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
+    {'1': 'port', '3': 4, '4': 1, '5': 4, '10': 'port'},
+    {'1': 'machineId', '3': 5, '4': 1, '5': 4, '10': 'machineId'},
   ],
 };
 
 /// Descriptor for `CreateResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createResourceRequestDescriptor = $convert.base64Decode(
     'ChVDcmVhdGVSZXNvdXJjZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgAS'
-    'gJUgRkZXNjEhwKCW1hY2hpbmVJZBgDIAEoBFIJbWFjaGluZUlk');
+    'gJUgRkZXNjEkQKEGRlcGxveW1lbnRNZXRob2QYAyABKA4yGC5wcm90b3MuRGVwbG95bWVudE1l'
+    'dGhvZFIQZGVwbG95bWVudE1ldGhvZBISCgRwb3J0GAQgASgEUgRwb3J0EhwKCW1hY2hpbmVJZB'
+    'gFIAEoBFIJbWFjaGluZUlk');
 
 @$core.Deprecated('Use generateTokenRequestDescriptor instead')
 const GenerateTokenRequest$json = {
@@ -642,11 +646,12 @@ const Resource$json = {
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
     {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'os', '3': 6, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'deploymentMethod', '3': 8, '4': 1, '5': 9, '10': 'deploymentMethod'},
-    {'1': 'status', '3': 9, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'createdBy', '3': 10, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'port', '3': 6, '4': 1, '5': 4, '10': 'port'},
+    {'1': 'os', '3': 7, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'age', '3': 8, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'deploymentMethod', '3': 9, '4': 1, '5': 9, '10': 'deploymentMethod'},
+    {'1': 'status', '3': 10, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'createdBy', '3': 11, '4': 1, '5': 9, '10': 'createdBy'},
   ],
 };
 
@@ -654,9 +659,9 @@ const Resource$json = {
 final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
     'CghSZXNvdXJjZRIOCgJpZBgBIAEoCVICaWQSHAoJbWFjaGluZUlkGAIgASgEUgltYWNoaW5lSW'
     'QSEgoEbmFtZRgDIAEoCVIEbmFtZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSDgoCaXAYBSABKAlS'
-    'AmlwEg4KAm9zGAYgASgJUgJvcxIQCgNhZ2UYByABKAlSA2FnZRIqChBkZXBsb3ltZW50TWV0aG'
-    '9kGAggASgJUhBkZXBsb3ltZW50TWV0aG9kEhYKBnN0YXR1cxgJIAEoCFIGc3RhdHVzEhwKCWNy'
-    'ZWF0ZWRCeRgKIAEoCVIJY3JlYXRlZEJ5');
+    'AmlwEhIKBHBvcnQYBiABKARSBHBvcnQSDgoCb3MYByABKAlSAm9zEhAKA2FnZRgIIAEoCVIDYW'
+    'dlEioKEGRlcGxveW1lbnRNZXRob2QYCSABKAlSEGRlcGxveW1lbnRNZXRob2QSFgoGc3RhdHVz'
+    'GAogASgIUgZzdGF0dXMSHAoJY3JlYXRlZEJ5GAsgASgJUgljcmVhdGVkQnk=');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
