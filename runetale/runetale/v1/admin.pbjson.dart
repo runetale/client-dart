@@ -419,6 +419,9 @@ const GenerateTokenRequest$json = {
   '2': [
     {'1': 'deploymentMethod', '3': 1, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
     {'1': 'expirelyTime', '3': 2, '4': 1, '5': 14, '6': '.protos.ExpirelyTime', '10': 'expirelyTime'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 4, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'port', '3': 5, '4': 1, '5': 4, '10': 'port'},
   ],
 };
 
@@ -426,7 +429,8 @@ const GenerateTokenRequest$json = {
 final $typed_data.Uint8List generateTokenRequestDescriptor = $convert.base64Decode(
     'ChRHZW5lcmF0ZVRva2VuUmVxdWVzdBJEChBkZXBsb3ltZW50TWV0aG9kGAEgASgOMhgucHJvdG'
     '9zLkRlcGxveW1lbnRNZXRob2RSEGRlcGxveW1lbnRNZXRob2QSOAoMZXhwaXJlbHlUaW1lGAIg'
-    'ASgOMhQucHJvdG9zLkV4cGlyZWx5VGltZVIMZXhwaXJlbHlUaW1l');
+    'ASgOMhQucHJvdG9zLkV4cGlyZWx5VGltZVIMZXhwaXJlbHlUaW1lEhIKBG5hbWUYAyABKAlSBG'
+    '5hbWUSEgoEZGVzYxgEIAEoCVIEZGVzYxISCgRwb3J0GAUgASgEUgRwb3J0');
 
 @$core.Deprecated('Use generateTokenResponseDescriptor instead')
 const GenerateTokenResponse$json = {

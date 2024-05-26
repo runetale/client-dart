@@ -1638,6 +1638,9 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   factory GenerateTokenRequest({
     DeploymentMethod? deploymentMethod,
     ExpirelyTime? expirelyTime,
+    $core.String? name,
+    $core.String? desc,
+    $fixnum.Int64? port,
   }) {
     final $result = create();
     if (deploymentMethod != null) {
@@ -1645,6 +1648,15 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
     }
     if (expirelyTime != null) {
       $result.expirelyTime = expirelyTime;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (port != null) {
+      $result.port = port;
     }
     return $result;
   }
@@ -1655,6 +1667,9 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<DeploymentMethod>(1, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..e<ExpirelyTime>(2, _omitFieldNames ? '' : 'expirelyTime', $pb.PbFieldType.OE, protoName: 'expirelyTime', defaultOrMaker: ExpirelyTime.ONEMONTH, valueOf: ExpirelyTime.valueOf, enumValues: ExpirelyTime.values)
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'desc')
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -1696,6 +1711,33 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   $core.bool hasExpirelyTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearExpirelyTime() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get desc => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set desc($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDesc() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDesc() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get port => $_getI64(4);
+  @$pb.TagNumber(5)
+  set port($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPort() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPort() => clearField(5);
 }
 
 class GenerateTokenResponse extends $pb.GeneratedMessage {
