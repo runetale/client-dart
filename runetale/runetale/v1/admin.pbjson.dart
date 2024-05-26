@@ -413,25 +413,6 @@ final $typed_data.Uint8List inkDescriptor = $convert.base64Decode(
     'IEZGVzYxIWCgZkb21haW4YBCABKAlSBmRvbWFpbhIoCgdkZXZpY2VzGAUgAygLMg4ucHJvdG9z'
     'LkRldmljZVIHZGV2aWNlcxIQCgNhZ2UYBiABKAlSA2FnZQ==');
 
-@$core.Deprecated('Use createResourceRequestDescriptor instead')
-const CreateResourceRequest$json = {
-  '1': 'CreateResourceRequest',
-  '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'deploymentMethod', '3': 3, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
-    {'1': 'port', '3': 4, '4': 1, '5': 4, '10': 'port'},
-    {'1': 'token', '3': 5, '4': 1, '5': 9, '10': 'token'},
-  ],
-};
-
-/// Descriptor for `CreateResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createResourceRequestDescriptor = $convert.base64Decode(
-    'ChVDcmVhdGVSZXNvdXJjZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgAS'
-    'gJUgRkZXNjEkQKEGRlcGxveW1lbnRNZXRob2QYAyABKA4yGC5wcm90b3MuRGVwbG95bWVudE1l'
-    'dGhvZFIQZGVwbG95bWVudE1ldGhvZBISCgRwb3J0GAQgASgEUgRwb3J0EhQKBXRva2VuGAUgAS'
-    'gJUgV0b2tlbg==');
-
 @$core.Deprecated('Use generateTokenRequestDescriptor instead')
 const GenerateTokenRequest$json = {
   '1': 'GenerateTokenRequest',
