@@ -421,7 +421,7 @@ const CreateResourceRequest$json = {
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'deploymentMethod', '3': 3, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
     {'1': 'port', '3': 4, '4': 1, '5': 4, '10': 'port'},
-    {'1': 'machineId', '3': 5, '4': 1, '5': 4, '10': 'machineId'},
+    {'1': 'token', '3': 5, '4': 1, '5': 9, '10': 'token'},
   ],
 };
 
@@ -429,8 +429,8 @@ const CreateResourceRequest$json = {
 final $typed_data.Uint8List createResourceRequestDescriptor = $convert.base64Decode(
     'ChVDcmVhdGVSZXNvdXJjZVJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgAS'
     'gJUgRkZXNjEkQKEGRlcGxveW1lbnRNZXRob2QYAyABKA4yGC5wcm90b3MuRGVwbG95bWVudE1l'
-    'dGhvZFIQZGVwbG95bWVudE1ldGhvZBISCgRwb3J0GAQgASgEUgRwb3J0EhwKCW1hY2hpbmVJZB'
-    'gFIAEoBFIJbWFjaGluZUlk');
+    'dGhvZFIQZGVwbG95bWVudE1ldGhvZBISCgRwb3J0GAQgASgEUgRwb3J0EhQKBXRva2VuGAUgAS'
+    'gJUgV0b2tlbg==');
 
 @$core.Deprecated('Use generateTokenRequestDescriptor instead')
 const GenerateTokenRequest$json = {

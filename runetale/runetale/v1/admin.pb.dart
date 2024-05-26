@@ -1640,7 +1640,7 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     DeploymentMethod? deploymentMethod,
     $fixnum.Int64? port,
-    $fixnum.Int64? machineId,
+    $core.String? token,
   }) {
     final $result = create();
     if (name != null) {
@@ -1655,8 +1655,8 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
     if (port != null) {
       $result.port = port;
     }
-    if (machineId != null) {
-      $result.machineId = machineId;
+    if (token != null) {
+      $result.token = token;
     }
     return $result;
   }
@@ -1669,7 +1669,7 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..e<DeploymentMethod>(3, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(5, _omitFieldNames ? '' : 'token')
     ..hasRequiredFields = false
   ;
 
@@ -1731,13 +1731,13 @@ class CreateResourceRequest extends $pb.GeneratedMessage {
   void clearPort() => clearField(4);
 
   @$pb.TagNumber(5)
-  $fixnum.Int64 get machineId => $_getI64(4);
+  $core.String get token => $_getSZ(4);
   @$pb.TagNumber(5)
-  set machineId($fixnum.Int64 v) { $_setInt64(4, v); }
+  set token($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasMachineId() => $_has(4);
+  $core.bool hasToken() => $_has(4);
   @$pb.TagNumber(5)
-  void clearMachineId() => clearField(5);
+  void clearToken() => clearField(5);
 }
 
 class GenerateTokenRequest extends $pb.GeneratedMessage {
