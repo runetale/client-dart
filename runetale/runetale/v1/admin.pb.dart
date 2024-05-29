@@ -1640,7 +1640,6 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
     ExpirelyTime? expirelyTime,
     $core.String? name,
     $core.String? desc,
-    $fixnum.Int64? port,
   }) {
     final $result = create();
     if (deploymentMethod != null) {
@@ -1655,9 +1654,6 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (port != null) {
-      $result.port = port;
-    }
     return $result;
   }
   GenerateTokenRequest._() : super();
@@ -1669,7 +1665,6 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
     ..e<ExpirelyTime>(2, _omitFieldNames ? '' : 'expirelyTime', $pb.PbFieldType.OE, protoName: 'expirelyTime', defaultOrMaker: ExpirelyTime.ONEMONTH, valueOf: ExpirelyTime.valueOf, enumValues: ExpirelyTime.values)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'desc')
-    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -1729,15 +1724,6 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   $core.bool hasDesc() => $_has(3);
   @$pb.TagNumber(4)
   void clearDesc() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $fixnum.Int64 get port => $_getI64(4);
-  @$pb.TagNumber(5)
-  set port($fixnum.Int64 v) { $_setInt64(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasPort() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearPort() => clearField(5);
 }
 
 class GenerateTokenResponse extends $pb.GeneratedMessage {
