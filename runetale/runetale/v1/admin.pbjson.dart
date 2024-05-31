@@ -437,6 +437,7 @@ const GenerateComposeKeyResponse$json = {
   '1': 'GenerateComposeKeyResponse',
   '2': [
     {'1': 'installScripts', '3': 1, '4': 3, '5': 11, '6': '.protos.GenerateComposeKeyResponse.installScript', '10': 'installScripts'},
+    {'1': 'composeKey', '3': 2, '4': 1, '5': 9, '10': 'composeKey'},
   ],
   '3': [GenerateComposeKeyResponse_installScript$json],
 };
@@ -454,9 +455,9 @@ const GenerateComposeKeyResponse_installScript$json = {
 final $typed_data.Uint8List generateComposeKeyResponseDescriptor = $convert.base64Decode(
     'ChpHZW5lcmF0ZUNvbXBvc2VLZXlSZXNwb25zZRJYCg5pbnN0YWxsU2NyaXB0cxgBIAMoCzIwLn'
     'Byb3Rvcy5HZW5lcmF0ZUNvbXBvc2VLZXlSZXNwb25zZS5pbnN0YWxsU2NyaXB0Ug5pbnN0YWxs'
-    'U2NyaXB0cxpnCg1pbnN0YWxsU2NyaXB0EhYKBnNjcmlwdBgBIAEoCVIGc2NyaXB0Ej4KDnBsYX'
-    'Rmb3JtTWV0aG9kGAIgASgOMhYucHJvdG9zLlBsYXRmb3JtTWV0aG9kUg5wbGF0Zm9ybU1ldGhv'
-    'ZA==');
+    'U2NyaXB0cxIeCgpjb21wb3NlS2V5GAIgASgJUgpjb21wb3NlS2V5GmcKDWluc3RhbGxTY3JpcH'
+    'QSFgoGc2NyaXB0GAEgASgJUgZzY3JpcHQSPgoOcGxhdGZvcm1NZXRob2QYAiABKA4yFi5wcm90'
+    'b3MuUGxhdGZvcm1NZXRob2RSDnBsYXRmb3JtTWV0aG9k');
 
 @$core.Deprecated('Use getComposeKeysResponseDescriptor instead')
 const GetComposeKeysResponse$json = {

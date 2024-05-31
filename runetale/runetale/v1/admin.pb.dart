@@ -1807,10 +1807,14 @@ class GenerateComposeKeyResponse_installScript extends $pb.GeneratedMessage {
 class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
   factory GenerateComposeKeyResponse({
     $core.Iterable<GenerateComposeKeyResponse_installScript>? installScripts,
+    $core.String? composeKey,
   }) {
     final $result = create();
     if (installScripts != null) {
       $result.installScripts.addAll(installScripts);
+    }
+    if (composeKey != null) {
+      $result.composeKey = composeKey;
     }
     return $result;
   }
@@ -1820,6 +1824,7 @@ class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateComposeKeyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pc<GenerateComposeKeyResponse_installScript>(1, _omitFieldNames ? '' : 'installScripts', $pb.PbFieldType.PM, protoName: 'installScripts', subBuilder: GenerateComposeKeyResponse_installScript.create)
+    ..aOS(2, _omitFieldNames ? '' : 'composeKey', protoName: 'composeKey')
     ..hasRequiredFields = false
   ;
 
@@ -1846,6 +1851,15 @@ class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(1)
   $core.List<GenerateComposeKeyResponse_installScript> get installScripts => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.String get composeKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set composeKey($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasComposeKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearComposeKey() => clearField(2);
 }
 
 class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
