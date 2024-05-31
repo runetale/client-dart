@@ -1740,13 +1740,77 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   void clearIsReusable() => clearField(5);
 }
 
-class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
-  factory GenerateComposeKeyResponse({
-    $core.String? token,
+class GenerateComposeKeyResponse_installScript extends $pb.GeneratedMessage {
+  factory GenerateComposeKeyResponse_installScript({
+    $core.String? script,
+    PlatformMethod? platformMethod,
   }) {
     final $result = create();
-    if (token != null) {
-      $result.token = token;
+    if (script != null) {
+      $result.script = script;
+    }
+    if (platformMethod != null) {
+      $result.platformMethod = platformMethod;
+    }
+    return $result;
+  }
+  GenerateComposeKeyResponse_installScript._() : super();
+  factory GenerateComposeKeyResponse_installScript.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GenerateComposeKeyResponse_installScript.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateComposeKeyResponse.installScript', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'script')
+    ..e<PlatformMethod>(2, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: PlatformMethod.DOCKER, valueOf: PlatformMethod.valueOf, enumValues: PlatformMethod.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GenerateComposeKeyResponse_installScript clone() => GenerateComposeKeyResponse_installScript()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GenerateComposeKeyResponse_installScript copyWith(void Function(GenerateComposeKeyResponse_installScript) updates) => super.copyWith((message) => updates(message as GenerateComposeKeyResponse_installScript)) as GenerateComposeKeyResponse_installScript;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GenerateComposeKeyResponse_installScript create() => GenerateComposeKeyResponse_installScript._();
+  GenerateComposeKeyResponse_installScript createEmptyInstance() => create();
+  static $pb.PbList<GenerateComposeKeyResponse_installScript> createRepeated() => $pb.PbList<GenerateComposeKeyResponse_installScript>();
+  @$core.pragma('dart2js:noInline')
+  static GenerateComposeKeyResponse_installScript getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateComposeKeyResponse_installScript>(create);
+  static GenerateComposeKeyResponse_installScript? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get script => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set script($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasScript() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearScript() => clearField(1);
+
+  @$pb.TagNumber(2)
+  PlatformMethod get platformMethod => $_getN(1);
+  @$pb.TagNumber(2)
+  set platformMethod(PlatformMethod v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPlatformMethod() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPlatformMethod() => clearField(2);
+}
+
+class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
+  factory GenerateComposeKeyResponse({
+    $core.Iterable<GenerateComposeKeyResponse_installScript>? installScripts,
+  }) {
+    final $result = create();
+    if (installScripts != null) {
+      $result.installScripts.addAll(installScripts);
     }
     return $result;
   }
@@ -1755,7 +1819,7 @@ class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
   factory GenerateComposeKeyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateComposeKeyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'token')
+    ..pc<GenerateComposeKeyResponse_installScript>(1, _omitFieldNames ? '' : 'installScripts', $pb.PbFieldType.PM, protoName: 'installScripts', subBuilder: GenerateComposeKeyResponse_installScript.create)
     ..hasRequiredFields = false
   ;
 
@@ -1781,13 +1845,7 @@ class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
   static GenerateComposeKeyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get token => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set token($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasToken() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearToken() => clearField(1);
+  $core.List<GenerateComposeKeyResponse_installScript> get installScripts => $_getList(0);
 }
 
 class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
