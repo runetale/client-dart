@@ -68,21 +68,21 @@ class Action extends $pb.ProtobufEnum {
   const Action._($core.int v, $core.String n) : super(v, n);
 }
 
-class DeploymentMethod extends $pb.ProtobufEnum {
-  static const DeploymentMethod DOCKER = DeploymentMethod._(0, _omitEnumNames ? '' : 'DOCKER');
-  static const DeploymentMethod CLI = DeploymentMethod._(1, _omitEnumNames ? '' : 'CLI');
-  static const DeploymentMethod LINUX = DeploymentMethod._(2, _omitEnumNames ? '' : 'LINUX');
-  static const DeploymentMethod GCP = DeploymentMethod._(3, _omitEnumNames ? '' : 'GCP');
-  static const DeploymentMethod MANUAL = DeploymentMethod._(4, _omitEnumNames ? '' : 'MANUAL');
-  static const DeploymentMethod AWS = DeploymentMethod._(5, _omitEnumNames ? '' : 'AWS');
-  static const DeploymentMethod AZURE = DeploymentMethod._(6, _omitEnumNames ? '' : 'AZURE');
-  static const DeploymentMethod ONPREM = DeploymentMethod._(7, _omitEnumNames ? '' : 'ONPREM');
-  static const DeploymentMethod MACOS = DeploymentMethod._(8, _omitEnumNames ? '' : 'MACOS');
-  static const DeploymentMethod WINDOWS = DeploymentMethod._(9, _omitEnumNames ? '' : 'WINDOWS');
-  static const DeploymentMethod ONBOARDING = DeploymentMethod._(10, _omitEnumNames ? '' : 'ONBOARDING');
-  static const DeploymentMethod OTHER = DeploymentMethod._(11, _omitEnumNames ? '' : 'OTHER');
+class PlatformMethod extends $pb.ProtobufEnum {
+  static const PlatformMethod DOCKER = PlatformMethod._(0, _omitEnumNames ? '' : 'DOCKER');
+  static const PlatformMethod CLI = PlatformMethod._(1, _omitEnumNames ? '' : 'CLI');
+  static const PlatformMethod LINUX = PlatformMethod._(2, _omitEnumNames ? '' : 'LINUX');
+  static const PlatformMethod GCP = PlatformMethod._(3, _omitEnumNames ? '' : 'GCP');
+  static const PlatformMethod MANUAL = PlatformMethod._(4, _omitEnumNames ? '' : 'MANUAL');
+  static const PlatformMethod AWS = PlatformMethod._(5, _omitEnumNames ? '' : 'AWS');
+  static const PlatformMethod AZURE = PlatformMethod._(6, _omitEnumNames ? '' : 'AZURE');
+  static const PlatformMethod ONPREM = PlatformMethod._(7, _omitEnumNames ? '' : 'ONPREM');
+  static const PlatformMethod MACOS = PlatformMethod._(8, _omitEnumNames ? '' : 'MACOS');
+  static const PlatformMethod WINDOWS = PlatformMethod._(9, _omitEnumNames ? '' : 'WINDOWS');
+  static const PlatformMethod ONBOARDING = PlatformMethod._(10, _omitEnumNames ? '' : 'ONBOARDING');
+  static const PlatformMethod OTHER = PlatformMethod._(11, _omitEnumNames ? '' : 'OTHER');
 
-  static const $core.List<DeploymentMethod> values = <DeploymentMethod> [
+  static const $core.List<PlatformMethod> values = <PlatformMethod> [
     DOCKER,
     CLI,
     LINUX,
@@ -97,10 +97,10 @@ class DeploymentMethod extends $pb.ProtobufEnum {
     OTHER,
   ];
 
-  static final $core.Map<$core.int, DeploymentMethod> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static DeploymentMethod? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, PlatformMethod> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static PlatformMethod? valueOf($core.int value) => _byValue[value];
 
-  const DeploymentMethod._($core.int v, $core.String n) : super(v, n);
+  const PlatformMethod._($core.int v, $core.String n) : super(v, n);
 }
 
 

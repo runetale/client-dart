@@ -59,9 +59,9 @@ const Action$json = {
 final $typed_data.Uint8List actionDescriptor = $convert.base64Decode(
     'CgZBY3Rpb24SCgoGQWNjZXB0EAASCgoGRGVuaWVkEAE=');
 
-@$core.Deprecated('Use deploymentMethodDescriptor instead')
-const DeploymentMethod$json = {
-  '1': 'DeploymentMethod',
+@$core.Deprecated('Use platformMethodDescriptor instead')
+const PlatformMethod$json = {
+  '1': 'PlatformMethod',
   '2': [
     {'1': 'DOCKER', '2': 0},
     {'1': 'CLI', '2': 1},
@@ -78,11 +78,11 @@ const DeploymentMethod$json = {
   ],
 };
 
-/// Descriptor for `DeploymentMethod`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List deploymentMethodDescriptor = $convert.base64Decode(
-    'ChBEZXBsb3ltZW50TWV0aG9kEgoKBkRPQ0tFUhAAEgcKA0NMSRABEgkKBUxJTlVYEAISBwoDR0'
-    'NQEAMSCgoGTUFOVUFMEAQSBwoDQVdTEAUSCQoFQVpVUkUQBhIKCgZPTlBSRU0QBxIJCgVNQUNP'
-    'UxAIEgsKB1dJTkRPV1MQCRIOCgpPTkJPQVJESU5HEAoSCQoFT1RIRVIQCw==');
+/// Descriptor for `PlatformMethod`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List platformMethodDescriptor = $convert.base64Decode(
+    'Cg5QbGF0Zm9ybU1ldGhvZBIKCgZET0NLRVIQABIHCgNDTEkQARIJCgVMSU5VWBACEgcKA0dDUB'
+    'ADEgoKBk1BTlVBTBAEEgcKA0FXUxAFEgkKBUFaVVJFEAYSCgoGT05QUkVNEAcSCQoFTUFDT1MQ'
+    'CBILCgdXSU5ET1dTEAkSDgoKT05CT0FSRElORxAKEgkKBU9USEVSEAs=');
 
 @$core.Deprecated('Use createAclRequestDescriptor instead')
 const CreateAclRequest$json = {
@@ -417,7 +417,7 @@ final $typed_data.Uint8List inkDescriptor = $convert.base64Decode(
 const GenerateComposeKeyRequest$json = {
   '1': 'GenerateComposeKeyRequest',
   '2': [
-    {'1': 'deploymentMethod', '3': 1, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
+    {'1': 'platformMethod', '3': 1, '4': 1, '5': 14, '6': '.protos.PlatformMethod', '10': 'platformMethod'},
     {'1': 'expirelyTime', '3': 2, '4': 1, '5': 14, '6': '.protos.ExpirelyTime', '10': 'expirelyTime'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 4, '4': 1, '5': 9, '10': 'desc'},
@@ -427,11 +427,10 @@ const GenerateComposeKeyRequest$json = {
 
 /// Descriptor for `GenerateComposeKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List generateComposeKeyRequestDescriptor = $convert.base64Decode(
-    'ChlHZW5lcmF0ZUNvbXBvc2VLZXlSZXF1ZXN0EkQKEGRlcGxveW1lbnRNZXRob2QYASABKA4yGC'
-    '5wcm90b3MuRGVwbG95bWVudE1ldGhvZFIQZGVwbG95bWVudE1ldGhvZBI4CgxleHBpcmVseVRp'
-    'bWUYAiABKA4yFC5wcm90b3MuRXhwaXJlbHlUaW1lUgxleHBpcmVseVRpbWUSEgoEbmFtZRgDIA'
-    'EoCVIEbmFtZRISCgRkZXNjGAQgASgJUgRkZXNjEh4KCmlzUmV1c2FibGUYBSABKAhSCmlzUmV1'
-    'c2FibGU=');
+    'ChlHZW5lcmF0ZUNvbXBvc2VLZXlSZXF1ZXN0Ej4KDnBsYXRmb3JtTWV0aG9kGAEgASgOMhYucH'
+    'JvdG9zLlBsYXRmb3JtTWV0aG9kUg5wbGF0Zm9ybU1ldGhvZBI4CgxleHBpcmVseVRpbWUYAiAB'
+    'KA4yFC5wcm90b3MuRXhwaXJlbHlUaW1lUgxleHBpcmVseVRpbWUSEgoEbmFtZRgDIAEoCVIEbm'
+    'FtZRISCgRkZXNjGAQgASgJUgRkZXNjEh4KCmlzUmV1c2FibGUYBSABKAhSCmlzUmV1c2FibGU=');
 
 @$core.Deprecated('Use generateComposeKeyResponseDescriptor instead')
 const GenerateComposeKeyResponse$json = {
@@ -510,15 +509,15 @@ const CreateFleetRequest$json = {
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'machineIds', '3': 3, '4': 3, '5': 4, '10': 'machineIds'},
-    {'1': 'deploymentMethod', '3': 4, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
+    {'1': 'platformMethod', '3': 4, '4': 1, '5': 14, '6': '.protos.PlatformMethod', '10': 'platformMethod'},
   ],
 };
 
 /// Descriptor for `CreateFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVGbGVldFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgASgJUg'
-    'RkZXNjEh4KCm1hY2hpbmVJZHMYAyADKARSCm1hY2hpbmVJZHMSRAoQZGVwbG95bWVudE1ldGhv'
-    'ZBgEIAEoDjIYLnByb3Rvcy5EZXBsb3ltZW50TWV0aG9kUhBkZXBsb3ltZW50TWV0aG9k');
+    'RkZXNjEh4KCm1hY2hpbmVJZHMYAyADKARSCm1hY2hpbmVJZHMSPgoOcGxhdGZvcm1NZXRob2QY'
+    'BCABKA4yFi5wcm90b3MuUGxhdGZvcm1NZXRob2RSDnBsYXRmb3JtTWV0aG9k');
 
 @$core.Deprecated('Use getFleetRequestDescriptor instead')
 const GetFleetRequest$json = {
@@ -552,7 +551,7 @@ const PatchFleetRequest$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'machineIds', '3': 4, '4': 3, '5': 4, '10': 'machineIds'},
-    {'1': 'deploymentMethod', '3': 5, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
+    {'1': 'platformMethod', '3': 5, '4': 1, '5': 14, '6': '.protos.PlatformMethod', '10': 'platformMethod'},
     {'1': 'action', '3': 6, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
@@ -560,9 +559,9 @@ const PatchFleetRequest$json = {
 /// Descriptor for `PatchFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
     'ChFQYXRjaEZsZWV0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
-    'ISCgRkZXNjGAMgASgJUgRkZXNjEh4KCm1hY2hpbmVJZHMYBCADKARSCm1hY2hpbmVJZHMSRAoQ'
-    'ZGVwbG95bWVudE1ldGhvZBgFIAEoDjIYLnByb3Rvcy5EZXBsb3ltZW50TWV0aG9kUhBkZXBsb3'
-    'ltZW50TWV0aG9kEiYKBmFjdGlvbhgGIAEoDjIOLnByb3Rvcy5BY3Rpb25SBmFjdGlvbg==');
+    'ISCgRkZXNjGAMgASgJUgRkZXNjEh4KCm1hY2hpbmVJZHMYBCADKARSCm1hY2hpbmVJZHMSPgoO'
+    'cGxhdGZvcm1NZXRob2QYBSABKA4yFi5wcm90b3MuUGxhdGZvcm1NZXRob2RSDnBsYXRmb3JtTW'
+    'V0aG9kEiYKBmFjdGlvbhgGIAEoDjIOLnByb3Rvcy5BY3Rpb25SBmFjdGlvbg==');
 
 @$core.Deprecated('Use overviewDescriptor instead')
 const Overview$json = {

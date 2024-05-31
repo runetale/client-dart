@@ -1636,15 +1636,15 @@ class Ink extends $pb.GeneratedMessage {
 
 class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   factory GenerateComposeKeyRequest({
-    DeploymentMethod? deploymentMethod,
+    PlatformMethod? platformMethod,
     ExpirelyTime? expirelyTime,
     $core.String? name,
     $core.String? desc,
     $core.bool? isReusable,
   }) {
     final $result = create();
-    if (deploymentMethod != null) {
-      $result.deploymentMethod = deploymentMethod;
+    if (platformMethod != null) {
+      $result.platformMethod = platformMethod;
     }
     if (expirelyTime != null) {
       $result.expirelyTime = expirelyTime;
@@ -1665,7 +1665,7 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   factory GenerateComposeKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateComposeKeyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..e<DeploymentMethod>(1, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..e<PlatformMethod>(1, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: PlatformMethod.DOCKER, valueOf: PlatformMethod.valueOf, enumValues: PlatformMethod.values)
     ..e<ExpirelyTime>(2, _omitFieldNames ? '' : 'expirelyTime', $pb.PbFieldType.OE, protoName: 'expirelyTime', defaultOrMaker: ExpirelyTime.ONEMONTH, valueOf: ExpirelyTime.valueOf, enumValues: ExpirelyTime.values)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'desc')
@@ -1695,13 +1695,13 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   static GenerateComposeKeyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  DeploymentMethod get deploymentMethod => $_getN(0);
+  PlatformMethod get platformMethod => $_getN(0);
   @$pb.TagNumber(1)
-  set deploymentMethod(DeploymentMethod v) { setField(1, v); }
+  set platformMethod(PlatformMethod v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasDeploymentMethod() => $_has(0);
+  $core.bool hasPlatformMethod() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDeploymentMethod() => clearField(1);
+  void clearPlatformMethod() => clearField(1);
 
   @$pb.TagNumber(2)
   ExpirelyTime get expirelyTime => $_getN(1);
@@ -2067,7 +2067,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
-    DeploymentMethod? deploymentMethod,
+    PlatformMethod? platformMethod,
   }) {
     final $result = create();
     if (name != null) {
@@ -2079,8 +2079,8 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
     }
-    if (deploymentMethod != null) {
-      $result.deploymentMethod = deploymentMethod;
+    if (platformMethod != null) {
+      $result.platformMethod = platformMethod;
     }
     return $result;
   }
@@ -2092,7 +2092,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..e<DeploymentMethod>(4, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..e<PlatformMethod>(4, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: PlatformMethod.DOCKER, valueOf: PlatformMethod.valueOf, enumValues: PlatformMethod.values)
     ..hasRequiredFields = false
   ;
 
@@ -2139,13 +2139,13 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get machineIds => $_getList(2);
 
   @$pb.TagNumber(4)
-  DeploymentMethod get deploymentMethod => $_getN(3);
+  PlatformMethod get platformMethod => $_getN(3);
   @$pb.TagNumber(4)
-  set deploymentMethod(DeploymentMethod v) { setField(4, v); }
+  set platformMethod(PlatformMethod v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasDeploymentMethod() => $_has(3);
+  $core.bool hasPlatformMethod() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDeploymentMethod() => clearField(4);
+  void clearPlatformMethod() => clearField(4);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -2248,7 +2248,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? machineIds,
-    DeploymentMethod? deploymentMethod,
+    PlatformMethod? platformMethod,
     Action? action,
   }) {
     final $result = create();
@@ -2264,8 +2264,8 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (machineIds != null) {
       $result.machineIds.addAll(machineIds);
     }
-    if (deploymentMethod != null) {
-      $result.deploymentMethod = deploymentMethod;
+    if (platformMethod != null) {
+      $result.platformMethod = platformMethod;
     }
     if (action != null) {
       $result.action = action;
@@ -2281,7 +2281,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
-    ..e<DeploymentMethod>(5, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
+    ..e<PlatformMethod>(5, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: PlatformMethod.DOCKER, valueOf: PlatformMethod.valueOf, enumValues: PlatformMethod.values)
     ..e<Action>(6, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -2338,13 +2338,13 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get machineIds => $_getList(3);
 
   @$pb.TagNumber(5)
-  DeploymentMethod get deploymentMethod => $_getN(4);
+  PlatformMethod get platformMethod => $_getN(4);
   @$pb.TagNumber(5)
-  set deploymentMethod(DeploymentMethod v) { setField(5, v); }
+  set platformMethod(PlatformMethod v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDeploymentMethod() => $_has(4);
+  $core.bool hasPlatformMethod() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDeploymentMethod() => clearField(5);
+  void clearPlatformMethod() => clearField(5);
 
   @$pb.TagNumber(6)
   Action get action => $_getN(5);
