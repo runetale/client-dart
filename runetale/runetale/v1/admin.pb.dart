@@ -1790,9 +1790,9 @@ class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
   void clearToken() => clearField(1);
 }
 
-class GetComposeKeysResponse_token extends $pb.GeneratedMessage {
-  factory GetComposeKeysResponse_token({
-    $core.String? token,
+class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
+  factory GetComposeKeysResponse_composeKey({
+    $core.String? composeKey,
     $core.String? expiredAt,
     $core.bool? hasExpied,
     $core.String? createdBy,
@@ -1801,8 +1801,8 @@ class GetComposeKeysResponse_token extends $pb.GeneratedMessage {
     $core.bool? isReusable,
   }) {
     final $result = create();
-    if (token != null) {
-      $result.token = token;
+    if (composeKey != null) {
+      $result.composeKey = composeKey;
     }
     if (expiredAt != null) {
       $result.expiredAt = expiredAt;
@@ -1824,12 +1824,12 @@ class GetComposeKeysResponse_token extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetComposeKeysResponse_token._() : super();
-  factory GetComposeKeysResponse_token.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetComposeKeysResponse_token.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetComposeKeysResponse_composeKey._() : super();
+  factory GetComposeKeysResponse_composeKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetComposeKeysResponse_composeKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeKeysResponse.token', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'token')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeKeysResponse.composeKey', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'composeKey', protoName: 'composeKey')
     ..aOS(2, _omitFieldNames ? '' : 'expiredAt', protoName: 'expiredAt')
     ..aOB(3, _omitFieldNames ? '' : 'hasExpied', protoName: 'hasExpied')
     ..aOS(4, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
@@ -1843,31 +1843,31 @@ class GetComposeKeysResponse_token extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetComposeKeysResponse_token clone() => GetComposeKeysResponse_token()..mergeFromMessage(this);
+  GetComposeKeysResponse_composeKey clone() => GetComposeKeysResponse_composeKey()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetComposeKeysResponse_token copyWith(void Function(GetComposeKeysResponse_token) updates) => super.copyWith((message) => updates(message as GetComposeKeysResponse_token)) as GetComposeKeysResponse_token;
+  GetComposeKeysResponse_composeKey copyWith(void Function(GetComposeKeysResponse_composeKey) updates) => super.copyWith((message) => updates(message as GetComposeKeysResponse_composeKey)) as GetComposeKeysResponse_composeKey;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetComposeKeysResponse_token create() => GetComposeKeysResponse_token._();
-  GetComposeKeysResponse_token createEmptyInstance() => create();
-  static $pb.PbList<GetComposeKeysResponse_token> createRepeated() => $pb.PbList<GetComposeKeysResponse_token>();
+  static GetComposeKeysResponse_composeKey create() => GetComposeKeysResponse_composeKey._();
+  GetComposeKeysResponse_composeKey createEmptyInstance() => create();
+  static $pb.PbList<GetComposeKeysResponse_composeKey> createRepeated() => $pb.PbList<GetComposeKeysResponse_composeKey>();
   @$core.pragma('dart2js:noInline')
-  static GetComposeKeysResponse_token getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeKeysResponse_token>(create);
-  static GetComposeKeysResponse_token? _defaultInstance;
+  static GetComposeKeysResponse_composeKey getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeKeysResponse_composeKey>(create);
+  static GetComposeKeysResponse_composeKey? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get token => $_getSZ(0);
+  $core.String get composeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set token($core.String v) { $_setString(0, v); }
+  set composeKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasToken() => $_has(0);
+  $core.bool hasComposeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearToken() => clearField(1);
+  void clearComposeKey() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get expiredAt => $_getSZ(1);
@@ -1926,11 +1926,11 @@ class GetComposeKeysResponse_token extends $pb.GeneratedMessage {
 
 class GetComposeKeysResponse extends $pb.GeneratedMessage {
   factory GetComposeKeysResponse({
-    $core.Iterable<GetComposeKeysResponse_token>? tokens,
+    $core.Iterable<GetComposeKeysResponse_composeKey>? composeKeys,
   }) {
     final $result = create();
-    if (tokens != null) {
-      $result.tokens.addAll(tokens);
+    if (composeKeys != null) {
+      $result.composeKeys.addAll(composeKeys);
     }
     return $result;
   }
@@ -1939,7 +1939,7 @@ class GetComposeKeysResponse extends $pb.GeneratedMessage {
   factory GetComposeKeysResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeKeysResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..pc<GetComposeKeysResponse_token>(1, _omitFieldNames ? '' : 'tokens', $pb.PbFieldType.PM, subBuilder: GetComposeKeysResponse_token.create)
+    ..pc<GetComposeKeysResponse_composeKey>(1, _omitFieldNames ? '' : 'composeKeys', $pb.PbFieldType.PM, protoName: 'composeKeys', subBuilder: GetComposeKeysResponse_composeKey.create)
     ..hasRequiredFields = false
   ;
 
@@ -1965,7 +1965,7 @@ class GetComposeKeysResponse extends $pb.GeneratedMessage {
   static GetComposeKeysResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<GetComposeKeysResponse_token> get tokens => $_getList(0);
+  $core.List<GetComposeKeysResponse_composeKey> get composeKeys => $_getList(0);
 }
 
 class GetResourceRequest extends $pb.GeneratedMessage {

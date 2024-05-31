@@ -449,16 +449,16 @@ final $typed_data.Uint8List generateComposeKeyResponseDescriptor = $convert.base
 const GetComposeKeysResponse$json = {
   '1': 'GetComposeKeysResponse',
   '2': [
-    {'1': 'tokens', '3': 1, '4': 3, '5': 11, '6': '.protos.GetComposeKeysResponse.token', '10': 'tokens'},
+    {'1': 'composeKeys', '3': 1, '4': 3, '5': 11, '6': '.protos.GetComposeKeysResponse.composeKey', '10': 'composeKeys'},
   ],
-  '3': [GetComposeKeysResponse_token$json],
+  '3': [GetComposeKeysResponse_composeKey$json],
 };
 
 @$core.Deprecated('Use getComposeKeysResponseDescriptor instead')
-const GetComposeKeysResponse_token$json = {
-  '1': 'token',
+const GetComposeKeysResponse_composeKey$json = {
+  '1': 'composeKey',
   '2': [
-    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
+    {'1': 'composeKey', '3': 1, '4': 1, '5': 9, '10': 'composeKey'},
     {'1': 'expiredAt', '3': 2, '4': 1, '5': 9, '10': 'expiredAt'},
     {'1': 'hasExpied', '3': 3, '4': 1, '5': 8, '10': 'hasExpied'},
     {'1': 'createdBy', '3': 4, '4': 1, '5': 9, '10': 'createdBy'},
@@ -470,12 +470,13 @@ const GetComposeKeysResponse_token$json = {
 
 /// Descriptor for `GetComposeKeysResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getComposeKeysResponseDescriptor = $convert.base64Decode(
-    'ChZHZXRDb21wb3NlS2V5c1Jlc3BvbnNlEjwKBnRva2VucxgBIAMoCzIkLnByb3Rvcy5HZXRDb2'
-    '1wb3NlS2V5c1Jlc3BvbnNlLnRva2VuUgZ0b2tlbnMa1wEKBXRva2VuEhQKBXRva2VuGAEgASgJ'
-    'UgV0b2tlbhIcCglleHBpcmVkQXQYAiABKAlSCWV4cGlyZWRBdBIcCgloYXNFeHBpZWQYAyABKA'
-    'hSCWhhc0V4cGllZBIcCgljcmVhdGVkQnkYBCABKAlSCWNyZWF0ZWRCeRIcCgljcmVhdGVkQXQY'
-    'BSABKAlSCWNyZWF0ZWRBdBIgCgtkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24SHgoKaX'
-    'NSZXVzYWJsZRgHIAEoCFIKaXNSZXVzYWJsZQ==');
+    'ChZHZXRDb21wb3NlS2V5c1Jlc3BvbnNlEksKC2NvbXBvc2VLZXlzGAEgAygLMikucHJvdG9zLk'
+    'dldENvbXBvc2VLZXlzUmVzcG9uc2UuY29tcG9zZUtleVILY29tcG9zZUtleXMa5gEKCmNvbXBv'
+    'c2VLZXkSHgoKY29tcG9zZUtleRgBIAEoCVIKY29tcG9zZUtleRIcCglleHBpcmVkQXQYAiABKA'
+    'lSCWV4cGlyZWRBdBIcCgloYXNFeHBpZWQYAyABKAhSCWhhc0V4cGllZBIcCgljcmVhdGVkQnkY'
+    'BCABKAlSCWNyZWF0ZWRCeRIcCgljcmVhdGVkQXQYBSABKAlSCWNyZWF0ZWRBdBIgCgtkZXNjcm'
+    'lwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24SHgoKaXNSZXVzYWJsZRgHIAEoCFIKaXNSZXVzYWJs'
+    'ZQ==');
 
 @$core.Deprecated('Use getResourceRequestDescriptor instead')
 const GetResourceRequest$json = {
