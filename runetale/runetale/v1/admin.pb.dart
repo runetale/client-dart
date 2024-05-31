@@ -2040,6 +2040,98 @@ class GetComposeKeysResponse extends $pb.GeneratedMessage {
   $core.List<GetComposeKeysResponse_composeKey> get composeKeys => $_getList(0);
 }
 
+class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
+  factory GetComposeMachineStatusResponse({
+    $core.bool? isConnected,
+    $core.String? ip,
+    $core.String? cidr,
+    $core.String? name,
+  }) {
+    final $result = create();
+    if (isConnected != null) {
+      $result.isConnected = isConnected;
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    return $result;
+  }
+  GetComposeMachineStatusResponse._() : super();
+  factory GetComposeMachineStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetComposeMachineStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeMachineStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'isConnected', protoName: 'isConnected')
+    ..aOS(2, _omitFieldNames ? '' : 'ip')
+    ..aOS(3, _omitFieldNames ? '' : 'cidr')
+    ..aOS(4, _omitFieldNames ? '' : 'name')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetComposeMachineStatusResponse clone() => GetComposeMachineStatusResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetComposeMachineStatusResponse copyWith(void Function(GetComposeMachineStatusResponse) updates) => super.copyWith((message) => updates(message as GetComposeMachineStatusResponse)) as GetComposeMachineStatusResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetComposeMachineStatusResponse create() => GetComposeMachineStatusResponse._();
+  GetComposeMachineStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<GetComposeMachineStatusResponse> createRepeated() => $pb.PbList<GetComposeMachineStatusResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetComposeMachineStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeMachineStatusResponse>(create);
+  static GetComposeMachineStatusResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get isConnected => $_getBF(0);
+  @$pb.TagNumber(1)
+  set isConnected($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIsConnected() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIsConnected() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get ip => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set ip($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasIp() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIp() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cidr => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cidr($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCidr() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCidr() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get name => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set name($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearName() => clearField(4);
+}
+
 class GetResourceRequest extends $pb.GeneratedMessage {
   factory GetResourceRequest({
     $core.String? id,
