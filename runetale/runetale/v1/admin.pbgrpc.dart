@@ -86,14 +86,14 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetResources',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Resources.fromBuffer(value));
-  static final _$generateToken = $grpc.ClientMethod<$1.GenerateTokenRequest, $1.GenerateTokenResponse>(
-      '/protos.AdminService/GenerateToken',
-      ($1.GenerateTokenRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GenerateTokenResponse.fromBuffer(value));
-  static final _$getTokens = $grpc.ClientMethod<$0.Empty, $1.GetTokensResponse>(
+  static final _$generateComposeKey = $grpc.ClientMethod<$1.GenerateComposeKeyRequest, $1.GenerateComposeKeyResponse>(
+      '/protos.AdminService/GenerateComposeKey',
+      ($1.GenerateComposeKeyRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GenerateComposeKeyResponse.fromBuffer(value));
+  static final _$getTokens = $grpc.ClientMethod<$0.Empty, $1.GenerateComposeKeyResponse>(
       '/protos.AdminService/GetTokens',
       ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetTokensResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $1.GenerateComposeKeyResponse.fromBuffer(value));
   static final _$createFleet = $grpc.ClientMethod<$1.CreateFleetRequest, $1.Fleet>(
       '/protos.AdminService/CreateFleet',
       ($1.CreateFleetRequest value) => value.writeToBuffer(),
@@ -201,11 +201,11 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getResources, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GenerateTokenResponse> generateToken($1.GenerateTokenRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$generateToken, request, options: options);
+  $grpc.ResponseFuture<$1.GenerateComposeKeyResponse> generateComposeKey($1.GenerateComposeKeyRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$generateComposeKey, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetTokensResponse> getTokens($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.GenerateComposeKeyResponse> getTokens($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getTokens, request, options: options);
   }
 
@@ -363,20 +363,20 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.Resources value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GenerateTokenRequest, $1.GenerateTokenResponse>(
-        'GenerateToken',
-        generateToken_Pre,
+    $addMethod($grpc.ServiceMethod<$1.GenerateComposeKeyRequest, $1.GenerateComposeKeyResponse>(
+        'GenerateComposeKey',
+        generateComposeKey_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GenerateTokenRequest.fromBuffer(value),
-        ($1.GenerateTokenResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GetTokensResponse>(
+        ($core.List<$core.int> value) => $1.GenerateComposeKeyRequest.fromBuffer(value),
+        ($1.GenerateComposeKeyResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GenerateComposeKeyResponse>(
         'GetTokens',
         getTokens_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($1.GetTokensResponse value) => value.writeToBuffer()));
+        ($1.GenerateComposeKeyResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateFleetRequest, $1.Fleet>(
         'CreateFleet',
         createFleet_Pre,
@@ -506,11 +506,11 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getResources(call, await request);
   }
 
-  $async.Future<$1.GenerateTokenResponse> generateToken_Pre($grpc.ServiceCall call, $async.Future<$1.GenerateTokenRequest> request) async {
-    return generateToken(call, await request);
+  $async.Future<$1.GenerateComposeKeyResponse> generateComposeKey_Pre($grpc.ServiceCall call, $async.Future<$1.GenerateComposeKeyRequest> request) async {
+    return generateComposeKey(call, await request);
   }
 
-  $async.Future<$1.GetTokensResponse> getTokens_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$1.GenerateComposeKeyResponse> getTokens_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return getTokens(call, await request);
   }
 
@@ -566,8 +566,8 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Devices> getDevices($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.Resource> getResource($grpc.ServiceCall call, $1.GetResourceRequest request);
   $async.Future<$1.Resources> getResources($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$1.GenerateTokenResponse> generateToken($grpc.ServiceCall call, $1.GenerateTokenRequest request);
-  $async.Future<$1.GetTokensResponse> getTokens($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.GenerateComposeKeyResponse> generateComposeKey($grpc.ServiceCall call, $1.GenerateComposeKeyRequest request);
+  $async.Future<$1.GenerateComposeKeyResponse> getTokens($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.Fleet> createFleet($grpc.ServiceCall call, $1.CreateFleetRequest request);
   $async.Future<$1.Fleet> getFleet($grpc.ServiceCall call, $1.GetFleetRequest request);
   $async.Future<$1.Fleets> getFleets($grpc.ServiceCall call, $0.Empty request);

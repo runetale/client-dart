@@ -199,8 +199,8 @@ class RemotePeer extends $pb.GeneratedMessage {
   void clearCidr() => clearField(5);
 }
 
-class CreateMachineResponse extends $pb.GeneratedMessage {
-  factory CreateMachineResponse({
+class ComposeMachineResponse extends $pb.GeneratedMessage {
+  factory ComposeMachineResponse({
     $core.String? ip,
     $core.String? cidr,
   }) {
@@ -213,11 +213,11 @@ class CreateMachineResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  CreateMachineResponse._() : super();
-  factory CreateMachineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateMachineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ComposeMachineResponse._() : super();
+  factory ComposeMachineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ComposeMachineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateMachineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComposeMachineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'cidr')
     ..hasRequiredFields = false
@@ -227,22 +227,22 @@ class CreateMachineResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  CreateMachineResponse clone() => CreateMachineResponse()..mergeFromMessage(this);
+  ComposeMachineResponse clone() => ComposeMachineResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CreateMachineResponse copyWith(void Function(CreateMachineResponse) updates) => super.copyWith((message) => updates(message as CreateMachineResponse)) as CreateMachineResponse;
+  ComposeMachineResponse copyWith(void Function(ComposeMachineResponse) updates) => super.copyWith((message) => updates(message as ComposeMachineResponse)) as ComposeMachineResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static CreateMachineResponse create() => CreateMachineResponse._();
-  CreateMachineResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateMachineResponse> createRepeated() => $pb.PbList<CreateMachineResponse>();
+  static ComposeMachineResponse create() => ComposeMachineResponse._();
+  ComposeMachineResponse createEmptyInstance() => create();
+  static $pb.PbList<ComposeMachineResponse> createRepeated() => $pb.PbList<ComposeMachineResponse>();
   @$core.pragma('dart2js:noInline')
-  static CreateMachineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateMachineResponse>(create);
-  static CreateMachineResponse? _defaultInstance;
+  static ComposeMachineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComposeMachineResponse>(create);
+  static ComposeMachineResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);

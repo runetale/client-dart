@@ -1634,12 +1634,13 @@ class Ink extends $pb.GeneratedMessage {
   void clearAge() => clearField(6);
 }
 
-class GenerateTokenRequest extends $pb.GeneratedMessage {
-  factory GenerateTokenRequest({
+class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
+  factory GenerateComposeKeyRequest({
     DeploymentMethod? deploymentMethod,
     ExpirelyTime? expirelyTime,
     $core.String? name,
     $core.String? desc,
+    $core.bool? isReusable,
   }) {
     final $result = create();
     if (deploymentMethod != null) {
@@ -1654,17 +1655,21 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
+    if (isReusable != null) {
+      $result.isReusable = isReusable;
+    }
     return $result;
   }
-  GenerateTokenRequest._() : super();
-  factory GenerateTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GenerateTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GenerateComposeKeyRequest._() : super();
+  factory GenerateComposeKeyRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GenerateComposeKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateComposeKeyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<DeploymentMethod>(1, _omitFieldNames ? '' : 'deploymentMethod', $pb.PbFieldType.OE, protoName: 'deploymentMethod', defaultOrMaker: DeploymentMethod.DOCKER, valueOf: DeploymentMethod.valueOf, enumValues: DeploymentMethod.values)
     ..e<ExpirelyTime>(2, _omitFieldNames ? '' : 'expirelyTime', $pb.PbFieldType.OE, protoName: 'expirelyTime', defaultOrMaker: ExpirelyTime.ONEMONTH, valueOf: ExpirelyTime.valueOf, enumValues: ExpirelyTime.values)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'desc')
+    ..aOB(5, _omitFieldNames ? '' : 'isReusable', protoName: 'isReusable')
     ..hasRequiredFields = false
   ;
 
@@ -1672,22 +1677,22 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GenerateTokenRequest clone() => GenerateTokenRequest()..mergeFromMessage(this);
+  GenerateComposeKeyRequest clone() => GenerateComposeKeyRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GenerateTokenRequest copyWith(void Function(GenerateTokenRequest) updates) => super.copyWith((message) => updates(message as GenerateTokenRequest)) as GenerateTokenRequest;
+  GenerateComposeKeyRequest copyWith(void Function(GenerateComposeKeyRequest) updates) => super.copyWith((message) => updates(message as GenerateComposeKeyRequest)) as GenerateComposeKeyRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GenerateTokenRequest create() => GenerateTokenRequest._();
-  GenerateTokenRequest createEmptyInstance() => create();
-  static $pb.PbList<GenerateTokenRequest> createRepeated() => $pb.PbList<GenerateTokenRequest>();
+  static GenerateComposeKeyRequest create() => GenerateComposeKeyRequest._();
+  GenerateComposeKeyRequest createEmptyInstance() => create();
+  static $pb.PbList<GenerateComposeKeyRequest> createRepeated() => $pb.PbList<GenerateComposeKeyRequest>();
   @$core.pragma('dart2js:noInline')
-  static GenerateTokenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateTokenRequest>(create);
-  static GenerateTokenRequest? _defaultInstance;
+  static GenerateComposeKeyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateComposeKeyRequest>(create);
+  static GenerateComposeKeyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   DeploymentMethod get deploymentMethod => $_getN(0);
@@ -1724,10 +1729,19 @@ class GenerateTokenRequest extends $pb.GeneratedMessage {
   $core.bool hasDesc() => $_has(3);
   @$pb.TagNumber(4)
   void clearDesc() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get isReusable => $_getBF(4);
+  @$pb.TagNumber(5)
+  set isReusable($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasIsReusable() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsReusable() => clearField(5);
 }
 
-class GenerateTokenResponse extends $pb.GeneratedMessage {
-  factory GenerateTokenResponse({
+class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
+  factory GenerateComposeKeyResponse({
     $core.String? token,
   }) {
     final $result = create();
@@ -1736,11 +1750,11 @@ class GenerateTokenResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GenerateTokenResponse._() : super();
-  factory GenerateTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GenerateTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GenerateComposeKeyResponse._() : super();
+  factory GenerateComposeKeyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GenerateComposeKeyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateComposeKeyResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'token')
     ..hasRequiredFields = false
   ;
@@ -1749,22 +1763,22 @@ class GenerateTokenResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GenerateTokenResponse clone() => GenerateTokenResponse()..mergeFromMessage(this);
+  GenerateComposeKeyResponse clone() => GenerateComposeKeyResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GenerateTokenResponse copyWith(void Function(GenerateTokenResponse) updates) => super.copyWith((message) => updates(message as GenerateTokenResponse)) as GenerateTokenResponse;
+  GenerateComposeKeyResponse copyWith(void Function(GenerateComposeKeyResponse) updates) => super.copyWith((message) => updates(message as GenerateComposeKeyResponse)) as GenerateComposeKeyResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GenerateTokenResponse create() => GenerateTokenResponse._();
-  GenerateTokenResponse createEmptyInstance() => create();
-  static $pb.PbList<GenerateTokenResponse> createRepeated() => $pb.PbList<GenerateTokenResponse>();
+  static GenerateComposeKeyResponse create() => GenerateComposeKeyResponse._();
+  GenerateComposeKeyResponse createEmptyInstance() => create();
+  static $pb.PbList<GenerateComposeKeyResponse> createRepeated() => $pb.PbList<GenerateComposeKeyResponse>();
   @$core.pragma('dart2js:noInline')
-  static GenerateTokenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateTokenResponse>(create);
-  static GenerateTokenResponse? _defaultInstance;
+  static GenerateComposeKeyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenerateComposeKeyResponse>(create);
+  static GenerateComposeKeyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get token => $_getSZ(0);
@@ -1776,12 +1790,15 @@ class GenerateTokenResponse extends $pb.GeneratedMessage {
   void clearToken() => clearField(1);
 }
 
-class GetTokensResponse_token extends $pb.GeneratedMessage {
-  factory GetTokensResponse_token({
+class GetComposeKeysResponse_token extends $pb.GeneratedMessage {
+  factory GetComposeKeysResponse_token({
     $core.String? token,
     $core.String? expiredAt,
     $core.bool? hasExpied,
     $core.String? createdBy,
+    $core.String? createdAt,
+    $core.String? description,
+    $core.bool? isReusable,
   }) {
     final $result = create();
     if (token != null) {
@@ -1796,17 +1813,29 @@ class GetTokensResponse_token extends $pb.GeneratedMessage {
     if (createdBy != null) {
       $result.createdBy = createdBy;
     }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (isReusable != null) {
+      $result.isReusable = isReusable;
+    }
     return $result;
   }
-  GetTokensResponse_token._() : super();
-  factory GetTokensResponse_token.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetTokensResponse_token.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetComposeKeysResponse_token._() : super();
+  factory GetComposeKeysResponse_token.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetComposeKeysResponse_token.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTokensResponse.token', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeKeysResponse.token', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'token')
     ..aOS(2, _omitFieldNames ? '' : 'expiredAt', protoName: 'expiredAt')
     ..aOB(3, _omitFieldNames ? '' : 'hasExpied', protoName: 'hasExpied')
     ..aOS(4, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(5, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
+    ..aOS(6, _omitFieldNames ? '' : 'description')
+    ..aOB(7, _omitFieldNames ? '' : 'isReusable', protoName: 'isReusable')
     ..hasRequiredFields = false
   ;
 
@@ -1814,22 +1843,22 @@ class GetTokensResponse_token extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetTokensResponse_token clone() => GetTokensResponse_token()..mergeFromMessage(this);
+  GetComposeKeysResponse_token clone() => GetComposeKeysResponse_token()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetTokensResponse_token copyWith(void Function(GetTokensResponse_token) updates) => super.copyWith((message) => updates(message as GetTokensResponse_token)) as GetTokensResponse_token;
+  GetComposeKeysResponse_token copyWith(void Function(GetComposeKeysResponse_token) updates) => super.copyWith((message) => updates(message as GetComposeKeysResponse_token)) as GetComposeKeysResponse_token;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetTokensResponse_token create() => GetTokensResponse_token._();
-  GetTokensResponse_token createEmptyInstance() => create();
-  static $pb.PbList<GetTokensResponse_token> createRepeated() => $pb.PbList<GetTokensResponse_token>();
+  static GetComposeKeysResponse_token create() => GetComposeKeysResponse_token._();
+  GetComposeKeysResponse_token createEmptyInstance() => create();
+  static $pb.PbList<GetComposeKeysResponse_token> createRepeated() => $pb.PbList<GetComposeKeysResponse_token>();
   @$core.pragma('dart2js:noInline')
-  static GetTokensResponse_token getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTokensResponse_token>(create);
-  static GetTokensResponse_token? _defaultInstance;
+  static GetComposeKeysResponse_token getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeKeysResponse_token>(create);
+  static GetComposeKeysResponse_token? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get token => $_getSZ(0);
@@ -1866,11 +1895,38 @@ class GetTokensResponse_token extends $pb.GeneratedMessage {
   $core.bool hasCreatedBy() => $_has(3);
   @$pb.TagNumber(4)
   void clearCreatedBy() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get createdAt => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set createdAt($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get description => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set description($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDescription() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDescription() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get isReusable => $_getBF(6);
+  @$pb.TagNumber(7)
+  set isReusable($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasIsReusable() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIsReusable() => clearField(7);
 }
 
-class GetTokensResponse extends $pb.GeneratedMessage {
-  factory GetTokensResponse({
-    $core.Iterable<GetTokensResponse_token>? tokens,
+class GetComposeKeysResponse extends $pb.GeneratedMessage {
+  factory GetComposeKeysResponse({
+    $core.Iterable<GetComposeKeysResponse_token>? tokens,
   }) {
     final $result = create();
     if (tokens != null) {
@@ -1878,12 +1934,12 @@ class GetTokensResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetTokensResponse._() : super();
-  factory GetTokensResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetTokensResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetComposeKeysResponse._() : super();
+  factory GetComposeKeysResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetComposeKeysResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTokensResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..pc<GetTokensResponse_token>(1, _omitFieldNames ? '' : 'tokens', $pb.PbFieldType.PM, subBuilder: GetTokensResponse_token.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeKeysResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<GetComposeKeysResponse_token>(1, _omitFieldNames ? '' : 'tokens', $pb.PbFieldType.PM, subBuilder: GetComposeKeysResponse_token.create)
     ..hasRequiredFields = false
   ;
 
@@ -1891,25 +1947,25 @@ class GetTokensResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetTokensResponse clone() => GetTokensResponse()..mergeFromMessage(this);
+  GetComposeKeysResponse clone() => GetComposeKeysResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetTokensResponse copyWith(void Function(GetTokensResponse) updates) => super.copyWith((message) => updates(message as GetTokensResponse)) as GetTokensResponse;
+  GetComposeKeysResponse copyWith(void Function(GetComposeKeysResponse) updates) => super.copyWith((message) => updates(message as GetComposeKeysResponse)) as GetComposeKeysResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetTokensResponse create() => GetTokensResponse._();
-  GetTokensResponse createEmptyInstance() => create();
-  static $pb.PbList<GetTokensResponse> createRepeated() => $pb.PbList<GetTokensResponse>();
+  static GetComposeKeysResponse create() => GetComposeKeysResponse._();
+  GetComposeKeysResponse createEmptyInstance() => create();
+  static $pb.PbList<GetComposeKeysResponse> createRepeated() => $pb.PbList<GetComposeKeysResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetTokensResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTokensResponse>(create);
-  static GetTokensResponse? _defaultInstance;
+  static GetComposeKeysResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeKeysResponse>(create);
+  static GetComposeKeysResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<GetTokensResponse_token> get tokens => $_getList(0);
+  $core.List<GetComposeKeysResponse_token> get tokens => $_getList(0);
 }
 
 class GetResourceRequest extends $pb.GeneratedMessage {

@@ -413,62 +413,69 @@ final $typed_data.Uint8List inkDescriptor = $convert.base64Decode(
     'IEZGVzYxIWCgZkb21haW4YBCABKAlSBmRvbWFpbhIoCgdkZXZpY2VzGAUgAygLMg4ucHJvdG9z'
     'LkRldmljZVIHZGV2aWNlcxIQCgNhZ2UYBiABKAlSA2FnZQ==');
 
-@$core.Deprecated('Use generateTokenRequestDescriptor instead')
-const GenerateTokenRequest$json = {
-  '1': 'GenerateTokenRequest',
+@$core.Deprecated('Use generateComposeKeyRequestDescriptor instead')
+const GenerateComposeKeyRequest$json = {
+  '1': 'GenerateComposeKeyRequest',
   '2': [
     {'1': 'deploymentMethod', '3': 1, '4': 1, '5': 14, '6': '.protos.DeploymentMethod', '10': 'deploymentMethod'},
     {'1': 'expirelyTime', '3': 2, '4': 1, '5': 14, '6': '.protos.ExpirelyTime', '10': 'expirelyTime'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 4, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'isReusable', '3': 5, '4': 1, '5': 8, '10': 'isReusable'},
   ],
 };
 
-/// Descriptor for `GenerateTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateTokenRequestDescriptor = $convert.base64Decode(
-    'ChRHZW5lcmF0ZVRva2VuUmVxdWVzdBJEChBkZXBsb3ltZW50TWV0aG9kGAEgASgOMhgucHJvdG'
-    '9zLkRlcGxveW1lbnRNZXRob2RSEGRlcGxveW1lbnRNZXRob2QSOAoMZXhwaXJlbHlUaW1lGAIg'
-    'ASgOMhQucHJvdG9zLkV4cGlyZWx5VGltZVIMZXhwaXJlbHlUaW1lEhIKBG5hbWUYAyABKAlSBG'
-    '5hbWUSEgoEZGVzYxgEIAEoCVIEZGVzYw==');
+/// Descriptor for `GenerateComposeKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateComposeKeyRequestDescriptor = $convert.base64Decode(
+    'ChlHZW5lcmF0ZUNvbXBvc2VLZXlSZXF1ZXN0EkQKEGRlcGxveW1lbnRNZXRob2QYASABKA4yGC'
+    '5wcm90b3MuRGVwbG95bWVudE1ldGhvZFIQZGVwbG95bWVudE1ldGhvZBI4CgxleHBpcmVseVRp'
+    'bWUYAiABKA4yFC5wcm90b3MuRXhwaXJlbHlUaW1lUgxleHBpcmVseVRpbWUSEgoEbmFtZRgDIA'
+    'EoCVIEbmFtZRISCgRkZXNjGAQgASgJUgRkZXNjEh4KCmlzUmV1c2FibGUYBSABKAhSCmlzUmV1'
+    'c2FibGU=');
 
-@$core.Deprecated('Use generateTokenResponseDescriptor instead')
-const GenerateTokenResponse$json = {
-  '1': 'GenerateTokenResponse',
+@$core.Deprecated('Use generateComposeKeyResponseDescriptor instead')
+const GenerateComposeKeyResponse$json = {
+  '1': 'GenerateComposeKeyResponse',
   '2': [
     {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
   ],
 };
 
-/// Descriptor for `GenerateTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateTokenResponseDescriptor = $convert.base64Decode(
-    'ChVHZW5lcmF0ZVRva2VuUmVzcG9uc2USFAoFdG9rZW4YASABKAlSBXRva2Vu');
+/// Descriptor for `GenerateComposeKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List generateComposeKeyResponseDescriptor = $convert.base64Decode(
+    'ChpHZW5lcmF0ZUNvbXBvc2VLZXlSZXNwb25zZRIUCgV0b2tlbhgBIAEoCVIFdG9rZW4=');
 
-@$core.Deprecated('Use getTokensResponseDescriptor instead')
-const GetTokensResponse$json = {
-  '1': 'GetTokensResponse',
+@$core.Deprecated('Use getComposeKeysResponseDescriptor instead')
+const GetComposeKeysResponse$json = {
+  '1': 'GetComposeKeysResponse',
   '2': [
-    {'1': 'tokens', '3': 1, '4': 3, '5': 11, '6': '.protos.GetTokensResponse.token', '10': 'tokens'},
+    {'1': 'tokens', '3': 1, '4': 3, '5': 11, '6': '.protos.GetComposeKeysResponse.token', '10': 'tokens'},
   ],
-  '3': [GetTokensResponse_token$json],
+  '3': [GetComposeKeysResponse_token$json],
 };
 
-@$core.Deprecated('Use getTokensResponseDescriptor instead')
-const GetTokensResponse_token$json = {
+@$core.Deprecated('Use getComposeKeysResponseDescriptor instead')
+const GetComposeKeysResponse_token$json = {
   '1': 'token',
   '2': [
     {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
     {'1': 'expiredAt', '3': 2, '4': 1, '5': 9, '10': 'expiredAt'},
     {'1': 'hasExpied', '3': 3, '4': 1, '5': 8, '10': 'hasExpied'},
     {'1': 'createdBy', '3': 4, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'createdAt', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'isReusable', '3': 7, '4': 1, '5': 8, '10': 'isReusable'},
   ],
 };
 
-/// Descriptor for `GetTokensResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getTokensResponseDescriptor = $convert.base64Decode(
-    'ChFHZXRUb2tlbnNSZXNwb25zZRI3CgZ0b2tlbnMYASADKAsyHy5wcm90b3MuR2V0VG9rZW5zUm'
-    'VzcG9uc2UudG9rZW5SBnRva2Vucxp3CgV0b2tlbhIUCgV0b2tlbhgBIAEoCVIFdG9rZW4SHAoJ'
-    'ZXhwaXJlZEF0GAIgASgJUglleHBpcmVkQXQSHAoJaGFzRXhwaWVkGAMgASgIUgloYXNFeHBpZW'
-    'QSHAoJY3JlYXRlZEJ5GAQgASgJUgljcmVhdGVkQnk=');
+/// Descriptor for `GetComposeKeysResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getComposeKeysResponseDescriptor = $convert.base64Decode(
+    'ChZHZXRDb21wb3NlS2V5c1Jlc3BvbnNlEjwKBnRva2VucxgBIAMoCzIkLnByb3Rvcy5HZXRDb2'
+    '1wb3NlS2V5c1Jlc3BvbnNlLnRva2VuUgZ0b2tlbnMa1wEKBXRva2VuEhQKBXRva2VuGAEgASgJ'
+    'UgV0b2tlbhIcCglleHBpcmVkQXQYAiABKAlSCWV4cGlyZWRBdBIcCgloYXNFeHBpZWQYAyABKA'
+    'hSCWhhc0V4cGllZBIcCgljcmVhdGVkQnkYBCABKAlSCWNyZWF0ZWRCeRIcCgljcmVhdGVkQXQY'
+    'BSABKAlSCWNyZWF0ZWRBdBIgCgtkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24SHgoKaX'
+    'NSZXVzYWJsZRgHIAEoCFIKaXNSZXVzYWJsZQ==');
 
 @$core.Deprecated('Use getResourceRequestDescriptor instead')
 const GetResourceRequest$json = {

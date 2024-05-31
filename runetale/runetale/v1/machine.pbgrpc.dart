@@ -26,10 +26,10 @@ class MachineServiceClient extends $grpc.Client {
       '/protos.MachineService/SyncRemoteMachinesConfig',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $5.SyncMachinesResponse.fromBuffer(value));
-  static final _$createMachineWithAccessToken = $grpc.ClientMethod<$0.Empty, $5.CreateMachineResponse>(
-      '/protos.MachineService/CreateMachineWithAccessToken',
+  static final _$composeMachine = $grpc.ClientMethod<$0.Empty, $5.ComposeMachineResponse>(
+      '/protos.MachineService/ComposeMachine',
       ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.CreateMachineResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $5.ComposeMachineResponse.fromBuffer(value));
 
   MachineServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -41,8 +41,8 @@ class MachineServiceClient extends $grpc.Client {
     return $createUnaryCall(_$syncRemoteMachinesConfig, request, options: options);
   }
 
-  $grpc.ResponseFuture<$5.CreateMachineResponse> createMachineWithAccessToken($0.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createMachineWithAccessToken, request, options: options);
+  $grpc.ResponseFuture<$5.ComposeMachineResponse> composeMachine($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$composeMachine, request, options: options);
   }
 }
 
@@ -58,23 +58,23 @@ abstract class MachineServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($5.SyncMachinesResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $5.CreateMachineResponse>(
-        'CreateMachineWithAccessToken',
-        createMachineWithAccessToken_Pre,
+    $addMethod($grpc.ServiceMethod<$0.Empty, $5.ComposeMachineResponse>(
+        'ComposeMachine',
+        composeMachine_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($5.CreateMachineResponse value) => value.writeToBuffer()));
+        ($5.ComposeMachineResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return syncRemoteMachinesConfig(call, await request);
   }
 
-  $async.Future<$5.CreateMachineResponse> createMachineWithAccessToken_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return createMachineWithAccessToken(call, await request);
+  $async.Future<$5.ComposeMachineResponse> composeMachine_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return composeMachine(call, await request);
   }
 
   $async.Future<$5.SyncMachinesResponse> syncRemoteMachinesConfig($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$5.CreateMachineResponse> createMachineWithAccessToken($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$5.ComposeMachineResponse> composeMachine($grpc.ServiceCall call, $0.Empty request);
 }
