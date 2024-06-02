@@ -2044,7 +2044,7 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
   factory GetComposeMachineStatusResponse({
     $core.bool? isConnected,
     $core.String? ip,
-    $core.String? cidr,
+    $core.String? host,
   }) {
     final $result = create();
     if (isConnected != null) {
@@ -2053,8 +2053,8 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
     if (ip != null) {
       $result.ip = ip;
     }
-    if (cidr != null) {
-      $result.cidr = cidr;
+    if (host != null) {
+      $result.host = host;
     }
     return $result;
   }
@@ -2065,7 +2065,7 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeMachineStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isConnected', protoName: 'isConnected')
     ..aOS(2, _omitFieldNames ? '' : 'ip')
-    ..aOS(3, _omitFieldNames ? '' : 'cidr')
+    ..aOS(3, _omitFieldNames ? '' : 'host')
     ..hasRequiredFields = false
   ;
 
@@ -2109,13 +2109,13 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
   void clearIp() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get cidr => $_getSZ(2);
+  $core.String get host => $_getSZ(2);
   @$pb.TagNumber(3)
-  set cidr($core.String v) { $_setString(2, v); }
+  set host($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCidr() => $_has(2);
+  $core.bool hasHost() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCidr() => clearField(3);
+  void clearHost() => clearField(3);
 }
 
 class GetResourceRequest extends $pb.GeneratedMessage {
