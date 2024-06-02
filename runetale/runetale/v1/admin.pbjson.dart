@@ -492,6 +492,19 @@ final $typed_data.Uint8List getComposeKeysResponseDescriptor = $convert.base64De
     'lwdGlvbhgGIAEoCVILZGVzY3JpcHRpb24SHgoKaXNSZXVzYWJsZRgHIAEoCFIKaXNSZXVzYWJs'
     'ZQ==');
 
+@$core.Deprecated('Use getComposeMachineStatusRequestDescriptor instead')
+const GetComposeMachineStatusRequest$json = {
+  '1': 'GetComposeMachineStatusRequest',
+  '2': [
+    {'1': 'composeKey', '3': 1, '4': 1, '5': 9, '10': 'composeKey'},
+  ],
+};
+
+/// Descriptor for `GetComposeMachineStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getComposeMachineStatusRequestDescriptor = $convert.base64Decode(
+    'Ch5HZXRDb21wb3NlTWFjaGluZVN0YXR1c1JlcXVlc3QSHgoKY29tcG9zZUtleRgBIAEoCVIKY2'
+    '9tcG9zZUtleQ==');
+
 @$core.Deprecated('Use getComposeMachineStatusResponseDescriptor instead')
 const GetComposeMachineStatusResponse$json = {
   '1': 'GetComposeMachineStatusResponse',

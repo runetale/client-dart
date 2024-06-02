@@ -2040,6 +2040,56 @@ class GetComposeKeysResponse extends $pb.GeneratedMessage {
   $core.List<GetComposeKeysResponse_composeKey> get composeKeys => $_getList(0);
 }
 
+class GetComposeMachineStatusRequest extends $pb.GeneratedMessage {
+  factory GetComposeMachineStatusRequest({
+    $core.String? composeKey,
+  }) {
+    final $result = create();
+    if (composeKey != null) {
+      $result.composeKey = composeKey;
+    }
+    return $result;
+  }
+  GetComposeMachineStatusRequest._() : super();
+  factory GetComposeMachineStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetComposeMachineStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeMachineStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'composeKey', protoName: 'composeKey')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetComposeMachineStatusRequest clone() => GetComposeMachineStatusRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetComposeMachineStatusRequest copyWith(void Function(GetComposeMachineStatusRequest) updates) => super.copyWith((message) => updates(message as GetComposeMachineStatusRequest)) as GetComposeMachineStatusRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetComposeMachineStatusRequest create() => GetComposeMachineStatusRequest._();
+  GetComposeMachineStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<GetComposeMachineStatusRequest> createRepeated() => $pb.PbList<GetComposeMachineStatusRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetComposeMachineStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeMachineStatusRequest>(create);
+  static GetComposeMachineStatusRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get composeKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set composeKey($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasComposeKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearComposeKey() => clearField(1);
+}
+
 class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
   factory GetComposeMachineStatusResponse({
     $core.bool? isConnected,
