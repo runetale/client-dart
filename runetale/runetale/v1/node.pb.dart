@@ -101,15 +101,15 @@ class SyncNodesResponse extends $pb.GeneratedMessage {
 
 class Node extends $pb.GeneratedMessage {
   factory Node({
-    $core.String? remoteClientNodeKey,
+    $core.String? remoteNodeKey,
     $core.String? remoteWgPubKey,
     $core.Iterable<$core.String>? allowedIPs,
     $core.String? ip,
     $core.String? cidr,
   }) {
     final $result = create();
-    if (remoteClientNodeKey != null) {
-      $result.remoteClientNodeKey = remoteClientNodeKey;
+    if (remoteNodeKey != null) {
+      $result.remoteNodeKey = remoteNodeKey;
     }
     if (remoteWgPubKey != null) {
       $result.remoteWgPubKey = remoteWgPubKey;
@@ -130,7 +130,7 @@ class Node extends $pb.GeneratedMessage {
   factory Node.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Node', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'remoteClientNodeKey', protoName: 'remoteClientNodeKey')
+    ..aOS(1, _omitFieldNames ? '' : 'remoteNodeKey', protoName: 'remoteNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'remoteWgPubKey', protoName: 'remoteWgPubKey')
     ..pPS(3, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
     ..aOS(4, _omitFieldNames ? '' : 'ip')
@@ -160,13 +160,13 @@ class Node extends $pb.GeneratedMessage {
   static Node? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get remoteClientNodeKey => $_getSZ(0);
+  $core.String get remoteNodeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set remoteClientNodeKey($core.String v) { $_setString(0, v); }
+  set remoteNodeKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasRemoteClientNodeKey() => $_has(0);
+  $core.bool hasRemoteNodeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearRemoteClientNodeKey() => clearField(1);
+  void clearRemoteNodeKey() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get remoteWgPubKey => $_getSZ(1);
