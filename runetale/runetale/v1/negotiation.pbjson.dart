@@ -33,7 +33,7 @@ const NegotiationRequest$json = {
   '1': 'NegotiationRequest',
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
-    {'1': 'dstPeerMachineKey', '3': 2, '4': 1, '5': 9, '10': 'dstPeerMachineKey'},
+    {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
     {'1': 'srcWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'srcWgPubKey'},
     {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
     {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
@@ -44,16 +44,16 @@ const NegotiationRequest$json = {
 /// Descriptor for `NegotiationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List negotiationRequestDescriptor = $convert.base64Decode(
     'ChJOZWdvdGlhdGlvblJlcXVlc3QSKwoEdHlwZRgBIAEoDjIXLnByb3Rvcy5OZWdvdGlhdGlvbl'
-    'R5cGVSBHR5cGUSLAoRZHN0UGVlck1hY2hpbmVLZXkYAiABKAlSEWRzdFBlZXJNYWNoaW5lS2V5'
-    'EiAKC3NyY1dnUHViS2V5GAMgASgJUgtzcmNXZ1B1YktleRIUCgV1RmxhZxgEIAEoCVIFdUZsYW'
-    'cSEAoDcHdkGAUgASgJUgNwd2QSHAoJY2FuZGlkYXRlGAYgASgJUgljYW5kaWRhdGU=');
+    'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIgCgtzcmNXZ1B1Yktl'
+    'eRgDIAEoCVILc3JjV2dQdWJLZXkSFAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCV'
+    'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRl');
 
 @$core.Deprecated('Use negotiationResponseDescriptor instead')
 const NegotiationResponse$json = {
   '1': 'NegotiationResponse',
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
-    {'1': 'dstPeerMachineKey', '3': 2, '4': 1, '5': 9, '10': 'dstPeerMachineKey'},
+    {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
     {'1': 'uFlag', '3': 3, '4': 1, '5': 9, '10': 'uFlag'},
     {'1': 'pwd', '3': 4, '4': 1, '5': 9, '10': 'pwd'},
     {'1': 'candidate', '3': 5, '4': 1, '5': 9, '10': 'candidate'},
@@ -63,16 +63,16 @@ const NegotiationResponse$json = {
 /// Descriptor for `NegotiationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List negotiationResponseDescriptor = $convert.base64Decode(
     'ChNOZWdvdGlhdGlvblJlc3BvbnNlEisKBHR5cGUYASABKA4yFy5wcm90b3MuTmVnb3RpYXRpb2'
-    '5UeXBlUgR0eXBlEiwKEWRzdFBlZXJNYWNoaW5lS2V5GAIgASgJUhFkc3RQZWVyTWFjaGluZUtl'
-    'eRIUCgV1RmxhZxgDIAEoCVIFdUZsYWcSEAoDcHdkGAQgASgJUgNwd2QSHAoJY2FuZGlkYXRlGA'
-    'UgASgJUgljYW5kaWRhdGU=');
+    '5UeXBlUgR0eXBlEh4KCmRzdE5vZGVLZXkYAiABKAlSCmRzdE5vZGVLZXkSFAoFdUZsYWcYAyAB'
+    'KAlSBXVGbGFnEhAKA3B3ZBgEIAEoCVIDcHdkEhwKCWNhbmRpZGF0ZRgFIAEoCVIJY2FuZGlkYX'
+    'Rl');
 
 @$core.Deprecated('Use handshakeRequestDescriptor instead')
 const HandshakeRequest$json = {
   '1': 'HandshakeRequest',
   '2': [
-    {'1': 'dstPeerMachineKey', '3': 1, '4': 1, '5': 9, '10': 'dstPeerMachineKey'},
-    {'1': 'srcPeerMachineKey', '3': 2, '4': 1, '5': 9, '10': 'srcPeerMachineKey'},
+    {'1': 'dstNodeKey', '3': 1, '4': 1, '5': 9, '10': 'dstNodeKey'},
+    {'1': 'srcNodeKey', '3': 2, '4': 1, '5': 9, '10': 'srcNodeKey'},
     {'1': 'uFlag', '3': 3, '4': 1, '5': 9, '10': 'uFlag'},
     {'1': 'pwd', '3': 4, '4': 1, '5': 9, '10': 'pwd'},
   ],
@@ -80,23 +80,23 @@ const HandshakeRequest$json = {
 
 /// Descriptor for `HandshakeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List handshakeRequestDescriptor = $convert.base64Decode(
-    'ChBIYW5kc2hha2VSZXF1ZXN0EiwKEWRzdFBlZXJNYWNoaW5lS2V5GAEgASgJUhFkc3RQZWVyTW'
-    'FjaGluZUtleRIsChFzcmNQZWVyTWFjaGluZUtleRgCIAEoCVIRc3JjUGVlck1hY2hpbmVLZXkS'
-    'FAoFdUZsYWcYAyABKAlSBXVGbGFnEhAKA3B3ZBgEIAEoCVIDcHdk');
+    'ChBIYW5kc2hha2VSZXF1ZXN0Eh4KCmRzdE5vZGVLZXkYASABKAlSCmRzdE5vZGVLZXkSHgoKc3'
+    'JjTm9kZUtleRgCIAEoCVIKc3JjTm9kZUtleRIUCgV1RmxhZxgDIAEoCVIFdUZsYWcSEAoDcHdk'
+    'GAQgASgJUgNwd2Q=');
 
 @$core.Deprecated('Use candidateRequestDescriptor instead')
 const CandidateRequest$json = {
   '1': 'CandidateRequest',
   '2': [
-    {'1': 'dstPeerMachineKey', '3': 1, '4': 1, '5': 9, '10': 'dstPeerMachineKey'},
-    {'1': 'srcPeerMachineKey', '3': 2, '4': 1, '5': 9, '10': 'srcPeerMachineKey'},
+    {'1': 'dstNodeKey', '3': 1, '4': 1, '5': 9, '10': 'dstNodeKey'},
+    {'1': 'srcNodeKey', '3': 2, '4': 1, '5': 9, '10': 'srcNodeKey'},
     {'1': 'candidate', '3': 3, '4': 1, '5': 9, '10': 'candidate'},
   ],
 };
 
 /// Descriptor for `CandidateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List candidateRequestDescriptor = $convert.base64Decode(
-    'ChBDYW5kaWRhdGVSZXF1ZXN0EiwKEWRzdFBlZXJNYWNoaW5lS2V5GAEgASgJUhFkc3RQZWVyTW'
-    'FjaGluZUtleRIsChFzcmNQZWVyTWFjaGluZUtleRgCIAEoCVIRc3JjUGVlck1hY2hpbmVLZXkS'
-    'HAoJY2FuZGlkYXRlGAMgASgJUgljYW5kaWRhdGU=');
+    'ChBDYW5kaWRhdGVSZXF1ZXN0Eh4KCmRzdE5vZGVLZXkYASABKAlSCmRzdE5vZGVLZXkSHgoKc3'
+    'JjTm9kZUtleRgCIAEoCVIKc3JjTm9kZUtleRIcCgljYW5kaWRhdGUYAyABKAlSCWNhbmRpZGF0'
+    'ZQ==');
 

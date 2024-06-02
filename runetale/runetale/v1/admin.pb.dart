@@ -142,13 +142,13 @@ class CreateAclRequest extends $pb.GeneratedMessage {
 
 class AclResources extends $pb.GeneratedMessage {
   factory AclResources({
-    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$fixnum.Int64>? nodeIds,
     $core.String? policyId,
     AclResourceType? type,
   }) {
     final $result = create();
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
+    if (nodeIds != null) {
+      $result.nodeIds.addAll(nodeIds);
     }
     if (policyId != null) {
       $result.policyId = policyId;
@@ -163,7 +163,7 @@ class AclResources extends $pb.GeneratedMessage {
   factory AclResources.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResources', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..aOS(2, _omitFieldNames ? '' : 'policyId', protoName: 'policyId')
     ..e<AclResourceType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AclResourceType.FLEET, valueOf: AclResourceType.valueOf, enumValues: AclResourceType.values)
     ..hasRequiredFields = false
@@ -191,7 +191,7 @@ class AclResources extends $pb.GeneratedMessage {
   static AclResources? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(0);
+  $core.List<$fixnum.Int64> get nodeIds => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.String get policyId => $_getSZ(1);
@@ -497,8 +497,8 @@ class AclResponse extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.String? desc,
-    Node? src,
-    Node? dst,
+    Policy? src,
+    Policy? dst,
     $core.String? proto,
     $fixnum.Int64? port,
     $core.String? age,
@@ -542,8 +542,8 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..aOM<Node>(4, _omitFieldNames ? '' : 'src', subBuilder: Node.create)
-    ..aOM<Node>(5, _omitFieldNames ? '' : 'dst', subBuilder: Node.create)
+    ..aOM<Policy>(4, _omitFieldNames ? '' : 'src', subBuilder: Policy.create)
+    ..aOM<Policy>(5, _omitFieldNames ? '' : 'dst', subBuilder: Policy.create)
     ..aOS(6, _omitFieldNames ? '' : 'proto')
     ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(8, _omitFieldNames ? '' : 'age')
@@ -600,26 +600,26 @@ class AclResponse extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  Node get src => $_getN(3);
+  Policy get src => $_getN(3);
   @$pb.TagNumber(4)
-  set src(Node v) { setField(4, v); }
+  set src(Policy v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSrc() => $_has(3);
   @$pb.TagNumber(4)
   void clearSrc() => clearField(4);
   @$pb.TagNumber(4)
-  Node ensureSrc() => $_ensure(3);
+  Policy ensureSrc() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  Node get dst => $_getN(4);
+  Policy get dst => $_getN(4);
   @$pb.TagNumber(5)
-  set dst(Node v) { setField(5, v); }
+  set dst(Policy v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDst() => $_has(4);
   @$pb.TagNumber(5)
   void clearDst() => clearField(5);
   @$pb.TagNumber(5)
-  Node ensureDst() => $_ensure(4);
+  Policy ensureDst() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.String get proto => $_getSZ(5);
@@ -848,7 +848,7 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   factory CreateGroupRequest({
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$fixnum.Int64>? nodeIds,
   }) {
     final $result = create();
     if (name != null) {
@@ -857,8 +857,8 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
+    if (nodeIds != null) {
+      $result.nodeIds.addAll(nodeIds);
     }
     return $result;
   }
@@ -869,7 +869,7 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateGroupRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..hasRequiredFields = false
   ;
 
@@ -913,7 +913,7 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
+  $core.List<$fixnum.Int64> get nodeIds => $_getList(2);
 }
 
 class GetGroupRequest extends $pb.GeneratedMessage {
@@ -1093,7 +1093,7 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$fixnum.Int64>? nodeIds,
   }) {
     final $result = create();
     if (id != null) {
@@ -1105,8 +1105,8 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
+    if (nodeIds != null) {
+      $result.nodeIds.addAll(nodeIds);
     }
     return $result;
   }
@@ -1118,7 +1118,7 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..hasRequiredFields = false
   ;
 
@@ -1171,7 +1171,7 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(3);
+  $core.List<$fixnum.Int64> get nodeIds => $_getList(3);
 }
 
 class GetDevicesRequest extends $pb.GeneratedMessage {
@@ -1272,7 +1272,7 @@ class CreateInkRequest extends $pb.GeneratedMessage {
   factory CreateInkRequest({
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$fixnum.Int64>? nodeIds,
   }) {
     final $result = create();
     if (name != null) {
@@ -1281,8 +1281,8 @@ class CreateInkRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
+    if (nodeIds != null) {
+      $result.nodeIds.addAll(nodeIds);
     }
     return $result;
   }
@@ -1293,7 +1293,7 @@ class CreateInkRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateInkRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..hasRequiredFields = false
   ;
 
@@ -1337,7 +1337,7 @@ class CreateInkRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
+  $core.List<$fixnum.Int64> get nodeIds => $_getList(2);
 }
 
 class GetInkRequest extends $pb.GeneratedMessage {
@@ -1395,7 +1395,7 @@ class PatchInkRequest extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$fixnum.Int64>? nodeIds,
   }) {
     final $result = create();
     if (id != null) {
@@ -1407,8 +1407,8 @@ class PatchInkRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
+    if (nodeIds != null) {
+      $result.nodeIds.addAll(nodeIds);
     }
     return $result;
   }
@@ -1420,7 +1420,7 @@ class PatchInkRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..hasRequiredFields = false
   ;
 
@@ -1473,7 +1473,7 @@ class PatchInkRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(3);
+  $core.List<$fixnum.Int64> get nodeIds => $_getList(3);
 }
 
 class Inks extends $pb.GeneratedMessage {
@@ -2040,8 +2040,8 @@ class GetComposeKeysResponse extends $pb.GeneratedMessage {
   $core.List<GetComposeKeysResponse_composeKey> get composeKeys => $_getList(0);
 }
 
-class GetComposeMachineStatusRequest extends $pb.GeneratedMessage {
-  factory GetComposeMachineStatusRequest({
+class GetComposeNodeStatusRequest extends $pb.GeneratedMessage {
+  factory GetComposeNodeStatusRequest({
     $core.String? composeKey,
   }) {
     final $result = create();
@@ -2050,11 +2050,11 @@ class GetComposeMachineStatusRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetComposeMachineStatusRequest._() : super();
-  factory GetComposeMachineStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetComposeMachineStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetComposeNodeStatusRequest._() : super();
+  factory GetComposeNodeStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetComposeNodeStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeMachineStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeNodeStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'composeKey', protoName: 'composeKey')
     ..hasRequiredFields = false
   ;
@@ -2063,22 +2063,22 @@ class GetComposeMachineStatusRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetComposeMachineStatusRequest clone() => GetComposeMachineStatusRequest()..mergeFromMessage(this);
+  GetComposeNodeStatusRequest clone() => GetComposeNodeStatusRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetComposeMachineStatusRequest copyWith(void Function(GetComposeMachineStatusRequest) updates) => super.copyWith((message) => updates(message as GetComposeMachineStatusRequest)) as GetComposeMachineStatusRequest;
+  GetComposeNodeStatusRequest copyWith(void Function(GetComposeNodeStatusRequest) updates) => super.copyWith((message) => updates(message as GetComposeNodeStatusRequest)) as GetComposeNodeStatusRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetComposeMachineStatusRequest create() => GetComposeMachineStatusRequest._();
-  GetComposeMachineStatusRequest createEmptyInstance() => create();
-  static $pb.PbList<GetComposeMachineStatusRequest> createRepeated() => $pb.PbList<GetComposeMachineStatusRequest>();
+  static GetComposeNodeStatusRequest create() => GetComposeNodeStatusRequest._();
+  GetComposeNodeStatusRequest createEmptyInstance() => create();
+  static $pb.PbList<GetComposeNodeStatusRequest> createRepeated() => $pb.PbList<GetComposeNodeStatusRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetComposeMachineStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeMachineStatusRequest>(create);
-  static GetComposeMachineStatusRequest? _defaultInstance;
+  static GetComposeNodeStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeNodeStatusRequest>(create);
+  static GetComposeNodeStatusRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get composeKey => $_getSZ(0);
@@ -2090,8 +2090,8 @@ class GetComposeMachineStatusRequest extends $pb.GeneratedMessage {
   void clearComposeKey() => clearField(1);
 }
 
-class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
-  factory GetComposeMachineStatusResponse({
+class GetComposeNodeStatusResponse extends $pb.GeneratedMessage {
+  factory GetComposeNodeStatusResponse({
     $core.bool? isConnected,
     $core.String? ip,
     $core.String? host,
@@ -2108,11 +2108,11 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetComposeMachineStatusResponse._() : super();
-  factory GetComposeMachineStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetComposeMachineStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetComposeNodeStatusResponse._() : super();
+  factory GetComposeNodeStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetComposeNodeStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeMachineStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetComposeNodeStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isConnected', protoName: 'isConnected')
     ..aOS(2, _omitFieldNames ? '' : 'ip')
     ..aOS(3, _omitFieldNames ? '' : 'host')
@@ -2123,22 +2123,22 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetComposeMachineStatusResponse clone() => GetComposeMachineStatusResponse()..mergeFromMessage(this);
+  GetComposeNodeStatusResponse clone() => GetComposeNodeStatusResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetComposeMachineStatusResponse copyWith(void Function(GetComposeMachineStatusResponse) updates) => super.copyWith((message) => updates(message as GetComposeMachineStatusResponse)) as GetComposeMachineStatusResponse;
+  GetComposeNodeStatusResponse copyWith(void Function(GetComposeNodeStatusResponse) updates) => super.copyWith((message) => updates(message as GetComposeNodeStatusResponse)) as GetComposeNodeStatusResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetComposeMachineStatusResponse create() => GetComposeMachineStatusResponse._();
-  GetComposeMachineStatusResponse createEmptyInstance() => create();
-  static $pb.PbList<GetComposeMachineStatusResponse> createRepeated() => $pb.PbList<GetComposeMachineStatusResponse>();
+  static GetComposeNodeStatusResponse create() => GetComposeNodeStatusResponse._();
+  GetComposeNodeStatusResponse createEmptyInstance() => create();
+  static $pb.PbList<GetComposeNodeStatusResponse> createRepeated() => $pb.PbList<GetComposeNodeStatusResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetComposeMachineStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeMachineStatusResponse>(create);
-  static GetComposeMachineStatusResponse? _defaultInstance;
+  static GetComposeNodeStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetComposeNodeStatusResponse>(create);
+  static GetComposeNodeStatusResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get isConnected => $_getBF(0);
@@ -2266,7 +2266,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   factory CreateFleetRequest({
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$fixnum.Int64>? nodeIds,
     PlatformMethod? platformMethod,
   }) {
     final $result = create();
@@ -2276,8 +2276,8 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
+    if (nodeIds != null) {
+      $result.nodeIds.addAll(nodeIds);
     }
     if (platformMethod != null) {
       $result.platformMethod = platformMethod;
@@ -2291,7 +2291,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateFleetRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..e<PlatformMethod>(4, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: PlatformMethod.DOCKER, valueOf: PlatformMethod.valueOf, enumValues: PlatformMethod.values)
     ..hasRequiredFields = false
   ;
@@ -2336,7 +2336,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(2);
+  $core.List<$fixnum.Int64> get nodeIds => $_getList(2);
 
   @$pb.TagNumber(4)
   PlatformMethod get platformMethod => $_getN(3);
@@ -2447,7 +2447,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$fixnum.Int64>? machineIds,
+    $core.Iterable<$fixnum.Int64>? nodeIds,
     PlatformMethod? platformMethod,
     Action? action,
   }) {
@@ -2461,8 +2461,8 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (machineIds != null) {
-      $result.machineIds.addAll(machineIds);
+    if (nodeIds != null) {
+      $result.nodeIds.addAll(nodeIds);
     }
     if (platformMethod != null) {
       $result.platformMethod = platformMethod;
@@ -2480,7 +2480,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'machineIds', $pb.PbFieldType.KU6, protoName: 'machineIds')
+    ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..e<PlatformMethod>(5, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: PlatformMethod.DOCKER, valueOf: PlatformMethod.valueOf, enumValues: PlatformMethod.values)
     ..e<Action>(6, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
@@ -2535,7 +2535,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get machineIds => $_getList(3);
+  $core.List<$fixnum.Int64> get nodeIds => $_getList(3);
 
   @$pb.TagNumber(5)
   PlatformMethod get platformMethod => $_getN(4);
@@ -2676,8 +2676,8 @@ class Overview extends $pb.GeneratedMessage {
   void clearInviteLink() => clearField(6);
 }
 
-class Node extends $pb.GeneratedMessage {
-  factory Node({
+class Policy extends $pb.GeneratedMessage {
+  factory Policy({
     $core.Iterable<Fleet>? fleets,
     $core.Iterable<Resource>? resources,
     $core.Iterable<Group>? groups,
@@ -2706,11 +2706,11 @@ class Node extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  Node._() : super();
-  factory Node.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Node.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Policy._() : super();
+  factory Policy.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Policy.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Node', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Policy', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pc<Fleet>(1, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
     ..pc<Resource>(2, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
     ..pc<Group>(3, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
@@ -2724,22 +2724,22 @@ class Node extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Node clone() => Node()..mergeFromMessage(this);
+  Policy clone() => Policy()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Node copyWith(void Function(Node) updates) => super.copyWith((message) => updates(message as Node)) as Node;
+  Policy copyWith(void Function(Policy) updates) => super.copyWith((message) => updates(message as Policy)) as Policy;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static Node create() => Node._();
-  Node createEmptyInstance() => create();
-  static $pb.PbList<Node> createRepeated() => $pb.PbList<Node>();
+  static Policy create() => Policy._();
+  Policy createEmptyInstance() => create();
+  static $pb.PbList<Policy> createRepeated() => $pb.PbList<Policy>();
   @$core.pragma('dart2js:noInline')
-  static Node getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Node>(create);
-  static Node? _defaultInstance;
+  static Policy getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Policy>(create);
+  static Policy? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<Fleet> get fleets => $_getList(0);
@@ -2919,7 +2919,7 @@ class Fleet extends $pb.GeneratedMessage {
 class Resource extends $pb.GeneratedMessage {
   factory Resource({
     $core.String? id,
-    $fixnum.Int64? machineId,
+    $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? email,
     $core.String? ip,
@@ -2934,8 +2934,8 @@ class Resource extends $pb.GeneratedMessage {
     if (id != null) {
       $result.id = id;
     }
-    if (machineId != null) {
-      $result.machineId = machineId;
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
     }
     if (name != null) {
       $result.name = name;
@@ -2972,7 +2972,7 @@ class Resource extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resource', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'email')
     ..aOS(5, _omitFieldNames ? '' : 'ip')
@@ -3016,13 +3016,13 @@ class Resource extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get machineId => $_getI64(1);
+  $fixnum.Int64 get nodeId => $_getI64(1);
   @$pb.TagNumber(2)
-  set machineId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasMachineId() => $_has(1);
+  $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearMachineId() => clearField(2);
+  void clearNodeId() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -3209,7 +3209,7 @@ class Group extends $pb.GeneratedMessage {
 class User extends $pb.GeneratedMessage {
   factory User({
     $fixnum.Int64? id,
-    $fixnum.Int64? machineId,
+    $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? picture,
     $core.String? email,
@@ -3222,8 +3222,8 @@ class User extends $pb.GeneratedMessage {
     if (id != null) {
       $result.id = id;
     }
-    if (machineId != null) {
-      $result.machineId = machineId;
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
     }
     if (name != null) {
       $result.name = name;
@@ -3254,7 +3254,7 @@ class User extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'User', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'picture')
     ..aOS(5, _omitFieldNames ? '' : 'email')
@@ -3296,13 +3296,13 @@ class User extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get machineId => $_getI64(1);
+  $fixnum.Int64 get nodeId => $_getI64(1);
   @$pb.TagNumber(2)
-  set machineId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasMachineId() => $_has(1);
+  $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearMachineId() => clearField(2);
+  void clearNodeId() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -3370,7 +3370,7 @@ class User extends $pb.GeneratedMessage {
 
 class Device extends $pb.GeneratedMessage {
   factory Device({
-    $fixnum.Int64? machineId,
+    $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? email,
     $core.String? ip,
@@ -3384,8 +3384,8 @@ class Device extends $pb.GeneratedMessage {
     $core.String? keyExpiry,
   }) {
     final $result = create();
-    if (machineId != null) {
-      $result.machineId = machineId;
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
     }
     if (name != null) {
       $result.name = name;
@@ -3427,7 +3427,7 @@ class Device extends $pb.GeneratedMessage {
   factory Device.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Device', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'machineId', $pb.PbFieldType.OU6, protoName: 'machineId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'email')
     ..aOS(4, _omitFieldNames ? '' : 'ip')
@@ -3464,13 +3464,13 @@ class Device extends $pb.GeneratedMessage {
   static Device? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get machineId => $_getI64(0);
+  $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set machineId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasMachineId() => $_has(0);
+  $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearMachineId() => clearField(1);
+  void clearNodeId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);

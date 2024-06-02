@@ -20,7 +20,7 @@ export 'negotiation.pbenum.dart';
 class NegotiationRequest extends $pb.GeneratedMessage {
   factory NegotiationRequest({
     NegotiationType? type,
-    $core.String? dstPeerMachineKey,
+    $core.String? dstNodeKey,
     $core.String? srcWgPubKey,
     $core.String? uFlag,
     $core.String? pwd,
@@ -30,8 +30,8 @@ class NegotiationRequest extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
-    if (dstPeerMachineKey != null) {
-      $result.dstPeerMachineKey = dstPeerMachineKey;
+    if (dstNodeKey != null) {
+      $result.dstNodeKey = dstNodeKey;
     }
     if (srcWgPubKey != null) {
       $result.srcWgPubKey = srcWgPubKey;
@@ -53,7 +53,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
-    ..aOS(2, _omitFieldNames ? '' : 'dstPeerMachineKey', protoName: 'dstPeerMachineKey')
+    ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'srcWgPubKey', protoName: 'srcWgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(5, _omitFieldNames ? '' : 'pwd')
@@ -92,13 +92,13 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   void clearType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get dstPeerMachineKey => $_getSZ(1);
+  $core.String get dstNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set dstPeerMachineKey($core.String v) { $_setString(1, v); }
+  set dstNodeKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDstPeerMachineKey() => $_has(1);
+  $core.bool hasDstNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDstPeerMachineKey() => clearField(2);
+  void clearDstNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get srcWgPubKey => $_getSZ(2);
@@ -140,7 +140,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
 class NegotiationResponse extends $pb.GeneratedMessage {
   factory NegotiationResponse({
     NegotiationType? type,
-    $core.String? dstPeerMachineKey,
+    $core.String? dstNodeKey,
     $core.String? uFlag,
     $core.String? pwd,
     $core.String? candidate,
@@ -149,8 +149,8 @@ class NegotiationResponse extends $pb.GeneratedMessage {
     if (type != null) {
       $result.type = type;
     }
-    if (dstPeerMachineKey != null) {
-      $result.dstPeerMachineKey = dstPeerMachineKey;
+    if (dstNodeKey != null) {
+      $result.dstNodeKey = dstNodeKey;
     }
     if (uFlag != null) {
       $result.uFlag = uFlag;
@@ -169,7 +169,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
-    ..aOS(2, _omitFieldNames ? '' : 'dstPeerMachineKey', protoName: 'dstPeerMachineKey')
+    ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(4, _omitFieldNames ? '' : 'pwd')
     ..aOS(5, _omitFieldNames ? '' : 'candidate')
@@ -207,13 +207,13 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   void clearType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get dstPeerMachineKey => $_getSZ(1);
+  $core.String get dstNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set dstPeerMachineKey($core.String v) { $_setString(1, v); }
+  set dstNodeKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDstPeerMachineKey() => $_has(1);
+  $core.bool hasDstNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDstPeerMachineKey() => clearField(2);
+  void clearDstNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get uFlag => $_getSZ(2);
@@ -245,17 +245,17 @@ class NegotiationResponse extends $pb.GeneratedMessage {
 
 class HandshakeRequest extends $pb.GeneratedMessage {
   factory HandshakeRequest({
-    $core.String? dstPeerMachineKey,
-    $core.String? srcPeerMachineKey,
+    $core.String? dstNodeKey,
+    $core.String? srcNodeKey,
     $core.String? uFlag,
     $core.String? pwd,
   }) {
     final $result = create();
-    if (dstPeerMachineKey != null) {
-      $result.dstPeerMachineKey = dstPeerMachineKey;
+    if (dstNodeKey != null) {
+      $result.dstNodeKey = dstNodeKey;
     }
-    if (srcPeerMachineKey != null) {
-      $result.srcPeerMachineKey = srcPeerMachineKey;
+    if (srcNodeKey != null) {
+      $result.srcNodeKey = srcNodeKey;
     }
     if (uFlag != null) {
       $result.uFlag = uFlag;
@@ -270,8 +270,8 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   factory HandshakeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HandshakeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'dstPeerMachineKey', protoName: 'dstPeerMachineKey')
-    ..aOS(2, _omitFieldNames ? '' : 'srcPeerMachineKey', protoName: 'srcPeerMachineKey')
+    ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
+    ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(4, _omitFieldNames ? '' : 'pwd')
     ..hasRequiredFields = false
@@ -299,22 +299,22 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   static HandshakeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get dstPeerMachineKey => $_getSZ(0);
+  $core.String get dstNodeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set dstPeerMachineKey($core.String v) { $_setString(0, v); }
+  set dstNodeKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasDstPeerMachineKey() => $_has(0);
+  $core.bool hasDstNodeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDstPeerMachineKey() => clearField(1);
+  void clearDstNodeKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get srcPeerMachineKey => $_getSZ(1);
+  $core.String get srcNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set srcPeerMachineKey($core.String v) { $_setString(1, v); }
+  set srcNodeKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSrcPeerMachineKey() => $_has(1);
+  $core.bool hasSrcNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSrcPeerMachineKey() => clearField(2);
+  void clearSrcNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get uFlag => $_getSZ(2);
@@ -337,16 +337,16 @@ class HandshakeRequest extends $pb.GeneratedMessage {
 
 class CandidateRequest extends $pb.GeneratedMessage {
   factory CandidateRequest({
-    $core.String? dstPeerMachineKey,
-    $core.String? srcPeerMachineKey,
+    $core.String? dstNodeKey,
+    $core.String? srcNodeKey,
     $core.String? candidate,
   }) {
     final $result = create();
-    if (dstPeerMachineKey != null) {
-      $result.dstPeerMachineKey = dstPeerMachineKey;
+    if (dstNodeKey != null) {
+      $result.dstNodeKey = dstNodeKey;
     }
-    if (srcPeerMachineKey != null) {
-      $result.srcPeerMachineKey = srcPeerMachineKey;
+    if (srcNodeKey != null) {
+      $result.srcNodeKey = srcNodeKey;
     }
     if (candidate != null) {
       $result.candidate = candidate;
@@ -358,8 +358,8 @@ class CandidateRequest extends $pb.GeneratedMessage {
   factory CandidateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CandidateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'dstPeerMachineKey', protoName: 'dstPeerMachineKey')
-    ..aOS(2, _omitFieldNames ? '' : 'srcPeerMachineKey', protoName: 'srcPeerMachineKey')
+    ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
+    ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'candidate')
     ..hasRequiredFields = false
   ;
@@ -386,22 +386,22 @@ class CandidateRequest extends $pb.GeneratedMessage {
   static CandidateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get dstPeerMachineKey => $_getSZ(0);
+  $core.String get dstNodeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set dstPeerMachineKey($core.String v) { $_setString(0, v); }
+  set dstNodeKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasDstPeerMachineKey() => $_has(0);
+  $core.bool hasDstNodeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDstPeerMachineKey() => clearField(1);
+  void clearDstNodeKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get srcPeerMachineKey => $_getSZ(1);
+  $core.String get srcNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set srcPeerMachineKey($core.String v) { $_setString(1, v); }
+  set srcNodeKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSrcPeerMachineKey() => $_has(1);
+  $core.bool hasSrcNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSrcPeerMachineKey() => clearField(2);
+  void clearSrcNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get candidate => $_getSZ(2);

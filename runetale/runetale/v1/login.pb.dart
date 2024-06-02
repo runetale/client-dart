@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class LoginMachineResponse extends $pb.GeneratedMessage {
-  factory LoginMachineResponse({
+class LoginNodeResponse extends $pb.GeneratedMessage {
+  factory LoginNodeResponse({
     $core.bool? isRegistered,
     $core.String? loginUrl,
     $core.String? ip,
@@ -44,11 +44,11 @@ class LoginMachineResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  LoginMachineResponse._() : super();
-  factory LoginMachineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LoginMachineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  LoginNodeResponse._() : super();
+  factory LoginNodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LoginNodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginMachineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginNodeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..aOS(2, _omitFieldNames ? '' : 'loginUrl', protoName: 'loginUrl')
     ..aOS(3, _omitFieldNames ? '' : 'ip')
@@ -62,22 +62,22 @@ class LoginMachineResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  LoginMachineResponse clone() => LoginMachineResponse()..mergeFromMessage(this);
+  LoginNodeResponse clone() => LoginNodeResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  LoginMachineResponse copyWith(void Function(LoginMachineResponse) updates) => super.copyWith((message) => updates(message as LoginMachineResponse)) as LoginMachineResponse;
+  LoginNodeResponse copyWith(void Function(LoginNodeResponse) updates) => super.copyWith((message) => updates(message as LoginNodeResponse)) as LoginNodeResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static LoginMachineResponse create() => LoginMachineResponse._();
-  LoginMachineResponse createEmptyInstance() => create();
-  static $pb.PbList<LoginMachineResponse> createRepeated() => $pb.PbList<LoginMachineResponse>();
+  static LoginNodeResponse create() => LoginNodeResponse._();
+  LoginNodeResponse createEmptyInstance() => create();
+  static $pb.PbList<LoginNodeResponse> createRepeated() => $pb.PbList<LoginNodeResponse>();
   @$core.pragma('dart2js:noInline')
-  static LoginMachineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginMachineResponse>(create);
-  static LoginMachineResponse? _defaultInstance;
+  static LoginNodeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginNodeResponse>(create);
+  static LoginNodeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get isRegistered => $_getBF(0);
@@ -134,8 +134,8 @@ class LoginMachineResponse extends $pb.GeneratedMessage {
   void clearSignalPort() => clearField(6);
 }
 
-class PeerLoginSessionResponse extends $pb.GeneratedMessage {
-  factory PeerLoginSessionResponse({
+class LoginSessionResponse extends $pb.GeneratedMessage {
+  factory LoginSessionResponse({
     $core.String? ip,
     $core.String? cidr,
     $core.String? host,
@@ -164,11 +164,11 @@ class PeerLoginSessionResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  PeerLoginSessionResponse._() : super();
-  factory PeerLoginSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PeerLoginSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  LoginSessionResponse._() : super();
+  factory LoginSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LoginSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PeerLoginSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'cidr')
     ..aOS(3, _omitFieldNames ? '' : 'host')
@@ -182,22 +182,22 @@ class PeerLoginSessionResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PeerLoginSessionResponse clone() => PeerLoginSessionResponse()..mergeFromMessage(this);
+  LoginSessionResponse clone() => LoginSessionResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PeerLoginSessionResponse copyWith(void Function(PeerLoginSessionResponse) updates) => super.copyWith((message) => updates(message as PeerLoginSessionResponse)) as PeerLoginSessionResponse;
+  LoginSessionResponse copyWith(void Function(LoginSessionResponse) updates) => super.copyWith((message) => updates(message as LoginSessionResponse)) as LoginSessionResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PeerLoginSessionResponse create() => PeerLoginSessionResponse._();
-  PeerLoginSessionResponse createEmptyInstance() => create();
-  static $pb.PbList<PeerLoginSessionResponse> createRepeated() => $pb.PbList<PeerLoginSessionResponse>();
+  static LoginSessionResponse create() => LoginSessionResponse._();
+  LoginSessionResponse createEmptyInstance() => create();
+  static $pb.PbList<LoginSessionResponse> createRepeated() => $pb.PbList<LoginSessionResponse>();
   @$core.pragma('dart2js:noInline')
-  static PeerLoginSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PeerLoginSessionResponse>(create);
-  static PeerLoginSessionResponse? _defaultInstance;
+  static LoginSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginSessionResponse>(create);
+  static LoginSessionResponse? _defaultInstance;
 
   /// host ip
   @$pb.TagNumber(1)

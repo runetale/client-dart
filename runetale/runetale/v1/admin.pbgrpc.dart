@@ -94,10 +94,10 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetComposeKeys',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.GetComposeKeysResponse.fromBuffer(value));
-  static final _$getComposeMachineStatus = $grpc.ClientMethod<$1.GetComposeMachineStatusRequest, $1.GetComposeMachineStatusResponse>(
-      '/protos.AdminService/GetComposeMachineStatus',
-      ($1.GetComposeMachineStatusRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetComposeMachineStatusResponse.fromBuffer(value));
+  static final _$getComposeNodeStatus = $grpc.ClientMethod<$1.GetComposeNodeStatusRequest, $1.GetComposeNodeStatusResponse>(
+      '/protos.AdminService/GetComposeNodeStatus',
+      ($1.GetComposeNodeStatusRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetComposeNodeStatusResponse.fromBuffer(value));
   static final _$createFleet = $grpc.ClientMethod<$1.CreateFleetRequest, $1.Fleet>(
       '/protos.AdminService/CreateFleet',
       ($1.CreateFleetRequest value) => value.writeToBuffer(),
@@ -213,8 +213,8 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getComposeKeys, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetComposeMachineStatusResponse> getComposeMachineStatus($1.GetComposeMachineStatusRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getComposeMachineStatus, request, options: options);
+  $grpc.ResponseFuture<$1.GetComposeNodeStatusResponse> getComposeNodeStatus($1.GetComposeNodeStatusRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getComposeNodeStatus, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.Fleet> createFleet($1.CreateFleetRequest request, {$grpc.CallOptions? options}) {
@@ -385,13 +385,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.GetComposeKeysResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetComposeMachineStatusRequest, $1.GetComposeMachineStatusResponse>(
-        'GetComposeMachineStatus',
-        getComposeMachineStatus_Pre,
+    $addMethod($grpc.ServiceMethod<$1.GetComposeNodeStatusRequest, $1.GetComposeNodeStatusResponse>(
+        'GetComposeNodeStatus',
+        getComposeNodeStatus_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetComposeMachineStatusRequest.fromBuffer(value),
-        ($1.GetComposeMachineStatusResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $1.GetComposeNodeStatusRequest.fromBuffer(value),
+        ($1.GetComposeNodeStatusResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateFleetRequest, $1.Fleet>(
         'CreateFleet',
         createFleet_Pre,
@@ -529,8 +529,8 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getComposeKeys(call, await request);
   }
 
-  $async.Future<$1.GetComposeMachineStatusResponse> getComposeMachineStatus_Pre($grpc.ServiceCall call, $async.Future<$1.GetComposeMachineStatusRequest> request) async {
-    return getComposeMachineStatus(call, await request);
+  $async.Future<$1.GetComposeNodeStatusResponse> getComposeNodeStatus_Pre($grpc.ServiceCall call, $async.Future<$1.GetComposeNodeStatusRequest> request) async {
+    return getComposeNodeStatus(call, await request);
   }
 
   $async.Future<$1.Fleet> createFleet_Pre($grpc.ServiceCall call, $async.Future<$1.CreateFleetRequest> request) async {
@@ -587,7 +587,7 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Resources> getResources($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.GenerateComposeKeyResponse> generateComposeKey($grpc.ServiceCall call, $1.GenerateComposeKeyRequest request);
   $async.Future<$1.GetComposeKeysResponse> getComposeKeys($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$1.GetComposeMachineStatusResponse> getComposeMachineStatus($grpc.ServiceCall call, $1.GetComposeMachineStatusRequest request);
+  $async.Future<$1.GetComposeNodeStatusResponse> getComposeNodeStatus($grpc.ServiceCall call, $1.GetComposeNodeStatusRequest request);
   $async.Future<$1.Fleet> createFleet($grpc.ServiceCall call, $1.CreateFleetRequest request);
   $async.Future<$1.Fleet> getFleet($grpc.ServiceCall call, $1.GetFleetRequest request);
   $async.Future<$1.Fleets> getFleets($grpc.ServiceCall call, $0.Empty request);

@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/machine.proto
+//  source: runetale/runetale/v1/node.proto
 //
 // @dart = 2.12
 

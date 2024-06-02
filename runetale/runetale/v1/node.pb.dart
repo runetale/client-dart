@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/machine.proto
+//  source: runetale/runetale/v1/node.proto
 //
 // @dart = 2.12
 
@@ -13,10 +13,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class SyncMachinesResponse extends $pb.GeneratedMessage {
-  factory SyncMachinesResponse({
+class SyncNodesResponse extends $pb.GeneratedMessage {
+  factory SyncNodesResponse({
     $core.bool? isEmpty,
-    $core.Iterable<RemotePeer>? remotePeers,
+    $core.Iterable<Node>? remoteNodes,
     $core.String? ip,
     $core.String? cidr,
   }) {
@@ -24,8 +24,8 @@ class SyncMachinesResponse extends $pb.GeneratedMessage {
     if (isEmpty != null) {
       $result.isEmpty = isEmpty;
     }
-    if (remotePeers != null) {
-      $result.remotePeers.addAll(remotePeers);
+    if (remoteNodes != null) {
+      $result.remoteNodes.addAll(remoteNodes);
     }
     if (ip != null) {
       $result.ip = ip;
@@ -35,13 +35,13 @@ class SyncMachinesResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  SyncMachinesResponse._() : super();
-  factory SyncMachinesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncMachinesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  SyncNodesResponse._() : super();
+  factory SyncNodesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SyncNodesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncMachinesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncNodesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isEmpty', protoName: 'isEmpty')
-    ..pc<RemotePeer>(2, _omitFieldNames ? '' : 'remotePeers', $pb.PbFieldType.PM, protoName: 'remotePeers', subBuilder: RemotePeer.create)
+    ..pc<Node>(2, _omitFieldNames ? '' : 'remoteNodes', $pb.PbFieldType.PM, protoName: 'remoteNodes', subBuilder: Node.create)
     ..aOS(3, _omitFieldNames ? '' : 'ip')
     ..aOS(4, _omitFieldNames ? '' : 'cidr')
     ..hasRequiredFields = false
@@ -51,22 +51,22 @@ class SyncMachinesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  SyncMachinesResponse clone() => SyncMachinesResponse()..mergeFromMessage(this);
+  SyncNodesResponse clone() => SyncNodesResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SyncMachinesResponse copyWith(void Function(SyncMachinesResponse) updates) => super.copyWith((message) => updates(message as SyncMachinesResponse)) as SyncMachinesResponse;
+  SyncNodesResponse copyWith(void Function(SyncNodesResponse) updates) => super.copyWith((message) => updates(message as SyncNodesResponse)) as SyncNodesResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SyncMachinesResponse create() => SyncMachinesResponse._();
-  SyncMachinesResponse createEmptyInstance() => create();
-  static $pb.PbList<SyncMachinesResponse> createRepeated() => $pb.PbList<SyncMachinesResponse>();
+  static SyncNodesResponse create() => SyncNodesResponse._();
+  SyncNodesResponse createEmptyInstance() => create();
+  static $pb.PbList<SyncNodesResponse> createRepeated() => $pb.PbList<SyncNodesResponse>();
   @$core.pragma('dart2js:noInline')
-  static SyncMachinesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncMachinesResponse>(create);
-  static SyncMachinesResponse? _defaultInstance;
+  static SyncNodesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncNodesResponse>(create);
+  static SyncNodesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get isEmpty => $_getBF(0);
@@ -78,7 +78,7 @@ class SyncMachinesResponse extends $pb.GeneratedMessage {
   void clearIsEmpty() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<RemotePeer> get remotePeers => $_getList(1);
+  $core.List<Node> get remoteNodes => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.String get ip => $_getSZ(2);
@@ -99,17 +99,17 @@ class SyncMachinesResponse extends $pb.GeneratedMessage {
   void clearCidr() => clearField(4);
 }
 
-class RemotePeer extends $pb.GeneratedMessage {
-  factory RemotePeer({
-    $core.String? remoteClientMachineKey,
+class Node extends $pb.GeneratedMessage {
+  factory Node({
+    $core.String? remoteClientNodeKey,
     $core.String? remoteWgPubKey,
     $core.Iterable<$core.String>? allowedIPs,
     $core.String? ip,
     $core.String? cidr,
   }) {
     final $result = create();
-    if (remoteClientMachineKey != null) {
-      $result.remoteClientMachineKey = remoteClientMachineKey;
+    if (remoteClientNodeKey != null) {
+      $result.remoteClientNodeKey = remoteClientNodeKey;
     }
     if (remoteWgPubKey != null) {
       $result.remoteWgPubKey = remoteWgPubKey;
@@ -125,12 +125,12 @@ class RemotePeer extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  RemotePeer._() : super();
-  factory RemotePeer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RemotePeer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Node._() : super();
+  factory Node.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Node.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RemotePeer', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'remoteClientMachineKey', protoName: 'remoteClientMachineKey')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Node', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'remoteClientNodeKey', protoName: 'remoteClientNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'remoteWgPubKey', protoName: 'remoteWgPubKey')
     ..pPS(3, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
     ..aOS(4, _omitFieldNames ? '' : 'ip')
@@ -142,31 +142,31 @@ class RemotePeer extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  RemotePeer clone() => RemotePeer()..mergeFromMessage(this);
+  Node clone() => Node()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RemotePeer copyWith(void Function(RemotePeer) updates) => super.copyWith((message) => updates(message as RemotePeer)) as RemotePeer;
+  Node copyWith(void Function(Node) updates) => super.copyWith((message) => updates(message as Node)) as Node;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RemotePeer create() => RemotePeer._();
-  RemotePeer createEmptyInstance() => create();
-  static $pb.PbList<RemotePeer> createRepeated() => $pb.PbList<RemotePeer>();
+  static Node create() => Node._();
+  Node createEmptyInstance() => create();
+  static $pb.PbList<Node> createRepeated() => $pb.PbList<Node>();
   @$core.pragma('dart2js:noInline')
-  static RemotePeer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RemotePeer>(create);
-  static RemotePeer? _defaultInstance;
+  static Node getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Node>(create);
+  static Node? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get remoteClientMachineKey => $_getSZ(0);
+  $core.String get remoteClientNodeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set remoteClientMachineKey($core.String v) { $_setString(0, v); }
+  set remoteClientNodeKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasRemoteClientMachineKey() => $_has(0);
+  $core.bool hasRemoteClientNodeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearRemoteClientMachineKey() => clearField(1);
+  void clearRemoteClientNodeKey() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get remoteWgPubKey => $_getSZ(1);
@@ -199,8 +199,8 @@ class RemotePeer extends $pb.GeneratedMessage {
   void clearCidr() => clearField(5);
 }
 
-class ComposeMachineResponse extends $pb.GeneratedMessage {
-  factory ComposeMachineResponse({
+class ComposeNodeResponse extends $pb.GeneratedMessage {
+  factory ComposeNodeResponse({
     $core.String? ip,
     $core.String? cidr,
   }) {
@@ -213,11 +213,11 @@ class ComposeMachineResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  ComposeMachineResponse._() : super();
-  factory ComposeMachineResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ComposeMachineResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  ComposeNodeResponse._() : super();
+  factory ComposeNodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ComposeNodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComposeMachineResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComposeNodeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'cidr')
     ..hasRequiredFields = false
@@ -227,22 +227,22 @@ class ComposeMachineResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ComposeMachineResponse clone() => ComposeMachineResponse()..mergeFromMessage(this);
+  ComposeNodeResponse clone() => ComposeNodeResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ComposeMachineResponse copyWith(void Function(ComposeMachineResponse) updates) => super.copyWith((message) => updates(message as ComposeMachineResponse)) as ComposeMachineResponse;
+  ComposeNodeResponse copyWith(void Function(ComposeNodeResponse) updates) => super.copyWith((message) => updates(message as ComposeNodeResponse)) as ComposeNodeResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ComposeMachineResponse create() => ComposeMachineResponse._();
-  ComposeMachineResponse createEmptyInstance() => create();
-  static $pb.PbList<ComposeMachineResponse> createRepeated() => $pb.PbList<ComposeMachineResponse>();
+  static ComposeNodeResponse create() => ComposeNodeResponse._();
+  ComposeNodeResponse createEmptyInstance() => create();
+  static $pb.PbList<ComposeNodeResponse> createRepeated() => $pb.PbList<ComposeNodeResponse>();
   @$core.pragma('dart2js:noInline')
-  static ComposeMachineResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComposeMachineResponse>(create);
-  static ComposeMachineResponse? _defaultInstance;
+  static ComposeNodeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComposeNodeResponse>(create);
+  static ComposeNodeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
