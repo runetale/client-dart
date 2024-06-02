@@ -2045,7 +2045,6 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
     $core.bool? isConnected,
     $core.String? ip,
     $core.String? cidr,
-    $core.String? name,
   }) {
     final $result = create();
     if (isConnected != null) {
@@ -2057,9 +2056,6 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
     if (cidr != null) {
       $result.cidr = cidr;
     }
-    if (name != null) {
-      $result.name = name;
-    }
     return $result;
   }
   GetComposeMachineStatusResponse._() : super();
@@ -2070,7 +2066,6 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
     ..aOB(1, _omitFieldNames ? '' : 'isConnected', protoName: 'isConnected')
     ..aOS(2, _omitFieldNames ? '' : 'ip')
     ..aOS(3, _omitFieldNames ? '' : 'cidr')
-    ..aOS(4, _omitFieldNames ? '' : 'name')
     ..hasRequiredFields = false
   ;
 
@@ -2121,15 +2116,6 @@ class GetComposeMachineStatusResponse extends $pb.GeneratedMessage {
   $core.bool hasCidr() => $_has(2);
   @$pb.TagNumber(3)
   void clearCidr() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get name => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set name($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasName() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearName() => clearField(4);
 }
 
 class GetResourceRequest extends $pb.GeneratedMessage {

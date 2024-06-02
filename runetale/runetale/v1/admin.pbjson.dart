@@ -499,15 +499,13 @@ const GetComposeMachineStatusResponse$json = {
     {'1': 'isConnected', '3': 1, '4': 1, '5': 8, '10': 'isConnected'},
     {'1': 'ip', '3': 2, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'cidr', '3': 3, '4': 1, '5': 9, '10': 'cidr'},
-    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
   ],
 };
 
 /// Descriptor for `GetComposeMachineStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getComposeMachineStatusResponseDescriptor = $convert.base64Decode(
     'Ch9HZXRDb21wb3NlTWFjaGluZVN0YXR1c1Jlc3BvbnNlEiAKC2lzQ29ubmVjdGVkGAEgASgIUg'
-    'tpc0Nvbm5lY3RlZBIOCgJpcBgCIAEoCVICaXASEgoEY2lkchgDIAEoCVIEY2lkchISCgRuYW1l'
-    'GAQgASgJUgRuYW1l');
+    'tpc0Nvbm5lY3RlZBIOCgJpcBgCIAEoCVICaXASEgoEY2lkchgDIAEoCVIEY2lkcg==');
 
 @$core.Deprecated('Use getResourceRequestDescriptor instead')
 const GetResourceRequest$json = {
