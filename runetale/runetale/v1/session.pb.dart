@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
-  factory VerifyPeerLoginSessionRequest({
+class VerifyLoginSessionRequest extends $pb.GeneratedMessage {
+  factory VerifyLoginSessionRequest({
     $core.String? sessionID,
     $core.String? deploymentMethod,
   }) {
@@ -27,11 +27,11 @@ class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  VerifyPeerLoginSessionRequest._() : super();
-  factory VerifyPeerLoginSessionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory VerifyPeerLoginSessionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  VerifyLoginSessionRequest._() : super();
+  factory VerifyLoginSessionRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VerifyLoginSessionRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyPeerLoginSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyLoginSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sessionID', protoName: 'sessionID')
     ..aOS(2, _omitFieldNames ? '' : 'deploymentMethod', protoName: 'deploymentMethod')
     ..hasRequiredFields = false
@@ -41,24 +41,23 @@ class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  VerifyPeerLoginSessionRequest clone() => VerifyPeerLoginSessionRequest()..mergeFromMessage(this);
+  VerifyLoginSessionRequest clone() => VerifyLoginSessionRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VerifyPeerLoginSessionRequest copyWith(void Function(VerifyPeerLoginSessionRequest) updates) => super.copyWith((message) => updates(message as VerifyPeerLoginSessionRequest)) as VerifyPeerLoginSessionRequest;
+  VerifyLoginSessionRequest copyWith(void Function(VerifyLoginSessionRequest) updates) => super.copyWith((message) => updates(message as VerifyLoginSessionRequest)) as VerifyLoginSessionRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static VerifyPeerLoginSessionRequest create() => VerifyPeerLoginSessionRequest._();
-  VerifyPeerLoginSessionRequest createEmptyInstance() => create();
-  static $pb.PbList<VerifyPeerLoginSessionRequest> createRepeated() => $pb.PbList<VerifyPeerLoginSessionRequest>();
+  static VerifyLoginSessionRequest create() => VerifyLoginSessionRequest._();
+  VerifyLoginSessionRequest createEmptyInstance() => create();
+  static $pb.PbList<VerifyLoginSessionRequest> createRepeated() => $pb.PbList<VerifyLoginSessionRequest>();
   @$core.pragma('dart2js:noInline')
-  static VerifyPeerLoginSessionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifyPeerLoginSessionRequest>(create);
-  static VerifyPeerLoginSessionRequest? _defaultInstance;
+  static VerifyLoginSessionRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifyLoginSessionRequest>(create);
+  static VerifyLoginSessionRequest? _defaultInstance;
 
-  /// jwt session id for etcd
   @$pb.TagNumber(1)
   $core.String get sessionID => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -68,7 +67,6 @@ class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSessionID() => clearField(1);
 
-  /// DeploymentMethod, for `enum Deployment Method`` on `admin.proto``
   @$pb.TagNumber(2)
   $core.String get deploymentMethod => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -79,8 +77,8 @@ class VerifyPeerLoginSessionRequest extends $pb.GeneratedMessage {
   void clearDeploymentMethod() => clearField(2);
 }
 
-class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
-  factory VerifyPeerLoginSessionResponse({
+class VerifyLoginSessionResponse extends $pb.GeneratedMessage {
+  factory VerifyLoginSessionResponse({
     $core.String? ip,
     $core.String? host,
     $core.String? os,
@@ -97,11 +95,11 @@ class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  VerifyPeerLoginSessionResponse._() : super();
-  factory VerifyPeerLoginSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory VerifyPeerLoginSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  VerifyLoginSessionResponse._() : super();
+  factory VerifyLoginSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory VerifyLoginSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyPeerLoginSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyLoginSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'host')
     ..aOS(3, _omitFieldNames ? '' : 'os')
@@ -112,24 +110,23 @@ class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  VerifyPeerLoginSessionResponse clone() => VerifyPeerLoginSessionResponse()..mergeFromMessage(this);
+  VerifyLoginSessionResponse clone() => VerifyLoginSessionResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VerifyPeerLoginSessionResponse copyWith(void Function(VerifyPeerLoginSessionResponse) updates) => super.copyWith((message) => updates(message as VerifyPeerLoginSessionResponse)) as VerifyPeerLoginSessionResponse;
+  VerifyLoginSessionResponse copyWith(void Function(VerifyLoginSessionResponse) updates) => super.copyWith((message) => updates(message as VerifyLoginSessionResponse)) as VerifyLoginSessionResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static VerifyPeerLoginSessionResponse create() => VerifyPeerLoginSessionResponse._();
-  VerifyPeerLoginSessionResponse createEmptyInstance() => create();
-  static $pb.PbList<VerifyPeerLoginSessionResponse> createRepeated() => $pb.PbList<VerifyPeerLoginSessionResponse>();
+  static VerifyLoginSessionResponse create() => VerifyLoginSessionResponse._();
+  VerifyLoginSessionResponse createEmptyInstance() => create();
+  static $pb.PbList<VerifyLoginSessionResponse> createRepeated() => $pb.PbList<VerifyLoginSessionResponse>();
   @$core.pragma('dart2js:noInline')
-  static VerifyPeerLoginSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifyPeerLoginSessionResponse>(create);
-  static VerifyPeerLoginSessionResponse? _defaultInstance;
+  static VerifyLoginSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VerifyLoginSessionResponse>(create);
+  static VerifyLoginSessionResponse? _defaultInstance;
 
-  /// host ip
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -139,7 +136,6 @@ class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearIp() => clearField(1);
 
-  /// host name
   @$pb.TagNumber(2)
   $core.String get host => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -149,7 +145,6 @@ class VerifyPeerLoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearHost() => clearField(2);
 
-  /// host os
   @$pb.TagNumber(3)
   $core.String get os => $_getSZ(2);
   @$pb.TagNumber(3)

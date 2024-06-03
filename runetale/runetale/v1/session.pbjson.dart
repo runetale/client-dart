@@ -13,23 +13,23 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use verifyPeerLoginSessionRequestDescriptor instead')
-const VerifyPeerLoginSessionRequest$json = {
-  '1': 'VerifyPeerLoginSessionRequest',
+@$core.Deprecated('Use verifyLoginSessionRequestDescriptor instead')
+const VerifyLoginSessionRequest$json = {
+  '1': 'VerifyLoginSessionRequest',
   '2': [
     {'1': 'sessionID', '3': 1, '4': 1, '5': 9, '10': 'sessionID'},
     {'1': 'deploymentMethod', '3': 2, '4': 1, '5': 9, '10': 'deploymentMethod'},
   ],
 };
 
-/// Descriptor for `VerifyPeerLoginSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List verifyPeerLoginSessionRequestDescriptor = $convert.base64Decode(
-    'Ch1WZXJpZnlQZWVyTG9naW5TZXNzaW9uUmVxdWVzdBIcCglzZXNzaW9uSUQYASABKAlSCXNlc3'
-    'Npb25JRBIqChBkZXBsb3ltZW50TWV0aG9kGAIgASgJUhBkZXBsb3ltZW50TWV0aG9k');
+/// Descriptor for `VerifyLoginSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verifyLoginSessionRequestDescriptor = $convert.base64Decode(
+    'ChlWZXJpZnlMb2dpblNlc3Npb25SZXF1ZXN0EhwKCXNlc3Npb25JRBgBIAEoCVIJc2Vzc2lvbk'
+    'lEEioKEGRlcGxveW1lbnRNZXRob2QYAiABKAlSEGRlcGxveW1lbnRNZXRob2Q=');
 
-@$core.Deprecated('Use verifyPeerLoginSessionResponseDescriptor instead')
-const VerifyPeerLoginSessionResponse$json = {
-  '1': 'VerifyPeerLoginSessionResponse',
+@$core.Deprecated('Use verifyLoginSessionResponseDescriptor instead')
+const VerifyLoginSessionResponse$json = {
+  '1': 'VerifyLoginSessionResponse',
   '2': [
     {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'host', '3': 2, '4': 1, '5': 9, '10': 'host'},
@@ -37,8 +37,8 @@ const VerifyPeerLoginSessionResponse$json = {
   ],
 };
 
-/// Descriptor for `VerifyPeerLoginSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List verifyPeerLoginSessionResponseDescriptor = $convert.base64Decode(
-    'Ch5WZXJpZnlQZWVyTG9naW5TZXNzaW9uUmVzcG9uc2USDgoCaXAYASABKAlSAmlwEhIKBGhvc3'
-    'QYAiABKAlSBGhvc3QSDgoCb3MYAyABKAlSAm9z');
+/// Descriptor for `VerifyLoginSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List verifyLoginSessionResponseDescriptor = $convert.base64Decode(
+    'ChpWZXJpZnlMb2dpblNlc3Npb25SZXNwb25zZRIOCgJpcBgBIAEoCVICaXASEgoEaG9zdBgCIA'
+    'EoCVIEaG9zdBIOCgJvcxgDIAEoCVICb3M=');
 
