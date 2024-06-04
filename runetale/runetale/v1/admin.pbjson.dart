@@ -728,6 +728,11 @@ const User$json = {
     {'1': 'joined', '3': 7, '4': 1, '5': 9, '10': 'joined'},
     {'1': 'lastSeen', '3': 8, '4': 1, '5': 9, '10': 'lastSeen'},
     {'1': 'status', '3': 9, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'groups', '3': 10, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
+    {'1': 'devices', '3': 11, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
+    {'1': 'resources', '3': 12, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'fleets', '3': 13, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
+    {'1': 'inks', '3': 14, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
   ],
 };
 
@@ -736,7 +741,11 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'CgRVc2VyEg4KAmlkGAEgASgEUgJpZBIWCgZub2RlSWQYAiABKARSBm5vZGVJZBISCgRuYW1lGA'
     'MgASgJUgRuYW1lEhgKB3BpY3R1cmUYBCABKAlSB3BpY3R1cmUSFAoFZW1haWwYBSABKAlSBWVt'
     'YWlsEhIKBHJvbGUYBiABKAlSBHJvbGUSFgoGam9pbmVkGAcgASgJUgZqb2luZWQSGgoIbGFzdF'
-    'NlZW4YCCABKAlSCGxhc3RTZWVuEhYKBnN0YXR1cxgJIAEoCFIGc3RhdHVz');
+    'NlZW4YCCABKAlSCGxhc3RTZWVuEhYKBnN0YXR1cxgJIAEoCFIGc3RhdHVzEiUKBmdyb3VwcxgK'
+    'IAMoCzINLnByb3Rvcy5Hcm91cFIGZ3JvdXBzEigKB2RldmljZXMYCyADKAsyDi5wcm90b3MuRG'
+    'V2aWNlUgdkZXZpY2VzEi4KCXJlc291cmNlcxgMIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVz'
+    'b3VyY2VzEiUKBmZsZWV0cxgNIAMoCzINLnByb3Rvcy5GbGVldFIGZmxlZXRzEh8KBGlua3MYDi'
+    'ADKAsyCy5wcm90b3MuSW5rUgRpbmtz');
 
 @$core.Deprecated('Use deviceDescriptor instead')
 const Device$json = {

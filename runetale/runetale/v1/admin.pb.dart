@@ -3217,6 +3217,11 @@ class User extends $pb.GeneratedMessage {
     $core.String? joined,
     $core.String? lastSeen,
     $core.bool? status,
+    $core.Iterable<Group>? groups,
+    $core.Iterable<Device>? devices,
+    $core.Iterable<Resource>? resources,
+    $core.Iterable<Fleet>? fleets,
+    $core.Iterable<Ink>? inks,
   }) {
     final $result = create();
     if (id != null) {
@@ -3246,6 +3251,21 @@ class User extends $pb.GeneratedMessage {
     if (status != null) {
       $result.status = status;
     }
+    if (groups != null) {
+      $result.groups.addAll(groups);
+    }
+    if (devices != null) {
+      $result.devices.addAll(devices);
+    }
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (fleets != null) {
+      $result.fleets.addAll(fleets);
+    }
+    if (inks != null) {
+      $result.inks.addAll(inks);
+    }
     return $result;
   }
   User._() : super();
@@ -3262,6 +3282,11 @@ class User extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'joined')
     ..aOS(8, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
     ..aOB(9, _omitFieldNames ? '' : 'status')
+    ..pc<Group>(10, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..pc<Device>(11, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<Resource>(12, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<Fleet>(13, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<Ink>(14, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
     ..hasRequiredFields = false
   ;
 
@@ -3366,6 +3391,21 @@ class User extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(8);
   @$pb.TagNumber(9)
   void clearStatus() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<Group> get groups => $_getList(9);
+
+  @$pb.TagNumber(11)
+  $core.List<Device> get devices => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.List<Resource> get resources => $_getList(11);
+
+  @$pb.TagNumber(13)
+  $core.List<Fleet> get fleets => $_getList(12);
+
+  @$pb.TagNumber(14)
+  $core.List<Ink> get inks => $_getList(13);
 }
 
 class Device extends $pb.GeneratedMessage {
