@@ -75,31 +75,3 @@ final $typed_data.Uint8List authenticateResponseDescriptor = $convert.base64Deco
     'gCIAEoCVIFZW1haWwSGgoIdXNlcm5hbWUYAyABKAlSCHVzZXJuYW1lEhAKA3N1YhgEIAEoCVID'
     'c3ViEiIKDGlzUmVnaXN0ZXJlZBgFIAEoCFIMaXNSZWdpc3RlcmVk');
 
-@$core.Deprecated('Use getInvitationRequestDescriptor instead')
-const GetInvitationRequest$json = {
-  '1': 'GetInvitationRequest',
-  '2': [
-    {'1': 'inviteCode', '3': 1, '4': 1, '5': 9, '10': 'inviteCode'},
-  ],
-};
-
-/// Descriptor for `GetInvitationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getInvitationRequestDescriptor = $convert.base64Decode(
-    'ChRHZXRJbnZpdGF0aW9uUmVxdWVzdBIeCgppbnZpdGVDb2RlGAEgASgJUgppbnZpdGVDb2Rl');
-
-@$core.Deprecated('Use getInvitationResponseDescriptor instead')
-const GetInvitationResponse$json = {
-  '1': 'GetInvitationResponse',
-  '2': [
-    {'1': 'inviteID', '3': 1, '4': 1, '5': 9, '10': 'inviteID'},
-    {'1': 'invitationSub', '3': 2, '4': 1, '5': 9, '10': 'invitationSub'},
-    {'1': 'invitationEmail', '3': 3, '4': 1, '5': 9, '10': 'invitationEmail'},
-  ],
-};
-
-/// Descriptor for `GetInvitationResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getInvitationResponseDescriptor = $convert.base64Decode(
-    'ChVHZXRJbnZpdGF0aW9uUmVzcG9uc2USGgoIaW52aXRlSUQYASABKAlSCGludml0ZUlEEiQKDW'
-    'ludml0YXRpb25TdWIYAiABKAlSDWludml0YXRpb25TdWISKAoPaW52aXRhdGlvbkVtYWlsGAMg'
-    'ASgJUg9pbnZpdGF0aW9uRW1haWw=');
-

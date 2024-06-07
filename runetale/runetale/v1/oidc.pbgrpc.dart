@@ -30,10 +30,6 @@ class OIDCServiceClient extends $grpc.Client {
       '/protos.OIDCService/Authenticate',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $7.AuthenticateResponse.fromBuffer(value));
-  static final _$getInvitation = $grpc.ClientMethod<$7.GetInvitationRequest, $7.GetInvitationResponse>(
-      '/protos.OIDCService/GetInvitation',
-      ($7.GetInvitationRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $7.GetInvitationResponse.fromBuffer(value));
 
   OIDCServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -47,10 +43,6 @@ class OIDCServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$7.AuthenticateResponse> authenticate($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$authenticate, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$7.GetInvitationResponse> getInvitation($7.GetInvitationRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$getInvitation, request, options: options);
   }
 }
 
@@ -73,13 +65,6 @@ abstract class OIDCServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($7.AuthenticateResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$7.GetInvitationRequest, $7.GetInvitationResponse>(
-        'GetInvitation',
-        getInvitation_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $7.GetInvitationRequest.fromBuffer(value),
-        ($7.GetInvitationResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$7.LoginResponse> login_Pre($grpc.ServiceCall call, $async.Future<$7.LoginRequest> request) async {
@@ -90,11 +75,6 @@ abstract class OIDCServiceBase extends $grpc.Service {
     return authenticate(call, await request);
   }
 
-  $async.Future<$7.GetInvitationResponse> getInvitation_Pre($grpc.ServiceCall call, $async.Future<$7.GetInvitationRequest> request) async {
-    return getInvitation(call, await request);
-  }
-
   $async.Future<$7.LoginResponse> login($grpc.ServiceCall call, $7.LoginRequest request);
   $async.Future<$7.AuthenticateResponse> authenticate($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$7.GetInvitationResponse> getInvitation($grpc.ServiceCall call, $7.GetInvitationRequest request);
 }
