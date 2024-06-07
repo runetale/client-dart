@@ -156,6 +156,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? username,
     $core.String? picture,
+    $core.String? inviteCode,
   }) {
     final $result = create();
     if (sub != null) {
@@ -179,6 +180,9 @@ class LoginRequest extends $pb.GeneratedMessage {
     if (picture != null) {
       $result.picture = picture;
     }
+    if (inviteCode != null) {
+      $result.inviteCode = inviteCode;
+    }
     return $result;
   }
   LoginRequest._() : super();
@@ -193,6 +197,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'email')
     ..aOS(6, _omitFieldNames ? '' : 'username')
     ..aOS(7, _omitFieldNames ? '' : 'picture')
+    ..aOS(8, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
     ..hasRequiredFields = false
   ;
 
@@ -279,6 +284,15 @@ class LoginRequest extends $pb.GeneratedMessage {
   $core.bool hasPicture() => $_has(6);
   @$pb.TagNumber(7)
   void clearPicture() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get inviteCode => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set inviteCode($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasInviteCode() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearInviteCode() => clearField(8);
 }
 
 class AuthenticateResponse extends $pb.GeneratedMessage {
