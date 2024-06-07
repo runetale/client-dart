@@ -144,7 +144,7 @@ class AclResources extends $pb.GeneratedMessage {
   factory AclResources({
     $core.Iterable<$fixnum.Int64>? nodeIds,
     $core.String? policyId,
-    AclResourceType? type,
+    AclType? aclType,
   }) {
     final $result = create();
     if (nodeIds != null) {
@@ -153,8 +153,8 @@ class AclResources extends $pb.GeneratedMessage {
     if (policyId != null) {
       $result.policyId = policyId;
     }
-    if (type != null) {
-      $result.type = type;
+    if (aclType != null) {
+      $result.aclType = aclType;
     }
     return $result;
   }
@@ -165,7 +165,7 @@ class AclResources extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResources', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..aOS(2, _omitFieldNames ? '' : 'policyId', protoName: 'policyId')
-    ..e<AclResourceType>(3, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AclResourceType.FLEET, valueOf: AclResourceType.valueOf, enumValues: AclResourceType.values)
+    ..e<AclType>(3, _omitFieldNames ? '' : 'aclType', $pb.PbFieldType.OE, protoName: 'aclType', defaultOrMaker: AclType.FLEET, valueOf: AclType.valueOf, enumValues: AclType.values)
     ..hasRequiredFields = false
   ;
 
@@ -203,13 +203,13 @@ class AclResources extends $pb.GeneratedMessage {
   void clearPolicyId() => clearField(2);
 
   @$pb.TagNumber(3)
-  AclResourceType get type => $_getN(2);
+  AclType get aclType => $_getN(2);
   @$pb.TagNumber(3)
-  set type(AclResourceType v) { setField(3, v); }
+  set aclType(AclType v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasType() => $_has(2);
+  $core.bool hasAclType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearType() => clearField(3);
+  void clearAclType() => clearField(3);
 }
 
 class PatchAclRequest extends $pb.GeneratedMessage {
@@ -502,7 +502,7 @@ class AclResponse extends $pb.GeneratedMessage {
     $core.String? proto,
     $fixnum.Int64? port,
     $core.String? age,
-    $core.String? type,
+    AclType? aclType,
   }) {
     final $result = create();
     if (id != null) {
@@ -529,8 +529,8 @@ class AclResponse extends $pb.GeneratedMessage {
     if (age != null) {
       $result.age = age;
     }
-    if (type != null) {
-      $result.type = type;
+    if (aclType != null) {
+      $result.aclType = aclType;
     }
     return $result;
   }
@@ -547,7 +547,7 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'proto')
     ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(8, _omitFieldNames ? '' : 'age')
-    ..aOS(9, _omitFieldNames ? '' : 'type')
+    ..e<AclType>(9, _omitFieldNames ? '' : 'aclType', $pb.PbFieldType.OE, protoName: 'aclType', defaultOrMaker: AclType.FLEET, valueOf: AclType.valueOf, enumValues: AclType.values)
     ..hasRequiredFields = false
   ;
 
@@ -649,13 +649,13 @@ class AclResponse extends $pb.GeneratedMessage {
   void clearAge() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get type => $_getSZ(8);
+  AclType get aclType => $_getN(8);
   @$pb.TagNumber(9)
-  set type($core.String v) { $_setString(8, v); }
+  set aclType(AclType v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasType() => $_has(8);
+  $core.bool hasAclType() => $_has(8);
   @$pb.TagNumber(9)
-  void clearType() => clearField(9);
+  void clearAclType() => clearField(9);
 }
 
 class GetMeResponse extends $pb.GeneratedMessage {
@@ -3112,7 +3112,7 @@ class Group extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<User>? users,
     $core.String? age,
-    $core.String? type,
+    Platform? platform,
   }) {
     final $result = create();
     if (id != null) {
@@ -3127,8 +3127,8 @@ class Group extends $pb.GeneratedMessage {
     if (age != null) {
       $result.age = age;
     }
-    if (type != null) {
-      $result.type = type;
+    if (platform != null) {
+      $result.platform = platform;
     }
     return $result;
   }
@@ -3141,7 +3141,7 @@ class Group extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..pc<User>(3, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..aOS(4, _omitFieldNames ? '' : 'age')
-    ..aOS(5, _omitFieldNames ? '' : 'type')
+    ..e<Platform>(5, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..hasRequiredFields = false
   ;
 
@@ -3197,13 +3197,13 @@ class Group extends $pb.GeneratedMessage {
   void clearAge() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get type => $_getSZ(4);
+  Platform get platform => $_getN(4);
   @$pb.TagNumber(5)
-  set type($core.String v) { $_setString(4, v); }
+  set platform(Platform v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasType() => $_has(4);
+  $core.bool hasPlatform() => $_has(4);
   @$pb.TagNumber(5)
-  void clearType() => clearField(5);
+  void clearPlatform() => clearField(5);
 }
 
 class User extends $pb.GeneratedMessage {

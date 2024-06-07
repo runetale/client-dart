@@ -13,15 +13,15 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class AclResourceType extends $pb.ProtobufEnum {
-  static const AclResourceType FLEET = AclResourceType._(0, _omitEnumNames ? '' : 'FLEET');
-  static const AclResourceType RESOURCE = AclResourceType._(1, _omitEnumNames ? '' : 'RESOURCE');
-  static const AclResourceType GROUP = AclResourceType._(2, _omitEnumNames ? '' : 'GROUP');
-  static const AclResourceType USER = AclResourceType._(3, _omitEnumNames ? '' : 'USER');
-  static const AclResourceType INK = AclResourceType._(4, _omitEnumNames ? '' : 'INK');
-  static const AclResourceType DEVICE = AclResourceType._(5, _omitEnumNames ? '' : 'DEVICE');
+class AclType extends $pb.ProtobufEnum {
+  static const AclType FLEET = AclType._(0, _omitEnumNames ? '' : 'FLEET');
+  static const AclType RESOURCE = AclType._(1, _omitEnumNames ? '' : 'RESOURCE');
+  static const AclType GROUP = AclType._(2, _omitEnumNames ? '' : 'GROUP');
+  static const AclType USER = AclType._(3, _omitEnumNames ? '' : 'USER');
+  static const AclType INK = AclType._(4, _omitEnumNames ? '' : 'INK');
+  static const AclType DEVICE = AclType._(5, _omitEnumNames ? '' : 'DEVICE');
 
-  static const $core.List<AclResourceType> values = <AclResourceType> [
+  static const $core.List<AclType> values = <AclType> [
     FLEET,
     RESOURCE,
     GROUP,
@@ -30,10 +30,10 @@ class AclResourceType extends $pb.ProtobufEnum {
     DEVICE,
   ];
 
-  static final $core.Map<$core.int, AclResourceType> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static AclResourceType? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, AclType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static AclType? valueOf($core.int value) => _byValue[value];
 
-  const AclResourceType._($core.int v, $core.String n) : super(v, n);
+  const AclType._($core.int v, $core.String n) : super(v, n);
 }
 
 class ExpirelyTime extends $pb.ProtobufEnum {
