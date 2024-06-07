@@ -502,7 +502,7 @@ class AclResponse extends $pb.GeneratedMessage {
     $core.String? proto,
     $fixnum.Int64? port,
     $core.String? age,
-    AclType? aclType,
+    $core.String? aclType,
   }) {
     final $result = create();
     if (id != null) {
@@ -547,7 +547,7 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'proto')
     ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(8, _omitFieldNames ? '' : 'age')
-    ..e<AclType>(9, _omitFieldNames ? '' : 'aclType', $pb.PbFieldType.OE, protoName: 'aclType', defaultOrMaker: AclType.FLEET, valueOf: AclType.valueOf, enumValues: AclType.values)
+    ..aOS(9, _omitFieldNames ? '' : 'aclType', protoName: 'aclType')
     ..hasRequiredFields = false
   ;
 
@@ -649,9 +649,9 @@ class AclResponse extends $pb.GeneratedMessage {
   void clearAge() => clearField(8);
 
   @$pb.TagNumber(9)
-  AclType get aclType => $_getN(8);
+  $core.String get aclType => $_getSZ(8);
   @$pb.TagNumber(9)
-  set aclType(AclType v) { setField(9, v); }
+  set aclType($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
   $core.bool hasAclType() => $_has(8);
   @$pb.TagNumber(9)
