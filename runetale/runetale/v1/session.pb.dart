@@ -13,17 +13,19 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'admin.pbenum.dart' as $1;
+
 class VerifyLoginSessionRequest extends $pb.GeneratedMessage {
   factory VerifyLoginSessionRequest({
     $core.String? sessionID,
-    $core.String? deploymentMethod,
+    $1.Platform? platform,
   }) {
     final $result = create();
     if (sessionID != null) {
       $result.sessionID = sessionID;
     }
-    if (deploymentMethod != null) {
-      $result.deploymentMethod = deploymentMethod;
+    if (platform != null) {
+      $result.platform = platform;
     }
     return $result;
   }
@@ -33,7 +35,7 @@ class VerifyLoginSessionRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'VerifyLoginSessionRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sessionID', protoName: 'sessionID')
-    ..aOS(2, _omitFieldNames ? '' : 'deploymentMethod', protoName: 'deploymentMethod')
+    ..e<$1.Platform>(2, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: $1.Platform.DOCKER, valueOf: $1.Platform.valueOf, enumValues: $1.Platform.values)
     ..hasRequiredFields = false
   ;
 
@@ -68,13 +70,13 @@ class VerifyLoginSessionRequest extends $pb.GeneratedMessage {
   void clearSessionID() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get deploymentMethod => $_getSZ(1);
+  $1.Platform get platform => $_getN(1);
   @$pb.TagNumber(2)
-  set deploymentMethod($core.String v) { $_setString(1, v); }
+  set platform($1.Platform v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDeploymentMethod() => $_has(1);
+  $core.bool hasPlatform() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDeploymentMethod() => clearField(2);
+  void clearPlatform() => clearField(2);
 }
 
 class VerifyLoginSessionResponse extends $pb.GeneratedMessage {

@@ -18,14 +18,14 @@ const VerifyLoginSessionRequest$json = {
   '1': 'VerifyLoginSessionRequest',
   '2': [
     {'1': 'sessionID', '3': 1, '4': 1, '5': 9, '10': 'sessionID'},
-    {'1': 'deploymentMethod', '3': 2, '4': 1, '5': 9, '10': 'deploymentMethod'},
+    {'1': 'platform', '3': 2, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
   ],
 };
 
 /// Descriptor for `VerifyLoginSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List verifyLoginSessionRequestDescriptor = $convert.base64Decode(
     'ChlWZXJpZnlMb2dpblNlc3Npb25SZXF1ZXN0EhwKCXNlc3Npb25JRBgBIAEoCVIJc2Vzc2lvbk'
-    'lEEioKEGRlcGxveW1lbnRNZXRob2QYAiABKAlSEGRlcGxveW1lbnRNZXRob2Q=');
+    'lEEiwKCHBsYXRmb3JtGAIgASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9ybQ==');
 
 @$core.Deprecated('Use verifyLoginSessionResponseDescriptor instead')
 const VerifyLoginSessionResponse$json = {
