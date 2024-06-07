@@ -68,21 +68,21 @@ class Action extends $pb.ProtobufEnum {
   const Action._($core.int v, $core.String n) : super(v, n);
 }
 
-class PlatformMethod extends $pb.ProtobufEnum {
-  static const PlatformMethod DOCKER = PlatformMethod._(0, _omitEnumNames ? '' : 'DOCKER');
-  static const PlatformMethod CLI = PlatformMethod._(1, _omitEnumNames ? '' : 'CLI');
-  static const PlatformMethod LINUX = PlatformMethod._(2, _omitEnumNames ? '' : 'LINUX');
-  static const PlatformMethod GCP = PlatformMethod._(3, _omitEnumNames ? '' : 'GCP');
-  static const PlatformMethod MANUAL = PlatformMethod._(4, _omitEnumNames ? '' : 'MANUAL');
-  static const PlatformMethod AWS = PlatformMethod._(5, _omitEnumNames ? '' : 'AWS');
-  static const PlatformMethod AZURE = PlatformMethod._(6, _omitEnumNames ? '' : 'AZURE');
-  static const PlatformMethod ONPREM = PlatformMethod._(7, _omitEnumNames ? '' : 'ONPREM');
-  static const PlatformMethod MACOS = PlatformMethod._(8, _omitEnumNames ? '' : 'MACOS');
-  static const PlatformMethod WINDOWS = PlatformMethod._(9, _omitEnumNames ? '' : 'WINDOWS');
-  static const PlatformMethod ONBOARDING = PlatformMethod._(10, _omitEnumNames ? '' : 'ONBOARDING');
-  static const PlatformMethod OTHER = PlatformMethod._(11, _omitEnumNames ? '' : 'OTHER');
+class Platform extends $pb.ProtobufEnum {
+  static const Platform DOCKER = Platform._(0, _omitEnumNames ? '' : 'DOCKER');
+  static const Platform CLI = Platform._(1, _omitEnumNames ? '' : 'CLI');
+  static const Platform LINUX = Platform._(2, _omitEnumNames ? '' : 'LINUX');
+  static const Platform GCP = Platform._(3, _omitEnumNames ? '' : 'GCP');
+  static const Platform MANUAL = Platform._(4, _omitEnumNames ? '' : 'MANUAL');
+  static const Platform AWS = Platform._(5, _omitEnumNames ? '' : 'AWS');
+  static const Platform AZURE = Platform._(6, _omitEnumNames ? '' : 'AZURE');
+  static const Platform ONPREM = Platform._(7, _omitEnumNames ? '' : 'ONPREM');
+  static const Platform MACOS = Platform._(8, _omitEnumNames ? '' : 'MACOS');
+  static const Platform WINDOWS = Platform._(9, _omitEnumNames ? '' : 'WINDOWS');
+  static const Platform ONBOARDING = Platform._(10, _omitEnumNames ? '' : 'ONBOARDING');
+  static const Platform OTHER = Platform._(11, _omitEnumNames ? '' : 'OTHER');
 
-  static const $core.List<PlatformMethod> values = <PlatformMethod> [
+  static const $core.List<Platform> values = <Platform> [
     DOCKER,
     CLI,
     LINUX,
@@ -97,10 +97,10 @@ class PlatformMethod extends $pb.ProtobufEnum {
     OTHER,
   ];
 
-  static final $core.Map<$core.int, PlatformMethod> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static PlatformMethod? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, Platform> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static Platform? valueOf($core.int value) => _byValue[value];
 
-  const PlatformMethod._($core.int v, $core.String n) : super(v, n);
+  const Platform._($core.int v, $core.String n) : super(v, n);
 }
 
 
