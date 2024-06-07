@@ -3112,7 +3112,6 @@ class Group extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<User>? users,
     $core.String? age,
-    Platform? platform,
   }) {
     final $result = create();
     if (id != null) {
@@ -3127,9 +3126,6 @@ class Group extends $pb.GeneratedMessage {
     if (age != null) {
       $result.age = age;
     }
-    if (platform != null) {
-      $result.platform = platform;
-    }
     return $result;
   }
   Group._() : super();
@@ -3141,7 +3137,6 @@ class Group extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..pc<User>(3, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..aOS(4, _omitFieldNames ? '' : 'age')
-    ..e<Platform>(5, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..hasRequiredFields = false
   ;
 
@@ -3195,15 +3190,6 @@ class Group extends $pb.GeneratedMessage {
   $core.bool hasAge() => $_has(3);
   @$pb.TagNumber(4)
   void clearAge() => clearField(4);
-
-  @$pb.TagNumber(5)
-  Platform get platform => $_getN(4);
-  @$pb.TagNumber(5)
-  set platform(Platform v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasPlatform() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearPlatform() => clearField(5);
 }
 
 class User extends $pb.GeneratedMessage {
