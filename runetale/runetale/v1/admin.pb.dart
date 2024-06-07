@@ -1636,15 +1636,15 @@ class Ink extends $pb.GeneratedMessage {
 
 class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   factory GenerateComposeKeyRequest({
-    Platform? platformMethod,
+    Platform? platform,
     ExpirelyTime? expirelyTime,
     $core.String? name,
     $core.String? desc,
     $core.bool? isReusable,
   }) {
     final $result = create();
-    if (platformMethod != null) {
-      $result.platformMethod = platformMethod;
+    if (platform != null) {
+      $result.platform = platform;
     }
     if (expirelyTime != null) {
       $result.expirelyTime = expirelyTime;
@@ -1665,7 +1665,7 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   factory GenerateComposeKeyRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateComposeKeyRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..e<Platform>(1, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..e<Platform>(1, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..e<ExpirelyTime>(2, _omitFieldNames ? '' : 'expirelyTime', $pb.PbFieldType.OE, protoName: 'expirelyTime', defaultOrMaker: ExpirelyTime.ONEMONTH, valueOf: ExpirelyTime.valueOf, enumValues: ExpirelyTime.values)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'desc')
@@ -1695,13 +1695,13 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   static GenerateComposeKeyRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  Platform get platformMethod => $_getN(0);
+  Platform get platform => $_getN(0);
   @$pb.TagNumber(1)
-  set platformMethod(Platform v) { setField(1, v); }
+  set platform(Platform v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasPlatformMethod() => $_has(0);
+  $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlatformMethod() => clearField(1);
+  void clearPlatform() => clearField(1);
 
   @$pb.TagNumber(2)
   ExpirelyTime get expirelyTime => $_getN(1);
@@ -1743,14 +1743,14 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
 class GenerateComposeKeyResponse_installScript extends $pb.GeneratedMessage {
   factory GenerateComposeKeyResponse_installScript({
     $core.String? script,
-    Platform? platformMethod,
+    Platform? platform,
   }) {
     final $result = create();
     if (script != null) {
       $result.script = script;
     }
-    if (platformMethod != null) {
-      $result.platformMethod = platformMethod;
+    if (platform != null) {
+      $result.platform = platform;
     }
     return $result;
   }
@@ -1760,7 +1760,7 @@ class GenerateComposeKeyResponse_installScript extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GenerateComposeKeyResponse.installScript', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'script')
-    ..e<Platform>(2, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..e<Platform>(2, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..hasRequiredFields = false
   ;
 
@@ -1795,13 +1795,13 @@ class GenerateComposeKeyResponse_installScript extends $pb.GeneratedMessage {
   void clearScript() => clearField(1);
 
   @$pb.TagNumber(2)
-  Platform get platformMethod => $_getN(1);
+  Platform get platform => $_getN(1);
   @$pb.TagNumber(2)
-  set platformMethod(Platform v) { setField(2, v); }
+  set platform(Platform v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPlatformMethod() => $_has(1);
+  $core.bool hasPlatform() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPlatformMethod() => clearField(2);
+  void clearPlatform() => clearField(2);
 }
 
 class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
@@ -2267,7 +2267,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? nodeIds,
-    Platform? platformMethod,
+    Platform? platform,
   }) {
     final $result = create();
     if (name != null) {
@@ -2279,8 +2279,8 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (nodeIds != null) {
       $result.nodeIds.addAll(nodeIds);
     }
-    if (platformMethod != null) {
-      $result.platformMethod = platformMethod;
+    if (platform != null) {
+      $result.platform = platform;
     }
     return $result;
   }
@@ -2292,7 +2292,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
-    ..e<Platform>(4, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..e<Platform>(4, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..hasRequiredFields = false
   ;
 
@@ -2339,13 +2339,13 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get nodeIds => $_getList(2);
 
   @$pb.TagNumber(4)
-  Platform get platformMethod => $_getN(3);
+  Platform get platform => $_getN(3);
   @$pb.TagNumber(4)
-  set platformMethod(Platform v) { setField(4, v); }
+  set platform(Platform v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPlatformMethod() => $_has(3);
+  $core.bool hasPlatform() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPlatformMethod() => clearField(4);
+  void clearPlatform() => clearField(4);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -2448,7 +2448,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? nodeIds,
-    Platform? platformMethod,
+    Platform? platform,
     Action? action,
   }) {
     final $result = create();
@@ -2464,8 +2464,8 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (nodeIds != null) {
       $result.nodeIds.addAll(nodeIds);
     }
-    if (platformMethod != null) {
-      $result.platformMethod = platformMethod;
+    if (platform != null) {
+      $result.platform = platform;
     }
     if (action != null) {
       $result.action = action;
@@ -2481,7 +2481,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
-    ..e<Platform>(5, _omitFieldNames ? '' : 'platformMethod', $pb.PbFieldType.OE, protoName: 'platformMethod', defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..e<Platform>(5, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..e<Action>(6, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -2538,13 +2538,13 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get nodeIds => $_getList(3);
 
   @$pb.TagNumber(5)
-  Platform get platformMethod => $_getN(4);
+  Platform get platform => $_getN(4);
   @$pb.TagNumber(5)
-  set platformMethod(Platform v) { setField(5, v); }
+  set platform(Platform v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPlatformMethod() => $_has(4);
+  $core.bool hasPlatform() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPlatformMethod() => clearField(5);
+  void clearPlatform() => clearField(5);
 
   @$pb.TagNumber(6)
   Action get action => $_getN(5);
