@@ -2676,8 +2676,8 @@ class Overview extends $pb.GeneratedMessage {
   void clearInviteLink() => clearField(6);
 }
 
-class InviteResponse extends $pb.GeneratedMessage {
-  factory InviteResponse({
+class InviteUserResponse extends $pb.GeneratedMessage {
+  factory InviteUserResponse({
     $core.String? inviteCode,
   }) {
     final $result = create();
@@ -2686,11 +2686,11 @@ class InviteResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  InviteResponse._() : super();
-  factory InviteResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InviteResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  InviteUserResponse._() : super();
+  factory InviteUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory InviteUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InviteResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InviteUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
     ..hasRequiredFields = false
   ;
@@ -2699,22 +2699,22 @@ class InviteResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  InviteResponse clone() => InviteResponse()..mergeFromMessage(this);
+  InviteUserResponse clone() => InviteUserResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InviteResponse copyWith(void Function(InviteResponse) updates) => super.copyWith((message) => updates(message as InviteResponse)) as InviteResponse;
+  InviteUserResponse copyWith(void Function(InviteUserResponse) updates) => super.copyWith((message) => updates(message as InviteUserResponse)) as InviteUserResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static InviteResponse create() => InviteResponse._();
-  InviteResponse createEmptyInstance() => create();
-  static $pb.PbList<InviteResponse> createRepeated() => $pb.PbList<InviteResponse>();
+  static InviteUserResponse create() => InviteUserResponse._();
+  InviteUserResponse createEmptyInstance() => create();
+  static $pb.PbList<InviteUserResponse> createRepeated() => $pb.PbList<InviteUserResponse>();
   @$core.pragma('dart2js:noInline')
-  static InviteResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InviteResponse>(create);
-  static InviteResponse? _defaultInstance;
+  static InviteUserResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InviteUserResponse>(create);
+  static InviteUserResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get inviteCode => $_getSZ(0);

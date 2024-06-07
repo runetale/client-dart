@@ -627,17 +627,17 @@ final $typed_data.Uint8List overviewDescriptor = $convert.base64Decode(
     '9uYm9hcmRpbmcYBSABKAhSDGlzT25ib2FyZGluZxIeCgppbnZpdGVMaW5rGAYgASgJUgppbnZp'
     'dGVMaW5r');
 
-@$core.Deprecated('Use inviteResponseDescriptor instead')
-const InviteResponse$json = {
-  '1': 'InviteResponse',
+@$core.Deprecated('Use inviteUserResponseDescriptor instead')
+const InviteUserResponse$json = {
+  '1': 'InviteUserResponse',
   '2': [
     {'1': 'inviteCode', '3': 1, '4': 1, '5': 9, '10': 'inviteCode'},
   ],
 };
 
-/// Descriptor for `InviteResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List inviteResponseDescriptor = $convert.base64Decode(
-    'Cg5JbnZpdGVSZXNwb25zZRIeCgppbnZpdGVDb2RlGAEgASgJUgppbnZpdGVDb2Rl');
+/// Descriptor for `InviteUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List inviteUserResponseDescriptor = $convert.base64Decode(
+    'ChJJbnZpdGVVc2VyUmVzcG9uc2USHgoKaW52aXRlQ29kZRgBIAEoCVIKaW52aXRlQ29kZQ==');
 
 @$core.Deprecated('Use policyDescriptor instead')
 const Policy$json = {

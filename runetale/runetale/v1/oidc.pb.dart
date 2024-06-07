@@ -403,11 +403,11 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
 
 class GetInvitationRequest extends $pb.GeneratedMessage {
   factory GetInvitationRequest({
-    $core.String? invitationCode,
+    $core.String? inviteCode,
   }) {
     final $result = create();
-    if (invitationCode != null) {
-      $result.invitationCode = invitationCode;
+    if (inviteCode != null) {
+      $result.inviteCode = inviteCode;
     }
     return $result;
   }
@@ -416,7 +416,7 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   factory GetInvitationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInvitationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'invitationCode', protoName: 'invitationCode')
+    ..aOS(1, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
     ..hasRequiredFields = false
   ;
 
@@ -442,24 +442,24 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   static GetInvitationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get invitationCode => $_getSZ(0);
+  $core.String get inviteCode => $_getSZ(0);
   @$pb.TagNumber(1)
-  set invitationCode($core.String v) { $_setString(0, v); }
+  set inviteCode($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInvitationCode() => $_has(0);
+  $core.bool hasInviteCode() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInvitationCode() => clearField(1);
+  void clearInviteCode() => clearField(1);
 }
 
 class GetInvitationResponse extends $pb.GeneratedMessage {
   factory GetInvitationResponse({
-    $core.String? invitationID,
+    $core.String? inviteID,
     $core.String? invitationSub,
     $core.String? invitationEmail,
   }) {
     final $result = create();
-    if (invitationID != null) {
-      $result.invitationID = invitationID;
+    if (inviteID != null) {
+      $result.inviteID = inviteID;
     }
     if (invitationSub != null) {
       $result.invitationSub = invitationSub;
@@ -474,7 +474,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   factory GetInvitationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInvitationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'invitationID', protoName: 'invitationID')
+    ..aOS(1, _omitFieldNames ? '' : 'inviteID', protoName: 'inviteID')
     ..aOS(2, _omitFieldNames ? '' : 'invitationSub', protoName: 'invitationSub')
     ..aOS(3, _omitFieldNames ? '' : 'invitationEmail', protoName: 'invitationEmail')
     ..hasRequiredFields = false
@@ -502,13 +502,13 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   static GetInvitationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get invitationID => $_getSZ(0);
+  $core.String get inviteID => $_getSZ(0);
   @$pb.TagNumber(1)
-  set invitationID($core.String v) { $_setString(0, v); }
+  set inviteID($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInvitationID() => $_has(0);
+  $core.bool hasInviteID() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInvitationID() => clearField(1);
+  void clearInviteID() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get invitationSub => $_getSZ(1);
