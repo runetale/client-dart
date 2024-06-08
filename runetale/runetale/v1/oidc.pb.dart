@@ -302,6 +302,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     $core.String? username,
     $core.String? sub,
     $core.bool? isRegistered,
+    $core.bool? isInvited,
   }) {
     final $result = create();
     if (doamin != null) {
@@ -319,6 +320,9 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     if (isRegistered != null) {
       $result.isRegistered = isRegistered;
     }
+    if (isInvited != null) {
+      $result.isInvited = isInvited;
+    }
     return $result;
   }
   AuthenticateResponse._() : super();
@@ -331,6 +335,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'username')
     ..aOS(4, _omitFieldNames ? '' : 'sub')
     ..aOB(5, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
+    ..aOB(6, _omitFieldNames ? '' : 'isInvited', protoName: 'isInvited')
     ..hasRequiredFields = false
   ;
 
@@ -399,6 +404,15 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   $core.bool hasIsRegistered() => $_has(4);
   @$pb.TagNumber(5)
   void clearIsRegistered() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get isInvited => $_getBF(5);
+  @$pb.TagNumber(6)
+  set isInvited($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasIsInvited() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIsInvited() => clearField(6);
 }
 
 
