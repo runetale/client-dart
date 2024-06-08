@@ -30,6 +30,10 @@ class LoginServiceClient extends $grpc.Client {
       '/protos.LoginService/LoginSession',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.LoginSessionResponse.fromBuffer(value));
+  static final _$getInvitation = $grpc.ClientMethod<$4.GetInvitationRequest, $4.GetInvitationResponse>(
+      '/protos.LoginService/GetInvitation',
+      ($4.GetInvitationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $4.GetInvitationResponse.fromBuffer(value));
 
   LoginServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -43,6 +47,10 @@ class LoginServiceClient extends $grpc.Client {
 
   $grpc.ResponseStream<$4.LoginSessionResponse> loginSession($async.Stream<$0.Empty> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$loginSession, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$4.GetInvitationResponse> getInvitation($4.GetInvitationRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getInvitation, request, options: options);
   }
 }
 
@@ -65,12 +73,24 @@ abstract class LoginServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($4.LoginSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.GetInvitationRequest, $4.GetInvitationResponse>(
+        'GetInvitation',
+        getInvitation_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.GetInvitationRequest.fromBuffer(value),
+        ($4.GetInvitationResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$4.LoginNodeResponse> loginNode_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
     return loginNode(call, await request);
   }
 
+  $async.Future<$4.GetInvitationResponse> getInvitation_Pre($grpc.ServiceCall call, $async.Future<$4.GetInvitationRequest> request) async {
+    return getInvitation(call, await request);
+  }
+
   $async.Future<$4.LoginNodeResponse> loginNode($grpc.ServiceCall call, $0.Empty request);
   $async.Stream<$4.LoginSessionResponse> loginSession($grpc.ServiceCall call, $async.Stream<$0.Empty> request);
+  $async.Future<$4.GetInvitationResponse> getInvitation($grpc.ServiceCall call, $4.GetInvitationRequest request);
 }
