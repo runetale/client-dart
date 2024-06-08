@@ -94,10 +94,12 @@ const GetInvitationResponse$json = {
   '1': 'GetInvitationResponse',
   '2': [
     {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'inviteCode', '3': 2, '4': 1, '5': 9, '10': 'inviteCode'},
   ],
 };
 
 /// Descriptor for `GetInvitationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getInvitationResponseDescriptor = $convert.base64Decode(
-    'ChVHZXRJbnZpdGF0aW9uUmVzcG9uc2USFAoFZW1haWwYASABKAlSBWVtYWls');
+    'ChVHZXRJbnZpdGF0aW9uUmVzcG9uc2USFAoFZW1haWwYASABKAlSBWVtYWlsEh4KCmludml0ZU'
+    'NvZGUYAiABKAlSCmludml0ZUNvZGU=');
 

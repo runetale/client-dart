@@ -468,10 +468,14 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
 class GetInvitationResponse extends $pb.GeneratedMessage {
   factory GetInvitationResponse({
     $core.String? email,
+    $core.String? inviteCode,
   }) {
     final $result = create();
     if (email != null) {
       $result.email = email;
+    }
+    if (inviteCode != null) {
+      $result.inviteCode = inviteCode;
     }
     return $result;
   }
@@ -481,6 +485,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInvitationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'email')
+    ..aOS(2, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
     ..hasRequiredFields = false
   ;
 
@@ -513,6 +518,15 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   $core.bool hasEmail() => $_has(0);
   @$pb.TagNumber(1)
   void clearEmail() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get inviteCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set inviteCode($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasInviteCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearInviteCode() => clearField(2);
 }
 
 
