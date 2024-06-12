@@ -640,6 +640,35 @@ const InviteUserResponse$json = {
 final $typed_data.Uint8List inviteUserResponseDescriptor = $convert.base64Decode(
     'ChJJbnZpdGVVc2VyUmVzcG9uc2USHgoKaW52aXRlQ29kZRgBIAEoCVIKaW52aXRlQ29kZQ==');
 
+@$core.Deprecated('Use createSubnetLinkerRequestDescriptor instead')
+const CreateSubnetLinkerRequest$json = {
+  '1': 'CreateSubnetLinkerRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'advertiseRoute', '3': 3, '4': 1, '5': 9, '10': 'advertiseRoute'},
+  ],
+};
+
+/// Descriptor for `CreateSubnetLinkerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSubnetLinkerRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVTdWJuZXRMaW5rZXJSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYx'
+    'gCIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0ZRgDIAEoCVIOYWR2ZXJ0aXNlUm91dGU=');
+
+@$core.Deprecated('Use createSubnetLinkerResponseDescriptor instead')
+const CreateSubnetLinkerResponse$json = {
+  '1': 'CreateSubnetLinkerResponse',
+  '2': [
+    {'1': 'installScripts', '3': 1, '4': 1, '5': 9, '10': 'installScripts'},
+    {'1': 'composeKey', '3': 2, '4': 1, '5': 9, '10': 'composeKey'},
+  ],
+};
+
+/// Descriptor for `CreateSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createSubnetLinkerResponseDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVTdWJuZXRMaW5rZXJSZXNwb25zZRImCg5pbnN0YWxsU2NyaXB0cxgBIAEoCVIOaW'
+    '5zdGFsbFNjcmlwdHMSHgoKY29tcG9zZUtleRgCIAEoCVIKY29tcG9zZUtleQ==');
+
 @$core.Deprecated('Use policyDescriptor instead')
 const Policy$json = {
   '1': 'Policy',

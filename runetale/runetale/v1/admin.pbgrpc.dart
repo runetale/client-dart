@@ -138,10 +138,10 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/CreateInviteUser',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.InviteUserResponse.fromBuffer(value));
-  static final _$createSubnetLinker = $grpc.ClientMethod<$0.Empty, $0.Empty>(
+  static final _$createSubnetLinker = $grpc.ClientMethod<$1.CreateSubnetLinkerRequest, $1.CreateSubnetLinkerResponse>(
       '/protos.AdminService/CreateSubnetLinker',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
+      ($1.CreateSubnetLinkerRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.CreateSubnetLinkerResponse.fromBuffer(value));
   static final _$deleteSubnetLinker = $grpc.ClientMethod<$0.Empty, $0.Empty>(
       '/protos.AdminService/DeleteSubnetLinker',
       ($0.Empty value) => value.writeToBuffer(),
@@ -269,7 +269,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createInviteUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.Empty> createSubnetLinker($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.CreateSubnetLinkerResponse> createSubnetLinker($1.CreateSubnetLinkerRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createSubnetLinker, request, options: options);
   }
 
@@ -486,13 +486,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.InviteUserResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $0.Empty>(
+    $addMethod($grpc.ServiceMethod<$1.CreateSubnetLinkerRequest, $1.CreateSubnetLinkerResponse>(
         'CreateSubnetLinker',
         createSubnetLinker_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $1.CreateSubnetLinkerRequest.fromBuffer(value),
+        ($1.CreateSubnetLinkerResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $0.Empty>(
         'DeleteSubnetLinker',
         deleteSubnetLinker_Pre,
@@ -618,7 +618,7 @@ abstract class AdminServiceBase extends $grpc.Service {
     return createInviteUser(call, await request);
   }
 
-  $async.Future<$0.Empty> createSubnetLinker_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$1.CreateSubnetLinkerResponse> createSubnetLinker_Pre($grpc.ServiceCall call, $async.Future<$1.CreateSubnetLinkerRequest> request) async {
     return createSubnetLinker(call, await request);
   }
 
@@ -655,6 +655,6 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Ink> patchInk($grpc.ServiceCall call, $1.PatchInkRequest request);
   $async.Future<$1.Overview> getOverview($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.InviteUserResponse> createInviteUser($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$0.Empty> createSubnetLinker($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.CreateSubnetLinkerResponse> createSubnetLinker($grpc.ServiceCall call, $1.CreateSubnetLinkerRequest request);
   $async.Future<$0.Empty> deleteSubnetLinker($grpc.ServiceCall call, $0.Empty request);
 }

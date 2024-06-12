@@ -2726,6 +2726,148 @@ class InviteUserResponse extends $pb.GeneratedMessage {
   void clearInviteCode() => clearField(1);
 }
 
+class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
+  factory CreateSubnetLinkerRequest({
+    $core.String? name,
+    $core.String? desc,
+    $core.String? advertiseRoute,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (advertiseRoute != null) {
+      $result.advertiseRoute = advertiseRoute;
+    }
+    return $result;
+  }
+  CreateSubnetLinkerRequest._() : super();
+  factory CreateSubnetLinkerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSubnetLinkerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSubnetLinkerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'desc')
+    ..aOS(3, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSubnetLinkerRequest clone() => CreateSubnetLinkerRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSubnetLinkerRequest copyWith(void Function(CreateSubnetLinkerRequest) updates) => super.copyWith((message) => updates(message as CreateSubnetLinkerRequest)) as CreateSubnetLinkerRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSubnetLinkerRequest create() => CreateSubnetLinkerRequest._();
+  CreateSubnetLinkerRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSubnetLinkerRequest> createRepeated() => $pb.PbList<CreateSubnetLinkerRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSubnetLinkerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSubnetLinkerRequest>(create);
+  static CreateSubnetLinkerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get desc => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set desc($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasDesc() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDesc() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get advertiseRoute => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set advertiseRoute($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAdvertiseRoute() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAdvertiseRoute() => clearField(3);
+}
+
+class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
+  factory CreateSubnetLinkerResponse({
+    $core.String? installScripts,
+    $core.String? composeKey,
+  }) {
+    final $result = create();
+    if (installScripts != null) {
+      $result.installScripts = installScripts;
+    }
+    if (composeKey != null) {
+      $result.composeKey = composeKey;
+    }
+    return $result;
+  }
+  CreateSubnetLinkerResponse._() : super();
+  factory CreateSubnetLinkerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSubnetLinkerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSubnetLinkerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'installScripts', protoName: 'installScripts')
+    ..aOS(2, _omitFieldNames ? '' : 'composeKey', protoName: 'composeKey')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSubnetLinkerResponse clone() => CreateSubnetLinkerResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSubnetLinkerResponse copyWith(void Function(CreateSubnetLinkerResponse) updates) => super.copyWith((message) => updates(message as CreateSubnetLinkerResponse)) as CreateSubnetLinkerResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateSubnetLinkerResponse create() => CreateSubnetLinkerResponse._();
+  CreateSubnetLinkerResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateSubnetLinkerResponse> createRepeated() => $pb.PbList<CreateSubnetLinkerResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSubnetLinkerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSubnetLinkerResponse>(create);
+  static CreateSubnetLinkerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get installScripts => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set installScripts($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasInstallScripts() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInstallScripts() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get composeKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set composeKey($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasComposeKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearComposeKey() => clearField(2);
+}
+
 class Policy extends $pb.GeneratedMessage {
   factory Policy({
     $core.Iterable<Fleet>? fleets,
