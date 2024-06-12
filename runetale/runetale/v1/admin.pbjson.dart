@@ -193,7 +193,7 @@ const AclResponse$json = {
     {'1': 'proto', '3': 6, '4': 1, '5': 9, '10': 'proto'},
     {'1': 'port', '3': 7, '4': 1, '5': 4, '10': 'port'},
     {'1': 'age', '3': 8, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'aclType', '3': 9, '4': 1, '5': 9, '10': 'aclType'},
+    {'1': 'nodeType', '3': 9, '4': 1, '5': 9, '10': 'nodeType'},
   ],
 };
 
@@ -202,8 +202,8 @@ final $typed_data.Uint8List aclResponseDescriptor = $convert.base64Decode(
     'CgtBY2xSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZX'
     'NjGAMgASgJUgRkZXNjEiAKA3NyYxgEIAEoCzIOLnByb3Rvcy5Qb2xpY3lSA3NyYxIgCgNkc3QY'
     'BSABKAsyDi5wcm90b3MuUG9saWN5UgNkc3QSFAoFcHJvdG8YBiABKAlSBXByb3RvEhIKBHBvcn'
-    'QYByABKARSBHBvcnQSEAoDYWdlGAggASgJUgNhZ2USGAoHYWNsVHlwZRgJIAEoCVIHYWNsVHlw'
-    'ZQ==');
+    'QYByABKARSBHBvcnQSEAoDYWdlGAggASgJUgNhZ2USGgoIbm9kZVR5cGUYCSABKAlSCG5vZGVU'
+    'eXBl');
 
 @$core.Deprecated('Use getMeResponseDescriptor instead')
 const GetMeResponse$json = {

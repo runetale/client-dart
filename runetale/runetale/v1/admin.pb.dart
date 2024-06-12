@@ -502,7 +502,7 @@ class AclResponse extends $pb.GeneratedMessage {
     $core.String? proto,
     $fixnum.Int64? port,
     $core.String? age,
-    $core.String? aclType,
+    $core.String? nodeType,
   }) {
     final $result = create();
     if (id != null) {
@@ -529,8 +529,8 @@ class AclResponse extends $pb.GeneratedMessage {
     if (age != null) {
       $result.age = age;
     }
-    if (aclType != null) {
-      $result.aclType = aclType;
+    if (nodeType != null) {
+      $result.nodeType = nodeType;
     }
     return $result;
   }
@@ -547,7 +547,7 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'proto')
     ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(8, _omitFieldNames ? '' : 'age')
-    ..aOS(9, _omitFieldNames ? '' : 'aclType', protoName: 'aclType')
+    ..aOS(9, _omitFieldNames ? '' : 'nodeType', protoName: 'nodeType')
     ..hasRequiredFields = false
   ;
 
@@ -649,13 +649,13 @@ class AclResponse extends $pb.GeneratedMessage {
   void clearAge() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get aclType => $_getSZ(8);
+  $core.String get nodeType => $_getSZ(8);
   @$pb.TagNumber(9)
-  set aclType($core.String v) { $_setString(8, v); }
+  set nodeType($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasAclType() => $_has(8);
+  $core.bool hasNodeType() => $_has(8);
   @$pb.TagNumber(9)
-  void clearAclType() => clearField(9);
+  void clearNodeType() => clearField(9);
 }
 
 class GetMeResponse extends $pb.GeneratedMessage {
