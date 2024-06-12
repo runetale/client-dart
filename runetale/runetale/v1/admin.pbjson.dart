@@ -13,9 +13,9 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use aclTypeDescriptor instead')
-const AclType$json = {
-  '1': 'AclType',
+@$core.Deprecated('Use nodeTypeDescriptor instead')
+const NodeType$json = {
+  '1': 'NodeType',
   '2': [
     {'1': 'FLEET', '2': 0},
     {'1': 'RESOURCE', '2': 1},
@@ -26,10 +26,10 @@ const AclType$json = {
   ],
 };
 
-/// Descriptor for `AclType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List aclTypeDescriptor = $convert.base64Decode(
-    'CgdBY2xUeXBlEgkKBUZMRUVUEAASDAoIUkVTT1VSQ0UQARIJCgVHUk9VUBACEggKBFVTRVIQAx'
-    'IHCgNJTksQBBIKCgZERVZJQ0UQBQ==');
+/// Descriptor for `NodeType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List nodeTypeDescriptor = $convert.base64Decode(
+    'CghOb2RlVHlwZRIJCgVGTEVFVBAAEgwKCFJFU09VUkNFEAESCQoFR1JPVVAQAhIICgRVU0VSEA'
+    'MSBwoDSU5LEAQSCgoGREVWSUNFEAU=');
 
 @$core.Deprecated('Use expirelyTimeDescriptor instead')
 const ExpirelyTime$json = {
@@ -111,14 +111,15 @@ const AclResources$json = {
   '2': [
     {'1': 'nodeIds', '3': 1, '4': 3, '5': 4, '10': 'nodeIds'},
     {'1': 'policyId', '3': 2, '4': 1, '5': 9, '10': 'policyId'},
-    {'1': 'aclType', '3': 3, '4': 1, '5': 14, '6': '.protos.AclType', '10': 'aclType'},
+    {'1': 'nodeType', '3': 3, '4': 1, '5': 14, '6': '.protos.NodeType', '10': 'nodeType'},
   ],
 };
 
 /// Descriptor for `AclResources`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List aclResourcesDescriptor = $convert.base64Decode(
     'CgxBY2xSZXNvdXJjZXMSGAoHbm9kZUlkcxgBIAMoBFIHbm9kZUlkcxIaCghwb2xpY3lJZBgCIA'
-    'EoCVIIcG9saWN5SWQSKQoHYWNsVHlwZRgDIAEoDjIPLnByb3Rvcy5BY2xUeXBlUgdhY2xUeXBl');
+    'EoCVIIcG9saWN5SWQSLAoIbm9kZVR5cGUYAyABKA4yEC5wcm90b3MuTm9kZVR5cGVSCG5vZGVU'
+    'eXBl');
 
 @$core.Deprecated('Use patchAclRequestDescriptor instead')
 const PatchAclRequest$json = {

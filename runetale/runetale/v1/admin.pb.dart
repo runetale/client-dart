@@ -144,7 +144,7 @@ class AclResources extends $pb.GeneratedMessage {
   factory AclResources({
     $core.Iterable<$fixnum.Int64>? nodeIds,
     $core.String? policyId,
-    AclType? aclType,
+    NodeType? nodeType,
   }) {
     final $result = create();
     if (nodeIds != null) {
@@ -153,8 +153,8 @@ class AclResources extends $pb.GeneratedMessage {
     if (policyId != null) {
       $result.policyId = policyId;
     }
-    if (aclType != null) {
-      $result.aclType = aclType;
+    if (nodeType != null) {
+      $result.nodeType = nodeType;
     }
     return $result;
   }
@@ -165,7 +165,7 @@ class AclResources extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AclResources', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..aOS(2, _omitFieldNames ? '' : 'policyId', protoName: 'policyId')
-    ..e<AclType>(3, _omitFieldNames ? '' : 'aclType', $pb.PbFieldType.OE, protoName: 'aclType', defaultOrMaker: AclType.FLEET, valueOf: AclType.valueOf, enumValues: AclType.values)
+    ..e<NodeType>(3, _omitFieldNames ? '' : 'nodeType', $pb.PbFieldType.OE, protoName: 'nodeType', defaultOrMaker: NodeType.FLEET, valueOf: NodeType.valueOf, enumValues: NodeType.values)
     ..hasRequiredFields = false
   ;
 
@@ -203,13 +203,13 @@ class AclResources extends $pb.GeneratedMessage {
   void clearPolicyId() => clearField(2);
 
   @$pb.TagNumber(3)
-  AclType get aclType => $_getN(2);
+  NodeType get nodeType => $_getN(2);
   @$pb.TagNumber(3)
-  set aclType(AclType v) { setField(3, v); }
+  set nodeType(NodeType v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAclType() => $_has(2);
+  $core.bool hasNodeType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAclType() => clearField(3);
+  void clearNodeType() => clearField(3);
 }
 
 class PatchAclRequest extends $pb.GeneratedMessage {
