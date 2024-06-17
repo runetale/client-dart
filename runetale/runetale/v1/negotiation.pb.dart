@@ -21,7 +21,6 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   factory NegotiationRequest({
     NegotiationType? type,
     $core.String? dstNodeKey,
-    $core.String? srcWgPubKey,
     $core.String? uFlag,
     $core.String? pwd,
     $core.String? candidate,
@@ -32,9 +31,6 @@ class NegotiationRequest extends $pb.GeneratedMessage {
     }
     if (dstNodeKey != null) {
       $result.dstNodeKey = dstNodeKey;
-    }
-    if (srcWgPubKey != null) {
-      $result.srcWgPubKey = srcWgPubKey;
     }
     if (uFlag != null) {
       $result.uFlag = uFlag;
@@ -54,10 +50,9 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
     ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
-    ..aOS(3, _omitFieldNames ? '' : 'srcWgPubKey', protoName: 'srcWgPubKey')
-    ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
-    ..aOS(5, _omitFieldNames ? '' : 'pwd')
-    ..aOS(6, _omitFieldNames ? '' : 'candidate')
+    ..aOS(3, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
+    ..aOS(4, _omitFieldNames ? '' : 'pwd')
+    ..aOS(5, _omitFieldNames ? '' : 'candidate')
     ..hasRequiredFields = false
   ;
 
@@ -101,40 +96,31 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   void clearDstNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get srcWgPubKey => $_getSZ(2);
+  $core.String get uFlag => $_getSZ(2);
   @$pb.TagNumber(3)
-  set srcWgPubKey($core.String v) { $_setString(2, v); }
+  set uFlag($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSrcWgPubKey() => $_has(2);
+  $core.bool hasUFlag() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSrcWgPubKey() => clearField(3);
+  void clearUFlag() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get uFlag => $_getSZ(3);
+  $core.String get pwd => $_getSZ(3);
   @$pb.TagNumber(4)
-  set uFlag($core.String v) { $_setString(3, v); }
+  set pwd($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasUFlag() => $_has(3);
+  $core.bool hasPwd() => $_has(3);
   @$pb.TagNumber(4)
-  void clearUFlag() => clearField(4);
+  void clearPwd() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get pwd => $_getSZ(4);
+  $core.String get candidate => $_getSZ(4);
   @$pb.TagNumber(5)
-  set pwd($core.String v) { $_setString(4, v); }
+  set candidate($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasPwd() => $_has(4);
+  $core.bool hasCandidate() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPwd() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get candidate => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set candidate($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasCandidate() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearCandidate() => clearField(6);
+  void clearCandidate() => clearField(5);
 }
 
 class NegotiationResponse extends $pb.GeneratedMessage {
@@ -416,6 +402,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
 class JoinRequest extends $pb.GeneratedMessage {
   factory JoinRequest({
     NegotiationType? type,
+    $core.String? dstNodeKey,
     $core.String? srcNodeKey,
     $core.String? srcWgPubKey,
     $core.String? ip,
@@ -424,6 +411,9 @@ class JoinRequest extends $pb.GeneratedMessage {
     final $result = create();
     if (type != null) {
       $result.type = type;
+    }
+    if (dstNodeKey != null) {
+      $result.dstNodeKey = dstNodeKey;
     }
     if (srcNodeKey != null) {
       $result.srcNodeKey = srcNodeKey;
@@ -445,10 +435,11 @@ class JoinRequest extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JoinRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
-    ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
-    ..aOS(3, _omitFieldNames ? '' : 'srcWgPubKey', protoName: 'srcWgPubKey')
-    ..aOS(4, _omitFieldNames ? '' : 'ip')
-    ..aOS(5, _omitFieldNames ? '' : 'cidr')
+    ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
+    ..aOS(3, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
+    ..aOS(4, _omitFieldNames ? '' : 'srcWgPubKey', protoName: 'srcWgPubKey')
+    ..aOS(5, _omitFieldNames ? '' : 'ip')
+    ..aOS(6, _omitFieldNames ? '' : 'cidr')
     ..hasRequiredFields = false
   ;
 
@@ -483,40 +474,49 @@ class JoinRequest extends $pb.GeneratedMessage {
   void clearType() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get srcNodeKey => $_getSZ(1);
+  $core.String get dstNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set srcNodeKey($core.String v) { $_setString(1, v); }
+  set dstNodeKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasSrcNodeKey() => $_has(1);
+  $core.bool hasDstNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSrcNodeKey() => clearField(2);
+  void clearDstNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get srcWgPubKey => $_getSZ(2);
+  $core.String get srcNodeKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set srcWgPubKey($core.String v) { $_setString(2, v); }
+  set srcNodeKey($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSrcWgPubKey() => $_has(2);
+  $core.bool hasSrcNodeKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSrcWgPubKey() => clearField(3);
+  void clearSrcNodeKey() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get ip => $_getSZ(3);
+  $core.String get srcWgPubKey => $_getSZ(3);
   @$pb.TagNumber(4)
-  set ip($core.String v) { $_setString(3, v); }
+  set srcWgPubKey($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasIp() => $_has(3);
+  $core.bool hasSrcWgPubKey() => $_has(3);
   @$pb.TagNumber(4)
-  void clearIp() => clearField(4);
+  void clearSrcWgPubKey() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get cidr => $_getSZ(4);
+  $core.String get ip => $_getSZ(4);
   @$pb.TagNumber(5)
-  set cidr($core.String v) { $_setString(4, v); }
+  set ip($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasCidr() => $_has(4);
+  $core.bool hasIp() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCidr() => clearField(5);
+  void clearIp() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get cidr => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set cidr($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCidr() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCidr() => clearField(6);
 }
 
 

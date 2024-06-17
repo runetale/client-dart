@@ -35,19 +35,18 @@ const NegotiationRequest$json = {
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
     {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
-    {'1': 'srcWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'srcWgPubKey'},
-    {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
-    {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
-    {'1': 'candidate', '3': 6, '4': 1, '5': 9, '10': 'candidate'},
+    {'1': 'uFlag', '3': 3, '4': 1, '5': 9, '10': 'uFlag'},
+    {'1': 'pwd', '3': 4, '4': 1, '5': 9, '10': 'pwd'},
+    {'1': 'candidate', '3': 5, '4': 1, '5': 9, '10': 'candidate'},
   ],
 };
 
 /// Descriptor for `NegotiationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List negotiationRequestDescriptor = $convert.base64Decode(
     'ChJOZWdvdGlhdGlvblJlcXVlc3QSKwoEdHlwZRgBIAEoDjIXLnByb3Rvcy5OZWdvdGlhdGlvbl'
-    'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIgCgtzcmNXZ1B1Yktl'
-    'eRgDIAEoCVILc3JjV2dQdWJLZXkSFAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCV'
-    'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRl');
+    'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIUCgV1RmxhZxgDIAEo'
+    'CVIFdUZsYWcSEAoDcHdkGAQgASgJUgNwd2QSHAoJY2FuZGlkYXRlGAUgASgJUgljYW5kaWRhdG'
+    'U=');
 
 @$core.Deprecated('Use negotiationResponseDescriptor instead')
 const NegotiationResponse$json = {
@@ -106,16 +105,18 @@ const JoinRequest$json = {
   '1': 'JoinRequest',
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
-    {'1': 'srcNodeKey', '3': 2, '4': 1, '5': 9, '10': 'srcNodeKey'},
-    {'1': 'srcWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'srcWgPubKey'},
-    {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'cidr', '3': 5, '4': 1, '5': 9, '10': 'cidr'},
+    {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
+    {'1': 'srcNodeKey', '3': 3, '4': 1, '5': 9, '10': 'srcNodeKey'},
+    {'1': 'srcWgPubKey', '3': 4, '4': 1, '5': 9, '10': 'srcWgPubKey'},
+    {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'cidr', '3': 6, '4': 1, '5': 9, '10': 'cidr'},
   ],
 };
 
 /// Descriptor for `JoinRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List joinRequestDescriptor = $convert.base64Decode(
     'CgtKb2luUmVxdWVzdBIrCgR0eXBlGAEgASgOMhcucHJvdG9zLk5lZ290aWF0aW9uVHlwZVIEdH'
-    'lwZRIeCgpzcmNOb2RlS2V5GAIgASgJUgpzcmNOb2RlS2V5EiAKC3NyY1dnUHViS2V5GAMgASgJ'
-    'UgtzcmNXZ1B1YktleRIOCgJpcBgEIAEoCVICaXASEgoEY2lkchgFIAEoCVIEY2lkcg==');
+    'lwZRIeCgpkc3ROb2RlS2V5GAIgASgJUgpkc3ROb2RlS2V5Eh4KCnNyY05vZGVLZXkYAyABKAlS'
+    'CnNyY05vZGVLZXkSIAoLc3JjV2dQdWJLZXkYBCABKAlSC3NyY1dnUHViS2V5Eg4KAmlwGAUgAS'
+    'gJUgJpcBISCgRjaWRyGAYgASgJUgRjaWRy');
 
