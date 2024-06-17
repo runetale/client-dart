@@ -17,11 +17,13 @@ class NegotiationType extends $pb.ProtobufEnum {
   static const NegotiationType OFFER = NegotiationType._(0, _omitEnumNames ? '' : 'OFFER');
   static const NegotiationType ANSWER = NegotiationType._(1, _omitEnumNames ? '' : 'ANSWER');
   static const NegotiationType CANDIDATE = NegotiationType._(2, _omitEnumNames ? '' : 'CANDIDATE');
+  static const NegotiationType JOIN = NegotiationType._(3, _omitEnumNames ? '' : 'JOIN');
 
   static const $core.List<NegotiationType> values = <NegotiationType> [
     OFFER,
     ANSWER,
     CANDIDATE,
+    JOIN,
   ];
 
   static final $core.Map<$core.int, NegotiationType> _byValue = $pb.ProtobufEnum.initByValue(values);
