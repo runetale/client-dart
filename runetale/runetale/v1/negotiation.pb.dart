@@ -413,6 +413,112 @@ class CandidateRequest extends $pb.GeneratedMessage {
   void clearCandidate() => clearField(3);
 }
 
+class JoinRequest extends $pb.GeneratedMessage {
+  factory JoinRequest({
+    NegotiationType? type,
+    $core.String? srcNodeKey,
+    $core.String? srcWgPubKey,
+    $core.String? ip,
+    $core.String? cidr,
+  }) {
+    final $result = create();
+    if (type != null) {
+      $result.type = type;
+    }
+    if (srcNodeKey != null) {
+      $result.srcNodeKey = srcNodeKey;
+    }
+    if (srcWgPubKey != null) {
+      $result.srcWgPubKey = srcWgPubKey;
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (cidr != null) {
+      $result.cidr = cidr;
+    }
+    return $result;
+  }
+  JoinRequest._() : super();
+  factory JoinRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory JoinRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'JoinRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
+    ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
+    ..aOS(3, _omitFieldNames ? '' : 'srcWgPubKey', protoName: 'srcWgPubKey')
+    ..aOS(4, _omitFieldNames ? '' : 'ip')
+    ..aOS(5, _omitFieldNames ? '' : 'cidr')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  JoinRequest clone() => JoinRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  JoinRequest copyWith(void Function(JoinRequest) updates) => super.copyWith((message) => updates(message as JoinRequest)) as JoinRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static JoinRequest create() => JoinRequest._();
+  JoinRequest createEmptyInstance() => create();
+  static $pb.PbList<JoinRequest> createRepeated() => $pb.PbList<JoinRequest>();
+  @$core.pragma('dart2js:noInline')
+  static JoinRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<JoinRequest>(create);
+  static JoinRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  NegotiationType get type => $_getN(0);
+  @$pb.TagNumber(1)
+  set type(NegotiationType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get srcNodeKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set srcNodeKey($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSrcNodeKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSrcNodeKey() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get srcWgPubKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set srcWgPubKey($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSrcWgPubKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSrcWgPubKey() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get ip => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set ip($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasIp() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIp() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get cidr => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set cidr($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasCidr() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCidr() => clearField(5);
+}
+
 
 const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
 const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
