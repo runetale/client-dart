@@ -30,6 +30,10 @@ class NodeServiceClient extends $grpc.Client {
       '/protos.NodeService/ComposeNode',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.ComposeNodeResponse.fromBuffer(value));
+  static final _$getNetworkMap = $grpc.ClientMethod<$0.Empty, $6.NetworkMapResponse>(
+      '/protos.NodeService/GetNetworkMap',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.NetworkMapResponse.fromBuffer(value));
 
   NodeServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -43,6 +47,10 @@ class NodeServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$6.ComposeNodeResponse> composeNode($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$composeNode, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.NetworkMapResponse> getNetworkMap($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getNetworkMap, request, options: options);
   }
 }
 
@@ -65,6 +73,13 @@ abstract class NodeServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($6.ComposeNodeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $6.NetworkMapResponse>(
+        'GetNetworkMap',
+        getNetworkMap_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($6.NetworkMapResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$6.SyncNodesResponse> syncRemoteNodesConfig_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
@@ -75,6 +90,11 @@ abstract class NodeServiceBase extends $grpc.Service {
     return composeNode(call, await request);
   }
 
+  $async.Future<$6.NetworkMapResponse> getNetworkMap_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getNetworkMap(call, await request);
+  }
+
   $async.Future<$6.SyncNodesResponse> syncRemoteNodesConfig($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$6.ComposeNodeResponse> composeNode($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$6.NetworkMapResponse> getNetworkMap($grpc.ServiceCall call, $0.Empty request);
 }

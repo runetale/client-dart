@@ -11,6 +11,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class SyncNodesResponse extends $pb.GeneratedMessage {
@@ -261,6 +262,295 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   $core.bool hasCidr() => $_has(1);
   @$pb.TagNumber(2)
   void clearCidr() => clearField(2);
+}
+
+class PortRange extends $pb.GeneratedMessage {
+  factory PortRange({
+    $fixnum.Int64? first,
+    $fixnum.Int64? last,
+  }) {
+    final $result = create();
+    if (first != null) {
+      $result.first = first;
+    }
+    if (last != null) {
+      $result.last = last;
+    }
+    return $result;
+  }
+  PortRange._() : super();
+  factory PortRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PortRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PortRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'first', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'last', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PortRange clone() => PortRange()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PortRange copyWith(void Function(PortRange) updates) => super.copyWith((message) => updates(message as PortRange)) as PortRange;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PortRange create() => PortRange._();
+  PortRange createEmptyInstance() => create();
+  static $pb.PbList<PortRange> createRepeated() => $pb.PbList<PortRange>();
+  @$core.pragma('dart2js:noInline')
+  static PortRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PortRange>(create);
+  static PortRange? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get first => $_getI64(0);
+  @$pb.TagNumber(1)
+  set first($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFirst() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFirst() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get last => $_getI64(1);
+  @$pb.TagNumber(2)
+  set last($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLast() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLast() => clearField(2);
+}
+
+class NetPortRange extends $pb.GeneratedMessage {
+  factory NetPortRange({
+    $core.String? ip,
+    PortRange? ports,
+  }) {
+    final $result = create();
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (ports != null) {
+      $result.ports = ports;
+    }
+    return $result;
+  }
+  NetPortRange._() : super();
+  factory NetPortRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NetPortRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetPortRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ip')
+    ..aOM<PortRange>(2, _omitFieldNames ? '' : 'ports', subBuilder: PortRange.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NetPortRange clone() => NetPortRange()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NetPortRange copyWith(void Function(NetPortRange) updates) => super.copyWith((message) => updates(message as NetPortRange)) as NetPortRange;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetPortRange create() => NetPortRange._();
+  NetPortRange createEmptyInstance() => create();
+  static $pb.PbList<NetPortRange> createRepeated() => $pb.PbList<NetPortRange>();
+  @$core.pragma('dart2js:noInline')
+  static NetPortRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetPortRange>(create);
+  static NetPortRange? _defaultInstance;
+
+  /// srcIpsと同じフォーマット
+  /// - "*" は全て許可
+  /// - "192.168.0.0/16" cidrが含まれたipの範囲
+  @$pb.TagNumber(1)
+  $core.String get ip => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ip($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIp() => clearField(1);
+
+  /// portのフォーマットは
+  /// - UDP or TCP portの番号を"0-65535"で指定する
+  /// - "80" などの単一のportの場合はlastにも同じポート番号が入る
+  @$pb.TagNumber(2)
+  PortRange get ports => $_getN(1);
+  @$pb.TagNumber(2)
+  set ports(PortRange v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPorts() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPorts() => clearField(2);
+  @$pb.TagNumber(2)
+  PortRange ensurePorts() => $_ensure(1);
+}
+
+class FilterRule extends $pb.GeneratedMessage {
+  factory FilterRule({
+    $core.Iterable<$core.String>? srcIps,
+    $core.Iterable<NetPortRange>? dstPorts,
+    $core.Iterable<$fixnum.Int64>? iPProto,
+  }) {
+    final $result = create();
+    if (srcIps != null) {
+      $result.srcIps.addAll(srcIps);
+    }
+    if (dstPorts != null) {
+      $result.dstPorts.addAll(dstPorts);
+    }
+    if (iPProto != null) {
+      $result.iPProto.addAll(iPProto);
+    }
+    return $result;
+  }
+  FilterRule._() : super();
+  factory FilterRule.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FilterRule.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FilterRule', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'srcIps', protoName: 'srcIps')
+    ..pc<NetPortRange>(2, _omitFieldNames ? '' : 'dstPorts', $pb.PbFieldType.PM, protoName: 'dstPorts', subBuilder: NetPortRange.create)
+    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.KU6, protoName: 'iPProto')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FilterRule clone() => FilterRule()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FilterRule copyWith(void Function(FilterRule) updates) => super.copyWith((message) => updates(message as FilterRule)) as FilterRule;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FilterRule create() => FilterRule._();
+  FilterRule createEmptyInstance() => create();
+  static $pb.PbList<FilterRule> createRepeated() => $pb.PbList<FilterRule>();
+  @$core.pragma('dart2js:noInline')
+  static FilterRule getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FilterRule>(create);
+  static FilterRule? _defaultInstance;
+
+  /// source ips,
+  /// - "*" は全て許可
+  /// - "192.168.0.0/16" cidrが含まれたipの範囲
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get srcIps => $_getList(0);
+
+  /// dstのpeerのリスト
+  @$pb.TagNumber(2)
+  $core.List<NetPortRange> get dstPorts => $_getList(1);
+
+  /// 使用するプロトコル
+  /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+  @$pb.TagNumber(3)
+  $core.List<$fixnum.Int64> get iPProto => $_getList(2);
+}
+
+class NetworkMapResponse extends $pb.GeneratedMessage {
+  factory NetworkMapResponse({
+    $fixnum.Int64? seq,
+    Node? node,
+    $core.Iterable<Node>? peers,
+    $core.Iterable<FilterRule>? packetFilter,
+  }) {
+    final $result = create();
+    if (seq != null) {
+      $result.seq = seq;
+    }
+    if (node != null) {
+      $result.node = node;
+    }
+    if (peers != null) {
+      $result.peers.addAll(peers);
+    }
+    if (packetFilter != null) {
+      $result.packetFilter.addAll(packetFilter);
+    }
+    return $result;
+  }
+  NetworkMapResponse._() : super();
+  factory NetworkMapResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NetworkMapResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetworkMapResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'seq', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOM<Node>(2, _omitFieldNames ? '' : 'node', subBuilder: Node.create)
+    ..pc<Node>(3, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM, subBuilder: Node.create)
+    ..pc<FilterRule>(4, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NetworkMapResponse clone() => NetworkMapResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NetworkMapResponse copyWith(void Function(NetworkMapResponse) updates) => super.copyWith((message) => updates(message as NetworkMapResponse)) as NetworkMapResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkMapResponse create() => NetworkMapResponse._();
+  NetworkMapResponse createEmptyInstance() => create();
+  static $pb.PbList<NetworkMapResponse> createRepeated() => $pb.PbList<NetworkMapResponse>();
+  @$core.pragma('dart2js:noInline')
+  static NetworkMapResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetworkMapResponse>(create);
+  static NetworkMapResponse? _defaultInstance;
+
+  /// このmapのsequential id
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get seq => $_getI64(0);
+  @$pb.TagNumber(1)
+  set seq($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSeq() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSeq() => clearField(1);
+
+  /// このNodeの情報
+  @$pb.TagNumber(2)
+  Node get node => $_getN(1);
+  @$pb.TagNumber(2)
+  set node(Node v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNode() => clearField(2);
+  @$pb.TagNumber(2)
+  Node ensureNode() => $_ensure(1);
+
+  /// このNodeがアクセスするpeers, つまりremote nodes
+  /// remote nodesのallowedIpsには自身のIP(remote nodeのIP)が入る
+  @$pb.TagNumber(3)
+  $core.List<Node> get peers => $_getList(2);
+
+  /// Firewall Rules
+  @$pb.TagNumber(4)
+  $core.List<FilterRule> get packetFilter => $_getList(3);
 }
 
 

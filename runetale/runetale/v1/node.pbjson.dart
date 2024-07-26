@@ -62,3 +62,63 @@ final $typed_data.Uint8List composeNodeResponseDescriptor = $convert.base64Decod
     'ChNDb21wb3NlTm9kZVJlc3BvbnNlEg4KAmlwGAEgASgJUgJpcBISCgRjaWRyGAIgASgJUgRjaW'
     'Ry');
 
+@$core.Deprecated('Use portRangeDescriptor instead')
+const PortRange$json = {
+  '1': 'PortRange',
+  '2': [
+    {'1': 'first', '3': 1, '4': 1, '5': 4, '10': 'first'},
+    {'1': 'last', '3': 2, '4': 1, '5': 4, '10': 'last'},
+  ],
+};
+
+/// Descriptor for `PortRange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List portRangeDescriptor = $convert.base64Decode(
+    'CglQb3J0UmFuZ2USFAoFZmlyc3QYASABKARSBWZpcnN0EhIKBGxhc3QYAiABKARSBGxhc3Q=');
+
+@$core.Deprecated('Use netPortRangeDescriptor instead')
+const NetPortRange$json = {
+  '1': 'NetPortRange',
+  '2': [
+    {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'ports', '3': 2, '4': 1, '5': 11, '6': '.protos.PortRange', '10': 'ports'},
+  ],
+};
+
+/// Descriptor for `NetPortRange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List netPortRangeDescriptor = $convert.base64Decode(
+    'CgxOZXRQb3J0UmFuZ2USDgoCaXAYASABKAlSAmlwEicKBXBvcnRzGAIgASgLMhEucHJvdG9zLl'
+    'BvcnRSYW5nZVIFcG9ydHM=');
+
+@$core.Deprecated('Use filterRuleDescriptor instead')
+const FilterRule$json = {
+  '1': 'FilterRule',
+  '2': [
+    {'1': 'srcIps', '3': 1, '4': 3, '5': 9, '10': 'srcIps'},
+    {'1': 'dstPorts', '3': 2, '4': 3, '5': 11, '6': '.protos.NetPortRange', '10': 'dstPorts'},
+    {'1': 'iPProto', '3': 3, '4': 3, '5': 4, '10': 'iPProto'},
+  ],
+};
+
+/// Descriptor for `FilterRule`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List filterRuleDescriptor = $convert.base64Decode(
+    'CgpGaWx0ZXJSdWxlEhYKBnNyY0lwcxgBIAMoCVIGc3JjSXBzEjAKCGRzdFBvcnRzGAIgAygLMh'
+    'QucHJvdG9zLk5ldFBvcnRSYW5nZVIIZHN0UG9ydHMSGAoHaVBQcm90bxgDIAMoBFIHaVBQcm90'
+    'bw==');
+
+@$core.Deprecated('Use networkMapResponseDescriptor instead')
+const NetworkMapResponse$json = {
+  '1': 'NetworkMapResponse',
+  '2': [
+    {'1': 'seq', '3': 1, '4': 1, '5': 4, '10': 'seq'},
+    {'1': 'node', '3': 2, '4': 1, '5': 11, '6': '.protos.Node', '10': 'node'},
+    {'1': 'peers', '3': 3, '4': 3, '5': 11, '6': '.protos.Node', '10': 'peers'},
+    {'1': 'packetFilter', '3': 4, '4': 3, '5': 11, '6': '.protos.FilterRule', '10': 'packetFilter'},
+  ],
+};
+
+/// Descriptor for `NetworkMapResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode(
+    'ChJOZXR3b3JrTWFwUmVzcG9uc2USEAoDc2VxGAEgASgEUgNzZXESIAoEbm9kZRgCIAEoCzIMLn'
+    'Byb3Rvcy5Ob2RlUgRub2RlEiIKBXBlZXJzGAMgAygLMgwucHJvdG9zLk5vZGVSBXBlZXJzEjYK'
+    'DHBhY2tldEZpbHRlchgEIAMoCzISLnByb3Rvcy5GaWx0ZXJSdWxlUgxwYWNrZXRGaWx0ZXI=');
+
