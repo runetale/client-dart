@@ -504,8 +504,8 @@ class AclResponse extends $pb.GeneratedMessage {
     $core.String? desc,
     Policy? src,
     Policy? dst,
-    $core.String? proto,
-    $fixnum.Int64? port,
+    $core.Iterable<$core.int>? proto,
+    $core.String? ports,
     $core.String? age,
     $core.String? nodeType,
   }) {
@@ -526,10 +526,10 @@ class AclResponse extends $pb.GeneratedMessage {
       $result.dst = dst;
     }
     if (proto != null) {
-      $result.proto = proto;
+      $result.proto.addAll(proto);
     }
-    if (port != null) {
-      $result.port = port;
+    if (ports != null) {
+      $result.ports = ports;
     }
     if (age != null) {
       $result.age = age;
@@ -549,8 +549,8 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..aOM<Policy>(4, _omitFieldNames ? '' : 'src', subBuilder: Policy.create)
     ..aOM<Policy>(5, _omitFieldNames ? '' : 'dst', subBuilder: Policy.create)
-    ..aOS(6, _omitFieldNames ? '' : 'proto')
-    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
+    ..aOS(7, _omitFieldNames ? '' : 'ports')
     ..aOS(8, _omitFieldNames ? '' : 'age')
     ..aOS(9, _omitFieldNames ? '' : 'nodeType', protoName: 'nodeType')
     ..hasRequiredFields = false
@@ -627,22 +627,16 @@ class AclResponse extends $pb.GeneratedMessage {
   Policy ensureDst() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.String get proto => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set proto($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasProto() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearProto() => clearField(6);
+  $core.List<$core.int> get proto => $_getList(5);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get port => $_getI64(6);
+  $core.String get ports => $_getSZ(6);
   @$pb.TagNumber(7)
-  set port($fixnum.Int64 v) { $_setInt64(6, v); }
+  set ports($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasPort() => $_has(6);
+  $core.bool hasPorts() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPort() => clearField(7);
+  void clearPorts() => clearField(7);
 
   @$pb.TagNumber(8)
   $core.String get age => $_getSZ(7);
