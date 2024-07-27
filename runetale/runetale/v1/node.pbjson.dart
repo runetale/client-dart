@@ -62,32 +62,30 @@ final $typed_data.Uint8List composeNodeResponseDescriptor = $convert.base64Decod
     'ChNDb21wb3NlTm9kZVJlc3BvbnNlEg4KAmlwGAEgASgJUgJpcBISCgRjaWRyGAIgASgJUgRjaW'
     'Ry');
 
-@$core.Deprecated('Use portRangeDescriptor instead')
-const PortRange$json = {
-  '1': 'PortRange',
+@$core.Deprecated('Use netPortRangeDescriptor instead')
+const NetPortRange$json = {
+  '1': 'NetPortRange',
+  '2': [
+    {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'ports', '3': 2, '4': 1, '5': 11, '6': '.protos.NetPortRange.portRange', '10': 'ports'},
+  ],
+  '3': [NetPortRange_portRange$json],
+};
+
+@$core.Deprecated('Use netPortRangeDescriptor instead')
+const NetPortRange_portRange$json = {
+  '1': 'portRange',
   '2': [
     {'1': 'first', '3': 1, '4': 1, '5': 4, '10': 'first'},
     {'1': 'last', '3': 2, '4': 1, '5': 4, '10': 'last'},
   ],
 };
 
-/// Descriptor for `PortRange`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List portRangeDescriptor = $convert.base64Decode(
-    'CglQb3J0UmFuZ2USFAoFZmlyc3QYASABKARSBWZpcnN0EhIKBGxhc3QYAiABKARSBGxhc3Q=');
-
-@$core.Deprecated('Use netPortRangeDescriptor instead')
-const NetPortRange$json = {
-  '1': 'NetPortRange',
-  '2': [
-    {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'ports', '3': 2, '4': 1, '5': 11, '6': '.protos.PortRange', '10': 'ports'},
-  ],
-};
-
 /// Descriptor for `NetPortRange`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List netPortRangeDescriptor = $convert.base64Decode(
-    'CgxOZXRQb3J0UmFuZ2USDgoCaXAYASABKAlSAmlwEicKBXBvcnRzGAIgASgLMhEucHJvdG9zLl'
-    'BvcnRSYW5nZVIFcG9ydHM=');
+    'CgxOZXRQb3J0UmFuZ2USDgoCaXAYASABKAlSAmlwEjQKBXBvcnRzGAIgASgLMh4ucHJvdG9zLk'
+    '5ldFBvcnRSYW5nZS5wb3J0UmFuZ2VSBXBvcnRzGjUKCXBvcnRSYW5nZRIUCgVmaXJzdBgBIAEo'
+    'BFIFZmlyc3QSEgoEbGFzdBgCIAEoBFIEbGFzdA==');
 
 @$core.Deprecated('Use filterRuleDescriptor instead')
 const FilterRule$json = {

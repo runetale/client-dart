@@ -264,8 +264,8 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   void clearCidr() => clearField(2);
 }
 
-class PortRange extends $pb.GeneratedMessage {
-  factory PortRange({
+class NetPortRange_portRange extends $pb.GeneratedMessage {
+  factory NetPortRange_portRange({
     $fixnum.Int64? first,
     $fixnum.Int64? last,
   }) {
@@ -278,11 +278,11 @@ class PortRange extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  PortRange._() : super();
-  factory PortRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PortRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  NetPortRange_portRange._() : super();
+  factory NetPortRange_portRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NetPortRange_portRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PortRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetPortRange.portRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'first', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'last', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
@@ -292,22 +292,22 @@ class PortRange extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  PortRange clone() => PortRange()..mergeFromMessage(this);
+  NetPortRange_portRange clone() => NetPortRange_portRange()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PortRange copyWith(void Function(PortRange) updates) => super.copyWith((message) => updates(message as PortRange)) as PortRange;
+  NetPortRange_portRange copyWith(void Function(NetPortRange_portRange) updates) => super.copyWith((message) => updates(message as NetPortRange_portRange)) as NetPortRange_portRange;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PortRange create() => PortRange._();
-  PortRange createEmptyInstance() => create();
-  static $pb.PbList<PortRange> createRepeated() => $pb.PbList<PortRange>();
+  static NetPortRange_portRange create() => NetPortRange_portRange._();
+  NetPortRange_portRange createEmptyInstance() => create();
+  static $pb.PbList<NetPortRange_portRange> createRepeated() => $pb.PbList<NetPortRange_portRange>();
   @$core.pragma('dart2js:noInline')
-  static PortRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PortRange>(create);
-  static PortRange? _defaultInstance;
+  static NetPortRange_portRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetPortRange_portRange>(create);
+  static NetPortRange_portRange? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get first => $_getI64(0);
@@ -331,7 +331,7 @@ class PortRange extends $pb.GeneratedMessage {
 class NetPortRange extends $pb.GeneratedMessage {
   factory NetPortRange({
     $core.String? ip,
-    PortRange? ports,
+    NetPortRange_portRange? ports,
   }) {
     final $result = create();
     if (ip != null) {
@@ -348,7 +348,7 @@ class NetPortRange extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetPortRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
-    ..aOM<PortRange>(2, _omitFieldNames ? '' : 'ports', subBuilder: PortRange.create)
+    ..aOM<NetPortRange_portRange>(2, _omitFieldNames ? '' : 'ports', subBuilder: NetPortRange_portRange.create)
     ..hasRequiredFields = false
   ;
 
@@ -389,15 +389,15 @@ class NetPortRange extends $pb.GeneratedMessage {
   /// - UDP or TCP portの番号を"0-65535"で指定する
   /// - "80" などの単一のportの場合はlastにも同じポート番号が入る
   @$pb.TagNumber(2)
-  PortRange get ports => $_getN(1);
+  NetPortRange_portRange get ports => $_getN(1);
   @$pb.TagNumber(2)
-  set ports(PortRange v) { setField(2, v); }
+  set ports(NetPortRange_portRange v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPorts() => $_has(1);
   @$pb.TagNumber(2)
   void clearPorts() => clearField(2);
   @$pb.TagNumber(2)
-  PortRange ensurePorts() => $_ensure(1);
+  NetPortRange_portRange ensurePorts() => $_ensure(1);
 }
 
 class FilterRule extends $pb.GeneratedMessage {

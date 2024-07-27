@@ -18,14 +18,78 @@ import 'admin.pbenum.dart';
 
 export 'admin.pbenum.dart';
 
+class PortRange extends $pb.GeneratedMessage {
+  factory PortRange({
+    $core.int? first,
+    $core.int? last,
+  }) {
+    final $result = create();
+    if (first != null) {
+      $result.first = first;
+    }
+    if (last != null) {
+      $result.last = last;
+    }
+    return $result;
+  }
+  PortRange._() : super();
+  factory PortRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PortRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PortRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'first', $pb.PbFieldType.OU3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'last', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PortRange clone() => PortRange()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PortRange copyWith(void Function(PortRange) updates) => super.copyWith((message) => updates(message as PortRange)) as PortRange;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PortRange create() => PortRange._();
+  PortRange createEmptyInstance() => create();
+  static $pb.PbList<PortRange> createRepeated() => $pb.PbList<PortRange>();
+  @$core.pragma('dart2js:noInline')
+  static PortRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PortRange>(create);
+  static PortRange? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get first => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set first($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFirst() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFirst() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get last => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set last($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLast() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLast() => clearField(2);
+}
+
 class CreateAclRequest extends $pb.GeneratedMessage {
   factory CreateAclRequest({
     $core.String? name,
     $core.String? desc,
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
-    $core.String? proto,
-    $fixnum.Int64? port,
+    $core.int? proto,
+    PortRange? ports,
     Action? action,
   }) {
     final $result = create();
@@ -44,8 +108,8 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     if (proto != null) {
       $result.proto = proto;
     }
-    if (port != null) {
-      $result.port = port;
+    if (ports != null) {
+      $result.ports = ports;
     }
     if (action != null) {
       $result.action = action;
@@ -61,8 +125,8 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..pc<AclResources>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
-    ..aOS(5, _omitFieldNames ? '' : 'proto')
-    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.OU3)
+    ..aOM<PortRange>(6, _omitFieldNames ? '' : 'ports', subBuilder: PortRange.create)
     ..e<Action>(7, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -112,23 +176,28 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.List<AclResources> get dst => $_getList(3);
 
+  /// ianaのプロトコル番号で実装
+  /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+  /// 0の場合はTCP, UDP, ICMPv4,ICMPv6が有効になる
   @$pb.TagNumber(5)
-  $core.String get proto => $_getSZ(4);
+  $core.int get proto => $_getIZ(4);
   @$pb.TagNumber(5)
-  set proto($core.String v) { $_setString(4, v); }
+  set proto($core.int v) { $_setUnsignedInt32(4, v); }
   @$pb.TagNumber(5)
   $core.bool hasProto() => $_has(4);
   @$pb.TagNumber(5)
   void clearProto() => clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get port => $_getI64(5);
+  PortRange get ports => $_getN(5);
   @$pb.TagNumber(6)
-  set port($fixnum.Int64 v) { $_setInt64(5, v); }
+  set ports(PortRange v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasPort() => $_has(5);
+  $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPort() => clearField(6);
+  void clearPorts() => clearField(6);
+  @$pb.TagNumber(6)
+  PortRange ensurePorts() => $_ensure(5);
 
   @$pb.TagNumber(7)
   Action get action => $_getN(6);
@@ -219,8 +288,8 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
-    $core.String? proto,
-    $fixnum.Int64? port,
+    $core.int? proto,
+    PortRange? ports,
     Action? action,
   }) {
     final $result = create();
@@ -242,8 +311,8 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     if (proto != null) {
       $result.proto = proto;
     }
-    if (port != null) {
-      $result.port = port;
+    if (ports != null) {
+      $result.ports = ports;
     }
     if (action != null) {
       $result.action = action;
@@ -260,8 +329,8 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(5, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
-    ..aOS(6, _omitFieldNames ? '' : 'proto')
-    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'port', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.OU3)
+    ..aOM<PortRange>(7, _omitFieldNames ? '' : 'ports', subBuilder: PortRange.create)
     ..e<Action>(8, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -320,23 +389,27 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.List<AclResources> get dst => $_getList(4);
 
+  /// ianaのプロトコル番号を使用する
+  /// 0の場合はTCP, UDP, ICMPv4,ICMPv6が有効になる
   @$pb.TagNumber(6)
-  $core.String get proto => $_getSZ(5);
+  $core.int get proto => $_getIZ(5);
   @$pb.TagNumber(6)
-  set proto($core.String v) { $_setString(5, v); }
+  set proto($core.int v) { $_setUnsignedInt32(5, v); }
   @$pb.TagNumber(6)
   $core.bool hasProto() => $_has(5);
   @$pb.TagNumber(6)
   void clearProto() => clearField(6);
 
   @$pb.TagNumber(7)
-  $fixnum.Int64 get port => $_getI64(6);
+  PortRange get ports => $_getN(6);
   @$pb.TagNumber(7)
-  set port($fixnum.Int64 v) { $_setInt64(6, v); }
+  set ports(PortRange v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasPort() => $_has(6);
+  $core.bool hasPorts() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPort() => clearField(7);
+  void clearPorts() => clearField(7);
+  @$pb.TagNumber(7)
+  PortRange ensurePorts() => $_ensure(6);
 
   @$pb.TagNumber(8)
   Action get action => $_getN(7);
@@ -2268,6 +2341,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? nodeIds,
     Platform? platform,
+    $core.String? port,
   }) {
     final $result = create();
     if (name != null) {
@@ -2282,6 +2356,9 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (platform != null) {
       $result.platform = platform;
     }
+    if (port != null) {
+      $result.port = port;
+    }
     return $result;
   }
   CreateFleetRequest._() : super();
@@ -2293,6 +2370,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..e<Platform>(4, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..aOS(6, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
   ;
 
@@ -2346,6 +2424,15 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(3);
   @$pb.TagNumber(4)
   void clearPlatform() => clearField(4);
+
+  @$pb.TagNumber(6)
+  $core.String get port => $_getSZ(4);
+  @$pb.TagNumber(6)
+  set port($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPort() => $_has(4);
+  @$pb.TagNumber(6)
+  void clearPort() => clearField(6);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -2450,6 +2537,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.Iterable<$fixnum.Int64>? nodeIds,
     Platform? platform,
     Action? action,
+    $core.String? port,
   }) {
     final $result = create();
     if (id != null) {
@@ -2470,6 +2558,9 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (action != null) {
       $result.action = action;
     }
+    if (port != null) {
+      $result.port = port;
+    }
     return $result;
   }
   PatchFleetRequest._() : super();
@@ -2483,6 +2574,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..e<Platform>(5, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..e<Action>(6, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
+    ..aOS(7, _omitFieldNames ? '' : 'port')
     ..hasRequiredFields = false
   ;
 
@@ -2554,6 +2646,15 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   $core.bool hasAction() => $_has(5);
   @$pb.TagNumber(6)
   void clearAction() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get port => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set port($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPort() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPort() => clearField(7);
 }
 
 class Overview extends $pb.GeneratedMessage {
