@@ -92,7 +92,7 @@ const CreateAclRequest$json = {
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'src', '3': 3, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
     {'1': 'dst', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
-    {'1': 'proto', '3': 5, '4': 1, '5': 13, '10': 'proto'},
+    {'1': 'proto', '3': 5, '4': 3, '5': 13, '10': 'proto'},
     {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
     {'1': 'action', '3': 7, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
@@ -102,7 +102,7 @@ const CreateAclRequest$json = {
 final $typed_data.Uint8List createAclRequestDescriptor = $convert.base64Decode(
     'ChBDcmVhdGVBY2xSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYxgCIAEoCVIEZG'
     'VzYxImCgNzcmMYAyADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNzcmMSJgoDZHN0GAQgAygL'
-    'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAUgASgNUgVwcm90bxIUCgVwb3'
+    'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAUgAygNUgVwcm90bxIUCgVwb3'
     'J0cxgGIAEoCVIFcG9ydHMSJgoGYWN0aW9uGAcgASgOMg4ucHJvdG9zLkFjdGlvblIGYWN0aW9u');
 
 @$core.Deprecated('Use aclResourcesDescriptor instead')
@@ -554,7 +554,7 @@ const CreateFleetRequest$json = {
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'nodeIds', '3': 3, '4': 3, '5': 4, '10': 'nodeIds'},
     {'1': 'platform', '3': 4, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
-    {'1': 'port', '3': 6, '4': 1, '5': 9, '10': 'port'},
+    {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
   ],
 };
 
@@ -562,7 +562,7 @@ const CreateFleetRequest$json = {
 final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVGbGVldFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgASgJUg'
     'RkZXNjEhgKB25vZGVJZHMYAyADKARSB25vZGVJZHMSLAoIcGxhdGZvcm0YBCABKA4yEC5wcm90'
-    'b3MuUGxhdGZvcm1SCHBsYXRmb3JtEhIKBHBvcnQYBiABKAlSBHBvcnQ=');
+    'b3MuUGxhdGZvcm1SCHBsYXRmb3JtEhQKBXBvcnRzGAYgASgJUgVwb3J0cw==');
 
 @$core.Deprecated('Use getFleetRequestDescriptor instead')
 const GetFleetRequest$json = {
@@ -598,7 +598,7 @@ const PatchFleetRequest$json = {
     {'1': 'nodeIds', '3': 4, '4': 3, '5': 4, '10': 'nodeIds'},
     {'1': 'platform', '3': 5, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
     {'1': 'action', '3': 6, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
-    {'1': 'port', '3': 7, '4': 1, '5': 9, '10': 'port'},
+    {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
   ],
 };
 
@@ -607,7 +607,7 @@ final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
     'ChFQYXRjaEZsZWV0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
     'ISCgRkZXNjGAMgASgJUgRkZXNjEhgKB25vZGVJZHMYBCADKARSB25vZGVJZHMSLAoIcGxhdGZv'
     'cm0YBSABKA4yEC5wcm90b3MuUGxhdGZvcm1SCHBsYXRmb3JtEiYKBmFjdGlvbhgGIAEoDjIOLn'
-    'Byb3Rvcy5BY3Rpb25SBmFjdGlvbhISCgRwb3J0GAcgASgJUgRwb3J0');
+    'Byb3Rvcy5BY3Rpb25SBmFjdGlvbhIUCgVwb3J0cxgHIAEoCVIFcG9ydHM=');
 
 @$core.Deprecated('Use overviewDescriptor instead')
 const Overview$json = {
