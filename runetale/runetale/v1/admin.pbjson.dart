@@ -132,7 +132,7 @@ const PatchAclRequest$json = {
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'src', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
     {'1': 'dst', '3': 5, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
-    {'1': 'proto', '3': 6, '4': 1, '5': 13, '10': 'proto'},
+    {'1': 'proto', '3': 6, '4': 3, '5': 13, '10': 'proto'},
     {'1': 'srcPorts', '3': 7, '4': 1, '5': 9, '10': 'srcPorts'},
     {'1': 'dstPorts', '3': 8, '4': 1, '5': 9, '10': 'dstPorts'},
     {'1': 'action', '3': 9, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
@@ -143,7 +143,7 @@ const PatchAclRequest$json = {
 final $typed_data.Uint8List patchAclRequestDescriptor = $convert.base64Decode(
     'Cg9QYXRjaEFjbFJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEg'
     'oEZGVzYxgDIAEoCVIEZGVzYxImCgNzcmMYBCADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNz'
-    'cmMSJgoDZHN0GAUgAygLMhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAYgAS'
+    'cmMSJgoDZHN0GAUgAygLMhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAYgAy'
     'gNUgVwcm90bxIaCghzcmNQb3J0cxgHIAEoCVIIc3JjUG9ydHMSGgoIZHN0UG9ydHMYCCABKAlS'
     'CGRzdFBvcnRzEiYKBmFjdGlvbhgJIAEoDjIOLnByb3Rvcy5BY3Rpb25SBmFjdGlvbg==');
 

@@ -230,7 +230,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
-    $core.int? proto,
+    $core.Iterable<$core.int>? proto,
     $core.String? srcPorts,
     $core.String? dstPorts,
     Action? action,
@@ -252,7 +252,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
       $result.dst.addAll(dst);
     }
     if (proto != null) {
-      $result.proto = proto;
+      $result.proto.addAll(proto);
     }
     if (srcPorts != null) {
       $result.srcPorts = srcPorts;
@@ -275,7 +275,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(5, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.OU3)
+    ..p<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
     ..aOS(7, _omitFieldNames ? '' : 'srcPorts', protoName: 'srcPorts')
     ..aOS(8, _omitFieldNames ? '' : 'dstPorts', protoName: 'dstPorts')
     ..e<Action>(9, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
@@ -339,13 +339,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   /// ianaのプロトコル番号を使用する
   /// 0の場合はTCP, UDP, ICMPv4,ICMPv6が有効になる
   @$pb.TagNumber(6)
-  $core.int get proto => $_getIZ(5);
-  @$pb.TagNumber(6)
-  set proto($core.int v) { $_setUnsignedInt32(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasProto() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearProto() => clearField(6);
+  $core.List<$core.int> get proto => $_getList(5);
 
   @$pb.TagNumber(7)
   $core.String get srcPorts => $_getSZ(6);
