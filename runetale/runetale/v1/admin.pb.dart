@@ -25,7 +25,6 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
     $core.Iterable<$core.int>? proto,
-    $core.String? srcPorts,
     $core.String? dstPorts,
     Action? action,
   }) {
@@ -45,9 +44,6 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     if (proto != null) {
       $result.proto.addAll(proto);
     }
-    if (srcPorts != null) {
-      $result.srcPorts = srcPorts;
-    }
     if (dstPorts != null) {
       $result.dstPorts = dstPorts;
     }
@@ -66,9 +62,8 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..p<$core.int>(5, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
-    ..aOS(6, _omitFieldNames ? '' : 'srcPorts', protoName: 'srcPorts')
-    ..aOS(7, _omitFieldNames ? '' : 'dstPorts', protoName: 'dstPorts')
-    ..e<Action>(8, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
+    ..aOS(6, _omitFieldNames ? '' : 'dstPorts', protoName: 'dstPorts')
+    ..e<Action>(7, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -124,31 +119,22 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   $core.List<$core.int> get proto => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.String get srcPorts => $_getSZ(5);
+  $core.String get dstPorts => $_getSZ(5);
   @$pb.TagNumber(6)
-  set srcPorts($core.String v) { $_setString(5, v); }
+  set dstPorts($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasSrcPorts() => $_has(5);
+  $core.bool hasDstPorts() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSrcPorts() => clearField(6);
+  void clearDstPorts() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get dstPorts => $_getSZ(6);
+  Action get action => $_getN(6);
   @$pb.TagNumber(7)
-  set dstPorts($core.String v) { $_setString(6, v); }
+  set action(Action v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasDstPorts() => $_has(6);
+  $core.bool hasAction() => $_has(6);
   @$pb.TagNumber(7)
-  void clearDstPorts() => clearField(7);
-
-  @$pb.TagNumber(8)
-  Action get action => $_getN(7);
-  @$pb.TagNumber(8)
-  set action(Action v) { setField(8, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasAction() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearAction() => clearField(8);
+  void clearAction() => clearField(7);
 }
 
 class AclResources extends $pb.GeneratedMessage {
@@ -231,7 +217,6 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
     $core.Iterable<$core.int>? proto,
-    $core.String? srcPorts,
     $core.String? dstPorts,
     Action? action,
   }) {
@@ -254,9 +239,6 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     if (proto != null) {
       $result.proto.addAll(proto);
     }
-    if (srcPorts != null) {
-      $result.srcPorts = srcPorts;
-    }
     if (dstPorts != null) {
       $result.dstPorts = dstPorts;
     }
@@ -276,9 +258,8 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(5, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..p<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
-    ..aOS(7, _omitFieldNames ? '' : 'srcPorts', protoName: 'srcPorts')
-    ..aOS(8, _omitFieldNames ? '' : 'dstPorts', protoName: 'dstPorts')
-    ..e<Action>(9, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
+    ..aOS(7, _omitFieldNames ? '' : 'dstPorts', protoName: 'dstPorts')
+    ..e<Action>(8, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -342,31 +323,22 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   $core.List<$core.int> get proto => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.String get srcPorts => $_getSZ(6);
+  $core.String get dstPorts => $_getSZ(6);
   @$pb.TagNumber(7)
-  set srcPorts($core.String v) { $_setString(6, v); }
+  set dstPorts($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasSrcPorts() => $_has(6);
+  $core.bool hasDstPorts() => $_has(6);
   @$pb.TagNumber(7)
-  void clearSrcPorts() => clearField(7);
+  void clearDstPorts() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get dstPorts => $_getSZ(7);
+  Action get action => $_getN(7);
   @$pb.TagNumber(8)
-  set dstPorts($core.String v) { $_setString(7, v); }
+  set action(Action v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasDstPorts() => $_has(7);
+  $core.bool hasAction() => $_has(7);
   @$pb.TagNumber(8)
-  void clearDstPorts() => clearField(8);
-
-  @$pb.TagNumber(9)
-  Action get action => $_getN(8);
-  @$pb.TagNumber(9)
-  set action(Action v) { setField(9, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasAction() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearAction() => clearField(9);
+  void clearAction() => clearField(8);
 }
 
 class GetAclRequest extends $pb.GeneratedMessage {
