@@ -2979,7 +2979,7 @@ class Fleet extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.Iterable<Resource>? resources,
-    $core.String? proto,
+    $core.Iterable<$core.int>? proto,
     $core.String? ports,
     $core.String? age,
     Platform? platform,
@@ -2999,7 +2999,7 @@ class Fleet extends $pb.GeneratedMessage {
       $result.resources.addAll(resources);
     }
     if (proto != null) {
-      $result.proto = proto;
+      $result.proto.addAll(proto);
     }
     if (ports != null) {
       $result.ports = ports;
@@ -3024,7 +3024,7 @@ class Fleet extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..pc<Resource>(4, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..aOS(5, _omitFieldNames ? '' : 'proto')
+    ..p<$core.int>(5, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
     ..aOS(6, _omitFieldNames ? '' : 'ports')
     ..aOS(7, _omitFieldNames ? '' : 'age')
     ..e<Platform>(8, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
@@ -3084,13 +3084,7 @@ class Fleet extends $pb.GeneratedMessage {
   $core.List<Resource> get resources => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.String get proto => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set proto($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasProto() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearProto() => clearField(5);
+  $core.List<$core.int> get proto => $_getList(4);
 
   @$pb.TagNumber(6)
   $core.String get ports => $_getSZ(5);
@@ -3137,6 +3131,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? ip,
     $core.String? ports,
+    $core.Iterable<$core.int>? proto,
     $core.String? os,
     $core.String? age,
     Platform? platform,
@@ -3161,6 +3156,9 @@ class Resource extends $pb.GeneratedMessage {
     }
     if (ports != null) {
       $result.ports = ports;
+    }
+    if (proto != null) {
+      $result.proto.addAll(proto);
     }
     if (os != null) {
       $result.os = os;
@@ -3190,11 +3188,12 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'email')
     ..aOS(5, _omitFieldNames ? '' : 'ip')
     ..aOS(6, _omitFieldNames ? '' : 'ports')
-    ..aOS(7, _omitFieldNames ? '' : 'os')
-    ..aOS(8, _omitFieldNames ? '' : 'age')
-    ..e<Platform>(9, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
-    ..aOB(10, _omitFieldNames ? '' : 'status')
-    ..aOS(11, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..p<$core.int>(7, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
+    ..aOS(8, _omitFieldNames ? '' : 'os')
+    ..aOS(9, _omitFieldNames ? '' : 'age')
+    ..e<Platform>(10, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..aOB(11, _omitFieldNames ? '' : 'status')
+    ..aOS(12, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..hasRequiredFields = false
   ;
 
@@ -3274,49 +3273,52 @@ class Resource extends $pb.GeneratedMessage {
   void clearPorts() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get os => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set os($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasOs() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearOs() => clearField(7);
+  $core.List<$core.int> get proto => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.String get age => $_getSZ(7);
+  $core.String get os => $_getSZ(7);
   @$pb.TagNumber(8)
-  set age($core.String v) { $_setString(7, v); }
+  set os($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasAge() => $_has(7);
+  $core.bool hasOs() => $_has(7);
   @$pb.TagNumber(8)
-  void clearAge() => clearField(8);
+  void clearOs() => clearField(8);
 
   @$pb.TagNumber(9)
-  Platform get platform => $_getN(8);
+  $core.String get age => $_getSZ(8);
   @$pb.TagNumber(9)
-  set platform(Platform v) { setField(9, v); }
+  set age($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasPlatform() => $_has(8);
+  $core.bool hasAge() => $_has(8);
   @$pb.TagNumber(9)
-  void clearPlatform() => clearField(9);
+  void clearAge() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.bool get status => $_getBF(9);
+  Platform get platform => $_getN(9);
   @$pb.TagNumber(10)
-  set status($core.bool v) { $_setBool(9, v); }
+  set platform(Platform v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasStatus() => $_has(9);
+  $core.bool hasPlatform() => $_has(9);
   @$pb.TagNumber(10)
-  void clearStatus() => clearField(10);
+  void clearPlatform() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get createdBy => $_getSZ(10);
+  $core.bool get status => $_getBF(10);
   @$pb.TagNumber(11)
-  set createdBy($core.String v) { $_setString(10, v); }
+  set status($core.bool v) { $_setBool(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasCreatedBy() => $_has(10);
+  $core.bool hasStatus() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCreatedBy() => clearField(11);
+  void clearStatus() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get createdBy => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set createdBy($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedBy() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreatedBy() => clearField(12);
 }
 
 class Group extends $pb.GeneratedMessage {
