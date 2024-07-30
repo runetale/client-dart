@@ -36,6 +36,23 @@ class NodeType extends $pb.ProtobufEnum {
   const NodeType._($core.int v, $core.String n) : super(v, n);
 }
 
+class LinkerType extends $pb.ProtobufEnum {
+  static const LinkerType SUBNET = LinkerType._(0, _omitEnumNames ? '' : 'SUBNET');
+  static const LinkerType UNIVERSAL = LinkerType._(1, _omitEnumNames ? '' : 'UNIVERSAL');
+  static const LinkerType APP = LinkerType._(2, _omitEnumNames ? '' : 'APP');
+
+  static const $core.List<LinkerType> values = <LinkerType> [
+    SUBNET,
+    UNIVERSAL,
+    APP,
+  ];
+
+  static final $core.Map<$core.int, LinkerType> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static LinkerType? valueOf($core.int value) => _byValue[value];
+
+  const LinkerType._($core.int v, $core.String n) : super(v, n);
+}
+
 class ExpirelyTime extends $pb.ProtobufEnum {
   static const ExpirelyTime ONEMONTH = ExpirelyTime._(0, _omitEnumNames ? '' : 'ONEMONTH');
   static const ExpirelyTime TWOMONTH = ExpirelyTime._(1, _omitEnumNames ? '' : 'TWOMONTH');

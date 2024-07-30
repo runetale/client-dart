@@ -31,6 +31,20 @@ final $typed_data.Uint8List nodeTypeDescriptor = $convert.base64Decode(
     'CghOb2RlVHlwZRIJCgVGTEVFVBAAEgwKCFJFU09VUkNFEAESCQoFR1JPVVAQAhIICgRVU0VSEA'
     'MSBwoDSU5LEAQSCgoGREVWSUNFEAU=');
 
+@$core.Deprecated('Use linkerTypeDescriptor instead')
+const LinkerType$json = {
+  '1': 'LinkerType',
+  '2': [
+    {'1': 'SUBNET', '2': 0},
+    {'1': 'UNIVERSAL', '2': 1},
+    {'1': 'APP', '2': 2},
+  ],
+};
+
+/// Descriptor for `LinkerType`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List linkerTypeDescriptor = $convert.base64Decode(
+    'CgpMaW5rZXJUeXBlEgoKBlNVQk5FVBAAEg0KCVVOSVZFUlNBTBABEgcKA0FQUBAC');
+
 @$core.Deprecated('Use expirelyTimeDescriptor instead')
 const ExpirelyTime$json = {
   '1': 'ExpirelyTime',
@@ -648,30 +662,87 @@ final $typed_data.Uint8List inviteUserResponseDescriptor = $convert.base64Decode
 const CreateSubnetLinkerRequest$json = {
   '1': 'CreateSubnetLinkerRequest',
   '2': [
-    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'advertiseRoute', '3': 3, '4': 1, '5': 9, '10': 'advertiseRoute'},
+    {'1': 'nodeIds', '3': 1, '4': 1, '5': 4, '10': 'nodeIds'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'advertiseRoute', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoute'},
   ],
 };
 
 /// Descriptor for `CreateSubnetLinkerRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createSubnetLinkerRequestDescriptor = $convert.base64Decode(
-    'ChlDcmVhdGVTdWJuZXRMaW5rZXJSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYx'
-    'gCIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0ZRgDIAEoCVIOYWR2ZXJ0aXNlUm91dGU=');
+    'ChlDcmVhdGVTdWJuZXRMaW5rZXJSZXF1ZXN0EhgKB25vZGVJZHMYASABKARSB25vZGVJZHMSEg'
+    'oEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEiYKDmFkdmVydGlzZVJvdXRl'
+    'GAQgAygJUg5hZHZlcnRpc2VSb3V0ZQ==');
+
+@$core.Deprecated('Use getLinkersReponseDescriptor instead')
+const GetLinkersReponse$json = {
+  '1': 'GetLinkersReponse',
+  '2': [
+    {'1': 'linker', '3': 2, '4': 3, '5': 11, '6': '.protos.Linker', '10': 'linker'},
+  ],
+};
+
+/// Descriptor for `GetLinkersReponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getLinkersReponseDescriptor = $convert.base64Decode(
+    'ChFHZXRMaW5rZXJzUmVwb25zZRImCgZsaW5rZXIYAiADKAsyDi5wcm90b3MuTGlua2VyUgZsaW'
+    '5rZXI=');
+
+@$core.Deprecated('Use linkerDescriptor instead')
+const Linker$json = {
+  '1': 'Linker',
+  '2': [
+    {'1': 'nodeType', '3': 1, '4': 1, '5': 14, '6': '.protos.NodeType', '10': 'nodeType'},
+    {'1': 'linkerType', '3': 2, '4': 1, '5': 14, '6': '.protos.LinkerType', '10': 'linkerType'},
+    {'1': 'id', '3': 3, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'nodeId', '3': 4, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'email', '3': 6, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'ip', '3': 7, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'ports', '3': 8, '4': 1, '5': 9, '10': 'ports'},
+    {'1': 'proto', '3': 9, '4': 3, '5': 13, '10': 'proto'},
+    {'1': 'os', '3': 10, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'age', '3': 11, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'platform', '3': 12, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
+    {'1': 'status', '3': 13, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'createdBy', '3': 14, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'lastSeen', '3': 15, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'version', '3': 16, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'nodeKey', '3': 17, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'createdAt', '3': 18, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'keyExpiry', '3': 19, '4': 1, '5': 9, '10': 'keyExpiry'},
+  ],
+};
+
+/// Descriptor for `Linker`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List linkerDescriptor = $convert.base64Decode(
+    'CgZMaW5rZXISLAoIbm9kZVR5cGUYASABKA4yEC5wcm90b3MuTm9kZVR5cGVSCG5vZGVUeXBlEj'
+    'IKCmxpbmtlclR5cGUYAiABKA4yEi5wcm90b3MuTGlua2VyVHlwZVIKbGlua2VyVHlwZRIOCgJp'
+    'ZBgDIAEoBFICaWQSFgoGbm9kZUlkGAQgASgEUgZub2RlSWQSEgoEbmFtZRgFIAEoCVIEbmFtZR'
+    'IUCgVlbWFpbBgGIAEoCVIFZW1haWwSDgoCaXAYByABKAlSAmlwEhQKBXBvcnRzGAggASgJUgVw'
+    'b3J0cxIUCgVwcm90bxgJIAMoDVIFcHJvdG8SDgoCb3MYCiABKAlSAm9zEhAKA2FnZRgLIAEoCV'
+    'IDYWdlEiwKCHBsYXRmb3JtGAwgASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9ybRIWCgZz'
+    'dGF0dXMYDSABKAhSBnN0YXR1cxIcCgljcmVhdGVkQnkYDiABKAlSCWNyZWF0ZWRCeRIaCghsYX'
+    'N0U2VlbhgPIAEoCVIIbGFzdFNlZW4SGAoHdmVyc2lvbhgQIAEoCVIHdmVyc2lvbhIYCgdub2Rl'
+    'S2V5GBEgASgJUgdub2RlS2V5EhwKCWNyZWF0ZWRBdBgSIAEoCVIJY3JlYXRlZEF0EhwKCWtleU'
+    'V4cGlyeRgTIAEoCVIJa2V5RXhwaXJ5');
 
 @$core.Deprecated('Use createSubnetLinkerResponseDescriptor instead')
 const CreateSubnetLinkerResponse$json = {
   '1': 'CreateSubnetLinkerResponse',
   '2': [
-    {'1': 'installScripts', '3': 1, '4': 1, '5': 9, '10': 'installScripts'},
-    {'1': 'composeKey', '3': 2, '4': 1, '5': 9, '10': 'composeKey'},
+    {'1': 'nodeIds', '3': 1, '4': 1, '5': 4, '10': 'nodeIds'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'advertiseRoute', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoute'},
   ],
 };
 
 /// Descriptor for `CreateSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createSubnetLinkerResponseDescriptor = $convert.base64Decode(
-    'ChpDcmVhdGVTdWJuZXRMaW5rZXJSZXNwb25zZRImCg5pbnN0YWxsU2NyaXB0cxgBIAEoCVIOaW'
-    '5zdGFsbFNjcmlwdHMSHgoKY29tcG9zZUtleRgCIAEoCVIKY29tcG9zZUtleQ==');
+    'ChpDcmVhdGVTdWJuZXRMaW5rZXJSZXNwb25zZRIYCgdub2RlSWRzGAEgASgEUgdub2RlSWRzEh'
+    'IKBG5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0'
+    'ZRgEIAMoCVIOYWR2ZXJ0aXNlUm91dGU=');
 
 @$core.Deprecated('Use policyDescriptor instead')
 const Policy$json = {
@@ -798,27 +869,28 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
 const Device$json = {
   '1': 'Device',
   '2': [
-    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'status', '3': 6, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'lastSeen', '3': 7, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'createdBy', '3': 8, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'version', '3': 9, '4': 1, '5': 9, '10': 'version'},
-    {'1': 'nodeKey', '3': 10, '4': 1, '5': 9, '10': 'nodeKey'},
-    {'1': 'createdAt', '3': 11, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'keyExpiry', '3': 12, '4': 1, '5': 9, '10': 'keyExpiry'},
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'os', '3': 6, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'status', '3': 7, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'lastSeen', '3': 8, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'version', '3': 10, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'nodeKey', '3': 11, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'createdAt', '3': 12, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'keyExpiry', '3': 13, '4': 1, '5': 9, '10': 'keyExpiry'},
   ],
 };
 
 /// Descriptor for `Device`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceDescriptor = $convert.base64Decode(
-    'CgZEZXZpY2USFgoGbm9kZUlkGAEgASgEUgZub2RlSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIUCg'
-    'VlbWFpbBgDIAEoCVIFZW1haWwSDgoCaXAYBCABKAlSAmlwEg4KAm9zGAUgASgJUgJvcxIWCgZz'
-    'dGF0dXMYBiABKAhSBnN0YXR1cxIaCghsYXN0U2VlbhgHIAEoCVIIbGFzdFNlZW4SHAoJY3JlYX'
-    'RlZEJ5GAggASgJUgljcmVhdGVkQnkSGAoHdmVyc2lvbhgJIAEoCVIHdmVyc2lvbhIYCgdub2Rl'
-    'S2V5GAogASgJUgdub2RlS2V5EhwKCWNyZWF0ZWRBdBgLIAEoCVIJY3JlYXRlZEF0EhwKCWtleU'
-    'V4cGlyeRgMIAEoCVIJa2V5RXhwaXJ5');
+    'CgZEZXZpY2USDgoCaWQYASABKARSAmlkEhYKBm5vZGVJZBgCIAEoBFIGbm9kZUlkEhIKBG5hbW'
+    'UYAyABKAlSBG5hbWUSFAoFZW1haWwYBCABKAlSBWVtYWlsEg4KAmlwGAUgASgJUgJpcBIOCgJv'
+    'cxgGIAEoCVICb3MSFgoGc3RhdHVzGAcgASgIUgZzdGF0dXMSGgoIbGFzdFNlZW4YCCABKAlSCG'
+    'xhc3RTZWVuEhwKCWNyZWF0ZWRCeRgJIAEoCVIJY3JlYXRlZEJ5EhgKB3ZlcnNpb24YCiABKAlS'
+    'B3ZlcnNpb24SGAoHbm9kZUtleRgLIAEoCVIHbm9kZUtleRIcCgljcmVhdGVkQXQYDCABKAlSCW'
+    'NyZWF0ZWRBdBIcCglrZXlFeHBpcnkYDSABKAlSCWtleUV4cGlyeQ==');
 

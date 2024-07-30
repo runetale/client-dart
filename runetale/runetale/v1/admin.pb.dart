@@ -2757,11 +2757,15 @@ class InviteUserResponse extends $pb.GeneratedMessage {
 
 class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   factory CreateSubnetLinkerRequest({
+    $fixnum.Int64? nodeIds,
     $core.String? name,
     $core.String? desc,
-    $core.String? advertiseRoute,
+    $core.Iterable<$core.String>? advertiseRoute,
   }) {
     final $result = create();
+    if (nodeIds != null) {
+      $result.nodeIds = nodeIds;
+    }
     if (name != null) {
       $result.name = name;
     }
@@ -2769,7 +2773,7 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
       $result.desc = desc;
     }
     if (advertiseRoute != null) {
-      $result.advertiseRoute = advertiseRoute;
+      $result.advertiseRoute.addAll(advertiseRoute);
     }
     return $result;
   }
@@ -2778,9 +2782,10 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   factory CreateSubnetLinkerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSubnetLinkerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'name')
-    ..aOS(2, _omitFieldNames ? '' : 'desc')
-    ..aOS(3, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
     ..hasRequiredFields = false
   ;
 
@@ -2806,44 +2811,395 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   static CreateSubnetLinkerRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $fixnum.Int64 get nodeIds => $_getI64(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set nodeIds($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasNodeIds() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearNodeIds() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get desc => $_getSZ(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set desc($core.String v) { $_setString(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDesc() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDesc() => clearField(2);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get advertiseRoute => $_getSZ(2);
+  $core.String get desc => $_getSZ(2);
   @$pb.TagNumber(3)
-  set advertiseRoute($core.String v) { $_setString(2, v); }
+  set desc($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAdvertiseRoute() => $_has(2);
+  $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAdvertiseRoute() => clearField(3);
+  void clearDesc() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get advertiseRoute => $_getList(3);
+}
+
+class GetLinkersReponse extends $pb.GeneratedMessage {
+  factory GetLinkersReponse({
+    $core.Iterable<Linker>? linker,
+  }) {
+    final $result = create();
+    if (linker != null) {
+      $result.linker.addAll(linker);
+    }
+    return $result;
+  }
+  GetLinkersReponse._() : super();
+  factory GetLinkersReponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetLinkersReponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLinkersReponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<Linker>(2, _omitFieldNames ? '' : 'linker', $pb.PbFieldType.PM, subBuilder: Linker.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetLinkersReponse clone() => GetLinkersReponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetLinkersReponse copyWith(void Function(GetLinkersReponse) updates) => super.copyWith((message) => updates(message as GetLinkersReponse)) as GetLinkersReponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetLinkersReponse create() => GetLinkersReponse._();
+  GetLinkersReponse createEmptyInstance() => create();
+  static $pb.PbList<GetLinkersReponse> createRepeated() => $pb.PbList<GetLinkersReponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetLinkersReponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLinkersReponse>(create);
+  static GetLinkersReponse? _defaultInstance;
+
+  @$pb.TagNumber(2)
+  $core.List<Linker> get linker => $_getList(0);
+}
+
+class Linker extends $pb.GeneratedMessage {
+  factory Linker({
+    NodeType? nodeType,
+    LinkerType? linkerType,
+    $fixnum.Int64? id,
+    $fixnum.Int64? nodeId,
+    $core.String? name,
+    $core.String? email,
+    $core.String? ip,
+    $core.String? ports,
+    $core.Iterable<$core.int>? proto,
+    $core.String? os,
+    $core.String? age,
+    Platform? platform,
+    $core.bool? status,
+    $core.String? createdBy,
+    $core.String? lastSeen,
+    $core.String? version,
+    $core.String? nodeKey,
+    $core.String? createdAt,
+    $core.String? keyExpiry,
+  }) {
+    final $result = create();
+    if (nodeType != null) {
+      $result.nodeType = nodeType;
+    }
+    if (linkerType != null) {
+      $result.linkerType = linkerType;
+    }
+    if (id != null) {
+      $result.id = id;
+    }
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (ports != null) {
+      $result.ports = ports;
+    }
+    if (proto != null) {
+      $result.proto.addAll(proto);
+    }
+    if (os != null) {
+      $result.os = os;
+    }
+    if (age != null) {
+      $result.age = age;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    if (lastSeen != null) {
+      $result.lastSeen = lastSeen;
+    }
+    if (version != null) {
+      $result.version = version;
+    }
+    if (nodeKey != null) {
+      $result.nodeKey = nodeKey;
+    }
+    if (createdAt != null) {
+      $result.createdAt = createdAt;
+    }
+    if (keyExpiry != null) {
+      $result.keyExpiry = keyExpiry;
+    }
+    return $result;
+  }
+  Linker._() : super();
+  factory Linker.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Linker.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Linker', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..e<NodeType>(1, _omitFieldNames ? '' : 'nodeType', $pb.PbFieldType.OE, protoName: 'nodeType', defaultOrMaker: NodeType.FLEET, valueOf: NodeType.valueOf, enumValues: NodeType.values)
+    ..e<LinkerType>(2, _omitFieldNames ? '' : 'linkerType', $pb.PbFieldType.OE, protoName: 'linkerType', defaultOrMaker: LinkerType.SUBNET, valueOf: LinkerType.valueOf, enumValues: LinkerType.values)
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(5, _omitFieldNames ? '' : 'name')
+    ..aOS(6, _omitFieldNames ? '' : 'email')
+    ..aOS(7, _omitFieldNames ? '' : 'ip')
+    ..aOS(8, _omitFieldNames ? '' : 'ports')
+    ..p<$core.int>(9, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
+    ..aOS(10, _omitFieldNames ? '' : 'os')
+    ..aOS(11, _omitFieldNames ? '' : 'age')
+    ..e<Platform>(12, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..aOB(13, _omitFieldNames ? '' : 'status')
+    ..aOS(14, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(15, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(16, _omitFieldNames ? '' : 'version')
+    ..aOS(17, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..aOS(18, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
+    ..aOS(19, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Linker clone() => Linker()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Linker copyWith(void Function(Linker) updates) => super.copyWith((message) => updates(message as Linker)) as Linker;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Linker create() => Linker._();
+  Linker createEmptyInstance() => create();
+  static $pb.PbList<Linker> createRepeated() => $pb.PbList<Linker>();
+  @$core.pragma('dart2js:noInline')
+  static Linker getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Linker>(create);
+  static Linker? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  NodeType get nodeType => $_getN(0);
+  @$pb.TagNumber(1)
+  set nodeType(NodeType v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasNodeType() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeType() => clearField(1);
+
+  @$pb.TagNumber(2)
+  LinkerType get linkerType => $_getN(1);
+  @$pb.TagNumber(2)
+  set linkerType(LinkerType v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLinkerType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLinkerType() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get id => $_getI64(2);
+  @$pb.TagNumber(3)
+  set id($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearId() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get nodeId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set nodeId($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasNodeId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNodeId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get name => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set name($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get email => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set email($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasEmail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEmail() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get ip => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set ip($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasIp() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIp() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get ports => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set ports($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPorts() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPorts() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.List<$core.int> get proto => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $core.String get os => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set os($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasOs() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearOs() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get age => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set age($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasAge() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearAge() => clearField(11);
+
+  @$pb.TagNumber(12)
+  Platform get platform => $_getN(11);
+  @$pb.TagNumber(12)
+  set platform(Platform v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasPlatform() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPlatform() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get status => $_getBF(12);
+  @$pb.TagNumber(13)
+  set status($core.bool v) { $_setBool(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasStatus() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearStatus() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get createdBy => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set createdBy($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasCreatedBy() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearCreatedBy() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.String get lastSeen => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set lastSeen($core.String v) { $_setString(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasLastSeen() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLastSeen() => clearField(15);
+
+  @$pb.TagNumber(16)
+  $core.String get version => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set version($core.String v) { $_setString(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasVersion() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearVersion() => clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get nodeKey => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set nodeKey($core.String v) { $_setString(16, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasNodeKey() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearNodeKey() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get createdAt => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set createdAt($core.String v) { $_setString(17, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasCreatedAt() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearCreatedAt() => clearField(18);
+
+  @$pb.TagNumber(19)
+  $core.String get keyExpiry => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set keyExpiry($core.String v) { $_setString(18, v); }
+  @$pb.TagNumber(19)
+  $core.bool hasKeyExpiry() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearKeyExpiry() => clearField(19);
 }
 
 class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   factory CreateSubnetLinkerResponse({
-    $core.String? installScripts,
-    $core.String? composeKey,
+    $fixnum.Int64? nodeIds,
+    $core.String? name,
+    $core.String? desc,
+    $core.Iterable<$core.String>? advertiseRoute,
   }) {
     final $result = create();
-    if (installScripts != null) {
-      $result.installScripts = installScripts;
+    if (nodeIds != null) {
+      $result.nodeIds = nodeIds;
     }
-    if (composeKey != null) {
-      $result.composeKey = composeKey;
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (advertiseRoute != null) {
+      $result.advertiseRoute.addAll(advertiseRoute);
     }
     return $result;
   }
@@ -2852,8 +3208,10 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   factory CreateSubnetLinkerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSubnetLinkerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'installScripts', protoName: 'installScripts')
-    ..aOS(2, _omitFieldNames ? '' : 'composeKey', protoName: 'composeKey')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
     ..hasRequiredFields = false
   ;
 
@@ -2879,22 +3237,34 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   static CreateSubnetLinkerResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get installScripts => $_getSZ(0);
+  $fixnum.Int64 get nodeIds => $_getI64(0);
   @$pb.TagNumber(1)
-  set installScripts($core.String v) { $_setString(0, v); }
+  set nodeIds($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasInstallScripts() => $_has(0);
+  $core.bool hasNodeIds() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInstallScripts() => clearField(1);
+  void clearNodeIds() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get composeKey => $_getSZ(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set composeKey($core.String v) { $_setString(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasComposeKey() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearComposeKey() => clearField(2);
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get advertiseRoute => $_getList(3);
 }
 
 class Policy extends $pb.GeneratedMessage {
@@ -3619,6 +3989,7 @@ class User extends $pb.GeneratedMessage {
 
 class Device extends $pb.GeneratedMessage {
   factory Device({
+    $fixnum.Int64? id,
     $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? email,
@@ -3633,6 +4004,9 @@ class Device extends $pb.GeneratedMessage {
     $core.String? keyExpiry,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (nodeId != null) {
       $result.nodeId = nodeId;
     }
@@ -3676,18 +4050,19 @@ class Device extends $pb.GeneratedMessage {
   factory Device.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Device', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'email')
-    ..aOS(4, _omitFieldNames ? '' : 'ip')
-    ..aOS(5, _omitFieldNames ? '' : 'os')
-    ..aOB(6, _omitFieldNames ? '' : 'status')
-    ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOS(8, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
-    ..aOS(9, _omitFieldNames ? '' : 'version')
-    ..aOS(10, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
-    ..aOS(11, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
-    ..aOS(12, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'email')
+    ..aOS(5, _omitFieldNames ? '' : 'ip')
+    ..aOS(6, _omitFieldNames ? '' : 'os')
+    ..aOB(7, _omitFieldNames ? '' : 'status')
+    ..aOS(8, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(9, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(10, _omitFieldNames ? '' : 'version')
+    ..aOS(11, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..aOS(12, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
+    ..aOS(13, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
     ..hasRequiredFields = false
   ;
 
@@ -3713,112 +4088,121 @@ class Device extends $pb.GeneratedMessage {
   static Device? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get nodeId => $_getI64(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasNodeId() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
+  $fixnum.Int64 get nodeId => $_getI64(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
+  $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearNodeId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get email => $_getSZ(2);
+  $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set email($core.String v) { $_setString(2, v); }
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasEmail() => $_has(2);
+  $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearEmail() => clearField(3);
+  void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get ip => $_getSZ(3);
+  $core.String get email => $_getSZ(3);
   @$pb.TagNumber(4)
-  set ip($core.String v) { $_setString(3, v); }
+  set email($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasIp() => $_has(3);
+  $core.bool hasEmail() => $_has(3);
   @$pb.TagNumber(4)
-  void clearIp() => clearField(4);
+  void clearEmail() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get os => $_getSZ(4);
+  $core.String get ip => $_getSZ(4);
   @$pb.TagNumber(5)
-  set os($core.String v) { $_setString(4, v); }
+  set ip($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasOs() => $_has(4);
+  $core.bool hasIp() => $_has(4);
   @$pb.TagNumber(5)
-  void clearOs() => clearField(5);
+  void clearIp() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get status => $_getBF(5);
+  $core.String get os => $_getSZ(5);
   @$pb.TagNumber(6)
-  set status($core.bool v) { $_setBool(5, v); }
+  set os($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasStatus() => $_has(5);
+  $core.bool hasOs() => $_has(5);
   @$pb.TagNumber(6)
-  void clearStatus() => clearField(6);
+  void clearOs() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get lastSeen => $_getSZ(6);
+  $core.bool get status => $_getBF(6);
   @$pb.TagNumber(7)
-  set lastSeen($core.String v) { $_setString(6, v); }
+  set status($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasLastSeen() => $_has(6);
+  $core.bool hasStatus() => $_has(6);
   @$pb.TagNumber(7)
-  void clearLastSeen() => clearField(7);
+  void clearStatus() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get createdBy => $_getSZ(7);
+  $core.String get lastSeen => $_getSZ(7);
   @$pb.TagNumber(8)
-  set createdBy($core.String v) { $_setString(7, v); }
+  set lastSeen($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasCreatedBy() => $_has(7);
+  $core.bool hasLastSeen() => $_has(7);
   @$pb.TagNumber(8)
-  void clearCreatedBy() => clearField(8);
+  void clearLastSeen() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get version => $_getSZ(8);
+  $core.String get createdBy => $_getSZ(8);
   @$pb.TagNumber(9)
-  set version($core.String v) { $_setString(8, v); }
+  set createdBy($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasVersion() => $_has(8);
+  $core.bool hasCreatedBy() => $_has(8);
   @$pb.TagNumber(9)
-  void clearVersion() => clearField(9);
+  void clearCreatedBy() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get nodeKey => $_getSZ(9);
+  $core.String get version => $_getSZ(9);
   @$pb.TagNumber(10)
-  set nodeKey($core.String v) { $_setString(9, v); }
+  set version($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasNodeKey() => $_has(9);
+  $core.bool hasVersion() => $_has(9);
   @$pb.TagNumber(10)
-  void clearNodeKey() => clearField(10);
+  void clearVersion() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get createdAt => $_getSZ(10);
+  $core.String get nodeKey => $_getSZ(10);
   @$pb.TagNumber(11)
-  set createdAt($core.String v) { $_setString(10, v); }
+  set nodeKey($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasCreatedAt() => $_has(10);
+  $core.bool hasNodeKey() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCreatedAt() => clearField(11);
+  void clearNodeKey() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get keyExpiry => $_getSZ(11);
+  $core.String get createdAt => $_getSZ(11);
   @$pb.TagNumber(12)
-  set keyExpiry($core.String v) { $_setString(11, v); }
+  set createdAt($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasKeyExpiry() => $_has(11);
+  $core.bool hasCreatedAt() => $_has(11);
   @$pb.TagNumber(12)
-  void clearKeyExpiry() => clearField(12);
+  void clearCreatedAt() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get keyExpiry => $_getSZ(12);
+  @$pb.TagNumber(13)
+  set keyExpiry($core.String v) { $_setString(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasKeyExpiry() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearKeyExpiry() => clearField(13);
 }
 
 
