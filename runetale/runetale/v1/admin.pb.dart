@@ -2841,6 +2841,56 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get advertiseRoute => $_getList(3);
 }
 
+class DeleteSubnetLinkerRequest extends $pb.GeneratedMessage {
+  factory DeleteSubnetLinkerRequest({
+    $core.String? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  DeleteSubnetLinkerRequest._() : super();
+  factory DeleteSubnetLinkerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteSubnetLinkerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSubnetLinkerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteSubnetLinkerRequest clone() => DeleteSubnetLinkerRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteSubnetLinkerRequest copyWith(void Function(DeleteSubnetLinkerRequest) updates) => super.copyWith((message) => updates(message as DeleteSubnetLinkerRequest)) as DeleteSubnetLinkerRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSubnetLinkerRequest create() => DeleteSubnetLinkerRequest._();
+  DeleteSubnetLinkerRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteSubnetLinkerRequest> createRepeated() => $pb.PbList<DeleteSubnetLinkerRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSubnetLinkerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSubnetLinkerRequest>(create);
+  static DeleteSubnetLinkerRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+}
+
 class GetLinkersReponse extends $pb.GeneratedMessage {
   factory GetLinkersReponse({
     $core.Iterable<Linker>? linker,
@@ -2887,9 +2937,9 @@ class GetLinkersReponse extends $pb.GeneratedMessage {
 
 class Linker extends $pb.GeneratedMessage {
   factory Linker({
+    $fixnum.Int64? id,
     NodeType? nodeType,
     LinkerType? linkerType,
-    $fixnum.Int64? id,
     $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? email,
@@ -2908,14 +2958,14 @@ class Linker extends $pb.GeneratedMessage {
     $core.String? keyExpiry,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (nodeType != null) {
       $result.nodeType = nodeType;
     }
     if (linkerType != null) {
       $result.linkerType = linkerType;
-    }
-    if (id != null) {
-      $result.id = id;
     }
     if (nodeId != null) {
       $result.nodeId = nodeId;
@@ -2972,9 +3022,9 @@ class Linker extends $pb.GeneratedMessage {
   factory Linker.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Linker', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..e<NodeType>(1, _omitFieldNames ? '' : 'nodeType', $pb.PbFieldType.OE, protoName: 'nodeType', defaultOrMaker: NodeType.FLEET, valueOf: NodeType.valueOf, enumValues: NodeType.values)
-    ..e<LinkerType>(2, _omitFieldNames ? '' : 'linkerType', $pb.PbFieldType.OE, protoName: 'linkerType', defaultOrMaker: LinkerType.SUBNET, valueOf: LinkerType.valueOf, enumValues: LinkerType.values)
-    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..e<NodeType>(2, _omitFieldNames ? '' : 'nodeType', $pb.PbFieldType.OE, protoName: 'nodeType', defaultOrMaker: NodeType.FLEET, valueOf: NodeType.valueOf, enumValues: NodeType.values)
+    ..e<LinkerType>(3, _omitFieldNames ? '' : 'linkerType', $pb.PbFieldType.OE, protoName: 'linkerType', defaultOrMaker: LinkerType.SUBNET, valueOf: LinkerType.valueOf, enumValues: LinkerType.values)
     ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(5, _omitFieldNames ? '' : 'name')
     ..aOS(6, _omitFieldNames ? '' : 'email')
@@ -3016,31 +3066,31 @@ class Linker extends $pb.GeneratedMessage {
   static Linker? _defaultInstance;
 
   @$pb.TagNumber(1)
-  NodeType get nodeType => $_getN(0);
+  $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set nodeType(NodeType v) { setField(1, v); }
+  set id($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasNodeType() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeType() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  LinkerType get linkerType => $_getN(1);
+  NodeType get nodeType => $_getN(1);
   @$pb.TagNumber(2)
-  set linkerType(LinkerType v) { setField(2, v); }
+  set nodeType(NodeType v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasLinkerType() => $_has(1);
+  $core.bool hasNodeType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLinkerType() => clearField(2);
+  void clearNodeType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get id => $_getI64(2);
+  LinkerType get linkerType => $_getN(2);
   @$pb.TagNumber(3)
-  set id($fixnum.Int64 v) { $_setInt64(2, v); }
+  set linkerType(LinkerType v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasId() => $_has(2);
+  $core.bool hasLinkerType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearId() => clearField(3);
+  void clearLinkerType() => clearField(3);
 
   @$pb.TagNumber(4)
   $fixnum.Int64 get nodeId => $_getI64(3);
@@ -3235,6 +3285,92 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static CreateSubnetLinkerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSubnetLinkerResponse>(create);
   static CreateSubnetLinkerResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get nodeIds => $_getI64(0);
+  @$pb.TagNumber(1)
+  set nodeIds($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasNodeIds() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeIds() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get advertiseRoute => $_getList(3);
+}
+
+class DeleteSubnetLinkerResponse extends $pb.GeneratedMessage {
+  factory DeleteSubnetLinkerResponse({
+    $fixnum.Int64? nodeIds,
+    $core.String? name,
+    $core.String? desc,
+    $core.Iterable<$core.String>? advertiseRoute,
+  }) {
+    final $result = create();
+    if (nodeIds != null) {
+      $result.nodeIds = nodeIds;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (advertiseRoute != null) {
+      $result.advertiseRoute.addAll(advertiseRoute);
+    }
+    return $result;
+  }
+  DeleteSubnetLinkerResponse._() : super();
+  factory DeleteSubnetLinkerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DeleteSubnetLinkerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSubnetLinkerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DeleteSubnetLinkerResponse clone() => DeleteSubnetLinkerResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DeleteSubnetLinkerResponse copyWith(void Function(DeleteSubnetLinkerResponse) updates) => super.copyWith((message) => updates(message as DeleteSubnetLinkerResponse)) as DeleteSubnetLinkerResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteSubnetLinkerResponse create() => DeleteSubnetLinkerResponse._();
+  DeleteSubnetLinkerResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteSubnetLinkerResponse> createRepeated() => $pb.PbList<DeleteSubnetLinkerResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteSubnetLinkerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSubnetLinkerResponse>(create);
+  static DeleteSubnetLinkerResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get nodeIds => $_getI64(0);

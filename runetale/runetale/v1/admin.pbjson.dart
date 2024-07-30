@@ -675,6 +675,18 @@ final $typed_data.Uint8List createSubnetLinkerRequestDescriptor = $convert.base6
     'oEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEiYKDmFkdmVydGlzZVJvdXRl'
     'GAQgAygJUg5hZHZlcnRpc2VSb3V0ZQ==');
 
+@$core.Deprecated('Use deleteSubnetLinkerRequestDescriptor instead')
+const DeleteSubnetLinkerRequest$json = {
+  '1': 'DeleteSubnetLinkerRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `DeleteSubnetLinkerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSubnetLinkerRequestDescriptor = $convert.base64Decode(
+    'ChlEZWxldGVTdWJuZXRMaW5rZXJSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+
 @$core.Deprecated('Use getLinkersReponseDescriptor instead')
 const GetLinkersReponse$json = {
   '1': 'GetLinkersReponse',
@@ -692,9 +704,9 @@ final $typed_data.Uint8List getLinkersReponseDescriptor = $convert.base64Decode(
 const Linker$json = {
   '1': 'Linker',
   '2': [
-    {'1': 'nodeType', '3': 1, '4': 1, '5': 14, '6': '.protos.NodeType', '10': 'nodeType'},
-    {'1': 'linkerType', '3': 2, '4': 1, '5': 14, '6': '.protos.LinkerType', '10': 'linkerType'},
-    {'1': 'id', '3': 3, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'nodeType', '3': 2, '4': 1, '5': 14, '6': '.protos.NodeType', '10': 'nodeType'},
+    {'1': 'linkerType', '3': 3, '4': 1, '5': 14, '6': '.protos.LinkerType', '10': 'linkerType'},
     {'1': 'nodeId', '3': 4, '4': 1, '5': 4, '10': 'nodeId'},
     {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
     {'1': 'email', '3': 6, '4': 1, '5': 9, '10': 'email'},
@@ -716,9 +728,9 @@ const Linker$json = {
 
 /// Descriptor for `Linker`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List linkerDescriptor = $convert.base64Decode(
-    'CgZMaW5rZXISLAoIbm9kZVR5cGUYASABKA4yEC5wcm90b3MuTm9kZVR5cGVSCG5vZGVUeXBlEj'
-    'IKCmxpbmtlclR5cGUYAiABKA4yEi5wcm90b3MuTGlua2VyVHlwZVIKbGlua2VyVHlwZRIOCgJp'
-    'ZBgDIAEoBFICaWQSFgoGbm9kZUlkGAQgASgEUgZub2RlSWQSEgoEbmFtZRgFIAEoCVIEbmFtZR'
+    'CgZMaW5rZXISDgoCaWQYASABKARSAmlkEiwKCG5vZGVUeXBlGAIgASgOMhAucHJvdG9zLk5vZG'
+    'VUeXBlUghub2RlVHlwZRIyCgpsaW5rZXJUeXBlGAMgASgOMhIucHJvdG9zLkxpbmtlclR5cGVS'
+    'CmxpbmtlclR5cGUSFgoGbm9kZUlkGAQgASgEUgZub2RlSWQSEgoEbmFtZRgFIAEoCVIEbmFtZR'
     'IUCgVlbWFpbBgGIAEoCVIFZW1haWwSDgoCaXAYByABKAlSAmlwEhQKBXBvcnRzGAggASgJUgVw'
     'b3J0cxIUCgVwcm90bxgJIAMoDVIFcHJvdG8SDgoCb3MYCiABKAlSAm9zEhAKA2FnZRgLIAEoCV'
     'IDYWdlEiwKCHBsYXRmb3JtGAwgASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9ybRIWCgZz'
@@ -741,6 +753,23 @@ const CreateSubnetLinkerResponse$json = {
 /// Descriptor for `CreateSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createSubnetLinkerResponseDescriptor = $convert.base64Decode(
     'ChpDcmVhdGVTdWJuZXRMaW5rZXJSZXNwb25zZRIYCgdub2RlSWRzGAEgASgEUgdub2RlSWRzEh'
+    'IKBG5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0'
+    'ZRgEIAMoCVIOYWR2ZXJ0aXNlUm91dGU=');
+
+@$core.Deprecated('Use deleteSubnetLinkerResponseDescriptor instead')
+const DeleteSubnetLinkerResponse$json = {
+  '1': 'DeleteSubnetLinkerResponse',
+  '2': [
+    {'1': 'nodeIds', '3': 1, '4': 1, '5': 4, '10': 'nodeIds'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'advertiseRoute', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoute'},
+  ],
+};
+
+/// Descriptor for `DeleteSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteSubnetLinkerResponseDescriptor = $convert.base64Decode(
+    'ChpEZWxldGVTdWJuZXRMaW5rZXJSZXNwb25zZRIYCgdub2RlSWRzGAEgASgEUgdub2RlSWRzEh'
     'IKBG5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0'
     'ZRgEIAMoCVIOYWR2ZXJ0aXNlUm91dGU=');
 
