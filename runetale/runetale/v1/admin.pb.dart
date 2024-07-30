@@ -2891,8 +2891,8 @@ class DeleteSubnetLinkerRequest extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 }
 
-class GetLinkersReponse extends $pb.GeneratedMessage {
-  factory GetLinkersReponse({
+class GetSubnetLinkersReponse extends $pb.GeneratedMessage {
+  factory GetSubnetLinkersReponse({
     $core.Iterable<Linker>? linker,
   }) {
     final $result = create();
@@ -2901,11 +2901,11 @@ class GetLinkersReponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  GetLinkersReponse._() : super();
-  factory GetLinkersReponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetLinkersReponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetSubnetLinkersReponse._() : super();
+  factory GetSubnetLinkersReponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSubnetLinkersReponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetLinkersReponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSubnetLinkersReponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pc<Linker>(2, _omitFieldNames ? '' : 'linker', $pb.PbFieldType.PM, subBuilder: Linker.create)
     ..hasRequiredFields = false
   ;
@@ -2914,22 +2914,22 @@ class GetLinkersReponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetLinkersReponse clone() => GetLinkersReponse()..mergeFromMessage(this);
+  GetSubnetLinkersReponse clone() => GetSubnetLinkersReponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetLinkersReponse copyWith(void Function(GetLinkersReponse) updates) => super.copyWith((message) => updates(message as GetLinkersReponse)) as GetLinkersReponse;
+  GetSubnetLinkersReponse copyWith(void Function(GetSubnetLinkersReponse) updates) => super.copyWith((message) => updates(message as GetSubnetLinkersReponse)) as GetSubnetLinkersReponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetLinkersReponse create() => GetLinkersReponse._();
-  GetLinkersReponse createEmptyInstance() => create();
-  static $pb.PbList<GetLinkersReponse> createRepeated() => $pb.PbList<GetLinkersReponse>();
+  static GetSubnetLinkersReponse create() => GetSubnetLinkersReponse._();
+  GetSubnetLinkersReponse createEmptyInstance() => create();
+  static $pb.PbList<GetSubnetLinkersReponse> createRepeated() => $pb.PbList<GetSubnetLinkersReponse>();
   @$core.pragma('dart2js:noInline')
-  static GetLinkersReponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLinkersReponse>(create);
-  static GetLinkersReponse? _defaultInstance;
+  static GetSubnetLinkersReponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSubnetLinkersReponse>(create);
+  static GetSubnetLinkersReponse? _defaultInstance;
 
   @$pb.TagNumber(2)
   $core.List<Linker> get linker => $_getList(0);

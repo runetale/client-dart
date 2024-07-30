@@ -687,18 +687,18 @@ const DeleteSubnetLinkerRequest$json = {
 final $typed_data.Uint8List deleteSubnetLinkerRequestDescriptor = $convert.base64Decode(
     'ChlEZWxldGVTdWJuZXRMaW5rZXJSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
 
-@$core.Deprecated('Use getLinkersReponseDescriptor instead')
-const GetLinkersReponse$json = {
-  '1': 'GetLinkersReponse',
+@$core.Deprecated('Use getSubnetLinkersReponseDescriptor instead')
+const GetSubnetLinkersReponse$json = {
+  '1': 'GetSubnetLinkersReponse',
   '2': [
     {'1': 'linker', '3': 2, '4': 3, '5': 11, '6': '.protos.Linker', '10': 'linker'},
   ],
 };
 
-/// Descriptor for `GetLinkersReponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getLinkersReponseDescriptor = $convert.base64Decode(
-    'ChFHZXRMaW5rZXJzUmVwb25zZRImCgZsaW5rZXIYAiADKAsyDi5wcm90b3MuTGlua2VyUgZsaW'
-    '5rZXI=');
+/// Descriptor for `GetSubnetLinkersReponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSubnetLinkersReponseDescriptor = $convert.base64Decode(
+    'ChdHZXRTdWJuZXRMaW5rZXJzUmVwb25zZRImCgZsaW5rZXIYAiADKAsyDi5wcm90b3MuTGlua2'
+    'VyUgZsaW5rZXI=');
 
 @$core.Deprecated('Use linkerDescriptor instead')
 const Linker$json = {
