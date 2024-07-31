@@ -107,7 +107,7 @@ const CreateAclRequest$json = {
     {'1': 'src', '3': 3, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
     {'1': 'dst', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
     {'1': 'proto', '3': 5, '4': 3, '5': 13, '10': 'proto'},
-    {'1': 'dstPorts', '3': 6, '4': 1, '5': 9, '10': 'dstPorts'},
+    {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
     {'1': 'action', '3': 7, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
@@ -116,9 +116,8 @@ const CreateAclRequest$json = {
 final $typed_data.Uint8List createAclRequestDescriptor = $convert.base64Decode(
     'ChBDcmVhdGVBY2xSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYxgCIAEoCVIEZG'
     'VzYxImCgNzcmMYAyADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNzcmMSJgoDZHN0GAQgAygL'
-    'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAUgAygNUgVwcm90bxIaCghkc3'
-    'RQb3J0cxgGIAEoCVIIZHN0UG9ydHMSJgoGYWN0aW9uGAcgASgOMg4ucHJvdG9zLkFjdGlvblIG'
-    'YWN0aW9u');
+    'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAUgAygNUgVwcm90bxIUCgVwb3'
+    'J0cxgGIAEoCVIFcG9ydHMSJgoGYWN0aW9uGAcgASgOMg4ucHJvdG9zLkFjdGlvblIGYWN0aW9u');
 
 @$core.Deprecated('Use aclResourcesDescriptor instead')
 const AclResources$json = {
@@ -146,7 +145,7 @@ const PatchAclRequest$json = {
     {'1': 'src', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
     {'1': 'dst', '3': 5, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
     {'1': 'proto', '3': 6, '4': 3, '5': 13, '10': 'proto'},
-    {'1': 'dstPorts', '3': 7, '4': 1, '5': 9, '10': 'dstPorts'},
+    {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
     {'1': 'action', '3': 8, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
@@ -156,8 +155,8 @@ final $typed_data.Uint8List patchAclRequestDescriptor = $convert.base64Decode(
     'Cg9QYXRjaEFjbFJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEg'
     'oEZGVzYxgDIAEoCVIEZGVzYxImCgNzcmMYBCADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNz'
     'cmMSJgoDZHN0GAUgAygLMhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAYgAy'
-    'gNUgVwcm90bxIaCghkc3RQb3J0cxgHIAEoCVIIZHN0UG9ydHMSJgoGYWN0aW9uGAggASgOMg4u'
-    'cHJvdG9zLkFjdGlvblIGYWN0aW9u');
+    'gNUgVwcm90bxIUCgVwb3J0cxgHIAEoCVIFcG9ydHMSJgoGYWN0aW9uGAggASgOMg4ucHJvdG9z'
+    'LkFjdGlvblIGYWN0aW9u');
 
 @$core.Deprecated('Use getAclRequestDescriptor instead')
 const GetAclRequest$json = {
@@ -206,10 +205,9 @@ const AclResponse$json = {
     {'1': 'src', '3': 4, '4': 1, '5': 11, '6': '.protos.Policy', '10': 'src'},
     {'1': 'dst', '3': 5, '4': 1, '5': 11, '6': '.protos.Policy', '10': 'dst'},
     {'1': 'proto', '3': 6, '4': 3, '5': 13, '10': 'proto'},
-    {'1': 'srcPorts', '3': 7, '4': 1, '5': 9, '10': 'srcPorts'},
-    {'1': 'dstPorts', '3': 8, '4': 1, '5': 9, '10': 'dstPorts'},
-    {'1': 'age', '3': 9, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'nodeType', '3': 10, '4': 1, '5': 9, '10': 'nodeType'},
+    {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
+    {'1': 'age', '3': 8, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'nodeType', '3': 9, '4': 1, '5': 9, '10': 'nodeType'},
   ],
 };
 
@@ -217,9 +215,9 @@ const AclResponse$json = {
 final $typed_data.Uint8List aclResponseDescriptor = $convert.base64Decode(
     'CgtBY2xSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZX'
     'NjGAMgASgJUgRkZXNjEiAKA3NyYxgEIAEoCzIOLnByb3Rvcy5Qb2xpY3lSA3NyYxIgCgNkc3QY'
-    'BSABKAsyDi5wcm90b3MuUG9saWN5UgNkc3QSFAoFcHJvdG8YBiADKA1SBXByb3RvEhoKCHNyY1'
-    'BvcnRzGAcgASgJUghzcmNQb3J0cxIaCghkc3RQb3J0cxgIIAEoCVIIZHN0UG9ydHMSEAoDYWdl'
-    'GAkgASgJUgNhZ2USGgoIbm9kZVR5cGUYCiABKAlSCG5vZGVUeXBl');
+    'BSABKAsyDi5wcm90b3MuUG9saWN5UgNkc3QSFAoFcHJvdG8YBiADKA1SBXByb3RvEhQKBXBvcn'
+    'RzGAcgASgJUgVwb3J0cxIQCgNhZ2UYCCABKAlSA2FnZRIaCghub2RlVHlwZRgJIAEoCVIIbm9k'
+    'ZVR5cGU=');
 
 @$core.Deprecated('Use getMeResponseDescriptor instead')
 const GetMeResponse$json = {

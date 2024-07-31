@@ -25,7 +25,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
     $core.Iterable<$core.int>? proto,
-    $core.String? dstPorts,
+    $core.String? ports,
     Action? action,
   }) {
     final $result = create();
@@ -44,8 +44,8 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     if (proto != null) {
       $result.proto.addAll(proto);
     }
-    if (dstPorts != null) {
-      $result.dstPorts = dstPorts;
+    if (ports != null) {
+      $result.ports = ports;
     }
     if (action != null) {
       $result.action = action;
@@ -62,7 +62,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..p<$core.int>(5, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
-    ..aOS(6, _omitFieldNames ? '' : 'dstPorts', protoName: 'dstPorts')
+    ..aOS(6, _omitFieldNames ? '' : 'ports')
     ..e<Action>(7, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -119,13 +119,13 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   $core.List<$core.int> get proto => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.String get dstPorts => $_getSZ(5);
+  $core.String get ports => $_getSZ(5);
   @$pb.TagNumber(6)
-  set dstPorts($core.String v) { $_setString(5, v); }
+  set ports($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasDstPorts() => $_has(5);
+  $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDstPorts() => clearField(6);
+  void clearPorts() => clearField(6);
 
   @$pb.TagNumber(7)
   Action get action => $_getN(6);
@@ -217,7 +217,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
     $core.Iterable<$core.int>? proto,
-    $core.String? dstPorts,
+    $core.String? ports,
     Action? action,
   }) {
     final $result = create();
@@ -239,8 +239,8 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     if (proto != null) {
       $result.proto.addAll(proto);
     }
-    if (dstPorts != null) {
-      $result.dstPorts = dstPorts;
+    if (ports != null) {
+      $result.ports = ports;
     }
     if (action != null) {
       $result.action = action;
@@ -258,7 +258,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(5, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..p<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
-    ..aOS(7, _omitFieldNames ? '' : 'dstPorts', protoName: 'dstPorts')
+    ..aOS(7, _omitFieldNames ? '' : 'ports')
     ..e<Action>(8, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
@@ -323,13 +323,13 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   $core.List<$core.int> get proto => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.String get dstPorts => $_getSZ(6);
+  $core.String get ports => $_getSZ(6);
   @$pb.TagNumber(7)
-  set dstPorts($core.String v) { $_setString(6, v); }
+  set ports($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasDstPorts() => $_has(6);
+  $core.bool hasPorts() => $_has(6);
   @$pb.TagNumber(7)
-  void clearDstPorts() => clearField(7);
+  void clearPorts() => clearField(7);
 
   @$pb.TagNumber(8)
   Action get action => $_getN(7);
@@ -493,8 +493,7 @@ class AclResponse extends $pb.GeneratedMessage {
     Policy? src,
     Policy? dst,
     $core.Iterable<$core.int>? proto,
-    $core.String? srcPorts,
-    $core.String? dstPorts,
+    $core.String? ports,
     $core.String? age,
     $core.String? nodeType,
   }) {
@@ -517,11 +516,8 @@ class AclResponse extends $pb.GeneratedMessage {
     if (proto != null) {
       $result.proto.addAll(proto);
     }
-    if (srcPorts != null) {
-      $result.srcPorts = srcPorts;
-    }
-    if (dstPorts != null) {
-      $result.dstPorts = dstPorts;
+    if (ports != null) {
+      $result.ports = ports;
     }
     if (age != null) {
       $result.age = age;
@@ -542,10 +538,9 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOM<Policy>(4, _omitFieldNames ? '' : 'src', subBuilder: Policy.create)
     ..aOM<Policy>(5, _omitFieldNames ? '' : 'dst', subBuilder: Policy.create)
     ..p<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
-    ..aOS(7, _omitFieldNames ? '' : 'srcPorts', protoName: 'srcPorts')
-    ..aOS(8, _omitFieldNames ? '' : 'dstPorts', protoName: 'dstPorts')
-    ..aOS(9, _omitFieldNames ? '' : 'age')
-    ..aOS(10, _omitFieldNames ? '' : 'nodeType', protoName: 'nodeType')
+    ..aOS(7, _omitFieldNames ? '' : 'ports')
+    ..aOS(8, _omitFieldNames ? '' : 'age')
+    ..aOS(9, _omitFieldNames ? '' : 'nodeType', protoName: 'nodeType')
     ..hasRequiredFields = false
   ;
 
@@ -623,40 +618,31 @@ class AclResponse extends $pb.GeneratedMessage {
   $core.List<$core.int> get proto => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.String get srcPorts => $_getSZ(6);
+  $core.String get ports => $_getSZ(6);
   @$pb.TagNumber(7)
-  set srcPorts($core.String v) { $_setString(6, v); }
+  set ports($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasSrcPorts() => $_has(6);
+  $core.bool hasPorts() => $_has(6);
   @$pb.TagNumber(7)
-  void clearSrcPorts() => clearField(7);
+  void clearPorts() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get dstPorts => $_getSZ(7);
+  $core.String get age => $_getSZ(7);
   @$pb.TagNumber(8)
-  set dstPorts($core.String v) { $_setString(7, v); }
+  set age($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasDstPorts() => $_has(7);
+  $core.bool hasAge() => $_has(7);
   @$pb.TagNumber(8)
-  void clearDstPorts() => clearField(8);
+  void clearAge() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get age => $_getSZ(8);
+  $core.String get nodeType => $_getSZ(8);
   @$pb.TagNumber(9)
-  set age($core.String v) { $_setString(8, v); }
+  set nodeType($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasAge() => $_has(8);
+  $core.bool hasNodeType() => $_has(8);
   @$pb.TagNumber(9)
-  void clearAge() => clearField(9);
-
-  @$pb.TagNumber(10)
-  $core.String get nodeType => $_getSZ(9);
-  @$pb.TagNumber(10)
-  set nodeType($core.String v) { $_setString(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasNodeType() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearNodeType() => clearField(10);
+  void clearNodeType() => clearField(9);
 }
 
 class GetMeResponse extends $pb.GeneratedMessage {
