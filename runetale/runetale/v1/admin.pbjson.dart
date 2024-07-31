@@ -418,7 +418,8 @@ const Ink$json = {
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
     {'1': 'devices', '3': 5, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
-    {'1': 'age', '3': 6, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
+    {'1': 'age', '3': 8, '4': 1, '5': 9, '10': 'age'},
   ],
 };
 
@@ -426,7 +427,8 @@ const Ink$json = {
 final $typed_data.Uint8List inkDescriptor = $convert.base64Decode(
     'CgNJbmsSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCV'
     'IEZGVzYxIWCgZkb21haW4YBCABKAlSBmRvbWFpbhIoCgdkZXZpY2VzGAUgAygLMg4ucHJvdG9z'
-    'LkRldmljZVIHZGV2aWNlcxIQCgNhZ2UYBiABKAlSA2FnZQ==');
+    'LkRldmljZVIHZGV2aWNlcxIUCgVwb3J0cxgHIAEoCVIFcG9ydHMSEAoDYWdlGAggASgJUgNhZ2'
+    'U=');
 
 @$core.Deprecated('Use generateComposeKeyRequestDescriptor instead')
 const GenerateComposeKeyRequest$json = {
@@ -901,23 +903,25 @@ const Device$json = {
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
     {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'os', '3': 6, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'status', '3': 7, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'lastSeen', '3': 8, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'version', '3': 10, '4': 1, '5': 9, '10': 'version'},
-    {'1': 'nodeKey', '3': 11, '4': 1, '5': 9, '10': 'nodeKey'},
-    {'1': 'createdAt', '3': 12, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'keyExpiry', '3': 13, '4': 1, '5': 9, '10': 'keyExpiry'},
+    {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
+    {'1': 'os', '3': 7, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'status', '3': 8, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'lastSeen', '3': 9, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'createdBy', '3': 10, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'version', '3': 11, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'nodeKey', '3': 12, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'createdAt', '3': 13, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'keyExpiry', '3': 14, '4': 1, '5': 9, '10': 'keyExpiry'},
   ],
 };
 
 /// Descriptor for `Device`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceDescriptor = $convert.base64Decode(
     'CgZEZXZpY2USDgoCaWQYASABKARSAmlkEhYKBm5vZGVJZBgCIAEoBFIGbm9kZUlkEhIKBG5hbW'
-    'UYAyABKAlSBG5hbWUSFAoFZW1haWwYBCABKAlSBWVtYWlsEg4KAmlwGAUgASgJUgJpcBIOCgJv'
-    'cxgGIAEoCVICb3MSFgoGc3RhdHVzGAcgASgIUgZzdGF0dXMSGgoIbGFzdFNlZW4YCCABKAlSCG'
-    'xhc3RTZWVuEhwKCWNyZWF0ZWRCeRgJIAEoCVIJY3JlYXRlZEJ5EhgKB3ZlcnNpb24YCiABKAlS'
-    'B3ZlcnNpb24SGAoHbm9kZUtleRgLIAEoCVIHbm9kZUtleRIcCgljcmVhdGVkQXQYDCABKAlSCW'
-    'NyZWF0ZWRBdBIcCglrZXlFeHBpcnkYDSABKAlSCWtleUV4cGlyeQ==');
+    'UYAyABKAlSBG5hbWUSFAoFZW1haWwYBCABKAlSBWVtYWlsEg4KAmlwGAUgASgJUgJpcBIUCgVw'
+    'b3J0cxgGIAEoCVIFcG9ydHMSDgoCb3MYByABKAlSAm9zEhYKBnN0YXR1cxgIIAEoCFIGc3RhdH'
+    'VzEhoKCGxhc3RTZWVuGAkgASgJUghsYXN0U2VlbhIcCgljcmVhdGVkQnkYCiABKAlSCWNyZWF0'
+    'ZWRCeRIYCgd2ZXJzaW9uGAsgASgJUgd2ZXJzaW9uEhgKB25vZGVLZXkYDCABKAlSB25vZGVLZX'
+    'kSHAoJY3JlYXRlZEF0GA0gASgJUgljcmVhdGVkQXQSHAoJa2V5RXhwaXJ5GA4gASgJUglrZXlF'
+    'eHBpcnk=');
 

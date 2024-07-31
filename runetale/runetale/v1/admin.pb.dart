@@ -1514,6 +1514,7 @@ class Ink extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.String? domain,
     $core.Iterable<Device>? devices,
+    $core.String? ports,
     $core.String? age,
   }) {
     final $result = create();
@@ -1532,6 +1533,9 @@ class Ink extends $pb.GeneratedMessage {
     if (devices != null) {
       $result.devices.addAll(devices);
     }
+    if (ports != null) {
+      $result.ports = ports;
+    }
     if (age != null) {
       $result.age = age;
     }
@@ -1547,7 +1551,8 @@ class Ink extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..aOS(4, _omitFieldNames ? '' : 'domain')
     ..pc<Device>(5, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
-    ..aOS(6, _omitFieldNames ? '' : 'age')
+    ..aOS(7, _omitFieldNames ? '' : 'ports')
+    ..aOS(8, _omitFieldNames ? '' : 'age')
     ..hasRequiredFields = false
   ;
 
@@ -1611,14 +1616,23 @@ class Ink extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.List<Device> get devices => $_getList(4);
 
-  @$pb.TagNumber(6)
-  $core.String get age => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set age($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasAge() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearAge() => clearField(6);
+  @$pb.TagNumber(7)
+  $core.String get ports => $_getSZ(5);
+  @$pb.TagNumber(7)
+  set ports($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPorts() => $_has(5);
+  @$pb.TagNumber(7)
+  void clearPorts() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get age => $_getSZ(6);
+  @$pb.TagNumber(8)
+  set age($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasAge() => $_has(6);
+  @$pb.TagNumber(8)
+  void clearAge() => clearField(8);
 }
 
 class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
@@ -4116,6 +4130,7 @@ class Device extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? email,
     $core.String? ip,
+    $core.String? ports,
     $core.String? os,
     $core.bool? status,
     $core.String? lastSeen,
@@ -4140,6 +4155,9 @@ class Device extends $pb.GeneratedMessage {
     }
     if (ip != null) {
       $result.ip = ip;
+    }
+    if (ports != null) {
+      $result.ports = ports;
     }
     if (os != null) {
       $result.os = os;
@@ -4177,14 +4195,15 @@ class Device extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'email')
     ..aOS(5, _omitFieldNames ? '' : 'ip')
-    ..aOS(6, _omitFieldNames ? '' : 'os')
-    ..aOB(7, _omitFieldNames ? '' : 'status')
-    ..aOS(8, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOS(9, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
-    ..aOS(10, _omitFieldNames ? '' : 'version')
-    ..aOS(11, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
-    ..aOS(12, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
-    ..aOS(13, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
+    ..aOS(6, _omitFieldNames ? '' : 'ports')
+    ..aOS(7, _omitFieldNames ? '' : 'os')
+    ..aOB(8, _omitFieldNames ? '' : 'status')
+    ..aOS(9, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(10, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(11, _omitFieldNames ? '' : 'version')
+    ..aOS(12, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..aOS(13, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
+    ..aOS(14, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
     ..hasRequiredFields = false
   ;
 
@@ -4255,76 +4274,85 @@ class Device extends $pb.GeneratedMessage {
   void clearIp() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get os => $_getSZ(5);
+  $core.String get ports => $_getSZ(5);
   @$pb.TagNumber(6)
-  set os($core.String v) { $_setString(5, v); }
+  set ports($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasOs() => $_has(5);
+  $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(6)
-  void clearOs() => clearField(6);
+  void clearPorts() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get status => $_getBF(6);
+  $core.String get os => $_getSZ(6);
   @$pb.TagNumber(7)
-  set status($core.bool v) { $_setBool(6, v); }
+  set os($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasStatus() => $_has(6);
+  $core.bool hasOs() => $_has(6);
   @$pb.TagNumber(7)
-  void clearStatus() => clearField(7);
+  void clearOs() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get lastSeen => $_getSZ(7);
+  $core.bool get status => $_getBF(7);
   @$pb.TagNumber(8)
-  set lastSeen($core.String v) { $_setString(7, v); }
+  set status($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasLastSeen() => $_has(7);
+  $core.bool hasStatus() => $_has(7);
   @$pb.TagNumber(8)
-  void clearLastSeen() => clearField(8);
+  void clearStatus() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get createdBy => $_getSZ(8);
+  $core.String get lastSeen => $_getSZ(8);
   @$pb.TagNumber(9)
-  set createdBy($core.String v) { $_setString(8, v); }
+  set lastSeen($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCreatedBy() => $_has(8);
+  $core.bool hasLastSeen() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCreatedBy() => clearField(9);
+  void clearLastSeen() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get version => $_getSZ(9);
+  $core.String get createdBy => $_getSZ(9);
   @$pb.TagNumber(10)
-  set version($core.String v) { $_setString(9, v); }
+  set createdBy($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasVersion() => $_has(9);
+  $core.bool hasCreatedBy() => $_has(9);
   @$pb.TagNumber(10)
-  void clearVersion() => clearField(10);
+  void clearCreatedBy() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get nodeKey => $_getSZ(10);
+  $core.String get version => $_getSZ(10);
   @$pb.TagNumber(11)
-  set nodeKey($core.String v) { $_setString(10, v); }
+  set version($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasNodeKey() => $_has(10);
+  $core.bool hasVersion() => $_has(10);
   @$pb.TagNumber(11)
-  void clearNodeKey() => clearField(11);
+  void clearVersion() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get createdAt => $_getSZ(11);
+  $core.String get nodeKey => $_getSZ(11);
   @$pb.TagNumber(12)
-  set createdAt($core.String v) { $_setString(11, v); }
+  set nodeKey($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasCreatedAt() => $_has(11);
+  $core.bool hasNodeKey() => $_has(11);
   @$pb.TagNumber(12)
-  void clearCreatedAt() => clearField(12);
+  void clearNodeKey() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.String get keyExpiry => $_getSZ(12);
+  $core.String get createdAt => $_getSZ(12);
   @$pb.TagNumber(13)
-  set keyExpiry($core.String v) { $_setString(12, v); }
+  set createdAt($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasKeyExpiry() => $_has(12);
+  $core.bool hasCreatedAt() => $_has(12);
   @$pb.TagNumber(13)
-  void clearKeyExpiry() => clearField(13);
+  void clearCreatedAt() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.String get keyExpiry => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set keyExpiry($core.String v) { $_setString(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasKeyExpiry() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearKeyExpiry() => clearField(14);
 }
 
 
