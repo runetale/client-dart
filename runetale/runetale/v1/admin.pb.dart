@@ -2929,11 +2929,11 @@ class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
 
 class GetSubnetLinkersReponse extends $pb.GeneratedMessage {
   factory GetSubnetLinkersReponse({
-    $core.Iterable<Linker>? linker,
+    $core.Iterable<Linker>? linkers,
   }) {
     final $result = create();
-    if (linker != null) {
-      $result.linker.addAll(linker);
+    if (linkers != null) {
+      $result.linkers.addAll(linkers);
     }
     return $result;
   }
@@ -2942,7 +2942,7 @@ class GetSubnetLinkersReponse extends $pb.GeneratedMessage {
   factory GetSubnetLinkersReponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSubnetLinkersReponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..pc<Linker>(2, _omitFieldNames ? '' : 'linker', $pb.PbFieldType.PM, subBuilder: Linker.create)
+    ..pc<Linker>(2, _omitFieldNames ? '' : 'linkers', $pb.PbFieldType.PM, subBuilder: Linker.create)
     ..hasRequiredFields = false
   ;
 
@@ -2968,7 +2968,7 @@ class GetSubnetLinkersReponse extends $pb.GeneratedMessage {
   static GetSubnetLinkersReponse? _defaultInstance;
 
   @$pb.TagNumber(2)
-  $core.List<Linker> get linker => $_getList(0);
+  $core.List<Linker> get linkers => $_getList(0);
 }
 
 class Linker extends $pb.GeneratedMessage {

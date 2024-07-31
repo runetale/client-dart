@@ -696,14 +696,14 @@ final $typed_data.Uint8List patchSubnetLinkerRequestDescriptor = $convert.base64
 const GetSubnetLinkersReponse$json = {
   '1': 'GetSubnetLinkersReponse',
   '2': [
-    {'1': 'linker', '3': 2, '4': 3, '5': 11, '6': '.protos.Linker', '10': 'linker'},
+    {'1': 'linkers', '3': 2, '4': 3, '5': 11, '6': '.protos.Linker', '10': 'linkers'},
   ],
 };
 
 /// Descriptor for `GetSubnetLinkersReponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getSubnetLinkersReponseDescriptor = $convert.base64Decode(
-    'ChdHZXRTdWJuZXRMaW5rZXJzUmVwb25zZRImCgZsaW5rZXIYAiADKAsyDi5wcm90b3MuTGlua2'
-    'VyUgZsaW5rZXI=');
+    'ChdHZXRTdWJuZXRMaW5rZXJzUmVwb25zZRIoCgdsaW5rZXJzGAIgAygLMg4ucHJvdG9zLkxpbm'
+    'tlclIHbGlua2Vycw==');
 
 @$core.Deprecated('Use linkerDescriptor instead')
 const Linker$json = {
