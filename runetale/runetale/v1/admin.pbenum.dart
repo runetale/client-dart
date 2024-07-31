@@ -20,6 +20,7 @@ class NodeType extends $pb.ProtobufEnum {
   static const NodeType USER = NodeType._(3, _omitEnumNames ? '' : 'USER');
   static const NodeType INK = NodeType._(4, _omitEnumNames ? '' : 'INK');
   static const NodeType DEVICE = NodeType._(5, _omitEnumNames ? '' : 'DEVICE');
+  static const NodeType LINKER = NodeType._(6, _omitEnumNames ? '' : 'LINKER');
 
   static const $core.List<NodeType> values = <NodeType> [
     FLEET,
@@ -28,6 +29,7 @@ class NodeType extends $pb.ProtobufEnum {
     USER,
     INK,
     DEVICE,
+    LINKER,
   ];
 
   static final $core.Map<$core.int, NodeType> _byValue = $pb.ProtobufEnum.initByValue(values);
