@@ -741,35 +741,37 @@ final $typed_data.Uint8List linkerDescriptor = $convert.base64Decode(
 const CreateSubnetLinkerResponse$json = {
   '1': 'CreateSubnetLinkerResponse',
   '2': [
-    {'1': 'nodeIds', '3': 1, '4': 1, '5': 4, '10': 'nodeIds'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'advertiseRoute', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoute'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'nodeIds', '3': 2, '4': 1, '5': 4, '10': 'nodeIds'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 4, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'advertiseRoute', '3': 5, '4': 3, '5': 9, '10': 'advertiseRoute'},
   ],
 };
 
 /// Descriptor for `CreateSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createSubnetLinkerResponseDescriptor = $convert.base64Decode(
-    'ChpDcmVhdGVTdWJuZXRMaW5rZXJSZXNwb25zZRIYCgdub2RlSWRzGAEgASgEUgdub2RlSWRzEh'
-    'IKBG5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0'
-    'ZRgEIAMoCVIOYWR2ZXJ0aXNlUm91dGU=');
+    'ChpDcmVhdGVTdWJuZXRMaW5rZXJSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSGAoHbm9kZUlkcx'
+    'gCIAEoBFIHbm9kZUlkcxISCgRuYW1lGAMgASgJUgRuYW1lEhIKBGRlc2MYBCABKAlSBGRlc2MS'
+    'JgoOYWR2ZXJ0aXNlUm91dGUYBSADKAlSDmFkdmVydGlzZVJvdXRl');
 
 @$core.Deprecated('Use patchSubnetLinkerResponseDescriptor instead')
 const PatchSubnetLinkerResponse$json = {
   '1': 'PatchSubnetLinkerResponse',
   '2': [
-    {'1': 'nodeIds', '3': 1, '4': 1, '5': 4, '10': 'nodeIds'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
-    {'1': 'advertiseRoute', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoute'},
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'nodeIds', '3': 2, '4': 1, '5': 4, '10': 'nodeIds'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 4, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'advertiseRoute', '3': 5, '4': 3, '5': 9, '10': 'advertiseRoute'},
   ],
 };
 
 /// Descriptor for `PatchSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchSubnetLinkerResponseDescriptor = $convert.base64Decode(
-    'ChlQYXRjaFN1Ym5ldExpbmtlclJlc3BvbnNlEhgKB25vZGVJZHMYASABKARSB25vZGVJZHMSEg'
-    'oEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEiYKDmFkdmVydGlzZVJvdXRl'
-    'GAQgAygJUg5hZHZlcnRpc2VSb3V0ZQ==');
+    'ChlQYXRjaFN1Ym5ldExpbmtlclJlc3BvbnNlEg4KAmlkGAEgASgJUgJpZBIYCgdub2RlSWRzGA'
+    'IgASgEUgdub2RlSWRzEhIKBG5hbWUYAyABKAlSBG5hbWUSEgoEZGVzYxgEIAEoCVIEZGVzYxIm'
+    'Cg5hZHZlcnRpc2VSb3V0ZRgFIAMoCVIOYWR2ZXJ0aXNlUm91dGU=');
 
 @$core.Deprecated('Use policyDescriptor instead')
 const Policy$json = {

@@ -3199,12 +3199,16 @@ class Linker extends $pb.GeneratedMessage {
 
 class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   factory CreateSubnetLinkerResponse({
+    $core.String? id,
     $fixnum.Int64? nodeIds,
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$core.String>? advertiseRoute,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (nodeIds != null) {
       $result.nodeIds = nodeIds;
     }
@@ -3224,10 +3228,11 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   factory CreateSubnetLinkerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSubnetLinkerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'desc')
+    ..pPS(5, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
     ..hasRequiredFields = false
   ;
 
@@ -3253,44 +3258,57 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   static CreateSubnetLinkerResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get nodeIds => $_getI64(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set nodeIds($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasNodeIds() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeIds() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
+  $fixnum.Int64 get nodeIds => $_getI64(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set nodeIds($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
+  $core.bool hasNodeIds() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearNodeIds() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get desc => $_getSZ(2);
+  $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set desc($core.String v) { $_setString(2, v); }
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasDesc() => $_has(2);
+  $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get advertiseRoute => $_getList(3);
+  $core.String get desc => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set desc($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDesc() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDesc() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get advertiseRoute => $_getList(4);
 }
 
 class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
   factory PatchSubnetLinkerResponse({
+    $core.String? id,
     $fixnum.Int64? nodeIds,
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$core.String>? advertiseRoute,
   }) {
     final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
     if (nodeIds != null) {
       $result.nodeIds = nodeIds;
     }
@@ -3310,10 +3328,11 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
   factory PatchSubnetLinkerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchSubnetLinkerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'desc')
+    ..pPS(5, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
     ..hasRequiredFields = false
   ;
 
@@ -3339,34 +3358,43 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
   static PatchSubnetLinkerResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get nodeIds => $_getI64(0);
+  $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set nodeIds($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasNodeIds() => $_has(0);
+  $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeIds() => clearField(1);
+  void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
+  $fixnum.Int64 get nodeIds => $_getI64(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set nodeIds($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
+  $core.bool hasNodeIds() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearNodeIds() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get desc => $_getSZ(2);
+  $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set desc($core.String v) { $_setString(2, v); }
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasDesc() => $_has(2);
+  $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get advertiseRoute => $_getList(3);
+  $core.String get desc => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set desc($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDesc() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDesc() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get advertiseRoute => $_getList(4);
 }
 
 class Policy extends $pb.GeneratedMessage {
