@@ -710,39 +710,32 @@ const Linker$json = {
   '1': 'Linker',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
-    {'1': 'nodeType', '3': 2, '4': 1, '5': 14, '6': '.protos.NodeType', '10': 'nodeType'},
-    {'1': 'linkerType', '3': 3, '4': 1, '5': 14, '6': '.protos.LinkerType', '10': 'linkerType'},
-    {'1': 'nodeId', '3': 4, '4': 1, '5': 4, '10': 'nodeId'},
-    {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'email', '3': 6, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'linkerType', '3': 2, '4': 1, '5': 14, '6': '.protos.LinkerType', '10': 'linkerType'},
+    {'1': 'nodeId', '3': 3, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'domain', '3': 6, '4': 1, '5': 9, '10': 'domain'},
     {'1': 'ip', '3': 7, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'ports', '3': 8, '4': 1, '5': 9, '10': 'ports'},
-    {'1': 'proto', '3': 9, '4': 3, '5': 13, '10': 'proto'},
+    {'1': 'advertiseRoute', '3': 8, '4': 3, '5': 9, '10': 'advertiseRoute'},
+    {'1': 'host', '3': 9, '4': 1, '5': 9, '10': 'host'},
     {'1': 'os', '3': 10, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'age', '3': 11, '4': 1, '5': 9, '10': 'age'},
+    {'1': 'nodeKey', '3': 11, '4': 1, '5': 9, '10': 'nodeKey'},
     {'1': 'platform', '3': 12, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
-    {'1': 'status', '3': 13, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'createdBy', '3': 14, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'lastSeen', '3': 15, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'version', '3': 16, '4': 1, '5': 9, '10': 'version'},
-    {'1': 'nodeKey', '3': 17, '4': 1, '5': 9, '10': 'nodeKey'},
-    {'1': 'createdAt', '3': 18, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'keyExpiry', '3': 19, '4': 1, '5': 9, '10': 'keyExpiry'},
+    {'1': 'createdBy', '3': 13, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'createdAt', '3': 14, '4': 1, '5': 9, '10': 'createdAt'},
   ],
 };
 
 /// Descriptor for `Linker`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List linkerDescriptor = $convert.base64Decode(
-    'CgZMaW5rZXISDgoCaWQYASABKARSAmlkEiwKCG5vZGVUeXBlGAIgASgOMhAucHJvdG9zLk5vZG'
-    'VUeXBlUghub2RlVHlwZRIyCgpsaW5rZXJUeXBlGAMgASgOMhIucHJvdG9zLkxpbmtlclR5cGVS'
-    'CmxpbmtlclR5cGUSFgoGbm9kZUlkGAQgASgEUgZub2RlSWQSEgoEbmFtZRgFIAEoCVIEbmFtZR'
-    'IUCgVlbWFpbBgGIAEoCVIFZW1haWwSDgoCaXAYByABKAlSAmlwEhQKBXBvcnRzGAggASgJUgVw'
-    'b3J0cxIUCgVwcm90bxgJIAMoDVIFcHJvdG8SDgoCb3MYCiABKAlSAm9zEhAKA2FnZRgLIAEoCV'
-    'IDYWdlEiwKCHBsYXRmb3JtGAwgASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9ybRIWCgZz'
-    'dGF0dXMYDSABKAhSBnN0YXR1cxIcCgljcmVhdGVkQnkYDiABKAlSCWNyZWF0ZWRCeRIaCghsYX'
-    'N0U2VlbhgPIAEoCVIIbGFzdFNlZW4SGAoHdmVyc2lvbhgQIAEoCVIHdmVyc2lvbhIYCgdub2Rl'
-    'S2V5GBEgASgJUgdub2RlS2V5EhwKCWNyZWF0ZWRBdBgSIAEoCVIJY3JlYXRlZEF0EhwKCWtleU'
-    'V4cGlyeRgTIAEoCVIJa2V5RXhwaXJ5');
+    'CgZMaW5rZXISDgoCaWQYASABKARSAmlkEjIKCmxpbmtlclR5cGUYAiABKA4yEi5wcm90b3MuTG'
+    'lua2VyVHlwZVIKbGlua2VyVHlwZRIWCgZub2RlSWQYAyABKARSBm5vZGVJZBISCgRuYW1lGAQg'
+    'ASgJUgRuYW1lEhQKBWVtYWlsGAUgASgJUgVlbWFpbBIWCgZkb21haW4YBiABKAlSBmRvbWFpbh'
+    'IOCgJpcBgHIAEoCVICaXASJgoOYWR2ZXJ0aXNlUm91dGUYCCADKAlSDmFkdmVydGlzZVJvdXRl'
+    'EhIKBGhvc3QYCSABKAlSBGhvc3QSDgoCb3MYCiABKAlSAm9zEhgKB25vZGVLZXkYCyABKAlSB2'
+    '5vZGVLZXkSLAoIcGxhdGZvcm0YDCABKA4yEC5wcm90b3MuUGxhdGZvcm1SCHBsYXRmb3JtEhwK'
+    'CWNyZWF0ZWRCeRgNIAEoCVIJY3JlYXRlZEJ5EhwKCWNyZWF0ZWRBdBgOIAEoCVIJY3JlYXRlZE'
+    'F0');
 
 @$core.Deprecated('Use createSubnetLinkerResponseDescriptor instead')
 const CreateSubnetLinkerResponse$json = {
