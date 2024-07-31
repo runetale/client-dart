@@ -675,17 +675,22 @@ final $typed_data.Uint8List createSubnetLinkerRequestDescriptor = $convert.base6
     'oEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEiYKDmFkdmVydGlzZVJvdXRl'
     'GAQgAygJUg5hZHZlcnRpc2VSb3V0ZQ==');
 
-@$core.Deprecated('Use deleteSubnetLinkerRequestDescriptor instead')
-const DeleteSubnetLinkerRequest$json = {
-  '1': 'DeleteSubnetLinkerRequest',
+@$core.Deprecated('Use patchSubnetLinkerRequestDescriptor instead')
+const PatchSubnetLinkerRequest$json = {
+  '1': 'PatchSubnetLinkerRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'advertiseRoute', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoute'},
   ],
 };
 
-/// Descriptor for `DeleteSubnetLinkerRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteSubnetLinkerRequestDescriptor = $convert.base64Decode(
-    'ChlEZWxldGVTdWJuZXRMaW5rZXJSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZA==');
+/// Descriptor for `PatchSubnetLinkerRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List patchSubnetLinkerRequestDescriptor = $convert.base64Decode(
+    'ChhQYXRjaFN1Ym5ldExpbmtlclJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKA'
+    'lSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0ZRgEIAMoCVIOYWR2'
+    'ZXJ0aXNlUm91dGU=');
 
 @$core.Deprecated('Use getSubnetLinkersReponseDescriptor instead')
 const GetSubnetLinkersReponse$json = {
@@ -756,9 +761,9 @@ final $typed_data.Uint8List createSubnetLinkerResponseDescriptor = $convert.base
     'IKBG5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0'
     'ZRgEIAMoCVIOYWR2ZXJ0aXNlUm91dGU=');
 
-@$core.Deprecated('Use deleteSubnetLinkerResponseDescriptor instead')
-const DeleteSubnetLinkerResponse$json = {
-  '1': 'DeleteSubnetLinkerResponse',
+@$core.Deprecated('Use patchSubnetLinkerResponseDescriptor instead')
+const PatchSubnetLinkerResponse$json = {
+  '1': 'PatchSubnetLinkerResponse',
   '2': [
     {'1': 'nodeIds', '3': 1, '4': 1, '5': 4, '10': 'nodeIds'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
@@ -767,11 +772,11 @@ const DeleteSubnetLinkerResponse$json = {
   ],
 };
 
-/// Descriptor for `DeleteSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteSubnetLinkerResponseDescriptor = $convert.base64Decode(
-    'ChpEZWxldGVTdWJuZXRMaW5rZXJSZXNwb25zZRIYCgdub2RlSWRzGAEgASgEUgdub2RlSWRzEh'
-    'IKBG5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxImCg5hZHZlcnRpc2VSb3V0'
-    'ZRgEIAMoCVIOYWR2ZXJ0aXNlUm91dGU=');
+/// Descriptor for `PatchSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List patchSubnetLinkerResponseDescriptor = $convert.base64Decode(
+    'ChlQYXRjaFN1Ym5ldExpbmtlclJlc3BvbnNlEhgKB25vZGVJZHMYASABKARSB25vZGVJZHMSEg'
+    'oEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgASgJUgRkZXNjEiYKDmFkdmVydGlzZVJvdXRl'
+    'GAQgAygJUg5hZHZlcnRpc2VSb3V0ZQ==');
 
 @$core.Deprecated('Use policyDescriptor instead')
 const Policy$json = {

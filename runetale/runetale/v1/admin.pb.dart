@@ -2841,22 +2841,37 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get advertiseRoute => $_getList(3);
 }
 
-class DeleteSubnetLinkerRequest extends $pb.GeneratedMessage {
-  factory DeleteSubnetLinkerRequest({
+class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
+  factory PatchSubnetLinkerRequest({
     $core.String? id,
+    $core.String? name,
+    $core.String? desc,
+    $core.Iterable<$core.String>? advertiseRoute,
   }) {
     final $result = create();
     if (id != null) {
       $result.id = id;
     }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
+    }
+    if (advertiseRoute != null) {
+      $result.advertiseRoute.addAll(advertiseRoute);
+    }
     return $result;
   }
-  DeleteSubnetLinkerRequest._() : super();
-  factory DeleteSubnetLinkerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteSubnetLinkerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PatchSubnetLinkerRequest._() : super();
+  factory PatchSubnetLinkerRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PatchSubnetLinkerRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSubnetLinkerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchSubnetLinkerRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
     ..hasRequiredFields = false
   ;
 
@@ -2864,22 +2879,22 @@ class DeleteSubnetLinkerRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  DeleteSubnetLinkerRequest clone() => DeleteSubnetLinkerRequest()..mergeFromMessage(this);
+  PatchSubnetLinkerRequest clone() => PatchSubnetLinkerRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteSubnetLinkerRequest copyWith(void Function(DeleteSubnetLinkerRequest) updates) => super.copyWith((message) => updates(message as DeleteSubnetLinkerRequest)) as DeleteSubnetLinkerRequest;
+  PatchSubnetLinkerRequest copyWith(void Function(PatchSubnetLinkerRequest) updates) => super.copyWith((message) => updates(message as PatchSubnetLinkerRequest)) as PatchSubnetLinkerRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DeleteSubnetLinkerRequest create() => DeleteSubnetLinkerRequest._();
-  DeleteSubnetLinkerRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteSubnetLinkerRequest> createRepeated() => $pb.PbList<DeleteSubnetLinkerRequest>();
+  static PatchSubnetLinkerRequest create() => PatchSubnetLinkerRequest._();
+  PatchSubnetLinkerRequest createEmptyInstance() => create();
+  static $pb.PbList<PatchSubnetLinkerRequest> createRepeated() => $pb.PbList<PatchSubnetLinkerRequest>();
   @$core.pragma('dart2js:noInline')
-  static DeleteSubnetLinkerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSubnetLinkerRequest>(create);
-  static DeleteSubnetLinkerRequest? _defaultInstance;
+  static PatchSubnetLinkerRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchSubnetLinkerRequest>(create);
+  static PatchSubnetLinkerRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -2889,6 +2904,27 @@ class DeleteSubnetLinkerRequest extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get advertiseRoute => $_getList(3);
 }
 
 class GetSubnetLinkersReponse extends $pb.GeneratedMessage {
@@ -3317,8 +3353,8 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get advertiseRoute => $_getList(3);
 }
 
-class DeleteSubnetLinkerResponse extends $pb.GeneratedMessage {
-  factory DeleteSubnetLinkerResponse({
+class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
+  factory PatchSubnetLinkerResponse({
     $fixnum.Int64? nodeIds,
     $core.String? name,
     $core.String? desc,
@@ -3339,11 +3375,11 @@ class DeleteSubnetLinkerResponse extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  DeleteSubnetLinkerResponse._() : super();
-  factory DeleteSubnetLinkerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteSubnetLinkerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  PatchSubnetLinkerResponse._() : super();
+  factory PatchSubnetLinkerResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PatchSubnetLinkerResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSubnetLinkerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchSubnetLinkerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
@@ -3355,22 +3391,22 @@ class DeleteSubnetLinkerResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  DeleteSubnetLinkerResponse clone() => DeleteSubnetLinkerResponse()..mergeFromMessage(this);
+  PatchSubnetLinkerResponse clone() => PatchSubnetLinkerResponse()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeleteSubnetLinkerResponse copyWith(void Function(DeleteSubnetLinkerResponse) updates) => super.copyWith((message) => updates(message as DeleteSubnetLinkerResponse)) as DeleteSubnetLinkerResponse;
+  PatchSubnetLinkerResponse copyWith(void Function(PatchSubnetLinkerResponse) updates) => super.copyWith((message) => updates(message as PatchSubnetLinkerResponse)) as PatchSubnetLinkerResponse;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DeleteSubnetLinkerResponse create() => DeleteSubnetLinkerResponse._();
-  DeleteSubnetLinkerResponse createEmptyInstance() => create();
-  static $pb.PbList<DeleteSubnetLinkerResponse> createRepeated() => $pb.PbList<DeleteSubnetLinkerResponse>();
+  static PatchSubnetLinkerResponse create() => PatchSubnetLinkerResponse._();
+  PatchSubnetLinkerResponse createEmptyInstance() => create();
+  static $pb.PbList<PatchSubnetLinkerResponse> createRepeated() => $pb.PbList<PatchSubnetLinkerResponse>();
   @$core.pragma('dart2js:noInline')
-  static DeleteSubnetLinkerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteSubnetLinkerResponse>(create);
-  static DeleteSubnetLinkerResponse? _defaultInstance;
+  static PatchSubnetLinkerResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchSubnetLinkerResponse>(create);
+  static PatchSubnetLinkerResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get nodeIds => $_getI64(0);
