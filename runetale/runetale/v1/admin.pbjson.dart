@@ -784,6 +784,7 @@ const Policy$json = {
     {'1': 'users', '3': 4, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
     {'1': 'inks', '3': 5, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
     {'1': 'devices', '3': 6, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
+    {'1': 'linkers', '3': 7, '4': 3, '5': 11, '6': '.protos.Linker', '10': 'linkers'},
   ],
 };
 
@@ -793,7 +794,8 @@ final $typed_data.Uint8List policyDescriptor = $convert.base64Decode(
     'VyY2VzGAIgAygLMhAucHJvdG9zLlJlc291cmNlUglyZXNvdXJjZXMSJQoGZ3JvdXBzGAMgAygL'
     'Mg0ucHJvdG9zLkdyb3VwUgZncm91cHMSIgoFdXNlcnMYBCADKAsyDC5wcm90b3MuVXNlclIFdX'
     'NlcnMSHwoEaW5rcxgFIAMoCzILLnByb3Rvcy5JbmtSBGlua3MSKAoHZGV2aWNlcxgGIAMoCzIO'
-    'LnByb3Rvcy5EZXZpY2VSB2RldmljZXM=');
+    'LnByb3Rvcy5EZXZpY2VSB2RldmljZXMSKAoHbGlua2VycxgHIAMoCzIOLnByb3Rvcy5MaW5rZX'
+    'JSB2xpbmtlcnM=');
 
 @$core.Deprecated('Use fleetDescriptor instead')
 const Fleet$json = {

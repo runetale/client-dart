@@ -3405,6 +3405,7 @@ class Policy extends $pb.GeneratedMessage {
     $core.Iterable<User>? users,
     $core.Iterable<Ink>? inks,
     $core.Iterable<Device>? devices,
+    $core.Iterable<Linker>? linkers,
   }) {
     final $result = create();
     if (fleets != null) {
@@ -3425,6 +3426,9 @@ class Policy extends $pb.GeneratedMessage {
     if (devices != null) {
       $result.devices.addAll(devices);
     }
+    if (linkers != null) {
+      $result.linkers.addAll(linkers);
+    }
     return $result;
   }
   Policy._() : super();
@@ -3438,6 +3442,7 @@ class Policy extends $pb.GeneratedMessage {
     ..pc<User>(4, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
     ..pc<Ink>(5, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
     ..pc<Device>(6, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<Linker>(7, _omitFieldNames ? '' : 'linkers', $pb.PbFieldType.PM, subBuilder: Linker.create)
     ..hasRequiredFields = false
   ;
 
@@ -3479,6 +3484,9 @@ class Policy extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<Device> get devices => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $core.List<Linker> get linkers => $_getList(6);
 }
 
 class Fleet extends $pb.GeneratedMessage {
