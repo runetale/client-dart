@@ -451,7 +451,6 @@ class FilterRule extends $pb.GeneratedMessage {
   static FilterRule? _defaultInstance;
 
   /// source ips,
-  /// - "*" は全て許可
   /// - "192.168.0.0/16" cidrが含まれたipの範囲
   @$pb.TagNumber(1)
   $core.List<$core.String> get srcIps => $_getList(0);
