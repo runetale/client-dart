@@ -403,15 +403,15 @@ class NetPortRange extends $pb.GeneratedMessage {
 class FilterRule extends $pb.GeneratedMessage {
   factory FilterRule({
     $core.Iterable<$core.String>? srcIps,
-    $core.Iterable<NetPortRange>? dstPorts,
+    $core.Iterable<NetPortRange>? dsts,
     $core.Iterable<$fixnum.Int64>? iPProto,
   }) {
     final $result = create();
     if (srcIps != null) {
       $result.srcIps.addAll(srcIps);
     }
-    if (dstPorts != null) {
-      $result.dstPorts.addAll(dstPorts);
+    if (dsts != null) {
+      $result.dsts.addAll(dsts);
     }
     if (iPProto != null) {
       $result.iPProto.addAll(iPProto);
@@ -424,7 +424,7 @@ class FilterRule extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FilterRule', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'srcIps', protoName: 'srcIps')
-    ..pc<NetPortRange>(2, _omitFieldNames ? '' : 'dstPorts', $pb.PbFieldType.PM, protoName: 'dstPorts', subBuilder: NetPortRange.create)
+    ..pc<NetPortRange>(2, _omitFieldNames ? '' : 'dsts', $pb.PbFieldType.PM, subBuilder: NetPortRange.create)
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.KU6, protoName: 'iPProto')
     ..hasRequiredFields = false
   ;
@@ -458,7 +458,7 @@ class FilterRule extends $pb.GeneratedMessage {
 
   /// dstのpeerのリスト
   @$pb.TagNumber(2)
-  $core.List<NetPortRange> get dstPorts => $_getList(1);
+  $core.List<NetPortRange> get dsts => $_getList(1);
 
   /// 使用するプロトコル
   /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
