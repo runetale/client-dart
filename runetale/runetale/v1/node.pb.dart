@@ -373,7 +373,8 @@ class NetPortRange extends $pb.GeneratedMessage {
   static NetPortRange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetPortRange>(create);
   static NetPortRange? _defaultInstance;
 
-  /// srcIpsと同じフォーマット
+  /// 以下のような形式
+  /// - IPv4 or IPv6の単一のIPアドレス
   /// - "*" は全て許可
   /// - "192.168.0.0/16" cidrが含まれたipの範囲
   @$pb.TagNumber(1)
