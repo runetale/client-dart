@@ -3200,7 +3200,7 @@ class Linker extends $pb.GeneratedMessage {
 class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   factory CreateSubnetLinkerResponse({
     $core.String? id,
-    $fixnum.Int64? nodeIds,
+    $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? desc,
     $core.Iterable<$core.String>? advertiseRoute,
@@ -3209,8 +3209,8 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
     if (id != null) {
       $result.id = id;
     }
-    if (nodeIds != null) {
-      $result.nodeIds = nodeIds;
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
     }
     if (name != null) {
       $result.name = name;
@@ -3229,7 +3229,7 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSubnetLinkerResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'desc')
     ..pPS(5, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
@@ -3267,13 +3267,13 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get nodeIds => $_getI64(1);
+  $fixnum.Int64 get nodeId => $_getI64(1);
   @$pb.TagNumber(2)
-  set nodeIds($fixnum.Int64 v) { $_setInt64(1, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasNodeIds() => $_has(1);
+  $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNodeIds() => clearField(2);
+  void clearNodeId() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);

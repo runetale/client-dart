@@ -743,7 +743,7 @@ const CreateSubnetLinkerResponse$json = {
   '1': 'CreateSubnetLinkerResponse',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'nodeIds', '3': 2, '4': 1, '5': 4, '10': 'nodeIds'},
+    {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 4, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'advertiseRoute', '3': 5, '4': 3, '5': 9, '10': 'advertiseRoute'},
@@ -752,9 +752,9 @@ const CreateSubnetLinkerResponse$json = {
 
 /// Descriptor for `CreateSubnetLinkerResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createSubnetLinkerResponseDescriptor = $convert.base64Decode(
-    'ChpDcmVhdGVTdWJuZXRMaW5rZXJSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSGAoHbm9kZUlkcx'
-    'gCIAEoBFIHbm9kZUlkcxISCgRuYW1lGAMgASgJUgRuYW1lEhIKBGRlc2MYBCABKAlSBGRlc2MS'
-    'JgoOYWR2ZXJ0aXNlUm91dGUYBSADKAlSDmFkdmVydGlzZVJvdXRl');
+    'ChpDcmVhdGVTdWJuZXRMaW5rZXJSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSFgoGbm9kZUlkGA'
+    'IgASgEUgZub2RlSWQSEgoEbmFtZRgDIAEoCVIEbmFtZRISCgRkZXNjGAQgASgJUgRkZXNjEiYK'
+    'DmFkdmVydGlzZVJvdXRlGAUgAygJUg5hZHZlcnRpc2VSb3V0ZQ==');
 
 @$core.Deprecated('Use patchSubnetLinkerResponseDescriptor instead')
 const PatchSubnetLinkerResponse$json = {
