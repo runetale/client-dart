@@ -23,14 +23,14 @@ const NodeType$json = {
     {'1': 'USER', '2': 3},
     {'1': 'INK', '2': 4},
     {'1': 'DEVICE', '2': 5},
-    {'1': 'LINKER', '2': 6},
+    {'1': 'SUBNET_LINKER', '2': 6},
   ],
 };
 
 /// Descriptor for `NodeType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List nodeTypeDescriptor = $convert.base64Decode(
     'CghOb2RlVHlwZRIJCgVGTEVFVBAAEgwKCFJFU09VUkNFEAESCQoFR1JPVVAQAhIICgRVU0VSEA'
-    'MSBwoDSU5LEAQSCgoGREVWSUNFEAUSCgoGTElOS0VSEAY=');
+    'MSBwoDSU5LEAQSCgoGREVWSUNFEAUSEQoNU1VCTkVUX0xJTktFUhAG');
 
 @$core.Deprecated('Use linkerTypeDescriptor instead')
 const LinkerType$json = {
