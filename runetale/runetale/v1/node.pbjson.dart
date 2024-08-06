@@ -68,6 +68,7 @@ const NetPortRange$json = {
   '2': [
     {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'ports', '3': 2, '4': 1, '5': 11, '6': '.protos.NetPortRange.portRange', '10': 'ports'},
+    {'1': 'advertiseRoute', '3': 3, '4': 3, '5': 9, '10': 'advertiseRoute'},
   ],
   '3': [NetPortRange_portRange$json],
 };
@@ -84,8 +85,9 @@ const NetPortRange_portRange$json = {
 /// Descriptor for `NetPortRange`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List netPortRangeDescriptor = $convert.base64Decode(
     'CgxOZXRQb3J0UmFuZ2USDgoCaXAYASABKAlSAmlwEjQKBXBvcnRzGAIgASgLMh4ucHJvdG9zLk'
-    '5ldFBvcnRSYW5nZS5wb3J0UmFuZ2VSBXBvcnRzGjUKCXBvcnRSYW5nZRIUCgVmaXJzdBgBIAEo'
-    'BFIFZmlyc3QSEgoEbGFzdBgCIAEoBFIEbGFzdA==');
+    '5ldFBvcnRSYW5nZS5wb3J0UmFuZ2VSBXBvcnRzEiYKDmFkdmVydGlzZVJvdXRlGAMgAygJUg5h'
+    'ZHZlcnRpc2VSb3V0ZRo1Cglwb3J0UmFuZ2USFAoFZmlyc3QYASABKARSBWZpcnN0EhIKBGxhc3'
+    'QYAiABKARSBGxhc3Q=');
 
 @$core.Deprecated('Use filterRuleDescriptor instead')
 const FilterRule$json = {
