@@ -332,7 +332,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   factory NetPortRange({
     $core.String? ip,
     NetPortRange_portRange? ports,
-    $core.Iterable<$core.String>? advertiseRoute,
+    $core.Iterable<$core.String>? advertisedRoute,
   }) {
     final $result = create();
     if (ip != null) {
@@ -341,8 +341,8 @@ class NetPortRange extends $pb.GeneratedMessage {
     if (ports != null) {
       $result.ports = ports;
     }
-    if (advertiseRoute != null) {
-      $result.advertiseRoute.addAll(advertiseRoute);
+    if (advertisedRoute != null) {
+      $result.advertisedRoute.addAll(advertisedRoute);
     }
     return $result;
   }
@@ -353,7 +353,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetPortRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOM<NetPortRange_portRange>(2, _omitFieldNames ? '' : 'ports', subBuilder: NetPortRange_portRange.create)
-    ..pPS(3, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..pPS(3, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
   ;
 
@@ -406,7 +406,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   NetPortRange_portRange ensurePorts() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get advertiseRoute => $_getList(2);
+  $core.List<$core.String> get advertisedRoute => $_getList(2);
 }
 
 class FilterRule extends $pb.GeneratedMessage {
