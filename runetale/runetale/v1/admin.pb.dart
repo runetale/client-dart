@@ -2987,6 +2987,7 @@ class Linker extends $pb.GeneratedMessage {
     Platform? platform,
     $core.String? createdBy,
     $core.String? createdAt,
+    $core.bool? status,
   }) {
     final $result = create();
     if (id != null) {
@@ -3031,6 +3032,9 @@ class Linker extends $pb.GeneratedMessage {
     if (createdAt != null) {
       $result.createdAt = createdAt;
     }
+    if (status != null) {
+      $result.status = status;
+    }
     return $result;
   }
   Linker._() : super();
@@ -3052,6 +3056,7 @@ class Linker extends $pb.GeneratedMessage {
     ..e<Platform>(12, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..aOS(13, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..aOS(14, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
+    ..aOB(15, _omitFieldNames ? '' : 'status')
     ..hasRequiredFields = false
   ;
 
@@ -3195,6 +3200,15 @@ class Linker extends $pb.GeneratedMessage {
   $core.bool hasCreatedAt() => $_has(13);
   @$pb.TagNumber(14)
   void clearCreatedAt() => clearField(14);
+
+  @$pb.TagNumber(15)
+  $core.bool get status => $_getBF(14);
+  @$pb.TagNumber(15)
+  set status($core.bool v) { $_setBool(14, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasStatus() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearStatus() => clearField(15);
 }
 
 class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {

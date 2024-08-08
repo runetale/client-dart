@@ -724,6 +724,7 @@ const Linker$json = {
     {'1': 'platform', '3': 12, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
     {'1': 'createdBy', '3': 13, '4': 1, '5': 9, '10': 'createdBy'},
     {'1': 'createdAt', '3': 14, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'status', '3': 15, '4': 1, '5': 8, '10': 'status'},
   ],
 };
 
@@ -736,7 +737,7 @@ final $typed_data.Uint8List linkerDescriptor = $convert.base64Decode(
     'EhIKBGhvc3QYCSABKAlSBGhvc3QSDgoCb3MYCiABKAlSAm9zEhgKB25vZGVLZXkYCyABKAlSB2'
     '5vZGVLZXkSLAoIcGxhdGZvcm0YDCABKA4yEC5wcm90b3MuUGxhdGZvcm1SCHBsYXRmb3JtEhwK'
     'CWNyZWF0ZWRCeRgNIAEoCVIJY3JlYXRlZEJ5EhwKCWNyZWF0ZWRBdBgOIAEoCVIJY3JlYXRlZE'
-    'F0');
+    'F0EhYKBnN0YXR1cxgPIAEoCFIGc3RhdHVz');
 
 @$core.Deprecated('Use createSubnetLinkerResponseDescriptor instead')
 const CreateSubnetLinkerResponse$json = {
