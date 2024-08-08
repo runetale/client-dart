@@ -2760,7 +2760,7 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$core.String>? advertiseRoute,
+    $core.Iterable<$core.String>? advertisedRoute,
   }) {
     final $result = create();
     if (nodeId != null) {
@@ -2772,8 +2772,8 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (advertiseRoute != null) {
-      $result.advertiseRoute.addAll(advertiseRoute);
+    if (advertisedRoute != null) {
+      $result.advertisedRoute.addAll(advertisedRoute);
     }
     return $result;
   }
@@ -2785,7 +2785,7 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..pPS(4, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
   ;
 
@@ -2838,7 +2838,7 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get advertiseRoute => $_getList(3);
+  $core.List<$core.String> get advertisedRoute => $_getList(3);
 }
 
 class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
@@ -2846,7 +2846,7 @@ class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
     $core.String? id,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$core.String>? advertiseRoute,
+    $core.Iterable<$core.String>? advertisedRoute,
   }) {
     final $result = create();
     if (id != null) {
@@ -2858,8 +2858,8 @@ class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (advertiseRoute != null) {
-      $result.advertiseRoute.addAll(advertiseRoute);
+    if (advertisedRoute != null) {
+      $result.advertisedRoute.addAll(advertisedRoute);
     }
     return $result;
   }
@@ -2871,7 +2871,7 @@ class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
-    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..pPS(4, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
   ;
 
@@ -2924,7 +2924,7 @@ class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
   void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get advertiseRoute => $_getList(3);
+  $core.List<$core.String> get advertisedRoute => $_getList(3);
 }
 
 class GetSubnetLinkersReponse extends $pb.GeneratedMessage {
@@ -2980,7 +2980,7 @@ class Linker extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? domain,
     $core.String? ip,
-    $core.Iterable<$core.String>? advertiseRoute,
+    $core.Iterable<$core.String>? advertisedRoute,
     $core.String? host,
     $core.String? os,
     $core.String? nodeKey,
@@ -3011,8 +3011,8 @@ class Linker extends $pb.GeneratedMessage {
     if (ip != null) {
       $result.ip = ip;
     }
-    if (advertiseRoute != null) {
-      $result.advertiseRoute.addAll(advertiseRoute);
+    if (advertisedRoute != null) {
+      $result.advertisedRoute.addAll(advertisedRoute);
     }
     if (host != null) {
       $result.host = host;
@@ -3049,7 +3049,7 @@ class Linker extends $pb.GeneratedMessage {
     ..aOS(5, _omitFieldNames ? '' : 'email')
     ..aOS(6, _omitFieldNames ? '' : 'domain')
     ..aOS(7, _omitFieldNames ? '' : 'ip')
-    ..pPS(8, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..pPS(8, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..aOS(9, _omitFieldNames ? '' : 'host')
     ..aOS(10, _omitFieldNames ? '' : 'os')
     ..aOS(11, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
@@ -3145,7 +3145,7 @@ class Linker extends $pb.GeneratedMessage {
   void clearIp() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.List<$core.String> get advertiseRoute => $_getList(7);
+  $core.List<$core.String> get advertisedRoute => $_getList(7);
 
   @$pb.TagNumber(9)
   $core.String get host => $_getSZ(8);
@@ -3217,7 +3217,7 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$core.String>? advertiseRoute,
+    $core.Iterable<$core.String>? advertisedRoute,
   }) {
     final $result = create();
     if (id != null) {
@@ -3232,8 +3232,8 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (advertiseRoute != null) {
-      $result.advertiseRoute.addAll(advertiseRoute);
+    if (advertisedRoute != null) {
+      $result.advertisedRoute.addAll(advertisedRoute);
     }
     return $result;
   }
@@ -3246,7 +3246,7 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'desc')
-    ..pPS(5, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..pPS(5, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
   ;
 
@@ -3308,7 +3308,7 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   void clearDesc() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get advertiseRoute => $_getList(4);
+  $core.List<$core.String> get advertisedRoute => $_getList(4);
 }
 
 class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
@@ -3317,7 +3317,7 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? nodeIds,
     $core.String? name,
     $core.String? desc,
-    $core.Iterable<$core.String>? advertiseRoute,
+    $core.Iterable<$core.String>? advertisedRoute,
   }) {
     final $result = create();
     if (id != null) {
@@ -3332,8 +3332,8 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
     if (desc != null) {
       $result.desc = desc;
     }
-    if (advertiseRoute != null) {
-      $result.advertiseRoute.addAll(advertiseRoute);
+    if (advertisedRoute != null) {
+      $result.advertisedRoute.addAll(advertisedRoute);
     }
     return $result;
   }
@@ -3346,7 +3346,7 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.OU6, protoName: 'nodeIds', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOS(4, _omitFieldNames ? '' : 'desc')
-    ..pPS(5, _omitFieldNames ? '' : 'advertiseRoute', protoName: 'advertiseRoute')
+    ..pPS(5, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
   ;
 
@@ -3408,7 +3408,7 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
   void clearDesc() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get advertiseRoute => $_getList(4);
+  $core.List<$core.String> get advertisedRoute => $_getList(4);
 }
 
 class Policy extends $pb.GeneratedMessage {
