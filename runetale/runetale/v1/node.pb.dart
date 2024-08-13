@@ -102,6 +102,7 @@ class SyncNodesResponse extends $pb.GeneratedMessage {
 
 class Node extends $pb.GeneratedMessage {
   factory Node({
+    $fixnum.Int64? nodeId,
     $core.String? remoteNodeKey,
     $core.String? remoteWgPubKey,
     $core.Iterable<$core.String>? allowedIPs,
@@ -109,6 +110,9 @@ class Node extends $pb.GeneratedMessage {
     $core.String? cidr,
   }) {
     final $result = create();
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
+    }
     if (remoteNodeKey != null) {
       $result.remoteNodeKey = remoteNodeKey;
     }
@@ -131,11 +135,12 @@ class Node extends $pb.GeneratedMessage {
   factory Node.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Node', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'remoteNodeKey', protoName: 'remoteNodeKey')
-    ..aOS(2, _omitFieldNames ? '' : 'remoteWgPubKey', protoName: 'remoteWgPubKey')
-    ..pPS(3, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
-    ..aOS(4, _omitFieldNames ? '' : 'ip')
-    ..aOS(5, _omitFieldNames ? '' : 'cidr')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'remoteNodeKey', protoName: 'remoteNodeKey')
+    ..aOS(3, _omitFieldNames ? '' : 'remoteWgPubKey', protoName: 'remoteWgPubKey')
+    ..pPS(4, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
+    ..aOS(5, _omitFieldNames ? '' : 'ip')
+    ..aOS(6, _omitFieldNames ? '' : 'cidr')
     ..hasRequiredFields = false
   ;
 
@@ -161,43 +166,52 @@ class Node extends $pb.GeneratedMessage {
   static Node? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get remoteNodeKey => $_getSZ(0);
+  $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set remoteNodeKey($core.String v) { $_setString(0, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasRemoteNodeKey() => $_has(0);
+  $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearRemoteNodeKey() => clearField(1);
+  void clearNodeId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get remoteWgPubKey => $_getSZ(1);
+  $core.String get remoteNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set remoteWgPubKey($core.String v) { $_setString(1, v); }
+  set remoteNodeKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasRemoteWgPubKey() => $_has(1);
+  $core.bool hasRemoteNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRemoteWgPubKey() => clearField(2);
+  void clearRemoteNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get allowedIPs => $_getList(2);
+  $core.String get remoteWgPubKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set remoteWgPubKey($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasRemoteWgPubKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRemoteWgPubKey() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get ip => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set ip($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasIp() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearIp() => clearField(4);
+  $core.List<$core.String> get allowedIPs => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.String get cidr => $_getSZ(4);
+  $core.String get ip => $_getSZ(4);
   @$pb.TagNumber(5)
-  set cidr($core.String v) { $_setString(4, v); }
+  set ip($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasCidr() => $_has(4);
+  $core.bool hasIp() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCidr() => clearField(5);
+  void clearIp() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get cidr => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set cidr($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCidr() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCidr() => clearField(6);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
