@@ -484,11 +484,6 @@ class FilterRule extends $pb.GeneratedMessage {
 
   /// 使用するプロトコル
   /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
-  /// 16進数で返ってくる
-  /// ICMPv4  = 0x01
-  /// ICMPv6  = 0x3a
-  /// TCP     = 0x06
-  /// UDP     = 0x11
   @$pb.TagNumber(3)
   $core.List<$core.int> get iPProto => $_getList(2);
 }
