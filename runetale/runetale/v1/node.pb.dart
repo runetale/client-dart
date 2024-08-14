@@ -427,7 +427,7 @@ class FilterRule extends $pb.GeneratedMessage {
   factory FilterRule({
     $core.Iterable<$core.String>? srcIps,
     $core.Iterable<NetPortRange>? dsts,
-    $core.Iterable<$fixnum.Int64>? iPProto,
+    $core.Iterable<$core.int>? iPProto,
   }) {
     final $result = create();
     if (srcIps != null) {
@@ -448,7 +448,7 @@ class FilterRule extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FilterRule', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'srcIps', protoName: 'srcIps')
     ..pc<NetPortRange>(2, _omitFieldNames ? '' : 'dsts', $pb.PbFieldType.PM, subBuilder: NetPortRange.create)
-    ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.KU6, protoName: 'iPProto')
+    ..p<$core.int>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.KU3, protoName: 'iPProto')
     ..hasRequiredFields = false
   ;
 
@@ -490,7 +490,7 @@ class FilterRule extends $pb.GeneratedMessage {
   /// TCP     = 0x06
   /// UDP     = 0x11
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get iPProto => $_getList(2);
+  $core.List<$core.int> get iPProto => $_getList(2);
 }
 
 class NetworkMapResponse extends $pb.GeneratedMessage {
