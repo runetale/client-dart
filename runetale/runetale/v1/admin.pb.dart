@@ -24,7 +24,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
-    $core.Iterable<$core.int>? proto,
+    $core.Iterable<IPProto>? ipProto,
     $core.String? ports,
     Action? action,
   }) {
@@ -41,8 +41,8 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     if (dst != null) {
       $result.dst.addAll(dst);
     }
-    if (proto != null) {
-      $result.proto.addAll(proto);
+    if (ipProto != null) {
+      $result.ipProto.addAll(ipProto);
     }
     if (ports != null) {
       $result.ports = ports;
@@ -61,7 +61,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..pc<AclResources>(3, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
-    ..p<$core.int>(5, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
+    ..pc<IPProto>(5, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..aOS(6, _omitFieldNames ? '' : 'ports')
     ..e<Action>(7, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
@@ -116,7 +116,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
   /// 0の場合はTCP, UDP, ICMPv4,ICMPv6が有効になる
   @$pb.TagNumber(5)
-  $core.List<$core.int> get proto => $_getList(4);
+  $core.List<IPProto> get ipProto => $_getList(4);
 
   @$pb.TagNumber(6)
   $core.String get ports => $_getSZ(5);
@@ -216,7 +216,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<AclResources>? src,
     $core.Iterable<AclResources>? dst,
-    $core.Iterable<$core.int>? proto,
+    $core.Iterable<IPProto>? ipProto,
     $core.String? ports,
     Action? action,
   }) {
@@ -236,8 +236,8 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     if (dst != null) {
       $result.dst.addAll(dst);
     }
-    if (proto != null) {
-      $result.proto.addAll(proto);
+    if (ipProto != null) {
+      $result.ipProto.addAll(ipProto);
     }
     if (ports != null) {
       $result.ports = ports;
@@ -257,7 +257,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'src', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<AclResources>(5, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
-    ..p<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
+    ..pc<IPProto>(6, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..aOS(7, _omitFieldNames ? '' : 'ports')
     ..e<Action>(8, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
@@ -320,7 +320,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   /// ianaのプロトコル番号を使用する
   /// 0の場合はTCP, UDP, ICMPv4,ICMPv6が有効になる
   @$pb.TagNumber(6)
-  $core.List<$core.int> get proto => $_getList(5);
+  $core.List<IPProto> get ipProto => $_getList(5);
 
   @$pb.TagNumber(7)
   $core.String get ports => $_getSZ(6);
@@ -492,7 +492,7 @@ class AclResponse extends $pb.GeneratedMessage {
     $core.String? desc,
     Policy? src,
     Policy? dst,
-    $core.Iterable<$core.int>? proto,
+    $core.Iterable<IPProto>? ipProto,
     $core.String? ports,
     $core.String? age,
     $core.String? nodeType,
@@ -513,8 +513,8 @@ class AclResponse extends $pb.GeneratedMessage {
     if (dst != null) {
       $result.dst = dst;
     }
-    if (proto != null) {
-      $result.proto.addAll(proto);
+    if (ipProto != null) {
+      $result.ipProto.addAll(ipProto);
     }
     if (ports != null) {
       $result.ports = ports;
@@ -537,7 +537,7 @@ class AclResponse extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..aOM<Policy>(4, _omitFieldNames ? '' : 'src', subBuilder: Policy.create)
     ..aOM<Policy>(5, _omitFieldNames ? '' : 'dst', subBuilder: Policy.create)
-    ..p<$core.int>(6, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
+    ..pc<IPProto>(6, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..aOS(7, _omitFieldNames ? '' : 'ports')
     ..aOS(8, _omitFieldNames ? '' : 'age')
     ..aOS(9, _omitFieldNames ? '' : 'nodeType', protoName: 'nodeType')
@@ -615,7 +615,7 @@ class AclResponse extends $pb.GeneratedMessage {
   Policy ensureDst() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.List<$core.int> get proto => $_getList(5);
+  $core.List<IPProto> get ipProto => $_getList(5);
 
   @$pb.TagNumber(7)
   $core.String get ports => $_getSZ(6);
@@ -3509,7 +3509,7 @@ class Fleet extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? desc,
     $core.Iterable<Resource>? resources,
-    $core.Iterable<$core.int>? proto,
+    $core.Iterable<IPProto>? ipProto,
     $core.String? ports,
     $core.String? age,
     Platform? platform,
@@ -3528,8 +3528,8 @@ class Fleet extends $pb.GeneratedMessage {
     if (resources != null) {
       $result.resources.addAll(resources);
     }
-    if (proto != null) {
-      $result.proto.addAll(proto);
+    if (ipProto != null) {
+      $result.ipProto.addAll(ipProto);
     }
     if (ports != null) {
       $result.ports = ports;
@@ -3554,7 +3554,7 @@ class Fleet extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..pc<Resource>(4, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..p<$core.int>(5, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
+    ..pc<IPProto>(5, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..aOS(6, _omitFieldNames ? '' : 'ports')
     ..aOS(7, _omitFieldNames ? '' : 'age')
     ..e<Platform>(8, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
@@ -3614,7 +3614,7 @@ class Fleet extends $pb.GeneratedMessage {
   $core.List<Resource> get resources => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<$core.int> get proto => $_getList(4);
+  $core.List<IPProto> get ipProto => $_getList(4);
 
   @$pb.TagNumber(6)
   $core.String get ports => $_getSZ(5);
@@ -3661,7 +3661,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? ip,
     $core.String? ports,
-    $core.Iterable<$core.int>? proto,
+    $core.Iterable<IPProto>? ipProto,
     $core.String? os,
     $core.String? age,
     Platform? platform,
@@ -3687,8 +3687,8 @@ class Resource extends $pb.GeneratedMessage {
     if (ports != null) {
       $result.ports = ports;
     }
-    if (proto != null) {
-      $result.proto.addAll(proto);
+    if (ipProto != null) {
+      $result.ipProto.addAll(ipProto);
     }
     if (os != null) {
       $result.os = os;
@@ -3718,7 +3718,7 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'email')
     ..aOS(5, _omitFieldNames ? '' : 'ip')
     ..aOS(6, _omitFieldNames ? '' : 'ports')
-    ..p<$core.int>(7, _omitFieldNames ? '' : 'proto', $pb.PbFieldType.KU3)
+    ..pc<IPProto>(7, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..aOS(8, _omitFieldNames ? '' : 'os')
     ..aOS(9, _omitFieldNames ? '' : 'age')
     ..e<Platform>(10, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
@@ -3803,7 +3803,7 @@ class Resource extends $pb.GeneratedMessage {
   void clearPorts() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<$core.int> get proto => $_getList(6);
+  $core.List<IPProto> get ipProto => $_getList(6);
 
   @$pb.TagNumber(8)
   $core.String get os => $_getSZ(7);

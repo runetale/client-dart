@@ -13,6 +13,27 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+class IPProto extends $pb.ProtobufEnum {
+  static const IPProto ALL = IPProto._(0, _omitEnumNames ? '' : 'ALL');
+  static const IPProto TCP = IPProto._(6, _omitEnumNames ? '' : 'TCP');
+  static const IPProto UDP = IPProto._(17, _omitEnumNames ? '' : 'UDP');
+  static const IPProto ICMPv4 = IPProto._(1, _omitEnumNames ? '' : 'ICMPv4');
+  static const IPProto ICMPv6 = IPProto._(58, _omitEnumNames ? '' : 'ICMPv6');
+
+  static const $core.List<IPProto> values = <IPProto> [
+    ALL,
+    TCP,
+    UDP,
+    ICMPv4,
+    ICMPv6,
+  ];
+
+  static final $core.Map<$core.int, IPProto> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static IPProto? valueOf($core.int value) => _byValue[value];
+
+  const IPProto._($core.int v, $core.String n) : super(v, n);
+}
+
 class NodeType extends $pb.ProtobufEnum {
   static const NodeType FLEET = NodeType._(0, _omitEnumNames ? '' : 'FLEET');
   static const NodeType RESOURCE = NodeType._(1, _omitEnumNames ? '' : 'RESOURCE');

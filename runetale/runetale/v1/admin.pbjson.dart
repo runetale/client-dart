@@ -13,6 +13,23 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use iPProtoDescriptor instead')
+const IPProto$json = {
+  '1': 'IPProto',
+  '2': [
+    {'1': 'ALL', '2': 0},
+    {'1': 'TCP', '2': 6},
+    {'1': 'UDP', '2': 17},
+    {'1': 'ICMPv4', '2': 1},
+    {'1': 'ICMPv6', '2': 58},
+  ],
+};
+
+/// Descriptor for `IPProto`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List iPProtoDescriptor = $convert.base64Decode(
+    'CgdJUFByb3RvEgcKA0FMTBAAEgcKA1RDUBAGEgcKA1VEUBAREgoKBklDTVB2NBABEgoKBklDTV'
+    'B2NhA6');
+
 @$core.Deprecated('Use nodeTypeDescriptor instead')
 const NodeType$json = {
   '1': 'NodeType',
@@ -107,7 +124,7 @@ const CreateAclRequest$json = {
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'src', '3': 3, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
     {'1': 'dst', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
-    {'1': 'proto', '3': 5, '4': 3, '5': 13, '10': 'proto'},
+    {'1': 'ipProto', '3': 5, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
     {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
     {'1': 'action', '3': 7, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
@@ -117,8 +134,9 @@ const CreateAclRequest$json = {
 final $typed_data.Uint8List createAclRequestDescriptor = $convert.base64Decode(
     'ChBDcmVhdGVBY2xSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYxgCIAEoCVIEZG'
     'VzYxImCgNzcmMYAyADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNzcmMSJgoDZHN0GAQgAygL'
-    'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAUgAygNUgVwcm90bxIUCgVwb3'
-    'J0cxgGIAEoCVIFcG9ydHMSJgoGYWN0aW9uGAcgASgOMg4ucHJvdG9zLkFjdGlvblIGYWN0aW9u');
+    'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EikKB2lwUHJvdG8YBSADKA4yDy5wcm90b3MuSV'
+    'BQcm90b1IHaXBQcm90bxIUCgVwb3J0cxgGIAEoCVIFcG9ydHMSJgoGYWN0aW9uGAcgASgOMg4u'
+    'cHJvdG9zLkFjdGlvblIGYWN0aW9u');
 
 @$core.Deprecated('Use aclResourcesDescriptor instead')
 const AclResources$json = {
@@ -145,7 +163,7 @@ const PatchAclRequest$json = {
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'src', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
     {'1': 'dst', '3': 5, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
-    {'1': 'proto', '3': 6, '4': 3, '5': 13, '10': 'proto'},
+    {'1': 'ipProto', '3': 6, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
     {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
     {'1': 'action', '3': 8, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
@@ -155,9 +173,9 @@ const PatchAclRequest$json = {
 final $typed_data.Uint8List patchAclRequestDescriptor = $convert.base64Decode(
     'Cg9QYXRjaEFjbFJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEg'
     'oEZGVzYxgDIAEoCVIEZGVzYxImCgNzcmMYBCADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNz'
-    'cmMSJgoDZHN0GAUgAygLMhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EhQKBXByb3RvGAYgAy'
-    'gNUgVwcm90bxIUCgVwb3J0cxgHIAEoCVIFcG9ydHMSJgoGYWN0aW9uGAggASgOMg4ucHJvdG9z'
-    'LkFjdGlvblIGYWN0aW9u');
+    'cmMSJgoDZHN0GAUgAygLMhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EikKB2lwUHJvdG8YBi'
+    'ADKA4yDy5wcm90b3MuSVBQcm90b1IHaXBQcm90bxIUCgVwb3J0cxgHIAEoCVIFcG9ydHMSJgoG'
+    'YWN0aW9uGAggASgOMg4ucHJvdG9zLkFjdGlvblIGYWN0aW9u');
 
 @$core.Deprecated('Use getAclRequestDescriptor instead')
 const GetAclRequest$json = {
@@ -205,7 +223,7 @@ const AclResponse$json = {
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'src', '3': 4, '4': 1, '5': 11, '6': '.protos.Policy', '10': 'src'},
     {'1': 'dst', '3': 5, '4': 1, '5': 11, '6': '.protos.Policy', '10': 'dst'},
-    {'1': 'proto', '3': 6, '4': 3, '5': 13, '10': 'proto'},
+    {'1': 'ipProto', '3': 6, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
     {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
     {'1': 'age', '3': 8, '4': 1, '5': 9, '10': 'age'},
     {'1': 'nodeType', '3': 9, '4': 1, '5': 9, '10': 'nodeType'},
@@ -216,9 +234,9 @@ const AclResponse$json = {
 final $typed_data.Uint8List aclResponseDescriptor = $convert.base64Decode(
     'CgtBY2xSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZX'
     'NjGAMgASgJUgRkZXNjEiAKA3NyYxgEIAEoCzIOLnByb3Rvcy5Qb2xpY3lSA3NyYxIgCgNkc3QY'
-    'BSABKAsyDi5wcm90b3MuUG9saWN5UgNkc3QSFAoFcHJvdG8YBiADKA1SBXByb3RvEhQKBXBvcn'
-    'RzGAcgASgJUgVwb3J0cxIQCgNhZ2UYCCABKAlSA2FnZRIaCghub2RlVHlwZRgJIAEoCVIIbm9k'
-    'ZVR5cGU=');
+    'BSABKAsyDi5wcm90b3MuUG9saWN5UgNkc3QSKQoHaXBQcm90bxgGIAMoDjIPLnByb3Rvcy5JUF'
+    'Byb3RvUgdpcFByb3RvEhQKBXBvcnRzGAcgASgJUgVwb3J0cxIQCgNhZ2UYCCABKAlSA2FnZRIa'
+    'Cghub2RlVHlwZRgJIAEoCVIIbm9kZVR5cGU=');
 
 @$core.Deprecated('Use getMeResponseDescriptor instead')
 const GetMeResponse$json = {
@@ -806,7 +824,7 @@ const Fleet$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'resources', '3': 4, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
-    {'1': 'proto', '3': 5, '4': 3, '5': 13, '10': 'proto'},
+    {'1': 'ipProto', '3': 5, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
     {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
     {'1': 'age', '3': 7, '4': 1, '5': 9, '10': 'age'},
     {'1': 'platform', '3': 8, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
@@ -818,9 +836,9 @@ const Fleet$json = {
 final $typed_data.Uint8List fleetDescriptor = $convert.base64Decode(
     'CgVGbGVldBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgAS'
     'gJUgRkZXNjEi4KCXJlc291cmNlcxgEIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVzb3VyY2Vz'
-    'EhQKBXByb3RvGAUgAygNUgVwcm90bxIUCgVwb3J0cxgGIAEoCVIFcG9ydHMSEAoDYWdlGAcgAS'
-    'gJUgNhZ2USLAoIcGxhdGZvcm0YCCABKA4yEC5wcm90b3MuUGxhdGZvcm1SCHBsYXRmb3JtEhwK'
-    'CWNyZWF0ZWRCeRgJIAEoCVIJY3JlYXRlZEJ5');
+    'EikKB2lwUHJvdG8YBSADKA4yDy5wcm90b3MuSVBQcm90b1IHaXBQcm90bxIUCgVwb3J0cxgGIA'
+    'EoCVIFcG9ydHMSEAoDYWdlGAcgASgJUgNhZ2USLAoIcGxhdGZvcm0YCCABKA4yEC5wcm90b3Mu'
+    'UGxhdGZvcm1SCHBsYXRmb3JtEhwKCWNyZWF0ZWRCeRgJIAEoCVIJY3JlYXRlZEJ5');
 
 @$core.Deprecated('Use resourceDescriptor instead')
 const Resource$json = {
@@ -832,7 +850,7 @@ const Resource$json = {
     {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
     {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
-    {'1': 'proto', '3': 7, '4': 3, '5': 13, '10': 'proto'},
+    {'1': 'ipProto', '3': 7, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
     {'1': 'os', '3': 8, '4': 1, '5': 9, '10': 'os'},
     {'1': 'age', '3': 9, '4': 1, '5': 9, '10': 'age'},
     {'1': 'platform', '3': 10, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
@@ -845,10 +863,10 @@ const Resource$json = {
 final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
     'CghSZXNvdXJjZRIOCgJpZBgBIAEoCVICaWQSFgoGbm9kZUlkGAIgASgEUgZub2RlSWQSEgoEbm'
     'FtZRgDIAEoCVIEbmFtZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSDgoCaXAYBSABKAlSAmlwEhQK'
-    'BXBvcnRzGAYgASgJUgVwb3J0cxIUCgVwcm90bxgHIAMoDVIFcHJvdG8SDgoCb3MYCCABKAlSAm'
-    '9zEhAKA2FnZRgJIAEoCVIDYWdlEiwKCHBsYXRmb3JtGAogASgOMhAucHJvdG9zLlBsYXRmb3Jt'
-    'UghwbGF0Zm9ybRIWCgZzdGF0dXMYCyABKAhSBnN0YXR1cxIcCgljcmVhdGVkQnkYDCABKAlSCW'
-    'NyZWF0ZWRCeQ==');
+    'BXBvcnRzGAYgASgJUgVwb3J0cxIpCgdpcFByb3RvGAcgAygOMg8ucHJvdG9zLklQUHJvdG9SB2'
+    'lwUHJvdG8SDgoCb3MYCCABKAlSAm9zEhAKA2FnZRgJIAEoCVIDYWdlEiwKCHBsYXRmb3JtGAog'
+    'ASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9ybRIWCgZzdGF0dXMYCyABKAhSBnN0YXR1cx'
+    'IcCgljcmVhdGVkQnkYDCABKAlSCWNyZWF0ZWRCeQ==');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
