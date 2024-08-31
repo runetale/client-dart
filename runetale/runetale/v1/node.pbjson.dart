@@ -114,6 +114,7 @@ const NetworkMapResponse$json = {
     {'1': 'node', '3': 2, '4': 1, '5': 11, '6': '.protos.Node', '10': 'node'},
     {'1': 'peers', '3': 3, '4': 3, '5': 11, '6': '.protos.Node', '10': 'peers'},
     {'1': 'packetFilter', '3': 4, '4': 3, '5': 11, '6': '.protos.FilterRule', '10': 'packetFilter'},
+    {'1': 'advertisedRoute', '3': 5, '4': 3, '5': 9, '10': 'advertisedRoute'},
   ],
 };
 
@@ -121,5 +122,6 @@ const NetworkMapResponse$json = {
 final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode(
     'ChJOZXR3b3JrTWFwUmVzcG9uc2USEAoDc2VxGAEgASgEUgNzZXESIAoEbm9kZRgCIAEoCzIMLn'
     'Byb3Rvcy5Ob2RlUgRub2RlEiIKBXBlZXJzGAMgAygLMgwucHJvdG9zLk5vZGVSBXBlZXJzEjYK'
-    'DHBhY2tldEZpbHRlchgEIAMoCzISLnByb3Rvcy5GaWx0ZXJSdWxlUgxwYWNrZXRGaWx0ZXI=');
+    'DHBhY2tldEZpbHRlchgEIAMoCzISLnByb3Rvcy5GaWx0ZXJSdWxlUgxwYWNrZXRGaWx0ZXISKA'
+    'oPYWR2ZXJ0aXNlZFJvdXRlGAUgAygJUg9hZHZlcnRpc2VkUm91dGU=');
 

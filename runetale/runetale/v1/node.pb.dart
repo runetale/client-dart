@@ -494,6 +494,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     Node? node,
     $core.Iterable<Node>? peers,
     $core.Iterable<FilterRule>? packetFilter,
+    $core.Iterable<$core.String>? advertisedRoute,
   }) {
     final $result = create();
     if (seq != null) {
@@ -508,6 +509,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (packetFilter != null) {
       $result.packetFilter.addAll(packetFilter);
     }
+    if (advertisedRoute != null) {
+      $result.advertisedRoute.addAll(advertisedRoute);
+    }
     return $result;
   }
   NetworkMapResponse._() : super();
@@ -519,6 +523,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..aOM<Node>(2, _omitFieldNames ? '' : 'node', subBuilder: Node.create)
     ..pc<Node>(3, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM, subBuilder: Node.create)
     ..pc<FilterRule>(4, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
+    ..pPS(5, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
   ;
 
@@ -565,14 +570,18 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Node ensureNode() => $_ensure(1);
 
-  /// このNodeがアクセスするpeers, つまりremote nodes
-  /// remote nodesのallowedIpsには自身のIP(remote nodeのIP)が入る
+  /// このNodeがアクセスするpeers, つまりremote nodesの情報が含まれている
   @$pb.TagNumber(3)
   $core.List<Node> get peers => $_getList(2);
 
   /// Firewall Rules
   @$pb.TagNumber(4)
   $core.List<FilterRule> get packetFilter => $_getList(3);
+
+  /// このnodeがadvertiseするIPアドレス
+  /// 1.2.3.4/16のような形
+  @$pb.TagNumber(5)
+  $core.List<$core.String> get advertisedRoute => $_getList(4);
 }
 
 
