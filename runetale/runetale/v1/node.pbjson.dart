@@ -34,21 +34,22 @@ final $typed_data.Uint8List syncNodesResponseDescriptor = $convert.base64Decode(
 const Node$json = {
   '1': 'Node',
   '2': [
-    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
-    {'1': 'remoteNodeKey', '3': 2, '4': 1, '5': 9, '10': 'remoteNodeKey'},
-    {'1': 'remoteWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'remoteWgPubKey'},
-    {'1': 'allowedIPs', '3': 4, '4': 3, '5': 9, '10': 'allowedIPs'},
-    {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'cidr', '3': 6, '4': 1, '5': 9, '10': 'cidr'},
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'remoteNodeKey', '3': 3, '4': 1, '5': 9, '10': 'remoteNodeKey'},
+    {'1': 'remoteWgPubKey', '3': 4, '4': 1, '5': 9, '10': 'remoteWgPubKey'},
+    {'1': 'allowedIPs', '3': 5, '4': 3, '5': 9, '10': 'allowedIPs'},
+    {'1': 'ip', '3': 6, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'cidr', '3': 7, '4': 1, '5': 9, '10': 'cidr'},
   ],
 };
 
 /// Descriptor for `Node`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
-    'CgROb2RlEhYKBm5vZGVJZBgBIAEoBFIGbm9kZUlkEiQKDXJlbW90ZU5vZGVLZXkYAiABKAlSDX'
-    'JlbW90ZU5vZGVLZXkSJgoOcmVtb3RlV2dQdWJLZXkYAyABKAlSDnJlbW90ZVdnUHViS2V5Eh4K'
-    'CmFsbG93ZWRJUHMYBCADKAlSCmFsbG93ZWRJUHMSDgoCaXAYBSABKAlSAmlwEhIKBGNpZHIYBi'
-    'ABKAlSBGNpZHI=');
+    'CgROb2RlEhIKBG5hbWUYASABKAlSBG5hbWUSFgoGbm9kZUlkGAIgASgEUgZub2RlSWQSJAoNcm'
+    'Vtb3RlTm9kZUtleRgDIAEoCVINcmVtb3RlTm9kZUtleRImCg5yZW1vdGVXZ1B1YktleRgEIAEo'
+    'CVIOcmVtb3RlV2dQdWJLZXkSHgoKYWxsb3dlZElQcxgFIAMoCVIKYWxsb3dlZElQcxIOCgJpcB'
+    'gGIAEoCVICaXASEgoEY2lkchgHIAEoCVIEY2lkcg==');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
