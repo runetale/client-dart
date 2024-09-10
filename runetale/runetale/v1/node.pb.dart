@@ -507,6 +507,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? seq,
     Node? node,
     $core.Iterable<Node>? peers,
+    $core.Iterable<Node>? peersChanged,
+    $core.Iterable<Node>? peersRemoved,
     $core.Iterable<FilterRule>? packetFilter,
     $core.Iterable<$core.String>? advertisedRoute,
   }) {
@@ -519,6 +521,12 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     }
     if (peers != null) {
       $result.peers.addAll(peers);
+    }
+    if (peersChanged != null) {
+      $result.peersChanged.addAll(peersChanged);
+    }
+    if (peersRemoved != null) {
+      $result.peersRemoved.addAll(peersRemoved);
     }
     if (packetFilter != null) {
       $result.packetFilter.addAll(packetFilter);
@@ -536,8 +544,10 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'seq', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOM<Node>(2, _omitFieldNames ? '' : 'node', subBuilder: Node.create)
     ..pc<Node>(3, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM, subBuilder: Node.create)
-    ..pc<FilterRule>(4, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
-    ..pPS(5, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
+    ..pc<Node>(4, _omitFieldNames ? '' : 'peersChanged', $pb.PbFieldType.PM, protoName: 'peersChanged', subBuilder: Node.create)
+    ..pc<Node>(5, _omitFieldNames ? '' : 'peersRemoved', $pb.PbFieldType.PM, protoName: 'peersRemoved', subBuilder: Node.create)
+    ..pc<FilterRule>(6, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
+    ..pPS(7, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
   ;
 
@@ -588,14 +598,23 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.List<Node> get peers => $_getList(2);
 
-  /// Firewall Rules
+  /// 変更があった場合のPeers
+  /// serverで差分更新される
   @$pb.TagNumber(4)
-  $core.List<FilterRule> get packetFilter => $_getList(3);
+  $core.List<Node> get peersChanged => $_getList(3);
+
+  /// 消された場合のPeers
+  @$pb.TagNumber(5)
+  $core.List<Node> get peersRemoved => $_getList(4);
+
+  /// Firewall Rules
+  @$pb.TagNumber(6)
+  $core.List<FilterRule> get packetFilter => $_getList(5);
 
   /// このnodeがadvertiseするIPアドレス
-  /// 1.2.3.4/16のような形
-  @$pb.TagNumber(5)
-  $core.List<$core.String> get advertisedRoute => $_getList(4);
+  /// 1.2.3.4/16のIP+Maskの形
+  @$pb.TagNumber(7)
+  $core.List<$core.String> get advertisedRoute => $_getList(6);
 }
 
 
