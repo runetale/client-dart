@@ -115,7 +115,7 @@ const NetworkMapResponse$json = {
     {'1': 'node', '3': 2, '4': 1, '5': 11, '6': '.protos.Node', '10': 'node'},
     {'1': 'peers', '3': 3, '4': 3, '5': 11, '6': '.protos.Node', '10': 'peers'},
     {'1': 'peersChanged', '3': 4, '4': 3, '5': 11, '6': '.protos.Node', '10': 'peersChanged'},
-    {'1': 'peersRemoved', '3': 5, '4': 3, '5': 11, '6': '.protos.Node', '10': 'peersRemoved'},
+    {'1': 'peersRemoved', '3': 5, '4': 3, '5': 4, '10': 'peersRemoved'},
     {'1': 'packetFilter', '3': 6, '4': 3, '5': 11, '6': '.protos.FilterRule', '10': 'packetFilter'},
     {'1': 'advertisedRoute', '3': 7, '4': 3, '5': 9, '10': 'advertisedRoute'},
   ],
@@ -125,8 +125,8 @@ const NetworkMapResponse$json = {
 final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode(
     'ChJOZXR3b3JrTWFwUmVzcG9uc2USEAoDc2VxGAEgASgEUgNzZXESIAoEbm9kZRgCIAEoCzIMLn'
     'Byb3Rvcy5Ob2RlUgRub2RlEiIKBXBlZXJzGAMgAygLMgwucHJvdG9zLk5vZGVSBXBlZXJzEjAK'
-    'DHBlZXJzQ2hhbmdlZBgEIAMoCzIMLnByb3Rvcy5Ob2RlUgxwZWVyc0NoYW5nZWQSMAoMcGVlcn'
-    'NSZW1vdmVkGAUgAygLMgwucHJvdG9zLk5vZGVSDHBlZXJzUmVtb3ZlZBI2CgxwYWNrZXRGaWx0'
-    'ZXIYBiADKAsyEi5wcm90b3MuRmlsdGVyUnVsZVIMcGFja2V0RmlsdGVyEigKD2FkdmVydGlzZW'
-    'RSb3V0ZRgHIAMoCVIPYWR2ZXJ0aXNlZFJvdXRl');
+    'DHBlZXJzQ2hhbmdlZBgEIAMoCzIMLnByb3Rvcy5Ob2RlUgxwZWVyc0NoYW5nZWQSIgoMcGVlcn'
+    'NSZW1vdmVkGAUgAygEUgxwZWVyc1JlbW92ZWQSNgoMcGFja2V0RmlsdGVyGAYgAygLMhIucHJv'
+    'dG9zLkZpbHRlclJ1bGVSDHBhY2tldEZpbHRlchIoCg9hZHZlcnRpc2VkUm91dGUYByADKAlSD2'
+    'FkdmVydGlzZWRSb3V0ZQ==');
 

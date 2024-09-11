@@ -508,7 +508,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     Node? node,
     $core.Iterable<Node>? peers,
     $core.Iterable<Node>? peersChanged,
-    $core.Iterable<Node>? peersRemoved,
+    $core.Iterable<$fixnum.Int64>? peersRemoved,
     $core.Iterable<FilterRule>? packetFilter,
     $core.Iterable<$core.String>? advertisedRoute,
   }) {
@@ -545,7 +545,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..aOM<Node>(2, _omitFieldNames ? '' : 'node', subBuilder: Node.create)
     ..pc<Node>(3, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM, subBuilder: Node.create)
     ..pc<Node>(4, _omitFieldNames ? '' : 'peersChanged', $pb.PbFieldType.PM, protoName: 'peersChanged', subBuilder: Node.create)
-    ..pc<Node>(5, _omitFieldNames ? '' : 'peersRemoved', $pb.PbFieldType.PM, protoName: 'peersRemoved', subBuilder: Node.create)
+    ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'peersRemoved', $pb.PbFieldType.KU6, protoName: 'peersRemoved')
     ..pc<FilterRule>(6, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
     ..pPS(7, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
@@ -603,9 +603,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.List<Node> get peersChanged => $_getList(3);
 
-  /// 消された場合のPeers
+  /// 消された場合のPeersのNodeID
   @$pb.TagNumber(5)
-  $core.List<Node> get peersRemoved => $_getList(4);
+  $core.List<$fixnum.Int64> get peersRemoved => $_getList(4);
 
   /// Firewall Rules
   @$pb.TagNumber(6)
