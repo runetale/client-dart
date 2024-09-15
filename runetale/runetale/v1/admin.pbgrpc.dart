@@ -70,9 +70,9 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/PatchGroup',
       ($1.PatchGroupRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Group.fromBuffer(value));
-  static final _$getDevice = $grpc.ClientMethod<$1.GetDevicesRequest, $1.Device>(
+  static final _$getDevice = $grpc.ClientMethod<$1.GetDeviceRequest, $1.Device>(
       '/protos.AdminService/GetDevice',
-      ($1.GetDevicesRequest value) => value.writeToBuffer(),
+      ($1.GetDeviceRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Device.fromBuffer(value));
   static final _$getDevices = $grpc.ClientMethod<$0.Empty, $1.Devices>(
       '/protos.AdminService/GetDevices',
@@ -205,7 +205,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$patchGroup, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.Device> getDevice($1.GetDevicesRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Device> getDevice($1.GetDeviceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDevice, request, options: options);
   }
 
@@ -375,12 +375,12 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.PatchGroupRequest.fromBuffer(value),
         ($1.Group value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.GetDevicesRequest, $1.Device>(
+    $addMethod($grpc.ServiceMethod<$1.GetDeviceRequest, $1.Device>(
         'GetDevice',
         getDevice_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $1.GetDevicesRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $1.GetDeviceRequest.fromBuffer(value),
         ($1.Device value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $1.Devices>(
         'GetDevices',
@@ -565,7 +565,7 @@ abstract class AdminServiceBase extends $grpc.Service {
     return patchGroup(call, await request);
   }
 
-  $async.Future<$1.Device> getDevice_Pre($grpc.ServiceCall call, $async.Future<$1.GetDevicesRequest> request) async {
+  $async.Future<$1.Device> getDevice_Pre($grpc.ServiceCall call, $async.Future<$1.GetDeviceRequest> request) async {
     return getDevice(call, await request);
   }
 
@@ -657,7 +657,7 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Group> getGroup($grpc.ServiceCall call, $1.GetGroupRequest request);
   $async.Future<$1.Groups> getGroups($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.Group> patchGroup($grpc.ServiceCall call, $1.PatchGroupRequest request);
-  $async.Future<$1.Device> getDevice($grpc.ServiceCall call, $1.GetDevicesRequest request);
+  $async.Future<$1.Device> getDevice($grpc.ServiceCall call, $1.GetDeviceRequest request);
   $async.Future<$1.Devices> getDevices($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.Resource> getResource($grpc.ServiceCall call, $1.GetResourceRequest request);
   $async.Future<$1.Resources> getResources($grpc.ServiceCall call, $0.Empty request);

@@ -78,19 +78,6 @@ final $typed_data.Uint8List expirelyTimeDescriptor = $convert.base64Decode(
     'CgxFeHBpcmVseVRpbWUSDAoIT05FTU9OVEgQABIMCghUV09NT05USBABEg4KClRIUkVFTU9OVE'
     'gQAg==');
 
-@$core.Deprecated('Use actionDescriptor instead')
-const Action$json = {
-  '1': 'Action',
-  '2': [
-    {'1': 'Accept', '2': 0},
-    {'1': 'Denied', '2': 1},
-  ],
-};
-
-/// Descriptor for `Action`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List actionDescriptor = $convert.base64Decode(
-    'CgZBY3Rpb24SCgoGQWNjZXB0EAASCgoGRGVuaWVkEAE=');
-
 @$core.Deprecated('Use platformDescriptor instead')
 const Platform$json = {
   '1': 'Platform',
@@ -126,7 +113,6 @@ const CreateAclRequest$json = {
     {'1': 'dst', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
     {'1': 'ipProto', '3': 5, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
     {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
-    {'1': 'action', '3': 7, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
   ],
 };
 
@@ -135,8 +121,7 @@ final $typed_data.Uint8List createAclRequestDescriptor = $convert.base64Decode(
     'ChBDcmVhdGVBY2xSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEZGVzYxgCIAEoCVIEZG'
     'VzYxImCgNzcmMYAyADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNzcmMSJgoDZHN0GAQgAygL'
     'MhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EikKB2lwUHJvdG8YBSADKA4yDy5wcm90b3MuSV'
-    'BQcm90b1IHaXBQcm90bxIUCgVwb3J0cxgGIAEoCVIFcG9ydHMSJgoGYWN0aW9uGAcgASgOMg4u'
-    'cHJvdG9zLkFjdGlvblIGYWN0aW9u');
+    'BQcm90b1IHaXBQcm90bxIUCgVwb3J0cxgGIAEoCVIFcG9ydHM=');
 
 @$core.Deprecated('Use aclResourcesDescriptor instead')
 const AclResources$json = {
@@ -159,23 +144,27 @@ const PatchAclRequest$json = {
   '1': 'PatchAclRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'desc', '17': true},
     {'1': 'src', '3': 4, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'src'},
     {'1': 'dst', '3': 5, '4': 3, '5': 11, '6': '.protos.AclResources', '10': 'dst'},
     {'1': 'ipProto', '3': 6, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
-    {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
-    {'1': 'action', '3': 8, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
+    {'1': 'ports', '3': 7, '4': 1, '5': 9, '9': 2, '10': 'ports', '17': true},
+  ],
+  '8': [
+    {'1': '_name'},
+    {'1': '_desc'},
+    {'1': '_ports'},
   ],
 };
 
 /// Descriptor for `PatchAclRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchAclRequestDescriptor = $convert.base64Decode(
-    'Cg9QYXRjaEFjbFJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEg'
-    'oEZGVzYxgDIAEoCVIEZGVzYxImCgNzcmMYBCADKAsyFC5wcm90b3MuQWNsUmVzb3VyY2VzUgNz'
-    'cmMSJgoDZHN0GAUgAygLMhQucHJvdG9zLkFjbFJlc291cmNlc1IDZHN0EikKB2lwUHJvdG8YBi'
-    'ADKA4yDy5wcm90b3MuSVBQcm90b1IHaXBQcm90bxIUCgVwb3J0cxgHIAEoCVIFcG9ydHMSJgoG'
-    'YWN0aW9uGAggASgOMg4ucHJvdG9zLkFjdGlvblIGYWN0aW9u');
+    'Cg9QYXRjaEFjbFJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhcKBG5hbWUYAiABKAlIAFIEbmFtZY'
+    'gBARIXCgRkZXNjGAMgASgJSAFSBGRlc2OIAQESJgoDc3JjGAQgAygLMhQucHJvdG9zLkFjbFJl'
+    'c291cmNlc1IDc3JjEiYKA2RzdBgFIAMoCzIULnByb3Rvcy5BY2xSZXNvdXJjZXNSA2RzdBIpCg'
+    'dpcFByb3RvGAYgAygOMg8ucHJvdG9zLklQUHJvdG9SB2lwUHJvdG8SGQoFcG9ydHMYByABKAlI'
+    'AlIFcG9ydHOIAQFCBwoFX25hbWVCBwoFX2Rlc2NCCAoGX3BvcnRz');
 
 @$core.Deprecated('Use getAclRequestDescriptor instead')
 const GetAclRequest$json = {
@@ -259,13 +248,13 @@ final $typed_data.Uint8List getMeResponseDescriptor = $convert.base64Decode(
 const GetUserRequest$json = {
   '1': 'GetUserRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
   ],
 };
 
 /// Descriptor for `GetUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getUserRequestDescriptor = $convert.base64Decode(
-    'Cg5HZXRVc2VyUmVxdWVzdBIOCgJpZBgBIAEoBFICaWQ=');
+    'Cg5HZXRVc2VyUmVxdWVzdBIWCgZub2RlSWQYASABKARSBm5vZGVJZA==');
 
 @$core.Deprecated('Use usersDescriptor instead')
 const Users$json = {
@@ -338,28 +327,33 @@ const PatchGroupRequest$json = {
   '1': 'PatchGroupRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'desc', '17': true},
     {'1': 'nodeIds', '3': 4, '4': 3, '5': 4, '10': 'nodeIds'},
+  ],
+  '8': [
+    {'1': '_name'},
+    {'1': '_desc'},
   ],
 };
 
 /// Descriptor for `PatchGroupRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchGroupRequestDescriptor = $convert.base64Decode(
-    'ChFQYXRjaEdyb3VwUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
-    'ISCgRkZXNjGAMgASgJUgRkZXNjEhgKB25vZGVJZHMYBCADKARSB25vZGVJZHM=');
+    'ChFQYXRjaEdyb3VwUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFwoEbmFtZRgCIAEoCUgAUgRuYW'
+    '1liAEBEhcKBGRlc2MYAyABKAlIAVIEZGVzY4gBARIYCgdub2RlSWRzGAQgAygEUgdub2RlSWRz'
+    'QgcKBV9uYW1lQgcKBV9kZXNj');
 
-@$core.Deprecated('Use getDevicesRequestDescriptor instead')
-const GetDevicesRequest$json = {
-  '1': 'GetDevicesRequest',
+@$core.Deprecated('Use getDeviceRequestDescriptor instead')
+const GetDeviceRequest$json = {
+  '1': 'GetDeviceRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
   ],
 };
 
-/// Descriptor for `GetDevicesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getDevicesRequestDescriptor = $convert.base64Decode(
-    'ChFHZXREZXZpY2VzUmVxdWVzdBIOCgJpZBgBIAEoBFICaWQ=');
+/// Descriptor for `GetDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDeviceRequestDescriptor = $convert.base64Decode(
+    'ChBHZXREZXZpY2VSZXF1ZXN0EhYKBm5vZGVJZBgBIAEoBFIGbm9kZUlk');
 
 @$core.Deprecated('Use devicesDescriptor instead')
 const Devices$json = {
@@ -405,16 +399,21 @@ const PatchInkRequest$json = {
   '1': 'PatchInkRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'desc', '17': true},
     {'1': 'nodeIds', '3': 4, '4': 3, '5': 4, '10': 'nodeIds'},
+  ],
+  '8': [
+    {'1': '_name'},
+    {'1': '_desc'},
   ],
 };
 
 /// Descriptor for `PatchInkRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchInkRequestDescriptor = $convert.base64Decode(
-    'Cg9QYXRjaElua1JlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSEg'
-    'oEZGVzYxgDIAEoCVIEZGVzYxIYCgdub2RlSWRzGAQgAygEUgdub2RlSWRz');
+    'Cg9QYXRjaElua1JlcXVlc3QSDgoCaWQYASABKAlSAmlkEhcKBG5hbWUYAiABKAlIAFIEbmFtZY'
+    'gBARIXCgRkZXNjGAMgASgJSAFSBGRlc2OIAQESGAoHbm9kZUlkcxgEIAMoBFIHbm9kZUlkc0IH'
+    'CgVfbmFtZUIHCgVfZGVzYw==');
 
 @$core.Deprecated('Use inksDescriptor instead')
 const Inks$json = {
@@ -628,21 +627,27 @@ const PatchFleetRequest$json = {
   '1': 'PatchFleetRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'desc', '17': true},
     {'1': 'nodeIds', '3': 4, '4': 3, '5': 4, '10': 'nodeIds'},
-    {'1': 'platform', '3': 5, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
-    {'1': 'action', '3': 6, '4': 1, '5': 14, '6': '.protos.Action', '10': 'action'},
-    {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
+    {'1': 'platform', '3': 5, '4': 1, '5': 14, '6': '.protos.Platform', '9': 2, '10': 'platform', '17': true},
+    {'1': 'ports', '3': 6, '4': 1, '5': 9, '9': 3, '10': 'ports', '17': true},
+  ],
+  '8': [
+    {'1': '_name'},
+    {'1': '_desc'},
+    {'1': '_platform'},
+    {'1': '_ports'},
   ],
 };
 
 /// Descriptor for `PatchFleetRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
-    'ChFQYXRjaEZsZWV0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZR'
-    'ISCgRkZXNjGAMgASgJUgRkZXNjEhgKB25vZGVJZHMYBCADKARSB25vZGVJZHMSLAoIcGxhdGZv'
-    'cm0YBSABKA4yEC5wcm90b3MuUGxhdGZvcm1SCHBsYXRmb3JtEiYKBmFjdGlvbhgGIAEoDjIOLn'
-    'Byb3Rvcy5BY3Rpb25SBmFjdGlvbhIUCgVwb3J0cxgHIAEoCVIFcG9ydHM=');
+    'ChFQYXRjaEZsZWV0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFwoEbmFtZRgCIAEoCUgAUgRuYW'
+    '1liAEBEhcKBGRlc2MYAyABKAlIAVIEZGVzY4gBARIYCgdub2RlSWRzGAQgAygEUgdub2RlSWRz'
+    'EjEKCHBsYXRmb3JtGAUgASgOMhAucHJvdG9zLlBsYXRmb3JtSAJSCHBsYXRmb3JtiAEBEhkKBX'
+    'BvcnRzGAYgASgJSANSBXBvcnRziAEBQgcKBV9uYW1lQgcKBV9kZXNjQgsKCV9wbGF0Zm9ybUII'
+    'CgZfcG9ydHM=');
 
 @$core.Deprecated('Use overviewDescriptor instead')
 const Overview$json = {
@@ -699,17 +704,21 @@ const PatchSubnetLinkerRequest$json = {
   '1': 'PatchSubnetLinkerRequest',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'name', '17': true},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'desc', '17': true},
     {'1': 'advertisedRoutes', '3': 4, '4': 3, '5': 9, '10': 'advertisedRoutes'},
+  ],
+  '8': [
+    {'1': '_name'},
+    {'1': '_desc'},
   ],
 };
 
 /// Descriptor for `PatchSubnetLinkerRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchSubnetLinkerRequestDescriptor = $convert.base64Decode(
-    'ChhQYXRjaFN1Ym5ldExpbmtlclJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKA'
-    'lSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxIqChBhZHZlcnRpc2VkUm91dGVzGAQgAygJUhBh'
-    'ZHZlcnRpc2VkUm91dGVz');
+    'ChhQYXRjaFN1Ym5ldExpbmtlclJlcXVlc3QSDgoCaWQYASABKAlSAmlkEhcKBG5hbWUYAiABKA'
+    'lIAFIEbmFtZYgBARIXCgRkZXNjGAMgASgJSAFSBGRlc2OIAQESKgoQYWR2ZXJ0aXNlZFJvdXRl'
+    'cxgEIAMoCVIQYWR2ZXJ0aXNlZFJvdXRlc0IHCgVfbmFtZUIHCgVfZGVzYw==');
 
 @$core.Deprecated('Use getSubnetLinkersReponseDescriptor instead')
 const GetSubnetLinkersReponse$json = {
@@ -888,62 +897,59 @@ final $typed_data.Uint8List groupDescriptor = $convert.base64Decode(
 const User$json = {
   '1': 'User',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
-    {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
-    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'picture', '3': 4, '4': 1, '5': 9, '10': 'picture'},
-    {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'role', '3': 6, '4': 1, '5': 9, '10': 'role'},
-    {'1': 'joined', '3': 7, '4': 1, '5': 9, '10': 'joined'},
-    {'1': 'lastSeen', '3': 8, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'status', '3': 9, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'groups', '3': 10, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
-    {'1': 'devices', '3': 11, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
-    {'1': 'resources', '3': 12, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
-    {'1': 'fleets', '3': 13, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
-    {'1': 'inks', '3': 14, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'picture', '3': 3, '4': 1, '5': 9, '10': 'picture'},
+    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'role', '3': 5, '4': 1, '5': 9, '10': 'role'},
+    {'1': 'joined', '3': 6, '4': 1, '5': 9, '10': 'joined'},
+    {'1': 'lastSeen', '3': 7, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'status', '3': 8, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'groups', '3': 9, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
+    {'1': 'devices', '3': 10, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
+    {'1': 'resources', '3': 11, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'fleets', '3': 12, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
+    {'1': 'inks', '3': 13, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
-    'CgRVc2VyEg4KAmlkGAEgASgEUgJpZBIWCgZub2RlSWQYAiABKARSBm5vZGVJZBISCgRuYW1lGA'
-    'MgASgJUgRuYW1lEhgKB3BpY3R1cmUYBCABKAlSB3BpY3R1cmUSFAoFZW1haWwYBSABKAlSBWVt'
-    'YWlsEhIKBHJvbGUYBiABKAlSBHJvbGUSFgoGam9pbmVkGAcgASgJUgZqb2luZWQSGgoIbGFzdF'
-    'NlZW4YCCABKAlSCGxhc3RTZWVuEhYKBnN0YXR1cxgJIAEoCFIGc3RhdHVzEiUKBmdyb3VwcxgK'
-    'IAMoCzINLnByb3Rvcy5Hcm91cFIGZ3JvdXBzEigKB2RldmljZXMYCyADKAsyDi5wcm90b3MuRG'
-    'V2aWNlUgdkZXZpY2VzEi4KCXJlc291cmNlcxgMIAMoCzIQLnByb3Rvcy5SZXNvdXJjZVIJcmVz'
-    'b3VyY2VzEiUKBmZsZWV0cxgNIAMoCzINLnByb3Rvcy5GbGVldFIGZmxlZXRzEh8KBGlua3MYDi'
-    'ADKAsyCy5wcm90b3MuSW5rUgRpbmtz');
+    'CgRVc2VyEhYKBm5vZGVJZBgBIAEoBFIGbm9kZUlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHcG'
+    'ljdHVyZRgDIAEoCVIHcGljdHVyZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSEgoEcm9sZRgFIAEo'
+    'CVIEcm9sZRIWCgZqb2luZWQYBiABKAlSBmpvaW5lZBIaCghsYXN0U2VlbhgHIAEoCVIIbGFzdF'
+    'NlZW4SFgoGc3RhdHVzGAggASgIUgZzdGF0dXMSJQoGZ3JvdXBzGAkgAygLMg0ucHJvdG9zLkdy'
+    'b3VwUgZncm91cHMSKAoHZGV2aWNlcxgKIAMoCzIOLnByb3Rvcy5EZXZpY2VSB2RldmljZXMSLg'
+    'oJcmVzb3VyY2VzGAsgAygLMhAucHJvdG9zLlJlc291cmNlUglyZXNvdXJjZXMSJQoGZmxlZXRz'
+    'GAwgAygLMg0ucHJvdG9zLkZsZWV0UgZmbGVldHMSHwoEaW5rcxgNIAMoCzILLnByb3Rvcy5Jbm'
+    'tSBGlua3M=');
 
 @$core.Deprecated('Use deviceDescriptor instead')
 const Device$json = {
   '1': 'Device',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
-    {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
-    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
-    {'1': 'os', '3': 7, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'status', '3': 8, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'lastSeen', '3': 9, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'createdBy', '3': 10, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'version', '3': 11, '4': 1, '5': 9, '10': 'version'},
-    {'1': 'nodeKey', '3': 12, '4': 1, '5': 9, '10': 'nodeKey'},
-    {'1': 'createdAt', '3': 13, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'keyExpiry', '3': 14, '4': 1, '5': 9, '10': 'keyExpiry'},
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'ip', '3': 4, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'ports', '3': 5, '4': 1, '5': 9, '10': 'ports'},
+    {'1': 'os', '3': 6, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'status', '3': 7, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'lastSeen', '3': 8, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'createdBy', '3': 9, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'version', '3': 10, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'nodeKey', '3': 11, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'createdAt', '3': 12, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'keyExpiry', '3': 13, '4': 1, '5': 9, '10': 'keyExpiry'},
   ],
 };
 
 /// Descriptor for `Device`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deviceDescriptor = $convert.base64Decode(
-    'CgZEZXZpY2USDgoCaWQYASABKARSAmlkEhYKBm5vZGVJZBgCIAEoBFIGbm9kZUlkEhIKBG5hbW'
-    'UYAyABKAlSBG5hbWUSFAoFZW1haWwYBCABKAlSBWVtYWlsEg4KAmlwGAUgASgJUgJpcBIUCgVw'
-    'b3J0cxgGIAEoCVIFcG9ydHMSDgoCb3MYByABKAlSAm9zEhYKBnN0YXR1cxgIIAEoCFIGc3RhdH'
-    'VzEhoKCGxhc3RTZWVuGAkgASgJUghsYXN0U2VlbhIcCgljcmVhdGVkQnkYCiABKAlSCWNyZWF0'
-    'ZWRCeRIYCgd2ZXJzaW9uGAsgASgJUgd2ZXJzaW9uEhgKB25vZGVLZXkYDCABKAlSB25vZGVLZX'
-    'kSHAoJY3JlYXRlZEF0GA0gASgJUgljcmVhdGVkQXQSHAoJa2V5RXhwaXJ5GA4gASgJUglrZXlF'
-    'eHBpcnk=');
+    'CgZEZXZpY2USFgoGbm9kZUlkGAEgASgEUgZub2RlSWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIUCg'
+    'VlbWFpbBgDIAEoCVIFZW1haWwSDgoCaXAYBCABKAlSAmlwEhQKBXBvcnRzGAUgASgJUgVwb3J0'
+    'cxIOCgJvcxgGIAEoCVICb3MSFgoGc3RhdHVzGAcgASgIUgZzdGF0dXMSGgoIbGFzdFNlZW4YCC'
+    'ABKAlSCGxhc3RTZWVuEhwKCWNyZWF0ZWRCeRgJIAEoCVIJY3JlYXRlZEJ5EhgKB3ZlcnNpb24Y'
+    'CiABKAlSB3ZlcnNpb24SGAoHbm9kZUtleRgLIAEoCVIHbm9kZUtleRIcCgljcmVhdGVkQXQYDC'
+    'ABKAlSCWNyZWF0ZWRBdBIcCglrZXlFeHBpcnkYDSABKAlSCWtleUV4cGlyeQ==');
 

@@ -93,21 +93,6 @@ class ExpirelyTime extends $pb.ProtobufEnum {
   const ExpirelyTime._($core.int v, $core.String n) : super(v, n);
 }
 
-class Action extends $pb.ProtobufEnum {
-  static const Action Accept = Action._(0, _omitEnumNames ? '' : 'Accept');
-  static const Action Denied = Action._(1, _omitEnumNames ? '' : 'Denied');
-
-  static const $core.List<Action> values = <Action> [
-    Accept,
-    Denied,
-  ];
-
-  static final $core.Map<$core.int, Action> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static Action? valueOf($core.int value) => _byValue[value];
-
-  const Action._($core.int v, $core.String n) : super(v, n);
-}
-
 class Platform extends $pb.ProtobufEnum {
   static const Platform DOCKER = Platform._(0, _omitEnumNames ? '' : 'DOCKER');
   static const Platform CLI = Platform._(1, _omitEnumNames ? '' : 'CLI');

@@ -26,7 +26,6 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? dst,
     $core.Iterable<IPProto>? ipProto,
     $core.String? ports,
-    Action? action,
   }) {
     final $result = create();
     if (name != null) {
@@ -47,9 +46,6 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     if (ports != null) {
       $result.ports = ports;
     }
-    if (action != null) {
-      $result.action = action;
-    }
     return $result;
   }
   CreateAclRequest._() : super();
@@ -63,7 +59,6 @@ class CreateAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(4, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<IPProto>(5, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..aOS(6, _omitFieldNames ? '' : 'ports')
-    ..e<Action>(7, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -126,15 +121,6 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(6)
   void clearPorts() => clearField(6);
-
-  @$pb.TagNumber(7)
-  Action get action => $_getN(6);
-  @$pb.TagNumber(7)
-  set action(Action v) { setField(7, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasAction() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearAction() => clearField(7);
 }
 
 class AclResources extends $pb.GeneratedMessage {
@@ -218,7 +204,6 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     $core.Iterable<AclResources>? dst,
     $core.Iterable<IPProto>? ipProto,
     $core.String? ports,
-    Action? action,
   }) {
     final $result = create();
     if (id != null) {
@@ -242,9 +227,6 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     if (ports != null) {
       $result.ports = ports;
     }
-    if (action != null) {
-      $result.action = action;
-    }
     return $result;
   }
   PatchAclRequest._() : super();
@@ -259,7 +241,6 @@ class PatchAclRequest extends $pb.GeneratedMessage {
     ..pc<AclResources>(5, _omitFieldNames ? '' : 'dst', $pb.PbFieldType.PM, subBuilder: AclResources.create)
     ..pc<IPProto>(6, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..aOS(7, _omitFieldNames ? '' : 'ports')
-    ..e<Action>(8, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
     ..hasRequiredFields = false
   ;
 
@@ -330,15 +311,6 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   $core.bool hasPorts() => $_has(6);
   @$pb.TagNumber(7)
   void clearPorts() => clearField(7);
-
-  @$pb.TagNumber(8)
-  Action get action => $_getN(7);
-  @$pb.TagNumber(8)
-  set action(Action v) { setField(8, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasAction() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearAction() => clearField(8);
 }
 
 class GetAclRequest extends $pb.GeneratedMessage {
@@ -739,11 +711,11 @@ class GetMeResponse extends $pb.GeneratedMessage {
 
 class GetUserRequest extends $pb.GeneratedMessage {
   factory GetUserRequest({
-    $fixnum.Int64? id,
+    $fixnum.Int64? nodeId,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
     }
     return $result;
   }
@@ -752,7 +724,7 @@ class GetUserRequest extends $pb.GeneratedMessage {
   factory GetUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -778,13 +750,13 @@ class GetUserRequest extends $pb.GeneratedMessage {
   static GetUserRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearNodeId() => clearField(1);
 }
 
 class Users extends $pb.GeneratedMessage {
@@ -1161,22 +1133,22 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get nodeIds => $_getList(3);
 }
 
-class GetDevicesRequest extends $pb.GeneratedMessage {
-  factory GetDevicesRequest({
-    $fixnum.Int64? id,
+class GetDeviceRequest extends $pb.GeneratedMessage {
+  factory GetDeviceRequest({
+    $fixnum.Int64? nodeId,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
     }
     return $result;
   }
-  GetDevicesRequest._() : super();
-  factory GetDevicesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetDevicesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  GetDeviceRequest._() : super();
+  factory GetDeviceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDeviceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDeviceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -1184,31 +1156,31 @@ class GetDevicesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  GetDevicesRequest clone() => GetDevicesRequest()..mergeFromMessage(this);
+  GetDeviceRequest clone() => GetDeviceRequest()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetDevicesRequest copyWith(void Function(GetDevicesRequest) updates) => super.copyWith((message) => updates(message as GetDevicesRequest)) as GetDevicesRequest;
+  GetDeviceRequest copyWith(void Function(GetDeviceRequest) updates) => super.copyWith((message) => updates(message as GetDeviceRequest)) as GetDeviceRequest;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetDevicesRequest create() => GetDevicesRequest._();
-  GetDevicesRequest createEmptyInstance() => create();
-  static $pb.PbList<GetDevicesRequest> createRepeated() => $pb.PbList<GetDevicesRequest>();
+  static GetDeviceRequest create() => GetDeviceRequest._();
+  GetDeviceRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDeviceRequest> createRepeated() => $pb.PbList<GetDeviceRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetDevicesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicesRequest>(create);
-  static GetDevicesRequest? _defaultInstance;
+  static GetDeviceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDeviceRequest>(create);
+  static GetDeviceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearNodeId() => clearField(1);
 }
 
 class Devices extends $pb.GeneratedMessage {
@@ -2464,7 +2436,6 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? nodeIds,
     Platform? platform,
-    Action? action,
     $core.String? ports,
   }) {
     final $result = create();
@@ -2483,9 +2454,6 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (platform != null) {
       $result.platform = platform;
     }
-    if (action != null) {
-      $result.action = action;
-    }
     if (ports != null) {
       $result.ports = ports;
     }
@@ -2501,8 +2469,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..e<Platform>(5, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
-    ..e<Action>(6, _omitFieldNames ? '' : 'action', $pb.PbFieldType.OE, defaultOrMaker: Action.Accept, valueOf: Action.valueOf, enumValues: Action.values)
-    ..aOS(7, _omitFieldNames ? '' : 'ports')
+    ..aOS(6, _omitFieldNames ? '' : 'ports')
     ..hasRequiredFields = false
   ;
 
@@ -2567,22 +2534,13 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   void clearPlatform() => clearField(5);
 
   @$pb.TagNumber(6)
-  Action get action => $_getN(5);
+  $core.String get ports => $_getSZ(5);
   @$pb.TagNumber(6)
-  set action(Action v) { setField(6, v); }
+  set ports($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasAction() => $_has(5);
+  $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(6)
-  void clearAction() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.String get ports => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set ports($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasPorts() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearPorts() => clearField(7);
+  void clearPorts() => clearField(6);
 }
 
 class Overview extends $pb.GeneratedMessage {
@@ -3939,7 +3897,6 @@ class Group extends $pb.GeneratedMessage {
 
 class User extends $pb.GeneratedMessage {
   factory User({
-    $fixnum.Int64? id,
     $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? picture,
@@ -3955,9 +3912,6 @@ class User extends $pb.GeneratedMessage {
     $core.Iterable<Ink>? inks,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
     if (nodeId != null) {
       $result.nodeId = nodeId;
     }
@@ -4004,20 +3958,19 @@ class User extends $pb.GeneratedMessage {
   factory User.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'User', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, _omitFieldNames ? '' : 'name')
-    ..aOS(4, _omitFieldNames ? '' : 'picture')
-    ..aOS(5, _omitFieldNames ? '' : 'email')
-    ..aOS(6, _omitFieldNames ? '' : 'role')
-    ..aOS(7, _omitFieldNames ? '' : 'joined')
-    ..aOS(8, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOB(9, _omitFieldNames ? '' : 'status')
-    ..pc<Group>(10, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
-    ..pc<Device>(11, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
-    ..pc<Resource>(12, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..pc<Fleet>(13, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
-    ..pc<Ink>(14, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'picture')
+    ..aOS(4, _omitFieldNames ? '' : 'email')
+    ..aOS(5, _omitFieldNames ? '' : 'role')
+    ..aOS(6, _omitFieldNames ? '' : 'joined')
+    ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOB(8, _omitFieldNames ? '' : 'status')
+    ..pc<Group>(9, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..pc<Device>(10, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<Resource>(11, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<Fleet>(12, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<Ink>(13, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
     ..hasRequiredFields = false
   ;
 
@@ -4043,105 +3996,95 @@ class User extends $pb.GeneratedMessage {
   static User? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearNodeId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get nodeId => $_getI64(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set nodeId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasNodeId() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNodeId() => clearField(2);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get name => $_getSZ(2);
+  $core.String get picture => $_getSZ(2);
   @$pb.TagNumber(3)
-  set name($core.String v) { $_setString(2, v); }
+  set picture($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasName() => $_has(2);
+  $core.bool hasPicture() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearPicture() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get picture => $_getSZ(3);
+  $core.String get email => $_getSZ(3);
   @$pb.TagNumber(4)
-  set picture($core.String v) { $_setString(3, v); }
+  set email($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPicture() => $_has(3);
+  $core.bool hasEmail() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPicture() => clearField(4);
+  void clearEmail() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get email => $_getSZ(4);
+  $core.String get role => $_getSZ(4);
   @$pb.TagNumber(5)
-  set email($core.String v) { $_setString(4, v); }
+  set role($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasEmail() => $_has(4);
+  $core.bool hasRole() => $_has(4);
   @$pb.TagNumber(5)
-  void clearEmail() => clearField(5);
+  void clearRole() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get role => $_getSZ(5);
+  $core.String get joined => $_getSZ(5);
   @$pb.TagNumber(6)
-  set role($core.String v) { $_setString(5, v); }
+  set joined($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasRole() => $_has(5);
+  $core.bool hasJoined() => $_has(5);
   @$pb.TagNumber(6)
-  void clearRole() => clearField(6);
+  void clearJoined() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get joined => $_getSZ(6);
+  $core.String get lastSeen => $_getSZ(6);
   @$pb.TagNumber(7)
-  set joined($core.String v) { $_setString(6, v); }
+  set lastSeen($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasJoined() => $_has(6);
+  $core.bool hasLastSeen() => $_has(6);
   @$pb.TagNumber(7)
-  void clearJoined() => clearField(7);
+  void clearLastSeen() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get lastSeen => $_getSZ(7);
+  $core.bool get status => $_getBF(7);
   @$pb.TagNumber(8)
-  set lastSeen($core.String v) { $_setString(7, v); }
+  set status($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasLastSeen() => $_has(7);
+  $core.bool hasStatus() => $_has(7);
   @$pb.TagNumber(8)
-  void clearLastSeen() => clearField(8);
+  void clearStatus() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.bool get status => $_getBF(8);
-  @$pb.TagNumber(9)
-  set status($core.bool v) { $_setBool(8, v); }
-  @$pb.TagNumber(9)
-  $core.bool hasStatus() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearStatus() => clearField(9);
+  $core.List<Group> get groups => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.List<Group> get groups => $_getList(9);
+  $core.List<Device> get devices => $_getList(9);
 
   @$pb.TagNumber(11)
-  $core.List<Device> get devices => $_getList(10);
+  $core.List<Resource> get resources => $_getList(10);
 
   @$pb.TagNumber(12)
-  $core.List<Resource> get resources => $_getList(11);
+  $core.List<Fleet> get fleets => $_getList(11);
 
   @$pb.TagNumber(13)
-  $core.List<Fleet> get fleets => $_getList(12);
-
-  @$pb.TagNumber(14)
-  $core.List<Ink> get inks => $_getList(13);
+  $core.List<Ink> get inks => $_getList(12);
 }
 
 class Device extends $pb.GeneratedMessage {
   factory Device({
-    $fixnum.Int64? id,
     $fixnum.Int64? nodeId,
     $core.String? name,
     $core.String? email,
@@ -4157,9 +4100,6 @@ class Device extends $pb.GeneratedMessage {
     $core.String? keyExpiry,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
     if (nodeId != null) {
       $result.nodeId = nodeId;
     }
@@ -4206,20 +4146,19 @@ class Device extends $pb.GeneratedMessage {
   factory Device.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Device', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, _omitFieldNames ? '' : 'name')
-    ..aOS(4, _omitFieldNames ? '' : 'email')
-    ..aOS(5, _omitFieldNames ? '' : 'ip')
-    ..aOS(6, _omitFieldNames ? '' : 'ports')
-    ..aOS(7, _omitFieldNames ? '' : 'os')
-    ..aOB(8, _omitFieldNames ? '' : 'status')
-    ..aOS(9, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOS(10, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
-    ..aOS(11, _omitFieldNames ? '' : 'version')
-    ..aOS(12, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
-    ..aOS(13, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
-    ..aOS(14, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'email')
+    ..aOS(4, _omitFieldNames ? '' : 'ip')
+    ..aOS(5, _omitFieldNames ? '' : 'ports')
+    ..aOS(6, _omitFieldNames ? '' : 'os')
+    ..aOB(7, _omitFieldNames ? '' : 'status')
+    ..aOS(8, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(9, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(10, _omitFieldNames ? '' : 'version')
+    ..aOS(11, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..aOS(12, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
+    ..aOS(13, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
     ..hasRequiredFields = false
   ;
 
@@ -4245,130 +4184,121 @@ class Device extends $pb.GeneratedMessage {
   static Device? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $fixnum.Int64 get id => $_getI64(0);
+  $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearNodeId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get nodeId => $_getI64(1);
+  $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set nodeId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set name($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasNodeId() => $_has(1);
+  $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNodeId() => clearField(2);
+  void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get name => $_getSZ(2);
+  $core.String get email => $_getSZ(2);
   @$pb.TagNumber(3)
-  set name($core.String v) { $_setString(2, v); }
+  set email($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasName() => $_has(2);
+  $core.bool hasEmail() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearEmail() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get email => $_getSZ(3);
+  $core.String get ip => $_getSZ(3);
   @$pb.TagNumber(4)
-  set email($core.String v) { $_setString(3, v); }
+  set ip($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasEmail() => $_has(3);
+  $core.bool hasIp() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEmail() => clearField(4);
+  void clearIp() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get ip => $_getSZ(4);
+  $core.String get ports => $_getSZ(4);
   @$pb.TagNumber(5)
-  set ip($core.String v) { $_setString(4, v); }
+  set ports($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasIp() => $_has(4);
+  $core.bool hasPorts() => $_has(4);
   @$pb.TagNumber(5)
-  void clearIp() => clearField(5);
+  void clearPorts() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get ports => $_getSZ(5);
+  $core.String get os => $_getSZ(5);
   @$pb.TagNumber(6)
-  set ports($core.String v) { $_setString(5, v); }
+  set os($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasPorts() => $_has(5);
+  $core.bool hasOs() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPorts() => clearField(6);
+  void clearOs() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get os => $_getSZ(6);
+  $core.bool get status => $_getBF(6);
   @$pb.TagNumber(7)
-  set os($core.String v) { $_setString(6, v); }
+  set status($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasOs() => $_has(6);
+  $core.bool hasStatus() => $_has(6);
   @$pb.TagNumber(7)
-  void clearOs() => clearField(7);
+  void clearStatus() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get status => $_getBF(7);
+  $core.String get lastSeen => $_getSZ(7);
   @$pb.TagNumber(8)
-  set status($core.bool v) { $_setBool(7, v); }
+  set lastSeen($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasStatus() => $_has(7);
+  $core.bool hasLastSeen() => $_has(7);
   @$pb.TagNumber(8)
-  void clearStatus() => clearField(8);
+  void clearLastSeen() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.String get lastSeen => $_getSZ(8);
+  $core.String get createdBy => $_getSZ(8);
   @$pb.TagNumber(9)
-  set lastSeen($core.String v) { $_setString(8, v); }
+  set createdBy($core.String v) { $_setString(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasLastSeen() => $_has(8);
+  $core.bool hasCreatedBy() => $_has(8);
   @$pb.TagNumber(9)
-  void clearLastSeen() => clearField(9);
+  void clearCreatedBy() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get createdBy => $_getSZ(9);
+  $core.String get version => $_getSZ(9);
   @$pb.TagNumber(10)
-  set createdBy($core.String v) { $_setString(9, v); }
+  set version($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasCreatedBy() => $_has(9);
+  $core.bool hasVersion() => $_has(9);
   @$pb.TagNumber(10)
-  void clearCreatedBy() => clearField(10);
+  void clearVersion() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get version => $_getSZ(10);
+  $core.String get nodeKey => $_getSZ(10);
   @$pb.TagNumber(11)
-  set version($core.String v) { $_setString(10, v); }
+  set nodeKey($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasVersion() => $_has(10);
+  $core.bool hasNodeKey() => $_has(10);
   @$pb.TagNumber(11)
-  void clearVersion() => clearField(11);
+  void clearNodeKey() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get nodeKey => $_getSZ(11);
+  $core.String get createdAt => $_getSZ(11);
   @$pb.TagNumber(12)
-  set nodeKey($core.String v) { $_setString(11, v); }
+  set createdAt($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasNodeKey() => $_has(11);
+  $core.bool hasCreatedAt() => $_has(11);
   @$pb.TagNumber(12)
-  void clearNodeKey() => clearField(12);
+  void clearCreatedAt() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.String get createdAt => $_getSZ(12);
+  $core.String get keyExpiry => $_getSZ(12);
   @$pb.TagNumber(13)
-  set createdAt($core.String v) { $_setString(12, v); }
+  set keyExpiry($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasCreatedAt() => $_has(12);
+  $core.bool hasKeyExpiry() => $_has(12);
   @$pb.TagNumber(13)
-  void clearCreatedAt() => clearField(13);
-
-  @$pb.TagNumber(14)
-  $core.String get keyExpiry => $_getSZ(13);
-  @$pb.TagNumber(14)
-  set keyExpiry($core.String v) { $_setString(13, v); }
-  @$pb.TagNumber(14)
-  $core.bool hasKeyExpiry() => $_has(13);
-  @$pb.TagNumber(14)
-  void clearKeyExpiry() => clearField(14);
+  void clearKeyExpiry() => clearField(13);
 }
 
 
