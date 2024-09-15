@@ -792,18 +792,19 @@ const Linker$json = {
     {'1': 'nodeId', '3': 3, '4': 1, '5': 4, '10': 'nodeId'},
     {'1': 'nodeType', '3': 4, '4': 1, '5': 14, '6': '.protos.NodeType', '10': 'nodeType'},
     {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'email', '3': 6, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'domain', '3': 7, '4': 1, '5': 9, '10': 'domain'},
-    {'1': 'ip', '3': 8, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'advertisedRoutes', '3': 9, '4': 3, '5': 9, '10': 'advertisedRoutes'},
-    {'1': 'host', '3': 10, '4': 1, '5': 9, '10': 'host'},
-    {'1': 'os', '3': 11, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'nodeKey', '3': 12, '4': 1, '5': 9, '10': 'nodeKey'},
-    {'1': 'platform', '3': 13, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
-    {'1': 'createdBy', '3': 14, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'createdAt', '3': 15, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'status', '3': 16, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'lastSeen', '3': 17, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'desc', '3': 6, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'email', '3': 7, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'domain', '3': 8, '4': 1, '5': 9, '10': 'domain'},
+    {'1': 'ip', '3': 9, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'advertisedRoutes', '3': 10, '4': 3, '5': 9, '10': 'advertisedRoutes'},
+    {'1': 'host', '3': 11, '4': 1, '5': 9, '10': 'host'},
+    {'1': 'os', '3': 12, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'nodeKey', '3': 13, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'platform', '3': 14, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
+    {'1': 'createdBy', '3': 15, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'createdAt', '3': 16, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'status', '3': 17, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'lastSeen', '3': 18, '4': 1, '5': 9, '10': 'lastSeen'},
   ],
 };
 
@@ -812,12 +813,13 @@ final $typed_data.Uint8List linkerDescriptor = $convert.base64Decode(
     'CgZMaW5rZXISDgoCaWQYASABKAlSAmlkEjIKCmxpbmtlclR5cGUYAiABKA4yEi5wcm90b3MuTG'
     'lua2VyVHlwZVIKbGlua2VyVHlwZRIWCgZub2RlSWQYAyABKARSBm5vZGVJZBIsCghub2RlVHlw'
     'ZRgEIAEoDjIQLnByb3Rvcy5Ob2RlVHlwZVIIbm9kZVR5cGUSEgoEbmFtZRgFIAEoCVIEbmFtZR'
-    'IUCgVlbWFpbBgGIAEoCVIFZW1haWwSFgoGZG9tYWluGAcgASgJUgZkb21haW4SDgoCaXAYCCAB'
-    'KAlSAmlwEioKEGFkdmVydGlzZWRSb3V0ZXMYCSADKAlSEGFkdmVydGlzZWRSb3V0ZXMSEgoEaG'
-    '9zdBgKIAEoCVIEaG9zdBIOCgJvcxgLIAEoCVICb3MSGAoHbm9kZUtleRgMIAEoCVIHbm9kZUtl'
-    'eRIsCghwbGF0Zm9ybRgNIAEoDjIQLnByb3Rvcy5QbGF0Zm9ybVIIcGxhdGZvcm0SHAoJY3JlYX'
-    'RlZEJ5GA4gASgJUgljcmVhdGVkQnkSHAoJY3JlYXRlZEF0GA8gASgJUgljcmVhdGVkQXQSFgoG'
-    'c3RhdHVzGBAgASgIUgZzdGF0dXMSGgoIbGFzdFNlZW4YESABKAlSCGxhc3RTZWVu');
+    'ISCgRkZXNjGAYgASgJUgRkZXNjEhQKBWVtYWlsGAcgASgJUgVlbWFpbBIWCgZkb21haW4YCCAB'
+    'KAlSBmRvbWFpbhIOCgJpcBgJIAEoCVICaXASKgoQYWR2ZXJ0aXNlZFJvdXRlcxgKIAMoCVIQYW'
+    'R2ZXJ0aXNlZFJvdXRlcxISCgRob3N0GAsgASgJUgRob3N0Eg4KAm9zGAwgASgJUgJvcxIYCgdu'
+    'b2RlS2V5GA0gASgJUgdub2RlS2V5EiwKCHBsYXRmb3JtGA4gASgOMhAucHJvdG9zLlBsYXRmb3'
+    'JtUghwbGF0Zm9ybRIcCgljcmVhdGVkQnkYDyABKAlSCWNyZWF0ZWRCeRIcCgljcmVhdGVkQXQY'
+    'ECABKAlSCWNyZWF0ZWRBdBIWCgZzdGF0dXMYESABKAhSBnN0YXR1cxIaCghsYXN0U2VlbhgSIA'
+    'EoCVIIbGFzdFNlZW4=');
 
 @$core.Deprecated('Use createSubnetLinkerResponseDescriptor instead')
 const CreateSubnetLinkerResponse$json = {
@@ -945,15 +947,17 @@ const Group$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'users', '3': 3, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
-    {'1': 'updatedAt', '3': 4, '4': 1, '5': 9, '10': 'updatedAt'},
+    {'1': 'desc', '3': 3, '4': 1, '5': 9, '10': 'desc'},
+    {'1': 'users', '3': 4, '4': 3, '5': 11, '6': '.protos.User', '10': 'users'},
+    {'1': 'updatedAt', '3': 5, '4': 1, '5': 9, '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `Group`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List groupDescriptor = $convert.base64Decode(
-    'CgVHcm91cBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIiCgV1c2VycxgDIA'
-    'MoCzIMLnByb3Rvcy5Vc2VyUgV1c2VycxIcCgl1cGRhdGVkQXQYBCABKAlSCXVwZGF0ZWRBdA==');
+    'CgVHcm91cBIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZXNjGAMgAS'
+    'gJUgRkZXNjEiIKBXVzZXJzGAQgAygLMgwucHJvdG9zLlVzZXJSBXVzZXJzEhwKCXVwZGF0ZWRB'
+    'dBgFIAEoCVIJdXBkYXRlZEF0');
 
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = {

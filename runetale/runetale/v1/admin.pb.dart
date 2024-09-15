@@ -3095,6 +3095,7 @@ class Linker extends $pb.GeneratedMessage {
     $fixnum.Int64? nodeId,
     NodeType? nodeType,
     $core.String? name,
+    $core.String? desc,
     $core.String? email,
     $core.String? domain,
     $core.String? ip,
@@ -3123,6 +3124,9 @@ class Linker extends $pb.GeneratedMessage {
     }
     if (name != null) {
       $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (email != null) {
       $result.email = email;
@@ -3172,18 +3176,19 @@ class Linker extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..e<NodeType>(4, _omitFieldNames ? '' : 'nodeType', $pb.PbFieldType.OE, protoName: 'nodeType', defaultOrMaker: NodeType.FLEET, valueOf: NodeType.valueOf, enumValues: NodeType.values)
     ..aOS(5, _omitFieldNames ? '' : 'name')
-    ..aOS(6, _omitFieldNames ? '' : 'email')
-    ..aOS(7, _omitFieldNames ? '' : 'domain')
-    ..aOS(8, _omitFieldNames ? '' : 'ip')
-    ..pPS(9, _omitFieldNames ? '' : 'advertisedRoutes', protoName: 'advertisedRoutes')
-    ..aOS(10, _omitFieldNames ? '' : 'host')
-    ..aOS(11, _omitFieldNames ? '' : 'os')
-    ..aOS(12, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
-    ..e<Platform>(13, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
-    ..aOS(14, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
-    ..aOS(15, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
-    ..aOB(16, _omitFieldNames ? '' : 'status')
-    ..aOS(17, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOS(6, _omitFieldNames ? '' : 'desc')
+    ..aOS(7, _omitFieldNames ? '' : 'email')
+    ..aOS(8, _omitFieldNames ? '' : 'domain')
+    ..aOS(9, _omitFieldNames ? '' : 'ip')
+    ..pPS(10, _omitFieldNames ? '' : 'advertisedRoutes', protoName: 'advertisedRoutes')
+    ..aOS(11, _omitFieldNames ? '' : 'host')
+    ..aOS(12, _omitFieldNames ? '' : 'os')
+    ..aOS(13, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..e<Platform>(14, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..aOS(15, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(16, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
+    ..aOB(17, _omitFieldNames ? '' : 'status')
+    ..aOS(18, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
     ..hasRequiredFields = false
   ;
 
@@ -3255,106 +3260,115 @@ class Linker extends $pb.GeneratedMessage {
   void clearName() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get email => $_getSZ(5);
+  $core.String get desc => $_getSZ(5);
   @$pb.TagNumber(6)
-  set email($core.String v) { $_setString(5, v); }
+  set desc($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasEmail() => $_has(5);
+  $core.bool hasDesc() => $_has(5);
   @$pb.TagNumber(6)
-  void clearEmail() => clearField(6);
+  void clearDesc() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get domain => $_getSZ(6);
+  $core.String get email => $_getSZ(6);
   @$pb.TagNumber(7)
-  set domain($core.String v) { $_setString(6, v); }
+  set email($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasDomain() => $_has(6);
+  $core.bool hasEmail() => $_has(6);
   @$pb.TagNumber(7)
-  void clearDomain() => clearField(7);
+  void clearEmail() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.String get ip => $_getSZ(7);
+  $core.String get domain => $_getSZ(7);
   @$pb.TagNumber(8)
-  set ip($core.String v) { $_setString(7, v); }
+  set domain($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasIp() => $_has(7);
+  $core.bool hasDomain() => $_has(7);
   @$pb.TagNumber(8)
-  void clearIp() => clearField(8);
+  void clearDomain() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<$core.String> get advertisedRoutes => $_getList(8);
+  $core.String get ip => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set ip($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasIp() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIp() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.String get host => $_getSZ(9);
-  @$pb.TagNumber(10)
-  set host($core.String v) { $_setString(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasHost() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearHost() => clearField(10);
+  $core.List<$core.String> get advertisedRoutes => $_getList(9);
 
   @$pb.TagNumber(11)
-  $core.String get os => $_getSZ(10);
+  $core.String get host => $_getSZ(10);
   @$pb.TagNumber(11)
-  set os($core.String v) { $_setString(10, v); }
+  set host($core.String v) { $_setString(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasOs() => $_has(10);
+  $core.bool hasHost() => $_has(10);
   @$pb.TagNumber(11)
-  void clearOs() => clearField(11);
+  void clearHost() => clearField(11);
 
   @$pb.TagNumber(12)
-  $core.String get nodeKey => $_getSZ(11);
+  $core.String get os => $_getSZ(11);
   @$pb.TagNumber(12)
-  set nodeKey($core.String v) { $_setString(11, v); }
+  set os($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(12)
-  $core.bool hasNodeKey() => $_has(11);
+  $core.bool hasOs() => $_has(11);
   @$pb.TagNumber(12)
-  void clearNodeKey() => clearField(12);
+  void clearOs() => clearField(12);
 
   @$pb.TagNumber(13)
-  Platform get platform => $_getN(12);
+  $core.String get nodeKey => $_getSZ(12);
   @$pb.TagNumber(13)
-  set platform(Platform v) { setField(13, v); }
+  set nodeKey($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasPlatform() => $_has(12);
+  $core.bool hasNodeKey() => $_has(12);
   @$pb.TagNumber(13)
-  void clearPlatform() => clearField(13);
+  void clearNodeKey() => clearField(13);
 
   @$pb.TagNumber(14)
-  $core.String get createdBy => $_getSZ(13);
+  Platform get platform => $_getN(13);
   @$pb.TagNumber(14)
-  set createdBy($core.String v) { $_setString(13, v); }
+  set platform(Platform v) { setField(14, v); }
   @$pb.TagNumber(14)
-  $core.bool hasCreatedBy() => $_has(13);
+  $core.bool hasPlatform() => $_has(13);
   @$pb.TagNumber(14)
-  void clearCreatedBy() => clearField(14);
+  void clearPlatform() => clearField(14);
 
   @$pb.TagNumber(15)
-  $core.String get createdAt => $_getSZ(14);
+  $core.String get createdBy => $_getSZ(14);
   @$pb.TagNumber(15)
-  set createdAt($core.String v) { $_setString(14, v); }
+  set createdBy($core.String v) { $_setString(14, v); }
   @$pb.TagNumber(15)
-  $core.bool hasCreatedAt() => $_has(14);
+  $core.bool hasCreatedBy() => $_has(14);
   @$pb.TagNumber(15)
-  void clearCreatedAt() => clearField(15);
+  void clearCreatedBy() => clearField(15);
 
   @$pb.TagNumber(16)
-  $core.bool get status => $_getBF(15);
+  $core.String get createdAt => $_getSZ(15);
   @$pb.TagNumber(16)
-  set status($core.bool v) { $_setBool(15, v); }
+  set createdAt($core.String v) { $_setString(15, v); }
   @$pb.TagNumber(16)
-  $core.bool hasStatus() => $_has(15);
+  $core.bool hasCreatedAt() => $_has(15);
   @$pb.TagNumber(16)
-  void clearStatus() => clearField(16);
+  void clearCreatedAt() => clearField(16);
 
   @$pb.TagNumber(17)
-  $core.String get lastSeen => $_getSZ(16);
+  $core.bool get status => $_getBF(16);
   @$pb.TagNumber(17)
-  set lastSeen($core.String v) { $_setString(16, v); }
+  set status($core.bool v) { $_setBool(16, v); }
   @$pb.TagNumber(17)
-  $core.bool hasLastSeen() => $_has(16);
+  $core.bool hasStatus() => $_has(16);
   @$pb.TagNumber(17)
-  void clearLastSeen() => clearField(17);
+  void clearStatus() => clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get lastSeen => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set lastSeen($core.String v) { $_setString(17, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasLastSeen() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearLastSeen() => clearField(18);
 }
 
 class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
@@ -4040,6 +4054,7 @@ class Group extends $pb.GeneratedMessage {
   factory Group({
     $core.String? id,
     $core.String? name,
+    $core.String? desc,
     $core.Iterable<User>? users,
     $core.String? updatedAt,
   }) {
@@ -4049,6 +4064,9 @@ class Group extends $pb.GeneratedMessage {
     }
     if (name != null) {
       $result.name = name;
+    }
+    if (desc != null) {
+      $result.desc = desc;
     }
     if (users != null) {
       $result.users.addAll(users);
@@ -4065,8 +4083,9 @@ class Group extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Group', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'name')
-    ..pc<User>(3, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
-    ..aOS(4, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt')
+    ..aOS(3, _omitFieldNames ? '' : 'desc')
+    ..pc<User>(4, _omitFieldNames ? '' : 'users', $pb.PbFieldType.PM, subBuilder: User.create)
+    ..aOS(5, _omitFieldNames ? '' : 'updatedAt', protoName: 'updatedAt')
     ..hasRequiredFields = false
   ;
 
@@ -4110,16 +4129,25 @@ class Group extends $pb.GeneratedMessage {
   void clearName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<User> get users => $_getList(2);
+  $core.String get desc => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set desc($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDesc() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDesc() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get updatedAt => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set updatedAt($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasUpdatedAt() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearUpdatedAt() => clearField(4);
+  $core.List<User> get users => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $core.String get updatedAt => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set updatedAt($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUpdatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUpdatedAt() => clearField(5);
 }
 
 class User extends $pb.GeneratedMessage {
