@@ -215,7 +215,7 @@ const AclResponse$json = {
     {'1': 'ipProto', '3': 6, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
     {'1': 'ports', '3': 7, '4': 1, '5': 9, '10': 'ports'},
     {'1': 'age', '3': 8, '4': 1, '5': 9, '10': 'age'},
-    {'1': 'nodeType', '3': 9, '4': 1, '5': 9, '10': 'nodeType'},
+    {'1': 'aclType', '3': 9, '4': 1, '5': 9, '10': 'aclType'},
   ],
 };
 
@@ -224,8 +224,8 @@ final $typed_data.Uint8List aclResponseDescriptor = $convert.base64Decode(
     'CgtBY2xSZXNwb25zZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRISCgRkZX'
     'NjGAMgASgJUgRkZXNjEiAKA3NyYxgEIAEoCzIOLnByb3Rvcy5Qb2xpY3lSA3NyYxIgCgNkc3QY'
     'BSABKAsyDi5wcm90b3MuUG9saWN5UgNkc3QSKQoHaXBQcm90bxgGIAMoDjIPLnByb3Rvcy5JUF'
-    'Byb3RvUgdpcFByb3RvEhQKBXBvcnRzGAcgASgJUgVwb3J0cxIQCgNhZ2UYCCABKAlSA2FnZRIa'
-    'Cghub2RlVHlwZRgJIAEoCVIIbm9kZVR5cGU=');
+    'Byb3RvUgdpcFByb3RvEhQKBXBvcnRzGAcgASgJUgVwb3J0cxIQCgNhZ2UYCCABKAlSA2FnZRIY'
+    'CgdhY2xUeXBlGAkgASgJUgdhY2xUeXBl');
 
 @$core.Deprecated('Use getMeResponseDescriptor instead')
 const GetMeResponse$json = {
@@ -740,31 +740,33 @@ const Linker$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'linkerType', '3': 2, '4': 1, '5': 14, '6': '.protos.LinkerType', '10': 'linkerType'},
     {'1': 'nodeId', '3': 3, '4': 1, '5': 4, '10': 'nodeId'},
-    {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'domain', '3': 6, '4': 1, '5': 9, '10': 'domain'},
-    {'1': 'ip', '3': 7, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'advertisedRoutes', '3': 8, '4': 3, '5': 9, '10': 'advertisedRoutes'},
-    {'1': 'host', '3': 9, '4': 1, '5': 9, '10': 'host'},
-    {'1': 'os', '3': 10, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'nodeKey', '3': 11, '4': 1, '5': 9, '10': 'nodeKey'},
-    {'1': 'platform', '3': 12, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
-    {'1': 'createdBy', '3': 13, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'createdAt', '3': 14, '4': 1, '5': 9, '10': 'createdAt'},
-    {'1': 'status', '3': 15, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'nodeType', '3': 4, '4': 1, '5': 14, '6': '.protos.NodeType', '10': 'nodeType'},
+    {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'email', '3': 6, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'domain', '3': 7, '4': 1, '5': 9, '10': 'domain'},
+    {'1': 'ip', '3': 8, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'advertisedRoutes', '3': 9, '4': 3, '5': 9, '10': 'advertisedRoutes'},
+    {'1': 'host', '3': 10, '4': 1, '5': 9, '10': 'host'},
+    {'1': 'os', '3': 11, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'nodeKey', '3': 12, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'platform', '3': 13, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
+    {'1': 'createdBy', '3': 14, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'createdAt', '3': 15, '4': 1, '5': 9, '10': 'createdAt'},
+    {'1': 'status', '3': 16, '4': 1, '5': 8, '10': 'status'},
   ],
 };
 
 /// Descriptor for `Linker`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List linkerDescriptor = $convert.base64Decode(
     'CgZMaW5rZXISDgoCaWQYASABKAlSAmlkEjIKCmxpbmtlclR5cGUYAiABKA4yEi5wcm90b3MuTG'
-    'lua2VyVHlwZVIKbGlua2VyVHlwZRIWCgZub2RlSWQYAyABKARSBm5vZGVJZBISCgRuYW1lGAQg'
-    'ASgJUgRuYW1lEhQKBWVtYWlsGAUgASgJUgVlbWFpbBIWCgZkb21haW4YBiABKAlSBmRvbWFpbh'
-    'IOCgJpcBgHIAEoCVICaXASKgoQYWR2ZXJ0aXNlZFJvdXRlcxgIIAMoCVIQYWR2ZXJ0aXNlZFJv'
-    'dXRlcxISCgRob3N0GAkgASgJUgRob3N0Eg4KAm9zGAogASgJUgJvcxIYCgdub2RlS2V5GAsgAS'
-    'gJUgdub2RlS2V5EiwKCHBsYXRmb3JtGAwgASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9y'
-    'bRIcCgljcmVhdGVkQnkYDSABKAlSCWNyZWF0ZWRCeRIcCgljcmVhdGVkQXQYDiABKAlSCWNyZW'
-    'F0ZWRBdBIWCgZzdGF0dXMYDyABKAhSBnN0YXR1cw==');
+    'lua2VyVHlwZVIKbGlua2VyVHlwZRIWCgZub2RlSWQYAyABKARSBm5vZGVJZBIsCghub2RlVHlw'
+    'ZRgEIAEoDjIQLnByb3Rvcy5Ob2RlVHlwZVIIbm9kZVR5cGUSEgoEbmFtZRgFIAEoCVIEbmFtZR'
+    'IUCgVlbWFpbBgGIAEoCVIFZW1haWwSFgoGZG9tYWluGAcgASgJUgZkb21haW4SDgoCaXAYCCAB'
+    'KAlSAmlwEioKEGFkdmVydGlzZWRSb3V0ZXMYCSADKAlSEGFkdmVydGlzZWRSb3V0ZXMSEgoEaG'
+    '9zdBgKIAEoCVIEaG9zdBIOCgJvcxgLIAEoCVICb3MSGAoHbm9kZUtleRgMIAEoCVIHbm9kZUtl'
+    'eRIsCghwbGF0Zm9ybRgNIAEoDjIQLnByb3Rvcy5QbGF0Zm9ybVIIcGxhdGZvcm0SHAoJY3JlYX'
+    'RlZEJ5GA4gASgJUgljcmVhdGVkQnkSHAoJY3JlYXRlZEF0GA8gASgJUgljcmVhdGVkQXQSFgoG'
+    'c3RhdHVzGBAgASgIUgZzdGF0dXM=');
 
 @$core.Deprecated('Use createSubnetLinkerResponseDescriptor instead')
 const CreateSubnetLinkerResponse$json = {
