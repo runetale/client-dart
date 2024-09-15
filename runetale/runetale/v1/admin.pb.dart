@@ -3791,6 +3791,7 @@ class Resource extends $pb.GeneratedMessage {
     Platform? platform,
     $core.bool? status,
     $core.String? createdBy,
+    $core.String? lastSeen,
     $core.bool? isLinker,
     Linker? linker,
     $core.Iterable<Fleet>? fleets,
@@ -3832,6 +3833,9 @@ class Resource extends $pb.GeneratedMessage {
     if (createdBy != null) {
       $result.createdBy = createdBy;
     }
+    if (lastSeen != null) {
+      $result.lastSeen = lastSeen;
+    }
     if (isLinker != null) {
       $result.isLinker = isLinker;
     }
@@ -3860,9 +3864,10 @@ class Resource extends $pb.GeneratedMessage {
     ..e<Platform>(10, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..aOB(11, _omitFieldNames ? '' : 'status')
     ..aOS(12, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
-    ..aOB(13, _omitFieldNames ? '' : 'isLinker', protoName: 'isLinker')
-    ..aOM<Linker>(14, _omitFieldNames ? '' : 'linker', subBuilder: Linker.create)
-    ..pc<Fleet>(15, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..aOS(13, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..aOB(14, _omitFieldNames ? '' : 'isLinker', protoName: 'isLinker')
+    ..aOM<Linker>(16, _omitFieldNames ? '' : 'linker', subBuilder: Linker.create)
+    ..pc<Fleet>(17, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
     ..hasRequiredFields = false
   ;
 
@@ -3990,28 +3995,37 @@ class Resource extends $pb.GeneratedMessage {
   void clearCreatedBy() => clearField(12);
 
   @$pb.TagNumber(13)
-  $core.bool get isLinker => $_getBF(12);
+  $core.String get lastSeen => $_getSZ(12);
   @$pb.TagNumber(13)
-  set isLinker($core.bool v) { $_setBool(12, v); }
+  set lastSeen($core.String v) { $_setString(12, v); }
   @$pb.TagNumber(13)
-  $core.bool hasIsLinker() => $_has(12);
+  $core.bool hasLastSeen() => $_has(12);
   @$pb.TagNumber(13)
-  void clearIsLinker() => clearField(13);
+  void clearLastSeen() => clearField(13);
 
   @$pb.TagNumber(14)
-  Linker get linker => $_getN(13);
+  $core.bool get isLinker => $_getBF(13);
   @$pb.TagNumber(14)
-  set linker(Linker v) { setField(14, v); }
+  set isLinker($core.bool v) { $_setBool(13, v); }
   @$pb.TagNumber(14)
-  $core.bool hasLinker() => $_has(13);
+  $core.bool hasIsLinker() => $_has(13);
   @$pb.TagNumber(14)
-  void clearLinker() => clearField(14);
-  @$pb.TagNumber(14)
-  Linker ensureLinker() => $_ensure(13);
+  void clearIsLinker() => clearField(14);
+
+  @$pb.TagNumber(16)
+  Linker get linker => $_getN(14);
+  @$pb.TagNumber(16)
+  set linker(Linker v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasLinker() => $_has(14);
+  @$pb.TagNumber(16)
+  void clearLinker() => clearField(16);
+  @$pb.TagNumber(16)
+  Linker ensureLinker() => $_ensure(14);
 
   /// 属しているfleetが変える
-  @$pb.TagNumber(15)
-  $core.List<Fleet> get fleets => $_getList(14);
+  @$pb.TagNumber(17)
+  $core.List<Fleet> get fleets => $_getList(15);
 }
 
 class Group extends $pb.GeneratedMessage {

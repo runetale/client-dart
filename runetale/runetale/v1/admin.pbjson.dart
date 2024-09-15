@@ -915,9 +915,10 @@ const Resource$json = {
     {'1': 'platform', '3': 10, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
     {'1': 'status', '3': 11, '4': 1, '5': 8, '10': 'status'},
     {'1': 'createdBy', '3': 12, '4': 1, '5': 9, '10': 'createdBy'},
-    {'1': 'isLinker', '3': 13, '4': 1, '5': 8, '10': 'isLinker'},
-    {'1': 'linker', '3': 14, '4': 1, '5': 11, '6': '.protos.Linker', '9': 0, '10': 'linker', '17': true},
-    {'1': 'fleets', '3': 15, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
+    {'1': 'lastSeen', '3': 13, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'isLinker', '3': 14, '4': 1, '5': 8, '10': 'isLinker'},
+    {'1': 'linker', '3': 16, '4': 1, '5': 11, '6': '.protos.Linker', '9': 0, '10': 'linker', '17': true},
+    {'1': 'fleets', '3': 17, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
   ],
   '8': [
     {'1': '_linker'},
@@ -931,9 +932,10 @@ final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
     'BXBvcnRzGAYgASgJUgVwb3J0cxIpCgdpcFByb3RvGAcgAygOMg8ucHJvdG9zLklQUHJvdG9SB2'
     'lwUHJvdG8SDgoCb3MYCCABKAlSAm9zEhAKA2FnZRgJIAEoCVIDYWdlEiwKCHBsYXRmb3JtGAog'
     'ASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9ybRIWCgZzdGF0dXMYCyABKAhSBnN0YXR1cx'
-    'IcCgljcmVhdGVkQnkYDCABKAlSCWNyZWF0ZWRCeRIaCghpc0xpbmtlchgNIAEoCFIIaXNMaW5r'
-    'ZXISKwoGbGlua2VyGA4gASgLMg4ucHJvdG9zLkxpbmtlckgAUgZsaW5rZXKIAQESJQoGZmxlZX'
-    'RzGA8gAygLMg0ucHJvdG9zLkZsZWV0UgZmbGVldHNCCQoHX2xpbmtlcg==');
+    'IcCgljcmVhdGVkQnkYDCABKAlSCWNyZWF0ZWRCeRIaCghsYXN0U2VlbhgNIAEoCVIIbGFzdFNl'
+    'ZW4SGgoIaXNMaW5rZXIYDiABKAhSCGlzTGlua2VyEisKBmxpbmtlchgQIAEoCzIOLnByb3Rvcy'
+    '5MaW5rZXJIAFIGbGlua2VyiAEBEiUKBmZsZWV0cxgRIAMoCzINLnByb3Rvcy5GbGVldFIGZmxl'
+    'ZXRzQgkKB19saW5rZXI=');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
