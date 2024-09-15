@@ -30,9 +30,9 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetUser',
       ($1.GetUserRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.User.fromBuffer(value));
-  static final _$getUsers = $grpc.ClientMethod<$0.Empty, $1.Users>(
+  static final _$getUsers = $grpc.ClientMethod<$1.GetUsersRequest, $1.Users>(
       '/protos.AdminService/GetUsers',
-      ($0.Empty value) => value.writeToBuffer(),
+      ($1.GetUsersRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Users.fromBuffer(value));
   static final _$createAcl = $grpc.ClientMethod<$1.CreateAclRequest, $1.AclResponse>(
       '/protos.AdminService/CreateAcl',
@@ -74,17 +74,17 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetDevice',
       ($1.GetDeviceRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Device.fromBuffer(value));
-  static final _$getDevices = $grpc.ClientMethod<$0.Empty, $1.Devices>(
+  static final _$getDevices = $grpc.ClientMethod<$1.GetDevicesRequest, $1.Devices>(
       '/protos.AdminService/GetDevices',
-      ($0.Empty value) => value.writeToBuffer(),
+      ($1.GetDevicesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Devices.fromBuffer(value));
   static final _$getResource = $grpc.ClientMethod<$1.GetResourceRequest, $1.Resource>(
       '/protos.AdminService/GetResource',
       ($1.GetResourceRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Resource.fromBuffer(value));
-  static final _$getResources = $grpc.ClientMethod<$0.Empty, $1.Resources>(
+  static final _$getResources = $grpc.ClientMethod<$1.GetResourcesRequest, $1.Resources>(
       '/protos.AdminService/GetResources',
-      ($0.Empty value) => value.writeToBuffer(),
+      ($1.GetResourcesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Resources.fromBuffer(value));
   static final _$generateComposeKey = $grpc.ClientMethod<$1.GenerateComposeKeyRequest, $1.GenerateComposeKeyResponse>(
       '/protos.AdminService/GenerateComposeKey',
@@ -165,7 +165,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getUser, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.Users> getUsers($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Users> getUsers($1.GetUsersRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getUsers, request, options: options);
   }
 
@@ -209,7 +209,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getDevice, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.Devices> getDevices($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Devices> getDevices($1.GetDevicesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDevices, request, options: options);
   }
 
@@ -217,7 +217,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getResource, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.Resources> getResources($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Resources> getResources($1.GetResourcesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getResources, request, options: options);
   }
 
@@ -305,12 +305,12 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.GetUserRequest.fromBuffer(value),
         ($1.User value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Users>(
+    $addMethod($grpc.ServiceMethod<$1.GetUsersRequest, $1.Users>(
         'GetUsers',
         getUsers_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $1.GetUsersRequest.fromBuffer(value),
         ($1.Users value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateAclRequest, $1.AclResponse>(
         'CreateAcl',
@@ -382,12 +382,12 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.GetDeviceRequest.fromBuffer(value),
         ($1.Device value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Devices>(
+    $addMethod($grpc.ServiceMethod<$1.GetDevicesRequest, $1.Devices>(
         'GetDevices',
         getDevices_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $1.GetDevicesRequest.fromBuffer(value),
         ($1.Devices value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.GetResourceRequest, $1.Resource>(
         'GetResource',
@@ -396,12 +396,12 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.GetResourceRequest.fromBuffer(value),
         ($1.Resource value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Resources>(
+    $addMethod($grpc.ServiceMethod<$1.GetResourcesRequest, $1.Resources>(
         'GetResources',
         getResources_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $1.GetResourcesRequest.fromBuffer(value),
         ($1.Resources value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.GenerateComposeKeyRequest, $1.GenerateComposeKeyResponse>(
         'GenerateComposeKey',
@@ -525,7 +525,7 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getUser(call, await request);
   }
 
-  $async.Future<$1.Users> getUsers_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$1.Users> getUsers_Pre($grpc.ServiceCall call, $async.Future<$1.GetUsersRequest> request) async {
     return getUsers(call, await request);
   }
 
@@ -569,7 +569,7 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getDevice(call, await request);
   }
 
-  $async.Future<$1.Devices> getDevices_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$1.Devices> getDevices_Pre($grpc.ServiceCall call, $async.Future<$1.GetDevicesRequest> request) async {
     return getDevices(call, await request);
   }
 
@@ -577,7 +577,7 @@ abstract class AdminServiceBase extends $grpc.Service {
     return getResource(call, await request);
   }
 
-  $async.Future<$1.Resources> getResources_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+  $async.Future<$1.Resources> getResources_Pre($grpc.ServiceCall call, $async.Future<$1.GetResourcesRequest> request) async {
     return getResources(call, await request);
   }
 
@@ -647,7 +647,7 @@ abstract class AdminServiceBase extends $grpc.Service {
 
   $async.Future<$1.GetMeResponse> getMe($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.User> getUser($grpc.ServiceCall call, $1.GetUserRequest request);
-  $async.Future<$1.Users> getUsers($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.Users> getUsers($grpc.ServiceCall call, $1.GetUsersRequest request);
   $async.Future<$1.AclResponse> createAcl($grpc.ServiceCall call, $1.CreateAclRequest request);
   $async.Future<$1.AclResponse> getAcl($grpc.ServiceCall call, $1.GetAclRequest request);
   $async.Future<$1.GetAclsResponse> getAcls($grpc.ServiceCall call, $0.Empty request);
@@ -658,9 +658,9 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.Groups> getGroups($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.Group> patchGroup($grpc.ServiceCall call, $1.PatchGroupRequest request);
   $async.Future<$1.Device> getDevice($grpc.ServiceCall call, $1.GetDeviceRequest request);
-  $async.Future<$1.Devices> getDevices($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.Devices> getDevices($grpc.ServiceCall call, $1.GetDevicesRequest request);
   $async.Future<$1.Resource> getResource($grpc.ServiceCall call, $1.GetResourceRequest request);
-  $async.Future<$1.Resources> getResources($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.Resources> getResources($grpc.ServiceCall call, $1.GetResourcesRequest request);
   $async.Future<$1.GenerateComposeKeyResponse> generateComposeKey($grpc.ServiceCall call, $1.GenerateComposeKeyRequest request);
   $async.Future<$1.GetComposeKeysResponse> getComposeKeys($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.GetComposeNodeStatusResponse> getComposeNodeStatus($grpc.ServiceCall call, $1.GetComposeNodeStatusRequest request);

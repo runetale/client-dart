@@ -759,6 +759,56 @@ class GetUserRequest extends $pb.GeneratedMessage {
   void clearNodeId() => clearField(1);
 }
 
+class GetUsersRequest extends $pb.GeneratedMessage {
+  factory GetUsersRequest({
+    $core.String? groupId,
+  }) {
+    final $result = create();
+    if (groupId != null) {
+      $result.groupId = groupId;
+    }
+    return $result;
+  }
+  GetUsersRequest._() : super();
+  factory GetUsersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetUsersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetUsersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'groupId', protoName: 'groupId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetUsersRequest clone() => GetUsersRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetUsersRequest copyWith(void Function(GetUsersRequest) updates) => super.copyWith((message) => updates(message as GetUsersRequest)) as GetUsersRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUsersRequest create() => GetUsersRequest._();
+  GetUsersRequest createEmptyInstance() => create();
+  static $pb.PbList<GetUsersRequest> createRepeated() => $pb.PbList<GetUsersRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetUsersRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetUsersRequest>(create);
+  static GetUsersRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get groupId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set groupId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGroupId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGroupId() => clearField(1);
+}
+
 class Users extends $pb.GeneratedMessage {
   factory Users({
     $core.Iterable<User>? users,
@@ -1181,6 +1231,57 @@ class GetDeviceRequest extends $pb.GeneratedMessage {
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
   void clearNodeId() => clearField(1);
+}
+
+class GetDevicesRequest extends $pb.GeneratedMessage {
+  factory GetDevicesRequest({
+    $core.String? inkId,
+  }) {
+    final $result = create();
+    if (inkId != null) {
+      $result.inkId = inkId;
+    }
+    return $result;
+  }
+  GetDevicesRequest._() : super();
+  factory GetDevicesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDevicesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetDevicesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'inkId', protoName: 'inkId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDevicesRequest clone() => GetDevicesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDevicesRequest copyWith(void Function(GetDevicesRequest) updates) => super.copyWith((message) => updates(message as GetDevicesRequest)) as GetDevicesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDevicesRequest create() => GetDevicesRequest._();
+  GetDevicesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDevicesRequest> createRepeated() => $pb.PbList<GetDevicesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDevicesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDevicesRequest>(create);
+  static GetDevicesRequest? _defaultInstance;
+
+  /// このパラメータがある場合は、レスポンスから、そのidをひく
+  @$pb.TagNumber(1)
+  $core.String get inkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set inkId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasInkId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInkId() => clearField(1);
 }
 
 class Devices extends $pb.GeneratedMessage {
@@ -2189,6 +2290,56 @@ class GetResourceRequest extends $pb.GeneratedMessage {
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
+}
+
+class GetResourcesRequest extends $pb.GeneratedMessage {
+  factory GetResourcesRequest({
+    $core.String? fleetId,
+  }) {
+    final $result = create();
+    if (fleetId != null) {
+      $result.fleetId = fleetId;
+    }
+    return $result;
+  }
+  GetResourcesRequest._() : super();
+  factory GetResourcesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetResourcesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetResourcesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fleetId', protoName: 'fleetId')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetResourcesRequest clone() => GetResourcesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetResourcesRequest copyWith(void Function(GetResourcesRequest) updates) => super.copyWith((message) => updates(message as GetResourcesRequest)) as GetResourcesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetResourcesRequest create() => GetResourcesRequest._();
+  GetResourcesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetResourcesRequest> createRepeated() => $pb.PbList<GetResourcesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetResourcesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetResourcesRequest>(create);
+  static GetResourcesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get fleetId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fleetId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasFleetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFleetId() => clearField(1);
 }
 
 class Resources extends $pb.GeneratedMessage {
@@ -3642,6 +3793,7 @@ class Resource extends $pb.GeneratedMessage {
     $core.String? createdBy,
     $core.bool? isLinker,
     Linker? linker,
+    $core.Iterable<Fleet>? fleets,
   }) {
     final $result = create();
     if (id != null) {
@@ -3686,6 +3838,9 @@ class Resource extends $pb.GeneratedMessage {
     if (linker != null) {
       $result.linker = linker;
     }
+    if (fleets != null) {
+      $result.fleets.addAll(fleets);
+    }
     return $result;
   }
   Resource._() : super();
@@ -3707,6 +3862,7 @@ class Resource extends $pb.GeneratedMessage {
     ..aOS(12, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..aOB(13, _omitFieldNames ? '' : 'isLinker', protoName: 'isLinker')
     ..aOM<Linker>(14, _omitFieldNames ? '' : 'linker', subBuilder: Linker.create)
+    ..pc<Fleet>(15, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
     ..hasRequiredFields = false
   ;
 
@@ -3852,6 +4008,10 @@ class Resource extends $pb.GeneratedMessage {
   void clearLinker() => clearField(14);
   @$pb.TagNumber(14)
   Linker ensureLinker() => $_ensure(13);
+
+  /// 属しているfleetが変える
+  @$pb.TagNumber(15)
+  $core.List<Fleet> get fleets => $_getList(14);
 }
 
 class Group extends $pb.GeneratedMessage {
@@ -4145,6 +4305,7 @@ class Device extends $pb.GeneratedMessage {
     $core.String? keyExpiry,
     $core.bool? isLinker,
     Linker? linker,
+    $core.Iterable<Ink>? inks,
   }) {
     final $result = create();
     if (nodeId != null) {
@@ -4192,6 +4353,9 @@ class Device extends $pb.GeneratedMessage {
     if (linker != null) {
       $result.linker = linker;
     }
+    if (inks != null) {
+      $result.inks.addAll(inks);
+    }
     return $result;
   }
   Device._() : super();
@@ -4214,6 +4378,7 @@ class Device extends $pb.GeneratedMessage {
     ..aOS(13, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
     ..aOB(14, _omitFieldNames ? '' : 'isLinker', protoName: 'isLinker')
     ..aOM<Linker>(15, _omitFieldNames ? '' : 'linker', subBuilder: Linker.create)
+    ..pc<Ink>(16, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
     ..hasRequiredFields = false
   ;
 
@@ -4374,6 +4539,10 @@ class Device extends $pb.GeneratedMessage {
   void clearLinker() => clearField(15);
   @$pb.TagNumber(15)
   Linker ensureLinker() => $_ensure(14);
+
+  /// deviceが属しているinks
+  @$pb.TagNumber(16)
+  $core.List<Ink> get inks => $_getList(15);
 }
 
 

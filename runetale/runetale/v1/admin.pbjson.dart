@@ -256,6 +256,22 @@ const GetUserRequest$json = {
 final $typed_data.Uint8List getUserRequestDescriptor = $convert.base64Decode(
     'Cg5HZXRVc2VyUmVxdWVzdBIWCgZub2RlSWQYASABKARSBm5vZGVJZA==');
 
+@$core.Deprecated('Use getUsersRequestDescriptor instead')
+const GetUsersRequest$json = {
+  '1': 'GetUsersRequest',
+  '2': [
+    {'1': 'groupId', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'groupId', '17': true},
+  ],
+  '8': [
+    {'1': '_groupId'},
+  ],
+};
+
+/// Descriptor for `GetUsersRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUsersRequestDescriptor = $convert.base64Decode(
+    'Cg9HZXRVc2Vyc1JlcXVlc3QSHQoHZ3JvdXBJZBgBIAEoCUgAUgdncm91cElkiAEBQgoKCF9ncm'
+    '91cElk');
+
 @$core.Deprecated('Use usersDescriptor instead')
 const Users$json = {
   '1': 'Users',
@@ -354,6 +370,22 @@ const GetDeviceRequest$json = {
 /// Descriptor for `GetDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getDeviceRequestDescriptor = $convert.base64Decode(
     'ChBHZXREZXZpY2VSZXF1ZXN0EhYKBm5vZGVJZBgBIAEoBFIGbm9kZUlk');
+
+@$core.Deprecated('Use getDevicesRequestDescriptor instead')
+const GetDevicesRequest$json = {
+  '1': 'GetDevicesRequest',
+  '2': [
+    {'1': 'inkId', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'inkId', '17': true},
+  ],
+  '8': [
+    {'1': '_inkId'},
+  ],
+};
+
+/// Descriptor for `GetDevicesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDevicesRequestDescriptor = $convert.base64Decode(
+    'ChFHZXREZXZpY2VzUmVxdWVzdBIZCgVpbmtJZBgBIAEoCUgAUgVpbmtJZIgBAUIICgZfaW5rSW'
+    'Q=');
 
 @$core.Deprecated('Use devicesDescriptor instead')
 const Devices$json = {
@@ -566,6 +598,22 @@ const GetResourceRequest$json = {
 /// Descriptor for `GetResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getResourceRequestDescriptor = $convert.base64Decode(
     'ChJHZXRSZXNvdXJjZVJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+
+@$core.Deprecated('Use getResourcesRequestDescriptor instead')
+const GetResourcesRequest$json = {
+  '1': 'GetResourcesRequest',
+  '2': [
+    {'1': 'fleetId', '3': 1, '4': 1, '5': 9, '9': 0, '10': 'fleetId', '17': true},
+  ],
+  '8': [
+    {'1': '_fleetId'},
+  ],
+};
+
+/// Descriptor for `GetResourcesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getResourcesRequestDescriptor = $convert.base64Decode(
+    'ChNHZXRSZXNvdXJjZXNSZXF1ZXN0Eh0KB2ZsZWV0SWQYASABKAlIAFIHZmxlZXRJZIgBAUIKCg'
+    'hfZmxlZXRJZA==');
 
 @$core.Deprecated('Use resourcesDescriptor instead')
 const Resources$json = {
@@ -869,6 +917,7 @@ const Resource$json = {
     {'1': 'createdBy', '3': 12, '4': 1, '5': 9, '10': 'createdBy'},
     {'1': 'isLinker', '3': 13, '4': 1, '5': 8, '10': 'isLinker'},
     {'1': 'linker', '3': 14, '4': 1, '5': 11, '6': '.protos.Linker', '9': 0, '10': 'linker', '17': true},
+    {'1': 'fleets', '3': 15, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
   ],
   '8': [
     {'1': '_linker'},
@@ -883,8 +932,8 @@ final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
     'lwUHJvdG8SDgoCb3MYCCABKAlSAm9zEhAKA2FnZRgJIAEoCVIDYWdlEiwKCHBsYXRmb3JtGAog'
     'ASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9ybRIWCgZzdGF0dXMYCyABKAhSBnN0YXR1cx'
     'IcCgljcmVhdGVkQnkYDCABKAlSCWNyZWF0ZWRCeRIaCghpc0xpbmtlchgNIAEoCFIIaXNMaW5r'
-    'ZXISKwoGbGlua2VyGA4gASgLMg4ucHJvdG9zLkxpbmtlckgAUgZsaW5rZXKIAQFCCQoHX2xpbm'
-    'tlcg==');
+    'ZXISKwoGbGlua2VyGA4gASgLMg4ucHJvdG9zLkxpbmtlckgAUgZsaW5rZXKIAQESJQoGZmxlZX'
+    'RzGA8gAygLMg0ucHJvdG9zLkZsZWV0UgZmbGVldHNCCQoHX2xpbmtlcg==');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
@@ -952,6 +1001,7 @@ const Device$json = {
     {'1': 'keyExpiry', '3': 13, '4': 1, '5': 9, '10': 'keyExpiry'},
     {'1': 'isLinker', '3': 14, '4': 1, '5': 8, '10': 'isLinker'},
     {'1': 'linker', '3': 15, '4': 1, '5': 11, '6': '.protos.Linker', '9': 0, '10': 'linker', '17': true},
+    {'1': 'inks', '3': 16, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
   ],
   '8': [
     {'1': '_linker'},
@@ -967,5 +1017,5 @@ final $typed_data.Uint8List deviceDescriptor = $convert.base64Decode(
     'CiABKAlSB3ZlcnNpb24SGAoHbm9kZUtleRgLIAEoCVIHbm9kZUtleRIcCgljcmVhdGVkQXQYDC'
     'ABKAlSCWNyZWF0ZWRBdBIcCglrZXlFeHBpcnkYDSABKAlSCWtleUV4cGlyeRIaCghpc0xpbmtl'
     'chgOIAEoCFIIaXNMaW5rZXISKwoGbGlua2VyGA8gASgLMg4ucHJvdG9zLkxpbmtlckgAUgZsaW'
-    '5rZXKIAQFCCQoHX2xpbmtlcg==');
+    '5rZXKIAQESHwoEaW5rcxgQIAMoCzILLnByb3Rvcy5JbmtSBGlua3NCCQoHX2xpbmtlcg==');
 
