@@ -3640,6 +3640,8 @@ class Resource extends $pb.GeneratedMessage {
     Platform? platform,
     $core.bool? status,
     $core.String? createdBy,
+    $core.bool? isLinker,
+    Linker? linker,
   }) {
     final $result = create();
     if (id != null) {
@@ -3678,6 +3680,12 @@ class Resource extends $pb.GeneratedMessage {
     if (createdBy != null) {
       $result.createdBy = createdBy;
     }
+    if (isLinker != null) {
+      $result.isLinker = isLinker;
+    }
+    if (linker != null) {
+      $result.linker = linker;
+    }
     return $result;
   }
   Resource._() : super();
@@ -3697,6 +3705,8 @@ class Resource extends $pb.GeneratedMessage {
     ..e<Platform>(10, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..aOB(11, _omitFieldNames ? '' : 'status')
     ..aOS(12, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOB(13, _omitFieldNames ? '' : 'isLinker', protoName: 'isLinker')
+    ..aOM<Linker>(14, _omitFieldNames ? '' : 'linker', subBuilder: Linker.create)
     ..hasRequiredFields = false
   ;
 
@@ -3822,6 +3832,26 @@ class Resource extends $pb.GeneratedMessage {
   $core.bool hasCreatedBy() => $_has(11);
   @$pb.TagNumber(12)
   void clearCreatedBy() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.bool get isLinker => $_getBF(12);
+  @$pb.TagNumber(13)
+  set isLinker($core.bool v) { $_setBool(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasIsLinker() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearIsLinker() => clearField(13);
+
+  @$pb.TagNumber(14)
+  Linker get linker => $_getN(13);
+  @$pb.TagNumber(14)
+  set linker(Linker v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasLinker() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearLinker() => clearField(14);
+  @$pb.TagNumber(14)
+  Linker ensureLinker() => $_ensure(13);
 }
 
 class Group extends $pb.GeneratedMessage {
@@ -4113,6 +4143,8 @@ class Device extends $pb.GeneratedMessage {
     $core.String? nodeKey,
     $core.String? createdAt,
     $core.String? keyExpiry,
+    $core.bool? isLinker,
+    Linker? linker,
   }) {
     final $result = create();
     if (nodeId != null) {
@@ -4154,6 +4186,12 @@ class Device extends $pb.GeneratedMessage {
     if (keyExpiry != null) {
       $result.keyExpiry = keyExpiry;
     }
+    if (isLinker != null) {
+      $result.isLinker = isLinker;
+    }
+    if (linker != null) {
+      $result.linker = linker;
+    }
     return $result;
   }
   Device._() : super();
@@ -4174,6 +4212,8 @@ class Device extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
     ..aOS(12, _omitFieldNames ? '' : 'createdAt', protoName: 'createdAt')
     ..aOS(13, _omitFieldNames ? '' : 'keyExpiry', protoName: 'keyExpiry')
+    ..aOB(14, _omitFieldNames ? '' : 'isLinker', protoName: 'isLinker')
+    ..aOM<Linker>(15, _omitFieldNames ? '' : 'linker', subBuilder: Linker.create)
     ..hasRequiredFields = false
   ;
 
@@ -4314,6 +4354,26 @@ class Device extends $pb.GeneratedMessage {
   $core.bool hasKeyExpiry() => $_has(12);
   @$pb.TagNumber(13)
   void clearKeyExpiry() => clearField(13);
+
+  @$pb.TagNumber(14)
+  $core.bool get isLinker => $_getBF(13);
+  @$pb.TagNumber(14)
+  set isLinker($core.bool v) { $_setBool(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasIsLinker() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearIsLinker() => clearField(14);
+
+  @$pb.TagNumber(15)
+  Linker get linker => $_getN(14);
+  @$pb.TagNumber(15)
+  set linker(Linker v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasLinker() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLinker() => clearField(15);
+  @$pb.TagNumber(15)
+  Linker ensureLinker() => $_ensure(14);
 }
 
 

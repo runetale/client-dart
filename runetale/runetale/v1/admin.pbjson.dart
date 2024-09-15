@@ -867,6 +867,11 @@ const Resource$json = {
     {'1': 'platform', '3': 10, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
     {'1': 'status', '3': 11, '4': 1, '5': 8, '10': 'status'},
     {'1': 'createdBy', '3': 12, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'isLinker', '3': 13, '4': 1, '5': 8, '10': 'isLinker'},
+    {'1': 'linker', '3': 14, '4': 1, '5': 11, '6': '.protos.Linker', '9': 0, '10': 'linker', '17': true},
+  ],
+  '8': [
+    {'1': '_linker'},
   ],
 };
 
@@ -877,7 +882,9 @@ final $typed_data.Uint8List resourceDescriptor = $convert.base64Decode(
     'BXBvcnRzGAYgASgJUgVwb3J0cxIpCgdpcFByb3RvGAcgAygOMg8ucHJvdG9zLklQUHJvdG9SB2'
     'lwUHJvdG8SDgoCb3MYCCABKAlSAm9zEhAKA2FnZRgJIAEoCVIDYWdlEiwKCHBsYXRmb3JtGAog'
     'ASgOMhAucHJvdG9zLlBsYXRmb3JtUghwbGF0Zm9ybRIWCgZzdGF0dXMYCyABKAhSBnN0YXR1cx'
-    'IcCgljcmVhdGVkQnkYDCABKAlSCWNyZWF0ZWRCeQ==');
+    'IcCgljcmVhdGVkQnkYDCABKAlSCWNyZWF0ZWRCeRIaCghpc0xpbmtlchgNIAEoCFIIaXNMaW5r'
+    'ZXISKwoGbGlua2VyGA4gASgLMg4ucHJvdG9zLkxpbmtlckgAUgZsaW5rZXKIAQFCCQoHX2xpbm'
+    'tlcg==');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
@@ -943,6 +950,11 @@ const Device$json = {
     {'1': 'nodeKey', '3': 11, '4': 1, '5': 9, '10': 'nodeKey'},
     {'1': 'createdAt', '3': 12, '4': 1, '5': 9, '10': 'createdAt'},
     {'1': 'keyExpiry', '3': 13, '4': 1, '5': 9, '10': 'keyExpiry'},
+    {'1': 'isLinker', '3': 14, '4': 1, '5': 8, '10': 'isLinker'},
+    {'1': 'linker', '3': 15, '4': 1, '5': 11, '6': '.protos.Linker', '9': 0, '10': 'linker', '17': true},
+  ],
+  '8': [
+    {'1': '_linker'},
   ],
 };
 
@@ -953,5 +965,7 @@ final $typed_data.Uint8List deviceDescriptor = $convert.base64Decode(
     'cxIOCgJvcxgGIAEoCVICb3MSFgoGc3RhdHVzGAcgASgIUgZzdGF0dXMSGgoIbGFzdFNlZW4YCC'
     'ABKAlSCGxhc3RTZWVuEhwKCWNyZWF0ZWRCeRgJIAEoCVIJY3JlYXRlZEJ5EhgKB3ZlcnNpb24Y'
     'CiABKAlSB3ZlcnNpb24SGAoHbm9kZUtleRgLIAEoCVIHbm9kZUtleRIcCgljcmVhdGVkQXQYDC'
-    'ABKAlSCWNyZWF0ZWRBdBIcCglrZXlFeHBpcnkYDSABKAlSCWtleUV4cGlyeQ==');
+    'ABKAlSCWNyZWF0ZWRBdBIcCglrZXlFeHBpcnkYDSABKAlSCWtleUV4cGlyeRIaCghpc0xpbmtl'
+    'chgOIAEoCFIIaXNMaW5rZXISKwoGbGlua2VyGA8gASgLMg4ucHJvdG9zLkxpbmtlckgAUgZsaW'
+    '5rZXKIAQFCCQoHX2xpbmtlcg==');
 
