@@ -63,6 +63,20 @@ const LinkerType$json = {
 final $typed_data.Uint8List linkerTypeDescriptor = $convert.base64Decode(
     'CgpMaW5rZXJUeXBlEgoKBlNVQk5FVBAAEg0KCVVOSVZFUlNBTBABEgcKA0FQUBAC');
 
+@$core.Deprecated('Use userRoleDescriptor instead')
+const UserRole$json = {
+  '1': 'UserRole',
+  '2': [
+    {'1': 'OWNER', '2': 0},
+    {'1': 'ADMIN', '2': 1},
+    {'1': 'MEMBER', '2': 2},
+  ],
+};
+
+/// Descriptor for `UserRole`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List userRoleDescriptor = $convert.base64Decode(
+    'CghVc2VyUm9sZRIJCgVPV05FUhAAEgkKBUFETUlOEAESCgoGTUVNQkVSEAI=');
+
 @$core.Deprecated('Use expirelyTimeDescriptor instead')
 const ExpirelyTime$json = {
   '1': 'ExpirelyTime',
@@ -271,6 +285,20 @@ const GetUsersRequest$json = {
 final $typed_data.Uint8List getUsersRequestDescriptor = $convert.base64Decode(
     'Cg9HZXRVc2Vyc1JlcXVlc3QSHQoHZ3JvdXBJZBgBIAEoCUgAUgdncm91cElkiAEBQgoKCF9ncm'
     '91cElk');
+
+@$core.Deprecated('Use patchUserRequestDescriptor instead')
+const PatchUserRequest$json = {
+  '1': 'PatchUserRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'role', '3': 2, '4': 1, '5': 14, '6': '.protos.UserRole', '10': 'role'},
+  ],
+};
+
+/// Descriptor for `PatchUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List patchUserRequestDescriptor = $convert.base64Decode(
+    'ChBQYXRjaFVzZXJSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIkCgRyb2xlGAIgASgOMhAucHJvdG'
+    '9zLlVzZXJSb2xlUgRyb2xl');
 
 @$core.Deprecated('Use usersDescriptor instead')
 const Users$json = {
@@ -748,6 +776,21 @@ final $typed_data.Uint8List createSubnetLinkerRequestDescriptor = $convert.base6
     'ChlDcmVhdGVTdWJuZXRMaW5rZXJSZXF1ZXN0EhYKBm5vZGVJZBgBIAEoBFIGbm9kZUlkEhIKBG'
     '5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxIqChBhZHZlcnRpc2VkUm91dGVz'
     'GAQgAygJUhBhZHZlcnRpc2VkUm91dGVz');
+
+@$core.Deprecated('Use getSubnetLinkerConvertibleNodesResponseDescriptor instead')
+const GetSubnetLinkerConvertibleNodesResponse$json = {
+  '1': 'GetSubnetLinkerConvertibleNodesResponse',
+  '2': [
+    {'1': 'resources', '3': 1, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'devices', '3': 2, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
+  ],
+};
+
+/// Descriptor for `GetSubnetLinkerConvertibleNodesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getSubnetLinkerConvertibleNodesResponseDescriptor = $convert.base64Decode(
+    'CidHZXRTdWJuZXRMaW5rZXJDb252ZXJ0aWJsZU5vZGVzUmVzcG9uc2USLgoJcmVzb3VyY2VzGA'
+    'EgAygLMhAucHJvdG9zLlJlc291cmNlUglyZXNvdXJjZXMSKAoHZGV2aWNlcxgCIAMoCzIOLnBy'
+    'b3Rvcy5EZXZpY2VSB2RldmljZXM=');
 
 @$core.Deprecated('Use patchSubnetLinkerRequestDescriptor instead')
 const PatchSubnetLinkerRequest$json = {

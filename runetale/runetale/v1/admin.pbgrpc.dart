@@ -34,6 +34,10 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/GetUsers',
       ($1.GetUsersRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.Users.fromBuffer(value));
+  static final _$patchUser = $grpc.ClientMethod<$1.PatchUserRequest, $1.User>(
+      '/protos.AdminService/PatchUser',
+      ($1.PatchUserRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.User.fromBuffer(value));
   static final _$createAcl = $grpc.ClientMethod<$1.CreateAclRequest, $1.AclResponse>(
       '/protos.AdminService/CreateAcl',
       ($1.CreateAclRequest value) => value.writeToBuffer(),
@@ -146,6 +150,10 @@ class AdminServiceClient extends $grpc.Client {
       '/protos.AdminService/CreateSubnetLinker',
       ($1.CreateSubnetLinkerRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.CreateSubnetLinkerResponse.fromBuffer(value));
+  static final _$getSubnetLinkerConvertibleNodes = $grpc.ClientMethod<$0.Empty, $1.GetSubnetLinkerConvertibleNodesResponse>(
+      '/protos.AdminService/GetSubnetLinkerConvertibleNodes',
+      ($0.Empty value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $1.GetSubnetLinkerConvertibleNodesResponse.fromBuffer(value));
   static final _$patchSubnetLinker = $grpc.ClientMethod<$1.PatchSubnetLinkerRequest, $1.PatchSubnetLinkerResponse>(
       '/protos.AdminService/PatchSubnetLinker',
       ($1.PatchSubnetLinkerRequest value) => value.writeToBuffer(),
@@ -167,6 +175,10 @@ class AdminServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.Users> getUsers($1.GetUsersRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getUsers, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.User> patchUser($1.PatchUserRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$patchUser, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.AclResponse> createAcl($1.CreateAclRequest request, {$grpc.CallOptions? options}) {
@@ -281,6 +293,10 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createSubnetLinker, request, options: options);
   }
 
+  $grpc.ResponseFuture<$1.GetSubnetLinkerConvertibleNodesResponse> getSubnetLinkerConvertibleNodes($0.Empty request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getSubnetLinkerConvertibleNodes, request, options: options);
+  }
+
   $grpc.ResponseFuture<$1.PatchSubnetLinkerResponse> patchSubnetLinker($1.PatchSubnetLinkerRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchSubnetLinker, request, options: options);
   }
@@ -312,6 +328,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.GetUsersRequest.fromBuffer(value),
         ($1.Users value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.PatchUserRequest, $1.User>(
+        'PatchUser',
+        patchUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.PatchUserRequest.fromBuffer(value),
+        ($1.User value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.CreateAclRequest, $1.AclResponse>(
         'CreateAcl',
         createAcl_Pre,
@@ -508,6 +531,13 @@ abstract class AdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.CreateSubnetLinkerRequest.fromBuffer(value),
         ($1.CreateSubnetLinkerResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.GetSubnetLinkerConvertibleNodesResponse>(
+        'GetSubnetLinkerConvertibleNodes',
+        getSubnetLinkerConvertibleNodes_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.GetSubnetLinkerConvertibleNodesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.PatchSubnetLinkerRequest, $1.PatchSubnetLinkerResponse>(
         'PatchSubnetLinker',
         patchSubnetLinker_Pre,
@@ -527,6 +557,10 @@ abstract class AdminServiceBase extends $grpc.Service {
 
   $async.Future<$1.Users> getUsers_Pre($grpc.ServiceCall call, $async.Future<$1.GetUsersRequest> request) async {
     return getUsers(call, await request);
+  }
+
+  $async.Future<$1.User> patchUser_Pre($grpc.ServiceCall call, $async.Future<$1.PatchUserRequest> request) async {
+    return patchUser(call, await request);
   }
 
   $async.Future<$1.AclResponse> createAcl_Pre($grpc.ServiceCall call, $async.Future<$1.CreateAclRequest> request) async {
@@ -641,6 +675,10 @@ abstract class AdminServiceBase extends $grpc.Service {
     return createSubnetLinker(call, await request);
   }
 
+  $async.Future<$1.GetSubnetLinkerConvertibleNodesResponse> getSubnetLinkerConvertibleNodes_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
+    return getSubnetLinkerConvertibleNodes(call, await request);
+  }
+
   $async.Future<$1.PatchSubnetLinkerResponse> patchSubnetLinker_Pre($grpc.ServiceCall call, $async.Future<$1.PatchSubnetLinkerRequest> request) async {
     return patchSubnetLinker(call, await request);
   }
@@ -648,6 +686,7 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.GetMeResponse> getMe($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.User> getUser($grpc.ServiceCall call, $1.GetUserRequest request);
   $async.Future<$1.Users> getUsers($grpc.ServiceCall call, $1.GetUsersRequest request);
+  $async.Future<$1.User> patchUser($grpc.ServiceCall call, $1.PatchUserRequest request);
   $async.Future<$1.AclResponse> createAcl($grpc.ServiceCall call, $1.CreateAclRequest request);
   $async.Future<$1.AclResponse> getAcl($grpc.ServiceCall call, $1.GetAclRequest request);
   $async.Future<$1.GetAclsResponse> getAcls($grpc.ServiceCall call, $0.Empty request);
@@ -676,5 +715,6 @@ abstract class AdminServiceBase extends $grpc.Service {
   $async.Future<$1.InviteUserResponse> createInviteUser($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.GetSubnetLinkersReponse> getSubnetLinkers($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.CreateSubnetLinkerResponse> createSubnetLinker($grpc.ServiceCall call, $1.CreateSubnetLinkerRequest request);
+  $async.Future<$1.GetSubnetLinkerConvertibleNodesResponse> getSubnetLinkerConvertibleNodes($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$1.PatchSubnetLinkerResponse> patchSubnetLinker($grpc.ServiceCall call, $1.PatchSubnetLinkerRequest request);
 }

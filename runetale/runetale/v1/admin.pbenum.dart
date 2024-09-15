@@ -76,6 +76,23 @@ class LinkerType extends $pb.ProtobufEnum {
   const LinkerType._($core.int v, $core.String n) : super(v, n);
 }
 
+class UserRole extends $pb.ProtobufEnum {
+  static const UserRole OWNER = UserRole._(0, _omitEnumNames ? '' : 'OWNER');
+  static const UserRole ADMIN = UserRole._(1, _omitEnumNames ? '' : 'ADMIN');
+  static const UserRole MEMBER = UserRole._(2, _omitEnumNames ? '' : 'MEMBER');
+
+  static const $core.List<UserRole> values = <UserRole> [
+    OWNER,
+    ADMIN,
+    MEMBER,
+  ];
+
+  static final $core.Map<$core.int, UserRole> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static UserRole? valueOf($core.int value) => _byValue[value];
+
+  const UserRole._($core.int v, $core.String n) : super(v, n);
+}
+
 class ExpirelyTime extends $pb.ProtobufEnum {
   static const ExpirelyTime ONEMONTH = ExpirelyTime._(0, _omitEnumNames ? '' : 'ONEMONTH');
   static const ExpirelyTime TWOMONTH = ExpirelyTime._(1, _omitEnumNames ? '' : 'TWOMONTH');

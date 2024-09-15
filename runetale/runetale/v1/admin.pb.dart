@@ -809,6 +809,70 @@ class GetUsersRequest extends $pb.GeneratedMessage {
   void clearGroupId() => clearField(1);
 }
 
+class PatchUserRequest extends $pb.GeneratedMessage {
+  factory PatchUserRequest({
+    $core.String? id,
+    UserRole? role,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (role != null) {
+      $result.role = role;
+    }
+    return $result;
+  }
+  PatchUserRequest._() : super();
+  factory PatchUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PatchUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..e<UserRole>(2, _omitFieldNames ? '' : 'role', $pb.PbFieldType.OE, defaultOrMaker: UserRole.OWNER, valueOf: UserRole.valueOf, enumValues: UserRole.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PatchUserRequest clone() => PatchUserRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PatchUserRequest copyWith(void Function(PatchUserRequest) updates) => super.copyWith((message) => updates(message as PatchUserRequest)) as PatchUserRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PatchUserRequest create() => PatchUserRequest._();
+  PatchUserRequest createEmptyInstance() => create();
+  static $pb.PbList<PatchUserRequest> createRepeated() => $pb.PbList<PatchUserRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PatchUserRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PatchUserRequest>(create);
+  static PatchUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  UserRole get role => $_getN(1);
+  @$pb.TagNumber(2)
+  set role(UserRole v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasRole() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRole() => clearField(2);
+}
+
 class Users extends $pb.GeneratedMessage {
   factory Users({
     $core.Iterable<User>? users,
@@ -2956,6 +3020,58 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<$core.String> get advertisedRoutes => $_getList(3);
+}
+
+class GetSubnetLinkerConvertibleNodesResponse extends $pb.GeneratedMessage {
+  factory GetSubnetLinkerConvertibleNodesResponse({
+    $core.Iterable<Resource>? resources,
+    $core.Iterable<Device>? devices,
+  }) {
+    final $result = create();
+    if (resources != null) {
+      $result.resources.addAll(resources);
+    }
+    if (devices != null) {
+      $result.devices.addAll(devices);
+    }
+    return $result;
+  }
+  GetSubnetLinkerConvertibleNodesResponse._() : super();
+  factory GetSubnetLinkerConvertibleNodesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetSubnetLinkerConvertibleNodesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSubnetLinkerConvertibleNodesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<Resource>(1, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<Device>(2, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetSubnetLinkerConvertibleNodesResponse clone() => GetSubnetLinkerConvertibleNodesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetSubnetLinkerConvertibleNodesResponse copyWith(void Function(GetSubnetLinkerConvertibleNodesResponse) updates) => super.copyWith((message) => updates(message as GetSubnetLinkerConvertibleNodesResponse)) as GetSubnetLinkerConvertibleNodesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSubnetLinkerConvertibleNodesResponse create() => GetSubnetLinkerConvertibleNodesResponse._();
+  GetSubnetLinkerConvertibleNodesResponse createEmptyInstance() => create();
+  static $pb.PbList<GetSubnetLinkerConvertibleNodesResponse> createRepeated() => $pb.PbList<GetSubnetLinkerConvertibleNodesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetSubnetLinkerConvertibleNodesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSubnetLinkerConvertibleNodesResponse>(create);
+  static GetSubnetLinkerConvertibleNodesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Resource> get resources => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $core.List<Device> get devices => $_getList(1);
 }
 
 class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
