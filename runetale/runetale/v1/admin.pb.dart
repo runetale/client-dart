@@ -2393,6 +2393,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     $core.Iterable<$fixnum.Int64>? nodeIds,
     Platform? platform,
     $core.String? ports,
+    $core.Iterable<IPProto>? ipProto,
   }) {
     final $result = create();
     if (name != null) {
@@ -2410,6 +2411,9 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (ports != null) {
       $result.ports = ports;
     }
+    if (ipProto != null) {
+      $result.ipProto.addAll(ipProto);
+    }
     return $result;
   }
   CreateFleetRequest._() : super();
@@ -2422,6 +2426,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..e<Platform>(4, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
     ..aOS(6, _omitFieldNames ? '' : 'ports')
+    ..pc<IPProto>(7, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..hasRequiredFields = false
   ;
 
@@ -2484,6 +2489,9 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   $core.bool hasPorts() => $_has(4);
   @$pb.TagNumber(6)
   void clearPorts() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<IPProto> get ipProto => $_getList(5);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {

@@ -637,6 +637,7 @@ const CreateFleetRequest$json = {
     {'1': 'nodeIds', '3': 3, '4': 3, '5': 4, '10': 'nodeIds'},
     {'1': 'platform', '3': 4, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
     {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
+    {'1': 'ipProto', '3': 7, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
   ],
 };
 
@@ -644,7 +645,8 @@ const CreateFleetRequest$json = {
 final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVGbGVldFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgASgJUg'
     'RkZXNjEhgKB25vZGVJZHMYAyADKARSB25vZGVJZHMSLAoIcGxhdGZvcm0YBCABKA4yEC5wcm90'
-    'b3MuUGxhdGZvcm1SCHBsYXRmb3JtEhQKBXBvcnRzGAYgASgJUgVwb3J0cw==');
+    'b3MuUGxhdGZvcm1SCHBsYXRmb3JtEhQKBXBvcnRzGAYgASgJUgVwb3J0cxIpCgdpcFByb3RvGA'
+    'cgAygOMg8ucHJvdG9zLklQUHJvdG9SB2lwUHJvdG8=');
 
 @$core.Deprecated('Use getFleetRequestDescriptor instead')
 const GetFleetRequest$json = {
