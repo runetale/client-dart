@@ -4161,7 +4161,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   Linker ensureLinker() => $_ensure(13);
 
-  /// 属しているfleetが変える
+  /// 属しているfleetが返ってくる
   @$pb.TagNumber(15)
   $core.List<Fleet> get fleets => $_getList(14);
 }
