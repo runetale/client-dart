@@ -290,15 +290,15 @@ final $typed_data.Uint8List getUsersRequestDescriptor = $convert.base64Decode(
 const PatchUserRequest$json = {
   '1': 'PatchUserRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
     {'1': 'role', '3': 2, '4': 1, '5': 14, '6': '.protos.UserRole', '10': 'role'},
   ],
 };
 
 /// Descriptor for `PatchUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List patchUserRequestDescriptor = $convert.base64Decode(
-    'ChBQYXRjaFVzZXJSZXF1ZXN0Eg4KAmlkGAEgASgJUgJpZBIkCgRyb2xlGAIgASgOMhAucHJvdG'
-    '9zLlVzZXJSb2xlUgRyb2xl');
+    'ChBQYXRjaFVzZXJSZXF1ZXN0EhYKBm5vZGVJZBgBIAEoBFIGbm9kZUlkEiQKBHJvbGUYAiABKA'
+    '4yEC5wcm90b3MuVXNlclJvbGVSBHJvbGU=');
 
 @$core.Deprecated('Use usersDescriptor instead')
 const Users$json = {

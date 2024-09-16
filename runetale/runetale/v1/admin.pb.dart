@@ -811,12 +811,12 @@ class GetUsersRequest extends $pb.GeneratedMessage {
 
 class PatchUserRequest extends $pb.GeneratedMessage {
   factory PatchUserRequest({
-    $core.String? id,
+    $fixnum.Int64? nodeId,
     UserRole? role,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
     }
     if (role != null) {
       $result.role = role;
@@ -828,7 +828,7 @@ class PatchUserRequest extends $pb.GeneratedMessage {
   factory PatchUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PatchUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..e<UserRole>(2, _omitFieldNames ? '' : 'role', $pb.PbFieldType.OE, defaultOrMaker: UserRole.OWNER, valueOf: UserRole.valueOf, enumValues: UserRole.values)
     ..hasRequiredFields = false
   ;
@@ -855,13 +855,13 @@ class PatchUserRequest extends $pb.GeneratedMessage {
   static PatchUserRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
+  $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearNodeId() => clearField(1);
 
   @$pb.TagNumber(2)
   UserRole get role => $_getN(1);
