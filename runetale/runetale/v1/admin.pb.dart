@@ -2308,11 +2308,11 @@ class GetComposeNodeStatusResponse extends $pb.GeneratedMessage {
 
 class GetResourceRequest extends $pb.GeneratedMessage {
   factory GetResourceRequest({
-    $core.String? id,
+    $fixnum.Int64? nodeId,
   }) {
     final $result = create();
-    if (id != null) {
-      $result.id = id;
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
     }
     return $result;
   }
@@ -2321,7 +2321,7 @@ class GetResourceRequest extends $pb.GeneratedMessage {
   factory GetResourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetResourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -2347,13 +2347,13 @@ class GetResourceRequest extends $pb.GeneratedMessage {
   static GetResourceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get id => $_getSZ(0);
+  $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasId() => $_has(0);
+  $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearNodeId() => clearField(1);
 }
 
 class GetResourcesRequest extends $pb.GeneratedMessage {

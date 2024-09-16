@@ -619,13 +619,13 @@ final $typed_data.Uint8List getComposeNodeStatusResponseDescriptor = $convert.ba
 const GetResourceRequest$json = {
   '1': 'GetResourceRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
   ],
 };
 
 /// Descriptor for `GetResourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getResourceRequestDescriptor = $convert.base64Decode(
-    'ChJHZXRSZXNvdXJjZVJlcXVlc3QSDgoCaWQYASABKAlSAmlk');
+    'ChJHZXRSZXNvdXJjZVJlcXVlc3QSFgoGbm9kZUlkGAEgASgEUgZub2RlSWQ=');
 
 @$core.Deprecated('Use getResourcesRequestDescriptor instead')
 const GetResourcesRequest$json = {
