@@ -792,6 +792,7 @@ const SubnetLinkerCovertibleNode$json = {
     {'1': 'status', '3': 11, '4': 1, '5': 8, '10': 'status'},
     {'1': 'createdBy', '3': 12, '4': 1, '5': 9, '10': 'createdBy'},
     {'1': 'lastSeen', '3': 13, '4': 1, '5': 9, '10': 'lastSeen'},
+    {'1': 'nodeType', '3': 14, '4': 1, '5': 14, '6': '.protos.NodeType', '10': 'nodeType'},
   ],
 };
 
@@ -802,7 +803,8 @@ final $typed_data.Uint8List subnetLinkerCovertibleNodeDescriptor = $convert.base
     'DgoCaXAYBSABKAlSAmlwEikKB2lwUHJvdG8YCCADKA4yDy5wcm90b3MuSVBQcm90b1IHaXBQcm'
     '90bxIOCgJvcxgJIAEoCVICb3MSLAoIcGxhdGZvcm0YCiABKA4yEC5wcm90b3MuUGxhdGZvcm1S'
     'CHBsYXRmb3JtEhYKBnN0YXR1cxgLIAEoCFIGc3RhdHVzEhwKCWNyZWF0ZWRCeRgMIAEoCVIJY3'
-    'JlYXRlZEJ5EhoKCGxhc3RTZWVuGA0gASgJUghsYXN0U2Vlbg==');
+    'JlYXRlZEJ5EhoKCGxhc3RTZWVuGA0gASgJUghsYXN0U2VlbhIsCghub2RlVHlwZRgOIAEoDjIQ'
+    'LnByb3Rvcy5Ob2RlVHlwZVIIbm9kZVR5cGU=');
 
 @$core.Deprecated('Use getSubnetLinkerConvertibleNodesResponseDescriptor instead')
 const GetSubnetLinkerConvertibleNodesResponse$json = {

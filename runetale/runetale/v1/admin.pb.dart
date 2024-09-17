@@ -3035,6 +3035,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
     $core.bool? status,
     $core.String? createdBy,
     $core.String? lastSeen,
+    NodeType? nodeType,
   }) {
     final $result = create();
     if (id != null) {
@@ -3070,6 +3071,9 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
     if (lastSeen != null) {
       $result.lastSeen = lastSeen;
     }
+    if (nodeType != null) {
+      $result.nodeType = nodeType;
+    }
     return $result;
   }
   SubnetLinkerCovertibleNode._() : super();
@@ -3088,6 +3092,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
     ..aOB(11, _omitFieldNames ? '' : 'status')
     ..aOS(12, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
     ..aOS(13, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..e<NodeType>(14, _omitFieldNames ? '' : 'nodeType', $pb.PbFieldType.OE, protoName: 'nodeType', defaultOrMaker: NodeType.FLEET, valueOf: NodeType.valueOf, enumValues: NodeType.values)
     ..hasRequiredFields = false
   ;
 
@@ -3204,6 +3209,15 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   $core.bool hasLastSeen() => $_has(10);
   @$pb.TagNumber(13)
   void clearLastSeen() => clearField(13);
+
+  @$pb.TagNumber(14)
+  NodeType get nodeType => $_getN(11);
+  @$pb.TagNumber(14)
+  set nodeType(NodeType v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasNodeType() => $_has(11);
+  @$pb.TagNumber(14)
+  void clearNodeType() => clearField(14);
 }
 
 class GetSubnetLinkerConvertibleNodesResponse extends $pb.GeneratedMessage {
