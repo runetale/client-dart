@@ -777,20 +777,46 @@ final $typed_data.Uint8List createSubnetLinkerRequestDescriptor = $convert.base6
     '5hbWUYAiABKAlSBG5hbWUSEgoEZGVzYxgDIAEoCVIEZGVzYxIqChBhZHZlcnRpc2VkUm91dGVz'
     'GAQgAygJUhBhZHZlcnRpc2VkUm91dGVz');
 
+@$core.Deprecated('Use subnetLinkerCovertibleNodeDescriptor instead')
+const SubnetLinkerCovertibleNode$json = {
+  '1': 'SubnetLinkerCovertibleNode',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'ipProto', '3': 8, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
+    {'1': 'os', '3': 9, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'platform', '3': 10, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
+    {'1': 'status', '3': 11, '4': 1, '5': 8, '10': 'status'},
+    {'1': 'createdBy', '3': 12, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'lastSeen', '3': 13, '4': 1, '5': 9, '10': 'lastSeen'},
+  ],
+};
+
+/// Descriptor for `SubnetLinkerCovertibleNode`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List subnetLinkerCovertibleNodeDescriptor = $convert.base64Decode(
+    'ChpTdWJuZXRMaW5rZXJDb3ZlcnRpYmxlTm9kZRIOCgJpZBgBIAEoCVICaWQSFgoGbm9kZUlkGA'
+    'IgASgEUgZub2RlSWQSEgoEbmFtZRgDIAEoCVIEbmFtZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwS'
+    'DgoCaXAYBSABKAlSAmlwEikKB2lwUHJvdG8YCCADKA4yDy5wcm90b3MuSVBQcm90b1IHaXBQcm'
+    '90bxIOCgJvcxgJIAEoCVICb3MSLAoIcGxhdGZvcm0YCiABKA4yEC5wcm90b3MuUGxhdGZvcm1S'
+    'CHBsYXRmb3JtEhYKBnN0YXR1cxgLIAEoCFIGc3RhdHVzEhwKCWNyZWF0ZWRCeRgMIAEoCVIJY3'
+    'JlYXRlZEJ5EhoKCGxhc3RTZWVuGA0gASgJUghsYXN0U2Vlbg==');
+
 @$core.Deprecated('Use getSubnetLinkerConvertibleNodesResponseDescriptor instead')
 const GetSubnetLinkerConvertibleNodesResponse$json = {
   '1': 'GetSubnetLinkerConvertibleNodesResponse',
   '2': [
-    {'1': 'resources', '3': 1, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
-    {'1': 'devices', '3': 2, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
+    {'1': 'subnetLinkerConvetibleNodes', '3': 1, '4': 3, '5': 11, '6': '.protos.SubnetLinkerCovertibleNode', '10': 'subnetLinkerConvetibleNodes'},
   ],
 };
 
 /// Descriptor for `GetSubnetLinkerConvertibleNodesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getSubnetLinkerConvertibleNodesResponseDescriptor = $convert.base64Decode(
-    'CidHZXRTdWJuZXRMaW5rZXJDb252ZXJ0aWJsZU5vZGVzUmVzcG9uc2USLgoJcmVzb3VyY2VzGA'
-    'EgAygLMhAucHJvdG9zLlJlc291cmNlUglyZXNvdXJjZXMSKAoHZGV2aWNlcxgCIAMoCzIOLnBy'
-    'b3Rvcy5EZXZpY2VSB2RldmljZXM=');
+    'CidHZXRTdWJuZXRMaW5rZXJDb252ZXJ0aWJsZU5vZGVzUmVzcG9uc2USZAobc3VibmV0TGlua2'
+    'VyQ29udmV0aWJsZU5vZGVzGAEgAygLMiIucHJvdG9zLlN1Ym5ldExpbmtlckNvdmVydGlibGVO'
+    'b2RlUhtzdWJuZXRMaW5rZXJDb252ZXRpYmxlTm9kZXM=');
 
 @$core.Deprecated('Use patchSubnetLinkerRequestDescriptor instead')
 const PatchSubnetLinkerRequest$json = {

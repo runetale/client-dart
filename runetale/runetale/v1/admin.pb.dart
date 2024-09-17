@@ -3022,17 +3022,197 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   $core.List<$core.String> get advertisedRoutes => $_getList(3);
 }
 
-class GetSubnetLinkerConvertibleNodesResponse extends $pb.GeneratedMessage {
-  factory GetSubnetLinkerConvertibleNodesResponse({
-    $core.Iterable<Resource>? resources,
-    $core.Iterable<Device>? devices,
+class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
+  factory SubnetLinkerCovertibleNode({
+    $core.String? id,
+    $fixnum.Int64? nodeId,
+    $core.String? name,
+    $core.String? email,
+    $core.String? ip,
+    $core.Iterable<IPProto>? ipProto,
+    $core.String? os,
+    Platform? platform,
+    $core.bool? status,
+    $core.String? createdBy,
+    $core.String? lastSeen,
   }) {
     final $result = create();
-    if (resources != null) {
-      $result.resources.addAll(resources);
+    if (id != null) {
+      $result.id = id;
     }
-    if (devices != null) {
-      $result.devices.addAll(devices);
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (email != null) {
+      $result.email = email;
+    }
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (ipProto != null) {
+      $result.ipProto.addAll(ipProto);
+    }
+    if (os != null) {
+      $result.os = os;
+    }
+    if (platform != null) {
+      $result.platform = platform;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    if (createdBy != null) {
+      $result.createdBy = createdBy;
+    }
+    if (lastSeen != null) {
+      $result.lastSeen = lastSeen;
+    }
+    return $result;
+  }
+  SubnetLinkerCovertibleNode._() : super();
+  factory SubnetLinkerCovertibleNode.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SubnetLinkerCovertibleNode.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SubnetLinkerCovertibleNode', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'name')
+    ..aOS(4, _omitFieldNames ? '' : 'email')
+    ..aOS(5, _omitFieldNames ? '' : 'ip')
+    ..pc<IPProto>(8, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
+    ..aOS(9, _omitFieldNames ? '' : 'os')
+    ..e<Platform>(10, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
+    ..aOB(11, _omitFieldNames ? '' : 'status')
+    ..aOS(12, _omitFieldNames ? '' : 'createdBy', protoName: 'createdBy')
+    ..aOS(13, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  SubnetLinkerCovertibleNode clone() => SubnetLinkerCovertibleNode()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  SubnetLinkerCovertibleNode copyWith(void Function(SubnetLinkerCovertibleNode) updates) => super.copyWith((message) => updates(message as SubnetLinkerCovertibleNode)) as SubnetLinkerCovertibleNode;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SubnetLinkerCovertibleNode create() => SubnetLinkerCovertibleNode._();
+  SubnetLinkerCovertibleNode createEmptyInstance() => create();
+  static $pb.PbList<SubnetLinkerCovertibleNode> createRepeated() => $pb.PbList<SubnetLinkerCovertibleNode>();
+  @$core.pragma('dart2js:noInline')
+  static SubnetLinkerCovertibleNode getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SubnetLinkerCovertibleNode>(create);
+  static SubnetLinkerCovertibleNode? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get nodeId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set nodeId($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNodeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get name => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set name($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get email => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set email($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEmail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEmail() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get ip => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set ip($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasIp() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIp() => clearField(5);
+
+  @$pb.TagNumber(8)
+  $core.List<IPProto> get ipProto => $_getList(5);
+
+  @$pb.TagNumber(9)
+  $core.String get os => $_getSZ(6);
+  @$pb.TagNumber(9)
+  set os($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasOs() => $_has(6);
+  @$pb.TagNumber(9)
+  void clearOs() => clearField(9);
+
+  @$pb.TagNumber(10)
+  Platform get platform => $_getN(7);
+  @$pb.TagNumber(10)
+  set platform(Platform v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasPlatform() => $_has(7);
+  @$pb.TagNumber(10)
+  void clearPlatform() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.bool get status => $_getBF(8);
+  @$pb.TagNumber(11)
+  set status($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasStatus() => $_has(8);
+  @$pb.TagNumber(11)
+  void clearStatus() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get createdBy => $_getSZ(9);
+  @$pb.TagNumber(12)
+  set createdBy($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCreatedBy() => $_has(9);
+  @$pb.TagNumber(12)
+  void clearCreatedBy() => clearField(12);
+
+  @$pb.TagNumber(13)
+  $core.String get lastSeen => $_getSZ(10);
+  @$pb.TagNumber(13)
+  set lastSeen($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasLastSeen() => $_has(10);
+  @$pb.TagNumber(13)
+  void clearLastSeen() => clearField(13);
+}
+
+class GetSubnetLinkerConvertibleNodesResponse extends $pb.GeneratedMessage {
+  factory GetSubnetLinkerConvertibleNodesResponse({
+    $core.Iterable<SubnetLinkerCovertibleNode>? subnetLinkerConvetibleNodes,
+  }) {
+    final $result = create();
+    if (subnetLinkerConvetibleNodes != null) {
+      $result.subnetLinkerConvetibleNodes.addAll(subnetLinkerConvetibleNodes);
     }
     return $result;
   }
@@ -3041,8 +3221,7 @@ class GetSubnetLinkerConvertibleNodesResponse extends $pb.GeneratedMessage {
   factory GetSubnetLinkerConvertibleNodesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSubnetLinkerConvertibleNodesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..pc<Resource>(1, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..pc<Device>(2, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<SubnetLinkerCovertibleNode>(1, _omitFieldNames ? '' : 'subnetLinkerConvetibleNodes', $pb.PbFieldType.PM, protoName: 'subnetLinkerConvetibleNodes', subBuilder: SubnetLinkerCovertibleNode.create)
     ..hasRequiredFields = false
   ;
 
@@ -3068,10 +3247,7 @@ class GetSubnetLinkerConvertibleNodesResponse extends $pb.GeneratedMessage {
   static GetSubnetLinkerConvertibleNodesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Resource> get resources => $_getList(0);
-
-  @$pb.TagNumber(2)
-  $core.List<Device> get devices => $_getList(1);
+  $core.List<SubnetLinkerCovertibleNode> get subnetLinkerConvetibleNodes => $_getList(0);
 }
 
 class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
