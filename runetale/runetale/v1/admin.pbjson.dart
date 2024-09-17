@@ -1038,13 +1038,11 @@ const User$json = {
     {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
     {'1': 'role', '3': 5, '4': 1, '5': 9, '10': 'role'},
     {'1': 'joined', '3': 6, '4': 1, '5': 9, '10': 'joined'},
-    {'1': 'lastSeen', '3': 7, '4': 1, '5': 9, '10': 'lastSeen'},
-    {'1': 'status', '3': 8, '4': 1, '5': 8, '10': 'status'},
-    {'1': 'groups', '3': 9, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
-    {'1': 'devices', '3': 10, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
-    {'1': 'resources', '3': 11, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
-    {'1': 'fleets', '3': 12, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
-    {'1': 'inks', '3': 13, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
+    {'1': 'groups', '3': 7, '4': 3, '5': 11, '6': '.protos.Group', '10': 'groups'},
+    {'1': 'devices', '3': 8, '4': 3, '5': 11, '6': '.protos.Device', '10': 'devices'},
+    {'1': 'resources', '3': 9, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
+    {'1': 'fleets', '3': 10, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
+    {'1': 'inks', '3': 11, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
   ],
 };
 
@@ -1052,12 +1050,11 @@ const User$json = {
 final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'CgRVc2VyEhYKBm5vZGVJZBgBIAEoBFIGbm9kZUlkEhIKBG5hbWUYAiABKAlSBG5hbWUSGAoHcG'
     'ljdHVyZRgDIAEoCVIHcGljdHVyZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSEgoEcm9sZRgFIAEo'
-    'CVIEcm9sZRIWCgZqb2luZWQYBiABKAlSBmpvaW5lZBIaCghsYXN0U2VlbhgHIAEoCVIIbGFzdF'
-    'NlZW4SFgoGc3RhdHVzGAggASgIUgZzdGF0dXMSJQoGZ3JvdXBzGAkgAygLMg0ucHJvdG9zLkdy'
-    'b3VwUgZncm91cHMSKAoHZGV2aWNlcxgKIAMoCzIOLnByb3Rvcy5EZXZpY2VSB2RldmljZXMSLg'
-    'oJcmVzb3VyY2VzGAsgAygLMhAucHJvdG9zLlJlc291cmNlUglyZXNvdXJjZXMSJQoGZmxlZXRz'
-    'GAwgAygLMg0ucHJvdG9zLkZsZWV0UgZmbGVldHMSHwoEaW5rcxgNIAMoCzILLnByb3Rvcy5Jbm'
-    'tSBGlua3M=');
+    'CVIEcm9sZRIWCgZqb2luZWQYBiABKAlSBmpvaW5lZBIlCgZncm91cHMYByADKAsyDS5wcm90b3'
+    'MuR3JvdXBSBmdyb3VwcxIoCgdkZXZpY2VzGAggAygLMg4ucHJvdG9zLkRldmljZVIHZGV2aWNl'
+    'cxIuCglyZXNvdXJjZXMYCSADKAsyEC5wcm90b3MuUmVzb3VyY2VSCXJlc291cmNlcxIlCgZmbG'
+    'VldHMYCiADKAsyDS5wcm90b3MuRmxlZXRSBmZsZWV0cxIfCgRpbmtzGAsgAygLMgsucHJvdG9z'
+    'Lklua1IEaW5rcw==');
 
 @$core.Deprecated('Use deviceDescriptor instead')
 const Device$json = {

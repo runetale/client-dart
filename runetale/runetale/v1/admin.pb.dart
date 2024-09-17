@@ -4450,8 +4450,6 @@ class User extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? role,
     $core.String? joined,
-    $core.String? lastSeen,
-    $core.bool? status,
     $core.Iterable<Group>? groups,
     $core.Iterable<Device>? devices,
     $core.Iterable<Resource>? resources,
@@ -4476,12 +4474,6 @@ class User extends $pb.GeneratedMessage {
     }
     if (joined != null) {
       $result.joined = joined;
-    }
-    if (lastSeen != null) {
-      $result.lastSeen = lastSeen;
-    }
-    if (status != null) {
-      $result.status = status;
     }
     if (groups != null) {
       $result.groups.addAll(groups);
@@ -4511,13 +4503,11 @@ class User extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'email')
     ..aOS(5, _omitFieldNames ? '' : 'role')
     ..aOS(6, _omitFieldNames ? '' : 'joined')
-    ..aOS(7, _omitFieldNames ? '' : 'lastSeen', protoName: 'lastSeen')
-    ..aOB(8, _omitFieldNames ? '' : 'status')
-    ..pc<Group>(9, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
-    ..pc<Device>(10, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
-    ..pc<Resource>(11, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
-    ..pc<Fleet>(12, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
-    ..pc<Ink>(13, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
+    ..pc<Group>(7, _omitFieldNames ? '' : 'groups', $pb.PbFieldType.PM, subBuilder: Group.create)
+    ..pc<Device>(8, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: Device.create)
+    ..pc<Resource>(9, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
+    ..pc<Fleet>(10, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
+    ..pc<Ink>(11, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
     ..hasRequiredFields = false
   ;
 
@@ -4597,37 +4587,19 @@ class User extends $pb.GeneratedMessage {
   void clearJoined() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get lastSeen => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set lastSeen($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasLastSeen() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearLastSeen() => clearField(7);
+  $core.List<Group> get groups => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.bool get status => $_getBF(7);
-  @$pb.TagNumber(8)
-  set status($core.bool v) { $_setBool(7, v); }
-  @$pb.TagNumber(8)
-  $core.bool hasStatus() => $_has(7);
-  @$pb.TagNumber(8)
-  void clearStatus() => clearField(8);
+  $core.List<Device> get devices => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.List<Group> get groups => $_getList(8);
+  $core.List<Resource> get resources => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.List<Device> get devices => $_getList(9);
+  $core.List<Fleet> get fleets => $_getList(9);
 
   @$pb.TagNumber(11)
-  $core.List<Resource> get resources => $_getList(10);
-
-  @$pb.TagNumber(12)
-  $core.List<Fleet> get fleets => $_getList(11);
-
-  @$pb.TagNumber(13)
-  $core.List<Ink> get inks => $_getList(12);
+  $core.List<Ink> get inks => $_getList(10);
 }
 
 class Device extends $pb.GeneratedMessage {
