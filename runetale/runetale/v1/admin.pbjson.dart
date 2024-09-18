@@ -664,8 +664,6 @@ const CreateFleetRequest$json = {
     {'1': 'desc', '3': 2, '4': 1, '5': 9, '10': 'desc'},
     {'1': 'nodeIds', '3': 3, '4': 3, '5': 4, '10': 'nodeIds'},
     {'1': 'platform', '3': 4, '4': 1, '5': 14, '6': '.protos.Platform', '10': 'platform'},
-    {'1': 'ports', '3': 6, '4': 1, '5': 9, '10': 'ports'},
-    {'1': 'ipProto', '3': 7, '4': 3, '5': 14, '6': '.protos.IPProto', '10': 'ipProto'},
   ],
 };
 
@@ -673,8 +671,7 @@ const CreateFleetRequest$json = {
 final $typed_data.Uint8List createFleetRequestDescriptor = $convert.base64Decode(
     'ChJDcmVhdGVGbGVldFJlcXVlc3QSEgoEbmFtZRgBIAEoCVIEbmFtZRISCgRkZXNjGAIgASgJUg'
     'RkZXNjEhgKB25vZGVJZHMYAyADKARSB25vZGVJZHMSLAoIcGxhdGZvcm0YBCABKA4yEC5wcm90'
-    'b3MuUGxhdGZvcm1SCHBsYXRmb3JtEhQKBXBvcnRzGAYgASgJUgVwb3J0cxIpCgdpcFByb3RvGA'
-    'cgAygOMg8ucHJvdG9zLklQUHJvdG9SB2lwUHJvdG8=');
+    'b3MuUGxhdGZvcm1SCHBsYXRmb3Jt');
 
 @$core.Deprecated('Use getFleetRequestDescriptor instead')
 const GetFleetRequest$json = {
@@ -709,13 +706,11 @@ const PatchFleetRequest$json = {
     {'1': 'desc', '3': 3, '4': 1, '5': 9, '9': 1, '10': 'desc', '17': true},
     {'1': 'nodeIds', '3': 4, '4': 3, '5': 4, '10': 'nodeIds'},
     {'1': 'platform', '3': 5, '4': 1, '5': 14, '6': '.protos.Platform', '9': 2, '10': 'platform', '17': true},
-    {'1': 'ports', '3': 6, '4': 1, '5': 9, '9': 3, '10': 'ports', '17': true},
   ],
   '8': [
     {'1': '_name'},
     {'1': '_desc'},
     {'1': '_platform'},
-    {'1': '_ports'},
   ],
 };
 
@@ -723,9 +718,8 @@ const PatchFleetRequest$json = {
 final $typed_data.Uint8List patchFleetRequestDescriptor = $convert.base64Decode(
     'ChFQYXRjaEZsZWV0UmVxdWVzdBIOCgJpZBgBIAEoCVICaWQSFwoEbmFtZRgCIAEoCUgAUgRuYW'
     '1liAEBEhcKBGRlc2MYAyABKAlIAVIEZGVzY4gBARIYCgdub2RlSWRzGAQgAygEUgdub2RlSWRz'
-    'EjEKCHBsYXRmb3JtGAUgASgOMhAucHJvdG9zLlBsYXRmb3JtSAJSCHBsYXRmb3JtiAEBEhkKBX'
-    'BvcnRzGAYgASgJSANSBXBvcnRziAEBQgcKBV9uYW1lQgcKBV9kZXNjQgsKCV9wbGF0Zm9ybUII'
-    'CgZfcG9ydHM=');
+    'EjEKCHBsYXRmb3JtGAUgASgOMhAucHJvdG9zLlBsYXRmb3JtSAJSCHBsYXRmb3JtiAEBQgcKBV'
+    '9uYW1lQgcKBV9kZXNjQgsKCV9wbGF0Zm9ybQ==');
 
 @$core.Deprecated('Use overviewDescriptor instead')
 const Overview$json = {

@@ -2456,8 +2456,6 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? nodeIds,
     Platform? platform,
-    $core.String? ports,
-    $core.Iterable<IPProto>? ipProto,
   }) {
     final $result = create();
     if (name != null) {
@@ -2472,12 +2470,6 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     if (platform != null) {
       $result.platform = platform;
     }
-    if (ports != null) {
-      $result.ports = ports;
-    }
-    if (ipProto != null) {
-      $result.ipProto.addAll(ipProto);
-    }
     return $result;
   }
   CreateFleetRequest._() : super();
@@ -2489,8 +2481,6 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..e<Platform>(4, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
-    ..aOS(6, _omitFieldNames ? '' : 'ports')
-    ..pc<IPProto>(7, _omitFieldNames ? '' : 'ipProto', $pb.PbFieldType.KE, protoName: 'ipProto', valueOf: IPProto.valueOf, enumValues: IPProto.values, defaultEnumValue: IPProto.ALL)
     ..hasRequiredFields = false
   ;
 
@@ -2544,18 +2534,6 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(3);
   @$pb.TagNumber(4)
   void clearPlatform() => clearField(4);
-
-  @$pb.TagNumber(6)
-  $core.String get ports => $_getSZ(4);
-  @$pb.TagNumber(6)
-  set ports($core.String v) { $_setString(4, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasPorts() => $_has(4);
-  @$pb.TagNumber(6)
-  void clearPorts() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.List<IPProto> get ipProto => $_getList(5);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -2659,7 +2637,6 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     $core.String? desc,
     $core.Iterable<$fixnum.Int64>? nodeIds,
     Platform? platform,
-    $core.String? ports,
   }) {
     final $result = create();
     if (id != null) {
@@ -2677,9 +2654,6 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     if (platform != null) {
       $result.platform = platform;
     }
-    if (ports != null) {
-      $result.ports = ports;
-    }
     return $result;
   }
   PatchFleetRequest._() : super();
@@ -2692,7 +2666,6 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'desc')
     ..p<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeIds', $pb.PbFieldType.KU6, protoName: 'nodeIds')
     ..e<Platform>(5, _omitFieldNames ? '' : 'platform', $pb.PbFieldType.OE, defaultOrMaker: Platform.DOCKER, valueOf: Platform.valueOf, enumValues: Platform.values)
-    ..aOS(6, _omitFieldNames ? '' : 'ports')
     ..hasRequiredFields = false
   ;
 
@@ -2755,15 +2728,6 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   $core.bool hasPlatform() => $_has(4);
   @$pb.TagNumber(5)
   void clearPlatform() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get ports => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set ports($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasPorts() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearPorts() => clearField(6);
 }
 
 class Overview extends $pb.GeneratedMessage {
