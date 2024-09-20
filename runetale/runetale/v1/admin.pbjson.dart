@@ -1039,6 +1039,7 @@ const User$json = {
     {'1': 'resources', '3': 9, '4': 3, '5': 11, '6': '.protos.Resource', '10': 'resources'},
     {'1': 'fleets', '3': 10, '4': 3, '5': 11, '6': '.protos.Fleet', '10': 'fleets'},
     {'1': 'inks', '3': 11, '4': 3, '5': 11, '6': '.protos.Ink', '10': 'inks'},
+    {'1': 'isSharedDomain', '3': 12, '4': 1, '5': 8, '10': 'isSharedDomain'},
   ],
 };
 
@@ -1050,7 +1051,7 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
     'MuR3JvdXBSBmdyb3VwcxIoCgdkZXZpY2VzGAggAygLMg4ucHJvdG9zLkRldmljZVIHZGV2aWNl'
     'cxIuCglyZXNvdXJjZXMYCSADKAsyEC5wcm90b3MuUmVzb3VyY2VSCXJlc291cmNlcxIlCgZmbG'
     'VldHMYCiADKAsyDS5wcm90b3MuRmxlZXRSBmZsZWV0cxIfCgRpbmtzGAsgAygLMgsucHJvdG9z'
-    'Lklua1IEaW5rcw==');
+    'Lklua1IEaW5rcxImCg5pc1NoYXJlZERvbWFpbhgMIAEoCFIOaXNTaGFyZWREb21haW4=');
 
 @$core.Deprecated('Use deviceDescriptor instead')
 const Device$json = {

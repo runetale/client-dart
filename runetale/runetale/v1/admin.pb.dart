@@ -4433,6 +4433,7 @@ class User extends $pb.GeneratedMessage {
     $core.Iterable<Resource>? resources,
     $core.Iterable<Fleet>? fleets,
     $core.Iterable<Ink>? inks,
+    $core.bool? isSharedDomain,
   }) {
     final $result = create();
     if (nodeId != null) {
@@ -4468,6 +4469,9 @@ class User extends $pb.GeneratedMessage {
     if (inks != null) {
       $result.inks.addAll(inks);
     }
+    if (isSharedDomain != null) {
+      $result.isSharedDomain = isSharedDomain;
+    }
     return $result;
   }
   User._() : super();
@@ -4486,6 +4490,7 @@ class User extends $pb.GeneratedMessage {
     ..pc<Resource>(9, _omitFieldNames ? '' : 'resources', $pb.PbFieldType.PM, subBuilder: Resource.create)
     ..pc<Fleet>(10, _omitFieldNames ? '' : 'fleets', $pb.PbFieldType.PM, subBuilder: Fleet.create)
     ..pc<Ink>(11, _omitFieldNames ? '' : 'inks', $pb.PbFieldType.PM, subBuilder: Ink.create)
+    ..aOB(12, _omitFieldNames ? '' : 'isSharedDomain', protoName: 'isSharedDomain')
     ..hasRequiredFields = false
   ;
 
@@ -4578,6 +4583,15 @@ class User extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(11)
   $core.List<Ink> get inks => $_getList(10);
+
+  @$pb.TagNumber(12)
+  $core.bool get isSharedDomain => $_getBF(11);
+  @$pb.TagNumber(12)
+  set isSharedDomain($core.bool v) { $_setBool(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasIsSharedDomain() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearIsSharedDomain() => clearField(12);
 }
 
 class Device extends $pb.GeneratedMessage {
