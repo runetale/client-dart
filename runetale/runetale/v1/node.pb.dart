@@ -513,7 +513,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.Iterable<Node>? peersChanged,
     $core.Iterable<$fixnum.Int64>? peersRemoved,
     $core.Iterable<FilterRule>? packetFilter,
-    $core.Iterable<$core.String>? advertisedRoute,
+    $core.String? advertisedRoute,
   }) {
     final $result = create();
     if (seq != null) {
@@ -535,7 +535,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
       $result.packetFilter.addAll(packetFilter);
     }
     if (advertisedRoute != null) {
-      $result.advertisedRoute.addAll(advertisedRoute);
+      $result.advertisedRoute = advertisedRoute;
     }
     return $result;
   }
@@ -550,7 +550,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..pc<Node>(4, _omitFieldNames ? '' : 'peersChanged', $pb.PbFieldType.PM, protoName: 'peersChanged', subBuilder: Node.create)
     ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'peersRemoved', $pb.PbFieldType.KU6, protoName: 'peersRemoved')
     ..pc<FilterRule>(6, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
-    ..pPS(7, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
+    ..aOS(7, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..hasRequiredFields = false
   ;
 
@@ -616,8 +616,15 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
 
   /// このnodeがadvertiseするIPアドレス
   /// 1.2.3.4/16のIP+Maskの形
+  /// "10.0.0.0/8,192.172.0.0/24"のようにcommaで区切る
   @$pb.TagNumber(7)
-  $core.List<$core.String> get advertisedRoute => $_getList(6);
+  $core.String get advertisedRoute => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set advertisedRoute($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAdvertisedRoute() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAdvertisedRoute() => clearField(7);
 }
 
 
