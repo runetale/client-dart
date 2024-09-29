@@ -514,6 +514,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.Iterable<$fixnum.Int64>? peersRemoved,
     $core.Iterable<FilterRule>? packetFilter,
     $core.String? advertisedRoute,
+    $core.bool? jailed,
   }) {
     final $result = create();
     if (seq != null) {
@@ -537,6 +538,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (advertisedRoute != null) {
       $result.advertisedRoute = advertisedRoute;
     }
+    if (jailed != null) {
+      $result.jailed = jailed;
+    }
     return $result;
   }
   NetworkMapResponse._() : super();
@@ -551,6 +555,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'peersRemoved', $pb.PbFieldType.KU6, protoName: 'peersRemoved')
     ..pc<FilterRule>(6, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
     ..aOS(7, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
+    ..aOB(8, _omitFieldNames ? '' : 'Jailed', protoName: 'Jailed')
     ..hasRequiredFields = false
   ;
 
@@ -625,6 +630,17 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   $core.bool hasAdvertisedRoute() => $_has(6);
   @$pb.TagNumber(7)
   void clearAdvertisedRoute() => clearField(7);
+
+  /// jailedがtrueの場合全てのパケットを拒否する
+  /// defaultの状態はこの状態である
+  @$pb.TagNumber(8)
+  $core.bool get jailed => $_getBF(7);
+  @$pb.TagNumber(8)
+  set jailed($core.bool v) { $_setBool(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasJailed() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearJailed() => clearField(8);
 }
 
 
