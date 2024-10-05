@@ -100,23 +100,3 @@ final $typed_data.Uint8List candidateRequestDescriptor = $convert.base64Decode(
     'JjTm9kZUtleRgCIAEoCVIKc3JjTm9kZUtleRIcCgljYW5kaWRhdGUYAyABKAlSCWNhbmRpZGF0'
     'ZQ==');
 
-@$core.Deprecated('Use joinRequestDescriptor instead')
-const JoinRequest$json = {
-  '1': 'JoinRequest',
-  '2': [
-    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
-    {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
-    {'1': 'srcNodeKey', '3': 3, '4': 1, '5': 9, '10': 'srcNodeKey'},
-    {'1': 'srcWgPubKey', '3': 4, '4': 1, '5': 9, '10': 'srcWgPubKey'},
-    {'1': 'ip', '3': 5, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'cidr', '3': 6, '4': 1, '5': 9, '10': 'cidr'},
-  ],
-};
-
-/// Descriptor for `JoinRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List joinRequestDescriptor = $convert.base64Decode(
-    'CgtKb2luUmVxdWVzdBIrCgR0eXBlGAEgASgOMhcucHJvdG9zLk5lZ290aWF0aW9uVHlwZVIEdH'
-    'lwZRIeCgpkc3ROb2RlS2V5GAIgASgJUgpkc3ROb2RlS2V5Eh4KCnNyY05vZGVLZXkYAyABKAlS'
-    'CnNyY05vZGVLZXkSIAoLc3JjV2dQdWJLZXkYBCABKAlSC3NyY1dnUHViS2V5Eg4KAmlwGAUgAS'
-    'gJUgJpcBISCgRjaWRyGAYgASgJUgRjaWRy');
-
