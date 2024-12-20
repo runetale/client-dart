@@ -30,9 +30,9 @@ class NodeServiceClient extends $grpc.Client {
       '/protos.NodeService/GetNetworkMap',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.NetworkMapResponse.fromBuffer(value));
-  static final _$connectNetworkMapTable = $grpc.ClientMethod<$0.Empty, $6.NetworkMapResponse>(
+  static final _$connectNetworkMapTable = $grpc.ClientMethod<$6.NetworkMapResponse, $6.NetworkMapResponse>(
       '/protos.NodeService/ConnectNetworkMapTable',
-      ($0.Empty value) => value.writeToBuffer(),
+      ($6.NetworkMapResponse value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.NetworkMapResponse.fromBuffer(value));
 
   NodeServiceClient($grpc.ClientChannel channel,
@@ -49,7 +49,7 @@ class NodeServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getNetworkMap, request, options: options);
   }
 
-  $grpc.ResponseStream<$6.NetworkMapResponse> connectNetworkMapTable($async.Stream<$0.Empty> request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseStream<$6.NetworkMapResponse> connectNetworkMapTable($async.Stream<$6.NetworkMapResponse> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$connectNetworkMapTable, request, options: options);
   }
 }
@@ -73,12 +73,12 @@ abstract class NodeServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($6.NetworkMapResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $6.NetworkMapResponse>(
+    $addMethod($grpc.ServiceMethod<$6.NetworkMapResponse, $6.NetworkMapResponse>(
         'ConnectNetworkMapTable',
         connectNetworkMapTable,
         true,
         true,
-        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($core.List<$core.int> value) => $6.NetworkMapResponse.fromBuffer(value),
         ($6.NetworkMapResponse value) => value.writeToBuffer()));
   }
 
@@ -92,5 +92,5 @@ abstract class NodeServiceBase extends $grpc.Service {
 
   $async.Future<$6.ComposeNodeResponse> composeNode($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$6.NetworkMapResponse> getNetworkMap($grpc.ServiceCall call, $0.Empty request);
-  $async.Stream<$6.NetworkMapResponse> connectNetworkMapTable($grpc.ServiceCall call, $async.Stream<$0.Empty> request);
+  $async.Stream<$6.NetworkMapResponse> connectNetworkMapTable($grpc.ServiceCall call, $async.Stream<$6.NetworkMapResponse> request);
 }
