@@ -104,8 +104,8 @@ class Node extends $pb.GeneratedMessage {
   factory Node({
     $core.String? name,
     $fixnum.Int64? nodeId,
-    $core.String? remoteNodeKey,
-    $core.String? remoteWgPubKey,
+    $core.String? nodeKey,
+    $core.String? wgPubKey,
     $core.Iterable<$core.String>? allowedIPs,
     $core.String? ip,
     $core.String? cidr,
@@ -117,11 +117,11 @@ class Node extends $pb.GeneratedMessage {
     if (nodeId != null) {
       $result.nodeId = nodeId;
     }
-    if (remoteNodeKey != null) {
-      $result.remoteNodeKey = remoteNodeKey;
+    if (nodeKey != null) {
+      $result.nodeKey = nodeKey;
     }
-    if (remoteWgPubKey != null) {
-      $result.remoteWgPubKey = remoteWgPubKey;
+    if (wgPubKey != null) {
+      $result.wgPubKey = wgPubKey;
     }
     if (allowedIPs != null) {
       $result.allowedIPs.addAll(allowedIPs);
@@ -141,8 +141,8 @@ class Node extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Node', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, _omitFieldNames ? '' : 'remoteNodeKey', protoName: 'remoteNodeKey')
-    ..aOS(4, _omitFieldNames ? '' : 'remoteWgPubKey', protoName: 'remoteWgPubKey')
+    ..aOS(3, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..aOS(4, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
     ..pPS(5, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
     ..aOS(6, _omitFieldNames ? '' : 'ip')
     ..aOS(7, _omitFieldNames ? '' : 'cidr')
@@ -189,22 +189,22 @@ class Node extends $pb.GeneratedMessage {
   void clearNodeId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get remoteNodeKey => $_getSZ(2);
+  $core.String get nodeKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set remoteNodeKey($core.String v) { $_setString(2, v); }
+  set nodeKey($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasRemoteNodeKey() => $_has(2);
+  $core.bool hasNodeKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearRemoteNodeKey() => clearField(3);
+  void clearNodeKey() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get remoteWgPubKey => $_getSZ(3);
+  $core.String get wgPubKey => $_getSZ(3);
   @$pb.TagNumber(4)
-  set remoteWgPubKey($core.String v) { $_setString(3, v); }
+  set wgPubKey($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasRemoteWgPubKey() => $_has(3);
+  $core.bool hasWgPubKey() => $_has(3);
   @$pb.TagNumber(4)
-  void clearRemoteWgPubKey() => clearField(4);
+  void clearWgPubKey() => clearField(4);
 
   @$pb.TagNumber(5)
   $core.List<$core.String> get allowedIPs => $_getList(4);
