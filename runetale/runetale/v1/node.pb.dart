@@ -444,7 +444,7 @@ class FilterRule extends $pb.GeneratedMessage {
   factory FilterRule({
     $core.Iterable<$core.String>? srcIps,
     $core.Iterable<NetPortRange>? dsts,
-    $core.Iterable<$core.int>? iPProto,
+    $core.Iterable<ProtoNumber>? iPProto,
   }) {
     final $result = create();
     if (srcIps != null) {
@@ -465,7 +465,7 @@ class FilterRule extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FilterRule', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'srcIps', protoName: 'srcIps')
     ..pc<NetPortRange>(2, _omitFieldNames ? '' : 'dsts', $pb.PbFieldType.PM, subBuilder: NetPortRange.create)
-    ..p<$core.int>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.KU3, protoName: 'iPProto')
+    ..pc<ProtoNumber>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.PM, protoName: 'iPProto', subBuilder: ProtoNumber.create)
     ..hasRequiredFields = false
   ;
 
@@ -502,7 +502,7 @@ class FilterRule extends $pb.GeneratedMessage {
   /// 使用するプロトコル
   /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
   @$pb.TagNumber(3)
-  $core.List<$core.int> get iPProto => $_getList(2);
+  $core.List<ProtoNumber> get iPProto => $_getList(2);
 }
 
 class NetworkMapResponse extends $pb.GeneratedMessage {
@@ -641,6 +641,162 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   $core.bool hasJailed() => $_has(7);
   @$pb.TagNumber(8)
   void clearJailed() => clearField(8);
+}
+
+/// proto numbers
+/// Unknown = 0x00
+/// ICMPv4  = 0x01
+/// ICMPv6  = 0x3a
+/// TCP     = 0x06
+/// UDP     = 0x11
+class ProtoNumber extends $pb.GeneratedMessage {
+  factory ProtoNumber({
+    $core.int? unknown,
+    $core.int? iCMPv4,
+    $core.int? iCMPv6,
+    $core.int? tCP,
+    $core.int? uDP,
+  }) {
+    final $result = create();
+    if (unknown != null) {
+      $result.unknown = unknown;
+    }
+    if (iCMPv4 != null) {
+      $result.iCMPv4 = iCMPv4;
+    }
+    if (iCMPv6 != null) {
+      $result.iCMPv6 = iCMPv6;
+    }
+    if (tCP != null) {
+      $result.tCP = tCP;
+    }
+    if (uDP != null) {
+      $result.uDP = uDP;
+    }
+    return $result;
+  }
+  ProtoNumber._() : super();
+  factory ProtoNumber.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ProtoNumber.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ProtoNumber', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'Unknown', $pb.PbFieldType.OU3, protoName: 'Unknown')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'ICMPv4', $pb.PbFieldType.OU3, protoName: 'ICMPv4')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'ICMPv6', $pb.PbFieldType.OU3, protoName: 'ICMPv6')
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'TCP', $pb.PbFieldType.OU3, protoName: 'TCP')
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'UDP', $pb.PbFieldType.OU3, protoName: 'UDP')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ProtoNumber clone() => ProtoNumber()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ProtoNumber copyWith(void Function(ProtoNumber) updates) => super.copyWith((message) => updates(message as ProtoNumber)) as ProtoNumber;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProtoNumber create() => ProtoNumber._();
+  ProtoNumber createEmptyInstance() => create();
+  static $pb.PbList<ProtoNumber> createRepeated() => $pb.PbList<ProtoNumber>();
+  @$core.pragma('dart2js:noInline')
+  static ProtoNumber getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProtoNumber>(create);
+  static ProtoNumber? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get unknown => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set unknown($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasUnknown() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUnknown() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get iCMPv4 => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set iCMPv4($core.int v) { $_setUnsignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasICMPv4() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearICMPv4() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get iCMPv6 => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set iCMPv6($core.int v) { $_setUnsignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasICMPv6() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearICMPv6() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get tCP => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set tCP($core.int v) { $_setUnsignedInt32(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTCP() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTCP() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.int get uDP => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set uDP($core.int v) { $_setUnsignedInt32(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasUDP() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearUDP() => clearField(5);
+}
+
+class IpProto extends $pb.GeneratedMessage {
+  factory IpProto({
+    $core.Iterable<ProtoNumber>? iPProto,
+  }) {
+    final $result = create();
+    if (iPProto != null) {
+      $result.iPProto.addAll(iPProto);
+    }
+    return $result;
+  }
+  IpProto._() : super();
+  factory IpProto.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory IpProto.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IpProto', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<ProtoNumber>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.PM, protoName: 'iPProto', subBuilder: ProtoNumber.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  IpProto clone() => IpProto()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  IpProto copyWith(void Function(IpProto) updates) => super.copyWith((message) => updates(message as IpProto)) as IpProto;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static IpProto create() => IpProto._();
+  IpProto createEmptyInstance() => create();
+  static $pb.PbList<IpProto> createRepeated() => $pb.PbList<IpProto>();
+  @$core.pragma('dart2js:noInline')
+  static IpProto getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IpProto>(create);
+  static IpProto? _defaultInstance;
+
+  @$pb.TagNumber(3)
+  $core.List<ProtoNumber> get iPProto => $_getList(0);
 }
 
 

@@ -98,14 +98,15 @@ const FilterRule$json = {
   '2': [
     {'1': 'srcIps', '3': 1, '4': 3, '5': 9, '10': 'srcIps'},
     {'1': 'dsts', '3': 2, '4': 3, '5': 11, '6': '.protos.NetPortRange', '10': 'dsts'},
-    {'1': 'iPProto', '3': 3, '4': 3, '5': 13, '10': 'iPProto'},
+    {'1': 'iPProto', '3': 3, '4': 3, '5': 11, '6': '.protos.ProtoNumber', '10': 'iPProto'},
   ],
 };
 
 /// Descriptor for `FilterRule`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List filterRuleDescriptor = $convert.base64Decode(
     'CgpGaWx0ZXJSdWxlEhYKBnNyY0lwcxgBIAMoCVIGc3JjSXBzEigKBGRzdHMYAiADKAsyFC5wcm'
-    '90b3MuTmV0UG9ydFJhbmdlUgRkc3RzEhgKB2lQUHJvdG8YAyADKA1SB2lQUHJvdG8=');
+    '90b3MuTmV0UG9ydFJhbmdlUgRkc3RzEi0KB2lQUHJvdG8YAyADKAsyEy5wcm90b3MuUHJvdG9O'
+    'dW1iZXJSB2lQUHJvdG8=');
 
 @$core.Deprecated('Use networkMapResponseDescriptor instead')
 const NetworkMapResponse$json = {
@@ -130,4 +131,35 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'NSZW1vdmVkGAUgAygEUgxwZWVyc1JlbW92ZWQSNgoMcGFja2V0RmlsdGVyGAYgAygLMhIucHJv'
     'dG9zLkZpbHRlclJ1bGVSDHBhY2tldEZpbHRlchIoCg9hZHZlcnRpc2VkUm91dGUYByABKAlSD2'
     'FkdmVydGlzZWRSb3V0ZRIWCgZKYWlsZWQYCCABKAhSBkphaWxlZA==');
+
+@$core.Deprecated('Use protoNumberDescriptor instead')
+const ProtoNumber$json = {
+  '1': 'ProtoNumber',
+  '2': [
+    {'1': 'Unknown', '3': 1, '4': 1, '5': 13, '10': 'Unknown'},
+    {'1': 'ICMPv4', '3': 2, '4': 1, '5': 13, '10': 'ICMPv4'},
+    {'1': 'ICMPv6', '3': 3, '4': 1, '5': 13, '10': 'ICMPv6'},
+    {'1': 'TCP', '3': 4, '4': 1, '5': 13, '10': 'TCP'},
+    {'1': 'UDP', '3': 5, '4': 1, '5': 13, '10': 'UDP'},
+  ],
+};
+
+/// Descriptor for `ProtoNumber`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List protoNumberDescriptor = $convert.base64Decode(
+    'CgtQcm90b051bWJlchIYCgdVbmtub3duGAEgASgNUgdVbmtub3duEhYKBklDTVB2NBgCIAEoDV'
+    'IGSUNNUHY0EhYKBklDTVB2NhgDIAEoDVIGSUNNUHY2EhAKA1RDUBgEIAEoDVIDVENQEhAKA1VE'
+    'UBgFIAEoDVIDVURQ');
+
+@$core.Deprecated('Use ipProtoDescriptor instead')
+const IpProto$json = {
+  '1': 'IpProto',
+  '2': [
+    {'1': 'iPProto', '3': 3, '4': 3, '5': 11, '6': '.protos.ProtoNumber', '10': 'iPProto'},
+  ],
+};
+
+/// Descriptor for `IpProto`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List ipProtoDescriptor = $convert.base64Decode(
+    'CgdJcFByb3RvEi0KB2lQUHJvdG8YAyADKAsyEy5wcm90b3MuUHJvdG9OdW1iZXJSB2lQUHJvdG'
+    '8=');
 
