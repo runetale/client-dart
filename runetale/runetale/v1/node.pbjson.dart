@@ -98,15 +98,14 @@ const FilterRule$json = {
   '2': [
     {'1': 'srcIps', '3': 1, '4': 3, '5': 9, '10': 'srcIps'},
     {'1': 'dsts', '3': 2, '4': 3, '5': 11, '6': '.protos.NetPortRange', '10': 'dsts'},
-    {'1': 'iPProto', '3': 3, '4': 1, '5': 11, '6': '.protos.IpProto', '10': 'iPProto'},
+    {'1': 'iPProto', '3': 3, '4': 3, '5': 5, '10': 'iPProto'},
   ],
 };
 
 /// Descriptor for `FilterRule`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List filterRuleDescriptor = $convert.base64Decode(
     'CgpGaWx0ZXJSdWxlEhYKBnNyY0lwcxgBIAMoCVIGc3JjSXBzEigKBGRzdHMYAiADKAsyFC5wcm'
-    '90b3MuTmV0UG9ydFJhbmdlUgRkc3RzEikKB2lQUHJvdG8YAyABKAsyDy5wcm90b3MuSXBQcm90'
-    'b1IHaVBQcm90bw==');
+    '90b3MuTmV0UG9ydFJhbmdlUgRkc3RzEhgKB2lQUHJvdG8YAyADKAVSB2lQUHJvdG8=');
 
 @$core.Deprecated('Use networkMapResponseDescriptor instead')
 const NetworkMapResponse$json = {
@@ -131,16 +130,4 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'NSZW1vdmVkGAUgAygEUgxwZWVyc1JlbW92ZWQSNgoMcGFja2V0RmlsdGVyGAYgAygLMhIucHJv'
     'dG9zLkZpbHRlclJ1bGVSDHBhY2tldEZpbHRlchIoCg9hZHZlcnRpc2VkUm91dGUYByABKAlSD2'
     'FkdmVydGlzZWRSb3V0ZRIWCgZKYWlsZWQYCCABKAhSBkphaWxlZA==');
-
-@$core.Deprecated('Use ipProtoDescriptor instead')
-const IpProto$json = {
-  '1': 'IpProto',
-  '2': [
-    {'1': 'iana', '3': 1, '4': 3, '5': 5, '10': 'iana'},
-  ],
-};
-
-/// Descriptor for `IpProto`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List ipProtoDescriptor = $convert.base64Decode(
-    'CgdJcFByb3RvEhIKBGlhbmEYASADKAVSBGlhbmE=');
 

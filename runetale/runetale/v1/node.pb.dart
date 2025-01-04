@@ -444,7 +444,7 @@ class FilterRule extends $pb.GeneratedMessage {
   factory FilterRule({
     $core.Iterable<$core.String>? srcIps,
     $core.Iterable<NetPortRange>? dsts,
-    IpProto? iPProto,
+    $core.Iterable<$core.int>? iPProto,
   }) {
     final $result = create();
     if (srcIps != null) {
@@ -454,7 +454,7 @@ class FilterRule extends $pb.GeneratedMessage {
       $result.dsts.addAll(dsts);
     }
     if (iPProto != null) {
-      $result.iPProto = iPProto;
+      $result.iPProto.addAll(iPProto);
     }
     return $result;
   }
@@ -465,7 +465,7 @@ class FilterRule extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FilterRule', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'srcIps', protoName: 'srcIps')
     ..pc<NetPortRange>(2, _omitFieldNames ? '' : 'dsts', $pb.PbFieldType.PM, subBuilder: NetPortRange.create)
-    ..aOM<IpProto>(3, _omitFieldNames ? '' : 'iPProto', protoName: 'iPProto', subBuilder: IpProto.create)
+    ..p<$core.int>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.K3, protoName: 'iPProto')
     ..hasRequiredFields = false
   ;
 
@@ -499,18 +499,15 @@ class FilterRule extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.List<NetPortRange> get dsts => $_getList(1);
 
-  /// 使用するプロトコル
   /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+  /// protocol numbers
+  /// Unknown = 0x00
+  /// ICMPv4  = 0x01
+  /// ICMPv6  = 0x3a
+  /// TCP     = 0x06
+  /// UDP     = 0x11
   @$pb.TagNumber(3)
-  IpProto get iPProto => $_getN(2);
-  @$pb.TagNumber(3)
-  set iPProto(IpProto v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasIPProto() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearIPProto() => clearField(3);
-  @$pb.TagNumber(3)
-  IpProto ensureIPProto() => $_ensure(2);
+  $core.List<$core.int> get iPProto => $_getList(2);
 }
 
 class NetworkMapResponse extends $pb.GeneratedMessage {
@@ -649,57 +646,6 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   $core.bool hasJailed() => $_has(7);
   @$pb.TagNumber(8)
   void clearJailed() => clearField(8);
-}
-
-/// protocol numbers
-class IpProto extends $pb.GeneratedMessage {
-  factory IpProto({
-    $core.Iterable<$core.int>? iana,
-  }) {
-    final $result = create();
-    if (iana != null) {
-      $result.iana.addAll(iana);
-    }
-    return $result;
-  }
-  IpProto._() : super();
-  factory IpProto.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory IpProto.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'IpProto', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..p<$core.int>(1, _omitFieldNames ? '' : 'iana', $pb.PbFieldType.K3)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  IpProto clone() => IpProto()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  IpProto copyWith(void Function(IpProto) updates) => super.copyWith((message) => updates(message as IpProto)) as IpProto;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static IpProto create() => IpProto._();
-  IpProto createEmptyInstance() => create();
-  static $pb.PbList<IpProto> createRepeated() => $pb.PbList<IpProto>();
-  @$core.pragma('dart2js:noInline')
-  static IpProto getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<IpProto>(create);
-  static IpProto? _defaultInstance;
-
-  /// protocol numbers
-  /// Unknown = 0x00
-  /// ICMPv4  = 0x01
-  /// ICMPv6  = 0x3a
-  /// TCP     = 0x06
-  /// UDP     = 0x11
-  @$pb.TagNumber(1)
-  $core.List<$core.int> get iana => $_getList(0);
 }
 
 
