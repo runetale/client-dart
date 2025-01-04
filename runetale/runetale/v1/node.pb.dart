@@ -465,7 +465,7 @@ class FilterRule extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FilterRule', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'srcIps', protoName: 'srcIps')
     ..pc<NetPortRange>(2, _omitFieldNames ? '' : 'dsts', $pb.PbFieldType.PM, subBuilder: NetPortRange.create)
-    ..p<$core.int>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.K3, protoName: 'iPProto')
+    ..p<$core.int>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.KU3, protoName: 'iPProto')
     ..hasRequiredFields = false
   ;
 

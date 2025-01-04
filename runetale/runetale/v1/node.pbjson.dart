@@ -98,14 +98,14 @@ const FilterRule$json = {
   '2': [
     {'1': 'srcIps', '3': 1, '4': 3, '5': 9, '10': 'srcIps'},
     {'1': 'dsts', '3': 2, '4': 3, '5': 11, '6': '.protos.NetPortRange', '10': 'dsts'},
-    {'1': 'iPProto', '3': 3, '4': 3, '5': 5, '10': 'iPProto'},
+    {'1': 'iPProto', '3': 3, '4': 3, '5': 13, '10': 'iPProto'},
   ],
 };
 
 /// Descriptor for `FilterRule`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List filterRuleDescriptor = $convert.base64Decode(
     'CgpGaWx0ZXJSdWxlEhYKBnNyY0lwcxgBIAMoCVIGc3JjSXBzEigKBGRzdHMYAiADKAsyFC5wcm'
-    '90b3MuTmV0UG9ydFJhbmdlUgRkc3RzEhgKB2lQUHJvdG8YAyADKAVSB2lQUHJvdG8=');
+    '90b3MuTmV0UG9ydFJhbmdlUgRkc3RzEhgKB2lQUHJvdG8YAyADKA1SB2lQUHJvdG8=');
 
 @$core.Deprecated('Use networkMapResponseDescriptor instead')
 const NetworkMapResponse$json = {
