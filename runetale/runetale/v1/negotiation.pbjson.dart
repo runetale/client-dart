@@ -75,16 +75,17 @@ const HandshakeRequest$json = {
   '2': [
     {'1': 'dstNodeKey', '3': 1, '4': 1, '5': 9, '10': 'dstNodeKey'},
     {'1': 'srcNodeKey', '3': 2, '4': 1, '5': 9, '10': 'srcNodeKey'},
-    {'1': 'uFlag', '3': 3, '4': 1, '5': 9, '10': 'uFlag'},
-    {'1': 'pwd', '3': 4, '4': 1, '5': 9, '10': 'pwd'},
+    {'1': 'wgPubKey', '3': 3, '4': 1, '5': 9, '10': 'wgPubKey'},
+    {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
+    {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
   ],
 };
 
 /// Descriptor for `HandshakeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List handshakeRequestDescriptor = $convert.base64Decode(
     'ChBIYW5kc2hha2VSZXF1ZXN0Eh4KCmRzdE5vZGVLZXkYASABKAlSCmRzdE5vZGVLZXkSHgoKc3'
-    'JjTm9kZUtleRgCIAEoCVIKc3JjTm9kZUtleRIUCgV1RmxhZxgDIAEoCVIFdUZsYWcSEAoDcHdk'
-    'GAQgASgJUgNwd2Q=');
+    'JjTm9kZUtleRgCIAEoCVIKc3JjTm9kZUtleRIaCgh3Z1B1YktleRgDIAEoCVIId2dQdWJLZXkS'
+    'FAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCVIDcHdk');
 
 @$core.Deprecated('Use candidateRequestDescriptor instead')
 const CandidateRequest$json = {

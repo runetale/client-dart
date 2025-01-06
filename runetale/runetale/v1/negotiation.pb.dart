@@ -261,6 +261,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   factory HandshakeRequest({
     $core.String? dstNodeKey,
     $core.String? srcNodeKey,
+    $core.String? wgPubKey,
     $core.String? uFlag,
     $core.String? pwd,
   }) {
@@ -270,6 +271,9 @@ class HandshakeRequest extends $pb.GeneratedMessage {
     }
     if (srcNodeKey != null) {
       $result.srcNodeKey = srcNodeKey;
+    }
+    if (wgPubKey != null) {
+      $result.wgPubKey = wgPubKey;
     }
     if (uFlag != null) {
       $result.uFlag = uFlag;
@@ -286,8 +290,9 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HandshakeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
-    ..aOS(3, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
-    ..aOS(4, _omitFieldNames ? '' : 'pwd')
+    ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
+    ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
+    ..aOS(5, _omitFieldNames ? '' : 'pwd')
     ..hasRequiredFields = false
   ;
 
@@ -331,22 +336,31 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   void clearSrcNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get uFlag => $_getSZ(2);
+  $core.String get wgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set uFlag($core.String v) { $_setString(2, v); }
+  set wgPubKey($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUFlag() => $_has(2);
+  $core.bool hasWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUFlag() => clearField(3);
+  void clearWgPubKey() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get pwd => $_getSZ(3);
+  $core.String get uFlag => $_getSZ(3);
   @$pb.TagNumber(4)
-  set pwd($core.String v) { $_setString(3, v); }
+  set uFlag($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPwd() => $_has(3);
+  $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPwd() => clearField(4);
+  void clearUFlag() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get pwd => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set pwd($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPwd() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPwd() => clearField(5);
 }
 
 class CandidateRequest extends $pb.GeneratedMessage {
