@@ -93,13 +93,14 @@ const CandidateRequest$json = {
   '2': [
     {'1': 'dstNodeKey', '3': 1, '4': 1, '5': 9, '10': 'dstNodeKey'},
     {'1': 'srcNodeKey', '3': 2, '4': 1, '5': 9, '10': 'srcNodeKey'},
-    {'1': 'candidate', '3': 3, '4': 1, '5': 9, '10': 'candidate'},
+    {'1': 'wgPubKey', '3': 3, '4': 1, '5': 9, '10': 'wgPubKey'},
+    {'1': 'candidate', '3': 4, '4': 1, '5': 9, '10': 'candidate'},
   ],
 };
 
 /// Descriptor for `CandidateRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List candidateRequestDescriptor = $convert.base64Decode(
     'ChBDYW5kaWRhdGVSZXF1ZXN0Eh4KCmRzdE5vZGVLZXkYASABKAlSCmRzdE5vZGVLZXkSHgoKc3'
-    'JjTm9kZUtleRgCIAEoCVIKc3JjTm9kZUtleRIcCgljYW5kaWRhdGUYAyABKAlSCWNhbmRpZGF0'
-    'ZQ==');
+    'JjTm9kZUtleRgCIAEoCVIKc3JjTm9kZUtleRIaCgh3Z1B1YktleRgDIAEoCVIId2dQdWJLZXkS'
+    'HAoJY2FuZGlkYXRlGAQgASgJUgljYW5kaWRhdGU=');
 

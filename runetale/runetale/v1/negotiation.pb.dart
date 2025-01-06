@@ -367,6 +367,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   factory CandidateRequest({
     $core.String? dstNodeKey,
     $core.String? srcNodeKey,
+    $core.String? wgPubKey,
     $core.String? candidate,
   }) {
     final $result = create();
@@ -375,6 +376,9 @@ class CandidateRequest extends $pb.GeneratedMessage {
     }
     if (srcNodeKey != null) {
       $result.srcNodeKey = srcNodeKey;
+    }
+    if (wgPubKey != null) {
+      $result.wgPubKey = wgPubKey;
     }
     if (candidate != null) {
       $result.candidate = candidate;
@@ -388,7 +392,8 @@ class CandidateRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CandidateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
-    ..aOS(3, _omitFieldNames ? '' : 'candidate')
+    ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
+    ..aOS(4, _omitFieldNames ? '' : 'candidate')
     ..hasRequiredFields = false
   ;
 
@@ -432,13 +437,22 @@ class CandidateRequest extends $pb.GeneratedMessage {
   void clearSrcNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get candidate => $_getSZ(2);
+  $core.String get wgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set candidate($core.String v) { $_setString(2, v); }
+  set wgPubKey($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCandidate() => $_has(2);
+  $core.bool hasWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCandidate() => clearField(3);
+  void clearWgPubKey() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get candidate => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set candidate($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasCandidate() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCandidate() => clearField(4);
 }
 
 
