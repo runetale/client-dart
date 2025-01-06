@@ -35,18 +35,19 @@ const NegotiationRequest$json = {
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
     {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
-    {'1': 'uFlag', '3': 3, '4': 1, '5': 9, '10': 'uFlag'},
-    {'1': 'pwd', '3': 4, '4': 1, '5': 9, '10': 'pwd'},
-    {'1': 'candidate', '3': 5, '4': 1, '5': 9, '10': 'candidate'},
+    {'1': 'dstWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'dstWgPubKey'},
+    {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
+    {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
+    {'1': 'candidate', '3': 6, '4': 1, '5': 9, '10': 'candidate'},
   ],
 };
 
 /// Descriptor for `NegotiationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List negotiationRequestDescriptor = $convert.base64Decode(
     'ChJOZWdvdGlhdGlvblJlcXVlc3QSKwoEdHlwZRgBIAEoDjIXLnByb3Rvcy5OZWdvdGlhdGlvbl'
-    'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIUCgV1RmxhZxgDIAEo'
-    'CVIFdUZsYWcSEAoDcHdkGAQgASgJUgNwd2QSHAoJY2FuZGlkYXRlGAUgASgJUgljYW5kaWRhdG'
-    'U=');
+    'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIgCgtkc3RXZ1B1Yktl'
+    'eRgDIAEoCVILZHN0V2dQdWJLZXkSFAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCV'
+    'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRl');
 
 @$core.Deprecated('Use negotiationResponseDescriptor instead')
 const NegotiationResponse$json = {
@@ -54,18 +55,19 @@ const NegotiationResponse$json = {
   '2': [
     {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
     {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
-    {'1': 'uFlag', '3': 3, '4': 1, '5': 9, '10': 'uFlag'},
-    {'1': 'pwd', '3': 4, '4': 1, '5': 9, '10': 'pwd'},
-    {'1': 'candidate', '3': 5, '4': 1, '5': 9, '10': 'candidate'},
+    {'1': 'dstWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'dstWgPubKey'},
+    {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
+    {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
+    {'1': 'candidate', '3': 6, '4': 1, '5': 9, '10': 'candidate'},
   ],
 };
 
 /// Descriptor for `NegotiationResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List negotiationResponseDescriptor = $convert.base64Decode(
     'ChNOZWdvdGlhdGlvblJlc3BvbnNlEisKBHR5cGUYASABKA4yFy5wcm90b3MuTmVnb3RpYXRpb2'
-    '5UeXBlUgR0eXBlEh4KCmRzdE5vZGVLZXkYAiABKAlSCmRzdE5vZGVLZXkSFAoFdUZsYWcYAyAB'
-    'KAlSBXVGbGFnEhAKA3B3ZBgEIAEoCVIDcHdkEhwKCWNhbmRpZGF0ZRgFIAEoCVIJY2FuZGlkYX'
-    'Rl');
+    '5UeXBlUgR0eXBlEh4KCmRzdE5vZGVLZXkYAiABKAlSCmRzdE5vZGVLZXkSIAoLZHN0V2dQdWJL'
+    'ZXkYAyABKAlSC2RzdFdnUHViS2V5EhQKBXVGbGFnGAQgASgJUgV1RmxhZxIQCgNwd2QYBSABKA'
+    'lSA3B3ZBIcCgljYW5kaWRhdGUYBiABKAlSCWNhbmRpZGF0ZQ==');
 
 @$core.Deprecated('Use handshakeRequestDescriptor instead')
 const HandshakeRequest$json = {

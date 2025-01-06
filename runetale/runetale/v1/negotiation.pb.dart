@@ -21,6 +21,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   factory NegotiationRequest({
     NegotiationType? type,
     $core.String? dstNodeKey,
+    $core.String? dstWgPubKey,
     $core.String? uFlag,
     $core.String? pwd,
     $core.String? candidate,
@@ -31,6 +32,9 @@ class NegotiationRequest extends $pb.GeneratedMessage {
     }
     if (dstNodeKey != null) {
       $result.dstNodeKey = dstNodeKey;
+    }
+    if (dstWgPubKey != null) {
+      $result.dstWgPubKey = dstWgPubKey;
     }
     if (uFlag != null) {
       $result.uFlag = uFlag;
@@ -50,9 +54,10 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
     ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
-    ..aOS(3, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
-    ..aOS(4, _omitFieldNames ? '' : 'pwd')
-    ..aOS(5, _omitFieldNames ? '' : 'candidate')
+    ..aOS(3, _omitFieldNames ? '' : 'dstWgPubKey', protoName: 'dstWgPubKey')
+    ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
+    ..aOS(5, _omitFieldNames ? '' : 'pwd')
+    ..aOS(6, _omitFieldNames ? '' : 'candidate')
     ..hasRequiredFields = false
   ;
 
@@ -96,37 +101,47 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   void clearDstNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get uFlag => $_getSZ(2);
+  $core.String get dstWgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set uFlag($core.String v) { $_setString(2, v); }
+  set dstWgPubKey($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUFlag() => $_has(2);
+  $core.bool hasDstWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUFlag() => clearField(3);
+  void clearDstWgPubKey() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get pwd => $_getSZ(3);
+  $core.String get uFlag => $_getSZ(3);
   @$pb.TagNumber(4)
-  set pwd($core.String v) { $_setString(3, v); }
+  set uFlag($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPwd() => $_has(3);
+  $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPwd() => clearField(4);
+  void clearUFlag() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get candidate => $_getSZ(4);
+  $core.String get pwd => $_getSZ(4);
   @$pb.TagNumber(5)
-  set candidate($core.String v) { $_setString(4, v); }
+  set pwd($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasCandidate() => $_has(4);
+  $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCandidate() => clearField(5);
+  void clearPwd() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get candidate => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set candidate($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCandidate() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCandidate() => clearField(6);
 }
 
 class NegotiationResponse extends $pb.GeneratedMessage {
   factory NegotiationResponse({
     NegotiationType? type,
     $core.String? dstNodeKey,
+    $core.String? dstWgPubKey,
     $core.String? uFlag,
     $core.String? pwd,
     $core.String? candidate,
@@ -137,6 +152,9 @@ class NegotiationResponse extends $pb.GeneratedMessage {
     }
     if (dstNodeKey != null) {
       $result.dstNodeKey = dstNodeKey;
+    }
+    if (dstWgPubKey != null) {
+      $result.dstWgPubKey = dstWgPubKey;
     }
     if (uFlag != null) {
       $result.uFlag = uFlag;
@@ -156,9 +174,10 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
     ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
-    ..aOS(3, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
-    ..aOS(4, _omitFieldNames ? '' : 'pwd')
-    ..aOS(5, _omitFieldNames ? '' : 'candidate')
+    ..aOS(3, _omitFieldNames ? '' : 'dstWgPubKey', protoName: 'dstWgPubKey')
+    ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
+    ..aOS(5, _omitFieldNames ? '' : 'pwd')
+    ..aOS(6, _omitFieldNames ? '' : 'candidate')
     ..hasRequiredFields = false
   ;
 
@@ -202,31 +221,40 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   void clearDstNodeKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get uFlag => $_getSZ(2);
+  $core.String get dstWgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set uFlag($core.String v) { $_setString(2, v); }
+  set dstWgPubKey($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUFlag() => $_has(2);
+  $core.bool hasDstWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUFlag() => clearField(3);
+  void clearDstWgPubKey() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get pwd => $_getSZ(3);
+  $core.String get uFlag => $_getSZ(3);
   @$pb.TagNumber(4)
-  set pwd($core.String v) { $_setString(3, v); }
+  set uFlag($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPwd() => $_has(3);
+  $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPwd() => clearField(4);
+  void clearUFlag() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get candidate => $_getSZ(4);
+  $core.String get pwd => $_getSZ(4);
   @$pb.TagNumber(5)
-  set candidate($core.String v) { $_setString(4, v); }
+  set pwd($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasCandidate() => $_has(4);
+  $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCandidate() => clearField(5);
+  void clearPwd() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get candidate => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set candidate($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasCandidate() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCandidate() => clearField(6);
 }
 
 class HandshakeRequest extends $pb.GeneratedMessage {
