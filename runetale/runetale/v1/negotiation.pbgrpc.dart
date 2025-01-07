@@ -38,10 +38,6 @@ class NegotiationServiceClient extends $grpc.Client {
       '/protos.NegotiationService/Connect',
       ($5.NegotiationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $5.NegotiationRequest.fromBuffer(value));
-  static final _$join = $grpc.ClientMethod<$5.JoinRequest, $0.Empty>(
-      '/protos.NegotiationService/Join',
-      ($5.JoinRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
 
   NegotiationServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -63,10 +59,6 @@ class NegotiationServiceClient extends $grpc.Client {
 
   $grpc.ResponseStream<$5.NegotiationRequest> connect($async.Stream<$5.NegotiationRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$connect, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.Empty> join($5.JoinRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$join, request, options: options);
   }
 }
 
@@ -103,13 +95,6 @@ abstract class NegotiationServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $5.NegotiationRequest.fromBuffer(value),
         ($5.NegotiationRequest value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$5.JoinRequest, $0.Empty>(
-        'Join',
-        join_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $5.JoinRequest.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.Empty> offer_Pre($grpc.ServiceCall call, $async.Future<$5.HandshakeRequest> request) async {
@@ -124,13 +109,8 @@ abstract class NegotiationServiceBase extends $grpc.Service {
     return candidate(call, await request);
   }
 
-  $async.Future<$0.Empty> join_Pre($grpc.ServiceCall call, $async.Future<$5.JoinRequest> request) async {
-    return join(call, await request);
-  }
-
   $async.Future<$0.Empty> offer($grpc.ServiceCall call, $5.HandshakeRequest request);
   $async.Future<$0.Empty> answer($grpc.ServiceCall call, $5.HandshakeRequest request);
   $async.Future<$0.Empty> candidate($grpc.ServiceCall call, $5.CandidateRequest request);
   $async.Stream<$5.NegotiationRequest> connect($grpc.ServiceCall call, $async.Stream<$5.NegotiationRequest> request);
-  $async.Future<$0.Empty> join($grpc.ServiceCall call, $5.JoinRequest request);
 }
