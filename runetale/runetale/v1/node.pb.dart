@@ -520,6 +520,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.Iterable<FilterRule>? packetFilter,
     $core.String? advertisedRoute,
     $core.bool? jailed,
+    $core.Iterable<Node>? iceTable,
   }) {
     final $result = create();
     if (seq != null) {
@@ -546,6 +547,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (jailed != null) {
       $result.jailed = jailed;
     }
+    if (iceTable != null) {
+      $result.iceTable.addAll(iceTable);
+    }
     return $result;
   }
   NetworkMapResponse._() : super();
@@ -561,6 +565,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..pc<FilterRule>(6, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
     ..aOS(7, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
     ..aOB(8, _omitFieldNames ? '' : 'Jailed', protoName: 'Jailed')
+    ..pc<Node>(9, _omitFieldNames ? '' : 'iceTable', $pb.PbFieldType.PM, protoName: 'iceTable', subBuilder: Node.create)
     ..hasRequiredFields = false
   ;
 
@@ -646,6 +651,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   $core.bool hasJailed() => $_has(7);
   @$pb.TagNumber(8)
   void clearJailed() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.List<Node> get iceTable => $_getList(8);
 }
 
 
