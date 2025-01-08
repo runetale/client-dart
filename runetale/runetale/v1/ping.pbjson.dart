@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/health.proto
+//  source: runetale/runetale/v1/ping.proto
 //
 // @dart = 2.12
 
@@ -13,15 +13,15 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use healthResponseDescriptor instead')
-const HealthResponse$json = {
-  '1': 'HealthResponse',
+@$core.Deprecated('Use pingResponseDescriptor instead')
+const PingResponse$json = {
+  '1': 'PingResponse',
   '2': [
     {'1': 'message', '3': 1, '4': 1, '5': 9, '10': 'message'},
   ],
 };
 
-/// Descriptor for `HealthResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List healthResponseDescriptor = $convert.base64Decode(
-    'Cg5IZWFsdGhSZXNwb25zZRIYCgdtZXNzYWdlGAEgASgJUgdtZXNzYWdl');
+/// Descriptor for `PingResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pingResponseDescriptor = $convert.base64Decode(
+    'CgxQaW5nUmVzcG9uc2USGAoHbWVzc2FnZRgBIAEoCVIHbWVzc2FnZQ==');
 

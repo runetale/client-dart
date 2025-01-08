@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: runetale/runetale/v1/health.proto
+//  source: runetale/runetale/v1/ping.proto
 //
 // @dart = 2.12
 
