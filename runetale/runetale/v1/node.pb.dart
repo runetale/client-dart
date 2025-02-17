@@ -360,7 +360,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   factory NetPortRange({
     $core.String? ip,
     NetPortRange_portRange? ports,
-    $core.Iterable<$core.String>? advertisedRoute,
+    $core.String? advertisedRoutes,
   }) {
     final $result = create();
     if (ip != null) {
@@ -369,8 +369,8 @@ class NetPortRange extends $pb.GeneratedMessage {
     if (ports != null) {
       $result.ports = ports;
     }
-    if (advertisedRoute != null) {
-      $result.advertisedRoute.addAll(advertisedRoute);
+    if (advertisedRoutes != null) {
+      $result.advertisedRoutes = advertisedRoutes;
     }
     return $result;
   }
@@ -381,7 +381,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetPortRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOM<NetPortRange_portRange>(2, _omitFieldNames ? '' : 'ports', subBuilder: NetPortRange_portRange.create)
-    ..pPS(3, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
+    ..aOS(3, _omitFieldNames ? '' : 'advertisedRoutes', protoName: 'advertisedRoutes')
     ..hasRequiredFields = false
   ;
 
@@ -436,8 +436,17 @@ class NetPortRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   NetPortRange_portRange ensurePorts() => $_ensure(1);
 
+  /// advertiseすることが許可されたIP範囲
+  /// 1.2.3.4/16のIP+Maskの形
+  /// "10.0.0.0/8,192.172.0.0/24"のようにcommaで区切る
   @$pb.TagNumber(3)
-  $core.List<$core.String> get advertisedRoute => $_getList(2);
+  $core.String get advertisedRoutes => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set advertisedRoutes($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAdvertisedRoutes() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAdvertisedRoutes() => clearField(3);
 }
 
 class FilterRule extends $pb.GeneratedMessage {
