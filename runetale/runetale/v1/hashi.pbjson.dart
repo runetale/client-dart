@@ -13,6 +13,18 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use nodePublicDescriptor instead')
+const NodePublic$json = {
+  '1': 'NodePublic',
+  '2': [
+    {'1': 'k', '3': 1, '4': 1, '5': 12, '8': {}, '10': 'k'},
+  ],
+};
+
+/// Descriptor for `NodePublic`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List nodePublicDescriptor = $convert.base64Decode(
+    'CgpOb2RlUHVibGljEhUKAWsYASABKAxCB/pCBHoCaCBSAWs=');
+
 @$core.Deprecated('Use endpointDescriptor instead')
 const Endpoint$json = {
   '1': 'Endpoint',
@@ -68,7 +80,7 @@ const PeerStatus$json = {
   '1': 'PeerStatus',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
-    {'1': 'public_key', '3': 2, '4': 1, '5': 12, '10': 'publicKey'},
+    {'1': 'public_key', '3': 2, '4': 1, '5': 11, '6': '.protos.NodePublic', '10': 'publicKey'},
     {'1': 'os', '3': 3, '4': 1, '5': 9, '10': 'os'},
     {'1': 'host_name', '3': 4, '4': 1, '5': 9, '10': 'hostName'},
     {'1': 'runetale_ips', '3': 5, '4': 3, '5': 9, '10': 'runetaleIps'},
@@ -90,15 +102,16 @@ const PeerStatus$json = {
 
 /// Descriptor for `PeerStatus`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List peerStatusDescriptor = $convert.base64Decode(
-    'CgpQZWVyU3RhdHVzEg4KAmlkGAEgASgDUgJpZBIdCgpwdWJsaWNfa2V5GAIgASgMUglwdWJsaW'
-    'NLZXkSDgoCb3MYAyABKAlSAm9zEhsKCWhvc3RfbmFtZRgEIAEoCVIIaG9zdE5hbWUSIQoMcnVu'
-    'ZXRhbGVfaXBzGAUgAygJUgtydW5ldGFsZUlwcxIgCgxwZWVyX2FwaV91cmwYBiADKAlSCnBlZX'
-    'JBcGlVcmwSHwoLYWxsb3dlZF9pcHMYByADKAlSCmFsbG93ZWRJcHMSGQoIcnhfYnl0ZXMYCCAB'
-    'KANSB3J4Qnl0ZXMSGQoIdHhfYnl0ZXMYCSABKANSB3R4Qnl0ZXMSQQoObGFzdF9oYW5kc2hha2'
-    'UYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg1sYXN0SGFuZHNoYWtlEjkKCmxh'
-    'c3Rfd3JpdGUYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglsYXN0V3JpdGUSFA'
-    'oFYWRkcnMYDCADKAlSBWFkZHJzEh4KCGN1cl9hZGRyGA0gASgJSABSB2N1ckFkZHKIAQESHgoI'
-    'aWNlX2FkZHIYDiABKAlIAVIHaWNlQWRkcogBAUILCglfY3VyX2FkZHJCCwoJX2ljZV9hZGRy');
+    'CgpQZWVyU3RhdHVzEg4KAmlkGAEgASgDUgJpZBIxCgpwdWJsaWNfa2V5GAIgASgLMhIucHJvdG'
+    '9zLk5vZGVQdWJsaWNSCXB1YmxpY0tleRIOCgJvcxgDIAEoCVICb3MSGwoJaG9zdF9uYW1lGAQg'
+    'ASgJUghob3N0TmFtZRIhCgxydW5ldGFsZV9pcHMYBSADKAlSC3J1bmV0YWxlSXBzEiAKDHBlZX'
+    'JfYXBpX3VybBgGIAMoCVIKcGVlckFwaVVybBIfCgthbGxvd2VkX2lwcxgHIAMoCVIKYWxsb3dl'
+    'ZElwcxIZCghyeF9ieXRlcxgIIAEoA1IHcnhCeXRlcxIZCgh0eF9ieXRlcxgJIAEoA1IHdHhCeX'
+    'RlcxJBCg5sYXN0X2hhbmRzaGFrZRgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS'
+    'DWxhc3RIYW5kc2hha2USOQoKbGFzdF93cml0ZRgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW'
+    '1lc3RhbXBSCWxhc3RXcml0ZRIUCgVhZGRycxgMIAMoCVIFYWRkcnMSHgoIY3VyX2FkZHIYDSAB'
+    'KAlIAFIHY3VyQWRkcogBARIeCghpY2VfYWRkchgOIAEoCUgBUgdpY2VBZGRyiAEBQgsKCV9jdX'
+    'JfYWRkckILCglfaWNlX2FkZHI=');
 
 @$core.Deprecated('Use userspacePeerEngineStatusDescriptor instead')
 const UserspacePeerEngineStatus$json = {
@@ -121,7 +134,7 @@ final $typed_data.Uint8List userspacePeerEngineStatusDescriptor = $convert.base6
 const CompactPeerStatus$json = {
   '1': 'CompactPeerStatus',
   '2': [
-    {'1': 'node_key', '3': 1, '4': 1, '5': 12, '10': 'nodeKey'},
+    {'1': 'node_key', '3': 1, '4': 1, '5': 11, '6': '.protos.NodePublic', '10': 'nodeKey'},
     {'1': 'tx_bytes', '3': 2, '4': 1, '5': 3, '10': 'txBytes'},
     {'1': 'rx_bytes', '3': 3, '4': 1, '5': 3, '10': 'rxBytes'},
     {'1': 'last_handshake', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastHandshake'},
@@ -130,8 +143,8 @@ const CompactPeerStatus$json = {
 
 /// Descriptor for `CompactPeerStatus`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List compactPeerStatusDescriptor = $convert.base64Decode(
-    'ChFDb21wYWN0UGVlclN0YXR1cxIZCghub2RlX2tleRgBIAEoDFIHbm9kZUtleRIZCgh0eF9ieX'
-    'RlcxgCIAEoA1IHdHhCeXRlcxIZCghyeF9ieXRlcxgDIAEoA1IHcnhCeXRlcxJBCg5sYXN0X2hh'
-    'bmRzaGFrZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDWxhc3RIYW5kc2hha2'
-    'U=');
+    'ChFDb21wYWN0UGVlclN0YXR1cxItCghub2RlX2tleRgBIAEoCzISLnByb3Rvcy5Ob2RlUHVibG'
+    'ljUgdub2RlS2V5EhkKCHR4X2J5dGVzGAIgASgDUgd0eEJ5dGVzEhkKCHJ4X2J5dGVzGAMgASgD'
+    'UgdyeEJ5dGVzEkEKDmxhc3RfaGFuZHNoYWtlGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbW'
+    'VzdGFtcFINbGFzdEhhbmRzaGFrZQ==');
 
