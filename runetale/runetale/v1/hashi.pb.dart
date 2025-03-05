@@ -19,7 +19,7 @@ import '../../../google/protobuf/timestamp.pb.dart' as $9;
 class Endpoint extends $pb.GeneratedMessage {
   factory Endpoint({
     $core.String? addr,
-    $fixnum.Int64? type,
+    $core.String? type,
   }) {
     final $result = create();
     if (addr != null) {
@@ -36,7 +36,7 @@ class Endpoint extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Endpoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'addr')
-    ..aInt64(2, _omitFieldNames ? '' : 'type')
+    ..aOS(2, _omitFieldNames ? '' : 'type')
     ..hasRequiredFields = false
   ;
 
@@ -71,9 +71,9 @@ class Endpoint extends $pb.GeneratedMessage {
   void clearAddr() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get type => $_getI64(1);
+  $core.String get type => $_getSZ(1);
   @$pb.TagNumber(2)
-  set type($fixnum.Int64 v) { $_setInt64(1, v); }
+  set type($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasType() => $_has(1);
   @$pb.TagNumber(2)

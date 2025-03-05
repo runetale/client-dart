@@ -18,13 +18,13 @@ const Endpoint$json = {
   '1': 'Endpoint',
   '2': [
     {'1': 'addr', '3': 1, '4': 1, '5': 9, '10': 'addr'},
-    {'1': 'type', '3': 2, '4': 1, '5': 3, '10': 'type'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
   ],
 };
 
 /// Descriptor for `Endpoint`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List endpointDescriptor = $convert.base64Decode(
-    'CghFbmRwb2ludBISCgRhZGRyGAEgASgJUgRhZGRyEhIKBHR5cGUYAiABKANSBHR5cGU=');
+    'CghFbmRwb2ludBISCgRhZGRyGAEgASgJUgRhZGRyEhIKBHR5cGUYAiABKAlSBHR5cGU=');
 
 @$core.Deprecated('Use statusDescriptor instead')
 const Status$json = {
