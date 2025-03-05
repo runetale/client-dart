@@ -26,25 +26,25 @@ const Endpoint$json = {
 final $typed_data.Uint8List endpointDescriptor = $convert.base64Decode(
     'CghFbmRwb2ludBISCgRhZGRyGAEgASgJUgRhZGRyEhIKBHR5cGUYAiABKAlSBHR5cGU=');
 
-@$core.Deprecated('Use statusDescriptor instead')
-const Status$json = {
-  '1': 'Status',
+@$core.Deprecated('Use hashiStatusDescriptor instead')
+const HashiStatus$json = {
+  '1': 'HashiStatus',
   '2': [
-    {'1': 'backend_state', '3': 1, '4': 1, '5': 9, '10': 'backendState'},
-    {'1': 'runetale_ips', '3': 2, '4': 3, '5': 9, '10': 'runetaleIps'},
-    {'1': 'interactive_login_url', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'interactiveLoginUrl', '17': true},
-    {'1': 'self', '3': 4, '4': 1, '5': 11, '6': '.protos.PeerStatus', '9': 1, '10': 'self', '17': true},
-    {'1': 'peer', '3': 5, '4': 3, '5': 11, '6': '.protos.Status.PeerEntry', '10': 'peer'},
+    {'1': 'backend_state', '3': 1, '4': 1, '5': 9, '10': 'BackendState'},
+    {'1': 'runetale_ips', '3': 2, '4': 3, '5': 9, '10': 'RunetaleIPs'},
+    {'1': 'interactive_login_url', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'InteractiveLoginURL', '17': true},
+    {'1': 'self', '3': 4, '4': 1, '5': 11, '6': '.protos.PeerStatus', '9': 1, '10': 'Self', '17': true},
+    {'1': 'peer', '3': 5, '4': 3, '5': 11, '6': '.protos.HashiStatus.PeerEntry', '10': 'Peer'},
   ],
-  '3': [Status_PeerEntry$json],
+  '3': [HashiStatus_PeerEntry$json],
   '8': [
     {'1': '_interactive_login_url'},
     {'1': '_self'},
   ],
 };
 
-@$core.Deprecated('Use statusDescriptor instead')
-const Status_PeerEntry$json = {
+@$core.Deprecated('Use hashiStatusDescriptor instead')
+const HashiStatus_PeerEntry$json = {
   '1': 'PeerEntry',
   '2': [
     {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
@@ -53,15 +53,15 @@ const Status_PeerEntry$json = {
   '7': {'7': true},
 };
 
-/// Descriptor for `Status`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List statusDescriptor = $convert.base64Decode(
-    'CgZTdGF0dXMSIwoNYmFja2VuZF9zdGF0ZRgBIAEoCVIMYmFja2VuZFN0YXRlEiEKDHJ1bmV0YW'
-    'xlX2lwcxgCIAMoCVILcnVuZXRhbGVJcHMSNwoVaW50ZXJhY3RpdmVfbG9naW5fdXJsGAMgASgJ'
-    'SABSE2ludGVyYWN0aXZlTG9naW5VcmyIAQESKwoEc2VsZhgEIAEoCzISLnByb3Rvcy5QZWVyU3'
-    'RhdHVzSAFSBHNlbGaIAQESLAoEcGVlchgFIAMoCzIYLnByb3Rvcy5TdGF0dXMuUGVlckVudHJ5'
-    'UgRwZWVyGksKCVBlZXJFbnRyeRIQCgNrZXkYASABKAlSA2tleRIoCgV2YWx1ZRgCIAEoCzISLn'
-    'Byb3Rvcy5QZWVyU3RhdHVzUgV2YWx1ZToCOAFCGAoWX2ludGVyYWN0aXZlX2xvZ2luX3VybEIH'
-    'CgVfc2VsZg==');
+/// Descriptor for `HashiStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hashiStatusDescriptor = $convert.base64Decode(
+    'CgtIYXNoaVN0YXR1cxIjCg1iYWNrZW5kX3N0YXRlGAEgASgJUgxCYWNrZW5kU3RhdGUSIQoMcn'
+    'VuZXRhbGVfaXBzGAIgAygJUgtSdW5ldGFsZUlQcxI3ChVpbnRlcmFjdGl2ZV9sb2dpbl91cmwY'
+    'AyABKAlIAFITSW50ZXJhY3RpdmVMb2dpblVSTIgBARIrCgRzZWxmGAQgASgLMhIucHJvdG9zLl'
+    'BlZXJTdGF0dXNIAVIEU2VsZogBARIxCgRwZWVyGAUgAygLMh0ucHJvdG9zLkhhc2hpU3RhdHVz'
+    'LlBlZXJFbnRyeVIEUGVlchpLCglQZWVyRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKAoFdmFsdW'
+    'UYAiABKAsyEi5wcm90b3MuUGVlclN0YXR1c1IFdmFsdWU6AjgBQhgKFl9pbnRlcmFjdGl2ZV9s'
+    'b2dpbl91cmxCBwoFX3NlbGY=');
 
 @$core.Deprecated('Use peerStatusDescriptor instead')
 const PeerStatus$json = {

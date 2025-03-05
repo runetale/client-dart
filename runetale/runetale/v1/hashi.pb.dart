@@ -80,8 +80,8 @@ class Endpoint extends $pb.GeneratedMessage {
   void clearType() => clearField(2);
 }
 
-class Status extends $pb.GeneratedMessage {
-  factory Status({
+class HashiStatus extends $pb.GeneratedMessage {
+  factory HashiStatus({
     $core.String? backendState,
     $core.Iterable<$core.String>? runetaleIps,
     $core.String? interactiveLoginUrl,
@@ -106,16 +106,16 @@ class Status extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  Status._() : super();
-  factory Status.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Status.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  HashiStatus._() : super();
+  factory HashiStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HashiStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Status', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'backendState')
-    ..pPS(2, _omitFieldNames ? '' : 'runetaleIps')
-    ..aOS(3, _omitFieldNames ? '' : 'interactiveLoginUrl')
-    ..aOM<PeerStatus>(4, _omitFieldNames ? '' : 'self', subBuilder: PeerStatus.create)
-    ..m<$core.String, PeerStatus>(5, _omitFieldNames ? '' : 'peer', entryClassName: 'Status.PeerEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: PeerStatus.create, valueDefaultOrMaker: PeerStatus.getDefault, packageName: const $pb.PackageName('protos'))
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HashiStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'BackendState', protoName: 'backend_state')
+    ..pPS(2, _omitFieldNames ? '' : 'RunetaleIPs', protoName: 'runetale_ips')
+    ..aOS(3, _omitFieldNames ? '' : 'InteractiveLoginURL', protoName: 'interactive_login_url')
+    ..aOM<PeerStatus>(4, _omitFieldNames ? '' : 'Self', protoName: 'self', subBuilder: PeerStatus.create)
+    ..m<$core.String, PeerStatus>(5, _omitFieldNames ? '' : 'Peer', protoName: 'peer', entryClassName: 'HashiStatus.PeerEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: PeerStatus.create, valueDefaultOrMaker: PeerStatus.getDefault, packageName: const $pb.PackageName('protos'))
     ..hasRequiredFields = false
   ;
 
@@ -123,22 +123,22 @@ class Status extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Status clone() => Status()..mergeFromMessage(this);
+  HashiStatus clone() => HashiStatus()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Status copyWith(void Function(Status) updates) => super.copyWith((message) => updates(message as Status)) as Status;
+  HashiStatus copyWith(void Function(HashiStatus) updates) => super.copyWith((message) => updates(message as HashiStatus)) as HashiStatus;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static Status create() => Status._();
-  Status createEmptyInstance() => create();
-  static $pb.PbList<Status> createRepeated() => $pb.PbList<Status>();
+  static HashiStatus create() => HashiStatus._();
+  HashiStatus createEmptyInstance() => create();
+  static $pb.PbList<HashiStatus> createRepeated() => $pb.PbList<HashiStatus>();
   @$core.pragma('dart2js:noInline')
-  static Status getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Status>(create);
-  static Status? _defaultInstance;
+  static HashiStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HashiStatus>(create);
+  static HashiStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get backendState => $_getSZ(0);
