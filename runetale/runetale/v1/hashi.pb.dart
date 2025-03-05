@@ -16,56 +16,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $9;
 
-class NodePublic extends $pb.GeneratedMessage {
-  factory NodePublic({
-    $core.List<$core.int>? k,
-  }) {
-    final $result = create();
-    if (k != null) {
-      $result.k = k;
-    }
-    return $result;
-  }
-  NodePublic._() : super();
-  factory NodePublic.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NodePublic.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NodePublic', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'k', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  NodePublic clone() => NodePublic()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  NodePublic copyWith(void Function(NodePublic) updates) => super.copyWith((message) => updates(message as NodePublic)) as NodePublic;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static NodePublic create() => NodePublic._();
-  NodePublic createEmptyInstance() => create();
-  static $pb.PbList<NodePublic> createRepeated() => $pb.PbList<NodePublic>();
-  @$core.pragma('dart2js:noInline')
-  static NodePublic getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NodePublic>(create);
-  static NodePublic? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<$core.int> get k => $_getN(0);
-  @$pb.TagNumber(1)
-  set k($core.List<$core.int> v) { $_setBytes(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasK() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearK() => clearField(1);
-}
-
 class Endpoint extends $pb.GeneratedMessage {
   factory Endpoint({
     $core.String? addr,
@@ -229,7 +179,7 @@ class Status extends $pb.GeneratedMessage {
 class PeerStatus extends $pb.GeneratedMessage {
   factory PeerStatus({
     $fixnum.Int64? id,
-    NodePublic? publicKey,
+    $core.String? publicKey,
     $core.String? os,
     $core.String? hostName,
     $core.Iterable<$core.String>? runetaleIps,
@@ -294,7 +244,7 @@ class PeerStatus extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PeerStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
-    ..aOM<NodePublic>(2, _omitFieldNames ? '' : 'publicKey', subBuilder: NodePublic.create)
+    ..aOS(2, _omitFieldNames ? '' : 'publicKey')
     ..aOS(3, _omitFieldNames ? '' : 'os')
     ..aOS(4, _omitFieldNames ? '' : 'hostName')
     ..pPS(5, _omitFieldNames ? '' : 'runetaleIps')
@@ -341,15 +291,13 @@ class PeerStatus extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  NodePublic get publicKey => $_getN(1);
+  $core.String get publicKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set publicKey(NodePublic v) { setField(2, v); }
+  set publicKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasPublicKey() => $_has(1);
   @$pb.TagNumber(2)
   void clearPublicKey() => clearField(2);
-  @$pb.TagNumber(2)
-  NodePublic ensurePublicKey() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.String get os => $_getSZ(2);
@@ -510,7 +458,7 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
 
 class CompactPeerStatus extends $pb.GeneratedMessage {
   factory CompactPeerStatus({
-    NodePublic? nodeKey,
+    $core.String? nodeKey,
     $fixnum.Int64? txBytes,
     $fixnum.Int64? rxBytes,
     $9.Timestamp? lastHandshake,
@@ -535,7 +483,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   factory CompactPeerStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompactPeerStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOM<NodePublic>(1, _omitFieldNames ? '' : 'nodeKey', subBuilder: NodePublic.create)
+    ..aOS(1, _omitFieldNames ? '' : 'nodeKey')
     ..aInt64(2, _omitFieldNames ? '' : 'txBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'rxBytes')
     ..aOM<$9.Timestamp>(4, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $9.Timestamp.create)
@@ -564,15 +512,13 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   static CompactPeerStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
-  NodePublic get nodeKey => $_getN(0);
+  $core.String get nodeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set nodeKey(NodePublic v) { setField(1, v); }
+  set nodeKey($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasNodeKey() => $_has(0);
   @$pb.TagNumber(1)
   void clearNodeKey() => clearField(1);
-  @$pb.TagNumber(1)
-  NodePublic ensureNodeKey() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get txBytes => $_getI64(1);
