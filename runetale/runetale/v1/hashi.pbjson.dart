@@ -67,20 +67,20 @@ final $typed_data.Uint8List hashiStatusDescriptor = $convert.base64Decode(
 const PeerStatus$json = {
   '1': 'PeerStatus',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
-    {'1': 'public_key', '3': 2, '4': 1, '5': 9, '10': 'publicKey'},
-    {'1': 'os', '3': 3, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'host_name', '3': 4, '4': 1, '5': 9, '10': 'hostName'},
+    {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'ID'},
+    {'1': 'public_key', '3': 2, '4': 1, '5': 9, '10': 'PublicKey'},
+    {'1': 'os', '3': 3, '4': 1, '5': 9, '10': 'OS'},
+    {'1': 'host_name', '3': 4, '4': 1, '5': 9, '10': 'HostName'},
     {'1': 'runetale_ips', '3': 5, '4': 3, '5': 9, '10': 'RunetaleIPs'},
-    {'1': 'peer_api_url', '3': 6, '4': 3, '5': 9, '10': 'peerApiUrl'},
-    {'1': 'allowed_ips', '3': 7, '4': 3, '5': 9, '10': 'allowedIps'},
-    {'1': 'rx_bytes', '3': 8, '4': 1, '5': 3, '10': 'rxBytes'},
-    {'1': 'tx_bytes', '3': 9, '4': 1, '5': 3, '10': 'txBytes'},
-    {'1': 'last_handshake', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastHandshake'},
-    {'1': 'last_write', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastWrite'},
-    {'1': 'addrs', '3': 12, '4': 3, '5': 9, '10': 'addrs'},
-    {'1': 'cur_addr', '3': 13, '4': 1, '5': 9, '9': 0, '10': 'curAddr', '17': true},
-    {'1': 'ice_addr', '3': 14, '4': 1, '5': 9, '9': 1, '10': 'iceAddr', '17': true},
+    {'1': 'peer_api_url', '3': 6, '4': 3, '5': 9, '10': 'PeerAPIURL'},
+    {'1': 'allowed_ips', '3': 7, '4': 3, '5': 9, '10': 'AllowedIPs'},
+    {'1': 'rx_bytes', '3': 8, '4': 1, '5': 3, '10': 'RxBytes'},
+    {'1': 'tx_bytes', '3': 9, '4': 1, '5': 3, '10': 'TxBytes'},
+    {'1': 'last_handshake', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'LastHandshake'},
+    {'1': 'last_write', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'LastWrite'},
+    {'1': 'addrs', '3': 12, '4': 3, '5': 9, '10': 'Addr'},
+    {'1': 'cur_addr', '3': 13, '4': 1, '5': 9, '9': 0, '10': 'CurrentAddr', '17': true},
+    {'1': 'ice_addr', '3': 14, '4': 1, '5': 9, '9': 1, '10': 'IceAddr', '17': true},
   ],
   '8': [
     {'1': '_cur_addr'},
@@ -90,15 +90,16 @@ const PeerStatus$json = {
 
 /// Descriptor for `PeerStatus`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List peerStatusDescriptor = $convert.base64Decode(
-    'CgpQZWVyU3RhdHVzEg4KAmlkGAEgASgDUgJpZBIdCgpwdWJsaWNfa2V5GAIgASgJUglwdWJsaW'
-    'NLZXkSDgoCb3MYAyABKAlSAm9zEhsKCWhvc3RfbmFtZRgEIAEoCVIIaG9zdE5hbWUSIQoMcnVu'
-    'ZXRhbGVfaXBzGAUgAygJUgtSdW5ldGFsZUlQcxIgCgxwZWVyX2FwaV91cmwYBiADKAlSCnBlZX'
-    'JBcGlVcmwSHwoLYWxsb3dlZF9pcHMYByADKAlSCmFsbG93ZWRJcHMSGQoIcnhfYnl0ZXMYCCAB'
-    'KANSB3J4Qnl0ZXMSGQoIdHhfYnl0ZXMYCSABKANSB3R4Qnl0ZXMSQQoObGFzdF9oYW5kc2hha2'
-    'UYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg1sYXN0SGFuZHNoYWtlEjkKCmxh'
-    'c3Rfd3JpdGUYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglsYXN0V3JpdGUSFA'
-    'oFYWRkcnMYDCADKAlSBWFkZHJzEh4KCGN1cl9hZGRyGA0gASgJSABSB2N1ckFkZHKIAQESHgoI'
-    'aWNlX2FkZHIYDiABKAlIAVIHaWNlQWRkcogBAUILCglfY3VyX2FkZHJCCwoJX2ljZV9hZGRy');
+    'CgpQZWVyU3RhdHVzEg4KAmlkGAEgASgDUgJJRBIdCgpwdWJsaWNfa2V5GAIgASgJUglQdWJsaW'
+    'NLZXkSDgoCb3MYAyABKAlSAk9TEhsKCWhvc3RfbmFtZRgEIAEoCVIISG9zdE5hbWUSIQoMcnVu'
+    'ZXRhbGVfaXBzGAUgAygJUgtSdW5ldGFsZUlQcxIgCgxwZWVyX2FwaV91cmwYBiADKAlSClBlZX'
+    'JBUElVUkwSHwoLYWxsb3dlZF9pcHMYByADKAlSCkFsbG93ZWRJUHMSGQoIcnhfYnl0ZXMYCCAB'
+    'KANSB1J4Qnl0ZXMSGQoIdHhfYnl0ZXMYCSABKANSB1R4Qnl0ZXMSQQoObGFzdF9oYW5kc2hha2'
+    'UYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg1MYXN0SGFuZHNoYWtlEjkKCmxh'
+    'c3Rfd3JpdGUYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglMYXN0V3JpdGUSEw'
+    'oFYWRkcnMYDCADKAlSBEFkZHISIgoIY3VyX2FkZHIYDSABKAlIAFILQ3VycmVudEFkZHKIAQES'
+    'HgoIaWNlX2FkZHIYDiABKAlIAVIHSWNlQWRkcogBAUILCglfY3VyX2FkZHJCCwoJX2ljZV9hZG'
+    'Ry');
 
 @$core.Deprecated('Use userspacePeerEngineStatusDescriptor instead')
 const UserspacePeerEngineStatus$json = {

@@ -243,20 +243,20 @@ class PeerStatus extends $pb.GeneratedMessage {
   factory PeerStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PeerStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aInt64(1, _omitFieldNames ? '' : 'id')
-    ..aOS(2, _omitFieldNames ? '' : 'publicKey')
-    ..aOS(3, _omitFieldNames ? '' : 'os')
-    ..aOS(4, _omitFieldNames ? '' : 'hostName')
+    ..aInt64(1, _omitFieldNames ? '' : 'ID', protoName: 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'PublicKey', protoName: 'public_key')
+    ..aOS(3, _omitFieldNames ? '' : 'OS', protoName: 'os')
+    ..aOS(4, _omitFieldNames ? '' : 'HostName', protoName: 'host_name')
     ..pPS(5, _omitFieldNames ? '' : 'RunetaleIPs', protoName: 'runetale_ips')
-    ..pPS(6, _omitFieldNames ? '' : 'peerApiUrl')
-    ..pPS(7, _omitFieldNames ? '' : 'allowedIps')
-    ..aInt64(8, _omitFieldNames ? '' : 'rxBytes')
-    ..aInt64(9, _omitFieldNames ? '' : 'txBytes')
-    ..aOM<$9.Timestamp>(10, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $9.Timestamp.create)
-    ..aOM<$9.Timestamp>(11, _omitFieldNames ? '' : 'lastWrite', subBuilder: $9.Timestamp.create)
-    ..pPS(12, _omitFieldNames ? '' : 'addrs')
-    ..aOS(13, _omitFieldNames ? '' : 'curAddr')
-    ..aOS(14, _omitFieldNames ? '' : 'iceAddr')
+    ..pPS(6, _omitFieldNames ? '' : 'PeerAPIURL', protoName: 'peer_api_url')
+    ..pPS(7, _omitFieldNames ? '' : 'AllowedIPs', protoName: 'allowed_ips')
+    ..aInt64(8, _omitFieldNames ? '' : 'RxBytes', protoName: 'rx_bytes')
+    ..aInt64(9, _omitFieldNames ? '' : 'TxBytes', protoName: 'tx_bytes')
+    ..aOM<$9.Timestamp>(10, _omitFieldNames ? '' : 'LastHandshake', protoName: 'last_handshake', subBuilder: $9.Timestamp.create)
+    ..aOM<$9.Timestamp>(11, _omitFieldNames ? '' : 'LastWrite', protoName: 'last_write', subBuilder: $9.Timestamp.create)
+    ..pPS(12, _omitFieldNames ? '' : 'Addr', protoName: 'addrs')
+    ..aOS(13, _omitFieldNames ? '' : 'CurrentAddr', protoName: 'cur_addr')
+    ..aOS(14, _omitFieldNames ? '' : 'IceAddr', protoName: 'ice_addr')
     ..hasRequiredFields = false
   ;
 
