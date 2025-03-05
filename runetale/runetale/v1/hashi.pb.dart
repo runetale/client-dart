@@ -247,7 +247,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'publicKey')
     ..aOS(3, _omitFieldNames ? '' : 'os')
     ..aOS(4, _omitFieldNames ? '' : 'hostName')
-    ..pPS(5, _omitFieldNames ? '' : 'runetaleIps')
+    ..pPS(5, _omitFieldNames ? '' : 'RunetaleIPs', protoName: 'runetale_ips')
     ..pPS(6, _omitFieldNames ? '' : 'peerApiUrl')
     ..pPS(7, _omitFieldNames ? '' : 'allowedIps')
     ..aInt64(8, _omitFieldNames ? '' : 'rxBytes')
@@ -548,6 +548,148 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   void clearLastHandshake() => clearField(4);
   @$pb.TagNumber(4)
   $9.Timestamp ensureLastHandshake() => $_ensure(3);
+}
+
+/// Hashigo struct like, hashiog(梯子) is a bridge in Japanese.
+/// 橋 are essential infrastructure in the world.
+/// The same holds true in the world of Runetale.
+/// A 橋 serves as the sole common pathway for a node, referenced through the API to enable flexible network configuration within Runetale.
+/// There is also a double meaning with "Hashi(お箸, chopstick)" a part of Japanese culture.
+/// Like using chopsticks, we carefully pick and fine-tune the settings with precision.
+class Hashigo extends $pb.GeneratedMessage {
+  factory Hashigo({
+    $core.String? serverUrl,
+    $core.String? signalUrl,
+    $core.bool? barricade,
+    $core.Iterable<$core.String>? advertiseRoutes,
+    $core.bool? acceptRoutes,
+    $core.bool? snatSubnetRoutes,
+    $core.bool? statefulFilter,
+  }) {
+    final $result = create();
+    if (serverUrl != null) {
+      $result.serverUrl = serverUrl;
+    }
+    if (signalUrl != null) {
+      $result.signalUrl = signalUrl;
+    }
+    if (barricade != null) {
+      $result.barricade = barricade;
+    }
+    if (advertiseRoutes != null) {
+      $result.advertiseRoutes.addAll(advertiseRoutes);
+    }
+    if (acceptRoutes != null) {
+      $result.acceptRoutes = acceptRoutes;
+    }
+    if (snatSubnetRoutes != null) {
+      $result.snatSubnetRoutes = snatSubnetRoutes;
+    }
+    if (statefulFilter != null) {
+      $result.statefulFilter = statefulFilter;
+    }
+    return $result;
+  }
+  Hashigo._() : super();
+  factory Hashigo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Hashigo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Hashigo', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'serverUrl')
+    ..aOS(2, _omitFieldNames ? '' : 'signalUrl')
+    ..aOB(3, _omitFieldNames ? '' : 'barricade')
+    ..pPS(4, _omitFieldNames ? '' : 'advertiseRoutes')
+    ..aOB(5, _omitFieldNames ? '' : 'acceptRoutes')
+    ..aOB(6, _omitFieldNames ? '' : 'snatSubnetRoutes')
+    ..aOB(7, _omitFieldNames ? '' : 'statefulFilter')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Hashigo clone() => Hashigo()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Hashigo copyWith(void Function(Hashigo) updates) => super.copyWith((message) => updates(message as Hashigo)) as Hashigo;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Hashigo create() => Hashigo._();
+  Hashigo createEmptyInstance() => create();
+  static $pb.PbList<Hashigo> createRepeated() => $pb.PbList<Hashigo>();
+  @$core.pragma('dart2js:noInline')
+  static Hashigo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Hashigo>(create);
+  static Hashigo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get serverUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set serverUrl($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasServerUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearServerUrl() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get signalUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set signalUrl($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSignalUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSignalUrl() => clearField(2);
+
+  /// incoming packet all block
+  @$pb.TagNumber(3)
+  $core.bool get barricade => $_getBF(2);
+  @$pb.TagNumber(3)
+  set barricade($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBarricade() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBarricade() => clearField(3);
+
+  /// このノードがAdvertiseするRoutes
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get advertiseRoutes => $_getList(3);
+
+  /// Whether to accept routes from subnet linker. Default: on
+  @$pb.TagNumber(5)
+  $core.bool get acceptRoutes => $_getBF(4);
+  @$pb.TagNumber(5)
+  set acceptRoutes($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasAcceptRoutes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAcceptRoutes() => clearField(5);
+
+  /// SNAT を無効にすると、Runetaleのトラフィックをサブネットリレーを
+  /// ネットワークで追加の手動設定が必要になります。
+  /// 基本的にはonにしておいてください。
+  @$pb.TagNumber(6)
+  $core.bool get snatSubnetRoutes => $_getBF(5);
+  @$pb.TagNumber(6)
+  set snatSubnetRoutes($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasSnatSubnetRoutes() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSnatSubnetRoutes() => clearField(6);
+
+  /// linuxのfirewallをstatefulで扱うかどうかを設定します。
+  /// デフォルトはONです。
+  @$pb.TagNumber(7)
+  $core.bool get statefulFilter => $_getBF(6);
+  @$pb.TagNumber(7)
+  set statefulFilter($core.bool v) { $_setBool(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasStatefulFilter() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStatefulFilter() => clearField(7);
 }
 
 

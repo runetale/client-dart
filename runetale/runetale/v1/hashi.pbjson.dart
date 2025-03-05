@@ -71,7 +71,7 @@ const PeerStatus$json = {
     {'1': 'public_key', '3': 2, '4': 1, '5': 9, '10': 'publicKey'},
     {'1': 'os', '3': 3, '4': 1, '5': 9, '10': 'os'},
     {'1': 'host_name', '3': 4, '4': 1, '5': 9, '10': 'hostName'},
-    {'1': 'runetale_ips', '3': 5, '4': 3, '5': 9, '10': 'runetaleIps'},
+    {'1': 'runetale_ips', '3': 5, '4': 3, '5': 9, '10': 'RunetaleIPs'},
     {'1': 'peer_api_url', '3': 6, '4': 3, '5': 9, '10': 'peerApiUrl'},
     {'1': 'allowed_ips', '3': 7, '4': 3, '5': 9, '10': 'allowedIps'},
     {'1': 'rx_bytes', '3': 8, '4': 1, '5': 3, '10': 'rxBytes'},
@@ -92,7 +92,7 @@ const PeerStatus$json = {
 final $typed_data.Uint8List peerStatusDescriptor = $convert.base64Decode(
     'CgpQZWVyU3RhdHVzEg4KAmlkGAEgASgDUgJpZBIdCgpwdWJsaWNfa2V5GAIgASgJUglwdWJsaW'
     'NLZXkSDgoCb3MYAyABKAlSAm9zEhsKCWhvc3RfbmFtZRgEIAEoCVIIaG9zdE5hbWUSIQoMcnVu'
-    'ZXRhbGVfaXBzGAUgAygJUgtydW5ldGFsZUlwcxIgCgxwZWVyX2FwaV91cmwYBiADKAlSCnBlZX'
+    'ZXRhbGVfaXBzGAUgAygJUgtSdW5ldGFsZUlQcxIgCgxwZWVyX2FwaV91cmwYBiADKAlSCnBlZX'
     'JBcGlVcmwSHwoLYWxsb3dlZF9pcHMYByADKAlSCmFsbG93ZWRJcHMSGQoIcnhfYnl0ZXMYCCAB'
     'KANSB3J4Qnl0ZXMSGQoIdHhfYnl0ZXMYCSABKANSB3R4Qnl0ZXMSQQoObGFzdF9oYW5kc2hha2'
     'UYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg1sYXN0SGFuZHNoYWtlEjkKCmxh'
@@ -134,4 +134,26 @@ final $typed_data.Uint8List compactPeerStatusDescriptor = $convert.base64Decode(
     'RlcxgCIAEoA1IHdHhCeXRlcxIZCghyeF9ieXRlcxgDIAEoA1IHcnhCeXRlcxJBCg5sYXN0X2hh'
     'bmRzaGFrZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDWxhc3RIYW5kc2hha2'
     'U=');
+
+@$core.Deprecated('Use hashigoDescriptor instead')
+const Hashigo$json = {
+  '1': 'Hashigo',
+  '2': [
+    {'1': 'server_url', '3': 1, '4': 1, '5': 9, '10': 'serverUrl'},
+    {'1': 'signal_url', '3': 2, '4': 1, '5': 9, '10': 'signalUrl'},
+    {'1': 'barricade', '3': 3, '4': 1, '5': 8, '10': 'barricade'},
+    {'1': 'advertise_routes', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoutes'},
+    {'1': 'accept_routes', '3': 5, '4': 1, '5': 8, '10': 'acceptRoutes'},
+    {'1': 'snat_subnet_routes', '3': 6, '4': 1, '5': 8, '10': 'snatSubnetRoutes'},
+    {'1': 'stateful_filter', '3': 7, '4': 1, '5': 8, '10': 'statefulFilter'},
+  ],
+};
+
+/// Descriptor for `Hashigo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hashigoDescriptor = $convert.base64Decode(
+    'CgdIYXNoaWdvEh0KCnNlcnZlcl91cmwYASABKAlSCXNlcnZlclVybBIdCgpzaWduYWxfdXJsGA'
+    'IgASgJUglzaWduYWxVcmwSHAoJYmFycmljYWRlGAMgASgIUgliYXJyaWNhZGUSKQoQYWR2ZXJ0'
+    'aXNlX3JvdXRlcxgEIAMoCVIPYWR2ZXJ0aXNlUm91dGVzEiMKDWFjY2VwdF9yb3V0ZXMYBSABKA'
+    'hSDGFjY2VwdFJvdXRlcxIsChJzbmF0X3N1Ym5ldF9yb3V0ZXMYBiABKAhSEHNuYXRTdWJuZXRS'
+    'b3V0ZXMSJwoPc3RhdGVmdWxfZmlsdGVyGAcgASgIUg5zdGF0ZWZ1bEZpbHRlcg==');
 
