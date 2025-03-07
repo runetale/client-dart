@@ -32,13 +32,12 @@ const HashiStatus$json = {
   '2': [
     {'1': 'backend_state', '3': 1, '4': 1, '5': 9, '10': 'backendState'},
     {'1': 'runetale_ips', '3': 2, '4': 3, '5': 9, '10': 'runetaleIps'},
-    {'1': 'interactive_login_url', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'interactiveLoginUrl', '17': true},
-    {'1': 'self', '3': 4, '4': 1, '5': 11, '6': '.protos.PeerStatus', '9': 1, '10': 'self', '17': true},
+    {'1': 'interactive_login_url', '3': 3, '4': 1, '5': 9, '10': 'interactiveLoginUrl'},
+    {'1': 'self', '3': 4, '4': 1, '5': 11, '6': '.protos.PeerStatus', '9': 0, '10': 'self', '17': true},
     {'1': 'peer', '3': 5, '4': 3, '5': 11, '6': '.protos.HashiStatus.PeerEntry', '10': 'peer'},
   ],
   '3': [HashiStatus_PeerEntry$json],
   '8': [
-    {'1': '_interactive_login_url'},
     {'1': '_self'},
   ],
 };
@@ -56,12 +55,11 @@ const HashiStatus_PeerEntry$json = {
 /// Descriptor for `HashiStatus`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List hashiStatusDescriptor = $convert.base64Decode(
     'CgtIYXNoaVN0YXR1cxIjCg1iYWNrZW5kX3N0YXRlGAEgASgJUgxiYWNrZW5kU3RhdGUSIQoMcn'
-    'VuZXRhbGVfaXBzGAIgAygJUgtydW5ldGFsZUlwcxI3ChVpbnRlcmFjdGl2ZV9sb2dpbl91cmwY'
-    'AyABKAlIAFITaW50ZXJhY3RpdmVMb2dpblVybIgBARIrCgRzZWxmGAQgASgLMhIucHJvdG9zLl'
-    'BlZXJTdGF0dXNIAVIEc2VsZogBARIxCgRwZWVyGAUgAygLMh0ucHJvdG9zLkhhc2hpU3RhdHVz'
-    'LlBlZXJFbnRyeVIEcGVlchpLCglQZWVyRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSKAoFdmFsdW'
-    'UYAiABKAsyEi5wcm90b3MuUGVlclN0YXR1c1IFdmFsdWU6AjgBQhgKFl9pbnRlcmFjdGl2ZV9s'
-    'b2dpbl91cmxCBwoFX3NlbGY=');
+    'VuZXRhbGVfaXBzGAIgAygJUgtydW5ldGFsZUlwcxIyChVpbnRlcmFjdGl2ZV9sb2dpbl91cmwY'
+    'AyABKAlSE2ludGVyYWN0aXZlTG9naW5VcmwSKwoEc2VsZhgEIAEoCzISLnByb3Rvcy5QZWVyU3'
+    'RhdHVzSABSBHNlbGaIAQESMQoEcGVlchgFIAMoCzIdLnByb3Rvcy5IYXNoaVN0YXR1cy5QZWVy'
+    'RW50cnlSBHBlZXIaSwoJUGVlckVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EigKBXZhbHVlGAIgAS'
+    'gLMhIucHJvdG9zLlBlZXJTdGF0dXNSBXZhbHVlOgI4AUIHCgVfc2VsZg==');
 
 @$core.Deprecated('Use peerStatusDescriptor instead')
 const PeerStatus$json = {
