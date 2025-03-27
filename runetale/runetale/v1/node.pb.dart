@@ -530,6 +530,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.String? advertisedRoute,
     $core.bool? jailed,
     $core.Iterable<Node>? iceTable,
+    DNSConfig? dns,
   }) {
     final $result = create();
     if (seq != null) {
@@ -559,6 +560,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (iceTable != null) {
       $result.iceTable.addAll(iceTable);
     }
+    if (dns != null) {
+      $result.dns = dns;
+    }
     return $result;
   }
   NetworkMapResponse._() : super();
@@ -573,8 +577,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..p<$fixnum.Int64>(5, _omitFieldNames ? '' : 'peersRemoved', $pb.PbFieldType.KU6, protoName: 'peersRemoved')
     ..pc<FilterRule>(6, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM, protoName: 'packetFilter', subBuilder: FilterRule.create)
     ..aOS(7, _omitFieldNames ? '' : 'advertisedRoute', protoName: 'advertisedRoute')
-    ..aOB(8, _omitFieldNames ? '' : 'Jailed', protoName: 'Jailed')
+    ..aOB(8, _omitFieldNames ? '' : 'jailed')
     ..pc<Node>(9, _omitFieldNames ? '' : 'iceTable', $pb.PbFieldType.PM, protoName: 'iceTable', subBuilder: Node.create)
+    ..aOM<DNSConfig>(10, _omitFieldNames ? '' : 'dns', subBuilder: DNSConfig.create)
     ..hasRequiredFields = false
   ;
 
@@ -651,7 +656,6 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   void clearAdvertisedRoute() => clearField(7);
 
   /// jailedがtrueの場合全てのパケットを拒否する
-  /// defaultの状態はこの状態である
   @$pb.TagNumber(8)
   $core.bool get jailed => $_getBF(7);
   @$pb.TagNumber(8)
@@ -663,6 +667,193 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(9)
   $core.List<Node> get iceTable => $_getList(8);
+
+  @$pb.TagNumber(10)
+  DNSConfig get dns => $_getN(9);
+  @$pb.TagNumber(10)
+  set dns(DNSConfig v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasDns() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDns() => clearField(10);
+  @$pb.TagNumber(10)
+  DNSConfig ensureDns() => $_ensure(9);
+}
+
+class Resolver extends $pb.GeneratedMessage {
+  factory Resolver({
+    $core.String? addr,
+  }) {
+    final $result = create();
+    if (addr != null) {
+      $result.addr = addr;
+    }
+    return $result;
+  }
+  Resolver._() : super();
+  factory Resolver.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Resolver.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resolver', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'addr')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Resolver clone() => Resolver()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Resolver copyWith(void Function(Resolver) updates) => super.copyWith((message) => updates(message as Resolver)) as Resolver;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Resolver create() => Resolver._();
+  Resolver createEmptyInstance() => create();
+  static $pb.PbList<Resolver> createRepeated() => $pb.PbList<Resolver>();
+  @$core.pragma('dart2js:noInline')
+  static Resolver getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Resolver>(create);
+  static Resolver? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get addr => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set addr($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAddr() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAddr() => clearField(1);
+}
+
+class Resolvers extends $pb.GeneratedMessage {
+  factory Resolvers({
+    $core.Iterable<Resolver>? resolvers,
+  }) {
+    final $result = create();
+    if (resolvers != null) {
+      $result.resolvers.addAll(resolvers);
+    }
+    return $result;
+  }
+  Resolvers._() : super();
+  factory Resolvers.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Resolvers.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resolvers', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<Resolver>(1, _omitFieldNames ? '' : 'resolvers', $pb.PbFieldType.PM, subBuilder: Resolver.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Resolvers clone() => Resolvers()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Resolvers copyWith(void Function(Resolvers) updates) => super.copyWith((message) => updates(message as Resolvers)) as Resolvers;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Resolvers create() => Resolvers._();
+  Resolvers createEmptyInstance() => create();
+  static $pb.PbList<Resolvers> createRepeated() => $pb.PbList<Resolvers>();
+  @$core.pragma('dart2js:noInline')
+  static Resolvers getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Resolvers>(create);
+  static Resolvers? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Resolver> get resolvers => $_getList(0);
+}
+
+class DNSConfig extends $pb.GeneratedMessage {
+  factory DNSConfig({
+    $core.Iterable<Resolver>? resolvers,
+    $core.Map<$core.String, Resolvers>? routes,
+    $core.Iterable<$core.String>? domains,
+  }) {
+    final $result = create();
+    if (resolvers != null) {
+      $result.resolvers.addAll(resolvers);
+    }
+    if (routes != null) {
+      $result.routes.addAll(routes);
+    }
+    if (domains != null) {
+      $result.domains.addAll(domains);
+    }
+    return $result;
+  }
+  DNSConfig._() : super();
+  factory DNSConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DNSConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DNSConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..pc<Resolver>(1, _omitFieldNames ? '' : 'resolvers', $pb.PbFieldType.PM, subBuilder: Resolver.create)
+    ..m<$core.String, Resolvers>(2, _omitFieldNames ? '' : 'routes', entryClassName: 'DNSConfig.RoutesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: Resolvers.create, valueDefaultOrMaker: Resolvers.getDefault, packageName: const $pb.PackageName('protos'))
+    ..pPS(3, _omitFieldNames ? '' : 'domains')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DNSConfig clone() => DNSConfig()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DNSConfig copyWith(void Function(DNSConfig) updates) => super.copyWith((message) => updates(message as DNSConfig)) as DNSConfig;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DNSConfig create() => DNSConfig._();
+  DNSConfig createEmptyInstance() => create();
+  static $pb.PbList<DNSConfig> createRepeated() => $pb.PbList<DNSConfig>();
+  @$core.pragma('dart2js:noInline')
+  static DNSConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DNSConfig>(create);
+  static DNSConfig? _defaultInstance;
+
+  /// Resolversは使用するDNSリゾルバの一覧、優先順位順。
+  /// デフォルトでは設定されていない。
+  /// 有効にすると接続されたクライアントはローカルのDNS設定を無視し、
+  /// 常にこれらのグローバルネームサーバーを使用する。
+  /// 設定される場合は以下のような値が入る
+  /// - 8.8.8.8
+  /// - 9.9.9.9
+  /// - 2001:4860:4860::8888
+  /// - 2001:4860:4860::9999
+  @$pb.TagNumber(1)
+  $core.List<Resolver> get resolvers => $_getList(0);
+
+  /// RoutesはDNS名のサフィックス（接尾辞）を、DNSリゾルバのセットにマッピングします。
+  /// 値が空のスライスである場合、そのサフィックスはWonderDNSの100.200.100.200で処理される。
+  /// 2025/3/27時点では主にSplit DNSで使用する。
+  /// マップのキーはFQDNのsuffix
+  /// 例えば"printer.office.example.com."の場合は
+  /// "office.example.com."になる。
+  /// e.g. office.example.com.:["178.10.3.1"]
+  @$pb.TagNumber(2)
+  $core.Map<$core.String, Resolvers> get routes => $_getMap(1);
+
+  /// Domains はSearch Domainsの一覧。
+  /// たとえばあるRunetに"example.com"と"test.com"が検索ドメインとして設定されている場合、
+  /// ユーザーがserverという名前を入力すると、Runetaleは
+  /// 	1. server.example.comを設定されたネームサーバー（例：8.8.8.8 や 1.1.1.1）で検索します。
+  /// 	2. 一致しなければ、次にserver.test.comを同様のネームサーバーで検索します。
+  /// e.g. ["example.com","test.com"] のような感じ
+  @$pb.TagNumber(3)
+  $core.List<$core.String> get domains => $_getList(2);
 }
 
 

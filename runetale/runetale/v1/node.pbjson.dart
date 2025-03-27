@@ -118,8 +118,9 @@ const NetworkMapResponse$json = {
     {'1': 'peersRemoved', '3': 5, '4': 3, '5': 4, '10': 'peersRemoved'},
     {'1': 'packetFilter', '3': 6, '4': 3, '5': 11, '6': '.protos.FilterRule', '10': 'packetFilter'},
     {'1': 'advertisedRoute', '3': 7, '4': 1, '5': 9, '10': 'advertisedRoute'},
-    {'1': 'Jailed', '3': 8, '4': 1, '5': 8, '10': 'Jailed'},
+    {'1': 'jailed', '3': 8, '4': 1, '5': 8, '10': 'jailed'},
     {'1': 'iceTable', '3': 9, '4': 3, '5': 11, '6': '.protos.Node', '10': 'iceTable'},
+    {'1': 'dns', '3': 10, '4': 1, '5': 11, '6': '.protos.DNSConfig', '10': 'dns'},
   ],
 };
 
@@ -130,6 +131,60 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'DHBlZXJzQ2hhbmdlZBgEIAMoCzIMLnByb3Rvcy5Ob2RlUgxwZWVyc0NoYW5nZWQSIgoMcGVlcn'
     'NSZW1vdmVkGAUgAygEUgxwZWVyc1JlbW92ZWQSNgoMcGFja2V0RmlsdGVyGAYgAygLMhIucHJv'
     'dG9zLkZpbHRlclJ1bGVSDHBhY2tldEZpbHRlchIoCg9hZHZlcnRpc2VkUm91dGUYByABKAlSD2'
-    'FkdmVydGlzZWRSb3V0ZRIWCgZKYWlsZWQYCCABKAhSBkphaWxlZBIoCghpY2VUYWJsZRgJIAMo'
-    'CzIMLnByb3Rvcy5Ob2RlUghpY2VUYWJsZQ==');
+    'FkdmVydGlzZWRSb3V0ZRIWCgZqYWlsZWQYCCABKAhSBmphaWxlZBIoCghpY2VUYWJsZRgJIAMo'
+    'CzIMLnByb3Rvcy5Ob2RlUghpY2VUYWJsZRIjCgNkbnMYCiABKAsyES5wcm90b3MuRE5TQ29uZm'
+    'lnUgNkbnM=');
+
+@$core.Deprecated('Use resolverDescriptor instead')
+const Resolver$json = {
+  '1': 'Resolver',
+  '2': [
+    {'1': 'addr', '3': 1, '4': 1, '5': 9, '10': 'addr'},
+  ],
+};
+
+/// Descriptor for `Resolver`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolverDescriptor = $convert.base64Decode(
+    'CghSZXNvbHZlchISCgRhZGRyGAEgASgJUgRhZGRy');
+
+@$core.Deprecated('Use resolversDescriptor instead')
+const Resolvers$json = {
+  '1': 'Resolvers',
+  '2': [
+    {'1': 'resolvers', '3': 1, '4': 3, '5': 11, '6': '.protos.Resolver', '10': 'resolvers'},
+  ],
+};
+
+/// Descriptor for `Resolvers`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List resolversDescriptor = $convert.base64Decode(
+    'CglSZXNvbHZlcnMSLgoJcmVzb2x2ZXJzGAEgAygLMhAucHJvdG9zLlJlc29sdmVyUglyZXNvbH'
+    'ZlcnM=');
+
+@$core.Deprecated('Use dNSConfigDescriptor instead')
+const DNSConfig$json = {
+  '1': 'DNSConfig',
+  '2': [
+    {'1': 'resolvers', '3': 1, '4': 3, '5': 11, '6': '.protos.Resolver', '10': 'resolvers'},
+    {'1': 'routes', '3': 2, '4': 3, '5': 11, '6': '.protos.DNSConfig.RoutesEntry', '10': 'routes'},
+    {'1': 'domains', '3': 3, '4': 3, '5': 9, '10': 'domains'},
+  ],
+  '3': [DNSConfig_RoutesEntry$json],
+};
+
+@$core.Deprecated('Use dNSConfigDescriptor instead')
+const DNSConfig_RoutesEntry$json = {
+  '1': 'RoutesEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.protos.Resolvers', '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `DNSConfig`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dNSConfigDescriptor = $convert.base64Decode(
+    'CglETlNDb25maWcSLgoJcmVzb2x2ZXJzGAEgAygLMhAucHJvdG9zLlJlc29sdmVyUglyZXNvbH'
+    'ZlcnMSNQoGcm91dGVzGAIgAygLMh0ucHJvdG9zLkROU0NvbmZpZy5Sb3V0ZXNFbnRyeVIGcm91'
+    'dGVzEhgKB2RvbWFpbnMYAyADKAlSB2RvbWFpbnMaTAoLUm91dGVzRW50cnkSEAoDa2V5GAEgAS'
+    'gJUgNrZXkSJwoFdmFsdWUYAiABKAsyES5wcm90b3MuUmVzb2x2ZXJzUgV2YWx1ZToCOAE=');
 
