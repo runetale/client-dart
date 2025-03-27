@@ -778,7 +778,7 @@ class DNSConfig extends $pb.GeneratedMessage {
   factory DNSConfig({
     $core.Iterable<Resolver>? resolvers,
     $core.Map<$core.String, Resolvers>? routes,
-    $core.Iterable<$core.String>? domains,
+    $core.Iterable<$core.String>? searchDomains,
   }) {
     final $result = create();
     if (resolvers != null) {
@@ -787,8 +787,8 @@ class DNSConfig extends $pb.GeneratedMessage {
     if (routes != null) {
       $result.routes.addAll(routes);
     }
-    if (domains != null) {
-      $result.domains.addAll(domains);
+    if (searchDomains != null) {
+      $result.searchDomains.addAll(searchDomains);
     }
     return $result;
   }
@@ -799,7 +799,7 @@ class DNSConfig extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DNSConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pc<Resolver>(1, _omitFieldNames ? '' : 'resolvers', $pb.PbFieldType.PM, subBuilder: Resolver.create)
     ..m<$core.String, Resolvers>(2, _omitFieldNames ? '' : 'routes', entryClassName: 'DNSConfig.RoutesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: Resolvers.create, valueDefaultOrMaker: Resolvers.getDefault, packageName: const $pb.PackageName('protos'))
-    ..pPS(3, _omitFieldNames ? '' : 'domains')
+    ..pPS(3, _omitFieldNames ? '' : 'searchDomains', protoName: 'searchDomains')
     ..hasRequiredFields = false
   ;
 
@@ -838,22 +838,21 @@ class DNSConfig extends $pb.GeneratedMessage {
 
   /// RoutesはDNS名のサフィックス（接尾辞）を、DNSリゾルバのセットにマッピングします。
   /// 値が空のスライスである場合、そのサフィックスはWonderDNSの100.200.100.200で処理される。
-  /// 2025/3/27時点では主にSplit DNSで使用する。
   /// マップのキーはFQDNのsuffix
   /// 例えば"printer.office.example.com."の場合は
   /// "office.example.com."になる。
   /// e.g. office.example.com.:["178.10.3.1"]
+  /// - 2025/3/27時点では主にSplit DNSで使用する。
   @$pb.TagNumber(2)
   $core.Map<$core.String, Resolvers> get routes => $_getMap(1);
 
-  /// Domains はSearch Domainsの一覧。
-  /// たとえばあるRunetに"example.com"と"test.com"が検索ドメインとして設定されている場合、
+  /// SearchDomainsはたとえばあるRunetに"example.com"と"test.com"が検索ドメインとして設定されている場合、
   /// ユーザーがserverという名前を入力すると、Runetaleは
   /// 	1. server.example.comを設定されたネームサーバー（例：8.8.8.8 や 1.1.1.1）で検索します。
   /// 	2. 一致しなければ、次にserver.test.comを同様のネームサーバーで検索します。
   /// e.g. ["example.com","test.com"] のような感じ
   @$pb.TagNumber(3)
-  $core.List<$core.String> get domains => $_getList(2);
+  $core.List<$core.String> get searchDomains => $_getList(2);
 }
 
 

@@ -166,7 +166,7 @@ const DNSConfig$json = {
   '2': [
     {'1': 'resolvers', '3': 1, '4': 3, '5': 11, '6': '.protos.Resolver', '10': 'resolvers'},
     {'1': 'routes', '3': 2, '4': 3, '5': 11, '6': '.protos.DNSConfig.RoutesEntry', '10': 'routes'},
-    {'1': 'domains', '3': 3, '4': 3, '5': 9, '10': 'domains'},
+    {'1': 'searchDomains', '3': 3, '4': 3, '5': 9, '10': 'searchDomains'},
   ],
   '3': [DNSConfig_RoutesEntry$json],
 };
@@ -185,6 +185,7 @@ const DNSConfig_RoutesEntry$json = {
 final $typed_data.Uint8List dNSConfigDescriptor = $convert.base64Decode(
     'CglETlNDb25maWcSLgoJcmVzb2x2ZXJzGAEgAygLMhAucHJvdG9zLlJlc29sdmVyUglyZXNvbH'
     'ZlcnMSNQoGcm91dGVzGAIgAygLMh0ucHJvdG9zLkROU0NvbmZpZy5Sb3V0ZXNFbnRyeVIGcm91'
-    'dGVzEhgKB2RvbWFpbnMYAyADKAlSB2RvbWFpbnMaTAoLUm91dGVzRW50cnkSEAoDa2V5GAEgAS'
-    'gJUgNrZXkSJwoFdmFsdWUYAiABKAsyES5wcm90b3MuUmVzb2x2ZXJzUgV2YWx1ZToCOAE=');
+    'dGVzEiQKDXNlYXJjaERvbWFpbnMYAyADKAlSDXNlYXJjaERvbWFpbnMaTAoLUm91dGVzRW50cn'
+    'kSEAoDa2V5GAEgASgJUgNrZXkSJwoFdmFsdWUYAiABKAsyES5wcm90b3MuUmVzb2x2ZXJzUgV2'
+    'YWx1ZToCOAE=');
 
