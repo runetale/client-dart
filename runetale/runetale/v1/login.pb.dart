@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/login.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -13,6 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class LoginNodeResponse extends $pb.GeneratedMessage {
   factory LoginNodeResponse({
@@ -86,7 +88,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasIsRegistered() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIsRegistered() => clearField(1);
+  void clearIsRegistered() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get loginUrl => $_getSZ(1);
@@ -95,7 +97,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasLoginUrl() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLoginUrl() => clearField(2);
+  void clearLoginUrl() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get ip => $_getSZ(2);
@@ -104,7 +106,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasIp() => $_has(2);
   @$pb.TagNumber(3)
-  void clearIp() => clearField(3);
+  void clearIp() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get cidr => $_getSZ(3);
@@ -113,7 +115,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasCidr() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCidr() => clearField(4);
+  void clearCidr() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get signalHost => $_getSZ(4);
@@ -122,7 +124,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasSignalHost() => $_has(4);
   @$pb.TagNumber(5)
-  void clearSignalHost() => clearField(5);
+  void clearSignalHost() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $fixnum.Int64 get signalPort => $_getI64(5);
@@ -131,7 +133,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasSignalPort() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSignalPort() => clearField(6);
+  void clearSignalPort() => $_clearField(6);
 }
 
 class LoginSessionResponse extends $pb.GeneratedMessage {
@@ -207,7 +209,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasIp() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIp() => clearField(1);
+  void clearIp() => $_clearField(1);
 
   /// host wireguard cidr
   @$pb.TagNumber(2)
@@ -217,7 +219,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasCidr() => $_has(1);
   @$pb.TagNumber(2)
-  void clearCidr() => clearField(2);
+  void clearCidr() => $_clearField(2);
 
   /// host name
   @$pb.TagNumber(3)
@@ -227,7 +229,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasHost() => $_has(2);
   @$pb.TagNumber(3)
-  void clearHost() => clearField(3);
+  void clearHost() => $_clearField(3);
 
   /// host os
   @$pb.TagNumber(4)
@@ -237,7 +239,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasOs() => $_has(3);
   @$pb.TagNumber(4)
-  void clearOs() => clearField(4);
+  void clearOs() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get signalServerHost => $_getSZ(4);
@@ -246,7 +248,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasSignalServerHost() => $_has(4);
   @$pb.TagNumber(5)
-  void clearSignalServerHost() => clearField(5);
+  void clearSignalServerHost() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $fixnum.Int64 get signalServerPort => $_getI64(5);
@@ -255,7 +257,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasSignalServerPort() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSignalServerPort() => clearField(6);
+  void clearSignalServerPort() => $_clearField(6);
 }
 
 class GetInvitationRequest extends $pb.GeneratedMessage {
@@ -305,7 +307,7 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasInviteCode() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInviteCode() => clearField(1);
+  void clearInviteCode() => $_clearField(1);
 }
 
 class GetInvitationResponse extends $pb.GeneratedMessage {
@@ -360,7 +362,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasEmail() => $_has(0);
   @$pb.TagNumber(1)
-  void clearEmail() => clearField(1);
+  void clearEmail() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get inviteCode => $_getSZ(1);
@@ -369,7 +371,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasInviteCode() => $_has(1);
   @$pb.TagNumber(2)
-  void clearInviteCode() => clearField(2);
+  void clearInviteCode() => $_clearField(2);
 }
 
 

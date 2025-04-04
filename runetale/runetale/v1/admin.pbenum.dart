@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/admin.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -31,7 +31,7 @@ class IPProto extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, IPProto> _byValue = $pb.ProtobufEnum.initByValue(values);
   static IPProto? valueOf($core.int value) => _byValue[value];
 
-  const IPProto._($core.int v, $core.String n) : super(v, n);
+  const IPProto._(super.v, super.n);
 }
 
 class NodeType extends $pb.ProtobufEnum {
@@ -56,7 +56,7 @@ class NodeType extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, NodeType> _byValue = $pb.ProtobufEnum.initByValue(values);
   static NodeType? valueOf($core.int value) => _byValue[value];
 
-  const NodeType._($core.int v, $core.String n) : super(v, n);
+  const NodeType._(super.v, super.n);
 }
 
 class LinkerType extends $pb.ProtobufEnum {
@@ -73,7 +73,7 @@ class LinkerType extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, LinkerType> _byValue = $pb.ProtobufEnum.initByValue(values);
   static LinkerType? valueOf($core.int value) => _byValue[value];
 
-  const LinkerType._($core.int v, $core.String n) : super(v, n);
+  const LinkerType._(super.v, super.n);
 }
 
 class UserRole extends $pb.ProtobufEnum {
@@ -90,7 +90,7 @@ class UserRole extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, UserRole> _byValue = $pb.ProtobufEnum.initByValue(values);
   static UserRole? valueOf($core.int value) => _byValue[value];
 
-  const UserRole._($core.int v, $core.String n) : super(v, n);
+  const UserRole._(super.v, super.n);
 }
 
 class ExpirelyTime extends $pb.ProtobufEnum {
@@ -107,7 +107,7 @@ class ExpirelyTime extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, ExpirelyTime> _byValue = $pb.ProtobufEnum.initByValue(values);
   static ExpirelyTime? valueOf($core.int value) => _byValue[value];
 
-  const ExpirelyTime._($core.int v, $core.String n) : super(v, n);
+  const ExpirelyTime._(super.v, super.n);
 }
 
 class Platform extends $pb.ProtobufEnum {
@@ -142,7 +142,7 @@ class Platform extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, Platform> _byValue = $pb.ProtobufEnum.initByValue(values);
   static Platform? valueOf($core.int value) => _byValue[value];
 
-  const Platform._($core.int v, $core.String n) : super(v, n);
+  const Platform._(super.v, super.n);
 }
 
 

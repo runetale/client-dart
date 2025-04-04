@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/node.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -13,6 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class SyncNodesResponse extends $pb.GeneratedMessage {
   factory SyncNodesResponse({
@@ -76,10 +78,10 @@ class SyncNodesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasIsEmpty() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIsEmpty() => clearField(1);
+  void clearIsEmpty() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<Node> get remoteNodes => $_getList(1);
+  $pb.PbList<Node> get remoteNodes => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.String get ip => $_getSZ(2);
@@ -88,7 +90,7 @@ class SyncNodesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasIp() => $_has(2);
   @$pb.TagNumber(3)
-  void clearIp() => clearField(3);
+  void clearIp() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get cidr => $_getSZ(3);
@@ -97,7 +99,7 @@ class SyncNodesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasCidr() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCidr() => clearField(4);
+  void clearCidr() => $_clearField(4);
 }
 
 class Node extends $pb.GeneratedMessage {
@@ -177,7 +179,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearName() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get nodeId => $_getI64(1);
@@ -186,7 +188,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNodeId() => clearField(2);
+  void clearNodeId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get nodeKey => $_getSZ(2);
@@ -195,7 +197,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasNodeKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearNodeKey() => clearField(3);
+  void clearNodeKey() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get wgPubKey => $_getSZ(3);
@@ -204,10 +206,10 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasWgPubKey() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWgPubKey() => clearField(4);
+  void clearWgPubKey() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get allowedIPs => $_getList(4);
+  $pb.PbList<$core.String> get allowedIPs => $_getList(4);
 
   @$pb.TagNumber(6)
   $core.String get ip => $_getSZ(5);
@@ -216,7 +218,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasIp() => $_has(5);
   @$pb.TagNumber(6)
-  void clearIp() => clearField(6);
+  void clearIp() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $core.String get cidr => $_getSZ(6);
@@ -225,7 +227,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasCidr() => $_has(6);
   @$pb.TagNumber(7)
-  void clearCidr() => clearField(7);
+  void clearCidr() => $_clearField(7);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
@@ -280,7 +282,7 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasIp() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIp() => clearField(1);
+  void clearIp() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get cidr => $_getSZ(1);
@@ -289,7 +291,7 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasCidr() => $_has(1);
   @$pb.TagNumber(2)
-  void clearCidr() => clearField(2);
+  void clearCidr() => $_clearField(2);
 }
 
 class NetPortRange_portRange extends $pb.GeneratedMessage {
@@ -344,7 +346,7 @@ class NetPortRange_portRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasFirst() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFirst() => clearField(1);
+  void clearFirst() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get last => $_getI64(1);
@@ -353,7 +355,7 @@ class NetPortRange_portRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasLast() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLast() => clearField(2);
+  void clearLast() => $_clearField(2);
 }
 
 class NetPortRange extends $pb.GeneratedMessage {
@@ -417,7 +419,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasIp() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIp() => clearField(1);
+  void clearIp() => $_clearField(1);
 
   /// portのフォーマットは
   /// - 全て指定の `*` か
@@ -428,11 +430,11 @@ class NetPortRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   NetPortRange_portRange get ports => $_getN(1);
   @$pb.TagNumber(2)
-  set ports(NetPortRange_portRange v) { setField(2, v); }
+  set ports(NetPortRange_portRange v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPorts() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPorts() => clearField(2);
+  void clearPorts() => $_clearField(2);
   @$pb.TagNumber(2)
   NetPortRange_portRange ensurePorts() => $_ensure(1);
 
@@ -446,7 +448,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasAdvertisedRoutes() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAdvertisedRoutes() => clearField(3);
+  void clearAdvertisedRoutes() => $_clearField(3);
 }
 
 class FilterRule extends $pb.GeneratedMessage {
@@ -502,11 +504,11 @@ class FilterRule extends $pb.GeneratedMessage {
   /// source ips,
   /// - "192.168.0.0/16" cidrが含まれたipの範囲
   @$pb.TagNumber(1)
-  $core.List<$core.String> get srcIps => $_getList(0);
+  $pb.PbList<$core.String> get srcIps => $_getList(0);
 
   /// dstのpeerのリスト
   @$pb.TagNumber(2)
-  $core.List<NetPortRange> get dsts => $_getList(1);
+  $pb.PbList<NetPortRange> get dsts => $_getList(1);
 
   /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
   /// protocol numbers
@@ -516,7 +518,7 @@ class FilterRule extends $pb.GeneratedMessage {
   /// TCP     = 0x06
   /// UDP     = 0x11
   @$pb.TagNumber(3)
-  $core.List<$core.int> get iPProto => $_getList(2);
+  $pb.PbList<$core.int> get iPProto => $_getList(2);
 }
 
 class NetworkMapResponse extends $pb.GeneratedMessage {
@@ -612,36 +614,36 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSeq() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSeq() => clearField(1);
+  void clearSeq() => $_clearField(1);
 
   /// このNodeの情報
   @$pb.TagNumber(2)
   Node get node => $_getN(1);
   @$pb.TagNumber(2)
-  set node(Node v) { setField(2, v); }
+  set node(Node v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasNode() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNode() => clearField(2);
+  void clearNode() => $_clearField(2);
   @$pb.TagNumber(2)
   Node ensureNode() => $_ensure(1);
 
   /// このNodeがアクセスするpeers, つまりremote nodesの情報が含まれている
   @$pb.TagNumber(3)
-  $core.List<Node> get peers => $_getList(2);
+  $pb.PbList<Node> get peers => $_getList(2);
 
   /// 変更があった場合のPeers
   /// serverで差分更新される
   @$pb.TagNumber(4)
-  $core.List<Node> get peersChanged => $_getList(3);
+  $pb.PbList<Node> get peersChanged => $_getList(3);
 
   /// 消された場合のPeersのNodeID
   @$pb.TagNumber(5)
-  $core.List<$fixnum.Int64> get peersRemoved => $_getList(4);
+  $pb.PbList<$fixnum.Int64> get peersRemoved => $_getList(4);
 
   /// Firewall Rules
   @$pb.TagNumber(6)
-  $core.List<FilterRule> get packetFilter => $_getList(5);
+  $pb.PbList<FilterRule> get packetFilter => $_getList(5);
 
   /// このnodeがadvertiseするIPアドレス
   /// 1.2.3.4/16のIP+Maskの形
@@ -653,7 +655,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasAdvertisedRoute() => $_has(6);
   @$pb.TagNumber(7)
-  void clearAdvertisedRoute() => clearField(7);
+  void clearAdvertisedRoute() => $_clearField(7);
 
   /// jailedがtrueの場合全てのパケットを拒否する
   @$pb.TagNumber(8)
@@ -663,19 +665,19 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasJailed() => $_has(7);
   @$pb.TagNumber(8)
-  void clearJailed() => clearField(8);
+  void clearJailed() => $_clearField(8);
 
   @$pb.TagNumber(9)
-  $core.List<Node> get iceTable => $_getList(8);
+  $pb.PbList<Node> get iceTable => $_getList(8);
 
   @$pb.TagNumber(10)
   DNSConfig get dns => $_getN(9);
   @$pb.TagNumber(10)
-  set dns(DNSConfig v) { setField(10, v); }
+  set dns(DNSConfig v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasDns() => $_has(9);
   @$pb.TagNumber(10)
-  void clearDns() => clearField(10);
+  void clearDns() => $_clearField(10);
   @$pb.TagNumber(10)
   DNSConfig ensureDns() => $_ensure(9);
 }
@@ -727,7 +729,7 @@ class Resolver extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAddr() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAddr() => clearField(1);
+  void clearAddr() => $_clearField(1);
 }
 
 class Resolvers extends $pb.GeneratedMessage {
@@ -771,14 +773,16 @@ class Resolvers extends $pb.GeneratedMessage {
   static Resolvers? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Resolver> get resolvers => $_getList(0);
+  $pb.PbList<Resolver> get resolvers => $_getList(0);
 }
 
 class DNSConfig extends $pb.GeneratedMessage {
   factory DNSConfig({
     $core.Iterable<Resolver>? resolvers,
-    $core.Map<$core.String, Resolvers>? routes,
+    $pb.PbMap<$core.String, Resolvers>? routes,
     $core.Iterable<$core.String>? searchDomains,
+    $core.Iterable<$core.String>? exitNodeFilterd,
+    $core.bool? enabledWonderDNS,
   }) {
     final $result = create();
     if (resolvers != null) {
@@ -790,6 +794,12 @@ class DNSConfig extends $pb.GeneratedMessage {
     if (searchDomains != null) {
       $result.searchDomains.addAll(searchDomains);
     }
+    if (exitNodeFilterd != null) {
+      $result.exitNodeFilterd.addAll(exitNodeFilterd);
+    }
+    if (enabledWonderDNS != null) {
+      $result.enabledWonderDNS = enabledWonderDNS;
+    }
     return $result;
   }
   DNSConfig._() : super();
@@ -800,6 +810,8 @@ class DNSConfig extends $pb.GeneratedMessage {
     ..pc<Resolver>(1, _omitFieldNames ? '' : 'resolvers', $pb.PbFieldType.PM, subBuilder: Resolver.create)
     ..m<$core.String, Resolvers>(2, _omitFieldNames ? '' : 'routes', entryClassName: 'DNSConfig.RoutesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: Resolvers.create, valueDefaultOrMaker: Resolvers.getDefault, packageName: const $pb.PackageName('protos'))
     ..pPS(3, _omitFieldNames ? '' : 'searchDomains', protoName: 'searchDomains')
+    ..pPS(4, _omitFieldNames ? '' : 'exitNodeFilterd', protoName: 'exitNodeFilterd')
+    ..aOB(5, _omitFieldNames ? '' : 'enabledWonderDNS', protoName: 'enabledWonderDNS')
     ..hasRequiredFields = false
   ;
 
@@ -834,7 +846,7 @@ class DNSConfig extends $pb.GeneratedMessage {
   /// - 2001:4860:4860::8888
   /// - 2001:4860:4860::9999
   @$pb.TagNumber(1)
-  $core.List<Resolver> get resolvers => $_getList(0);
+  $pb.PbList<Resolver> get resolvers => $_getList(0);
 
   /// RoutesはDNS名のサフィックス（接尾辞）を、DNSリゾルバのセットにマッピングします。
   /// 値が空のスライスである場合、そのサフィックスはWonderDNSの100.200.100.200で処理される。
@@ -844,7 +856,7 @@ class DNSConfig extends $pb.GeneratedMessage {
   /// e.g. office.example.com.:["178.10.3.1"]
   /// - 2025/3/27時点では主にSplit DNSで使用する。
   @$pb.TagNumber(2)
-  $core.Map<$core.String, Resolvers> get routes => $_getMap(1);
+  $pb.PbMap<$core.String, Resolvers> get routes => $_getMap(1);
 
   /// SearchDomainsはたとえばあるRunetに"example.com"と"test.com"が検索ドメインとして設定されている場合、
   /// ユーザーがserverという名前を入力すると、Runetaleは
@@ -852,7 +864,23 @@ class DNSConfig extends $pb.GeneratedMessage {
   /// 	2. 一致しなければ、次にserver.test.comを同様のネームサーバーで検索します。
   /// e.g. ["example.com","test.com"] のような感じ
   @$pb.TagNumber(3)
-  $core.List<$core.String> get searchDomains => $_getList(2);
+  $pb.PbList<$core.String> get searchDomains => $_getList(2);
+
+  /// 出口ノードとして DNS プロキシを行う際に
+  /// 応答を無視するDNSサフィックスのリスト
+  /// defaultでは[.rt.net]
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get exitNodeFilterd => $_getList(3);
+
+  /// wonderdnsを有効にするかどうか
+  @$pb.TagNumber(5)
+  $core.bool get enabledWonderDNS => $_getBF(4);
+  @$pb.TagNumber(5)
+  set enabledWonderDNS($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasEnabledWonderDNS() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEnabledWonderDNS() => $_clearField(5);
 }
 
 

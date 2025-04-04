@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/admin.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,6 +15,8 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'admin.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'admin.pbenum.dart';
 
@@ -90,7 +92,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearName() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get desc => $_getSZ(1);
@@ -99,19 +101,19 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDesc() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDesc() => clearField(2);
+  void clearDesc() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<AclResources> get src => $_getList(2);
+  $pb.PbList<AclResources> get src => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<AclResources> get dst => $_getList(3);
+  $pb.PbList<AclResources> get dst => $_getList(3);
 
   /// ianaのプロトコル番号で実装
   /// https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
   /// 0の場合はTCP, UDP, ICMPv4,ICMPv6が有効になる
   @$pb.TagNumber(5)
-  $core.List<IPProto> get ipProto => $_getList(4);
+  $pb.PbList<IPProto> get ipProto => $_getList(4);
 
   @$pb.TagNumber(6)
   $core.String get ports => $_getSZ(5);
@@ -120,7 +122,7 @@ class CreateAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPorts() => clearField(6);
+  void clearPorts() => $_clearField(6);
 }
 
 class AclResources extends $pb.GeneratedMessage {
@@ -174,7 +176,7 @@ class AclResources extends $pb.GeneratedMessage {
   static AclResources? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$fixnum.Int64> get nodeIds => $_getList(0);
+  $pb.PbList<$fixnum.Int64> get nodeIds => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.String get policyId => $_getSZ(1);
@@ -183,16 +185,16 @@ class AclResources extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPolicyId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPolicyId() => clearField(2);
+  void clearPolicyId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   NodeType get nodeType => $_getN(2);
   @$pb.TagNumber(3)
-  set nodeType(NodeType v) { setField(3, v); }
+  set nodeType(NodeType v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasNodeType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearNodeType() => clearField(3);
+  void clearNodeType() => $_clearField(3);
 }
 
 class PatchAclRequest extends $pb.GeneratedMessage {
@@ -272,7 +274,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -281,7 +283,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -290,18 +292,18 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<AclResources> get src => $_getList(3);
+  $pb.PbList<AclResources> get src => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<AclResources> get dst => $_getList(4);
+  $pb.PbList<AclResources> get dst => $_getList(4);
 
   /// ianaのプロトコル番号を使用する
   /// 0の場合はTCP, UDP, ICMPv4,ICMPv6が有効になる
   @$pb.TagNumber(6)
-  $core.List<IPProto> get ipProto => $_getList(5);
+  $pb.PbList<IPProto> get ipProto => $_getList(5);
 
   @$pb.TagNumber(7)
   $core.String get ports => $_getSZ(6);
@@ -310,7 +312,7 @@ class PatchAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasPorts() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPorts() => clearField(7);
+  void clearPorts() => $_clearField(7);
 }
 
 class GetAclRequest extends $pb.GeneratedMessage {
@@ -360,7 +362,7 @@ class GetAclRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 class GetAclsResponse extends $pb.GeneratedMessage {
@@ -404,7 +406,7 @@ class GetAclsResponse extends $pb.GeneratedMessage {
   static GetAclsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<AclResponse> get acls => $_getList(0);
+  $pb.PbList<AclResponse> get acls => $_getList(0);
 }
 
 class GetAclsJsonResponse extends $pb.GeneratedMessage {
@@ -454,7 +456,7 @@ class GetAclsJsonResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasJson() => $_has(0);
   @$pb.TagNumber(1)
-  void clearJson() => clearField(1);
+  void clearJson() => $_clearField(1);
 }
 
 class AclResponse extends $pb.GeneratedMessage {
@@ -544,7 +546,7 @@ class AclResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -553,7 +555,7 @@ class AclResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -562,32 +564,32 @@ class AclResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
   Policy get src => $_getN(3);
   @$pb.TagNumber(4)
-  set src(Policy v) { setField(4, v); }
+  set src(Policy v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSrc() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSrc() => clearField(4);
+  void clearSrc() => $_clearField(4);
   @$pb.TagNumber(4)
   Policy ensureSrc() => $_ensure(3);
 
   @$pb.TagNumber(5)
   Policy get dst => $_getN(4);
   @$pb.TagNumber(5)
-  set dst(Policy v) { setField(5, v); }
+  set dst(Policy v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDst() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDst() => clearField(5);
+  void clearDst() => $_clearField(5);
   @$pb.TagNumber(5)
   Policy ensureDst() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.List<IPProto> get ipProto => $_getList(5);
+  $pb.PbList<IPProto> get ipProto => $_getList(5);
 
   @$pb.TagNumber(7)
   $core.String get ports => $_getSZ(6);
@@ -596,7 +598,7 @@ class AclResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasPorts() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPorts() => clearField(7);
+  void clearPorts() => $_clearField(7);
 
   @$pb.TagNumber(8)
   $core.String get updatedAt => $_getSZ(7);
@@ -605,7 +607,7 @@ class AclResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasUpdatedAt() => $_has(7);
   @$pb.TagNumber(8)
-  void clearUpdatedAt() => clearField(8);
+  void clearUpdatedAt() => $_clearField(8);
 
   @$pb.TagNumber(9)
   $core.String get aclType => $_getSZ(8);
@@ -614,7 +616,7 @@ class AclResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasAclType() => $_has(8);
   @$pb.TagNumber(9)
-  void clearAclType() => clearField(9);
+  void clearAclType() => $_clearField(9);
 }
 
 class GetMeResponse extends $pb.GeneratedMessage {
@@ -679,7 +681,7 @@ class GetMeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUsername() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUsername() => clearField(1);
+  void clearUsername() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get email => $_getSZ(1);
@@ -688,7 +690,7 @@ class GetMeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
-  void clearEmail() => clearField(2);
+  void clearEmail() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get picture => $_getSZ(2);
@@ -697,7 +699,7 @@ class GetMeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPicture() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPicture() => clearField(3);
+  void clearPicture() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.bool get isOwner => $_getBF(3);
@@ -706,7 +708,7 @@ class GetMeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasIsOwner() => $_has(3);
   @$pb.TagNumber(4)
-  void clearIsOwner() => clearField(4);
+  void clearIsOwner() => $_clearField(4);
 }
 
 class GetUserRequest extends $pb.GeneratedMessage {
@@ -756,7 +758,7 @@ class GetUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => clearField(1);
+  void clearNodeId() => $_clearField(1);
 }
 
 class GetUsersRequest extends $pb.GeneratedMessage {
@@ -806,7 +808,7 @@ class GetUsersRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasGroupId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearGroupId() => clearField(1);
+  void clearGroupId() => $_clearField(1);
 }
 
 class PatchUserRequest extends $pb.GeneratedMessage {
@@ -861,16 +863,16 @@ class PatchUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => clearField(1);
+  void clearNodeId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   UserRole get role => $_getN(1);
   @$pb.TagNumber(2)
-  set role(UserRole v) { setField(2, v); }
+  set role(UserRole v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRole() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRole() => clearField(2);
+  void clearRole() => $_clearField(2);
 }
 
 class Users extends $pb.GeneratedMessage {
@@ -914,7 +916,7 @@ class Users extends $pb.GeneratedMessage {
   static Users? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<User> get users => $_getList(0);
+  $pb.PbList<User> get users => $_getList(0);
 }
 
 class CreateGroupRequest extends $pb.GeneratedMessage {
@@ -974,7 +976,7 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearName() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get desc => $_getSZ(1);
@@ -983,10 +985,10 @@ class CreateGroupRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDesc() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDesc() => clearField(2);
+  void clearDesc() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get nodeIds => $_getList(2);
+  $pb.PbList<$fixnum.Int64> get nodeIds => $_getList(2);
 }
 
 class GetGroupRequest extends $pb.GeneratedMessage {
@@ -1036,7 +1038,7 @@ class GetGroupRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 class Groups extends $pb.GeneratedMessage {
@@ -1080,7 +1082,7 @@ class Groups extends $pb.GeneratedMessage {
   static Groups? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Group> get groups => $_getList(0);
+  $pb.PbList<Group> get groups => $_getList(0);
 }
 
 class UserWithPicture extends $pb.GeneratedMessage {
@@ -1140,7 +1142,7 @@ class UserWithPicture extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -1149,7 +1151,7 @@ class UserWithPicture extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get picture => $_getSZ(2);
@@ -1158,7 +1160,7 @@ class UserWithPicture extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPicture() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPicture() => clearField(3);
+  void clearPicture() => $_clearField(3);
 }
 
 class PatchGroupRequest extends $pb.GeneratedMessage {
@@ -1223,7 +1225,7 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -1232,7 +1234,7 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -1241,10 +1243,10 @@ class PatchGroupRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get nodeIds => $_getList(3);
+  $pb.PbList<$fixnum.Int64> get nodeIds => $_getList(3);
 }
 
 class GetDeviceRequest extends $pb.GeneratedMessage {
@@ -1294,7 +1296,7 @@ class GetDeviceRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => clearField(1);
+  void clearNodeId() => $_clearField(1);
 }
 
 class GetDevicesRequest extends $pb.GeneratedMessage {
@@ -1345,7 +1347,7 @@ class GetDevicesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasInkId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInkId() => clearField(1);
+  void clearInkId() => $_clearField(1);
 }
 
 class Devices extends $pb.GeneratedMessage {
@@ -1389,7 +1391,7 @@ class Devices extends $pb.GeneratedMessage {
   static Devices? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Device> get devices => $_getList(0);
+  $pb.PbList<Device> get devices => $_getList(0);
 }
 
 class CreateInkRequest extends $pb.GeneratedMessage {
@@ -1449,7 +1451,7 @@ class CreateInkRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearName() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get desc => $_getSZ(1);
@@ -1458,10 +1460,10 @@ class CreateInkRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDesc() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDesc() => clearField(2);
+  void clearDesc() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get nodeIds => $_getList(2);
+  $pb.PbList<$fixnum.Int64> get nodeIds => $_getList(2);
 }
 
 class GetInkRequest extends $pb.GeneratedMessage {
@@ -1511,7 +1513,7 @@ class GetInkRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 class PatchInkRequest extends $pb.GeneratedMessage {
@@ -1576,7 +1578,7 @@ class PatchInkRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -1585,7 +1587,7 @@ class PatchInkRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -1594,10 +1596,10 @@ class PatchInkRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get nodeIds => $_getList(3);
+  $pb.PbList<$fixnum.Int64> get nodeIds => $_getList(3);
 }
 
 class Inks extends $pb.GeneratedMessage {
@@ -1641,7 +1643,7 @@ class Inks extends $pb.GeneratedMessage {
   static Inks? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Ink> get inks => $_getList(0);
+  $pb.PbList<Ink> get inks => $_getList(0);
 }
 
 class Ink extends $pb.GeneratedMessage {
@@ -1721,7 +1723,7 @@ class Ink extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -1730,7 +1732,7 @@ class Ink extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -1739,7 +1741,7 @@ class Ink extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get domain => $_getSZ(3);
@@ -1748,10 +1750,10 @@ class Ink extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDomain() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDomain() => clearField(4);
+  void clearDomain() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<Device> get devices => $_getList(4);
+  $pb.PbList<Device> get devices => $_getList(4);
 
   @$pb.TagNumber(7)
   $core.String get ports => $_getSZ(5);
@@ -1760,7 +1762,7 @@ class Ink extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(7)
-  void clearPorts() => clearField(7);
+  void clearPorts() => $_clearField(7);
 
   @$pb.TagNumber(8)
   $core.String get updatedAt => $_getSZ(6);
@@ -1769,7 +1771,7 @@ class Ink extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasUpdatedAt() => $_has(6);
   @$pb.TagNumber(8)
-  void clearUpdatedAt() => clearField(8);
+  void clearUpdatedAt() => $_clearField(8);
 }
 
 class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
@@ -1835,20 +1837,20 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Platform get platform => $_getN(0);
   @$pb.TagNumber(1)
-  set platform(Platform v) { setField(1, v); }
+  set platform(Platform v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlatform() => clearField(1);
+  void clearPlatform() => $_clearField(1);
 
   @$pb.TagNumber(2)
   ExpirelyTime get expirelyTime => $_getN(1);
   @$pb.TagNumber(2)
-  set expirelyTime(ExpirelyTime v) { setField(2, v); }
+  set expirelyTime(ExpirelyTime v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasExpirelyTime() => $_has(1);
   @$pb.TagNumber(2)
-  void clearExpirelyTime() => clearField(2);
+  void clearExpirelyTime() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -1857,7 +1859,7 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get desc => $_getSZ(3);
@@ -1866,7 +1868,7 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDesc() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDesc() => clearField(4);
+  void clearDesc() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.bool get isReusable => $_getBF(4);
@@ -1875,7 +1877,7 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasIsReusable() => $_has(4);
   @$pb.TagNumber(5)
-  void clearIsReusable() => clearField(5);
+  void clearIsReusable() => $_clearField(5);
 }
 
 class GenerateComposeKeyResponse_installScript extends $pb.GeneratedMessage {
@@ -1930,16 +1932,16 @@ class GenerateComposeKeyResponse_installScript extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasScript() => $_has(0);
   @$pb.TagNumber(1)
-  void clearScript() => clearField(1);
+  void clearScript() => $_clearField(1);
 
   @$pb.TagNumber(2)
   Platform get platform => $_getN(1);
   @$pb.TagNumber(2)
-  set platform(Platform v) { setField(2, v); }
+  set platform(Platform v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPlatform() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPlatform() => clearField(2);
+  void clearPlatform() => $_clearField(2);
 }
 
 class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
@@ -1988,7 +1990,7 @@ class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
   static GenerateComposeKeyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<GenerateComposeKeyResponse_installScript> get installScripts => $_getList(0);
+  $pb.PbList<GenerateComposeKeyResponse_installScript> get installScripts => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.String get composeKey => $_getSZ(1);
@@ -1997,7 +1999,7 @@ class GenerateComposeKeyResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasComposeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearComposeKey() => clearField(2);
+  void clearComposeKey() => $_clearField(2);
 }
 
 class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
@@ -2077,7 +2079,7 @@ class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasComposeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearComposeKey() => clearField(1);
+  void clearComposeKey() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get expiredAt => $_getSZ(1);
@@ -2086,7 +2088,7 @@ class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasExpiredAt() => $_has(1);
   @$pb.TagNumber(2)
-  void clearExpiredAt() => clearField(2);
+  void clearExpiredAt() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.bool get hasExpied => $_getBF(2);
@@ -2095,7 +2097,7 @@ class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasHasExpied() => $_has(2);
   @$pb.TagNumber(3)
-  void clearHasExpied() => clearField(3);
+  void clearHasExpied() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get createdBy => $_getSZ(3);
@@ -2104,7 +2106,7 @@ class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasCreatedBy() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCreatedBy() => clearField(4);
+  void clearCreatedBy() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get createdAt => $_getSZ(4);
@@ -2113,7 +2115,7 @@ class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasCreatedAt() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCreatedAt() => clearField(5);
+  void clearCreatedAt() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get description => $_getSZ(5);
@@ -2122,7 +2124,7 @@ class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasDescription() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDescription() => clearField(6);
+  void clearDescription() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $core.bool get isReusable => $_getBF(6);
@@ -2131,7 +2133,7 @@ class GetComposeKeysResponse_composeKey extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasIsReusable() => $_has(6);
   @$pb.TagNumber(7)
-  void clearIsReusable() => clearField(7);
+  void clearIsReusable() => $_clearField(7);
 }
 
 class GetComposeKeysResponse extends $pb.GeneratedMessage {
@@ -2175,7 +2177,7 @@ class GetComposeKeysResponse extends $pb.GeneratedMessage {
   static GetComposeKeysResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<GetComposeKeysResponse_composeKey> get composeKeys => $_getList(0);
+  $pb.PbList<GetComposeKeysResponse_composeKey> get composeKeys => $_getList(0);
 }
 
 class GetComposeNodeStatusRequest extends $pb.GeneratedMessage {
@@ -2225,7 +2227,7 @@ class GetComposeNodeStatusRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasComposeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearComposeKey() => clearField(1);
+  void clearComposeKey() => $_clearField(1);
 }
 
 class GetComposeNodeStatusResponse extends $pb.GeneratedMessage {
@@ -2285,7 +2287,7 @@ class GetComposeNodeStatusResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasIsConnected() => $_has(0);
   @$pb.TagNumber(1)
-  void clearIsConnected() => clearField(1);
+  void clearIsConnected() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get ip => $_getSZ(1);
@@ -2294,7 +2296,7 @@ class GetComposeNodeStatusResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasIp() => $_has(1);
   @$pb.TagNumber(2)
-  void clearIp() => clearField(2);
+  void clearIp() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get host => $_getSZ(2);
@@ -2303,7 +2305,7 @@ class GetComposeNodeStatusResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasHost() => $_has(2);
   @$pb.TagNumber(3)
-  void clearHost() => clearField(3);
+  void clearHost() => $_clearField(3);
 }
 
 class GetResourceRequest extends $pb.GeneratedMessage {
@@ -2353,7 +2355,7 @@ class GetResourceRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => clearField(1);
+  void clearNodeId() => $_clearField(1);
 }
 
 class GetResourcesRequest extends $pb.GeneratedMessage {
@@ -2403,7 +2405,7 @@ class GetResourcesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasFleetId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFleetId() => clearField(1);
+  void clearFleetId() => $_clearField(1);
 }
 
 class Resources extends $pb.GeneratedMessage {
@@ -2447,7 +2449,7 @@ class Resources extends $pb.GeneratedMessage {
   static Resources? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Resource> get resources => $_getList(0);
+  $pb.PbList<Resource> get resources => $_getList(0);
 }
 
 class CreateFleetRequest extends $pb.GeneratedMessage {
@@ -2512,7 +2514,7 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearName() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get desc => $_getSZ(1);
@@ -2521,19 +2523,19 @@ class CreateFleetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDesc() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDesc() => clearField(2);
+  void clearDesc() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$fixnum.Int64> get nodeIds => $_getList(2);
+  $pb.PbList<$fixnum.Int64> get nodeIds => $_getList(2);
 
   @$pb.TagNumber(4)
   Platform get platform => $_getN(3);
   @$pb.TagNumber(4)
-  set platform(Platform v) { setField(4, v); }
+  set platform(Platform v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasPlatform() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPlatform() => clearField(4);
+  void clearPlatform() => $_clearField(4);
 }
 
 class GetFleetRequest extends $pb.GeneratedMessage {
@@ -2583,7 +2585,7 @@ class GetFleetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 class Fleets extends $pb.GeneratedMessage {
@@ -2627,7 +2629,7 @@ class Fleets extends $pb.GeneratedMessage {
   static Fleets? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Fleet> get fleets => $_getList(0);
+  $pb.PbList<Fleet> get fleets => $_getList(0);
 }
 
 class PatchFleetRequest extends $pb.GeneratedMessage {
@@ -2697,7 +2699,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -2706,7 +2708,7 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -2715,19 +2717,19 @@ class PatchFleetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$fixnum.Int64> get nodeIds => $_getList(3);
+  $pb.PbList<$fixnum.Int64> get nodeIds => $_getList(3);
 
   @$pb.TagNumber(5)
   Platform get platform => $_getN(4);
   @$pb.TagNumber(5)
-  set platform(Platform v) { setField(5, v); }
+  set platform(Platform v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasPlatform() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPlatform() => clearField(5);
+  void clearPlatform() => $_clearField(5);
 }
 
 class Overview extends $pb.GeneratedMessage {
@@ -2802,7 +2804,7 @@ class Overview extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasDevicesAmount() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDevicesAmount() => clearField(1);
+  void clearDevicesAmount() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get usersAmount => $_getI64(1);
@@ -2811,7 +2813,7 @@ class Overview extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasUsersAmount() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUsersAmount() => clearField(2);
+  void clearUsersAmount() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get fleetsAmount => $_getI64(2);
@@ -2820,7 +2822,7 @@ class Overview extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasFleetsAmount() => $_has(2);
   @$pb.TagNumber(3)
-  void clearFleetsAmount() => clearField(3);
+  void clearFleetsAmount() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $fixnum.Int64 get resourcesAmount => $_getI64(3);
@@ -2829,7 +2831,7 @@ class Overview extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasResourcesAmount() => $_has(3);
   @$pb.TagNumber(4)
-  void clearResourcesAmount() => clearField(4);
+  void clearResourcesAmount() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.bool get isOnboarding => $_getBF(4);
@@ -2838,7 +2840,7 @@ class Overview extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasIsOnboarding() => $_has(4);
   @$pb.TagNumber(5)
-  void clearIsOnboarding() => clearField(5);
+  void clearIsOnboarding() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get inviteLink => $_getSZ(5);
@@ -2847,7 +2849,7 @@ class Overview extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasInviteLink() => $_has(5);
   @$pb.TagNumber(6)
-  void clearInviteLink() => clearField(6);
+  void clearInviteLink() => $_clearField(6);
 }
 
 class InviteUserResponse extends $pb.GeneratedMessage {
@@ -2897,7 +2899,7 @@ class InviteUserResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasInviteCode() => $_has(0);
   @$pb.TagNumber(1)
-  void clearInviteCode() => clearField(1);
+  void clearInviteCode() => $_clearField(1);
 }
 
 class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
@@ -2962,7 +2964,7 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => clearField(1);
+  void clearNodeId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -2971,7 +2973,7 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -2980,10 +2982,10 @@ class CreateSubnetLinkerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get advertisedRoutes => $_getList(3);
+  $pb.PbList<$core.String> get advertisedRoutes => $_getList(3);
 }
 
 class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
@@ -3088,7 +3090,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get nodeId => $_getI64(1);
@@ -3097,7 +3099,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNodeId() => clearField(2);
+  void clearNodeId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -3106,7 +3108,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get email => $_getSZ(3);
@@ -3115,7 +3117,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasEmail() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEmail() => clearField(4);
+  void clearEmail() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get ip => $_getSZ(4);
@@ -3124,10 +3126,10 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasIp() => $_has(4);
   @$pb.TagNumber(5)
-  void clearIp() => clearField(5);
+  void clearIp() => $_clearField(5);
 
   @$pb.TagNumber(8)
-  $core.List<IPProto> get ipProto => $_getList(5);
+  $pb.PbList<IPProto> get ipProto => $_getList(5);
 
   @$pb.TagNumber(9)
   $core.String get os => $_getSZ(6);
@@ -3136,16 +3138,16 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasOs() => $_has(6);
   @$pb.TagNumber(9)
-  void clearOs() => clearField(9);
+  void clearOs() => $_clearField(9);
 
   @$pb.TagNumber(10)
   Platform get platform => $_getN(7);
   @$pb.TagNumber(10)
-  set platform(Platform v) { setField(10, v); }
+  set platform(Platform v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasPlatform() => $_has(7);
   @$pb.TagNumber(10)
-  void clearPlatform() => clearField(10);
+  void clearPlatform() => $_clearField(10);
 
   @$pb.TagNumber(11)
   $core.bool get status => $_getBF(8);
@@ -3154,7 +3156,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasStatus() => $_has(8);
   @$pb.TagNumber(11)
-  void clearStatus() => clearField(11);
+  void clearStatus() => $_clearField(11);
 
   @$pb.TagNumber(12)
   $core.String get createdBy => $_getSZ(9);
@@ -3163,7 +3165,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasCreatedBy() => $_has(9);
   @$pb.TagNumber(12)
-  void clearCreatedBy() => clearField(12);
+  void clearCreatedBy() => $_clearField(12);
 
   @$pb.TagNumber(13)
   $core.String get lastSeen => $_getSZ(10);
@@ -3172,16 +3174,16 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.bool hasLastSeen() => $_has(10);
   @$pb.TagNumber(13)
-  void clearLastSeen() => clearField(13);
+  void clearLastSeen() => $_clearField(13);
 
   @$pb.TagNumber(14)
   NodeType get nodeType => $_getN(11);
   @$pb.TagNumber(14)
-  set nodeType(NodeType v) { setField(14, v); }
+  set nodeType(NodeType v) { $_setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasNodeType() => $_has(11);
   @$pb.TagNumber(14)
-  void clearNodeType() => clearField(14);
+  void clearNodeType() => $_clearField(14);
 }
 
 class GetSubnetLinkerConvertibleNodesResponse extends $pb.GeneratedMessage {
@@ -3225,7 +3227,7 @@ class GetSubnetLinkerConvertibleNodesResponse extends $pb.GeneratedMessage {
   static GetSubnetLinkerConvertibleNodesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<SubnetLinkerCovertibleNode> get subnetLinkerConvetibleNodes => $_getList(0);
+  $pb.PbList<SubnetLinkerCovertibleNode> get subnetLinkerConvetibleNodes => $_getList(0);
 }
 
 class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
@@ -3290,7 +3292,7 @@ class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -3299,7 +3301,7 @@ class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -3308,10 +3310,10 @@ class PatchSubnetLinkerRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get advertisedRoutes => $_getList(3);
+  $pb.PbList<$core.String> get advertisedRoutes => $_getList(3);
 }
 
 class GetSubnetLinkersReponse extends $pb.GeneratedMessage {
@@ -3355,7 +3357,7 @@ class GetSubnetLinkersReponse extends $pb.GeneratedMessage {
   static GetSubnetLinkersReponse? _defaultInstance;
 
   @$pb.TagNumber(2)
-  $core.List<Linker> get linkers => $_getList(0);
+  $pb.PbList<Linker> get linkers => $_getList(0);
 }
 
 class Linker extends $pb.GeneratedMessage {
@@ -3490,16 +3492,16 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   LinkerType get linkerType => $_getN(1);
   @$pb.TagNumber(2)
-  set linkerType(LinkerType v) { setField(2, v); }
+  set linkerType(LinkerType v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasLinkerType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLinkerType() => clearField(2);
+  void clearLinkerType() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get nodeId => $_getI64(2);
@@ -3508,17 +3510,17 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasNodeId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearNodeId() => clearField(3);
+  void clearNodeId() => $_clearField(3);
 
   /// minor change 0.0.1 currently device or resource
   @$pb.TagNumber(4)
   NodeType get nodeType => $_getN(3);
   @$pb.TagNumber(4)
-  set nodeType(NodeType v) { setField(4, v); }
+  set nodeType(NodeType v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasNodeType() => $_has(3);
   @$pb.TagNumber(4)
-  void clearNodeType() => clearField(4);
+  void clearNodeType() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get name => $_getSZ(4);
@@ -3527,7 +3529,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearName() => clearField(5);
+  void clearName() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get desc => $_getSZ(5);
@@ -3536,7 +3538,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasDesc() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDesc() => clearField(6);
+  void clearDesc() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $core.String get email => $_getSZ(6);
@@ -3545,7 +3547,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasEmail() => $_has(6);
   @$pb.TagNumber(7)
-  void clearEmail() => clearField(7);
+  void clearEmail() => $_clearField(7);
 
   @$pb.TagNumber(8)
   $core.String get domain => $_getSZ(7);
@@ -3554,7 +3556,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasDomain() => $_has(7);
   @$pb.TagNumber(8)
-  void clearDomain() => clearField(8);
+  void clearDomain() => $_clearField(8);
 
   @$pb.TagNumber(9)
   $core.String get ip => $_getSZ(8);
@@ -3563,10 +3565,10 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasIp() => $_has(8);
   @$pb.TagNumber(9)
-  void clearIp() => clearField(9);
+  void clearIp() => $_clearField(9);
 
   @$pb.TagNumber(10)
-  $core.List<$core.String> get advertisedRoutes => $_getList(9);
+  $pb.PbList<$core.String> get advertisedRoutes => $_getList(9);
 
   @$pb.TagNumber(11)
   $core.String get host => $_getSZ(10);
@@ -3575,7 +3577,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasHost() => $_has(10);
   @$pb.TagNumber(11)
-  void clearHost() => clearField(11);
+  void clearHost() => $_clearField(11);
 
   @$pb.TagNumber(12)
   $core.String get os => $_getSZ(11);
@@ -3584,7 +3586,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasOs() => $_has(11);
   @$pb.TagNumber(12)
-  void clearOs() => clearField(12);
+  void clearOs() => $_clearField(12);
 
   @$pb.TagNumber(13)
   $core.String get nodeKey => $_getSZ(12);
@@ -3593,16 +3595,16 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.bool hasNodeKey() => $_has(12);
   @$pb.TagNumber(13)
-  void clearNodeKey() => clearField(13);
+  void clearNodeKey() => $_clearField(13);
 
   @$pb.TagNumber(14)
   Platform get platform => $_getN(13);
   @$pb.TagNumber(14)
-  set platform(Platform v) { setField(14, v); }
+  set platform(Platform v) { $_setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasPlatform() => $_has(13);
   @$pb.TagNumber(14)
-  void clearPlatform() => clearField(14);
+  void clearPlatform() => $_clearField(14);
 
   @$pb.TagNumber(15)
   $core.String get createdBy => $_getSZ(14);
@@ -3611,7 +3613,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   $core.bool hasCreatedBy() => $_has(14);
   @$pb.TagNumber(15)
-  void clearCreatedBy() => clearField(15);
+  void clearCreatedBy() => $_clearField(15);
 
   @$pb.TagNumber(16)
   $core.String get createdAt => $_getSZ(15);
@@ -3620,7 +3622,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(16)
   $core.bool hasCreatedAt() => $_has(15);
   @$pb.TagNumber(16)
-  void clearCreatedAt() => clearField(16);
+  void clearCreatedAt() => $_clearField(16);
 
   @$pb.TagNumber(17)
   $core.bool get status => $_getBF(16);
@@ -3629,7 +3631,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(17)
   $core.bool hasStatus() => $_has(16);
   @$pb.TagNumber(17)
-  void clearStatus() => clearField(17);
+  void clearStatus() => $_clearField(17);
 
   @$pb.TagNumber(18)
   $core.String get lastSeen => $_getSZ(17);
@@ -3638,7 +3640,7 @@ class Linker extends $pb.GeneratedMessage {
   @$pb.TagNumber(18)
   $core.bool hasLastSeen() => $_has(17);
   @$pb.TagNumber(18)
-  void clearLastSeen() => clearField(18);
+  void clearLastSeen() => $_clearField(18);
 }
 
 class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
@@ -3708,7 +3710,7 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get nodeId => $_getI64(1);
@@ -3717,7 +3719,7 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNodeId() => clearField(2);
+  void clearNodeId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -3726,7 +3728,7 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get desc => $_getSZ(3);
@@ -3735,10 +3737,10 @@ class CreateSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDesc() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDesc() => clearField(4);
+  void clearDesc() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get advertisedRoutes => $_getList(4);
+  $pb.PbList<$core.String> get advertisedRoutes => $_getList(4);
 }
 
 class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
@@ -3808,7 +3810,7 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get nodeIds => $_getI64(1);
@@ -3817,7 +3819,7 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNodeIds() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNodeIds() => clearField(2);
+  void clearNodeIds() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -3826,7 +3828,7 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get desc => $_getSZ(3);
@@ -3835,10 +3837,10 @@ class PatchSubnetLinkerResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDesc() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDesc() => clearField(4);
+  void clearDesc() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get advertisedRoutes => $_getList(4);
+  $pb.PbList<$core.String> get advertisedRoutes => $_getList(4);
 }
 
 class Policy extends $pb.GeneratedMessage {
@@ -3912,25 +3914,25 @@ class Policy extends $pb.GeneratedMessage {
   static Policy? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Fleet> get fleets => $_getList(0);
+  $pb.PbList<Fleet> get fleets => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.List<Resource> get resources => $_getList(1);
+  $pb.PbList<Resource> get resources => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<Group> get groups => $_getList(2);
+  $pb.PbList<Group> get groups => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<User> get users => $_getList(3);
+  $pb.PbList<User> get users => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<Ink> get inks => $_getList(4);
+  $pb.PbList<Ink> get inks => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.List<Device> get devices => $_getList(5);
+  $pb.PbList<Device> get devices => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.List<Linker> get linkers => $_getList(6);
+  $pb.PbList<Linker> get linkers => $_getList(6);
 }
 
 class Fleet extends $pb.GeneratedMessage {
@@ -4020,7 +4022,7 @@ class Fleet extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -4029,7 +4031,7 @@ class Fleet extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -4038,13 +4040,13 @@ class Fleet extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<Resource> get resources => $_getList(3);
+  $pb.PbList<Resource> get resources => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<IPProto> get ipProto => $_getList(4);
+  $pb.PbList<IPProto> get ipProto => $_getList(4);
 
   @$pb.TagNumber(6)
   $core.String get ports => $_getSZ(5);
@@ -4053,7 +4055,7 @@ class Fleet extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPorts() => clearField(6);
+  void clearPorts() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $core.String get updatedAt => $_getSZ(6);
@@ -4062,16 +4064,16 @@ class Fleet extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasUpdatedAt() => $_has(6);
   @$pb.TagNumber(7)
-  void clearUpdatedAt() => clearField(7);
+  void clearUpdatedAt() => $_clearField(7);
 
   @$pb.TagNumber(8)
   Platform get platform => $_getN(7);
   @$pb.TagNumber(8)
-  set platform(Platform v) { setField(8, v); }
+  set platform(Platform v) { $_setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasPlatform() => $_has(7);
   @$pb.TagNumber(8)
-  void clearPlatform() => clearField(8);
+  void clearPlatform() => $_clearField(8);
 
   @$pb.TagNumber(9)
   $core.String get createdBy => $_getSZ(8);
@@ -4080,7 +4082,7 @@ class Fleet extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasCreatedBy() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCreatedBy() => clearField(9);
+  void clearCreatedBy() => $_clearField(9);
 }
 
 class Resource extends $pb.GeneratedMessage {
@@ -4200,7 +4202,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get nodeId => $_getI64(1);
@@ -4209,7 +4211,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNodeId() => clearField(2);
+  void clearNodeId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -4218,7 +4220,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get email => $_getSZ(3);
@@ -4227,7 +4229,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasEmail() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEmail() => clearField(4);
+  void clearEmail() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get ip => $_getSZ(4);
@@ -4236,7 +4238,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasIp() => $_has(4);
   @$pb.TagNumber(5)
-  void clearIp() => clearField(5);
+  void clearIp() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get ports => $_getSZ(5);
@@ -4245,10 +4247,10 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasPorts() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPorts() => clearField(6);
+  void clearPorts() => $_clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<IPProto> get ipProto => $_getList(6);
+  $pb.PbList<IPProto> get ipProto => $_getList(6);
 
   @$pb.TagNumber(8)
   $core.String get os => $_getSZ(7);
@@ -4257,16 +4259,16 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasOs() => $_has(7);
   @$pb.TagNumber(8)
-  void clearOs() => clearField(8);
+  void clearOs() => $_clearField(8);
 
   @$pb.TagNumber(9)
   Platform get platform => $_getN(8);
   @$pb.TagNumber(9)
-  set platform(Platform v) { setField(9, v); }
+  set platform(Platform v) { $_setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasPlatform() => $_has(8);
   @$pb.TagNumber(9)
-  void clearPlatform() => clearField(9);
+  void clearPlatform() => $_clearField(9);
 
   @$pb.TagNumber(10)
   $core.bool get status => $_getBF(9);
@@ -4275,7 +4277,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.bool hasStatus() => $_has(9);
   @$pb.TagNumber(10)
-  void clearStatus() => clearField(10);
+  void clearStatus() => $_clearField(10);
 
   @$pb.TagNumber(11)
   $core.String get createdBy => $_getSZ(10);
@@ -4284,7 +4286,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasCreatedBy() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCreatedBy() => clearField(11);
+  void clearCreatedBy() => $_clearField(11);
 
   @$pb.TagNumber(12)
   $core.String get lastSeen => $_getSZ(11);
@@ -4293,7 +4295,7 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasLastSeen() => $_has(11);
   @$pb.TagNumber(12)
-  void clearLastSeen() => clearField(12);
+  void clearLastSeen() => $_clearField(12);
 
   @$pb.TagNumber(13)
   $core.bool get isLinker => $_getBF(12);
@@ -4302,22 +4304,22 @@ class Resource extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.bool hasIsLinker() => $_has(12);
   @$pb.TagNumber(13)
-  void clearIsLinker() => clearField(13);
+  void clearIsLinker() => $_clearField(13);
 
   @$pb.TagNumber(14)
   Linker get linker => $_getN(13);
   @$pb.TagNumber(14)
-  set linker(Linker v) { setField(14, v); }
+  set linker(Linker v) { $_setField(14, v); }
   @$pb.TagNumber(14)
   $core.bool hasLinker() => $_has(13);
   @$pb.TagNumber(14)
-  void clearLinker() => clearField(14);
+  void clearLinker() => $_clearField(14);
   @$pb.TagNumber(14)
   Linker ensureLinker() => $_ensure(13);
 
   /// 属しているfleetが返ってくる
   @$pb.TagNumber(15)
-  $core.List<Fleet> get fleets => $_getList(14);
+  $pb.PbList<Fleet> get fleets => $_getList(14);
 }
 
 class Group extends $pb.GeneratedMessage {
@@ -4387,7 +4389,7 @@ class Group extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -4396,7 +4398,7 @@ class Group extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get desc => $_getSZ(2);
@@ -4405,10 +4407,10 @@ class Group extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDesc() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDesc() => clearField(3);
+  void clearDesc() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<User> get users => $_getList(3);
+  $pb.PbList<User> get users => $_getList(3);
 
   @$pb.TagNumber(5)
   $core.String get updatedAt => $_getSZ(4);
@@ -4417,7 +4419,7 @@ class Group extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasUpdatedAt() => $_has(4);
   @$pb.TagNumber(5)
-  void clearUpdatedAt() => clearField(5);
+  void clearUpdatedAt() => $_clearField(5);
 }
 
 class User extends $pb.GeneratedMessage {
@@ -4522,7 +4524,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => clearField(1);
+  void clearNodeId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -4531,7 +4533,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get picture => $_getSZ(2);
@@ -4540,7 +4542,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPicture() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPicture() => clearField(3);
+  void clearPicture() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get email => $_getSZ(3);
@@ -4549,7 +4551,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasEmail() => $_has(3);
   @$pb.TagNumber(4)
-  void clearEmail() => clearField(4);
+  void clearEmail() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get role => $_getSZ(4);
@@ -4558,7 +4560,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasRole() => $_has(4);
   @$pb.TagNumber(5)
-  void clearRole() => clearField(5);
+  void clearRole() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get joined => $_getSZ(5);
@@ -4567,22 +4569,22 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasJoined() => $_has(5);
   @$pb.TagNumber(6)
-  void clearJoined() => clearField(6);
+  void clearJoined() => $_clearField(6);
 
   @$pb.TagNumber(7)
-  $core.List<Group> get groups => $_getList(6);
+  $pb.PbList<Group> get groups => $_getList(6);
 
   @$pb.TagNumber(8)
-  $core.List<Device> get devices => $_getList(7);
+  $pb.PbList<Device> get devices => $_getList(7);
 
   @$pb.TagNumber(9)
-  $core.List<Resource> get resources => $_getList(8);
+  $pb.PbList<Resource> get resources => $_getList(8);
 
   @$pb.TagNumber(10)
-  $core.List<Fleet> get fleets => $_getList(9);
+  $pb.PbList<Fleet> get fleets => $_getList(9);
 
   @$pb.TagNumber(11)
-  $core.List<Ink> get inks => $_getList(10);
+  $pb.PbList<Ink> get inks => $_getList(10);
 
   @$pb.TagNumber(12)
   $core.bool get isSharedDomain => $_getBF(11);
@@ -4591,7 +4593,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasIsSharedDomain() => $_has(11);
   @$pb.TagNumber(12)
-  void clearIsSharedDomain() => clearField(12);
+  void clearIsSharedDomain() => $_clearField(12);
 }
 
 class Device extends $pb.GeneratedMessage {
@@ -4716,7 +4718,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => clearField(1);
+  void clearNodeId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
@@ -4725,7 +4727,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get email => $_getSZ(2);
@@ -4734,7 +4736,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasEmail() => $_has(2);
   @$pb.TagNumber(3)
-  void clearEmail() => clearField(3);
+  void clearEmail() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get ip => $_getSZ(3);
@@ -4743,7 +4745,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasIp() => $_has(3);
   @$pb.TagNumber(4)
-  void clearIp() => clearField(4);
+  void clearIp() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get ports => $_getSZ(4);
@@ -4752,7 +4754,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasPorts() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPorts() => clearField(5);
+  void clearPorts() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get os => $_getSZ(5);
@@ -4761,7 +4763,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasOs() => $_has(5);
   @$pb.TagNumber(6)
-  void clearOs() => clearField(6);
+  void clearOs() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $core.bool get status => $_getBF(6);
@@ -4770,7 +4772,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasStatus() => $_has(6);
   @$pb.TagNumber(7)
-  void clearStatus() => clearField(7);
+  void clearStatus() => $_clearField(7);
 
   @$pb.TagNumber(8)
   $core.String get lastSeen => $_getSZ(7);
@@ -4779,7 +4781,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasLastSeen() => $_has(7);
   @$pb.TagNumber(8)
-  void clearLastSeen() => clearField(8);
+  void clearLastSeen() => $_clearField(8);
 
   @$pb.TagNumber(9)
   $core.String get createdBy => $_getSZ(8);
@@ -4788,7 +4790,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasCreatedBy() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCreatedBy() => clearField(9);
+  void clearCreatedBy() => $_clearField(9);
 
   @$pb.TagNumber(10)
   $core.String get version => $_getSZ(9);
@@ -4797,7 +4799,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.bool hasVersion() => $_has(9);
   @$pb.TagNumber(10)
-  void clearVersion() => clearField(10);
+  void clearVersion() => $_clearField(10);
 
   @$pb.TagNumber(11)
   $core.String get nodeKey => $_getSZ(10);
@@ -4806,7 +4808,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasNodeKey() => $_has(10);
   @$pb.TagNumber(11)
-  void clearNodeKey() => clearField(11);
+  void clearNodeKey() => $_clearField(11);
 
   @$pb.TagNumber(12)
   $core.String get createdAt => $_getSZ(11);
@@ -4815,7 +4817,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasCreatedAt() => $_has(11);
   @$pb.TagNumber(12)
-  void clearCreatedAt() => clearField(12);
+  void clearCreatedAt() => $_clearField(12);
 
   @$pb.TagNumber(13)
   $core.String get keyExpiry => $_getSZ(12);
@@ -4824,7 +4826,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.bool hasKeyExpiry() => $_has(12);
   @$pb.TagNumber(13)
-  void clearKeyExpiry() => clearField(13);
+  void clearKeyExpiry() => $_clearField(13);
 
   @$pb.TagNumber(14)
   $core.bool get isLinker => $_getBF(13);
@@ -4833,22 +4835,22 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   $core.bool hasIsLinker() => $_has(13);
   @$pb.TagNumber(14)
-  void clearIsLinker() => clearField(14);
+  void clearIsLinker() => $_clearField(14);
 
   @$pb.TagNumber(15)
   Linker get linker => $_getN(14);
   @$pb.TagNumber(15)
-  set linker(Linker v) { setField(15, v); }
+  set linker(Linker v) { $_setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasLinker() => $_has(14);
   @$pb.TagNumber(15)
-  void clearLinker() => clearField(15);
+  void clearLinker() => $_clearField(15);
   @$pb.TagNumber(15)
   Linker ensureLinker() => $_ensure(14);
 
   /// deviceが属しているinks
   @$pb.TagNumber(16)
-  $core.List<Ink> get inks => $_getList(15);
+  $pb.PbList<Ink> get inks => $_getList(15);
 }
 
 

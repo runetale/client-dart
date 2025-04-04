@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/oidc.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -12,6 +12,8 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class LoginResponse extends $pb.GeneratedMessage {
   factory LoginResponse({
@@ -90,7 +92,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSub() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSub() => clearField(1);
+  void clearSub() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get tenantID => $_getSZ(1);
@@ -99,7 +101,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasTenantID() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTenantID() => clearField(2);
+  void clearTenantID() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get doamin => $_getSZ(2);
@@ -108,7 +110,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDoamin() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDoamin() => clearField(3);
+  void clearDoamin() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get providerID => $_getSZ(3);
@@ -117,7 +119,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasProviderID() => $_has(3);
   @$pb.TagNumber(4)
-  void clearProviderID() => clearField(4);
+  void clearProviderID() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get email => $_getSZ(4);
@@ -126,7 +128,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasEmail() => $_has(4);
   @$pb.TagNumber(5)
-  void clearEmail() => clearField(5);
+  void clearEmail() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get username => $_getSZ(5);
@@ -135,7 +137,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasUsername() => $_has(5);
   @$pb.TagNumber(6)
-  void clearUsername() => clearField(6);
+  void clearUsername() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $core.String get picture => $_getSZ(6);
@@ -144,7 +146,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasPicture() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPicture() => clearField(7);
+  void clearPicture() => $_clearField(7);
 }
 
 class LoginRequest extends $pb.GeneratedMessage {
@@ -229,7 +231,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSub() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSub() => clearField(1);
+  void clearSub() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get tenantID => $_getSZ(1);
@@ -238,7 +240,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasTenantID() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTenantID() => clearField(2);
+  void clearTenantID() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get doamin => $_getSZ(2);
@@ -247,7 +249,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDoamin() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDoamin() => clearField(3);
+  void clearDoamin() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get providerID => $_getSZ(3);
@@ -256,7 +258,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasProviderID() => $_has(3);
   @$pb.TagNumber(4)
-  void clearProviderID() => clearField(4);
+  void clearProviderID() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get email => $_getSZ(4);
@@ -265,7 +267,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasEmail() => $_has(4);
   @$pb.TagNumber(5)
-  void clearEmail() => clearField(5);
+  void clearEmail() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get username => $_getSZ(5);
@@ -274,7 +276,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasUsername() => $_has(5);
   @$pb.TagNumber(6)
-  void clearUsername() => clearField(6);
+  void clearUsername() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $core.String get picture => $_getSZ(6);
@@ -283,7 +285,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasPicture() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPicture() => clearField(7);
+  void clearPicture() => $_clearField(7);
 
   @$pb.TagNumber(8)
   $core.String get inviteCode => $_getSZ(7);
@@ -292,7 +294,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasInviteCode() => $_has(7);
   @$pb.TagNumber(8)
-  void clearInviteCode() => clearField(8);
+  void clearInviteCode() => $_clearField(8);
 }
 
 class AuthenticateResponse extends $pb.GeneratedMessage {
@@ -367,7 +369,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasDoamin() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDoamin() => clearField(1);
+  void clearDoamin() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get email => $_getSZ(1);
@@ -376,7 +378,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
-  void clearEmail() => clearField(2);
+  void clearEmail() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get username => $_getSZ(2);
@@ -385,7 +387,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasUsername() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUsername() => clearField(3);
+  void clearUsername() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get sub => $_getSZ(3);
@@ -394,7 +396,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasSub() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSub() => clearField(4);
+  void clearSub() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.bool get isRegistered => $_getBF(4);
@@ -403,7 +405,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasIsRegistered() => $_has(4);
   @$pb.TagNumber(5)
-  void clearIsRegistered() => clearField(5);
+  void clearIsRegistered() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.bool get isInvited => $_getBF(5);
@@ -412,7 +414,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasIsInvited() => $_has(5);
   @$pb.TagNumber(6)
-  void clearIsInvited() => clearField(6);
+  void clearIsInvited() => $_clearField(6);
 }
 
 

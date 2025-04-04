@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/node.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -167,6 +167,8 @@ const DNSConfig$json = {
     {'1': 'resolvers', '3': 1, '4': 3, '5': 11, '6': '.protos.Resolver', '10': 'resolvers'},
     {'1': 'routes', '3': 2, '4': 3, '5': 11, '6': '.protos.DNSConfig.RoutesEntry', '10': 'routes'},
     {'1': 'searchDomains', '3': 3, '4': 3, '5': 9, '10': 'searchDomains'},
+    {'1': 'exitNodeFilterd', '3': 4, '4': 3, '5': 9, '10': 'exitNodeFilterd'},
+    {'1': 'enabledWonderDNS', '3': 5, '4': 1, '5': 8, '10': 'enabledWonderDNS'},
   ],
   '3': [DNSConfig_RoutesEntry$json],
 };
@@ -185,7 +187,8 @@ const DNSConfig_RoutesEntry$json = {
 final $typed_data.Uint8List dNSConfigDescriptor = $convert.base64Decode(
     'CglETlNDb25maWcSLgoJcmVzb2x2ZXJzGAEgAygLMhAucHJvdG9zLlJlc29sdmVyUglyZXNvbH'
     'ZlcnMSNQoGcm91dGVzGAIgAygLMh0ucHJvdG9zLkROU0NvbmZpZy5Sb3V0ZXNFbnRyeVIGcm91'
-    'dGVzEiQKDXNlYXJjaERvbWFpbnMYAyADKAlSDXNlYXJjaERvbWFpbnMaTAoLUm91dGVzRW50cn'
-    'kSEAoDa2V5GAEgASgJUgNrZXkSJwoFdmFsdWUYAiABKAsyES5wcm90b3MuUmVzb2x2ZXJzUgV2'
-    'YWx1ZToCOAE=');
+    'dGVzEiQKDXNlYXJjaERvbWFpbnMYAyADKAlSDXNlYXJjaERvbWFpbnMSKAoPZXhpdE5vZGVGaW'
+    'x0ZXJkGAQgAygJUg9leGl0Tm9kZUZpbHRlcmQSKgoQZW5hYmxlZFdvbmRlckROUxgFIAEoCFIQ'
+    'ZW5hYmxlZFdvbmRlckROUxpMCgtSb3V0ZXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRInCgV2YW'
+    'x1ZRgCIAEoCzIRLnByb3Rvcy5SZXNvbHZlcnNSBXZhbHVlOgI4AQ==');
 

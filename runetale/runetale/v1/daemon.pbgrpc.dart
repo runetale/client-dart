@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/daemon.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -82,16 +82,16 @@ abstract class DaemonServiceBase extends $grpc.Service {
         ($2.GetConnectionStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$2.GetConnectionStatusResponse> connect_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return connect(call, await request);
+  $async.Future<$2.GetConnectionStatusResponse> connect_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return connect($call, await $request);
   }
 
-  $async.Future<$2.GetConnectionStatusResponse> disconnect_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return disconnect(call, await request);
+  $async.Future<$2.GetConnectionStatusResponse> disconnect_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return disconnect($call, await $request);
   }
 
-  $async.Future<$2.GetConnectionStatusResponse> getConnectionStatus_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getConnectionStatus(call, await request);
+  $async.Future<$2.GetConnectionStatusResponse> getConnectionStatus_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getConnectionStatus($call, await $request);
   }
 
   $async.Future<$2.GetConnectionStatusResponse> connect($grpc.ServiceCall call, $0.Empty request);

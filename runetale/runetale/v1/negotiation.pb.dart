@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/negotiation.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -14,6 +14,8 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'negotiation.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'negotiation.pbenum.dart';
 
@@ -85,11 +87,11 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NegotiationType get type => $_getN(0);
   @$pb.TagNumber(1)
-  set type(NegotiationType v) { setField(1, v); }
+  set type(NegotiationType v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearType() => clearField(1);
+  void clearType() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get dstNodeKey => $_getSZ(1);
@@ -98,7 +100,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDstNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDstNodeKey() => clearField(2);
+  void clearDstNodeKey() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get dstWgPubKey => $_getSZ(2);
@@ -107,7 +109,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDstWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDstWgPubKey() => clearField(3);
+  void clearDstWgPubKey() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get uFlag => $_getSZ(3);
@@ -116,7 +118,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
-  void clearUFlag() => clearField(4);
+  void clearUFlag() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get pwd => $_getSZ(4);
@@ -125,7 +127,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPwd() => clearField(5);
+  void clearPwd() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get candidate => $_getSZ(5);
@@ -134,7 +136,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasCandidate() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCandidate() => clearField(6);
+  void clearCandidate() => $_clearField(6);
 }
 
 class NegotiationResponse extends $pb.GeneratedMessage {
@@ -205,11 +207,11 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NegotiationType get type => $_getN(0);
   @$pb.TagNumber(1)
-  set type(NegotiationType v) { setField(1, v); }
+  set type(NegotiationType v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearType() => clearField(1);
+  void clearType() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get dstNodeKey => $_getSZ(1);
@@ -218,7 +220,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDstNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDstNodeKey() => clearField(2);
+  void clearDstNodeKey() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get dstWgPubKey => $_getSZ(2);
@@ -227,7 +229,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDstWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDstWgPubKey() => clearField(3);
+  void clearDstWgPubKey() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get uFlag => $_getSZ(3);
@@ -236,7 +238,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
-  void clearUFlag() => clearField(4);
+  void clearUFlag() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get pwd => $_getSZ(4);
@@ -245,7 +247,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPwd() => clearField(5);
+  void clearPwd() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get candidate => $_getSZ(5);
@@ -254,7 +256,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasCandidate() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCandidate() => clearField(6);
+  void clearCandidate() => $_clearField(6);
 }
 
 class HandshakeRequest extends $pb.GeneratedMessage {
@@ -324,7 +326,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasDstNodeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDstNodeKey() => clearField(1);
+  void clearDstNodeKey() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get srcNodeKey => $_getSZ(1);
@@ -333,7 +335,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasSrcNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSrcNodeKey() => clearField(2);
+  void clearSrcNodeKey() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get wgPubKey => $_getSZ(2);
@@ -342,7 +344,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearWgPubKey() => clearField(3);
+  void clearWgPubKey() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get uFlag => $_getSZ(3);
@@ -351,7 +353,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
-  void clearUFlag() => clearField(4);
+  void clearUFlag() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get pwd => $_getSZ(4);
@@ -360,7 +362,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPwd() => clearField(5);
+  void clearPwd() => $_clearField(5);
 }
 
 class CandidateRequest extends $pb.GeneratedMessage {
@@ -425,7 +427,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasDstNodeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDstNodeKey() => clearField(1);
+  void clearDstNodeKey() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get srcNodeKey => $_getSZ(1);
@@ -434,7 +436,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasSrcNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSrcNodeKey() => clearField(2);
+  void clearSrcNodeKey() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get wgPubKey => $_getSZ(2);
@@ -443,7 +445,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearWgPubKey() => clearField(3);
+  void clearWgPubKey() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get candidate => $_getSZ(3);
@@ -452,7 +454,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasCandidate() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCandidate() => clearField(4);
+  void clearCandidate() => $_clearField(4);
 }
 
 

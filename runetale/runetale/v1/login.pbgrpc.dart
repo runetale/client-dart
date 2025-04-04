@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/login.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -82,12 +82,12 @@ abstract class LoginServiceBase extends $grpc.Service {
         ($3.GetInvitationResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$3.LoginNodeResponse> loginNode_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return loginNode(call, await request);
+  $async.Future<$3.LoginNodeResponse> loginNode_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return loginNode($call, await $request);
   }
 
-  $async.Future<$3.GetInvitationResponse> getInvitation_Pre($grpc.ServiceCall call, $async.Future<$3.GetInvitationRequest> request) async {
-    return getInvitation(call, await request);
+  $async.Future<$3.GetInvitationResponse> getInvitation_Pre($grpc.ServiceCall $call, $async.Future<$3.GetInvitationRequest> $request) async {
+    return getInvitation($call, await $request);
   }
 
   $async.Future<$3.LoginNodeResponse> loginNode($grpc.ServiceCall call, $0.Empty request);

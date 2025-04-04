@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/rtc.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -52,8 +52,8 @@ abstract class RtcServiceBase extends $grpc.Service {
         ($8.GetStunTurnConfigResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$8.GetStunTurnConfigResponse> getStunTurnConfig_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getStunTurnConfig(call, await request);
+  $async.Future<$8.GetStunTurnConfigResponse> getStunTurnConfig_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getStunTurnConfig($call, await $request);
   }
 
   $async.Future<$8.GetStunTurnConfigResponse> getStunTurnConfig($grpc.ServiceCall call, $0.Empty request);

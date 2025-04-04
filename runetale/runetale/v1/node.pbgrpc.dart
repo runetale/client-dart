@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/node.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -82,12 +82,12 @@ abstract class NodeServiceBase extends $grpc.Service {
         ($5.NetworkMapResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$5.ComposeNodeResponse> composeNode_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return composeNode(call, await request);
+  $async.Future<$5.ComposeNodeResponse> composeNode_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return composeNode($call, await $request);
   }
 
-  $async.Future<$5.NetworkMapResponse> getNetworkMap_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getNetworkMap(call, await request);
+  $async.Future<$5.NetworkMapResponse> getNetworkMap_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getNetworkMap($call, await $request);
   }
 
   $async.Future<$5.ComposeNodeResponse> composeNode($grpc.ServiceCall call, $0.Empty request);

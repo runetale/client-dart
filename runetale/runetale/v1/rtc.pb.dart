@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/rtc.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -12,6 +12,8 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class StunHost extends $pb.GeneratedMessage {
   factory StunHost({
@@ -70,7 +72,7 @@ class StunHost extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUrl() => clearField(1);
+  void clearUrl() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get username => $_getSZ(1);
@@ -79,7 +81,7 @@ class StunHost extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasUsername() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUsername() => clearField(2);
+  void clearUsername() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get password => $_getSZ(2);
@@ -88,7 +90,7 @@ class StunHost extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPassword() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPassword() => clearField(3);
+  void clearPassword() => $_clearField(3);
 }
 
 class TurnHost extends $pb.GeneratedMessage {
@@ -148,7 +150,7 @@ class TurnHost extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUrl() => clearField(1);
+  void clearUrl() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get username => $_getSZ(1);
@@ -157,7 +159,7 @@ class TurnHost extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasUsername() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUsername() => clearField(2);
+  void clearUsername() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get password => $_getSZ(2);
@@ -166,7 +168,7 @@ class TurnHost extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPassword() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPassword() => clearField(3);
+  void clearPassword() => $_clearField(3);
 }
 
 class RtcConfig extends $pb.GeneratedMessage {
@@ -217,22 +219,22 @@ class RtcConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   TurnHost get turnHost => $_getN(0);
   @$pb.TagNumber(1)
-  set turnHost(TurnHost v) { setField(1, v); }
+  set turnHost(TurnHost v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTurnHost() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTurnHost() => clearField(1);
+  void clearTurnHost() => $_clearField(1);
   @$pb.TagNumber(1)
   TurnHost ensureTurnHost() => $_ensure(0);
 
   @$pb.TagNumber(2)
   StunHost get stunHost => $_getN(1);
   @$pb.TagNumber(2)
-  set stunHost(StunHost v) { setField(2, v); }
+  set stunHost(StunHost v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStunHost() => $_has(1);
   @$pb.TagNumber(2)
-  void clearStunHost() => clearField(2);
+  void clearStunHost() => $_clearField(2);
   @$pb.TagNumber(2)
   StunHost ensureStunHost() => $_ensure(1);
 }
@@ -280,11 +282,11 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   RtcConfig get rtcConfig => $_getN(0);
   @$pb.TagNumber(1)
-  set rtcConfig(RtcConfig v) { setField(1, v); }
+  set rtcConfig(RtcConfig v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRtcConfig() => $_has(0);
   @$pb.TagNumber(1)
-  void clearRtcConfig() => clearField(1);
+  void clearRtcConfig() => $_clearField(1);
   @$pb.TagNumber(1)
   RtcConfig ensureRtcConfig() => $_ensure(0);
 }

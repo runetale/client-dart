@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/admin.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -547,140 +547,140 @@ abstract class AdminServiceBase extends $grpc.Service {
         ($1.PatchSubnetLinkerResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$1.GetMeResponse> getMe_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getMe(call, await request);
+  $async.Future<$1.GetMeResponse> getMe_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getMe($call, await $request);
   }
 
-  $async.Future<$1.User> getUser_Pre($grpc.ServiceCall call, $async.Future<$1.GetUserRequest> request) async {
-    return getUser(call, await request);
+  $async.Future<$1.User> getUser_Pre($grpc.ServiceCall $call, $async.Future<$1.GetUserRequest> $request) async {
+    return getUser($call, await $request);
   }
 
-  $async.Future<$1.Users> getUsers_Pre($grpc.ServiceCall call, $async.Future<$1.GetUsersRequest> request) async {
-    return getUsers(call, await request);
+  $async.Future<$1.Users> getUsers_Pre($grpc.ServiceCall $call, $async.Future<$1.GetUsersRequest> $request) async {
+    return getUsers($call, await $request);
   }
 
-  $async.Future<$1.User> patchUser_Pre($grpc.ServiceCall call, $async.Future<$1.PatchUserRequest> request) async {
-    return patchUser(call, await request);
+  $async.Future<$1.User> patchUser_Pre($grpc.ServiceCall $call, $async.Future<$1.PatchUserRequest> $request) async {
+    return patchUser($call, await $request);
   }
 
-  $async.Future<$1.AclResponse> createAcl_Pre($grpc.ServiceCall call, $async.Future<$1.CreateAclRequest> request) async {
-    return createAcl(call, await request);
+  $async.Future<$1.AclResponse> createAcl_Pre($grpc.ServiceCall $call, $async.Future<$1.CreateAclRequest> $request) async {
+    return createAcl($call, await $request);
   }
 
-  $async.Future<$1.AclResponse> getAcl_Pre($grpc.ServiceCall call, $async.Future<$1.GetAclRequest> request) async {
-    return getAcl(call, await request);
+  $async.Future<$1.AclResponse> getAcl_Pre($grpc.ServiceCall $call, $async.Future<$1.GetAclRequest> $request) async {
+    return getAcl($call, await $request);
   }
 
-  $async.Future<$1.GetAclsResponse> getAcls_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getAcls(call, await request);
+  $async.Future<$1.GetAclsResponse> getAcls_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getAcls($call, await $request);
   }
 
-  $async.Future<$1.GetAclsJsonResponse> getAclsJson_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getAclsJson(call, await request);
+  $async.Future<$1.GetAclsJsonResponse> getAclsJson_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getAclsJson($call, await $request);
   }
 
-  $async.Future<$1.AclResponse> patchAcl_Pre($grpc.ServiceCall call, $async.Future<$1.PatchAclRequest> request) async {
-    return patchAcl(call, await request);
+  $async.Future<$1.AclResponse> patchAcl_Pre($grpc.ServiceCall $call, $async.Future<$1.PatchAclRequest> $request) async {
+    return patchAcl($call, await $request);
   }
 
-  $async.Future<$1.Group> createGroup_Pre($grpc.ServiceCall call, $async.Future<$1.CreateGroupRequest> request) async {
-    return createGroup(call, await request);
+  $async.Future<$1.Group> createGroup_Pre($grpc.ServiceCall $call, $async.Future<$1.CreateGroupRequest> $request) async {
+    return createGroup($call, await $request);
   }
 
-  $async.Future<$1.Group> getGroup_Pre($grpc.ServiceCall call, $async.Future<$1.GetGroupRequest> request) async {
-    return getGroup(call, await request);
+  $async.Future<$1.Group> getGroup_Pre($grpc.ServiceCall $call, $async.Future<$1.GetGroupRequest> $request) async {
+    return getGroup($call, await $request);
   }
 
-  $async.Future<$1.Groups> getGroups_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getGroups(call, await request);
+  $async.Future<$1.Groups> getGroups_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getGroups($call, await $request);
   }
 
-  $async.Future<$1.Group> patchGroup_Pre($grpc.ServiceCall call, $async.Future<$1.PatchGroupRequest> request) async {
-    return patchGroup(call, await request);
+  $async.Future<$1.Group> patchGroup_Pre($grpc.ServiceCall $call, $async.Future<$1.PatchGroupRequest> $request) async {
+    return patchGroup($call, await $request);
   }
 
-  $async.Future<$1.Device> getDevice_Pre($grpc.ServiceCall call, $async.Future<$1.GetDeviceRequest> request) async {
-    return getDevice(call, await request);
+  $async.Future<$1.Device> getDevice_Pre($grpc.ServiceCall $call, $async.Future<$1.GetDeviceRequest> $request) async {
+    return getDevice($call, await $request);
   }
 
-  $async.Future<$1.Devices> getDevices_Pre($grpc.ServiceCall call, $async.Future<$1.GetDevicesRequest> request) async {
-    return getDevices(call, await request);
+  $async.Future<$1.Devices> getDevices_Pre($grpc.ServiceCall $call, $async.Future<$1.GetDevicesRequest> $request) async {
+    return getDevices($call, await $request);
   }
 
-  $async.Future<$1.Resource> getResource_Pre($grpc.ServiceCall call, $async.Future<$1.GetResourceRequest> request) async {
-    return getResource(call, await request);
+  $async.Future<$1.Resource> getResource_Pre($grpc.ServiceCall $call, $async.Future<$1.GetResourceRequest> $request) async {
+    return getResource($call, await $request);
   }
 
-  $async.Future<$1.Resources> getResources_Pre($grpc.ServiceCall call, $async.Future<$1.GetResourcesRequest> request) async {
-    return getResources(call, await request);
+  $async.Future<$1.Resources> getResources_Pre($grpc.ServiceCall $call, $async.Future<$1.GetResourcesRequest> $request) async {
+    return getResources($call, await $request);
   }
 
-  $async.Future<$1.GenerateComposeKeyResponse> generateComposeKey_Pre($grpc.ServiceCall call, $async.Future<$1.GenerateComposeKeyRequest> request) async {
-    return generateComposeKey(call, await request);
+  $async.Future<$1.GenerateComposeKeyResponse> generateComposeKey_Pre($grpc.ServiceCall $call, $async.Future<$1.GenerateComposeKeyRequest> $request) async {
+    return generateComposeKey($call, await $request);
   }
 
-  $async.Future<$1.GetComposeKeysResponse> getComposeKeys_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getComposeKeys(call, await request);
+  $async.Future<$1.GetComposeKeysResponse> getComposeKeys_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getComposeKeys($call, await $request);
   }
 
-  $async.Future<$1.GetComposeNodeStatusResponse> getComposeNodeStatus_Pre($grpc.ServiceCall call, $async.Future<$1.GetComposeNodeStatusRequest> request) async {
-    return getComposeNodeStatus(call, await request);
+  $async.Future<$1.GetComposeNodeStatusResponse> getComposeNodeStatus_Pre($grpc.ServiceCall $call, $async.Future<$1.GetComposeNodeStatusRequest> $request) async {
+    return getComposeNodeStatus($call, await $request);
   }
 
-  $async.Future<$1.Fleet> createFleet_Pre($grpc.ServiceCall call, $async.Future<$1.CreateFleetRequest> request) async {
-    return createFleet(call, await request);
+  $async.Future<$1.Fleet> createFleet_Pre($grpc.ServiceCall $call, $async.Future<$1.CreateFleetRequest> $request) async {
+    return createFleet($call, await $request);
   }
 
-  $async.Future<$1.Fleet> getFleet_Pre($grpc.ServiceCall call, $async.Future<$1.GetFleetRequest> request) async {
-    return getFleet(call, await request);
+  $async.Future<$1.Fleet> getFleet_Pre($grpc.ServiceCall $call, $async.Future<$1.GetFleetRequest> $request) async {
+    return getFleet($call, await $request);
   }
 
-  $async.Future<$1.Fleets> getFleets_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getFleets(call, await request);
+  $async.Future<$1.Fleets> getFleets_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getFleets($call, await $request);
   }
 
-  $async.Future<$1.Fleet> patchFleet_Pre($grpc.ServiceCall call, $async.Future<$1.PatchFleetRequest> request) async {
-    return patchFleet(call, await request);
+  $async.Future<$1.Fleet> patchFleet_Pre($grpc.ServiceCall $call, $async.Future<$1.PatchFleetRequest> $request) async {
+    return patchFleet($call, await $request);
   }
 
-  $async.Future<$1.Ink> createInk_Pre($grpc.ServiceCall call, $async.Future<$1.CreateInkRequest> request) async {
-    return createInk(call, await request);
+  $async.Future<$1.Ink> createInk_Pre($grpc.ServiceCall $call, $async.Future<$1.CreateInkRequest> $request) async {
+    return createInk($call, await $request);
   }
 
-  $async.Future<$1.Ink> getInk_Pre($grpc.ServiceCall call, $async.Future<$1.GetInkRequest> request) async {
-    return getInk(call, await request);
+  $async.Future<$1.Ink> getInk_Pre($grpc.ServiceCall $call, $async.Future<$1.GetInkRequest> $request) async {
+    return getInk($call, await $request);
   }
 
-  $async.Future<$1.Inks> getInks_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getInks(call, await request);
+  $async.Future<$1.Inks> getInks_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getInks($call, await $request);
   }
 
-  $async.Future<$1.Ink> patchInk_Pre($grpc.ServiceCall call, $async.Future<$1.PatchInkRequest> request) async {
-    return patchInk(call, await request);
+  $async.Future<$1.Ink> patchInk_Pre($grpc.ServiceCall $call, $async.Future<$1.PatchInkRequest> $request) async {
+    return patchInk($call, await $request);
   }
 
-  $async.Future<$1.Overview> getOverview_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getOverview(call, await request);
+  $async.Future<$1.Overview> getOverview_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getOverview($call, await $request);
   }
 
-  $async.Future<$1.InviteUserResponse> createInviteUser_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return createInviteUser(call, await request);
+  $async.Future<$1.InviteUserResponse> createInviteUser_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return createInviteUser($call, await $request);
   }
 
-  $async.Future<$1.GetSubnetLinkersReponse> getSubnetLinkers_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getSubnetLinkers(call, await request);
+  $async.Future<$1.GetSubnetLinkersReponse> getSubnetLinkers_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getSubnetLinkers($call, await $request);
   }
 
-  $async.Future<$1.CreateSubnetLinkerResponse> createSubnetLinker_Pre($grpc.ServiceCall call, $async.Future<$1.CreateSubnetLinkerRequest> request) async {
-    return createSubnetLinker(call, await request);
+  $async.Future<$1.CreateSubnetLinkerResponse> createSubnetLinker_Pre($grpc.ServiceCall $call, $async.Future<$1.CreateSubnetLinkerRequest> $request) async {
+    return createSubnetLinker($call, await $request);
   }
 
-  $async.Future<$1.GetSubnetLinkerConvertibleNodesResponse> getSubnetLinkerConvertibleNodes_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return getSubnetLinkerConvertibleNodes(call, await request);
+  $async.Future<$1.GetSubnetLinkerConvertibleNodesResponse> getSubnetLinkerConvertibleNodes_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return getSubnetLinkerConvertibleNodes($call, await $request);
   }
 
-  $async.Future<$1.PatchSubnetLinkerResponse> patchSubnetLinker_Pre($grpc.ServiceCall call, $async.Future<$1.PatchSubnetLinkerRequest> request) async {
-    return patchSubnetLinker(call, await request);
+  $async.Future<$1.PatchSubnetLinkerResponse> patchSubnetLinker_Pre($grpc.ServiceCall $call, $async.Future<$1.PatchSubnetLinkerRequest> $request) async {
+    return patchSubnetLinker($call, await $request);
   }
 
   $async.Future<$1.GetMeResponse> getMe($grpc.ServiceCall call, $0.Empty request);

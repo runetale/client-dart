@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/hashi.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,6 +15,8 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/timestamp.pb.dart' as $9;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class Endpoint extends $pb.GeneratedMessage {
   factory Endpoint({
@@ -68,7 +70,7 @@ class Endpoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAddr() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAddr() => clearField(1);
+  void clearAddr() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get type => $_getSZ(1);
@@ -77,7 +79,7 @@ class Endpoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearType() => clearField(2);
+  void clearType() => $_clearField(2);
 }
 
 class HashiStatus extends $pb.GeneratedMessage {
@@ -86,7 +88,7 @@ class HashiStatus extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? runetaleIps,
     $core.String? interactiveLoginUrl,
     PeerStatus? self,
-    $core.Map<$core.String, PeerStatus>? peer,
+    $pb.PbMap<$core.String, PeerStatus>? peer,
   }) {
     final $result = create();
     if (backendState != null) {
@@ -147,10 +149,10 @@ class HashiStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasBackendState() => $_has(0);
   @$pb.TagNumber(1)
-  void clearBackendState() => clearField(1);
+  void clearBackendState() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get runetaleIps => $_getList(1);
+  $pb.PbList<$core.String> get runetaleIps => $_getList(1);
 
   @$pb.TagNumber(3)
   $core.String get interactiveLoginUrl => $_getSZ(2);
@@ -159,21 +161,21 @@ class HashiStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasInteractiveLoginUrl() => $_has(2);
   @$pb.TagNumber(3)
-  void clearInteractiveLoginUrl() => clearField(3);
+  void clearInteractiveLoginUrl() => $_clearField(3);
 
   @$pb.TagNumber(4)
   PeerStatus get self => $_getN(3);
   @$pb.TagNumber(4)
-  set self(PeerStatus v) { setField(4, v); }
+  set self(PeerStatus v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSelf() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSelf() => clearField(4);
+  void clearSelf() => $_clearField(4);
   @$pb.TagNumber(4)
   PeerStatus ensureSelf() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $core.Map<$core.String, PeerStatus> get peer => $_getMap(4);
+  $pb.PbMap<$core.String, PeerStatus> get peer => $_getMap(4);
 }
 
 class PeerStatus extends $pb.GeneratedMessage {
@@ -288,7 +290,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get publicKey => $_getSZ(1);
@@ -297,7 +299,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPublicKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPublicKey() => clearField(2);
+  void clearPublicKey() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get os => $_getSZ(2);
@@ -306,7 +308,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasOs() => $_has(2);
   @$pb.TagNumber(3)
-  void clearOs() => clearField(3);
+  void clearOs() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get hostName => $_getSZ(3);
@@ -315,16 +317,16 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasHostName() => $_has(3);
   @$pb.TagNumber(4)
-  void clearHostName() => clearField(4);
+  void clearHostName() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get runetaleIps => $_getList(4);
+  $pb.PbList<$core.String> get runetaleIps => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.List<$core.String> get peerApiUrl => $_getList(5);
+  $pb.PbList<$core.String> get peerApiUrl => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.List<$core.String> get allowedIps => $_getList(6);
+  $pb.PbList<$core.String> get allowedIps => $_getList(6);
 
   @$pb.TagNumber(8)
   $fixnum.Int64 get rxBytes => $_getI64(7);
@@ -333,7 +335,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasRxBytes() => $_has(7);
   @$pb.TagNumber(8)
-  void clearRxBytes() => clearField(8);
+  void clearRxBytes() => $_clearField(8);
 
   @$pb.TagNumber(9)
   $fixnum.Int64 get txBytes => $_getI64(8);
@@ -342,32 +344,32 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasTxBytes() => $_has(8);
   @$pb.TagNumber(9)
-  void clearTxBytes() => clearField(9);
+  void clearTxBytes() => $_clearField(9);
 
   @$pb.TagNumber(10)
   $9.Timestamp get lastHandshake => $_getN(9);
   @$pb.TagNumber(10)
-  set lastHandshake($9.Timestamp v) { setField(10, v); }
+  set lastHandshake($9.Timestamp v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasLastHandshake() => $_has(9);
   @$pb.TagNumber(10)
-  void clearLastHandshake() => clearField(10);
+  void clearLastHandshake() => $_clearField(10);
   @$pb.TagNumber(10)
   $9.Timestamp ensureLastHandshake() => $_ensure(9);
 
   @$pb.TagNumber(11)
   $9.Timestamp get lastWrite => $_getN(10);
   @$pb.TagNumber(11)
-  set lastWrite($9.Timestamp v) { setField(11, v); }
+  set lastWrite($9.Timestamp v) { $_setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasLastWrite() => $_has(10);
   @$pb.TagNumber(11)
-  void clearLastWrite() => clearField(11);
+  void clearLastWrite() => $_clearField(11);
   @$pb.TagNumber(11)
   $9.Timestamp ensureLastWrite() => $_ensure(10);
 
   @$pb.TagNumber(12)
-  $core.List<$core.String> get addrs => $_getList(11);
+  $pb.PbList<$core.String> get addrs => $_getList(11);
 
   @$pb.TagNumber(13)
   $core.String get curAddr => $_getSZ(12);
@@ -376,7 +378,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.bool hasCurAddr() => $_has(12);
   @$pb.TagNumber(13)
-  void clearCurAddr() => clearField(13);
+  void clearCurAddr() => $_clearField(13);
 
   @$pb.TagNumber(14)
   $core.String get iceAddr => $_getSZ(13);
@@ -385,7 +387,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   $core.bool hasIceAddr() => $_has(13);
   @$pb.TagNumber(14)
-  void clearIceAddr() => clearField(14);
+  void clearIceAddr() => $_clearField(14);
 }
 
 class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
@@ -441,19 +443,19 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $9.Timestamp get gotAt => $_getN(0);
   @$pb.TagNumber(1)
-  set gotAt($9.Timestamp v) { setField(1, v); }
+  set gotAt($9.Timestamp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasGotAt() => $_has(0);
   @$pb.TagNumber(1)
-  void clearGotAt() => clearField(1);
+  void clearGotAt() => $_clearField(1);
   @$pb.TagNumber(1)
   $9.Timestamp ensureGotAt() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<CompactPeerStatus> get peers => $_getList(1);
+  $pb.PbList<CompactPeerStatus> get peers => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<Endpoint> get localAddrs => $_getList(2);
+  $pb.PbList<Endpoint> get localAddrs => $_getList(2);
 }
 
 class CompactPeerStatus extends $pb.GeneratedMessage {
@@ -518,7 +520,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNodeKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeKey() => clearField(1);
+  void clearNodeKey() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get txBytes => $_getI64(1);
@@ -527,7 +529,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasTxBytes() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTxBytes() => clearField(2);
+  void clearTxBytes() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get rxBytes => $_getI64(2);
@@ -536,16 +538,16 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasRxBytes() => $_has(2);
   @$pb.TagNumber(3)
-  void clearRxBytes() => clearField(3);
+  void clearRxBytes() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $9.Timestamp get lastHandshake => $_getN(3);
   @$pb.TagNumber(4)
-  set lastHandshake($9.Timestamp v) { setField(4, v); }
+  set lastHandshake($9.Timestamp v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastHandshake() => $_has(3);
   @$pb.TagNumber(4)
-  void clearLastHandshake() => clearField(4);
+  void clearLastHandshake() => $_clearField(4);
   @$pb.TagNumber(4)
   $9.Timestamp ensureLastHandshake() => $_ensure(3);
 }
@@ -633,7 +635,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasServerUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearServerUrl() => clearField(1);
+  void clearServerUrl() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get signalUrl => $_getSZ(1);
@@ -642,7 +644,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasSignalUrl() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSignalUrl() => clearField(2);
+  void clearSignalUrl() => $_clearField(2);
 
   /// incoming packet all block
   @$pb.TagNumber(3)
@@ -652,11 +654,11 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasBarricade() => $_has(2);
   @$pb.TagNumber(3)
-  void clearBarricade() => clearField(3);
+  void clearBarricade() => $_clearField(3);
 
   /// このノードがAdvertiseするRoutes
   @$pb.TagNumber(4)
-  $core.List<$core.String> get advertiseRoutes => $_getList(3);
+  $pb.PbList<$core.String> get advertiseRoutes => $_getList(3);
 
   /// Whether to accept routes from subnet linker. Default: on
   @$pb.TagNumber(5)
@@ -666,7 +668,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasAcceptRoutes() => $_has(4);
   @$pb.TagNumber(5)
-  void clearAcceptRoutes() => clearField(5);
+  void clearAcceptRoutes() => $_clearField(5);
 
   /// SNAT を無効にすると、Runetaleのトラフィックをサブネットリレーを
   /// ネットワークで追加の手動設定が必要になります。
@@ -678,7 +680,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasSnatSubnetRoutes() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSnatSubnetRoutes() => clearField(6);
+  void clearSnatSubnetRoutes() => $_clearField(6);
 
   /// linuxのfirewallをstatefulで扱うかどうかを設定します。
   /// デフォルトはONです。
@@ -689,7 +691,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasStatefulFilter() => $_has(6);
   @$pb.TagNumber(7)
-  void clearStatefulFilter() => clearField(7);
+  void clearStatefulFilter() => $_clearField(7);
 }
 
 

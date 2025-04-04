@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/oidc.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -67,12 +67,12 @@ abstract class OIDCServiceBase extends $grpc.Service {
         ($6.AuthenticateResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$6.LoginResponse> login_Pre($grpc.ServiceCall call, $async.Future<$6.LoginRequest> request) async {
-    return login(call, await request);
+  $async.Future<$6.LoginResponse> login_Pre($grpc.ServiceCall $call, $async.Future<$6.LoginRequest> $request) async {
+    return login($call, await $request);
   }
 
-  $async.Future<$6.AuthenticateResponse> authenticate_Pre($grpc.ServiceCall call, $async.Future<$0.Empty> request) async {
-    return authenticate(call, await request);
+  $async.Future<$6.AuthenticateResponse> authenticate_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return authenticate($call, await $request);
   }
 
   $async.Future<$6.LoginResponse> login($grpc.ServiceCall call, $6.LoginRequest request);

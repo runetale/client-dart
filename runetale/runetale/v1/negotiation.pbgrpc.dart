@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: runetale/runetale/v1/negotiation.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -97,16 +97,16 @@ abstract class NegotiationServiceBase extends $grpc.Service {
         ($4.NegotiationRequest value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Empty> offer_Pre($grpc.ServiceCall call, $async.Future<$4.HandshakeRequest> request) async {
-    return offer(call, await request);
+  $async.Future<$0.Empty> offer_Pre($grpc.ServiceCall $call, $async.Future<$4.HandshakeRequest> $request) async {
+    return offer($call, await $request);
   }
 
-  $async.Future<$0.Empty> answer_Pre($grpc.ServiceCall call, $async.Future<$4.HandshakeRequest> request) async {
-    return answer(call, await request);
+  $async.Future<$0.Empty> answer_Pre($grpc.ServiceCall $call, $async.Future<$4.HandshakeRequest> $request) async {
+    return answer($call, await $request);
   }
 
-  $async.Future<$0.Empty> candidate_Pre($grpc.ServiceCall call, $async.Future<$4.CandidateRequest> request) async {
-    return candidate(call, await request);
+  $async.Future<$0.Empty> candidate_Pre($grpc.ServiceCall $call, $async.Future<$4.CandidateRequest> $request) async {
+    return candidate($call, await $request);
   }
 
   $async.Future<$0.Empty> offer($grpc.ServiceCall call, $4.HandshakeRequest request);
