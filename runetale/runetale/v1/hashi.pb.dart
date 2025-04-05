@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $9;
+import '../../../google/protobuf/timestamp.pb.dart' as $10;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -189,8 +189,8 @@ class PeerStatus extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? allowedIps,
     $fixnum.Int64? rxBytes,
     $fixnum.Int64? txBytes,
-    $9.Timestamp? lastHandshake,
-    $9.Timestamp? lastWrite,
+    $10.Timestamp? lastHandshake,
+    $10.Timestamp? lastWrite,
     $core.Iterable<$core.String>? addrs,
     $core.String? curAddr,
     $core.String? iceAddr,
@@ -254,8 +254,8 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..pPS(7, _omitFieldNames ? '' : 'allowedIps')
     ..aInt64(8, _omitFieldNames ? '' : 'rxBytes')
     ..aInt64(9, _omitFieldNames ? '' : 'txBytes')
-    ..aOM<$9.Timestamp>(10, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $9.Timestamp.create)
-    ..aOM<$9.Timestamp>(11, _omitFieldNames ? '' : 'lastWrite', subBuilder: $9.Timestamp.create)
+    ..aOM<$10.Timestamp>(10, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $10.Timestamp.create)
+    ..aOM<$10.Timestamp>(11, _omitFieldNames ? '' : 'lastWrite', subBuilder: $10.Timestamp.create)
     ..pPS(12, _omitFieldNames ? '' : 'addrs')
     ..aOS(13, _omitFieldNames ? '' : 'curAddr')
     ..aOS(14, _omitFieldNames ? '' : 'iceAddr')
@@ -347,26 +347,26 @@ class PeerStatus extends $pb.GeneratedMessage {
   void clearTxBytes() => $_clearField(9);
 
   @$pb.TagNumber(10)
-  $9.Timestamp get lastHandshake => $_getN(9);
+  $10.Timestamp get lastHandshake => $_getN(9);
   @$pb.TagNumber(10)
-  set lastHandshake($9.Timestamp v) { $_setField(10, v); }
+  set lastHandshake($10.Timestamp v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasLastHandshake() => $_has(9);
   @$pb.TagNumber(10)
   void clearLastHandshake() => $_clearField(10);
   @$pb.TagNumber(10)
-  $9.Timestamp ensureLastHandshake() => $_ensure(9);
+  $10.Timestamp ensureLastHandshake() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $9.Timestamp get lastWrite => $_getN(10);
+  $10.Timestamp get lastWrite => $_getN(10);
   @$pb.TagNumber(11)
-  set lastWrite($9.Timestamp v) { $_setField(11, v); }
+  set lastWrite($10.Timestamp v) { $_setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasLastWrite() => $_has(10);
   @$pb.TagNumber(11)
   void clearLastWrite() => $_clearField(11);
   @$pb.TagNumber(11)
-  $9.Timestamp ensureLastWrite() => $_ensure(10);
+  $10.Timestamp ensureLastWrite() => $_ensure(10);
 
   @$pb.TagNumber(12)
   $pb.PbList<$core.String> get addrs => $_getList(11);
@@ -392,7 +392,7 @@ class PeerStatus extends $pb.GeneratedMessage {
 
 class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   factory UserspacePeerEngineStatus({
-    $9.Timestamp? gotAt,
+    $10.Timestamp? gotAt,
     $core.Iterable<CompactPeerStatus>? peers,
     $core.Iterable<Endpoint>? localAddrs,
   }) {
@@ -413,7 +413,7 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   factory UserspacePeerEngineStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserspacePeerEngineStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOM<$9.Timestamp>(1, _omitFieldNames ? '' : 'gotAt', subBuilder: $9.Timestamp.create)
+    ..aOM<$10.Timestamp>(1, _omitFieldNames ? '' : 'gotAt', subBuilder: $10.Timestamp.create)
     ..pc<CompactPeerStatus>(2, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM, subBuilder: CompactPeerStatus.create)
     ..pc<Endpoint>(3, _omitFieldNames ? '' : 'localAddrs', $pb.PbFieldType.PM, subBuilder: Endpoint.create)
     ..hasRequiredFields = false
@@ -441,15 +441,15 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   static UserspacePeerEngineStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $9.Timestamp get gotAt => $_getN(0);
+  $10.Timestamp get gotAt => $_getN(0);
   @$pb.TagNumber(1)
-  set gotAt($9.Timestamp v) { $_setField(1, v); }
+  set gotAt($10.Timestamp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasGotAt() => $_has(0);
   @$pb.TagNumber(1)
   void clearGotAt() => $_clearField(1);
   @$pb.TagNumber(1)
-  $9.Timestamp ensureGotAt() => $_ensure(0);
+  $10.Timestamp ensureGotAt() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $pb.PbList<CompactPeerStatus> get peers => $_getList(1);
@@ -463,7 +463,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
     $core.String? nodeKey,
     $fixnum.Int64? txBytes,
     $fixnum.Int64? rxBytes,
-    $9.Timestamp? lastHandshake,
+    $10.Timestamp? lastHandshake,
   }) {
     final $result = create();
     if (nodeKey != null) {
@@ -488,7 +488,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'nodeKey')
     ..aInt64(2, _omitFieldNames ? '' : 'txBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'rxBytes')
-    ..aOM<$9.Timestamp>(4, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $9.Timestamp.create)
+    ..aOM<$10.Timestamp>(4, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $10.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -541,15 +541,15 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   void clearRxBytes() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $9.Timestamp get lastHandshake => $_getN(3);
+  $10.Timestamp get lastHandshake => $_getN(3);
   @$pb.TagNumber(4)
-  set lastHandshake($9.Timestamp v) { $_setField(4, v); }
+  set lastHandshake($10.Timestamp v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastHandshake() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastHandshake() => $_clearField(4);
   @$pb.TagNumber(4)
-  $9.Timestamp ensureLastHandshake() => $_ensure(3);
+  $10.Timestamp ensureLastHandshake() => $_ensure(3);
 }
 
 /// Hashigo struct like, hashiog(梯子) is a bridge in Japanese.
@@ -692,6 +692,310 @@ class Hashigo extends $pb.GeneratedMessage {
   $core.bool hasStatefulFilter() => $_has(6);
   @$pb.TagNumber(7)
   void clearStatefulFilter() => $_clearField(7);
+}
+
+class PingResult extends $pb.GeneratedMessage {
+  factory PingResult({
+    $core.String? ip,
+    $core.String? nodeIp,
+    $core.String? nodeName,
+    $core.String? err,
+    $core.double? latencySeconds,
+    $core.String? endpoint,
+    $core.int? peerApiPort,
+    $core.String? peerApiUrl,
+    $core.bool? isLocalIp,
+  }) {
+    final $result = create();
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (nodeIp != null) {
+      $result.nodeIp = nodeIp;
+    }
+    if (nodeName != null) {
+      $result.nodeName = nodeName;
+    }
+    if (err != null) {
+      $result.err = err;
+    }
+    if (latencySeconds != null) {
+      $result.latencySeconds = latencySeconds;
+    }
+    if (endpoint != null) {
+      $result.endpoint = endpoint;
+    }
+    if (peerApiPort != null) {
+      $result.peerApiPort = peerApiPort;
+    }
+    if (peerApiUrl != null) {
+      $result.peerApiUrl = peerApiUrl;
+    }
+    if (isLocalIp != null) {
+      $result.isLocalIp = isLocalIp;
+    }
+    return $result;
+  }
+  PingResult._() : super();
+  factory PingResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PingResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PingResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ip')
+    ..aOS(2, _omitFieldNames ? '' : 'nodeIp')
+    ..aOS(3, _omitFieldNames ? '' : 'nodeName')
+    ..aOS(4, _omitFieldNames ? '' : 'err')
+    ..a<$core.double>(5, _omitFieldNames ? '' : 'latencySeconds', $pb.PbFieldType.OD)
+    ..aOS(6, _omitFieldNames ? '' : 'endpoint')
+    ..a<$core.int>(7, _omitFieldNames ? '' : 'peerApiPort', $pb.PbFieldType.OU3)
+    ..aOS(8, _omitFieldNames ? '' : 'peerApiUrl')
+    ..aOB(9, _omitFieldNames ? '' : 'isLocalIp')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PingResult clone() => PingResult()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PingResult copyWith(void Function(PingResult) updates) => super.copyWith((message) => updates(message as PingResult)) as PingResult;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PingResult create() => PingResult._();
+  PingResult createEmptyInstance() => create();
+  static $pb.PbList<PingResult> createRepeated() => $pb.PbList<PingResult>();
+  @$core.pragma('dart2js:noInline')
+  static PingResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PingResult>(create);
+  static PingResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ip => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ip($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIp() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get nodeIp => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nodeIp($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasNodeIp() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeIp() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get nodeName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set nodeName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasNodeName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNodeName() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get err => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set err($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasErr() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearErr() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.double get latencySeconds => $_getN(4);
+  @$pb.TagNumber(5)
+  set latencySeconds($core.double v) { $_setDouble(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLatencySeconds() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLatencySeconds() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get endpoint => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set endpoint($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasEndpoint() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEndpoint() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.int get peerApiPort => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set peerApiPort($core.int v) { $_setUnsignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasPeerApiPort() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearPeerApiPort() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get peerApiUrl => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set peerApiUrl($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPeerApiUrl() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPeerApiUrl() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.bool get isLocalIp => $_getBF(8);
+  @$pb.TagNumber(9)
+  set isLocalIp($core.bool v) { $_setBool(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasIsLocalIp() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIsLocalIp() => $_clearField(9);
+}
+
+class ComposeRequest extends $pb.GeneratedMessage {
+  factory ComposeRequest({
+    $core.String? key,
+  }) {
+    final $result = create();
+    if (key != null) {
+      $result.key = key;
+    }
+    return $result;
+  }
+  ComposeRequest._() : super();
+  factory ComposeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ComposeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComposeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'key')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ComposeRequest clone() => ComposeRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ComposeRequest copyWith(void Function(ComposeRequest) updates) => super.copyWith((message) => updates(message as ComposeRequest)) as ComposeRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ComposeRequest create() => ComposeRequest._();
+  ComposeRequest createEmptyInstance() => create();
+  static $pb.PbList<ComposeRequest> createRepeated() => $pb.PbList<ComposeRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ComposeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComposeRequest>(create);
+  static ComposeRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get key => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set key($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKey() => $_clearField(1);
+}
+
+class HashigoRequest extends $pb.GeneratedMessage {
+  factory HashigoRequest({
+    $core.bool? barricadeSet,
+    $core.bool? acceptRoutesSet,
+    $core.bool? snatSubnetRoutesSet,
+    $core.bool? statefulFilterSet,
+  }) {
+    final $result = create();
+    if (barricadeSet != null) {
+      $result.barricadeSet = barricadeSet;
+    }
+    if (acceptRoutesSet != null) {
+      $result.acceptRoutesSet = acceptRoutesSet;
+    }
+    if (snatSubnetRoutesSet != null) {
+      $result.snatSubnetRoutesSet = snatSubnetRoutesSet;
+    }
+    if (statefulFilterSet != null) {
+      $result.statefulFilterSet = statefulFilterSet;
+    }
+    return $result;
+  }
+  HashigoRequest._() : super();
+  factory HashigoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory HashigoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HashigoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOB(2, _omitFieldNames ? '' : 'barricadeSet')
+    ..aOB(3, _omitFieldNames ? '' : 'acceptRoutesSet')
+    ..aOB(4, _omitFieldNames ? '' : 'snatSubnetRoutesSet')
+    ..aOB(5, _omitFieldNames ? '' : 'statefulFilterSet')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  HashigoRequest clone() => HashigoRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  HashigoRequest copyWith(void Function(HashigoRequest) updates) => super.copyWith((message) => updates(message as HashigoRequest)) as HashigoRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static HashigoRequest create() => HashigoRequest._();
+  HashigoRequest createEmptyInstance() => create();
+  static $pb.PbList<HashigoRequest> createRepeated() => $pb.PbList<HashigoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static HashigoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HashigoRequest>(create);
+  static HashigoRequest? _defaultInstance;
+
+  @$pb.TagNumber(2)
+  $core.bool get barricadeSet => $_getBF(0);
+  @$pb.TagNumber(2)
+  set barricadeSet($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasBarricadeSet() => $_has(0);
+  @$pb.TagNumber(2)
+  void clearBarricadeSet() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get acceptRoutesSet => $_getBF(1);
+  @$pb.TagNumber(3)
+  set acceptRoutesSet($core.bool v) { $_setBool(1, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAcceptRoutesSet() => $_has(1);
+  @$pb.TagNumber(3)
+  void clearAcceptRoutesSet() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get snatSubnetRoutesSet => $_getBF(2);
+  @$pb.TagNumber(4)
+  set snatSubnetRoutesSet($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSnatSubnetRoutesSet() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearSnatSubnetRoutesSet() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get statefulFilterSet => $_getBF(3);
+  @$pb.TagNumber(5)
+  set statefulFilterSet($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasStatefulFilterSet() => $_has(3);
+  @$pb.TagNumber(5)
+  void clearStatefulFilterSet() => $_clearField(5);
 }
 
 
