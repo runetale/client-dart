@@ -191,6 +191,33 @@ const ComposeRequest$json = {
 final $typed_data.Uint8List composeRequestDescriptor = $convert.base64Decode(
     'Cg5Db21wb3NlUmVxdWVzdBIQCgNrZXkYASABKAlSA2tleQ==');
 
+@$core.Deprecated('Use pingRequestDescriptor instead')
+const PingRequest$json = {
+  '1': 'PingRequest',
+  '2': [
+    {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'size', '3': 3, '4': 1, '5': 5, '10': 'size'},
+  ],
+};
+
+/// Descriptor for `PingRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pingRequestDescriptor = $convert.base64Decode(
+    'CgtQaW5nUmVxdWVzdBIOCgJpcBgBIAEoCVICaXASEgoEdHlwZRgCIAEoCVIEdHlwZRISCgRzaX'
+    'plGAMgASgFUgRzaXpl');
+
+@$core.Deprecated('Use stopRequestDescriptor instead')
+const StopRequest$json = {
+  '1': 'StopRequest',
+  '2': [
+    {'1': 'reason', '3': 1, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `StopRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List stopRequestDescriptor = $convert.base64Decode(
+    'CgtTdG9wUmVxdWVzdBIWCgZyZWFzb24YASABKAlSBnJlYXNvbg==');
+
 @$core.Deprecated('Use hashigoRequestDescriptor instead')
 const HashigoRequest$json = {
   '1': 'HashigoRequest',

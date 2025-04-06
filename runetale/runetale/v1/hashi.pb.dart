@@ -906,6 +906,134 @@ class ComposeRequest extends $pb.GeneratedMessage {
   void clearKey() => $_clearField(1);
 }
 
+class PingRequest extends $pb.GeneratedMessage {
+  factory PingRequest({
+    $core.String? ip,
+    $core.String? type,
+    $core.int? size,
+  }) {
+    final $result = create();
+    if (ip != null) {
+      $result.ip = ip;
+    }
+    if (type != null) {
+      $result.type = type;
+    }
+    if (size != null) {
+      $result.size = size;
+    }
+    return $result;
+  }
+  PingRequest._() : super();
+  factory PingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ip')
+    ..aOS(2, _omitFieldNames ? '' : 'type')
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'size', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PingRequest clone() => PingRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PingRequest copyWith(void Function(PingRequest) updates) => super.copyWith((message) => updates(message as PingRequest)) as PingRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PingRequest create() => PingRequest._();
+  PingRequest createEmptyInstance() => create();
+  static $pb.PbList<PingRequest> createRepeated() => $pb.PbList<PingRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PingRequest>(create);
+  static PingRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ip => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ip($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasIp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIp() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get type => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set type($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get size => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set size($core.int v) { $_setSignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSize() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSize() => $_clearField(3);
+}
+
+class StopRequest extends $pb.GeneratedMessage {
+  factory StopRequest({
+    $core.String? reason,
+  }) {
+    final $result = create();
+    if (reason != null) {
+      $result.reason = reason;
+    }
+    return $result;
+  }
+  StopRequest._() : super();
+  factory StopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory StopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  StopRequest clone() => StopRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  StopRequest copyWith(void Function(StopRequest) updates) => super.copyWith((message) => updates(message as StopRequest)) as StopRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StopRequest create() => StopRequest._();
+  StopRequest createEmptyInstance() => create();
+  static $pb.PbList<StopRequest> createRepeated() => $pb.PbList<StopRequest>();
+  @$core.pragma('dart2js:noInline')
+  static StopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
+  static StopRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get reason => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set reason($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasReason() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearReason() => $_clearField(1);
+}
+
 class HashigoRequest extends $pb.GeneratedMessage {
   factory HashigoRequest({
     $core.bool? barricadeSet,
