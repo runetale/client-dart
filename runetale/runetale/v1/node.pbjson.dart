@@ -13,6 +13,52 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use packetFlowLogRequestDescriptor instead')
+const PacketFlowLogRequest$json = {
+  '1': 'PacketFlowLogRequest',
+  '2': [
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'loggedAt', '3': 2, '4': 1, '5': 9, '10': 'loggedAt'},
+    {'1': 'startedAt', '3': 3, '4': 1, '5': 9, '10': 'startedAt'},
+    {'1': 'endedAt', '3': 4, '4': 1, '5': 9, '10': 'endedAt'},
+    {'1': 'peerTraffic', '3': 5, '4': 3, '5': 11, '6': '.protos.PacketFlowLog', '10': 'peerTraffic'},
+    {'1': 'lanTraffic', '3': 6, '4': 3, '5': 11, '6': '.protos.PacketFlowLog', '10': 'lanTraffic'},
+    {'1': 'exitNodeTraffic', '3': 7, '4': 3, '5': 11, '6': '.protos.PacketFlowLog', '10': 'exitNodeTraffic'},
+    {'1': 'transportTraffic', '3': 8, '4': 3, '5': 11, '6': '.protos.PacketFlowLog', '10': 'transportTraffic'},
+  ],
+};
+
+/// Descriptor for `PacketFlowLogRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List packetFlowLogRequestDescriptor = $convert.base64Decode(
+    'ChRQYWNrZXRGbG93TG9nUmVxdWVzdBIWCgZub2RlSWQYASABKARSBm5vZGVJZBIaCghsb2dnZW'
+    'RBdBgCIAEoCVIIbG9nZ2VkQXQSHAoJc3RhcnRlZEF0GAMgASgJUglzdGFydGVkQXQSGAoHZW5k'
+    'ZWRBdBgEIAEoCVIHZW5kZWRBdBI3CgtwZWVyVHJhZmZpYxgFIAMoCzIVLnByb3Rvcy5QYWNrZX'
+    'RGbG93TG9nUgtwZWVyVHJhZmZpYxI1CgpsYW5UcmFmZmljGAYgAygLMhUucHJvdG9zLlBhY2tl'
+    'dEZsb3dMb2dSCmxhblRyYWZmaWMSPwoPZXhpdE5vZGVUcmFmZmljGAcgAygLMhUucHJvdG9zLl'
+    'BhY2tldEZsb3dMb2dSD2V4aXROb2RlVHJhZmZpYxJBChB0cmFuc3BvcnRUcmFmZmljGAggAygL'
+    'MhUucHJvdG9zLlBhY2tldEZsb3dMb2dSEHRyYW5zcG9ydFRyYWZmaWM=');
+
+@$core.Deprecated('Use packetFlowLogDescriptor instead')
+const PacketFlowLog$json = {
+  '1': 'PacketFlowLog',
+  '2': [
+    {'1': 'Proto', '3': 1, '4': 1, '5': 13, '10': 'Proto'},
+    {'1': 'Src', '3': 2, '4': 1, '5': 9, '10': 'Src'},
+    {'1': 'Dst', '3': 3, '4': 1, '5': 9, '10': 'Dst'},
+    {'1': 'TxPackets', '3': 4, '4': 1, '5': 4, '10': 'TxPackets'},
+    {'1': 'TxBytes', '3': 5, '4': 1, '5': 4, '10': 'TxBytes'},
+    {'1': 'RxPackets', '3': 6, '4': 1, '5': 4, '10': 'RxPackets'},
+    {'1': 'RxBytes', '3': 7, '4': 1, '5': 4, '10': 'RxBytes'},
+  ],
+};
+
+/// Descriptor for `PacketFlowLog`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List packetFlowLogDescriptor = $convert.base64Decode(
+    'Cg1QYWNrZXRGbG93TG9nEhQKBVByb3RvGAEgASgNUgVQcm90bxIQCgNTcmMYAiABKAlSA1NyYx'
+    'IQCgNEc3QYAyABKAlSA0RzdBIcCglUeFBhY2tldHMYBCABKARSCVR4UGFja2V0cxIYCgdUeEJ5'
+    'dGVzGAUgASgEUgdUeEJ5dGVzEhwKCVJ4UGFja2V0cxgGIAEoBFIJUnhQYWNrZXRzEhgKB1J4Qn'
+    'l0ZXMYByABKARSB1J4Qnl0ZXM=');
+
 @$core.Deprecated('Use syncNodesResponseDescriptor instead')
 const SyncNodesResponse$json = {
   '1': 'SyncNodesResponse',

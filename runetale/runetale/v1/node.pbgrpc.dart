@@ -34,6 +34,10 @@ class NodeServiceClient extends $grpc.Client {
       '/protos.NodeService/ConnectNetworkMapTable',
       ($6.NetworkMapResponse value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.NetworkMapResponse.fromBuffer(value));
+  static final _$uploadPacketFlowLog = $grpc.ClientMethod<$6.PacketFlowLogRequest, $0.Empty>(
+      '/protos.NodeService/UploadPacketFlowLog',
+      ($6.PacketFlowLogRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
 
   NodeServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -51,6 +55,10 @@ class NodeServiceClient extends $grpc.Client {
 
   $grpc.ResponseStream<$6.NetworkMapResponse> connectNetworkMapTable($async.Stream<$6.NetworkMapResponse> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$connectNetworkMapTable, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.Empty> uploadPacketFlowLog($6.PacketFlowLogRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$uploadPacketFlowLog, request, options: options);
   }
 }
 
@@ -80,6 +88,13 @@ abstract class NodeServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $6.NetworkMapResponse.fromBuffer(value),
         ($6.NetworkMapResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.PacketFlowLogRequest, $0.Empty>(
+        'UploadPacketFlowLog',
+        uploadPacketFlowLog_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.PacketFlowLogRequest.fromBuffer(value),
+        ($0.Empty value) => value.writeToBuffer()));
   }
 
   $async.Future<$6.ComposeNodeResponse> composeNode_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
@@ -90,7 +105,12 @@ abstract class NodeServiceBase extends $grpc.Service {
     return getNetworkMap($call, await $request);
   }
 
+  $async.Future<$0.Empty> uploadPacketFlowLog_Pre($grpc.ServiceCall $call, $async.Future<$6.PacketFlowLogRequest> $request) async {
+    return uploadPacketFlowLog($call, await $request);
+  }
+
   $async.Future<$6.ComposeNodeResponse> composeNode($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$6.NetworkMapResponse> getNetworkMap($grpc.ServiceCall call, $0.Empty request);
   $async.Stream<$6.NetworkMapResponse> connectNetworkMapTable($grpc.ServiceCall call, $async.Stream<$6.NetworkMapResponse> request);
+  $async.Future<$0.Empty> uploadPacketFlowLog($grpc.ServiceCall call, $6.PacketFlowLogRequest request);
 }

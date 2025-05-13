@@ -16,6 +16,271 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
+class PacketFlowLogRequest extends $pb.GeneratedMessage {
+  factory PacketFlowLogRequest({
+    $fixnum.Int64? nodeId,
+    $core.String? loggedAt,
+    $core.String? startedAt,
+    $core.String? endedAt,
+    $core.Iterable<PacketFlowLog>? peerTraffic,
+    $core.Iterable<PacketFlowLog>? lanTraffic,
+    $core.Iterable<PacketFlowLog>? exitNodeTraffic,
+    $core.Iterable<PacketFlowLog>? transportTraffic,
+  }) {
+    final $result = create();
+    if (nodeId != null) {
+      $result.nodeId = nodeId;
+    }
+    if (loggedAt != null) {
+      $result.loggedAt = loggedAt;
+    }
+    if (startedAt != null) {
+      $result.startedAt = startedAt;
+    }
+    if (endedAt != null) {
+      $result.endedAt = endedAt;
+    }
+    if (peerTraffic != null) {
+      $result.peerTraffic.addAll(peerTraffic);
+    }
+    if (lanTraffic != null) {
+      $result.lanTraffic.addAll(lanTraffic);
+    }
+    if (exitNodeTraffic != null) {
+      $result.exitNodeTraffic.addAll(exitNodeTraffic);
+    }
+    if (transportTraffic != null) {
+      $result.transportTraffic.addAll(transportTraffic);
+    }
+    return $result;
+  }
+  PacketFlowLogRequest._() : super();
+  factory PacketFlowLogRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PacketFlowLogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PacketFlowLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'loggedAt', protoName: 'loggedAt')
+    ..aOS(3, _omitFieldNames ? '' : 'startedAt', protoName: 'startedAt')
+    ..aOS(4, _omitFieldNames ? '' : 'endedAt', protoName: 'endedAt')
+    ..pc<PacketFlowLog>(5, _omitFieldNames ? '' : 'peerTraffic', $pb.PbFieldType.PM, protoName: 'peerTraffic', subBuilder: PacketFlowLog.create)
+    ..pc<PacketFlowLog>(6, _omitFieldNames ? '' : 'lanTraffic', $pb.PbFieldType.PM, protoName: 'lanTraffic', subBuilder: PacketFlowLog.create)
+    ..pc<PacketFlowLog>(7, _omitFieldNames ? '' : 'exitNodeTraffic', $pb.PbFieldType.PM, protoName: 'exitNodeTraffic', subBuilder: PacketFlowLog.create)
+    ..pc<PacketFlowLog>(8, _omitFieldNames ? '' : 'transportTraffic', $pb.PbFieldType.PM, protoName: 'transportTraffic', subBuilder: PacketFlowLog.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PacketFlowLogRequest clone() => PacketFlowLogRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PacketFlowLogRequest copyWith(void Function(PacketFlowLogRequest) updates) => super.copyWith((message) => updates(message as PacketFlowLogRequest)) as PacketFlowLogRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PacketFlowLogRequest create() => PacketFlowLogRequest._();
+  PacketFlowLogRequest createEmptyInstance() => create();
+  static $pb.PbList<PacketFlowLogRequest> createRepeated() => $pb.PbList<PacketFlowLogRequest>();
+  @$core.pragma('dart2js:noInline')
+  static PacketFlowLogRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PacketFlowLogRequest>(create);
+  static PacketFlowLogRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get nodeId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasNodeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeId() => $_clearField(1);
+
+  /// 特定のノードからネットワークログメッセージを記録した時刻のタイムスタンプ
+  @$pb.TagNumber(2)
+  $core.String get loggedAt => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set loggedAt($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLoggedAt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLoggedAt() => $_clearField(2);
+
+  /// 特定のノードからネットワークログメッセージを記録開始した時刻のタイムスタンプ
+  @$pb.TagNumber(3)
+  $core.String get startedAt => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set startedAt($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasStartedAt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearStartedAt() => $_clearField(3);
+
+  /// 特定のノードからネットワークログメッセージを記録終了した時刻のタイムスタンプ
+  @$pb.TagNumber(4)
+  $core.String get endedAt => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set endedAt($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEndedAt() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEndedAt() => $_clearField(4);
+
+  /// 100.x.y.z同士のトラフィックを記録する
+  @$pb.TagNumber(5)
+  $pb.PbList<PacketFlowLog> get peerTraffic => $_getList(4);
+
+  /// 明示的にアドバタイズされたサブネットルート上での、ノードと外部とのトラフィックを記録
+  @$pb.TagNumber(6)
+  $pb.PbList<PacketFlowLog> get lanTraffic => $_getList(5);
+
+  /// Srcは RunetaleIP アドレスですが、プロトコル、ソースポート、デスティネーションは空になる
+  @$pb.TagNumber(7)
+  $pb.PbList<PacketFlowLog> get exitNodeTraffic => $_getList(6);
+
+  /// 仮想ネットワークの下層で動作する物理ネットワーク層におけるトラフィックを記する
+  @$pb.TagNumber(8)
+  $pb.PbList<PacketFlowLog> get transportTraffic => $_getList(7);
+}
+
+class PacketFlowLog extends $pb.GeneratedMessage {
+  factory PacketFlowLog({
+    $core.int? proto,
+    $core.String? src,
+    $core.String? dst,
+    $fixnum.Int64? txPackets,
+    $fixnum.Int64? txBytes,
+    $fixnum.Int64? rxPackets,
+    $fixnum.Int64? rxBytes,
+  }) {
+    final $result = create();
+    if (proto != null) {
+      $result.proto = proto;
+    }
+    if (src != null) {
+      $result.src = src;
+    }
+    if (dst != null) {
+      $result.dst = dst;
+    }
+    if (txPackets != null) {
+      $result.txPackets = txPackets;
+    }
+    if (txBytes != null) {
+      $result.txBytes = txBytes;
+    }
+    if (rxPackets != null) {
+      $result.rxPackets = rxPackets;
+    }
+    if (rxBytes != null) {
+      $result.rxBytes = rxBytes;
+    }
+    return $result;
+  }
+  PacketFlowLog._() : super();
+  factory PacketFlowLog.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory PacketFlowLog.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PacketFlowLog', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'Proto', $pb.PbFieldType.OU3, protoName: 'Proto')
+    ..aOS(2, _omitFieldNames ? '' : 'Src', protoName: 'Src')
+    ..aOS(3, _omitFieldNames ? '' : 'Dst', protoName: 'Dst')
+    ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'TxPackets', $pb.PbFieldType.OU6, protoName: 'TxPackets', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'TxBytes', $pb.PbFieldType.OU6, protoName: 'TxBytes', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'RxPackets', $pb.PbFieldType.OU6, protoName: 'RxPackets', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'RxBytes', $pb.PbFieldType.OU6, protoName: 'RxBytes', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  PacketFlowLog clone() => PacketFlowLog()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  PacketFlowLog copyWith(void Function(PacketFlowLog) updates) => super.copyWith((message) => updates(message as PacketFlowLog)) as PacketFlowLog;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PacketFlowLog create() => PacketFlowLog._();
+  PacketFlowLog createEmptyInstance() => create();
+  static $pb.PbList<PacketFlowLog> createRepeated() => $pb.PbList<PacketFlowLog>();
+  @$core.pragma('dart2js:noInline')
+  static PacketFlowLog getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PacketFlowLog>(create);
+  static PacketFlowLog? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get proto => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set proto($core.int v) { $_setUnsignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasProto() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProto() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get src => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set src($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSrc() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSrc() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get dst => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set dst($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDst() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDst() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get txPackets => $_getI64(3);
+  @$pb.TagNumber(4)
+  set txPackets($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTxPackets() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTxPackets() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get txBytes => $_getI64(4);
+  @$pb.TagNumber(5)
+  set txBytes($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasTxBytes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTxBytes() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get rxPackets => $_getI64(5);
+  @$pb.TagNumber(6)
+  set rxPackets($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasRxPackets() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearRxPackets() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get rxBytes => $_getI64(6);
+  @$pb.TagNumber(7)
+  set rxBytes($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasRxBytes() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearRxBytes() => $_clearField(7);
+}
+
 class SyncNodesResponse extends $pb.GeneratedMessage {
   factory SyncNodesResponse({
     $core.bool? isEmpty,
