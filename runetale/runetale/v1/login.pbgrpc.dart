@@ -35,11 +35,7 @@ class LoginServiceClient extends $grpc.Client {
       ($4.GetInvitationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.GetInvitationResponse.fromBuffer(value));
 
-  LoginServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  LoginServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$4.LoginNodeResponse> loginNode($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$loginNode, request, options: options);

@@ -26,11 +26,7 @@ class TokenServiceClient extends $grpc.Client {
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
 
-  TokenServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  TokenServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$0.Empty> refreshToken($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$refreshToken, request, options: options);

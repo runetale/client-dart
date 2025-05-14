@@ -159,11 +159,7 @@ class AdminServiceClient extends $grpc.Client {
       ($1.PatchSubnetLinkerRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.PatchSubnetLinkerResponse.fromBuffer(value));
 
-  AdminServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  AdminServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$1.GetMeResponse> getMe($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMe, request, options: options);

@@ -39,11 +39,7 @@ class NodeServiceClient extends $grpc.Client {
       ($6.PacketFlowLogRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
 
-  NodeServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  NodeServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$6.ComposeNodeResponse> composeNode($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$composeNode, request, options: options);

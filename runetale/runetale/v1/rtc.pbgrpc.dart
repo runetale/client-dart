@@ -27,11 +27,7 @@ class RtcServiceClient extends $grpc.Client {
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $9.GetStunTurnConfigResponse.fromBuffer(value));
 
-  RtcServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  RtcServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$9.GetStunTurnConfigResponse> getStunTurnConfig($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getStunTurnConfig, request, options: options);

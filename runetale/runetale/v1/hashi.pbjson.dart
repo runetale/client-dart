@@ -79,6 +79,7 @@ const PeerStatus$json = {
     {'1': 'addrs', '3': 12, '4': 3, '5': 9, '10': 'addrs'},
     {'1': 'cur_addr', '3': 13, '4': 1, '5': 9, '9': 0, '10': 'curAddr', '17': true},
     {'1': 'ice_addr', '3': 14, '4': 1, '5': 9, '9': 1, '10': 'iceAddr', '17': true},
+    {'1': 'advertise_routes', '3': 15, '4': 3, '5': 9, '10': 'advertiseRoutes'},
   ],
   '8': [
     {'1': '_cur_addr'},
@@ -96,7 +97,8 @@ final $typed_data.Uint8List peerStatusDescriptor = $convert.base64Decode(
     'UYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg1sYXN0SGFuZHNoYWtlEjkKCmxh'
     'c3Rfd3JpdGUYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglsYXN0V3JpdGUSFA'
     'oFYWRkcnMYDCADKAlSBWFkZHJzEh4KCGN1cl9hZGRyGA0gASgJSABSB2N1ckFkZHKIAQESHgoI'
-    'aWNlX2FkZHIYDiABKAlIAVIHaWNlQWRkcogBAUILCglfY3VyX2FkZHJCCwoJX2ljZV9hZGRy');
+    'aWNlX2FkZHIYDiABKAlIAVIHaWNlQWRkcogBARIpChBhZHZlcnRpc2Vfcm91dGVzGA8gAygJUg'
+    '9hZHZlcnRpc2VSb3V0ZXNCCwoJX2N1cl9hZGRyQgsKCV9pY2VfYWRkcg==');
 
 @$core.Deprecated('Use userspacePeerEngineStatusDescriptor instead')
 const UserspacePeerEngineStatus$json = {

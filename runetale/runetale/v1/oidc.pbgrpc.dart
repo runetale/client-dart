@@ -31,11 +31,7 @@ class OIDCServiceClient extends $grpc.Client {
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $7.AuthenticateResponse.fromBuffer(value));
 
-  OIDCServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  OIDCServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$7.LoginResponse> login($7.LoginRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$login, request, options: options);

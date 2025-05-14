@@ -88,7 +88,7 @@ class HashiStatus extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? runetaleIps,
     $core.String? interactiveLoginUrl,
     PeerStatus? self,
-    $pb.PbMap<$core.String, PeerStatus>? peer,
+    $core.Iterable<$core.MapEntry<$core.String, PeerStatus>>? peer,
   }) {
     final $result = create();
     if (backendState != null) {
@@ -104,7 +104,7 @@ class HashiStatus extends $pb.GeneratedMessage {
       $result.self = self;
     }
     if (peer != null) {
-      $result.peer.addAll(peer);
+      $result.peer.addEntries(peer);
     }
     return $result;
   }
@@ -194,6 +194,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? addrs,
     $core.String? curAddr,
     $core.String? iceAddr,
+    $core.Iterable<$core.String>? advertiseRoutes,
   }) {
     final $result = create();
     if (id != null) {
@@ -238,6 +239,9 @@ class PeerStatus extends $pb.GeneratedMessage {
     if (iceAddr != null) {
       $result.iceAddr = iceAddr;
     }
+    if (advertiseRoutes != null) {
+      $result.advertiseRoutes.addAll(advertiseRoutes);
+    }
     return $result;
   }
   PeerStatus._() : super();
@@ -259,6 +263,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..pPS(12, _omitFieldNames ? '' : 'addrs')
     ..aOS(13, _omitFieldNames ? '' : 'curAddr')
     ..aOS(14, _omitFieldNames ? '' : 'iceAddr')
+    ..pPS(15, _omitFieldNames ? '' : 'advertiseRoutes')
     ..hasRequiredFields = false
   ;
 
@@ -388,6 +393,9 @@ class PeerStatus extends $pb.GeneratedMessage {
   $core.bool hasIceAddr() => $_has(13);
   @$pb.TagNumber(14)
   void clearIceAddr() => $_clearField(14);
+
+  @$pb.TagNumber(15)
+  $pb.PbList<$core.String> get advertiseRoutes => $_getList(14);
 }
 
 class UserspacePeerEngineStatus extends $pb.GeneratedMessage {

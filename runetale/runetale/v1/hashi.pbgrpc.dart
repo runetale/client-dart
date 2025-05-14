@@ -59,11 +59,7 @@ class HashiServiceClient extends $grpc.Client {
       ($3.HashigoRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.Hashigo.fromBuffer(value));
 
-  HashiServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  HashiServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$3.HashiStatus> status($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$status, request, options: options);

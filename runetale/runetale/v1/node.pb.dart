@@ -1044,7 +1044,7 @@ class Resolvers extends $pb.GeneratedMessage {
 class DNSConfig extends $pb.GeneratedMessage {
   factory DNSConfig({
     $core.Iterable<Resolver>? resolvers,
-    $pb.PbMap<$core.String, Resolvers>? routes,
+    $core.Iterable<$core.MapEntry<$core.String, Resolvers>>? routes,
     $core.Iterable<$core.String>? searchDomains,
     $core.Iterable<$core.String>? exitNodeFilterd,
     $core.bool? enabledWonderDNS,
@@ -1054,7 +1054,7 @@ class DNSConfig extends $pb.GeneratedMessage {
       $result.resolvers.addAll(resolvers);
     }
     if (routes != null) {
-      $result.routes.addAll(routes);
+      $result.routes.addEntries(routes);
     }
     if (searchDomains != null) {
       $result.searchDomains.addAll(searchDomains);

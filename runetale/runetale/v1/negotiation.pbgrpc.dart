@@ -39,11 +39,7 @@ class NegotiationServiceClient extends $grpc.Client {
       ($5.NegotiationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $5.NegotiationRequest.fromBuffer(value));
 
-  NegotiationServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  NegotiationServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$0.Empty> offer($5.HandshakeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$offer, request, options: options);

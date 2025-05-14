@@ -35,11 +35,7 @@ class DaemonServiceClient extends $grpc.Client {
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.GetConnectionStatusResponse.fromBuffer(value));
 
-  DaemonServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  DaemonServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$2.GetConnectionStatusResponse> connect($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$connect, request, options: options);
