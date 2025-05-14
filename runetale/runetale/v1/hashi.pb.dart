@@ -195,6 +195,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     $core.String? curAddr,
     $core.String? iceAddr,
     $core.Iterable<$core.String>? advertiseRoutes,
+    $core.bool? isSnatSubnet,
   }) {
     final $result = create();
     if (id != null) {
@@ -242,6 +243,9 @@ class PeerStatus extends $pb.GeneratedMessage {
     if (advertiseRoutes != null) {
       $result.advertiseRoutes.addAll(advertiseRoutes);
     }
+    if (isSnatSubnet != null) {
+      $result.isSnatSubnet = isSnatSubnet;
+    }
     return $result;
   }
   PeerStatus._() : super();
@@ -264,6 +268,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..aOS(13, _omitFieldNames ? '' : 'curAddr')
     ..aOS(14, _omitFieldNames ? '' : 'iceAddr')
     ..pPS(15, _omitFieldNames ? '' : 'advertiseRoutes')
+    ..aOB(16, _omitFieldNames ? '' : 'isSnatSubnet')
     ..hasRequiredFields = false
   ;
 
@@ -396,6 +401,16 @@ class PeerStatus extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(15)
   $pb.PbList<$core.String> get advertiseRoutes => $_getList(14);
+
+  /// subnet linkerを許可するかどうか
+  @$pb.TagNumber(16)
+  $core.bool get isSnatSubnet => $_getBF(15);
+  @$pb.TagNumber(16)
+  set isSnatSubnet($core.bool v) { $_setBool(15, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasIsSnatSubnet() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearIsSnatSubnet() => $_clearField(16);
 }
 
 class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
