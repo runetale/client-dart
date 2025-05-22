@@ -21,6 +21,14 @@ export 'token.pb.dart';
 
 @$pb.GrpcServiceName('protos.TokenService')
 class TokenServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$refreshToken = $grpc.ClientMethod<$0.Empty, $0.Empty>(
       '/protos.TokenService/RefreshToken',
       ($0.Empty value) => value.writeToBuffer(),

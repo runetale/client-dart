@@ -20,7 +20,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   factory LoginNodeResponse({
     $core.bool? isRegistered,
     $core.String? loginUrl,
-    $core.String? ip,
+    $core.Iterable<$core.String>? ip,
     $core.String? cidr,
     $core.String? signalHost,
     $fixnum.Int64? signalPort,
@@ -33,7 +33,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
       $result.loginUrl = loginUrl;
     }
     if (ip != null) {
-      $result.ip = ip;
+      $result.ip.addAll(ip);
     }
     if (cidr != null) {
       $result.cidr = cidr;
@@ -53,22 +53,16 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginNodeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..aOS(2, _omitFieldNames ? '' : 'loginUrl', protoName: 'loginUrl')
-    ..aOS(3, _omitFieldNames ? '' : 'ip')
+    ..pPS(3, _omitFieldNames ? '' : 'ip')
     ..aOS(4, _omitFieldNames ? '' : 'cidr')
     ..aOS(5, _omitFieldNames ? '' : 'signalHost', protoName: 'signalHost')
     ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'signalPort', $pb.PbFieldType.OU6, protoName: 'signalPort', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginNodeResponse clone() => LoginNodeResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginNodeResponse copyWith(void Function(LoginNodeResponse) updates) => super.copyWith((message) => updates(message as LoginNodeResponse)) as LoginNodeResponse;
 
   $pb.BuilderInfo get info_ => _i;
@@ -100,13 +94,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   void clearLoginUrl() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get ip => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set ip($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasIp() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearIp() => $_clearField(3);
+  $pb.PbList<$core.String> get ip => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get cidr => $_getSZ(3);
@@ -138,7 +126,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
 
 class LoginSessionResponse extends $pb.GeneratedMessage {
   factory LoginSessionResponse({
-    $core.String? ip,
+    $core.Iterable<$core.String>? ip,
     $core.String? cidr,
     $core.String? host,
     $core.String? os,
@@ -147,7 +135,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   }) {
     final $result = create();
     if (ip != null) {
-      $result.ip = ip;
+      $result.ip.addAll(ip);
     }
     if (cidr != null) {
       $result.cidr = cidr;
@@ -171,7 +159,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   factory LoginSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'ip')
+    ..pPS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'cidr')
     ..aOS(3, _omitFieldNames ? '' : 'host')
     ..aOS(4, _omitFieldNames ? '' : 'os')
@@ -180,15 +168,9 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginSessionResponse clone() => LoginSessionResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginSessionResponse copyWith(void Function(LoginSessionResponse) updates) => super.copyWith((message) => updates(message as LoginSessionResponse)) as LoginSessionResponse;
 
   $pb.BuilderInfo get info_ => _i;
@@ -203,13 +185,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
 
   /// host ip
   @$pb.TagNumber(1)
-  $core.String get ip => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set ip($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasIp() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearIp() => $_clearField(1);
+  $pb.PbList<$core.String> get ip => $_getList(0);
 
   /// host wireguard cidr
   @$pb.TagNumber(2)
@@ -279,15 +255,9 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetInvitationRequest clone() => GetInvitationRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetInvitationRequest copyWith(void Function(GetInvitationRequest) updates) => super.copyWith((message) => updates(message as GetInvitationRequest)) as GetInvitationRequest;
 
   $pb.BuilderInfo get info_ => _i;
@@ -334,15 +304,9 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetInvitationResponse clone() => GetInvitationResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetInvitationResponse copyWith(void Function(GetInvitationResponse) updates) => super.copyWith((message) => updates(message as GetInvitationResponse)) as GetInvitationResponse;
 
   $pb.BuilderInfo get info_ => _i;

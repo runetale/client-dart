@@ -22,6 +22,14 @@ export 'rtc.pb.dart';
 
 @$pb.GrpcServiceName('protos.RtcService')
 class RtcServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$getStunTurnConfig = $grpc.ClientMethod<$0.Empty, $9.GetStunTurnConfigResponse>(
       '/protos.RtcService/GetStunTurnConfig',
       ($0.Empty value) => value.writeToBuffer(),

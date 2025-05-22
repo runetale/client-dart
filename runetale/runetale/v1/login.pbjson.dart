@@ -19,7 +19,7 @@ const LoginNodeResponse$json = {
   '2': [
     {'1': 'isRegistered', '3': 1, '4': 1, '5': 8, '10': 'isRegistered'},
     {'1': 'loginUrl', '3': 2, '4': 1, '5': 9, '10': 'loginUrl'},
-    {'1': 'ip', '3': 3, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'ip', '3': 3, '4': 3, '5': 9, '10': 'ip'},
     {'1': 'cidr', '3': 4, '4': 1, '5': 9, '10': 'cidr'},
     {'1': 'signalHost', '3': 5, '4': 1, '5': 9, '10': 'signalHost'},
     {'1': 'signalPort', '3': 6, '4': 1, '5': 4, '10': 'signalPort'},
@@ -29,7 +29,7 @@ const LoginNodeResponse$json = {
 /// Descriptor for `LoginNodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List loginNodeResponseDescriptor = $convert.base64Decode(
     'ChFMb2dpbk5vZGVSZXNwb25zZRIiCgxpc1JlZ2lzdGVyZWQYASABKAhSDGlzUmVnaXN0ZXJlZB'
-    'IaCghsb2dpblVybBgCIAEoCVIIbG9naW5VcmwSDgoCaXAYAyABKAlSAmlwEhIKBGNpZHIYBCAB'
+    'IaCghsb2dpblVybBgCIAEoCVIIbG9naW5VcmwSDgoCaXAYAyADKAlSAmlwEhIKBGNpZHIYBCAB'
     'KAlSBGNpZHISHgoKc2lnbmFsSG9zdBgFIAEoCVIKc2lnbmFsSG9zdBIeCgpzaWduYWxQb3J0GA'
     'YgASgEUgpzaWduYWxQb3J0');
 
@@ -37,7 +37,7 @@ final $typed_data.Uint8List loginNodeResponseDescriptor = $convert.base64Decode(
 const LoginSessionResponse$json = {
   '1': 'LoginSessionResponse',
   '2': [
-    {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'ip', '3': 1, '4': 3, '5': 9, '10': 'ip'},
     {'1': 'cidr', '3': 2, '4': 1, '5': 9, '10': 'cidr'},
     {'1': 'host', '3': 3, '4': 1, '5': 9, '10': 'host'},
     {'1': 'os', '3': 4, '4': 1, '5': 9, '10': 'os'},
@@ -48,7 +48,7 @@ const LoginSessionResponse$json = {
 
 /// Descriptor for `LoginSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List loginSessionResponseDescriptor = $convert.base64Decode(
-    'ChRMb2dpblNlc3Npb25SZXNwb25zZRIOCgJpcBgBIAEoCVICaXASEgoEY2lkchgCIAEoCVIEY2'
+    'ChRMb2dpblNlc3Npb25SZXNwb25zZRIOCgJpcBgBIAMoCVICaXASEgoEY2lkchgCIAEoCVIEY2'
     'lkchISCgRob3N0GAMgASgJUgRob3N0Eg4KAm9zGAQgASgJUgJvcxIqChBzaWduYWxTZXJ2ZXJI'
     'b3N0GAUgASgJUhBzaWduYWxTZXJ2ZXJIb3N0EioKEHNpZ25hbFNlcnZlclBvcnQYBiABKARSEH'
     'NpZ25hbFNlcnZlclBvcnQ=');

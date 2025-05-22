@@ -53,8 +53,8 @@ class NodeType extends $pb.ProtobufEnum {
     SUBNET_LINKER,
   ];
 
-  static final $core.Map<$core.int, NodeType> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static NodeType? valueOf($core.int value) => _byValue[value];
+  static final $core.List<NodeType?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 6);
+  static NodeType? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const NodeType._(super.v, super.n);
 }
@@ -70,8 +70,8 @@ class LinkerType extends $pb.ProtobufEnum {
     APP,
   ];
 
-  static final $core.Map<$core.int, LinkerType> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static LinkerType? valueOf($core.int value) => _byValue[value];
+  static final $core.List<LinkerType?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
+  static LinkerType? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const LinkerType._(super.v, super.n);
 }
@@ -87,8 +87,8 @@ class UserRole extends $pb.ProtobufEnum {
     MEMBER,
   ];
 
-  static final $core.Map<$core.int, UserRole> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static UserRole? valueOf($core.int value) => _byValue[value];
+  static final $core.List<UserRole?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
+  static UserRole? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const UserRole._(super.v, super.n);
 }
@@ -104,8 +104,8 @@ class ExpirelyTime extends $pb.ProtobufEnum {
     THREEMONTH,
   ];
 
-  static final $core.Map<$core.int, ExpirelyTime> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static ExpirelyTime? valueOf($core.int value) => _byValue[value];
+  static final $core.List<ExpirelyTime?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
+  static ExpirelyTime? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const ExpirelyTime._(super.v, super.n);
 }
@@ -139,8 +139,8 @@ class Platform extends $pb.ProtobufEnum {
     OTHER,
   ];
 
-  static final $core.Map<$core.int, Platform> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static Platform? valueOf($core.int value) => _byValue[value];
+  static final $core.List<Platform?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 11);
+  static Platform? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const Platform._(super.v, super.n);
 }

@@ -22,6 +22,14 @@ export 'ping.pb.dart';
 
 @$pb.GrpcServiceName('protos.PingService')
 class PingServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$ping = $grpc.ClientMethod<$0.Empty, $8.PingResponse>(
       '/protos.PingService/Ping',
       ($0.Empty value) => value.writeToBuffer(),

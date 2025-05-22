@@ -22,6 +22,14 @@ export 'login.pb.dart';
 
 @$pb.GrpcServiceName('protos.LoginService')
 class LoginServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$loginNode = $grpc.ClientMethod<$0.Empty, $4.LoginNodeResponse>(
       '/protos.LoginService/LoginNode',
       ($0.Empty value) => value.writeToBuffer(),

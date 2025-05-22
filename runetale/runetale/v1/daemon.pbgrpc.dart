@@ -22,6 +22,14 @@ export 'daemon.pb.dart';
 
 @$pb.GrpcServiceName('protos.DaemonService')
 class DaemonServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$connect = $grpc.ClientMethod<$0.Empty, $2.GetConnectionStatusResponse>(
       '/protos.DaemonService/Connect',
       ($0.Empty value) => value.writeToBuffer(),

@@ -20,8 +20,18 @@ import 'hashi.pb.dart' as $3;
 
 export 'hashi.pb.dart';
 
+/// HashiServiceはRunetale Clientのバックエンド専用のAPI's
+/// hashilocalbackendのgrpc serviceとして実装されます
 @$pb.GrpcServiceName('protos.HashiService')
 class HashiServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$status = $grpc.ClientMethod<$0.Empty, $3.HashiStatus>(
       '/protos.HashiService/Status',
       ($0.Empty value) => value.writeToBuffer(),

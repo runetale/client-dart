@@ -22,6 +22,14 @@ export 'admin.pb.dart';
 
 @$pb.GrpcServiceName('protos.AdminService')
 class AdminServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$getMe = $grpc.ClientMethod<$0.Empty, $1.GetMeResponse>(
       '/protos.AdminService/GetMe',
       ($0.Empty value) => value.writeToBuffer(),
@@ -177,6 +185,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$patchUser, request, options: options);
   }
 
+  /// acls
   $grpc.ResponseFuture<$1.AclResponse> createAcl($1.CreateAclRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createAcl, request, options: options);
   }
@@ -197,6 +206,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$patchAcl, request, options: options);
   }
 
+  /// groups
   $grpc.ResponseFuture<$1.Group> createGroup($1.CreateGroupRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createGroup, request, options: options);
   }
@@ -213,6 +223,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$patchGroup, request, options: options);
   }
 
+  /// devices
   $grpc.ResponseFuture<$1.Device> getDevice($1.GetDeviceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDevice, request, options: options);
   }
@@ -221,6 +232,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getDevices, request, options: options);
   }
 
+  /// resources
   $grpc.ResponseFuture<$1.Resource> getResource($1.GetResourceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getResource, request, options: options);
   }
@@ -229,6 +241,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getResources, request, options: options);
   }
 
+  /// compose keys
   $grpc.ResponseFuture<$1.GenerateComposeKeyResponse> generateComposeKey($1.GenerateComposeKeyRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$generateComposeKey, request, options: options);
   }
@@ -241,6 +254,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getComposeNodeStatus, request, options: options);
   }
 
+  /// fleets
   $grpc.ResponseFuture<$1.Fleet> createFleet($1.CreateFleetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createFleet, request, options: options);
   }
@@ -257,6 +271,7 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$patchFleet, request, options: options);
   }
 
+  /// inks
   $grpc.ResponseFuture<$1.Ink> createInk($1.CreateInkRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createInk, request, options: options);
   }
@@ -273,14 +288,17 @@ class AdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$patchInk, request, options: options);
   }
 
+  /// overview
   $grpc.ResponseFuture<$1.Overview> getOverview($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getOverview, request, options: options);
   }
 
+  /// invite
   $grpc.ResponseFuture<$1.InviteUserResponse> createInviteUser($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createInviteUser, request, options: options);
   }
 
+  /// linker
   $grpc.ResponseFuture<$1.GetSubnetLinkersReponse> getSubnetLinkers($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getSubnetLinkers, request, options: options);
   }

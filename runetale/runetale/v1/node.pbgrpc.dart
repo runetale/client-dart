@@ -22,6 +22,14 @@ export 'node.pb.dart';
 
 @$pb.GrpcServiceName('protos.NodeService')
 class NodeServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$composeNode = $grpc.ClientMethod<$0.Empty, $6.ComposeNodeResponse>(
       '/protos.NodeService/ComposeNode',
       ($0.Empty value) => value.writeToBuffer(),

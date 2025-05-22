@@ -26,8 +26,8 @@ class NegotiationType extends $pb.ProtobufEnum {
     JOIN,
   ];
 
-  static final $core.Map<$core.int, NegotiationType> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static NegotiationType? valueOf($core.int value) => _byValue[value];
+  static final $core.List<NegotiationType?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 3);
+  static NegotiationType? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
   const NegotiationType._(super.v, super.n);
 }

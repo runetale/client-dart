@@ -22,6 +22,14 @@ export 'oidc.pb.dart';
 
 @$pb.GrpcServiceName('protos.OIDCService')
 class OIDCServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$login = $grpc.ClientMethod<$7.LoginRequest, $7.LoginResponse>(
       '/protos.OIDCService/Login',
       ($7.LoginRequest value) => value.writeToBuffer(),
