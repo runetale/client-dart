@@ -269,86 +269,6 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   void clearRxBytes() => $_clearField(7);
 }
 
-class SyncNodesResponse extends $pb.GeneratedMessage {
-  factory SyncNodesResponse({
-    $core.bool? isEmpty,
-    $core.Iterable<Node>? remoteNodes,
-    $core.String? ip,
-    $core.String? cidr,
-  }) {
-    final $result = create();
-    if (isEmpty != null) {
-      $result.isEmpty = isEmpty;
-    }
-    if (remoteNodes != null) {
-      $result.remoteNodes.addAll(remoteNodes);
-    }
-    if (ip != null) {
-      $result.ip = ip;
-    }
-    if (cidr != null) {
-      $result.cidr = cidr;
-    }
-    return $result;
-  }
-  SyncNodesResponse._() : super();
-  factory SyncNodesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SyncNodesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SyncNodesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'isEmpty', protoName: 'isEmpty')
-    ..pc<Node>(2, _omitFieldNames ? '' : 'remoteNodes', $pb.PbFieldType.PM, protoName: 'remoteNodes', subBuilder: Node.create)
-    ..aOS(3, _omitFieldNames ? '' : 'ip')
-    ..aOS(4, _omitFieldNames ? '' : 'cidr')
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SyncNodesResponse clone() => SyncNodesResponse()..mergeFromMessage(this);
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SyncNodesResponse copyWith(void Function(SyncNodesResponse) updates) => super.copyWith((message) => updates(message as SyncNodesResponse)) as SyncNodesResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static SyncNodesResponse create() => SyncNodesResponse._();
-  SyncNodesResponse createEmptyInstance() => create();
-  static $pb.PbList<SyncNodesResponse> createRepeated() => $pb.PbList<SyncNodesResponse>();
-  @$core.pragma('dart2js:noInline')
-  static SyncNodesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SyncNodesResponse>(create);
-  static SyncNodesResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.bool get isEmpty => $_getBF(0);
-  @$pb.TagNumber(1)
-  set isEmpty($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasIsEmpty() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearIsEmpty() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $pb.PbList<Node> get remoteNodes => $_getList(1);
-
-  @$pb.TagNumber(3)
-  $core.String get ip => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set ip($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasIp() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearIp() => $_clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get cidr => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set cidr($core.String v) { $_setString(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasCidr() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearCidr() => $_clearField(4);
-}
-
 class Node extends $pb.GeneratedMessage {
   factory Node({
     $core.String? name,
@@ -356,7 +276,7 @@ class Node extends $pb.GeneratedMessage {
     $core.String? nodeKey,
     $core.String? wgPubKey,
     $core.Iterable<$core.String>? allowedIPs,
-    $core.String? ip,
+    $core.Iterable<$core.String>? ips,
     $core.String? cidr,
   }) {
     final $result = create();
@@ -375,8 +295,8 @@ class Node extends $pb.GeneratedMessage {
     if (allowedIPs != null) {
       $result.allowedIPs.addAll(allowedIPs);
     }
-    if (ip != null) {
-      $result.ip = ip;
+    if (ips != null) {
+      $result.ips.addAll(ips);
     }
     if (cidr != null) {
       $result.cidr = cidr;
@@ -393,7 +313,7 @@ class Node extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
     ..aOS(4, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
     ..pPS(5, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
-    ..aOS(6, _omitFieldNames ? '' : 'ip')
+    ..pPS(6, _omitFieldNames ? '' : 'ips')
     ..aOS(7, _omitFieldNames ? '' : 'cidr')
     ..hasRequiredFields = false
   ;
@@ -453,13 +373,7 @@ class Node extends $pb.GeneratedMessage {
   $pb.PbList<$core.String> get allowedIPs => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.String get ip => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set ip($core.String v) { $_setString(5, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasIp() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearIp() => $_clearField(6);
+  $pb.PbList<$core.String> get ips => $_getList(5);
 
   @$pb.TagNumber(7)
   $core.String get cidr => $_getSZ(6);

@@ -59,23 +59,6 @@ final $typed_data.Uint8List packetFlowLogDescriptor = $convert.base64Decode(
     'dGVzGAUgASgEUgdUeEJ5dGVzEhwKCVJ4UGFja2V0cxgGIAEoBFIJUnhQYWNrZXRzEhgKB1J4Qn'
     'l0ZXMYByABKARSB1J4Qnl0ZXM=');
 
-@$core.Deprecated('Use syncNodesResponseDescriptor instead')
-const SyncNodesResponse$json = {
-  '1': 'SyncNodesResponse',
-  '2': [
-    {'1': 'isEmpty', '3': 1, '4': 1, '5': 8, '10': 'isEmpty'},
-    {'1': 'remoteNodes', '3': 2, '4': 3, '5': 11, '6': '.protos.Node', '10': 'remoteNodes'},
-    {'1': 'ip', '3': 3, '4': 1, '5': 9, '10': 'ip'},
-    {'1': 'cidr', '3': 4, '4': 1, '5': 9, '10': 'cidr'},
-  ],
-};
-
-/// Descriptor for `SyncNodesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List syncNodesResponseDescriptor = $convert.base64Decode(
-    'ChFTeW5jTm9kZXNSZXNwb25zZRIYCgdpc0VtcHR5GAEgASgIUgdpc0VtcHR5Ei4KC3JlbW90ZU'
-    '5vZGVzGAIgAygLMgwucHJvdG9zLk5vZGVSC3JlbW90ZU5vZGVzEg4KAmlwGAMgASgJUgJpcBIS'
-    'CgRjaWRyGAQgASgJUgRjaWRy');
-
 @$core.Deprecated('Use nodeDescriptor instead')
 const Node$json = {
   '1': 'Node',
@@ -85,7 +68,7 @@ const Node$json = {
     {'1': 'nodeKey', '3': 3, '4': 1, '5': 9, '10': 'nodeKey'},
     {'1': 'wgPubKey', '3': 4, '4': 1, '5': 9, '10': 'wgPubKey'},
     {'1': 'allowedIPs', '3': 5, '4': 3, '5': 9, '10': 'allowedIPs'},
-    {'1': 'ip', '3': 6, '4': 1, '5': 9, '10': 'ip'},
+    {'1': 'ips', '3': 6, '4': 3, '5': 9, '10': 'ips'},
     {'1': 'cidr', '3': 7, '4': 1, '5': 9, '10': 'cidr'},
   ],
 };
@@ -94,8 +77,8 @@ const Node$json = {
 final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'CgROb2RlEhIKBG5hbWUYASABKAlSBG5hbWUSFgoGbm9kZUlkGAIgASgEUgZub2RlSWQSGAoHbm'
     '9kZUtleRgDIAEoCVIHbm9kZUtleRIaCgh3Z1B1YktleRgEIAEoCVIId2dQdWJLZXkSHgoKYWxs'
-    'b3dlZElQcxgFIAMoCVIKYWxsb3dlZElQcxIOCgJpcBgGIAEoCVICaXASEgoEY2lkchgHIAEoCV'
-    'IEY2lkcg==');
+    'b3dlZElQcxgFIAMoCVIKYWxsb3dlZElQcxIQCgNpcHMYBiADKAlSA2lwcxISCgRjaWRyGAcgAS'
+    'gJUgRjaWRy');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
