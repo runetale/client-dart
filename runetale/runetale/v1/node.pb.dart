@@ -276,8 +276,7 @@ class Node extends $pb.GeneratedMessage {
     $core.String? nodeKey,
     $core.String? wgPubKey,
     $core.Iterable<$core.String>? allowedIPs,
-    $core.Iterable<$core.String>? ips,
-    $core.String? cidr,
+    $core.Iterable<$core.String>? addresses,
   }) {
     final $result = create();
     if (name != null) {
@@ -295,11 +294,8 @@ class Node extends $pb.GeneratedMessage {
     if (allowedIPs != null) {
       $result.allowedIPs.addAll(allowedIPs);
     }
-    if (ips != null) {
-      $result.ips.addAll(ips);
-    }
-    if (cidr != null) {
-      $result.cidr = cidr;
+    if (addresses != null) {
+      $result.addresses.addAll(addresses);
     }
     return $result;
   }
@@ -313,8 +309,7 @@ class Node extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
     ..aOS(4, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
     ..pPS(5, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
-    ..pPS(6, _omitFieldNames ? '' : 'ips')
-    ..aOS(7, _omitFieldNames ? '' : 'cidr')
+    ..pPS(6, _omitFieldNames ? '' : 'addresses')
     ..hasRequiredFields = false
   ;
 
@@ -372,17 +367,9 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $pb.PbList<$core.String> get allowedIPs => $_getList(4);
 
+  /// e.g. 100.x.y.z/16, fe80::/64
   @$pb.TagNumber(6)
-  $pb.PbList<$core.String> get ips => $_getList(5);
-
-  @$pb.TagNumber(7)
-  $core.String get cidr => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set cidr($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasCidr() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearCidr() => $_clearField(7);
+  $pb.PbList<$core.String> get addresses => $_getList(5);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {

@@ -68,8 +68,7 @@ const Node$json = {
     {'1': 'nodeKey', '3': 3, '4': 1, '5': 9, '10': 'nodeKey'},
     {'1': 'wgPubKey', '3': 4, '4': 1, '5': 9, '10': 'wgPubKey'},
     {'1': 'allowedIPs', '3': 5, '4': 3, '5': 9, '10': 'allowedIPs'},
-    {'1': 'ips', '3': 6, '4': 3, '5': 9, '10': 'ips'},
-    {'1': 'cidr', '3': 7, '4': 1, '5': 9, '10': 'cidr'},
+    {'1': 'addresses', '3': 6, '4': 3, '5': 9, '10': 'addresses'},
   ],
 };
 
@@ -77,8 +76,8 @@ const Node$json = {
 final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'CgROb2RlEhIKBG5hbWUYASABKAlSBG5hbWUSFgoGbm9kZUlkGAIgASgEUgZub2RlSWQSGAoHbm'
     '9kZUtleRgDIAEoCVIHbm9kZUtleRIaCgh3Z1B1YktleRgEIAEoCVIId2dQdWJLZXkSHgoKYWxs'
-    'b3dlZElQcxgFIAMoCVIKYWxsb3dlZElQcxIQCgNpcHMYBiADKAlSA2lwcxISCgRjaWRyGAcgAS'
-    'gJUgRjaWRy');
+    'b3dlZElQcxgFIAMoCVIKYWxsb3dlZElQcxIcCglhZGRyZXNzZXMYBiADKAlSCWFkZHJlc3Nlcw'
+    '==');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
