@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -148,6 +149,7 @@ const Hashigo$json = {
     {'1': 'accept_routes', '3': 5, '4': 1, '5': 8, '10': 'acceptRoutes'},
     {'1': 'snat_subnet_routes', '3': 6, '4': 1, '5': 8, '10': 'snatSubnetRoutes'},
     {'1': 'stateful_filter', '3': 7, '4': 1, '5': 8, '10': 'statefulFilter'},
+    {'1': 'app_linker', '3': 8, '4': 1, '5': 8, '10': 'appLinker'},
   ],
 };
 
@@ -157,7 +159,8 @@ final $typed_data.Uint8List hashigoDescriptor = $convert.base64Decode(
     'IgASgJUglzaWduYWxVcmwSHAoJYmFycmljYWRlGAMgASgIUgliYXJyaWNhZGUSKQoQYWR2ZXJ0'
     'aXNlX3JvdXRlcxgEIAMoCVIPYWR2ZXJ0aXNlUm91dGVzEiMKDWFjY2VwdF9yb3V0ZXMYBSABKA'
     'hSDGFjY2VwdFJvdXRlcxIsChJzbmF0X3N1Ym5ldF9yb3V0ZXMYBiABKAhSEHNuYXRTdWJuZXRS'
-    'b3V0ZXMSJwoPc3RhdGVmdWxfZmlsdGVyGAcgASgIUg5zdGF0ZWZ1bEZpbHRlcg==');
+    'b3V0ZXMSJwoPc3RhdGVmdWxfZmlsdGVyGAcgASgIUg5zdGF0ZWZ1bEZpbHRlchIdCgphcHBfbG'
+    'lua2VyGAggASgIUglhcHBMaW5rZXI=');
 
 @$core.Deprecated('Use pingResultDescriptor instead')
 const PingResult$json = {
@@ -222,21 +225,23 @@ const StopRequest$json = {
 final $typed_data.Uint8List stopRequestDescriptor = $convert.base64Decode(
     'CgtTdG9wUmVxdWVzdBIWCgZyZWFzb24YASABKAlSBnJlYXNvbg==');
 
-@$core.Deprecated('Use hashigoRequestDescriptor instead')
-const HashigoRequest$json = {
-  '1': 'HashigoRequest',
+@$core.Deprecated('Use hashigoConfigRequestDescriptor instead')
+const HashigoConfigRequest$json = {
+  '1': 'HashigoConfigRequest',
   '2': [
-    {'1': 'barricade_set', '3': 2, '4': 1, '5': 8, '10': 'barricadeSet'},
-    {'1': 'accept_routes_set', '3': 3, '4': 1, '5': 8, '10': 'acceptRoutesSet'},
-    {'1': 'snat_subnet_routes_set', '3': 4, '4': 1, '5': 8, '10': 'snatSubnetRoutesSet'},
-    {'1': 'stateful_filter_set', '3': 5, '4': 1, '5': 8, '10': 'statefulFilterSet'},
+    {'1': 'barricade_set', '3': 1, '4': 1, '5': 8, '10': 'barricadeSet'},
+    {'1': 'accept_routes_set', '3': 2, '4': 1, '5': 8, '10': 'acceptRoutesSet'},
+    {'1': 'snat_subnet_routes_set', '3': 3, '4': 1, '5': 8, '10': 'snatSubnetRoutesSet'},
+    {'1': 'stateful_filter_set', '3': 4, '4': 1, '5': 8, '10': 'statefulFilterSet'},
+    {'1': 'app_linker', '3': 5, '4': 1, '5': 8, '10': 'appLinker'},
   ],
 };
 
-/// Descriptor for `HashigoRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List hashigoRequestDescriptor = $convert.base64Decode(
-    'Cg5IYXNoaWdvUmVxdWVzdBIjCg1iYXJyaWNhZGVfc2V0GAIgASgIUgxiYXJyaWNhZGVTZXQSKg'
-    'oRYWNjZXB0X3JvdXRlc19zZXQYAyABKAhSD2FjY2VwdFJvdXRlc1NldBIzChZzbmF0X3N1Ym5l'
-    'dF9yb3V0ZXNfc2V0GAQgASgIUhNzbmF0U3VibmV0Um91dGVzU2V0Ei4KE3N0YXRlZnVsX2ZpbH'
-    'Rlcl9zZXQYBSABKAhSEXN0YXRlZnVsRmlsdGVyU2V0');
+/// Descriptor for `HashigoConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hashigoConfigRequestDescriptor = $convert.base64Decode(
+    'ChRIYXNoaWdvQ29uZmlnUmVxdWVzdBIjCg1iYXJyaWNhZGVfc2V0GAEgASgIUgxiYXJyaWNhZG'
+    'VTZXQSKgoRYWNjZXB0X3JvdXRlc19zZXQYAiABKAhSD2FjY2VwdFJvdXRlc1NldBIzChZzbmF0'
+    'X3N1Ym5ldF9yb3V0ZXNfc2V0GAMgASgIUhNzbmF0U3VibmV0Um91dGVzU2V0Ei4KE3N0YXRlZn'
+    'VsX2ZpbHRlcl9zZXQYBCABKAhSEXN0YXRlZnVsRmlsdGVyU2V0Eh0KCmFwcF9saW5rZXIYBSAB'
+    'KAhSCWFwcExpbmtlcg==');
 

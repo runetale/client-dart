@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -23,18 +24,16 @@ class Endpoint extends $pb.GeneratedMessage {
     $core.String? addr,
     $core.String? type,
   }) {
-    final $result = create();
-    if (addr != null) {
-      $result.addr = addr;
-    }
-    if (type != null) {
-      $result.type = type;
-    }
-    return $result;
+    final result = create();
+    if (addr != null) result.addr = addr;
+    if (type != null) result.type = type;
+    return result;
   }
-  Endpoint._() : super();
-  factory Endpoint.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Endpoint.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  Endpoint._();
+
+  factory Endpoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Endpoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Endpoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'addr')
@@ -47,10 +46,12 @@ class Endpoint extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Endpoint copyWith(void Function(Endpoint) updates) => super.copyWith((message) => updates(message as Endpoint)) as Endpoint;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Endpoint create() => Endpoint._();
+  @$core.override
   Endpoint createEmptyInstance() => create();
   static $pb.PbList<Endpoint> createRepeated() => $pb.PbList<Endpoint>();
   @$core.pragma('dart2js:noInline')
@@ -60,7 +61,7 @@ class Endpoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get addr => $_getSZ(0);
   @$pb.TagNumber(1)
-  set addr($core.String v) { $_setString(0, v); }
+  set addr($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasAddr() => $_has(0);
   @$pb.TagNumber(1)
@@ -69,7 +70,7 @@ class Endpoint extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get type => $_getSZ(1);
   @$pb.TagNumber(2)
-  set type($core.String v) { $_setString(1, v); }
+  set type($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasType() => $_has(1);
   @$pb.TagNumber(2)
@@ -84,27 +85,19 @@ class HashiStatus extends $pb.GeneratedMessage {
     PeerStatus? self,
     $core.Iterable<$core.MapEntry<$core.String, PeerStatus>>? peer,
   }) {
-    final $result = create();
-    if (backendState != null) {
-      $result.backendState = backendState;
-    }
-    if (runetaleIps != null) {
-      $result.runetaleIps.addAll(runetaleIps);
-    }
-    if (interactiveLoginUrl != null) {
-      $result.interactiveLoginUrl = interactiveLoginUrl;
-    }
-    if (self != null) {
-      $result.self = self;
-    }
-    if (peer != null) {
-      $result.peer.addEntries(peer);
-    }
-    return $result;
+    final result = create();
+    if (backendState != null) result.backendState = backendState;
+    if (runetaleIps != null) result.runetaleIps.addAll(runetaleIps);
+    if (interactiveLoginUrl != null) result.interactiveLoginUrl = interactiveLoginUrl;
+    if (self != null) result.self = self;
+    if (peer != null) result.peer.addEntries(peer);
+    return result;
   }
-  HashiStatus._() : super();
-  factory HashiStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HashiStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  HashiStatus._();
+
+  factory HashiStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory HashiStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HashiStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'backendState')
@@ -120,10 +113,12 @@ class HashiStatus extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HashiStatus copyWith(void Function(HashiStatus) updates) => super.copyWith((message) => updates(message as HashiStatus)) as HashiStatus;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static HashiStatus create() => HashiStatus._();
+  @$core.override
   HashiStatus createEmptyInstance() => create();
   static $pb.PbList<HashiStatus> createRepeated() => $pb.PbList<HashiStatus>();
   @$core.pragma('dart2js:noInline')
@@ -133,7 +128,7 @@ class HashiStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get backendState => $_getSZ(0);
   @$pb.TagNumber(1)
-  set backendState($core.String v) { $_setString(0, v); }
+  set backendState($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasBackendState() => $_has(0);
   @$pb.TagNumber(1)
@@ -145,7 +140,7 @@ class HashiStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get interactiveLoginUrl => $_getSZ(2);
   @$pb.TagNumber(3)
-  set interactiveLoginUrl($core.String v) { $_setString(2, v); }
+  set interactiveLoginUrl($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasInteractiveLoginUrl() => $_has(2);
   @$pb.TagNumber(3)
@@ -154,7 +149,7 @@ class HashiStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   PeerStatus get self => $_getN(3);
   @$pb.TagNumber(4)
-  set self(PeerStatus v) { $_setField(4, v); }
+  set self(PeerStatus value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasSelf() => $_has(3);
   @$pb.TagNumber(4)
@@ -185,60 +180,30 @@ class PeerStatus extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? advertiseRoutes,
     $core.bool? isSnatSubnet,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (publicKey != null) {
-      $result.publicKey = publicKey;
-    }
-    if (os != null) {
-      $result.os = os;
-    }
-    if (hostName != null) {
-      $result.hostName = hostName;
-    }
-    if (runetaleIps != null) {
-      $result.runetaleIps.addAll(runetaleIps);
-    }
-    if (peerApiUrl != null) {
-      $result.peerApiUrl.addAll(peerApiUrl);
-    }
-    if (allowedIps != null) {
-      $result.allowedIps.addAll(allowedIps);
-    }
-    if (rxBytes != null) {
-      $result.rxBytes = rxBytes;
-    }
-    if (txBytes != null) {
-      $result.txBytes = txBytes;
-    }
-    if (lastHandshake != null) {
-      $result.lastHandshake = lastHandshake;
-    }
-    if (lastWrite != null) {
-      $result.lastWrite = lastWrite;
-    }
-    if (addrs != null) {
-      $result.addrs.addAll(addrs);
-    }
-    if (curAddr != null) {
-      $result.curAddr = curAddr;
-    }
-    if (iceAddr != null) {
-      $result.iceAddr = iceAddr;
-    }
-    if (advertiseRoutes != null) {
-      $result.advertiseRoutes.addAll(advertiseRoutes);
-    }
-    if (isSnatSubnet != null) {
-      $result.isSnatSubnet = isSnatSubnet;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (publicKey != null) result.publicKey = publicKey;
+    if (os != null) result.os = os;
+    if (hostName != null) result.hostName = hostName;
+    if (runetaleIps != null) result.runetaleIps.addAll(runetaleIps);
+    if (peerApiUrl != null) result.peerApiUrl.addAll(peerApiUrl);
+    if (allowedIps != null) result.allowedIps.addAll(allowedIps);
+    if (rxBytes != null) result.rxBytes = rxBytes;
+    if (txBytes != null) result.txBytes = txBytes;
+    if (lastHandshake != null) result.lastHandshake = lastHandshake;
+    if (lastWrite != null) result.lastWrite = lastWrite;
+    if (addrs != null) result.addrs.addAll(addrs);
+    if (curAddr != null) result.curAddr = curAddr;
+    if (iceAddr != null) result.iceAddr = iceAddr;
+    if (advertiseRoutes != null) result.advertiseRoutes.addAll(advertiseRoutes);
+    if (isSnatSubnet != null) result.isSnatSubnet = isSnatSubnet;
+    return result;
   }
-  PeerStatus._() : super();
-  factory PeerStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PeerStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  PeerStatus._();
+
+  factory PeerStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PeerStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PeerStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
@@ -265,10 +230,12 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PeerStatus copyWith(void Function(PeerStatus) updates) => super.copyWith((message) => updates(message as PeerStatus)) as PeerStatus;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PeerStatus create() => PeerStatus._();
+  @$core.override
   PeerStatus createEmptyInstance() => create();
   static $pb.PbList<PeerStatus> createRepeated() => $pb.PbList<PeerStatus>();
   @$core.pragma('dart2js:noInline')
@@ -278,7 +245,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -287,7 +254,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get publicKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set publicKey($core.String v) { $_setString(1, v); }
+  set publicKey($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasPublicKey() => $_has(1);
   @$pb.TagNumber(2)
@@ -296,7 +263,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get os => $_getSZ(2);
   @$pb.TagNumber(3)
-  set os($core.String v) { $_setString(2, v); }
+  set os($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasOs() => $_has(2);
   @$pb.TagNumber(3)
@@ -305,7 +272,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get hostName => $_getSZ(3);
   @$pb.TagNumber(4)
-  set hostName($core.String v) { $_setString(3, v); }
+  set hostName($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasHostName() => $_has(3);
   @$pb.TagNumber(4)
@@ -323,7 +290,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $fixnum.Int64 get rxBytes => $_getI64(7);
   @$pb.TagNumber(8)
-  set rxBytes($fixnum.Int64 v) { $_setInt64(7, v); }
+  set rxBytes($fixnum.Int64 value) => $_setInt64(7, value);
   @$pb.TagNumber(8)
   $core.bool hasRxBytes() => $_has(7);
   @$pb.TagNumber(8)
@@ -332,7 +299,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $fixnum.Int64 get txBytes => $_getI64(8);
   @$pb.TagNumber(9)
-  set txBytes($fixnum.Int64 v) { $_setInt64(8, v); }
+  set txBytes($fixnum.Int64 value) => $_setInt64(8, value);
   @$pb.TagNumber(9)
   $core.bool hasTxBytes() => $_has(8);
   @$pb.TagNumber(9)
@@ -341,7 +308,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $9.Timestamp get lastHandshake => $_getN(9);
   @$pb.TagNumber(10)
-  set lastHandshake($9.Timestamp v) { $_setField(10, v); }
+  set lastHandshake($9.Timestamp value) => $_setField(10, value);
   @$pb.TagNumber(10)
   $core.bool hasLastHandshake() => $_has(9);
   @$pb.TagNumber(10)
@@ -352,7 +319,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $9.Timestamp get lastWrite => $_getN(10);
   @$pb.TagNumber(11)
-  set lastWrite($9.Timestamp v) { $_setField(11, v); }
+  set lastWrite($9.Timestamp value) => $_setField(11, value);
   @$pb.TagNumber(11)
   $core.bool hasLastWrite() => $_has(10);
   @$pb.TagNumber(11)
@@ -366,7 +333,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.String get curAddr => $_getSZ(12);
   @$pb.TagNumber(13)
-  set curAddr($core.String v) { $_setString(12, v); }
+  set curAddr($core.String value) => $_setString(12, value);
   @$pb.TagNumber(13)
   $core.bool hasCurAddr() => $_has(12);
   @$pb.TagNumber(13)
@@ -375,7 +342,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   $core.String get iceAddr => $_getSZ(13);
   @$pb.TagNumber(14)
-  set iceAddr($core.String v) { $_setString(13, v); }
+  set iceAddr($core.String value) => $_setString(13, value);
   @$pb.TagNumber(14)
   $core.bool hasIceAddr() => $_has(13);
   @$pb.TagNumber(14)
@@ -388,7 +355,7 @@ class PeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(16)
   $core.bool get isSnatSubnet => $_getBF(15);
   @$pb.TagNumber(16)
-  set isSnatSubnet($core.bool v) { $_setBool(15, v); }
+  set isSnatSubnet($core.bool value) => $_setBool(15, value);
   @$pb.TagNumber(16)
   $core.bool hasIsSnatSubnet() => $_has(15);
   @$pb.TagNumber(16)
@@ -401,21 +368,17 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
     $core.Iterable<CompactPeerStatus>? peers,
     $core.Iterable<Endpoint>? localAddrs,
   }) {
-    final $result = create();
-    if (gotAt != null) {
-      $result.gotAt = gotAt;
-    }
-    if (peers != null) {
-      $result.peers.addAll(peers);
-    }
-    if (localAddrs != null) {
-      $result.localAddrs.addAll(localAddrs);
-    }
-    return $result;
+    final result = create();
+    if (gotAt != null) result.gotAt = gotAt;
+    if (peers != null) result.peers.addAll(peers);
+    if (localAddrs != null) result.localAddrs.addAll(localAddrs);
+    return result;
   }
-  UserspacePeerEngineStatus._() : super();
-  factory UserspacePeerEngineStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UserspacePeerEngineStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  UserspacePeerEngineStatus._();
+
+  factory UserspacePeerEngineStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UserspacePeerEngineStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserspacePeerEngineStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOM<$9.Timestamp>(1, _omitFieldNames ? '' : 'gotAt', subBuilder: $9.Timestamp.create)
@@ -429,10 +392,12 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UserspacePeerEngineStatus copyWith(void Function(UserspacePeerEngineStatus) updates) => super.copyWith((message) => updates(message as UserspacePeerEngineStatus)) as UserspacePeerEngineStatus;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static UserspacePeerEngineStatus create() => UserspacePeerEngineStatus._();
+  @$core.override
   UserspacePeerEngineStatus createEmptyInstance() => create();
   static $pb.PbList<UserspacePeerEngineStatus> createRepeated() => $pb.PbList<UserspacePeerEngineStatus>();
   @$core.pragma('dart2js:noInline')
@@ -442,7 +407,7 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $9.Timestamp get gotAt => $_getN(0);
   @$pb.TagNumber(1)
-  set gotAt($9.Timestamp v) { $_setField(1, v); }
+  set gotAt($9.Timestamp value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasGotAt() => $_has(0);
   @$pb.TagNumber(1)
@@ -464,24 +429,18 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
     $fixnum.Int64? rxBytes,
     $9.Timestamp? lastHandshake,
   }) {
-    final $result = create();
-    if (nodeKey != null) {
-      $result.nodeKey = nodeKey;
-    }
-    if (txBytes != null) {
-      $result.txBytes = txBytes;
-    }
-    if (rxBytes != null) {
-      $result.rxBytes = rxBytes;
-    }
-    if (lastHandshake != null) {
-      $result.lastHandshake = lastHandshake;
-    }
-    return $result;
+    final result = create();
+    if (nodeKey != null) result.nodeKey = nodeKey;
+    if (txBytes != null) result.txBytes = txBytes;
+    if (rxBytes != null) result.rxBytes = rxBytes;
+    if (lastHandshake != null) result.lastHandshake = lastHandshake;
+    return result;
   }
-  CompactPeerStatus._() : super();
-  factory CompactPeerStatus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CompactPeerStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  CompactPeerStatus._();
+
+  factory CompactPeerStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CompactPeerStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompactPeerStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'nodeKey')
@@ -496,10 +455,12 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CompactPeerStatus copyWith(void Function(CompactPeerStatus) updates) => super.copyWith((message) => updates(message as CompactPeerStatus)) as CompactPeerStatus;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static CompactPeerStatus create() => CompactPeerStatus._();
+  @$core.override
   CompactPeerStatus createEmptyInstance() => create();
   static $pb.PbList<CompactPeerStatus> createRepeated() => $pb.PbList<CompactPeerStatus>();
   @$core.pragma('dart2js:noInline')
@@ -509,7 +470,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get nodeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set nodeKey($core.String v) { $_setString(0, v); }
+  set nodeKey($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasNodeKey() => $_has(0);
   @$pb.TagNumber(1)
@@ -518,7 +479,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $fixnum.Int64 get txBytes => $_getI64(1);
   @$pb.TagNumber(2)
-  set txBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  set txBytes($fixnum.Int64 value) => $_setInt64(1, value);
   @$pb.TagNumber(2)
   $core.bool hasTxBytes() => $_has(1);
   @$pb.TagNumber(2)
@@ -527,7 +488,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $fixnum.Int64 get rxBytes => $_getI64(2);
   @$pb.TagNumber(3)
-  set rxBytes($fixnum.Int64 v) { $_setInt64(2, v); }
+  set rxBytes($fixnum.Int64 value) => $_setInt64(2, value);
   @$pb.TagNumber(3)
   $core.bool hasRxBytes() => $_has(2);
   @$pb.TagNumber(3)
@@ -536,7 +497,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $9.Timestamp get lastHandshake => $_getN(3);
   @$pb.TagNumber(4)
-  set lastHandshake($9.Timestamp v) { $_setField(4, v); }
+  set lastHandshake($9.Timestamp value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasLastHandshake() => $_has(3);
   @$pb.TagNumber(4)
@@ -545,12 +506,22 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   $9.Timestamp ensureLastHandshake() => $_ensure(3);
 }
 
-/// Hashigo struct like, hashiog(梯子) is a bridge in Japanese.
+/// Hashigo struct like, hashigo(梯子) is a bridge in Japanese.
 /// 橋 are essential infrastructure in the world.
 /// The same holds true in the world of Runetale.
 /// A 橋 serves as the sole common pathway for a node, referenced through the API to enable flexible network configuration within Runetale.
 /// There is also a double meaning with "Hashi(お箸, chopstick)" a part of Japanese culture.
 /// Like using chopsticks, we carefully pick and fine-tune the settings with precision.
+///     O <- HashigoConfigRequest
+///    /|\
+///    / \
+///    |
+///    |==|==|==|==|==|==|==|==|==|==|==|==|==|
+///    |  |  |  |  |  |  |  |  |  |  |  |  |  |
+///    |==|==|==|==|==|==|==|==|==|==|==|==|==|
+///                                     +=======+
+///                                     |Hashigo|
+///                                     +=======+
 class Hashigo extends $pb.GeneratedMessage {
   factory Hashigo({
     $core.String? serverUrl,
@@ -560,34 +531,24 @@ class Hashigo extends $pb.GeneratedMessage {
     $core.bool? acceptRoutes,
     $core.bool? snatSubnetRoutes,
     $core.bool? statefulFilter,
+    $core.bool? appLinker,
   }) {
-    final $result = create();
-    if (serverUrl != null) {
-      $result.serverUrl = serverUrl;
-    }
-    if (signalUrl != null) {
-      $result.signalUrl = signalUrl;
-    }
-    if (barricade != null) {
-      $result.barricade = barricade;
-    }
-    if (advertiseRoutes != null) {
-      $result.advertiseRoutes.addAll(advertiseRoutes);
-    }
-    if (acceptRoutes != null) {
-      $result.acceptRoutes = acceptRoutes;
-    }
-    if (snatSubnetRoutes != null) {
-      $result.snatSubnetRoutes = snatSubnetRoutes;
-    }
-    if (statefulFilter != null) {
-      $result.statefulFilter = statefulFilter;
-    }
-    return $result;
+    final result = create();
+    if (serverUrl != null) result.serverUrl = serverUrl;
+    if (signalUrl != null) result.signalUrl = signalUrl;
+    if (barricade != null) result.barricade = barricade;
+    if (advertiseRoutes != null) result.advertiseRoutes.addAll(advertiseRoutes);
+    if (acceptRoutes != null) result.acceptRoutes = acceptRoutes;
+    if (snatSubnetRoutes != null) result.snatSubnetRoutes = snatSubnetRoutes;
+    if (statefulFilter != null) result.statefulFilter = statefulFilter;
+    if (appLinker != null) result.appLinker = appLinker;
+    return result;
   }
-  Hashigo._() : super();
-  factory Hashigo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Hashigo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  Hashigo._();
+
+  factory Hashigo.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Hashigo.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Hashigo', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serverUrl')
@@ -597,6 +558,7 @@ class Hashigo extends $pb.GeneratedMessage {
     ..aOB(5, _omitFieldNames ? '' : 'acceptRoutes')
     ..aOB(6, _omitFieldNames ? '' : 'snatSubnetRoutes')
     ..aOB(7, _omitFieldNames ? '' : 'statefulFilter')
+    ..aOB(8, _omitFieldNames ? '' : 'appLinker')
     ..hasRequiredFields = false
   ;
 
@@ -605,10 +567,12 @@ class Hashigo extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Hashigo copyWith(void Function(Hashigo) updates) => super.copyWith((message) => updates(message as Hashigo)) as Hashigo;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Hashigo create() => Hashigo._();
+  @$core.override
   Hashigo createEmptyInstance() => create();
   static $pb.PbList<Hashigo> createRepeated() => $pb.PbList<Hashigo>();
   @$core.pragma('dart2js:noInline')
@@ -618,7 +582,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get serverUrl => $_getSZ(0);
   @$pb.TagNumber(1)
-  set serverUrl($core.String v) { $_setString(0, v); }
+  set serverUrl($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasServerUrl() => $_has(0);
   @$pb.TagNumber(1)
@@ -627,7 +591,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get signalUrl => $_getSZ(1);
   @$pb.TagNumber(2)
-  set signalUrl($core.String v) { $_setString(1, v); }
+  set signalUrl($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasSignalUrl() => $_has(1);
   @$pb.TagNumber(2)
@@ -637,7 +601,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool get barricade => $_getBF(2);
   @$pb.TagNumber(3)
-  set barricade($core.bool v) { $_setBool(2, v); }
+  set barricade($core.bool value) => $_setBool(2, value);
   @$pb.TagNumber(3)
   $core.bool hasBarricade() => $_has(2);
   @$pb.TagNumber(3)
@@ -651,7 +615,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool get acceptRoutes => $_getBF(4);
   @$pb.TagNumber(5)
-  set acceptRoutes($core.bool v) { $_setBool(4, v); }
+  set acceptRoutes($core.bool value) => $_setBool(4, value);
   @$pb.TagNumber(5)
   $core.bool hasAcceptRoutes() => $_has(4);
   @$pb.TagNumber(5)
@@ -663,7 +627,7 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool get snatSubnetRoutes => $_getBF(5);
   @$pb.TagNumber(6)
-  set snatSubnetRoutes($core.bool v) { $_setBool(5, v); }
+  set snatSubnetRoutes($core.bool value) => $_setBool(5, value);
   @$pb.TagNumber(6)
   $core.bool hasSnatSubnetRoutes() => $_has(5);
   @$pb.TagNumber(6)
@@ -674,11 +638,21 @@ class Hashigo extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool get statefulFilter => $_getBF(6);
   @$pb.TagNumber(7)
-  set statefulFilter($core.bool v) { $_setBool(6, v); }
+  set statefulFilter($core.bool value) => $_setBool(6, value);
   @$pb.TagNumber(7)
   $core.bool hasStatefulFilter() => $_has(6);
   @$pb.TagNumber(7)
   void clearStatefulFilter() => $_clearField(7);
+
+  /// app_linkerを有効にするかどうかを設定します。
+  @$pb.TagNumber(8)
+  $core.bool get appLinker => $_getBF(7);
+  @$pb.TagNumber(8)
+  set appLinker($core.bool value) => $_setBool(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasAppLinker() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearAppLinker() => $_clearField(8);
 }
 
 class PingResult extends $pb.GeneratedMessage {
@@ -693,39 +667,23 @@ class PingResult extends $pb.GeneratedMessage {
     $core.String? peerApiUrl,
     $core.bool? isLocalIp,
   }) {
-    final $result = create();
-    if (ip != null) {
-      $result.ip = ip;
-    }
-    if (nodeIp != null) {
-      $result.nodeIp = nodeIp;
-    }
-    if (nodeName != null) {
-      $result.nodeName = nodeName;
-    }
-    if (err != null) {
-      $result.err = err;
-    }
-    if (latencySeconds != null) {
-      $result.latencySeconds = latencySeconds;
-    }
-    if (endpoint != null) {
-      $result.endpoint = endpoint;
-    }
-    if (peerApiPort != null) {
-      $result.peerApiPort = peerApiPort;
-    }
-    if (peerApiUrl != null) {
-      $result.peerApiUrl = peerApiUrl;
-    }
-    if (isLocalIp != null) {
-      $result.isLocalIp = isLocalIp;
-    }
-    return $result;
+    final result = create();
+    if (ip != null) result.ip = ip;
+    if (nodeIp != null) result.nodeIp = nodeIp;
+    if (nodeName != null) result.nodeName = nodeName;
+    if (err != null) result.err = err;
+    if (latencySeconds != null) result.latencySeconds = latencySeconds;
+    if (endpoint != null) result.endpoint = endpoint;
+    if (peerApiPort != null) result.peerApiPort = peerApiPort;
+    if (peerApiUrl != null) result.peerApiUrl = peerApiUrl;
+    if (isLocalIp != null) result.isLocalIp = isLocalIp;
+    return result;
   }
-  PingResult._() : super();
-  factory PingResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PingResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  PingResult._();
+
+  factory PingResult.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PingResult.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PingResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
@@ -745,10 +703,12 @@ class PingResult extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PingResult copyWith(void Function(PingResult) updates) => super.copyWith((message) => updates(message as PingResult)) as PingResult;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PingResult create() => PingResult._();
+  @$core.override
   PingResult createEmptyInstance() => create();
   static $pb.PbList<PingResult> createRepeated() => $pb.PbList<PingResult>();
   @$core.pragma('dart2js:noInline')
@@ -758,7 +718,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
   @$pb.TagNumber(1)
-  set ip($core.String v) { $_setString(0, v); }
+  set ip($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasIp() => $_has(0);
   @$pb.TagNumber(1)
@@ -767,7 +727,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get nodeIp => $_getSZ(1);
   @$pb.TagNumber(2)
-  set nodeIp($core.String v) { $_setString(1, v); }
+  set nodeIp($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasNodeIp() => $_has(1);
   @$pb.TagNumber(2)
@@ -776,7 +736,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get nodeName => $_getSZ(2);
   @$pb.TagNumber(3)
-  set nodeName($core.String v) { $_setString(2, v); }
+  set nodeName($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasNodeName() => $_has(2);
   @$pb.TagNumber(3)
@@ -785,7 +745,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get err => $_getSZ(3);
   @$pb.TagNumber(4)
-  set err($core.String v) { $_setString(3, v); }
+  set err($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasErr() => $_has(3);
   @$pb.TagNumber(4)
@@ -794,7 +754,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.double get latencySeconds => $_getN(4);
   @$pb.TagNumber(5)
-  set latencySeconds($core.double v) { $_setDouble(4, v); }
+  set latencySeconds($core.double value) => $_setDouble(4, value);
   @$pb.TagNumber(5)
   $core.bool hasLatencySeconds() => $_has(4);
   @$pb.TagNumber(5)
@@ -803,7 +763,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get endpoint => $_getSZ(5);
   @$pb.TagNumber(6)
-  set endpoint($core.String v) { $_setString(5, v); }
+  set endpoint($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasEndpoint() => $_has(5);
   @$pb.TagNumber(6)
@@ -812,7 +772,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.int get peerApiPort => $_getIZ(6);
   @$pb.TagNumber(7)
-  set peerApiPort($core.int v) { $_setUnsignedInt32(6, v); }
+  set peerApiPort($core.int value) => $_setUnsignedInt32(6, value);
   @$pb.TagNumber(7)
   $core.bool hasPeerApiPort() => $_has(6);
   @$pb.TagNumber(7)
@@ -821,7 +781,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.String get peerApiUrl => $_getSZ(7);
   @$pb.TagNumber(8)
-  set peerApiUrl($core.String v) { $_setString(7, v); }
+  set peerApiUrl($core.String value) => $_setString(7, value);
   @$pb.TagNumber(8)
   $core.bool hasPeerApiUrl() => $_has(7);
   @$pb.TagNumber(8)
@@ -830,7 +790,7 @@ class PingResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool get isLocalIp => $_getBF(8);
   @$pb.TagNumber(9)
-  set isLocalIp($core.bool v) { $_setBool(8, v); }
+  set isLocalIp($core.bool value) => $_setBool(8, value);
   @$pb.TagNumber(9)
   $core.bool hasIsLocalIp() => $_has(8);
   @$pb.TagNumber(9)
@@ -841,15 +801,15 @@ class ComposeRequest extends $pb.GeneratedMessage {
   factory ComposeRequest({
     $core.String? key,
   }) {
-    final $result = create();
-    if (key != null) {
-      $result.key = key;
-    }
-    return $result;
+    final result = create();
+    if (key != null) result.key = key;
+    return result;
   }
-  ComposeRequest._() : super();
-  factory ComposeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ComposeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ComposeRequest._();
+
+  factory ComposeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ComposeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComposeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'key')
@@ -861,10 +821,12 @@ class ComposeRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ComposeRequest copyWith(void Function(ComposeRequest) updates) => super.copyWith((message) => updates(message as ComposeRequest)) as ComposeRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ComposeRequest create() => ComposeRequest._();
+  @$core.override
   ComposeRequest createEmptyInstance() => create();
   static $pb.PbList<ComposeRequest> createRepeated() => $pb.PbList<ComposeRequest>();
   @$core.pragma('dart2js:noInline')
@@ -874,7 +836,7 @@ class ComposeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get key => $_getSZ(0);
   @$pb.TagNumber(1)
-  set key($core.String v) { $_setString(0, v); }
+  set key($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasKey() => $_has(0);
   @$pb.TagNumber(1)
@@ -887,21 +849,17 @@ class PingRequest extends $pb.GeneratedMessage {
     $core.String? type,
     $core.int? size,
   }) {
-    final $result = create();
-    if (ip != null) {
-      $result.ip = ip;
-    }
-    if (type != null) {
-      $result.type = type;
-    }
-    if (size != null) {
-      $result.size = size;
-    }
-    return $result;
+    final result = create();
+    if (ip != null) result.ip = ip;
+    if (type != null) result.type = type;
+    if (size != null) result.size = size;
+    return result;
   }
-  PingRequest._() : super();
-  factory PingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  PingRequest._();
+
+  factory PingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
@@ -915,10 +873,12 @@ class PingRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PingRequest copyWith(void Function(PingRequest) updates) => super.copyWith((message) => updates(message as PingRequest)) as PingRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PingRequest create() => PingRequest._();
+  @$core.override
   PingRequest createEmptyInstance() => create();
   static $pb.PbList<PingRequest> createRepeated() => $pb.PbList<PingRequest>();
   @$core.pragma('dart2js:noInline')
@@ -928,7 +888,7 @@ class PingRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
   @$pb.TagNumber(1)
-  set ip($core.String v) { $_setString(0, v); }
+  set ip($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasIp() => $_has(0);
   @$pb.TagNumber(1)
@@ -937,7 +897,7 @@ class PingRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get type => $_getSZ(1);
   @$pb.TagNumber(2)
-  set type($core.String v) { $_setString(1, v); }
+  set type($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasType() => $_has(1);
   @$pb.TagNumber(2)
@@ -946,7 +906,7 @@ class PingRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.int get size => $_getIZ(2);
   @$pb.TagNumber(3)
-  set size($core.int v) { $_setSignedInt32(2, v); }
+  set size($core.int value) => $_setSignedInt32(2, value);
   @$pb.TagNumber(3)
   $core.bool hasSize() => $_has(2);
   @$pb.TagNumber(3)
@@ -957,15 +917,15 @@ class StopRequest extends $pb.GeneratedMessage {
   factory StopRequest({
     $core.String? reason,
   }) {
-    final $result = create();
-    if (reason != null) {
-      $result.reason = reason;
-    }
-    return $result;
+    final result = create();
+    if (reason != null) result.reason = reason;
+    return result;
   }
-  StopRequest._() : super();
-  factory StopRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory StopRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  StopRequest._();
+
+  factory StopRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory StopRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'reason')
@@ -977,10 +937,12 @@ class StopRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StopRequest copyWith(void Function(StopRequest) updates) => super.copyWith((message) => updates(message as StopRequest)) as StopRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static StopRequest create() => StopRequest._();
+  @$core.override
   StopRequest createEmptyInstance() => create();
   static $pb.PbList<StopRequest> createRepeated() => $pb.PbList<StopRequest>();
   @$core.pragma('dart2js:noInline')
@@ -990,99 +952,107 @@ class StopRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get reason => $_getSZ(0);
   @$pb.TagNumber(1)
-  set reason($core.String v) { $_setString(0, v); }
+  set reason($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasReason() => $_has(0);
   @$pb.TagNumber(1)
   void clearReason() => $_clearField(1);
 }
 
-class HashigoRequest extends $pb.GeneratedMessage {
-  factory HashigoRequest({
+class HashigoConfigRequest extends $pb.GeneratedMessage {
+  factory HashigoConfigRequest({
     $core.bool? barricadeSet,
     $core.bool? acceptRoutesSet,
     $core.bool? snatSubnetRoutesSet,
     $core.bool? statefulFilterSet,
+    $core.bool? appLinker,
   }) {
-    final $result = create();
-    if (barricadeSet != null) {
-      $result.barricadeSet = barricadeSet;
-    }
-    if (acceptRoutesSet != null) {
-      $result.acceptRoutesSet = acceptRoutesSet;
-    }
-    if (snatSubnetRoutesSet != null) {
-      $result.snatSubnetRoutesSet = snatSubnetRoutesSet;
-    }
-    if (statefulFilterSet != null) {
-      $result.statefulFilterSet = statefulFilterSet;
-    }
-    return $result;
+    final result = create();
+    if (barricadeSet != null) result.barricadeSet = barricadeSet;
+    if (acceptRoutesSet != null) result.acceptRoutesSet = acceptRoutesSet;
+    if (snatSubnetRoutesSet != null) result.snatSubnetRoutesSet = snatSubnetRoutesSet;
+    if (statefulFilterSet != null) result.statefulFilterSet = statefulFilterSet;
+    if (appLinker != null) result.appLinker = appLinker;
+    return result;
   }
-  HashigoRequest._() : super();
-  factory HashigoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HashigoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HashigoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOB(2, _omitFieldNames ? '' : 'barricadeSet')
-    ..aOB(3, _omitFieldNames ? '' : 'acceptRoutesSet')
-    ..aOB(4, _omitFieldNames ? '' : 'snatSubnetRoutesSet')
-    ..aOB(5, _omitFieldNames ? '' : 'statefulFilterSet')
+  HashigoConfigRequest._();
+
+  factory HashigoConfigRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory HashigoConfigRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HashigoConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'barricadeSet')
+    ..aOB(2, _omitFieldNames ? '' : 'acceptRoutesSet')
+    ..aOB(3, _omitFieldNames ? '' : 'snatSubnetRoutesSet')
+    ..aOB(4, _omitFieldNames ? '' : 'statefulFilterSet')
+    ..aOB(5, _omitFieldNames ? '' : 'appLinker')
     ..hasRequiredFields = false
   ;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HashigoRequest clone() => HashigoRequest()..mergeFromMessage(this);
+  HashigoConfigRequest clone() => HashigoConfigRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HashigoRequest copyWith(void Function(HashigoRequest) updates) => super.copyWith((message) => updates(message as HashigoRequest)) as HashigoRequest;
+  HashigoConfigRequest copyWith(void Function(HashigoConfigRequest) updates) => super.copyWith((message) => updates(message as HashigoConfigRequest)) as HashigoConfigRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static HashigoRequest create() => HashigoRequest._();
-  HashigoRequest createEmptyInstance() => create();
-  static $pb.PbList<HashigoRequest> createRepeated() => $pb.PbList<HashigoRequest>();
+  static HashigoConfigRequest create() => HashigoConfigRequest._();
+  @$core.override
+  HashigoConfigRequest createEmptyInstance() => create();
+  static $pb.PbList<HashigoConfigRequest> createRepeated() => $pb.PbList<HashigoConfigRequest>();
   @$core.pragma('dart2js:noInline')
-  static HashigoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HashigoRequest>(create);
-  static HashigoRequest? _defaultInstance;
+  static HashigoConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HashigoConfigRequest>(create);
+  static HashigoConfigRequest? _defaultInstance;
 
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
   $core.bool get barricadeSet => $_getBF(0);
-  @$pb.TagNumber(2)
-  set barricadeSet($core.bool v) { $_setBool(0, v); }
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
+  set barricadeSet($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
   $core.bool hasBarricadeSet() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBarricadeSet() => $_clearField(1);
+
   @$pb.TagNumber(2)
-  void clearBarricadeSet() => $_clearField(2);
-
-  @$pb.TagNumber(3)
   $core.bool get acceptRoutesSet => $_getBF(1);
-  @$pb.TagNumber(3)
-  set acceptRoutesSet($core.bool v) { $_setBool(1, v); }
-  @$pb.TagNumber(3)
+  @$pb.TagNumber(2)
+  set acceptRoutesSet($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
   $core.bool hasAcceptRoutesSet() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAcceptRoutesSet() => $_clearField(2);
+
   @$pb.TagNumber(3)
-  void clearAcceptRoutesSet() => $_clearField(3);
-
-  @$pb.TagNumber(4)
   $core.bool get snatSubnetRoutesSet => $_getBF(2);
-  @$pb.TagNumber(4)
-  set snatSubnetRoutesSet($core.bool v) { $_setBool(2, v); }
-  @$pb.TagNumber(4)
+  @$pb.TagNumber(3)
+  set snatSubnetRoutesSet($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
   $core.bool hasSnatSubnetRoutesSet() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSnatSubnetRoutesSet() => $_clearField(3);
+
   @$pb.TagNumber(4)
-  void clearSnatSubnetRoutesSet() => $_clearField(4);
+  $core.bool get statefulFilterSet => $_getBF(3);
+  @$pb.TagNumber(4)
+  set statefulFilterSet($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStatefulFilterSet() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStatefulFilterSet() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get statefulFilterSet => $_getBF(3);
+  $core.bool get appLinker => $_getBF(4);
   @$pb.TagNumber(5)
-  set statefulFilterSet($core.bool v) { $_setBool(3, v); }
+  set appLinker($core.bool value) => $_setBool(4, value);
   @$pb.TagNumber(5)
-  $core.bool hasStatefulFilterSet() => $_has(3);
+  $core.bool hasAppLinker() => $_has(4);
   @$pb.TagNumber(5)
-  void clearStatefulFilterSet() => $_clearField(5);
+  void clearAppLinker() => $_clearField(5);
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

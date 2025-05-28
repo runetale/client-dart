@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -25,30 +26,20 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
     $core.String? signalHost,
     $fixnum.Int64? signalPort,
   }) {
-    final $result = create();
-    if (isRegistered != null) {
-      $result.isRegistered = isRegistered;
-    }
-    if (loginUrl != null) {
-      $result.loginUrl = loginUrl;
-    }
-    if (ip != null) {
-      $result.ip.addAll(ip);
-    }
-    if (cidr != null) {
-      $result.cidr = cidr;
-    }
-    if (signalHost != null) {
-      $result.signalHost = signalHost;
-    }
-    if (signalPort != null) {
-      $result.signalPort = signalPort;
-    }
-    return $result;
+    final result = create();
+    if (isRegistered != null) result.isRegistered = isRegistered;
+    if (loginUrl != null) result.loginUrl = loginUrl;
+    if (ip != null) result.ip.addAll(ip);
+    if (cidr != null) result.cidr = cidr;
+    if (signalHost != null) result.signalHost = signalHost;
+    if (signalPort != null) result.signalPort = signalPort;
+    return result;
   }
-  LoginNodeResponse._() : super();
-  factory LoginNodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LoginNodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  LoginNodeResponse._();
+
+  factory LoginNodeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LoginNodeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginNodeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
@@ -65,10 +56,12 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginNodeResponse copyWith(void Function(LoginNodeResponse) updates) => super.copyWith((message) => updates(message as LoginNodeResponse)) as LoginNodeResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static LoginNodeResponse create() => LoginNodeResponse._();
+  @$core.override
   LoginNodeResponse createEmptyInstance() => create();
   static $pb.PbList<LoginNodeResponse> createRepeated() => $pb.PbList<LoginNodeResponse>();
   @$core.pragma('dart2js:noInline')
@@ -78,7 +71,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool get isRegistered => $_getBF(0);
   @$pb.TagNumber(1)
-  set isRegistered($core.bool v) { $_setBool(0, v); }
+  set isRegistered($core.bool value) => $_setBool(0, value);
   @$pb.TagNumber(1)
   $core.bool hasIsRegistered() => $_has(0);
   @$pb.TagNumber(1)
@@ -87,7 +80,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get loginUrl => $_getSZ(1);
   @$pb.TagNumber(2)
-  set loginUrl($core.String v) { $_setString(1, v); }
+  set loginUrl($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasLoginUrl() => $_has(1);
   @$pb.TagNumber(2)
@@ -99,7 +92,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get cidr => $_getSZ(3);
   @$pb.TagNumber(4)
-  set cidr($core.String v) { $_setString(3, v); }
+  set cidr($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasCidr() => $_has(3);
   @$pb.TagNumber(4)
@@ -108,7 +101,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get signalHost => $_getSZ(4);
   @$pb.TagNumber(5)
-  set signalHost($core.String v) { $_setString(4, v); }
+  set signalHost($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasSignalHost() => $_has(4);
   @$pb.TagNumber(5)
@@ -117,7 +110,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $fixnum.Int64 get signalPort => $_getI64(5);
   @$pb.TagNumber(6)
-  set signalPort($fixnum.Int64 v) { $_setInt64(5, v); }
+  set signalPort($fixnum.Int64 value) => $_setInt64(5, value);
   @$pb.TagNumber(6)
   $core.bool hasSignalPort() => $_has(5);
   @$pb.TagNumber(6)
@@ -133,30 +126,20 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
     $core.String? signalServerHost,
     $fixnum.Int64? signalServerPort,
   }) {
-    final $result = create();
-    if (ip != null) {
-      $result.ip.addAll(ip);
-    }
-    if (cidr != null) {
-      $result.cidr = cidr;
-    }
-    if (host != null) {
-      $result.host = host;
-    }
-    if (os != null) {
-      $result.os = os;
-    }
-    if (signalServerHost != null) {
-      $result.signalServerHost = signalServerHost;
-    }
-    if (signalServerPort != null) {
-      $result.signalServerPort = signalServerPort;
-    }
-    return $result;
+    final result = create();
+    if (ip != null) result.ip.addAll(ip);
+    if (cidr != null) result.cidr = cidr;
+    if (host != null) result.host = host;
+    if (os != null) result.os = os;
+    if (signalServerHost != null) result.signalServerHost = signalServerHost;
+    if (signalServerPort != null) result.signalServerPort = signalServerPort;
+    return result;
   }
-  LoginSessionResponse._() : super();
-  factory LoginSessionResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LoginSessionResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  LoginSessionResponse._();
+
+  factory LoginSessionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LoginSessionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'ip')
@@ -173,10 +156,12 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginSessionResponse copyWith(void Function(LoginSessionResponse) updates) => super.copyWith((message) => updates(message as LoginSessionResponse)) as LoginSessionResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static LoginSessionResponse create() => LoginSessionResponse._();
+  @$core.override
   LoginSessionResponse createEmptyInstance() => create();
   static $pb.PbList<LoginSessionResponse> createRepeated() => $pb.PbList<LoginSessionResponse>();
   @$core.pragma('dart2js:noInline')
@@ -191,7 +176,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get cidr => $_getSZ(1);
   @$pb.TagNumber(2)
-  set cidr($core.String v) { $_setString(1, v); }
+  set cidr($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasCidr() => $_has(1);
   @$pb.TagNumber(2)
@@ -201,7 +186,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get host => $_getSZ(2);
   @$pb.TagNumber(3)
-  set host($core.String v) { $_setString(2, v); }
+  set host($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasHost() => $_has(2);
   @$pb.TagNumber(3)
@@ -211,7 +196,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get os => $_getSZ(3);
   @$pb.TagNumber(4)
-  set os($core.String v) { $_setString(3, v); }
+  set os($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasOs() => $_has(3);
   @$pb.TagNumber(4)
@@ -220,7 +205,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get signalServerHost => $_getSZ(4);
   @$pb.TagNumber(5)
-  set signalServerHost($core.String v) { $_setString(4, v); }
+  set signalServerHost($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasSignalServerHost() => $_has(4);
   @$pb.TagNumber(5)
@@ -229,7 +214,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $fixnum.Int64 get signalServerPort => $_getI64(5);
   @$pb.TagNumber(6)
-  set signalServerPort($fixnum.Int64 v) { $_setInt64(5, v); }
+  set signalServerPort($fixnum.Int64 value) => $_setInt64(5, value);
   @$pb.TagNumber(6)
   $core.bool hasSignalServerPort() => $_has(5);
   @$pb.TagNumber(6)
@@ -240,15 +225,15 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   factory GetInvitationRequest({
     $core.String? inviteCode,
   }) {
-    final $result = create();
-    if (inviteCode != null) {
-      $result.inviteCode = inviteCode;
-    }
-    return $result;
+    final result = create();
+    if (inviteCode != null) result.inviteCode = inviteCode;
+    return result;
   }
-  GetInvitationRequest._() : super();
-  factory GetInvitationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetInvitationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetInvitationRequest._();
+
+  factory GetInvitationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetInvitationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInvitationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
@@ -260,10 +245,12 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetInvitationRequest copyWith(void Function(GetInvitationRequest) updates) => super.copyWith((message) => updates(message as GetInvitationRequest)) as GetInvitationRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetInvitationRequest create() => GetInvitationRequest._();
+  @$core.override
   GetInvitationRequest createEmptyInstance() => create();
   static $pb.PbList<GetInvitationRequest> createRepeated() => $pb.PbList<GetInvitationRequest>();
   @$core.pragma('dart2js:noInline')
@@ -273,7 +260,7 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get inviteCode => $_getSZ(0);
   @$pb.TagNumber(1)
-  set inviteCode($core.String v) { $_setString(0, v); }
+  set inviteCode($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasInviteCode() => $_has(0);
   @$pb.TagNumber(1)
@@ -285,18 +272,16 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? inviteCode,
   }) {
-    final $result = create();
-    if (email != null) {
-      $result.email = email;
-    }
-    if (inviteCode != null) {
-      $result.inviteCode = inviteCode;
-    }
-    return $result;
+    final result = create();
+    if (email != null) result.email = email;
+    if (inviteCode != null) result.inviteCode = inviteCode;
+    return result;
   }
-  GetInvitationResponse._() : super();
-  factory GetInvitationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetInvitationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetInvitationResponse._();
+
+  factory GetInvitationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetInvitationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInvitationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'email')
@@ -309,10 +294,12 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetInvitationResponse copyWith(void Function(GetInvitationResponse) updates) => super.copyWith((message) => updates(message as GetInvitationResponse)) as GetInvitationResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetInvitationResponse create() => GetInvitationResponse._();
+  @$core.override
   GetInvitationResponse createEmptyInstance() => create();
   static $pb.PbList<GetInvitationResponse> createRepeated() => $pb.PbList<GetInvitationResponse>();
   @$core.pragma('dart2js:noInline')
@@ -322,7 +309,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get email => $_getSZ(0);
   @$pb.TagNumber(1)
-  set email($core.String v) { $_setString(0, v); }
+  set email($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasEmail() => $_has(0);
   @$pb.TagNumber(1)
@@ -331,7 +318,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get inviteCode => $_getSZ(1);
   @$pb.TagNumber(2)
-  set inviteCode($core.String v) { $_setString(1, v); }
+  set inviteCode($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasInviteCode() => $_has(1);
   @$pb.TagNumber(2)
@@ -339,5 +326,5 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

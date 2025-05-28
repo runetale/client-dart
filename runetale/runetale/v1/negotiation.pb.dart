@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -28,30 +29,20 @@ class NegotiationRequest extends $pb.GeneratedMessage {
     $core.String? pwd,
     $core.String? candidate,
   }) {
-    final $result = create();
-    if (type != null) {
-      $result.type = type;
-    }
-    if (dstNodeKey != null) {
-      $result.dstNodeKey = dstNodeKey;
-    }
-    if (dstWgPubKey != null) {
-      $result.dstWgPubKey = dstWgPubKey;
-    }
-    if (uFlag != null) {
-      $result.uFlag = uFlag;
-    }
-    if (pwd != null) {
-      $result.pwd = pwd;
-    }
-    if (candidate != null) {
-      $result.candidate = candidate;
-    }
-    return $result;
+    final result = create();
+    if (type != null) result.type = type;
+    if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
+    if (dstWgPubKey != null) result.dstWgPubKey = dstWgPubKey;
+    if (uFlag != null) result.uFlag = uFlag;
+    if (pwd != null) result.pwd = pwd;
+    if (candidate != null) result.candidate = candidate;
+    return result;
   }
-  NegotiationRequest._() : super();
-  factory NegotiationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NegotiationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  NegotiationRequest._();
+
+  factory NegotiationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory NegotiationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
@@ -68,10 +59,12 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NegotiationRequest copyWith(void Function(NegotiationRequest) updates) => super.copyWith((message) => updates(message as NegotiationRequest)) as NegotiationRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static NegotiationRequest create() => NegotiationRequest._();
+  @$core.override
   NegotiationRequest createEmptyInstance() => create();
   static $pb.PbList<NegotiationRequest> createRepeated() => $pb.PbList<NegotiationRequest>();
   @$core.pragma('dart2js:noInline')
@@ -81,7 +74,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NegotiationType get type => $_getN(0);
   @$pb.TagNumber(1)
-  set type(NegotiationType v) { $_setField(1, v); }
+  set type(NegotiationType value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
@@ -90,7 +83,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get dstNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set dstNodeKey($core.String v) { $_setString(1, v); }
+  set dstNodeKey($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasDstNodeKey() => $_has(1);
   @$pb.TagNumber(2)
@@ -99,7 +92,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get dstWgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set dstWgPubKey($core.String v) { $_setString(2, v); }
+  set dstWgPubKey($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasDstWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
@@ -108,7 +101,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get uFlag => $_getSZ(3);
   @$pb.TagNumber(4)
-  set uFlag($core.String v) { $_setString(3, v); }
+  set uFlag($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
@@ -117,7 +110,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get pwd => $_getSZ(4);
   @$pb.TagNumber(5)
-  set pwd($core.String v) { $_setString(4, v); }
+  set pwd($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
@@ -126,7 +119,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get candidate => $_getSZ(5);
   @$pb.TagNumber(6)
-  set candidate($core.String v) { $_setString(5, v); }
+  set candidate($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasCandidate() => $_has(5);
   @$pb.TagNumber(6)
@@ -142,30 +135,20 @@ class NegotiationResponse extends $pb.GeneratedMessage {
     $core.String? pwd,
     $core.String? candidate,
   }) {
-    final $result = create();
-    if (type != null) {
-      $result.type = type;
-    }
-    if (dstNodeKey != null) {
-      $result.dstNodeKey = dstNodeKey;
-    }
-    if (dstWgPubKey != null) {
-      $result.dstWgPubKey = dstWgPubKey;
-    }
-    if (uFlag != null) {
-      $result.uFlag = uFlag;
-    }
-    if (pwd != null) {
-      $result.pwd = pwd;
-    }
-    if (candidate != null) {
-      $result.candidate = candidate;
-    }
-    return $result;
+    final result = create();
+    if (type != null) result.type = type;
+    if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
+    if (dstWgPubKey != null) result.dstWgPubKey = dstWgPubKey;
+    if (uFlag != null) result.uFlag = uFlag;
+    if (pwd != null) result.pwd = pwd;
+    if (candidate != null) result.candidate = candidate;
+    return result;
   }
-  NegotiationResponse._() : super();
-  factory NegotiationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NegotiationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  NegotiationResponse._();
+
+  factory NegotiationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory NegotiationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
@@ -182,10 +165,12 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NegotiationResponse copyWith(void Function(NegotiationResponse) updates) => super.copyWith((message) => updates(message as NegotiationResponse)) as NegotiationResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static NegotiationResponse create() => NegotiationResponse._();
+  @$core.override
   NegotiationResponse createEmptyInstance() => create();
   static $pb.PbList<NegotiationResponse> createRepeated() => $pb.PbList<NegotiationResponse>();
   @$core.pragma('dart2js:noInline')
@@ -195,7 +180,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NegotiationType get type => $_getN(0);
   @$pb.TagNumber(1)
-  set type(NegotiationType v) { $_setField(1, v); }
+  set type(NegotiationType value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
@@ -204,7 +189,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get dstNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set dstNodeKey($core.String v) { $_setString(1, v); }
+  set dstNodeKey($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasDstNodeKey() => $_has(1);
   @$pb.TagNumber(2)
@@ -213,7 +198,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get dstWgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set dstWgPubKey($core.String v) { $_setString(2, v); }
+  set dstWgPubKey($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasDstWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
@@ -222,7 +207,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get uFlag => $_getSZ(3);
   @$pb.TagNumber(4)
-  set uFlag($core.String v) { $_setString(3, v); }
+  set uFlag($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
@@ -231,7 +216,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get pwd => $_getSZ(4);
   @$pb.TagNumber(5)
-  set pwd($core.String v) { $_setString(4, v); }
+  set pwd($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
@@ -240,7 +225,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get candidate => $_getSZ(5);
   @$pb.TagNumber(6)
-  set candidate($core.String v) { $_setString(5, v); }
+  set candidate($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasCandidate() => $_has(5);
   @$pb.TagNumber(6)
@@ -255,27 +240,19 @@ class HandshakeRequest extends $pb.GeneratedMessage {
     $core.String? uFlag,
     $core.String? pwd,
   }) {
-    final $result = create();
-    if (dstNodeKey != null) {
-      $result.dstNodeKey = dstNodeKey;
-    }
-    if (srcNodeKey != null) {
-      $result.srcNodeKey = srcNodeKey;
-    }
-    if (wgPubKey != null) {
-      $result.wgPubKey = wgPubKey;
-    }
-    if (uFlag != null) {
-      $result.uFlag = uFlag;
-    }
-    if (pwd != null) {
-      $result.pwd = pwd;
-    }
-    return $result;
+    final result = create();
+    if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
+    if (srcNodeKey != null) result.srcNodeKey = srcNodeKey;
+    if (wgPubKey != null) result.wgPubKey = wgPubKey;
+    if (uFlag != null) result.uFlag = uFlag;
+    if (pwd != null) result.pwd = pwd;
+    return result;
   }
-  HandshakeRequest._() : super();
-  factory HandshakeRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HandshakeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  HandshakeRequest._();
+
+  factory HandshakeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory HandshakeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HandshakeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
@@ -291,10 +268,12 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HandshakeRequest copyWith(void Function(HandshakeRequest) updates) => super.copyWith((message) => updates(message as HandshakeRequest)) as HandshakeRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static HandshakeRequest create() => HandshakeRequest._();
+  @$core.override
   HandshakeRequest createEmptyInstance() => create();
   static $pb.PbList<HandshakeRequest> createRepeated() => $pb.PbList<HandshakeRequest>();
   @$core.pragma('dart2js:noInline')
@@ -304,7 +283,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get dstNodeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set dstNodeKey($core.String v) { $_setString(0, v); }
+  set dstNodeKey($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasDstNodeKey() => $_has(0);
   @$pb.TagNumber(1)
@@ -313,7 +292,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get srcNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set srcNodeKey($core.String v) { $_setString(1, v); }
+  set srcNodeKey($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasSrcNodeKey() => $_has(1);
   @$pb.TagNumber(2)
@@ -322,7 +301,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get wgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set wgPubKey($core.String v) { $_setString(2, v); }
+  set wgPubKey($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
@@ -331,7 +310,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get uFlag => $_getSZ(3);
   @$pb.TagNumber(4)
-  set uFlag($core.String v) { $_setString(3, v); }
+  set uFlag($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasUFlag() => $_has(3);
   @$pb.TagNumber(4)
@@ -340,7 +319,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get pwd => $_getSZ(4);
   @$pb.TagNumber(5)
-  set pwd($core.String v) { $_setString(4, v); }
+  set pwd($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
@@ -354,24 +333,18 @@ class CandidateRequest extends $pb.GeneratedMessage {
     $core.String? wgPubKey,
     $core.String? candidate,
   }) {
-    final $result = create();
-    if (dstNodeKey != null) {
-      $result.dstNodeKey = dstNodeKey;
-    }
-    if (srcNodeKey != null) {
-      $result.srcNodeKey = srcNodeKey;
-    }
-    if (wgPubKey != null) {
-      $result.wgPubKey = wgPubKey;
-    }
-    if (candidate != null) {
-      $result.candidate = candidate;
-    }
-    return $result;
+    final result = create();
+    if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
+    if (srcNodeKey != null) result.srcNodeKey = srcNodeKey;
+    if (wgPubKey != null) result.wgPubKey = wgPubKey;
+    if (candidate != null) result.candidate = candidate;
+    return result;
   }
-  CandidateRequest._() : super();
-  factory CandidateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CandidateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  CandidateRequest._();
+
+  factory CandidateRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CandidateRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CandidateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
@@ -386,10 +359,12 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CandidateRequest copyWith(void Function(CandidateRequest) updates) => super.copyWith((message) => updates(message as CandidateRequest)) as CandidateRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static CandidateRequest create() => CandidateRequest._();
+  @$core.override
   CandidateRequest createEmptyInstance() => create();
   static $pb.PbList<CandidateRequest> createRepeated() => $pb.PbList<CandidateRequest>();
   @$core.pragma('dart2js:noInline')
@@ -399,7 +374,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get dstNodeKey => $_getSZ(0);
   @$pb.TagNumber(1)
-  set dstNodeKey($core.String v) { $_setString(0, v); }
+  set dstNodeKey($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasDstNodeKey() => $_has(0);
   @$pb.TagNumber(1)
@@ -408,7 +383,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get srcNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set srcNodeKey($core.String v) { $_setString(1, v); }
+  set srcNodeKey($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasSrcNodeKey() => $_has(1);
   @$pb.TagNumber(2)
@@ -417,7 +392,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get wgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set wgPubKey($core.String v) { $_setString(2, v); }
+  set wgPubKey($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
@@ -426,7 +401,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get candidate => $_getSZ(3);
   @$pb.TagNumber(4)
-  set candidate($core.String v) { $_setString(3, v); }
+  set candidate($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasCandidate() => $_has(3);
   @$pb.TagNumber(4)
@@ -434,5 +409,5 @@ class CandidateRequest extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

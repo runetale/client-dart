@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -27,36 +28,22 @@ class PacketFlowLogRequest extends $pb.GeneratedMessage {
     $core.Iterable<PacketFlowLog>? exitNodeTraffic,
     $core.Iterable<PacketFlowLog>? transportTraffic,
   }) {
-    final $result = create();
-    if (nodeId != null) {
-      $result.nodeId = nodeId;
-    }
-    if (loggedAt != null) {
-      $result.loggedAt = loggedAt;
-    }
-    if (startedAt != null) {
-      $result.startedAt = startedAt;
-    }
-    if (endedAt != null) {
-      $result.endedAt = endedAt;
-    }
-    if (peerTraffic != null) {
-      $result.peerTraffic.addAll(peerTraffic);
-    }
-    if (lanTraffic != null) {
-      $result.lanTraffic.addAll(lanTraffic);
-    }
-    if (exitNodeTraffic != null) {
-      $result.exitNodeTraffic.addAll(exitNodeTraffic);
-    }
-    if (transportTraffic != null) {
-      $result.transportTraffic.addAll(transportTraffic);
-    }
-    return $result;
+    final result = create();
+    if (nodeId != null) result.nodeId = nodeId;
+    if (loggedAt != null) result.loggedAt = loggedAt;
+    if (startedAt != null) result.startedAt = startedAt;
+    if (endedAt != null) result.endedAt = endedAt;
+    if (peerTraffic != null) result.peerTraffic.addAll(peerTraffic);
+    if (lanTraffic != null) result.lanTraffic.addAll(lanTraffic);
+    if (exitNodeTraffic != null) result.exitNodeTraffic.addAll(exitNodeTraffic);
+    if (transportTraffic != null) result.transportTraffic.addAll(transportTraffic);
+    return result;
   }
-  PacketFlowLogRequest._() : super();
-  factory PacketFlowLogRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PacketFlowLogRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  PacketFlowLogRequest._();
+
+  factory PacketFlowLogRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PacketFlowLogRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PacketFlowLogRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6, protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
@@ -75,10 +62,12 @@ class PacketFlowLogRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PacketFlowLogRequest copyWith(void Function(PacketFlowLogRequest) updates) => super.copyWith((message) => updates(message as PacketFlowLogRequest)) as PacketFlowLogRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PacketFlowLogRequest create() => PacketFlowLogRequest._();
+  @$core.override
   PacketFlowLogRequest createEmptyInstance() => create();
   static $pb.PbList<PacketFlowLogRequest> createRepeated() => $pb.PbList<PacketFlowLogRequest>();
   @$core.pragma('dart2js:noInline')
@@ -88,7 +77,7 @@ class PacketFlowLogRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
-  set nodeId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set nodeId($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasNodeId() => $_has(0);
   @$pb.TagNumber(1)
@@ -98,7 +87,7 @@ class PacketFlowLogRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get loggedAt => $_getSZ(1);
   @$pb.TagNumber(2)
-  set loggedAt($core.String v) { $_setString(1, v); }
+  set loggedAt($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasLoggedAt() => $_has(1);
   @$pb.TagNumber(2)
@@ -108,7 +97,7 @@ class PacketFlowLogRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get startedAt => $_getSZ(2);
   @$pb.TagNumber(3)
-  set startedAt($core.String v) { $_setString(2, v); }
+  set startedAt($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasStartedAt() => $_has(2);
   @$pb.TagNumber(3)
@@ -118,7 +107,7 @@ class PacketFlowLogRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get endedAt => $_getSZ(3);
   @$pb.TagNumber(4)
-  set endedAt($core.String v) { $_setString(3, v); }
+  set endedAt($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasEndedAt() => $_has(3);
   @$pb.TagNumber(4)
@@ -151,33 +140,21 @@ class PacketFlowLog extends $pb.GeneratedMessage {
     $fixnum.Int64? rxPackets,
     $fixnum.Int64? rxBytes,
   }) {
-    final $result = create();
-    if (proto != null) {
-      $result.proto = proto;
-    }
-    if (src != null) {
-      $result.src = src;
-    }
-    if (dst != null) {
-      $result.dst = dst;
-    }
-    if (txPackets != null) {
-      $result.txPackets = txPackets;
-    }
-    if (txBytes != null) {
-      $result.txBytes = txBytes;
-    }
-    if (rxPackets != null) {
-      $result.rxPackets = rxPackets;
-    }
-    if (rxBytes != null) {
-      $result.rxBytes = rxBytes;
-    }
-    return $result;
+    final result = create();
+    if (proto != null) result.proto = proto;
+    if (src != null) result.src = src;
+    if (dst != null) result.dst = dst;
+    if (txPackets != null) result.txPackets = txPackets;
+    if (txBytes != null) result.txBytes = txBytes;
+    if (rxPackets != null) result.rxPackets = rxPackets;
+    if (rxBytes != null) result.rxBytes = rxBytes;
+    return result;
   }
-  PacketFlowLog._() : super();
-  factory PacketFlowLog.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PacketFlowLog.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  PacketFlowLog._();
+
+  factory PacketFlowLog.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PacketFlowLog.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PacketFlowLog', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'Proto', $pb.PbFieldType.OU3, protoName: 'Proto')
@@ -195,10 +172,12 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PacketFlowLog copyWith(void Function(PacketFlowLog) updates) => super.copyWith((message) => updates(message as PacketFlowLog)) as PacketFlowLog;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PacketFlowLog create() => PacketFlowLog._();
+  @$core.override
   PacketFlowLog createEmptyInstance() => create();
   static $pb.PbList<PacketFlowLog> createRepeated() => $pb.PbList<PacketFlowLog>();
   @$core.pragma('dart2js:noInline')
@@ -208,7 +187,7 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.int get proto => $_getIZ(0);
   @$pb.TagNumber(1)
-  set proto($core.int v) { $_setUnsignedInt32(0, v); }
+  set proto($core.int value) => $_setUnsignedInt32(0, value);
   @$pb.TagNumber(1)
   $core.bool hasProto() => $_has(0);
   @$pb.TagNumber(1)
@@ -217,7 +196,7 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get src => $_getSZ(1);
   @$pb.TagNumber(2)
-  set src($core.String v) { $_setString(1, v); }
+  set src($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasSrc() => $_has(1);
   @$pb.TagNumber(2)
@@ -226,7 +205,7 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get dst => $_getSZ(2);
   @$pb.TagNumber(3)
-  set dst($core.String v) { $_setString(2, v); }
+  set dst($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasDst() => $_has(2);
   @$pb.TagNumber(3)
@@ -235,7 +214,7 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $fixnum.Int64 get txPackets => $_getI64(3);
   @$pb.TagNumber(4)
-  set txPackets($fixnum.Int64 v) { $_setInt64(3, v); }
+  set txPackets($fixnum.Int64 value) => $_setInt64(3, value);
   @$pb.TagNumber(4)
   $core.bool hasTxPackets() => $_has(3);
   @$pb.TagNumber(4)
@@ -244,7 +223,7 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $fixnum.Int64 get txBytes => $_getI64(4);
   @$pb.TagNumber(5)
-  set txBytes($fixnum.Int64 v) { $_setInt64(4, v); }
+  set txBytes($fixnum.Int64 value) => $_setInt64(4, value);
   @$pb.TagNumber(5)
   $core.bool hasTxBytes() => $_has(4);
   @$pb.TagNumber(5)
@@ -253,7 +232,7 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $fixnum.Int64 get rxPackets => $_getI64(5);
   @$pb.TagNumber(6)
-  set rxPackets($fixnum.Int64 v) { $_setInt64(5, v); }
+  set rxPackets($fixnum.Int64 value) => $_setInt64(5, value);
   @$pb.TagNumber(6)
   $core.bool hasRxPackets() => $_has(5);
   @$pb.TagNumber(6)
@@ -262,7 +241,7 @@ class PacketFlowLog extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $fixnum.Int64 get rxBytes => $_getI64(6);
   @$pb.TagNumber(7)
-  set rxBytes($fixnum.Int64 v) { $_setInt64(6, v); }
+  set rxBytes($fixnum.Int64 value) => $_setInt64(6, value);
   @$pb.TagNumber(7)
   $core.bool hasRxBytes() => $_has(6);
   @$pb.TagNumber(7)
@@ -278,30 +257,20 @@ class Node extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? allowedIPs,
     $core.Iterable<$core.String>? addresses,
   }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (nodeId != null) {
-      $result.nodeId = nodeId;
-    }
-    if (nodeKey != null) {
-      $result.nodeKey = nodeKey;
-    }
-    if (wgPubKey != null) {
-      $result.wgPubKey = wgPubKey;
-    }
-    if (allowedIPs != null) {
-      $result.allowedIPs.addAll(allowedIPs);
-    }
-    if (addresses != null) {
-      $result.addresses.addAll(addresses);
-    }
-    return $result;
+    final result = create();
+    if (name != null) result.name = name;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (nodeKey != null) result.nodeKey = nodeKey;
+    if (wgPubKey != null) result.wgPubKey = wgPubKey;
+    if (allowedIPs != null) result.allowedIPs.addAll(allowedIPs);
+    if (addresses != null) result.addresses.addAll(addresses);
+    return result;
   }
-  Node._() : super();
-  factory Node.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Node.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  Node._();
+
+  factory Node.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Node.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Node', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
@@ -318,10 +287,12 @@ class Node extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Node copyWith(void Function(Node) updates) => super.copyWith((message) => updates(message as Node)) as Node;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Node create() => Node._();
+  @$core.override
   Node createEmptyInstance() => create();
   static $pb.PbList<Node> createRepeated() => $pb.PbList<Node>();
   @$core.pragma('dart2js:noInline')
@@ -331,7 +302,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set name($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
@@ -340,7 +311,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $fixnum.Int64 get nodeId => $_getI64(1);
   @$pb.TagNumber(2)
-  set nodeId($fixnum.Int64 v) { $_setInt64(1, v); }
+  set nodeId($fixnum.Int64 value) => $_setInt64(1, value);
   @$pb.TagNumber(2)
   $core.bool hasNodeId() => $_has(1);
   @$pb.TagNumber(2)
@@ -349,7 +320,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get nodeKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set nodeKey($core.String v) { $_setString(2, v); }
+  set nodeKey($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasNodeKey() => $_has(2);
   @$pb.TagNumber(3)
@@ -358,7 +329,7 @@ class Node extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get wgPubKey => $_getSZ(3);
   @$pb.TagNumber(4)
-  set wgPubKey($core.String v) { $_setString(3, v); }
+  set wgPubKey($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasWgPubKey() => $_has(3);
   @$pb.TagNumber(4)
@@ -377,18 +348,16 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
     $core.String? ip,
     $core.String? cidr,
   }) {
-    final $result = create();
-    if (ip != null) {
-      $result.ip = ip;
-    }
-    if (cidr != null) {
-      $result.cidr = cidr;
-    }
-    return $result;
+    final result = create();
+    if (ip != null) result.ip = ip;
+    if (cidr != null) result.cidr = cidr;
+    return result;
   }
-  ComposeNodeResponse._() : super();
-  factory ComposeNodeResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ComposeNodeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ComposeNodeResponse._();
+
+  factory ComposeNodeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ComposeNodeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComposeNodeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
@@ -401,10 +370,12 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ComposeNodeResponse copyWith(void Function(ComposeNodeResponse) updates) => super.copyWith((message) => updates(message as ComposeNodeResponse)) as ComposeNodeResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ComposeNodeResponse create() => ComposeNodeResponse._();
+  @$core.override
   ComposeNodeResponse createEmptyInstance() => create();
   static $pb.PbList<ComposeNodeResponse> createRepeated() => $pb.PbList<ComposeNodeResponse>();
   @$core.pragma('dart2js:noInline')
@@ -414,7 +385,7 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
   @$pb.TagNumber(1)
-  set ip($core.String v) { $_setString(0, v); }
+  set ip($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasIp() => $_has(0);
   @$pb.TagNumber(1)
@@ -423,7 +394,7 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get cidr => $_getSZ(1);
   @$pb.TagNumber(2)
-  set cidr($core.String v) { $_setString(1, v); }
+  set cidr($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasCidr() => $_has(1);
   @$pb.TagNumber(2)
@@ -435,18 +406,16 @@ class NetPortRange_portRange extends $pb.GeneratedMessage {
     $fixnum.Int64? first,
     $fixnum.Int64? last,
   }) {
-    final $result = create();
-    if (first != null) {
-      $result.first = first;
-    }
-    if (last != null) {
-      $result.last = last;
-    }
-    return $result;
+    final result = create();
+    if (first != null) result.first = first;
+    if (last != null) result.last = last;
+    return result;
   }
-  NetPortRange_portRange._() : super();
-  factory NetPortRange_portRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NetPortRange_portRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  NetPortRange_portRange._();
+
+  factory NetPortRange_portRange.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory NetPortRange_portRange.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetPortRange.portRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'first', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
@@ -459,10 +428,12 @@ class NetPortRange_portRange extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NetPortRange_portRange copyWith(void Function(NetPortRange_portRange) updates) => super.copyWith((message) => updates(message as NetPortRange_portRange)) as NetPortRange_portRange;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static NetPortRange_portRange create() => NetPortRange_portRange._();
+  @$core.override
   NetPortRange_portRange createEmptyInstance() => create();
   static $pb.PbList<NetPortRange_portRange> createRepeated() => $pb.PbList<NetPortRange_portRange>();
   @$core.pragma('dart2js:noInline')
@@ -472,7 +443,7 @@ class NetPortRange_portRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get first => $_getI64(0);
   @$pb.TagNumber(1)
-  set first($fixnum.Int64 v) { $_setInt64(0, v); }
+  set first($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasFirst() => $_has(0);
   @$pb.TagNumber(1)
@@ -481,7 +452,7 @@ class NetPortRange_portRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $fixnum.Int64 get last => $_getI64(1);
   @$pb.TagNumber(2)
-  set last($fixnum.Int64 v) { $_setInt64(1, v); }
+  set last($fixnum.Int64 value) => $_setInt64(1, value);
   @$pb.TagNumber(2)
   $core.bool hasLast() => $_has(1);
   @$pb.TagNumber(2)
@@ -494,21 +465,17 @@ class NetPortRange extends $pb.GeneratedMessage {
     NetPortRange_portRange? ports,
     $core.String? advertisedRoutes,
   }) {
-    final $result = create();
-    if (ip != null) {
-      $result.ip = ip;
-    }
-    if (ports != null) {
-      $result.ports = ports;
-    }
-    if (advertisedRoutes != null) {
-      $result.advertisedRoutes = advertisedRoutes;
-    }
-    return $result;
+    final result = create();
+    if (ip != null) result.ip = ip;
+    if (ports != null) result.ports = ports;
+    if (advertisedRoutes != null) result.advertisedRoutes = advertisedRoutes;
+    return result;
   }
-  NetPortRange._() : super();
-  factory NetPortRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NetPortRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  NetPortRange._();
+
+  factory NetPortRange.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory NetPortRange.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetPortRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
@@ -522,10 +489,12 @@ class NetPortRange extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NetPortRange copyWith(void Function(NetPortRange) updates) => super.copyWith((message) => updates(message as NetPortRange)) as NetPortRange;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static NetPortRange create() => NetPortRange._();
+  @$core.override
   NetPortRange createEmptyInstance() => create();
   static $pb.PbList<NetPortRange> createRepeated() => $pb.PbList<NetPortRange>();
   @$core.pragma('dart2js:noInline')
@@ -539,7 +508,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get ip => $_getSZ(0);
   @$pb.TagNumber(1)
-  set ip($core.String v) { $_setString(0, v); }
+  set ip($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasIp() => $_has(0);
   @$pb.TagNumber(1)
@@ -554,7 +523,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   NetPortRange_portRange get ports => $_getN(1);
   @$pb.TagNumber(2)
-  set ports(NetPortRange_portRange v) { $_setField(2, v); }
+  set ports(NetPortRange_portRange value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasPorts() => $_has(1);
   @$pb.TagNumber(2)
@@ -568,7 +537,7 @@ class NetPortRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get advertisedRoutes => $_getSZ(2);
   @$pb.TagNumber(3)
-  set advertisedRoutes($core.String v) { $_setString(2, v); }
+  set advertisedRoutes($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasAdvertisedRoutes() => $_has(2);
   @$pb.TagNumber(3)
@@ -581,21 +550,17 @@ class FilterRule extends $pb.GeneratedMessage {
     $core.Iterable<NetPortRange>? dsts,
     $core.Iterable<$core.int>? iPProto,
   }) {
-    final $result = create();
-    if (srcIps != null) {
-      $result.srcIps.addAll(srcIps);
-    }
-    if (dsts != null) {
-      $result.dsts.addAll(dsts);
-    }
-    if (iPProto != null) {
-      $result.iPProto.addAll(iPProto);
-    }
-    return $result;
+    final result = create();
+    if (srcIps != null) result.srcIps.addAll(srcIps);
+    if (dsts != null) result.dsts.addAll(dsts);
+    if (iPProto != null) result.iPProto.addAll(iPProto);
+    return result;
   }
-  FilterRule._() : super();
-  factory FilterRule.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FilterRule.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FilterRule._();
+
+  factory FilterRule.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FilterRule.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FilterRule', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'srcIps', protoName: 'srcIps')
@@ -609,10 +574,12 @@ class FilterRule extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FilterRule copyWith(void Function(FilterRule) updates) => super.copyWith((message) => updates(message as FilterRule)) as FilterRule;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FilterRule create() => FilterRule._();
+  @$core.override
   FilterRule createEmptyInstance() => create();
   static $pb.PbList<FilterRule> createRepeated() => $pb.PbList<FilterRule>();
   @$core.pragma('dart2js:noInline')
@@ -652,42 +619,24 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.Iterable<Node>? iceTable,
     DNSConfig? dns,
   }) {
-    final $result = create();
-    if (seq != null) {
-      $result.seq = seq;
-    }
-    if (node != null) {
-      $result.node = node;
-    }
-    if (peers != null) {
-      $result.peers.addAll(peers);
-    }
-    if (peersChanged != null) {
-      $result.peersChanged.addAll(peersChanged);
-    }
-    if (peersRemoved != null) {
-      $result.peersRemoved.addAll(peersRemoved);
-    }
-    if (packetFilter != null) {
-      $result.packetFilter.addAll(packetFilter);
-    }
-    if (advertisedRoute != null) {
-      $result.advertisedRoute = advertisedRoute;
-    }
-    if (jailed != null) {
-      $result.jailed = jailed;
-    }
-    if (iceTable != null) {
-      $result.iceTable.addAll(iceTable);
-    }
-    if (dns != null) {
-      $result.dns = dns;
-    }
-    return $result;
+    final result = create();
+    if (seq != null) result.seq = seq;
+    if (node != null) result.node = node;
+    if (peers != null) result.peers.addAll(peers);
+    if (peersChanged != null) result.peersChanged.addAll(peersChanged);
+    if (peersRemoved != null) result.peersRemoved.addAll(peersRemoved);
+    if (packetFilter != null) result.packetFilter.addAll(packetFilter);
+    if (advertisedRoute != null) result.advertisedRoute = advertisedRoute;
+    if (jailed != null) result.jailed = jailed;
+    if (iceTable != null) result.iceTable.addAll(iceTable);
+    if (dns != null) result.dns = dns;
+    return result;
   }
-  NetworkMapResponse._() : super();
-  factory NetworkMapResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NetworkMapResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  NetworkMapResponse._();
+
+  factory NetworkMapResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory NetworkMapResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NetworkMapResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'seq', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
@@ -708,10 +657,12 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NetworkMapResponse copyWith(void Function(NetworkMapResponse) updates) => super.copyWith((message) => updates(message as NetworkMapResponse)) as NetworkMapResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static NetworkMapResponse create() => NetworkMapResponse._();
+  @$core.override
   NetworkMapResponse createEmptyInstance() => create();
   static $pb.PbList<NetworkMapResponse> createRepeated() => $pb.PbList<NetworkMapResponse>();
   @$core.pragma('dart2js:noInline')
@@ -722,7 +673,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get seq => $_getI64(0);
   @$pb.TagNumber(1)
-  set seq($fixnum.Int64 v) { $_setInt64(0, v); }
+  set seq($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasSeq() => $_has(0);
   @$pb.TagNumber(1)
@@ -732,7 +683,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   Node get node => $_getN(1);
   @$pb.TagNumber(2)
-  set node(Node v) { $_setField(2, v); }
+  set node(Node value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasNode() => $_has(1);
   @$pb.TagNumber(2)
@@ -763,7 +714,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.String get advertisedRoute => $_getSZ(6);
   @$pb.TagNumber(7)
-  set advertisedRoute($core.String v) { $_setString(6, v); }
+  set advertisedRoute($core.String value) => $_setString(6, value);
   @$pb.TagNumber(7)
   $core.bool hasAdvertisedRoute() => $_has(6);
   @$pb.TagNumber(7)
@@ -773,7 +724,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool get jailed => $_getBF(7);
   @$pb.TagNumber(8)
-  set jailed($core.bool v) { $_setBool(7, v); }
+  set jailed($core.bool value) => $_setBool(7, value);
   @$pb.TagNumber(8)
   $core.bool hasJailed() => $_has(7);
   @$pb.TagNumber(8)
@@ -785,7 +736,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   DNSConfig get dns => $_getN(9);
   @$pb.TagNumber(10)
-  set dns(DNSConfig v) { $_setField(10, v); }
+  set dns(DNSConfig value) => $_setField(10, value);
   @$pb.TagNumber(10)
   $core.bool hasDns() => $_has(9);
   @$pb.TagNumber(10)
@@ -798,15 +749,15 @@ class Resolver extends $pb.GeneratedMessage {
   factory Resolver({
     $core.String? addr,
   }) {
-    final $result = create();
-    if (addr != null) {
-      $result.addr = addr;
-    }
-    return $result;
+    final result = create();
+    if (addr != null) result.addr = addr;
+    return result;
   }
-  Resolver._() : super();
-  factory Resolver.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Resolver.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  Resolver._();
+
+  factory Resolver.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Resolver.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resolver', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'addr')
@@ -818,10 +769,12 @@ class Resolver extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Resolver copyWith(void Function(Resolver) updates) => super.copyWith((message) => updates(message as Resolver)) as Resolver;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Resolver create() => Resolver._();
+  @$core.override
   Resolver createEmptyInstance() => create();
   static $pb.PbList<Resolver> createRepeated() => $pb.PbList<Resolver>();
   @$core.pragma('dart2js:noInline')
@@ -831,7 +784,7 @@ class Resolver extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get addr => $_getSZ(0);
   @$pb.TagNumber(1)
-  set addr($core.String v) { $_setString(0, v); }
+  set addr($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasAddr() => $_has(0);
   @$pb.TagNumber(1)
@@ -842,15 +795,15 @@ class Resolvers extends $pb.GeneratedMessage {
   factory Resolvers({
     $core.Iterable<Resolver>? resolvers,
   }) {
-    final $result = create();
-    if (resolvers != null) {
-      $result.resolvers.addAll(resolvers);
-    }
-    return $result;
+    final result = create();
+    if (resolvers != null) result.resolvers.addAll(resolvers);
+    return result;
   }
-  Resolvers._() : super();
-  factory Resolvers.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Resolvers.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  Resolvers._();
+
+  factory Resolvers.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Resolvers.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Resolvers', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pc<Resolver>(1, _omitFieldNames ? '' : 'resolvers', $pb.PbFieldType.PM, subBuilder: Resolver.create)
@@ -862,10 +815,12 @@ class Resolvers extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Resolvers copyWith(void Function(Resolvers) updates) => super.copyWith((message) => updates(message as Resolvers)) as Resolvers;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Resolvers create() => Resolvers._();
+  @$core.override
   Resolvers createEmptyInstance() => create();
   static $pb.PbList<Resolvers> createRepeated() => $pb.PbList<Resolvers>();
   @$core.pragma('dart2js:noInline')
@@ -884,27 +839,19 @@ class DNSConfig extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? exitNodeFilterd,
     $core.bool? enabledWonderDNS,
   }) {
-    final $result = create();
-    if (resolvers != null) {
-      $result.resolvers.addAll(resolvers);
-    }
-    if (routes != null) {
-      $result.routes.addEntries(routes);
-    }
-    if (searchDomains != null) {
-      $result.searchDomains.addAll(searchDomains);
-    }
-    if (exitNodeFilterd != null) {
-      $result.exitNodeFilterd.addAll(exitNodeFilterd);
-    }
-    if (enabledWonderDNS != null) {
-      $result.enabledWonderDNS = enabledWonderDNS;
-    }
-    return $result;
+    final result = create();
+    if (resolvers != null) result.resolvers.addAll(resolvers);
+    if (routes != null) result.routes.addEntries(routes);
+    if (searchDomains != null) result.searchDomains.addAll(searchDomains);
+    if (exitNodeFilterd != null) result.exitNodeFilterd.addAll(exitNodeFilterd);
+    if (enabledWonderDNS != null) result.enabledWonderDNS = enabledWonderDNS;
+    return result;
   }
-  DNSConfig._() : super();
-  factory DNSConfig.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DNSConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  DNSConfig._();
+
+  factory DNSConfig.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DNSConfig.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DNSConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..pc<Resolver>(1, _omitFieldNames ? '' : 'resolvers', $pb.PbFieldType.PM, subBuilder: Resolver.create)
@@ -920,10 +867,12 @@ class DNSConfig extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DNSConfig copyWith(void Function(DNSConfig) updates) => super.copyWith((message) => updates(message as DNSConfig)) as DNSConfig;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static DNSConfig create() => DNSConfig._();
+  @$core.override
   DNSConfig createEmptyInstance() => create();
   static $pb.PbList<DNSConfig> createRepeated() => $pb.PbList<DNSConfig>();
   @$core.pragma('dart2js:noInline')
@@ -970,7 +919,7 @@ class DNSConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool get enabledWonderDNS => $_getBF(4);
   @$pb.TagNumber(5)
-  set enabledWonderDNS($core.bool v) { $_setBool(4, v); }
+  set enabledWonderDNS($core.bool value) => $_setBool(4, value);
   @$pb.TagNumber(5)
   $core.bool hasEnabledWonderDNS() => $_has(4);
   @$pb.TagNumber(5)
@@ -978,5 +927,5 @@ class DNSConfig extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

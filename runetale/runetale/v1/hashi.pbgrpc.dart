@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
@@ -64,9 +65,9 @@ class HashiServiceClient extends $grpc.Client {
       '/protos.HashiService/GetHashigo',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.Hashigo.fromBuffer(value));
-  static final _$patchHashigo = $grpc.ClientMethod<$2.HashigoRequest, $2.Hashigo>(
+  static final _$patchHashigo = $grpc.ClientMethod<$2.HashigoConfigRequest, $2.Hashigo>(
       '/protos.HashiService/PatchHashigo',
-      ($2.HashigoRequest value) => value.writeToBuffer(),
+      ($2.HashigoConfigRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $2.Hashigo.fromBuffer(value));
 
   HashiServiceClient(super.channel, {super.options, super.interceptors});
@@ -103,7 +104,7 @@ class HashiServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getHashigo, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.Hashigo> patchHashigo($2.HashigoRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$2.Hashigo> patchHashigo($2.HashigoConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$patchHashigo, request, options: options);
   }
 }
@@ -169,12 +170,12 @@ abstract class HashiServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($2.Hashigo value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$2.HashigoRequest, $2.Hashigo>(
+    $addMethod($grpc.ServiceMethod<$2.HashigoConfigRequest, $2.Hashigo>(
         'PatchHashigo',
         patchHashigo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $2.HashigoRequest.fromBuffer(value),
+        ($core.List<$core.int> value) => $2.HashigoConfigRequest.fromBuffer(value),
         ($2.Hashigo value) => value.writeToBuffer()));
   }
 
@@ -210,7 +211,7 @@ abstract class HashiServiceBase extends $grpc.Service {
     return getHashigo($call, await $request);
   }
 
-  $async.Future<$2.Hashigo> patchHashigo_Pre($grpc.ServiceCall $call, $async.Future<$2.HashigoRequest> $request) async {
+  $async.Future<$2.Hashigo> patchHashigo_Pre($grpc.ServiceCall $call, $async.Future<$2.HashigoConfigRequest> $request) async {
     return patchHashigo($call, await $request);
   }
 
@@ -222,5 +223,5 @@ abstract class HashiServiceBase extends $grpc.Service {
   $async.Future<$2.HashiStatus> stop($grpc.ServiceCall call, $2.StopRequest request);
   $async.Future<$2.HashiStatus> dial($grpc.ServiceCall call, $0.Empty request);
   $async.Future<$2.Hashigo> getHashigo($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$2.Hashigo> patchHashigo($grpc.ServiceCall call, $2.HashigoRequest request);
+  $async.Future<$2.Hashigo> patchHashigo($grpc.ServiceCall call, $2.HashigoConfigRequest request);
 }

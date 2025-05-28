@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -36,7 +37,7 @@ class OS extends $pb.ProtobufEnum {
   static final $core.List<OS?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 6);
   static OS? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const OS._(super.v, super.n);
+  const OS._(super.value, super.name);
 }
 
 class Platform extends $pb.ProtobufEnum {
@@ -71,7 +72,7 @@ class Platform extends $pb.ProtobufEnum {
   static final $core.List<Platform?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 11);
   static Platform? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const Platform._(super.v, super.n);
+  const Platform._(super.value, super.name);
 }
 
 class IPProto extends $pb.ProtobufEnum {
@@ -94,7 +95,7 @@ class IPProto extends $pb.ProtobufEnum {
   static final $core.List<IPProto?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 5);
   static IPProto? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const IPProto._(super.v, super.n);
+  const IPProto._(super.value, super.name);
 }
 
 class ExpirelyTime extends $pb.ProtobufEnum {
@@ -113,7 +114,7 @@ class ExpirelyTime extends $pb.ProtobufEnum {
   static final $core.List<ExpirelyTime?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 3);
   static ExpirelyTime? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const ExpirelyTime._(super.v, super.n);
+  const ExpirelyTime._(super.value, super.name);
 }
 
 class UserRoles extends $pb.ProtobufEnum {
@@ -130,8 +131,8 @@ class UserRoles extends $pb.ProtobufEnum {
   static final $core.List<UserRoles?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
   static UserRoles? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const UserRoles._(super.v, super.n);
+  const UserRoles._(super.value, super.name);
 }
 
 
-const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
+const $core.bool _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

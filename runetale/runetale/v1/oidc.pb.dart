@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -25,33 +26,21 @@ class LoginResponse extends $pb.GeneratedMessage {
     $core.String? username,
     $core.String? picture,
   }) {
-    final $result = create();
-    if (sub != null) {
-      $result.sub = sub;
-    }
-    if (tenantID != null) {
-      $result.tenantID = tenantID;
-    }
-    if (doamin != null) {
-      $result.doamin = doamin;
-    }
-    if (providerID != null) {
-      $result.providerID = providerID;
-    }
-    if (email != null) {
-      $result.email = email;
-    }
-    if (username != null) {
-      $result.username = username;
-    }
-    if (picture != null) {
-      $result.picture = picture;
-    }
-    return $result;
+    final result = create();
+    if (sub != null) result.sub = sub;
+    if (tenantID != null) result.tenantID = tenantID;
+    if (doamin != null) result.doamin = doamin;
+    if (providerID != null) result.providerID = providerID;
+    if (email != null) result.email = email;
+    if (username != null) result.username = username;
+    if (picture != null) result.picture = picture;
+    return result;
   }
-  LoginResponse._() : super();
-  factory LoginResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LoginResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  LoginResponse._();
+
+  factory LoginResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LoginResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sub')
@@ -69,10 +58,12 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginResponse copyWith(void Function(LoginResponse) updates) => super.copyWith((message) => updates(message as LoginResponse)) as LoginResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static LoginResponse create() => LoginResponse._();
+  @$core.override
   LoginResponse createEmptyInstance() => create();
   static $pb.PbList<LoginResponse> createRepeated() => $pb.PbList<LoginResponse>();
   @$core.pragma('dart2js:noInline')
@@ -82,7 +73,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get sub => $_getSZ(0);
   @$pb.TagNumber(1)
-  set sub($core.String v) { $_setString(0, v); }
+  set sub($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasSub() => $_has(0);
   @$pb.TagNumber(1)
@@ -91,7 +82,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get tenantID => $_getSZ(1);
   @$pb.TagNumber(2)
-  set tenantID($core.String v) { $_setString(1, v); }
+  set tenantID($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasTenantID() => $_has(1);
   @$pb.TagNumber(2)
@@ -100,7 +91,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get doamin => $_getSZ(2);
   @$pb.TagNumber(3)
-  set doamin($core.String v) { $_setString(2, v); }
+  set doamin($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasDoamin() => $_has(2);
   @$pb.TagNumber(3)
@@ -109,7 +100,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get providerID => $_getSZ(3);
   @$pb.TagNumber(4)
-  set providerID($core.String v) { $_setString(3, v); }
+  set providerID($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasProviderID() => $_has(3);
   @$pb.TagNumber(4)
@@ -118,7 +109,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get email => $_getSZ(4);
   @$pb.TagNumber(5)
-  set email($core.String v) { $_setString(4, v); }
+  set email($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasEmail() => $_has(4);
   @$pb.TagNumber(5)
@@ -127,7 +118,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get username => $_getSZ(5);
   @$pb.TagNumber(6)
-  set username($core.String v) { $_setString(5, v); }
+  set username($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasUsername() => $_has(5);
   @$pb.TagNumber(6)
@@ -136,7 +127,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.String get picture => $_getSZ(6);
   @$pb.TagNumber(7)
-  set picture($core.String v) { $_setString(6, v); }
+  set picture($core.String value) => $_setString(6, value);
   @$pb.TagNumber(7)
   $core.bool hasPicture() => $_has(6);
   @$pb.TagNumber(7)
@@ -154,36 +145,22 @@ class LoginRequest extends $pb.GeneratedMessage {
     $core.String? picture,
     $core.String? inviteCode,
   }) {
-    final $result = create();
-    if (sub != null) {
-      $result.sub = sub;
-    }
-    if (tenantID != null) {
-      $result.tenantID = tenantID;
-    }
-    if (doamin != null) {
-      $result.doamin = doamin;
-    }
-    if (providerID != null) {
-      $result.providerID = providerID;
-    }
-    if (email != null) {
-      $result.email = email;
-    }
-    if (username != null) {
-      $result.username = username;
-    }
-    if (picture != null) {
-      $result.picture = picture;
-    }
-    if (inviteCode != null) {
-      $result.inviteCode = inviteCode;
-    }
-    return $result;
+    final result = create();
+    if (sub != null) result.sub = sub;
+    if (tenantID != null) result.tenantID = tenantID;
+    if (doamin != null) result.doamin = doamin;
+    if (providerID != null) result.providerID = providerID;
+    if (email != null) result.email = email;
+    if (username != null) result.username = username;
+    if (picture != null) result.picture = picture;
+    if (inviteCode != null) result.inviteCode = inviteCode;
+    return result;
   }
-  LoginRequest._() : super();
-  factory LoginRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LoginRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  LoginRequest._();
+
+  factory LoginRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory LoginRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sub')
@@ -202,10 +179,12 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginRequest copyWith(void Function(LoginRequest) updates) => super.copyWith((message) => updates(message as LoginRequest)) as LoginRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static LoginRequest create() => LoginRequest._();
+  @$core.override
   LoginRequest createEmptyInstance() => create();
   static $pb.PbList<LoginRequest> createRepeated() => $pb.PbList<LoginRequest>();
   @$core.pragma('dart2js:noInline')
@@ -215,7 +194,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get sub => $_getSZ(0);
   @$pb.TagNumber(1)
-  set sub($core.String v) { $_setString(0, v); }
+  set sub($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasSub() => $_has(0);
   @$pb.TagNumber(1)
@@ -224,7 +203,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get tenantID => $_getSZ(1);
   @$pb.TagNumber(2)
-  set tenantID($core.String v) { $_setString(1, v); }
+  set tenantID($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasTenantID() => $_has(1);
   @$pb.TagNumber(2)
@@ -233,7 +212,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get doamin => $_getSZ(2);
   @$pb.TagNumber(3)
-  set doamin($core.String v) { $_setString(2, v); }
+  set doamin($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasDoamin() => $_has(2);
   @$pb.TagNumber(3)
@@ -242,7 +221,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get providerID => $_getSZ(3);
   @$pb.TagNumber(4)
-  set providerID($core.String v) { $_setString(3, v); }
+  set providerID($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasProviderID() => $_has(3);
   @$pb.TagNumber(4)
@@ -251,7 +230,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get email => $_getSZ(4);
   @$pb.TagNumber(5)
-  set email($core.String v) { $_setString(4, v); }
+  set email($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasEmail() => $_has(4);
   @$pb.TagNumber(5)
@@ -260,7 +239,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get username => $_getSZ(5);
   @$pb.TagNumber(6)
-  set username($core.String v) { $_setString(5, v); }
+  set username($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasUsername() => $_has(5);
   @$pb.TagNumber(6)
@@ -269,7 +248,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.String get picture => $_getSZ(6);
   @$pb.TagNumber(7)
-  set picture($core.String v) { $_setString(6, v); }
+  set picture($core.String value) => $_setString(6, value);
   @$pb.TagNumber(7)
   $core.bool hasPicture() => $_has(6);
   @$pb.TagNumber(7)
@@ -278,7 +257,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.String get inviteCode => $_getSZ(7);
   @$pb.TagNumber(8)
-  set inviteCode($core.String v) { $_setString(7, v); }
+  set inviteCode($core.String value) => $_setString(7, value);
   @$pb.TagNumber(8)
   $core.bool hasInviteCode() => $_has(7);
   @$pb.TagNumber(8)
@@ -294,30 +273,20 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     $core.bool? isRegistered,
     $core.bool? isInvited,
   }) {
-    final $result = create();
-    if (doamin != null) {
-      $result.doamin = doamin;
-    }
-    if (email != null) {
-      $result.email = email;
-    }
-    if (username != null) {
-      $result.username = username;
-    }
-    if (sub != null) {
-      $result.sub = sub;
-    }
-    if (isRegistered != null) {
-      $result.isRegistered = isRegistered;
-    }
-    if (isInvited != null) {
-      $result.isInvited = isInvited;
-    }
-    return $result;
+    final result = create();
+    if (doamin != null) result.doamin = doamin;
+    if (email != null) result.email = email;
+    if (username != null) result.username = username;
+    if (sub != null) result.sub = sub;
+    if (isRegistered != null) result.isRegistered = isRegistered;
+    if (isInvited != null) result.isInvited = isInvited;
+    return result;
   }
-  AuthenticateResponse._() : super();
-  factory AuthenticateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AuthenticateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  AuthenticateResponse._();
+
+  factory AuthenticateResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AuthenticateResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthenticateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'doamin')
@@ -334,10 +303,12 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AuthenticateResponse copyWith(void Function(AuthenticateResponse) updates) => super.copyWith((message) => updates(message as AuthenticateResponse)) as AuthenticateResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static AuthenticateResponse create() => AuthenticateResponse._();
+  @$core.override
   AuthenticateResponse createEmptyInstance() => create();
   static $pb.PbList<AuthenticateResponse> createRepeated() => $pb.PbList<AuthenticateResponse>();
   @$core.pragma('dart2js:noInline')
@@ -347,7 +318,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get doamin => $_getSZ(0);
   @$pb.TagNumber(1)
-  set doamin($core.String v) { $_setString(0, v); }
+  set doamin($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasDoamin() => $_has(0);
   @$pb.TagNumber(1)
@@ -356,7 +327,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get email => $_getSZ(1);
   @$pb.TagNumber(2)
-  set email($core.String v) { $_setString(1, v); }
+  set email($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
@@ -365,7 +336,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get username => $_getSZ(2);
   @$pb.TagNumber(3)
-  set username($core.String v) { $_setString(2, v); }
+  set username($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasUsername() => $_has(2);
   @$pb.TagNumber(3)
@@ -374,7 +345,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get sub => $_getSZ(3);
   @$pb.TagNumber(4)
-  set sub($core.String v) { $_setString(3, v); }
+  set sub($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasSub() => $_has(3);
   @$pb.TagNumber(4)
@@ -383,7 +354,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool get isRegistered => $_getBF(4);
   @$pb.TagNumber(5)
-  set isRegistered($core.bool v) { $_setBool(4, v); }
+  set isRegistered($core.bool value) => $_setBool(4, value);
   @$pb.TagNumber(5)
   $core.bool hasIsRegistered() => $_has(4);
   @$pb.TagNumber(5)
@@ -392,7 +363,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool get isInvited => $_getBF(5);
   @$pb.TagNumber(6)
-  set isInvited($core.bool v) { $_setBool(5, v); }
+  set isInvited($core.bool value) => $_setBool(5, value);
   @$pb.TagNumber(6)
   $core.bool hasIsInvited() => $_has(5);
   @$pb.TagNumber(6)
@@ -400,5 +371,5 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

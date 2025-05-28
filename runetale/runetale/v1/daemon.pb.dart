@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -19,15 +20,15 @@ class GetConnectionStatusResponse extends $pb.GeneratedMessage {
   factory GetConnectionStatusResponse({
     $core.bool? isConnected,
   }) {
-    final $result = create();
-    if (isConnected != null) {
-      $result.isConnected = isConnected;
-    }
-    return $result;
+    final result = create();
+    if (isConnected != null) result.isConnected = isConnected;
+    return result;
   }
-  GetConnectionStatusResponse._() : super();
-  factory GetConnectionStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetConnectionStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetConnectionStatusResponse._();
+
+  factory GetConnectionStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetConnectionStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetConnectionStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'IsConnected', protoName: 'IsConnected')
@@ -39,10 +40,12 @@ class GetConnectionStatusResponse extends $pb.GeneratedMessage {
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetConnectionStatusResponse copyWith(void Function(GetConnectionStatusResponse) updates) => super.copyWith((message) => updates(message as GetConnectionStatusResponse)) as GetConnectionStatusResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetConnectionStatusResponse create() => GetConnectionStatusResponse._();
+  @$core.override
   GetConnectionStatusResponse createEmptyInstance() => create();
   static $pb.PbList<GetConnectionStatusResponse> createRepeated() => $pb.PbList<GetConnectionStatusResponse>();
   @$core.pragma('dart2js:noInline')
@@ -52,7 +55,7 @@ class GetConnectionStatusResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool get isConnected => $_getBF(0);
   @$pb.TagNumber(1)
-  set isConnected($core.bool v) { $_setBool(0, v); }
+  set isConnected($core.bool value) => $_setBool(0, value);
   @$pb.TagNumber(1)
   $core.bool hasIsConnected() => $_has(0);
   @$pb.TagNumber(1)
@@ -60,5 +63,5 @@ class GetConnectionStatusResponse extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
