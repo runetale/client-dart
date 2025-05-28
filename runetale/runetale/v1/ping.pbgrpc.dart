@@ -16,7 +16,7 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/empty.pb.dart' as $0;
-import 'ping.pb.dart' as $8;
+import 'ping.pb.dart' as $7;
 
 export 'ping.pb.dart';
 
@@ -30,14 +30,14 @@ class PingServiceClient extends $grpc.Client {
     '',
   ];
 
-  static final _$ping = $grpc.ClientMethod<$0.Empty, $8.PingResponse>(
+  static final _$ping = $grpc.ClientMethod<$0.Empty, $7.PingResponse>(
       '/protos.PingService/Ping',
       ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $8.PingResponse.fromBuffer(value));
+      ($core.List<$core.int> value) => $7.PingResponse.fromBuffer(value));
 
   PingServiceClient(super.channel, {super.options, super.interceptors});
 
-  $grpc.ResponseFuture<$8.PingResponse> ping($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$7.PingResponse> ping($0.Empty request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$ping, request, options: options);
   }
 }
@@ -47,18 +47,18 @@ abstract class PingServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.PingService';
 
   PingServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.Empty, $8.PingResponse>(
+    $addMethod($grpc.ServiceMethod<$0.Empty, $7.PingResponse>(
         'Ping',
         ping_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($8.PingResponse value) => value.writeToBuffer()));
+        ($7.PingResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$8.PingResponse> ping_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$7.PingResponse> ping_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return ping($call, await $request);
   }
 
-  $async.Future<$8.PingResponse> ping($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$7.PingResponse> ping($grpc.ServiceCall call, $0.Empty request);
 }

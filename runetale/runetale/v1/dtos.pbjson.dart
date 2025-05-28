@@ -125,20 +125,6 @@ final $typed_data.Uint8List timestampDescriptor = $convert.base64Decode(
     'CglUaW1lc3RhbXASGAoHc2Vjb25kcxgBIAEoA1IHc2Vjb25kcxIUCgVuYW5vcxgCIAEoBVIFbm'
     'Fub3M=');
 
-@$core.Deprecated('Use authenticateResponseDescriptor instead')
-const AuthenticateResponse$json = {
-  '1': 'AuthenticateResponse',
-  '2': [
-    {'1': 'token', '3': 1, '4': 1, '5': 9, '10': 'token'},
-    {'1': 'refresh_token', '3': 2, '4': 1, '5': 9, '10': 'refreshToken'},
-  ],
-};
-
-/// Descriptor for `AuthenticateResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List authenticateResponseDescriptor = $convert.base64Decode(
-    'ChRBdXRoZW50aWNhdGVSZXNwb25zZRIUCgV0b2tlbhgBIAEoCVIFdG9rZW4SIwoNcmVmcmVzaF'
-    '90b2tlbhgCIAEoCVIMcmVmcmVzaFRva2Vu');
-
 @$core.Deprecated('Use logoutResponseDescriptor instead')
 const LogoutResponse$json = {
   '1': 'LogoutResponse',
@@ -213,7 +199,7 @@ const BaseUserNode$json = {
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
     {'1': 'is_online', '3': 7, '4': 1, '5': 8, '10': 'isOnline'},
-    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'lastSeen'},
+    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'lastSeen'},
   ],
 };
 
@@ -222,8 +208,7 @@ final $typed_data.Uint8List baseUserNodeDescriptor = $convert.base64Decode(
     'CgxCYXNlVXNlck5vZGUSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSDgoCaX'
     'AYAyABKAlSAmlwEh0KCnB1YmxpY19rZXkYBCABKAlSCXB1YmxpY0tleRIOCgJvcxgFIAEoCVIC'
     'b3MSGAoHdmVyc2lvbhgGIAEoCVIHdmVyc2lvbhIbCglpc19vbmxpbmUYByABKAhSCGlzT25saW'
-    '5lEjcKCWxhc3Rfc2VlbhgIIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCGxhc3RT'
-    'ZWVu');
+    '5lEi4KCWxhc3Rfc2VlbhgIIAEoCzIRLnByb3Rvcy5UaW1lc3RhbXBSCGxhc3RTZWVu');
 
 @$core.Deprecated('Use baseUserDescriptor instead')
 const BaseUser$json = {
@@ -232,21 +217,20 @@ const BaseUser$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'role', '3': 4, '4': 1, '5': 11, '6': '.admin_dashboard.UserRole', '10': 'role'},
-    {'1': 'nodes', '3': 5, '4': 3, '5': 11, '6': '.admin_dashboard.BaseUserNode', '10': 'nodes'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'role', '3': 4, '4': 1, '5': 11, '6': '.protos.UserRole', '10': 'role'},
+    {'1': 'nodes', '3': 5, '4': 3, '5': 11, '6': '.protos.BaseUserNode', '10': 'nodes'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `BaseUser`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List baseUserDescriptor = $convert.base64Decode(
     'CghCYXNlVXNlchIOCgJpZBgBIAEoCVICaWQSFAoFZW1haWwYAiABKAlSBWVtYWlsEhIKBG5hbW'
-    'UYAyABKAlSBG5hbWUSLQoEcm9sZRgEIAEoCzIZLmFkbWluX2Rhc2hib2FyZC5Vc2VyUm9sZVIE'
-    'cm9sZRIzCgVub2RlcxgFIAMoCzIdLmFkbWluX2Rhc2hib2FyZC5CYXNlVXNlck5vZGVSBW5vZG'
-    'VzEjkKCmNyZWF0ZWRfYXQYBiABKAsyGi5hZG1pbl9kYXNoYm9hcmQuVGltZXN0YW1wUgljcmVh'
-    'dGVkQXQSOQoKdXBkYXRlZF9hdBgHIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCX'
-    'VwZGF0ZWRBdA==');
+    'UYAyABKAlSBG5hbWUSJAoEcm9sZRgEIAEoCzIQLnByb3Rvcy5Vc2VyUm9sZVIEcm9sZRIqCgVu'
+    'b2RlcxgFIAMoCzIULnByb3Rvcy5CYXNlVXNlck5vZGVSBW5vZGVzEjAKCmNyZWF0ZWRfYXQYBi'
+    'ABKAsyES5wcm90b3MuVGltZXN0YW1wUgljcmVhdGVkQXQSMAoKdXBkYXRlZF9hdBgHIAEoCzIR'
+    'LnByb3Rvcy5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
 
 @$core.Deprecated('Use baseDeviceDescriptor instead')
 const BaseDevice$json = {
@@ -259,9 +243,9 @@ const BaseDevice$json = {
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
     {'1': 'is_online', '3': 7, '4': 1, '5': 8, '10': 'isOnline'},
-    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'lastSeen'},
-    {'1': 'created_at', '3': 9, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 10, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'lastSeen'},
+    {'1': 'created_at', '3': 9, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 10, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
@@ -270,10 +254,9 @@ final $typed_data.Uint8List baseDeviceDescriptor = $convert.base64Decode(
     'CgpCYXNlRGV2aWNlEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEh0KCnB1Ym'
     'xpY19rZXkYAyABKAlSCXB1YmxpY0tleRIOCgJpcBgEIAEoCVICaXASDgoCb3MYBSABKAlSAm9z'
     'EhgKB3ZlcnNpb24YBiABKAlSB3ZlcnNpb24SGwoJaXNfb25saW5lGAcgASgIUghpc09ubGluZR'
-    'I3CglsYXN0X3NlZW4YCCABKAsyGi5hZG1pbl9kYXNoYm9hcmQuVGltZXN0YW1wUghsYXN0U2Vl'
-    'bhI5CgpjcmVhdGVkX2F0GAkgASgLMhouYWRtaW5fZGFzaGJvYXJkLlRpbWVzdGFtcFIJY3JlYX'
-    'RlZEF0EjkKCnVwZGF0ZWRfYXQYCiABKAsyGi5hZG1pbl9kYXNoYm9hcmQuVGltZXN0YW1wUgl1'
-    'cGRhdGVkQXQ=');
+    'IuCglsYXN0X3NlZW4YCCABKAsyES5wcm90b3MuVGltZXN0YW1wUghsYXN0U2VlbhIwCgpjcmVh'
+    'dGVkX2F0GAkgASgLMhEucHJvdG9zLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjAKCnVwZGF0ZWRfYX'
+    'QYCiABKAsyES5wcm90b3MuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
 
 @$core.Deprecated('Use policyDescriptor instead')
 const Policy$json = {
@@ -287,8 +270,8 @@ const Policy$json = {
     {'1': 'ports', '3': 6, '4': 3, '5': 9, '10': 'ports'},
     {'1': 'protocols', '3': 7, '4': 3, '5': 9, '10': 'protocols'},
     {'1': 'enabled', '3': 8, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 9, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 10, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'created_at', '3': 9, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 10, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
@@ -297,9 +280,9 @@ final $typed_data.Uint8List policyDescriptor = $convert.base64Decode(
     'CgZQb2xpY3kSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcH'
     'Rpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhsKCXNyY19ub2RlcxgEIAMoCVIIc3JjTm9kZXMSGwoJ'
     'ZHN0X25vZGVzGAUgAygJUghkc3ROb2RlcxIUCgVwb3J0cxgGIAMoCVIFcG9ydHMSHAoJcHJvdG'
-    '9jb2xzGAcgAygJUglwcm90b2NvbHMSGAoHZW5hYmxlZBgIIAEoCFIHZW5hYmxlZBI5CgpjcmVh'
-    'dGVkX2F0GAkgASgLMhouYWRtaW5fZGFzaGJvYXJkLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjkKCn'
-    'VwZGF0ZWRfYXQYCiABKAsyGi5hZG1pbl9kYXNoYm9hcmQuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+    '9jb2xzGAcgAygJUglwcm90b2NvbHMSGAoHZW5hYmxlZBgIIAEoCFIHZW5hYmxlZBIwCgpjcmVh'
+    'dGVkX2F0GAkgASgLMhEucHJvdG9zLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjAKCnVwZGF0ZWRfYX'
+    'QYCiABKAsyES5wcm90b3MuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
 
 @$core.Deprecated('Use baseAclNodesDescriptor instead')
 const BaseAclNodes$json = {
@@ -322,23 +305,23 @@ const Acl$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'nodes', '3': 4, '4': 1, '5': 11, '6': '.admin_dashboard.BaseAclNodes', '10': 'nodes'},
+    {'1': 'nodes', '3': 4, '4': 1, '5': 11, '6': '.protos.BaseAclNodes', '10': 'nodes'},
     {'1': 'ports', '3': 5, '4': 3, '5': 9, '10': 'ports'},
     {'1': 'protocols', '3': 6, '4': 3, '5': 9, '10': 'protocols'},
     {'1': 'enabled', '3': 7, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 8, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `Acl`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List aclDescriptor = $convert.base64Decode(
     'CgNBY2wSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb2'
-    '4YAyABKAlSC2Rlc2NyaXB0aW9uEjMKBW5vZGVzGAQgASgLMh0uYWRtaW5fZGFzaGJvYXJkLkJh'
-    'c2VBY2xOb2Rlc1IFbm9kZXMSFAoFcG9ydHMYBSADKAlSBXBvcnRzEhwKCXByb3RvY29scxgGIA'
-    'MoCVIJcHJvdG9jb2xzEhgKB2VuYWJsZWQYByABKAhSB2VuYWJsZWQSOQoKY3JlYXRlZF9hdBgI'
-    'IAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2'
-    'F0GAkgASgLMhouYWRtaW5fZGFzaGJvYXJkLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+    '4YAyABKAlSC2Rlc2NyaXB0aW9uEioKBW5vZGVzGAQgASgLMhQucHJvdG9zLkJhc2VBY2xOb2Rl'
+    'c1IFbm9kZXMSFAoFcG9ydHMYBSADKAlSBXBvcnRzEhwKCXByb3RvY29scxgGIAMoCVIJcHJvdG'
+    '9jb2xzEhgKB2VuYWJsZWQYByABKAhSB2VuYWJsZWQSMAoKY3JlYXRlZF9hdBgIIAEoCzIRLnBy'
+    'b3Rvcy5UaW1lc3RhbXBSCWNyZWF0ZWRBdBIwCgp1cGRhdGVkX2F0GAkgASgLMhEucHJvdG9zLl'
+    'RpbWVzdGFtcFIJdXBkYXRlZEF0');
 
 @$core.Deprecated('Use splitDNSDescriptor instead')
 const SplitDNS$json = {
@@ -350,8 +333,8 @@ const SplitDNS$json = {
     {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
     {'1': 'nodes', '3': 5, '4': 3, '5': 9, '10': 'nodes'},
     {'1': 'enabled', '3': 6, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
@@ -359,9 +342,9 @@ const SplitDNS$json = {
 final $typed_data.Uint8List splitDNSDescriptor = $convert.base64Decode(
     'CghTcGxpdEROUxIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcm'
     'lwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SFgoGZG9tYWluGAQgASgJUgZkb21haW4SFAoFbm9k'
-    'ZXMYBSADKAlSBW5vZGVzEhgKB2VuYWJsZWQYBiABKAhSB2VuYWJsZWQSOQoKY3JlYXRlZF9hdB'
-    'gHIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVk'
-    'X2F0GAggASgLMhouYWRtaW5fZGFzaGJvYXJkLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+    'ZXMYBSADKAlSBW5vZGVzEhgKB2VuYWJsZWQYBiABKAhSB2VuYWJsZWQSMAoKY3JlYXRlZF9hdB'
+    'gHIAEoCzIRLnByb3Rvcy5UaW1lc3RhbXBSCWNyZWF0ZWRBdBIwCgp1cGRhdGVkX2F0GAggASgL'
+    'MhEucHJvdG9zLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
 
 @$core.Deprecated('Use dNSDescriptor instead')
 const DNS$json = {
@@ -373,8 +356,8 @@ const DNS$json = {
     {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
     {'1': 'nodes', '3': 5, '4': 3, '5': 9, '10': 'nodes'},
     {'1': 'enabled', '3': 6, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
@@ -382,9 +365,9 @@ const DNS$json = {
 final $typed_data.Uint8List dNSDescriptor = $convert.base64Decode(
     'CgNETlMSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb2'
     '4YAyABKAlSC2Rlc2NyaXB0aW9uEhYKBmRvbWFpbhgEIAEoCVIGZG9tYWluEhQKBW5vZGVzGAUg'
-    'AygJUgVub2RlcxIYCgdlbmFibGVkGAYgASgIUgdlbmFibGVkEjkKCmNyZWF0ZWRfYXQYByABKA'
-    'syGi5hZG1pbl9kYXNoYm9hcmQuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgI'
-    'IAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+    'AygJUgVub2RlcxIYCgdlbmFibGVkGAYgASgIUgdlbmFibGVkEjAKCmNyZWF0ZWRfYXQYByABKA'
+    'syES5wcm90b3MuVGltZXN0YW1wUgljcmVhdGVkQXQSMAoKdXBkYXRlZF9hdBgIIAEoCzIRLnBy'
+    'b3Rvcy5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
 
 @$core.Deprecated('Use baseResourceDescriptor instead')
 const BaseResource$json = {
@@ -394,9 +377,9 @@ const BaseResource$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
-    {'1': 'labels', '3': 5, '4': 3, '5': 11, '6': '.admin_dashboard.BaseResource.LabelsEntry', '10': 'labels'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'labels', '3': 5, '4': 3, '5': 11, '6': '.protos.BaseResource.LabelsEntry', '10': 'labels'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
   '3': [BaseResource_LabelsEntry$json],
 };
@@ -414,12 +397,11 @@ const BaseResource_LabelsEntry$json = {
 /// Descriptor for `BaseResource`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List baseResourceDescriptor = $convert.base64Decode(
     'CgxCYXNlUmVzb3VyY2USDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZG'
-    'VzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIKBHR5cGUYBCABKAlSBHR5cGUSQQoGbGFi'
-    'ZWxzGAUgAygLMikuYWRtaW5fZGFzaGJvYXJkLkJhc2VSZXNvdXJjZS5MYWJlbHNFbnRyeVIGbG'
-    'FiZWxzEjkKCmNyZWF0ZWRfYXQYBiABKAsyGi5hZG1pbl9kYXNoYm9hcmQuVGltZXN0YW1wUglj'
-    'cmVhdGVkQXQSOQoKdXBkYXRlZF9hdBgHIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbX'
-    'BSCXVwZGF0ZWRBdBo5CgtMYWJlbHNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgC'
-    'IAEoCVIFdmFsdWU6AjgB');
+    'VzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhIKBHR5cGUYBCABKAlSBHR5cGUSOAoGbGFi'
+    'ZWxzGAUgAygLMiAucHJvdG9zLkJhc2VSZXNvdXJjZS5MYWJlbHNFbnRyeVIGbGFiZWxzEjAKCm'
+    'NyZWF0ZWRfYXQYBiABKAsyES5wcm90b3MuVGltZXN0YW1wUgljcmVhdGVkQXQSMAoKdXBkYXRl'
+    'ZF9hdBgHIAEoCzIRLnByb3Rvcy5UaW1lc3RhbXBSCXVwZGF0ZWRBdBo5CgtMYWJlbHNFbnRyeR'
+    'IQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
 
 @$core.Deprecated('Use baseFleetDescriptor instead')
 const BaseFleet$json = {
@@ -429,9 +411,9 @@ const BaseFleet$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'nodes', '3': 4, '4': 3, '5': 9, '10': 'nodes'},
-    {'1': 'labels', '3': 5, '4': 3, '5': 11, '6': '.admin_dashboard.BaseFleet.LabelsEntry', '10': 'labels'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'labels', '3': 5, '4': 3, '5': 11, '6': '.protos.BaseFleet.LabelsEntry', '10': 'labels'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
   '3': [BaseFleet_LabelsEntry$json],
 };
@@ -449,12 +431,11 @@ const BaseFleet_LabelsEntry$json = {
 /// Descriptor for `BaseFleet`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List baseFleetDescriptor = $convert.base64Decode(
     'CglCYXNlRmxlZXQSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3'
-    'JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhQKBW5vZGVzGAQgAygJUgVub2RlcxI+CgZsYWJl'
-    'bHMYBSADKAsyJi5hZG1pbl9kYXNoYm9hcmQuQmFzZUZsZWV0LkxhYmVsc0VudHJ5UgZsYWJlbH'
-    'MSOQoKY3JlYXRlZF9hdBgGIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCWNyZWF0'
-    'ZWRBdBI5Cgp1cGRhdGVkX2F0GAcgASgLMhouYWRtaW5fZGFzaGJvYXJkLlRpbWVzdGFtcFIJdX'
-    'BkYXRlZEF0GjkKC0xhYmVsc0VudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJ'
-    'UgV2YWx1ZToCOAE=');
+    'JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhQKBW5vZGVzGAQgAygJUgVub2RlcxI1CgZsYWJl'
+    'bHMYBSADKAsyHS5wcm90b3MuQmFzZUZsZWV0LkxhYmVsc0VudHJ5UgZsYWJlbHMSMAoKY3JlYX'
+    'RlZF9hdBgGIAEoCzIRLnByb3Rvcy5UaW1lc3RhbXBSCWNyZWF0ZWRBdBIwCgp1cGRhdGVkX2F0'
+    'GAcgASgLMhEucHJvdG9zLlRpbWVzdGFtcFIJdXBkYXRlZEF0GjkKC0xhYmVsc0VudHJ5EhAKA2'
+    'tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
 
 @$core.Deprecated('Use baseGroupDescriptor instead')
 const BaseGroup$json = {
@@ -465,8 +446,8 @@ const BaseGroup$json = {
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'nodes', '3': 4, '4': 3, '5': 9, '10': 'nodes'},
     {'1': 'users', '3': 5, '4': 3, '5': 9, '10': 'users'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
@@ -474,9 +455,9 @@ const BaseGroup$json = {
 final $typed_data.Uint8List baseGroupDescriptor = $convert.base64Decode(
     'CglCYXNlR3JvdXASDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3'
     'JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhQKBW5vZGVzGAQgAygJUgVub2RlcxIUCgV1c2Vy'
-    'cxgFIAMoCVIFdXNlcnMSOQoKY3JlYXRlZF9hdBgGIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW'
-    '1lc3RhbXBSCWNyZWF0ZWRBdBI5Cgp1cGRhdGVkX2F0GAcgASgLMhouYWRtaW5fZGFzaGJvYXJk'
-    'LlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+    'cxgFIAMoCVIFdXNlcnMSMAoKY3JlYXRlZF9hdBgGIAEoCzIRLnByb3Rvcy5UaW1lc3RhbXBSCW'
+    'NyZWF0ZWRBdBIwCgp1cGRhdGVkX2F0GAcgASgLMhEucHJvdG9zLlRpbWVzdGFtcFIJdXBkYXRl'
+    'ZEF0');
 
 @$core.Deprecated('Use groupNodeDescriptor instead')
 const GroupNode$json = {
@@ -489,7 +470,7 @@ const GroupNode$json = {
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
     {'1': 'is_online', '3': 7, '4': 1, '5': 8, '10': 'isOnline'},
-    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'lastSeen'},
+    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'lastSeen'},
   ],
 };
 
@@ -497,8 +478,8 @@ const GroupNode$json = {
 final $typed_data.Uint8List groupNodeDescriptor = $convert.base64Decode(
     'CglHcm91cE5vZGUSDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSDgoCaXAYAy'
     'ABKAlSAmlwEh0KCnB1YmxpY19rZXkYBCABKAlSCXB1YmxpY0tleRIOCgJvcxgFIAEoCVICb3MS'
-    'GAoHdmVyc2lvbhgGIAEoCVIHdmVyc2lvbhIbCglpc19vbmxpbmUYByABKAhSCGlzT25saW5lEj'
-    'cKCWxhc3Rfc2VlbhgIIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCGxhc3RTZWVu');
+    'GAoHdmVyc2lvbhgGIAEoCVIHdmVyc2lvbhIbCglpc19vbmxpbmUYByABKAhSCGlzT25saW5lEi'
+    '4KCWxhc3Rfc2VlbhgIIAEoCzIRLnByb3Rvcy5UaW1lc3RhbXBSCGxhc3RTZWVu');
 
 @$core.Deprecated('Use linkerDescriptor instead')
 const Linker$json = {
@@ -510,8 +491,8 @@ const Linker$json = {
     {'1': 'subnet', '3': 4, '4': 1, '5': 9, '10': 'subnet'},
     {'1': 'nodes', '3': 5, '4': 3, '5': 9, '10': 'nodes'},
     {'1': 'enabled', '3': 6, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
@@ -519,9 +500,9 @@ const Linker$json = {
 final $typed_data.Uint8List linkerDescriptor = $convert.base64Decode(
     'CgZMaW5rZXISDgoCaWQYASABKAlSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcH'
     'Rpb24YAyABKAlSC2Rlc2NyaXB0aW9uEhYKBnN1Ym5ldBgEIAEoCVIGc3VibmV0EhQKBW5vZGVz'
-    'GAUgAygJUgVub2RlcxIYCgdlbmFibGVkGAYgASgIUgdlbmFibGVkEjkKCmNyZWF0ZWRfYXQYBy'
-    'ABKAsyGi5hZG1pbl9kYXNoYm9hcmQuVGltZXN0YW1wUgljcmVhdGVkQXQSOQoKdXBkYXRlZF9h'
-    'dBgIIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+    'GAUgAygJUgVub2RlcxIYCgdlbmFibGVkGAYgASgIUgdlbmFibGVkEjAKCmNyZWF0ZWRfYXQYBy'
+    'ABKAsyES5wcm90b3MuVGltZXN0YW1wUgljcmVhdGVkQXQSMAoKdXBkYXRlZF9hdBgIIAEoCzIR'
+    'LnByb3Rvcy5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
 
 @$core.Deprecated('Use subnetLinkerCovertibleNodeDescriptor instead')
 const SubnetLinkerCovertibleNode$json = {
@@ -534,7 +515,7 @@ const SubnetLinkerCovertibleNode$json = {
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
     {'1': 'is_online', '3': 7, '4': 1, '5': 8, '10': 'isOnline'},
-    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'lastSeen'},
+    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'lastSeen'},
   ],
 };
 
@@ -543,8 +524,8 @@ final $typed_data.Uint8List subnetLinkerCovertibleNodeDescriptor = $convert.base
     'ChpTdWJuZXRMaW5rZXJDb3ZlcnRpYmxlTm9kZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIA'
     'EoCVIEbmFtZRIOCgJpcBgDIAEoCVICaXASHQoKcHVibGljX2tleRgEIAEoCVIJcHVibGljS2V5'
     'Eg4KAm9zGAUgASgJUgJvcxIYCgd2ZXJzaW9uGAYgASgJUgd2ZXJzaW9uEhsKCWlzX29ubGluZR'
-    'gHIAEoCFIIaXNPbmxpbmUSNwoJbGFzdF9zZWVuGAggASgLMhouYWRtaW5fZGFzaGJvYXJkLlRp'
-    'bWVzdGFtcFIIbGFzdFNlZW4=');
+    'gHIAEoCFIIaXNPbmxpbmUSLgoJbGFzdF9zZWVuGAggASgLMhEucHJvdG9zLlRpbWVzdGFtcFII'
+    'bGFzdFNlZW4=');
 
 @$core.Deprecated('Use composeKeyDescriptor instead')
 const ComposeKey$json = {
@@ -554,18 +535,17 @@ const ComposeKey$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'key', '3': 3, '4': 1, '5': 9, '10': 'key'},
     {'1': 'install_script', '3': 4, '4': 1, '5': 9, '10': 'installScript'},
-    {'1': 'created_at', '3': 5, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 6, '4': 1, '5': 11, '6': '.admin_dashboard.Timestamp', '10': 'updatedAt'},
+    {'1': 'created_at', '3': 5, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
+    {'1': 'updated_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `ComposeKey`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List composeKeyDescriptor = $convert.base64Decode(
     'CgpDb21wb3NlS2V5Eg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhAKA2tleR'
-    'gDIAEoCVIDa2V5EiUKDmluc3RhbGxfc2NyaXB0GAQgASgJUg1pbnN0YWxsU2NyaXB0EjkKCmNy'
-    'ZWF0ZWRfYXQYBSABKAsyGi5hZG1pbl9kYXNoYm9hcmQuVGltZXN0YW1wUgljcmVhdGVkQXQSOQ'
-    'oKdXBkYXRlZF9hdBgGIAEoCzIaLmFkbWluX2Rhc2hib2FyZC5UaW1lc3RhbXBSCXVwZGF0ZWRB'
-    'dA==');
+    'gDIAEoCVIDa2V5EiUKDmluc3RhbGxfc2NyaXB0GAQgASgJUg1pbnN0YWxsU2NyaXB0EjAKCmNy'
+    'ZWF0ZWRfYXQYBSABKAsyES5wcm90b3MuVGltZXN0YW1wUgljcmVhdGVkQXQSMAoKdXBkYXRlZF'
+    '9hdBgGIAEoCzIRLnByb3Rvcy5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
 
 @$core.Deprecated('Use overviewResponseDescriptor instead')
 const OverviewResponse$json = {
@@ -610,14 +590,14 @@ final $typed_data.Uint8List updateSplitDNSRequestDescriptor = $convert.base64Dec
 const CreateSplitDNSRequest$json = {
   '1': 'CreateSplitDNSRequest',
   '2': [
-    {'1': 'split_dns', '3': 1, '4': 1, '5': 11, '6': '.admin_dashboard.SplitDNS', '10': 'splitDns'},
+    {'1': 'split_dns', '3': 1, '4': 1, '5': 11, '6': '.protos.SplitDNS', '10': 'splitDns'},
   ],
 };
 
 /// Descriptor for `CreateSplitDNSRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createSplitDNSRequestDescriptor = $convert.base64Decode(
-    'ChVDcmVhdGVTcGxpdEROU1JlcXVlc3QSNgoJc3BsaXRfZG5zGAEgASgLMhkuYWRtaW5fZGFzaG'
-    'JvYXJkLlNwbGl0RE5TUghzcGxpdERucw==');
+    'ChVDcmVhdGVTcGxpdEROU1JlcXVlc3QSLQoJc3BsaXRfZG5zGAEgASgLMhAucHJvdG9zLlNwbG'
+    'l0RE5TUghzcGxpdERucw==');
 
 @$core.Deprecated('Use deleteSplitDNSRequestDescriptor instead')
 const DeleteSplitDNSRequest$json = {
@@ -734,20 +714,20 @@ const InviteTeamMember$json = {
   '1': 'InviteTeamMember',
   '2': [
     {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'role', '3': 2, '4': 1, '5': 14, '6': '.admin_dashboard.UserRoles', '10': 'role'},
+    {'1': 'role', '3': 2, '4': 1, '5': 14, '6': '.protos.UserRoles', '10': 'role'},
   ],
 };
 
 /// Descriptor for `InviteTeamMember`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List inviteTeamMemberDescriptor = $convert.base64Decode(
-    'ChBJbnZpdGVUZWFtTWVtYmVyEhQKBWVtYWlsGAEgASgJUgVlbWFpbBIuCgRyb2xlGAIgASgOMh'
-    'ouYWRtaW5fZGFzaGJvYXJkLlVzZXJSb2xlc1IEcm9sZQ==');
+    'ChBJbnZpdGVUZWFtTWVtYmVyEhQKBWVtYWlsGAEgASgJUgVlbWFpbBIlCgRyb2xlGAIgASgOMh'
+    'EucHJvdG9zLlVzZXJSb2xlc1IEcm9sZQ==');
 
 @$core.Deprecated('Use inviteTeamMembersRequestDescriptor instead')
 const InviteTeamMembersRequest$json = {
   '1': 'InviteTeamMembersRequest',
   '2': [
-    {'1': 'members', '3': 1, '4': 3, '5': 11, '6': '.admin_dashboard.InviteTeamMember', '10': 'members'},
+    {'1': 'members', '3': 1, '4': 3, '5': 11, '6': '.protos.InviteTeamMember', '10': 'members'},
     {'1': 'redirect_to', '3': 2, '4': 1, '5': 9, '10': 'redirectTo'},
     {'1': 'revalidate_path', '3': 3, '4': 1, '5': 9, '10': 'revalidatePath'},
   ],
@@ -755,7 +735,7 @@ const InviteTeamMembersRequest$json = {
 
 /// Descriptor for `InviteTeamMembersRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List inviteTeamMembersRequestDescriptor = $convert.base64Decode(
-    'ChhJbnZpdGVUZWFtTWVtYmVyc1JlcXVlc3QSOwoHbWVtYmVycxgBIAMoCzIhLmFkbWluX2Rhc2'
-    'hib2FyZC5JbnZpdGVUZWFtTWVtYmVyUgdtZW1iZXJzEh8KC3JlZGlyZWN0X3RvGAIgASgJUgpy'
-    'ZWRpcmVjdFRvEicKD3JldmFsaWRhdGVfcGF0aBgDIAEoCVIOcmV2YWxpZGF0ZVBhdGg=');
+    'ChhJbnZpdGVUZWFtTWVtYmVyc1JlcXVlc3QSMgoHbWVtYmVycxgBIAMoCzIYLnByb3Rvcy5Jbn'
+    'ZpdGVUZWFtTWVtYmVyUgdtZW1iZXJzEh8KC3JlZGlyZWN0X3RvGAIgASgJUgpyZWRpcmVjdFRv'
+    'EicKD3JldmFsaWRhdGVfcGF0aBgDIAEoCVIOcmV2YWxpZGF0ZVBhdGg=');
 

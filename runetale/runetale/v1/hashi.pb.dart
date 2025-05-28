@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $10;
+import '../../../google/protobuf/timestamp.pb.dart' as $9;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -177,8 +177,8 @@ class PeerStatus extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? allowedIps,
     $fixnum.Int64? rxBytes,
     $fixnum.Int64? txBytes,
-    $10.Timestamp? lastHandshake,
-    $10.Timestamp? lastWrite,
+    $9.Timestamp? lastHandshake,
+    $9.Timestamp? lastWrite,
     $core.Iterable<$core.String>? addrs,
     $core.String? curAddr,
     $core.String? iceAddr,
@@ -250,8 +250,8 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..pPS(7, _omitFieldNames ? '' : 'allowedIps')
     ..aInt64(8, _omitFieldNames ? '' : 'rxBytes')
     ..aInt64(9, _omitFieldNames ? '' : 'txBytes')
-    ..aOM<$10.Timestamp>(10, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $10.Timestamp.create)
-    ..aOM<$10.Timestamp>(11, _omitFieldNames ? '' : 'lastWrite', subBuilder: $10.Timestamp.create)
+    ..aOM<$9.Timestamp>(10, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $9.Timestamp.create)
+    ..aOM<$9.Timestamp>(11, _omitFieldNames ? '' : 'lastWrite', subBuilder: $9.Timestamp.create)
     ..pPS(12, _omitFieldNames ? '' : 'addrs')
     ..aOS(13, _omitFieldNames ? '' : 'curAddr')
     ..aOS(14, _omitFieldNames ? '' : 'iceAddr')
@@ -339,26 +339,26 @@ class PeerStatus extends $pb.GeneratedMessage {
   void clearTxBytes() => $_clearField(9);
 
   @$pb.TagNumber(10)
-  $10.Timestamp get lastHandshake => $_getN(9);
+  $9.Timestamp get lastHandshake => $_getN(9);
   @$pb.TagNumber(10)
-  set lastHandshake($10.Timestamp v) { $_setField(10, v); }
+  set lastHandshake($9.Timestamp v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasLastHandshake() => $_has(9);
   @$pb.TagNumber(10)
   void clearLastHandshake() => $_clearField(10);
   @$pb.TagNumber(10)
-  $10.Timestamp ensureLastHandshake() => $_ensure(9);
+  $9.Timestamp ensureLastHandshake() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $10.Timestamp get lastWrite => $_getN(10);
+  $9.Timestamp get lastWrite => $_getN(10);
   @$pb.TagNumber(11)
-  set lastWrite($10.Timestamp v) { $_setField(11, v); }
+  set lastWrite($9.Timestamp v) { $_setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasLastWrite() => $_has(10);
   @$pb.TagNumber(11)
   void clearLastWrite() => $_clearField(11);
   @$pb.TagNumber(11)
-  $10.Timestamp ensureLastWrite() => $_ensure(10);
+  $9.Timestamp ensureLastWrite() => $_ensure(10);
 
   @$pb.TagNumber(12)
   $pb.PbList<$core.String> get addrs => $_getList(11);
@@ -397,7 +397,7 @@ class PeerStatus extends $pb.GeneratedMessage {
 
 class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   factory UserspacePeerEngineStatus({
-    $10.Timestamp? gotAt,
+    $9.Timestamp? gotAt,
     $core.Iterable<CompactPeerStatus>? peers,
     $core.Iterable<Endpoint>? localAddrs,
   }) {
@@ -418,7 +418,7 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   factory UserspacePeerEngineStatus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserspacePeerEngineStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOM<$10.Timestamp>(1, _omitFieldNames ? '' : 'gotAt', subBuilder: $10.Timestamp.create)
+    ..aOM<$9.Timestamp>(1, _omitFieldNames ? '' : 'gotAt', subBuilder: $9.Timestamp.create)
     ..pc<CompactPeerStatus>(2, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM, subBuilder: CompactPeerStatus.create)
     ..pc<Endpoint>(3, _omitFieldNames ? '' : 'localAddrs', $pb.PbFieldType.PM, subBuilder: Endpoint.create)
     ..hasRequiredFields = false
@@ -440,15 +440,15 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   static UserspacePeerEngineStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $10.Timestamp get gotAt => $_getN(0);
+  $9.Timestamp get gotAt => $_getN(0);
   @$pb.TagNumber(1)
-  set gotAt($10.Timestamp v) { $_setField(1, v); }
+  set gotAt($9.Timestamp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasGotAt() => $_has(0);
   @$pb.TagNumber(1)
   void clearGotAt() => $_clearField(1);
   @$pb.TagNumber(1)
-  $10.Timestamp ensureGotAt() => $_ensure(0);
+  $9.Timestamp ensureGotAt() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $pb.PbList<CompactPeerStatus> get peers => $_getList(1);
@@ -462,7 +462,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
     $core.String? nodeKey,
     $fixnum.Int64? txBytes,
     $fixnum.Int64? rxBytes,
-    $10.Timestamp? lastHandshake,
+    $9.Timestamp? lastHandshake,
   }) {
     final $result = create();
     if (nodeKey != null) {
@@ -487,7 +487,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'nodeKey')
     ..aInt64(2, _omitFieldNames ? '' : 'txBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'rxBytes')
-    ..aOM<$10.Timestamp>(4, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $10.Timestamp.create)
+    ..aOM<$9.Timestamp>(4, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $9.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -534,15 +534,15 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   void clearRxBytes() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $10.Timestamp get lastHandshake => $_getN(3);
+  $9.Timestamp get lastHandshake => $_getN(3);
   @$pb.TagNumber(4)
-  set lastHandshake($10.Timestamp v) { $_setField(4, v); }
+  set lastHandshake($9.Timestamp v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasLastHandshake() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastHandshake() => $_clearField(4);
   @$pb.TagNumber(4)
-  $10.Timestamp ensureLastHandshake() => $_ensure(3);
+  $9.Timestamp ensureLastHandshake() => $_ensure(3);
 }
 
 /// Hashigo struct like, hashiog(梯子) is a bridge in Japanese.
