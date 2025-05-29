@@ -150,6 +150,7 @@ const NetworkMapResponse$json = {
     {'1': 'jailed', '3': 8, '4': 1, '5': 8, '10': 'jailed'},
     {'1': 'iceTable', '3': 9, '4': 3, '5': 11, '6': '.protos.Node', '10': 'iceTable'},
     {'1': 'dns', '3': 10, '4': 1, '5': 11, '6': '.protos.DNSConfig', '10': 'dns'},
+    {'1': 'appLinker', '3': 11, '4': 1, '5': 11, '6': '.protos.AppLinker', '10': 'appLinker'},
   ],
 };
 
@@ -162,7 +163,22 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'dG9zLkZpbHRlclJ1bGVSDHBhY2tldEZpbHRlchIoCg9hZHZlcnRpc2VkUm91dGUYByABKAlSD2'
     'FkdmVydGlzZWRSb3V0ZRIWCgZqYWlsZWQYCCABKAhSBmphaWxlZBIoCghpY2VUYWJsZRgJIAMo'
     'CzIMLnByb3Rvcy5Ob2RlUghpY2VUYWJsZRIjCgNkbnMYCiABKAsyES5wcm90b3MuRE5TQ29uZm'
-    'lnUgNkbnM=');
+    'lnUgNkbnMSLwoJYXBwTGlua2VyGAsgASgLMhEucHJvdG9zLkFwcExpbmtlclIJYXBwTGlua2Vy');
+
+@$core.Deprecated('Use appLinkerDescriptor instead')
+const AppLinker$json = {
+  '1': 'AppLinker',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'domains', '3': 2, '4': 3, '5': 9, '10': 'domains'},
+    {'1': 'routes', '3': 3, '4': 3, '5': 9, '10': 'routes'},
+  ],
+};
+
+/// Descriptor for `AppLinker`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List appLinkerDescriptor = $convert.base64Decode(
+    'CglBcHBMaW5rZXISEgoEbmFtZRgBIAEoCVIEbmFtZRIYCgdkb21haW5zGAIgAygJUgdkb21haW'
+    '5zEhYKBnJvdXRlcxgDIAMoCVIGcm91dGVz');
 
 @$core.Deprecated('Use resolverDescriptor instead')
 const Resolver$json = {

@@ -618,6 +618,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.bool? jailed,
     $core.Iterable<Node>? iceTable,
     DNSConfig? dns,
+    AppLinker? appLinker,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -630,6 +631,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (jailed != null) result.jailed = jailed;
     if (iceTable != null) result.iceTable.addAll(iceTable);
     if (dns != null) result.dns = dns;
+    if (appLinker != null) result.appLinker = appLinker;
     return result;
   }
 
@@ -649,6 +651,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..aOB(8, _omitFieldNames ? '' : 'jailed')
     ..pc<Node>(9, _omitFieldNames ? '' : 'iceTable', $pb.PbFieldType.PM, protoName: 'iceTable', subBuilder: Node.create)
     ..aOM<DNSConfig>(10, _omitFieldNames ? '' : 'dns', subBuilder: DNSConfig.create)
+    ..aOM<AppLinker>(11, _omitFieldNames ? '' : 'appLinker', protoName: 'appLinker', subBuilder: AppLinker.create)
     ..hasRequiredFields = false
   ;
 
@@ -743,6 +746,82 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   void clearDns() => $_clearField(10);
   @$pb.TagNumber(10)
   DNSConfig ensureDns() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  AppLinker get appLinker => $_getN(10);
+  @$pb.TagNumber(11)
+  set appLinker(AppLinker value) => $_setField(11, value);
+  @$pb.TagNumber(11)
+  $core.bool hasAppLinker() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearAppLinker() => $_clearField(11);
+  @$pb.TagNumber(11)
+  AppLinker ensureAppLinker() => $_ensure(10);
+}
+
+class AppLinker extends $pb.GeneratedMessage {
+  factory AppLinker({
+    $core.String? name,
+    $core.Iterable<$core.String>? domains,
+    $core.Iterable<$core.String>? routes,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (domains != null) result.domains.addAll(domains);
+    if (routes != null) result.routes.addAll(routes);
+    return result;
+  }
+
+  AppLinker._();
+
+  factory AppLinker.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory AppLinker.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppLinker', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..pPS(2, _omitFieldNames ? '' : 'domains')
+    ..pPS(3, _omitFieldNames ? '' : 'routes')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AppLinker clone() => AppLinker()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AppLinker copyWith(void Function(AppLinker) updates) => super.copyWith((message) => updates(message as AppLinker)) as AppLinker;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AppLinker create() => AppLinker._();
+  @$core.override
+  AppLinker createEmptyInstance() => create();
+  static $pb.PbList<AppLinker> createRepeated() => $pb.PbList<AppLinker>();
+  @$core.pragma('dart2js:noInline')
+  static AppLinker getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppLinker>(create);
+  static AppLinker? _defaultInstance;
+
+  /// NameはこのAppLinkerの名前です。
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  /// Domainsは指定されたAppLinkerによってサービスされるドメインの一覧です。
+  /// ドメインは以下の形式を取ることができます
+  /// - example.com
+  /// - *.example.com
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get domains => $_getList(1);
+
+  /// Routesは指定されたAppLinkerrによってアドバタイズされる事前定義されたルートの一覧です。
+  /// ルートはCIDR表記で表現されます（例：192.168.1.0/24）。
+  @$pb.TagNumber(3)
+  $pb.PbList<$core.String> get routes => $_getList(2);
 }
 
 class Resolver extends $pb.GeneratedMessage {
