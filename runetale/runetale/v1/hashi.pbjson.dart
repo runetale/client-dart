@@ -229,19 +229,21 @@ final $typed_data.Uint8List stopRequestDescriptor = $convert.base64Decode(
 const HashigoConfigRequest$json = {
   '1': 'HashigoConfigRequest',
   '2': [
-    {'1': 'barricade_set', '3': 1, '4': 1, '5': 8, '10': 'barricadeSet'},
-    {'1': 'accept_routes_set', '3': 2, '4': 1, '5': 8, '10': 'acceptRoutesSet'},
-    {'1': 'snat_subnet_routes_set', '3': 3, '4': 1, '5': 8, '10': 'snatSubnetRoutesSet'},
-    {'1': 'stateful_filter_set', '3': 4, '4': 1, '5': 8, '10': 'statefulFilterSet'},
-    {'1': 'app_linker', '3': 5, '4': 1, '5': 8, '10': 'appLinker'},
+    {'1': 'hashigo', '3': 1, '4': 1, '5': 11, '6': '.protos.Hashigo', '10': 'hashigo'},
+    {'1': 'barricade_set', '3': 2, '4': 1, '5': 8, '10': 'barricadeSet'},
+    {'1': 'accept_routes_set', '3': 3, '4': 1, '5': 8, '10': 'acceptRoutesSet'},
+    {'1': 'snat_subnet_routes_set', '3': 4, '4': 1, '5': 8, '10': 'snatSubnetRoutesSet'},
+    {'1': 'stateful_filter_set', '3': 5, '4': 1, '5': 8, '10': 'statefulFilterSet'},
+    {'1': 'app_linker_set', '3': 6, '4': 1, '5': 8, '10': 'appLinkerSet'},
   ],
 };
 
 /// Descriptor for `HashigoConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List hashigoConfigRequestDescriptor = $convert.base64Decode(
-    'ChRIYXNoaWdvQ29uZmlnUmVxdWVzdBIjCg1iYXJyaWNhZGVfc2V0GAEgASgIUgxiYXJyaWNhZG'
-    'VTZXQSKgoRYWNjZXB0X3JvdXRlc19zZXQYAiABKAhSD2FjY2VwdFJvdXRlc1NldBIzChZzbmF0'
-    'X3N1Ym5ldF9yb3V0ZXNfc2V0GAMgASgIUhNzbmF0U3VibmV0Um91dGVzU2V0Ei4KE3N0YXRlZn'
-    'VsX2ZpbHRlcl9zZXQYBCABKAhSEXN0YXRlZnVsRmlsdGVyU2V0Eh0KCmFwcF9saW5rZXIYBSAB'
-    'KAhSCWFwcExpbmtlcg==');
+    'ChRIYXNoaWdvQ29uZmlnUmVxdWVzdBIpCgdoYXNoaWdvGAEgASgLMg8ucHJvdG9zLkhhc2hpZ2'
+    '9SB2hhc2hpZ28SIwoNYmFycmljYWRlX3NldBgCIAEoCFIMYmFycmljYWRlU2V0EioKEWFjY2Vw'
+    'dF9yb3V0ZXNfc2V0GAMgASgIUg9hY2NlcHRSb3V0ZXNTZXQSMwoWc25hdF9zdWJuZXRfcm91dG'
+    'VzX3NldBgEIAEoCFITc25hdFN1Ym5ldFJvdXRlc1NldBIuChNzdGF0ZWZ1bF9maWx0ZXJfc2V0'
+    'GAUgASgIUhFzdGF0ZWZ1bEZpbHRlclNldBIkCg5hcHBfbGlua2VyX3NldBgGIAEoCFIMYXBwTG'
+    'lua2VyU2V0');
 

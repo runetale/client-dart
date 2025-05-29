@@ -961,18 +961,20 @@ class StopRequest extends $pb.GeneratedMessage {
 
 class HashigoConfigRequest extends $pb.GeneratedMessage {
   factory HashigoConfigRequest({
+    Hashigo? hashigo,
     $core.bool? barricadeSet,
     $core.bool? acceptRoutesSet,
     $core.bool? snatSubnetRoutesSet,
     $core.bool? statefulFilterSet,
-    $core.bool? appLinker,
+    $core.bool? appLinkerSet,
   }) {
     final result = create();
+    if (hashigo != null) result.hashigo = hashigo;
     if (barricadeSet != null) result.barricadeSet = barricadeSet;
     if (acceptRoutesSet != null) result.acceptRoutesSet = acceptRoutesSet;
     if (snatSubnetRoutesSet != null) result.snatSubnetRoutesSet = snatSubnetRoutesSet;
     if (statefulFilterSet != null) result.statefulFilterSet = statefulFilterSet;
-    if (appLinker != null) result.appLinker = appLinker;
+    if (appLinkerSet != null) result.appLinkerSet = appLinkerSet;
     return result;
   }
 
@@ -982,11 +984,12 @@ class HashigoConfigRequest extends $pb.GeneratedMessage {
   factory HashigoConfigRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HashigoConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'barricadeSet')
-    ..aOB(2, _omitFieldNames ? '' : 'acceptRoutesSet')
-    ..aOB(3, _omitFieldNames ? '' : 'snatSubnetRoutesSet')
-    ..aOB(4, _omitFieldNames ? '' : 'statefulFilterSet')
-    ..aOB(5, _omitFieldNames ? '' : 'appLinker')
+    ..aOM<Hashigo>(1, _omitFieldNames ? '' : 'hashigo', subBuilder: Hashigo.create)
+    ..aOB(2, _omitFieldNames ? '' : 'barricadeSet')
+    ..aOB(3, _omitFieldNames ? '' : 'acceptRoutesSet')
+    ..aOB(4, _omitFieldNames ? '' : 'snatSubnetRoutesSet')
+    ..aOB(5, _omitFieldNames ? '' : 'statefulFilterSet')
+    ..aOB(6, _omitFieldNames ? '' : 'appLinkerSet')
     ..hasRequiredFields = false
   ;
 
@@ -1008,49 +1011,60 @@ class HashigoConfigRequest extends $pb.GeneratedMessage {
   static HashigoConfigRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.bool get barricadeSet => $_getBF(0);
+  Hashigo get hashigo => $_getN(0);
   @$pb.TagNumber(1)
-  set barricadeSet($core.bool value) => $_setBool(0, value);
+  set hashigo(Hashigo value) => $_setField(1, value);
   @$pb.TagNumber(1)
-  $core.bool hasBarricadeSet() => $_has(0);
+  $core.bool hasHashigo() => $_has(0);
   @$pb.TagNumber(1)
-  void clearBarricadeSet() => $_clearField(1);
+  void clearHashigo() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Hashigo ensureHashigo() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.bool get acceptRoutesSet => $_getBF(1);
+  $core.bool get barricadeSet => $_getBF(1);
   @$pb.TagNumber(2)
-  set acceptRoutesSet($core.bool value) => $_setBool(1, value);
+  set barricadeSet($core.bool value) => $_setBool(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasAcceptRoutesSet() => $_has(1);
+  $core.bool hasBarricadeSet() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAcceptRoutesSet() => $_clearField(2);
+  void clearBarricadeSet() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.bool get snatSubnetRoutesSet => $_getBF(2);
+  $core.bool get acceptRoutesSet => $_getBF(2);
   @$pb.TagNumber(3)
-  set snatSubnetRoutesSet($core.bool value) => $_setBool(2, value);
+  set acceptRoutesSet($core.bool value) => $_setBool(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasSnatSubnetRoutesSet() => $_has(2);
+  $core.bool hasAcceptRoutesSet() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSnatSubnetRoutesSet() => $_clearField(3);
+  void clearAcceptRoutesSet() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.bool get statefulFilterSet => $_getBF(3);
+  $core.bool get snatSubnetRoutesSet => $_getBF(3);
   @$pb.TagNumber(4)
-  set statefulFilterSet($core.bool value) => $_setBool(3, value);
+  set snatSubnetRoutesSet($core.bool value) => $_setBool(3, value);
   @$pb.TagNumber(4)
-  $core.bool hasStatefulFilterSet() => $_has(3);
+  $core.bool hasSnatSubnetRoutesSet() => $_has(3);
   @$pb.TagNumber(4)
-  void clearStatefulFilterSet() => $_clearField(4);
+  void clearSnatSubnetRoutesSet() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get appLinker => $_getBF(4);
+  $core.bool get statefulFilterSet => $_getBF(4);
   @$pb.TagNumber(5)
-  set appLinker($core.bool value) => $_setBool(4, value);
+  set statefulFilterSet($core.bool value) => $_setBool(4, value);
   @$pb.TagNumber(5)
-  $core.bool hasAppLinker() => $_has(4);
+  $core.bool hasStatefulFilterSet() => $_has(4);
   @$pb.TagNumber(5)
-  void clearAppLinker() => $_clearField(5);
+  void clearStatefulFilterSet() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get appLinkerSet => $_getBF(5);
+  @$pb.TagNumber(6)
+  set appLinkerSet($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAppLinkerSet() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAppLinkerSet() => $_clearField(6);
 }
 
 
