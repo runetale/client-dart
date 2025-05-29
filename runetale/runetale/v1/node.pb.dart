@@ -618,7 +618,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.bool? jailed,
     $core.Iterable<Node>? iceTable,
     DNSConfig? dns,
-    AppLinker? appLinker,
+    $core.Iterable<AppLinker>? appLinker,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -631,7 +631,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (jailed != null) result.jailed = jailed;
     if (iceTable != null) result.iceTable.addAll(iceTable);
     if (dns != null) result.dns = dns;
-    if (appLinker != null) result.appLinker = appLinker;
+    if (appLinker != null) result.appLinker.addAll(appLinker);
     return result;
   }
 
@@ -651,7 +651,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..aOB(8, _omitFieldNames ? '' : 'jailed')
     ..pc<Node>(9, _omitFieldNames ? '' : 'iceTable', $pb.PbFieldType.PM, protoName: 'iceTable', subBuilder: Node.create)
     ..aOM<DNSConfig>(10, _omitFieldNames ? '' : 'dns', subBuilder: DNSConfig.create)
-    ..aOM<AppLinker>(11, _omitFieldNames ? '' : 'appLinker', protoName: 'appLinker', subBuilder: AppLinker.create)
+    ..pc<AppLinker>(11, _omitFieldNames ? '' : 'appLinker', $pb.PbFieldType.PM, protoName: 'appLinker', subBuilder: AppLinker.create)
     ..hasRequiredFields = false
   ;
 
@@ -748,15 +748,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   DNSConfig ensureDns() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  AppLinker get appLinker => $_getN(10);
-  @$pb.TagNumber(11)
-  set appLinker(AppLinker value) => $_setField(11, value);
-  @$pb.TagNumber(11)
-  $core.bool hasAppLinker() => $_has(10);
-  @$pb.TagNumber(11)
-  void clearAppLinker() => $_clearField(11);
-  @$pb.TagNumber(11)
-  AppLinker ensureAppLinker() => $_ensure(10);
+  $pb.PbList<AppLinker> get appLinker => $_getList(10);
 }
 
 class AppLinker extends $pb.GeneratedMessage {

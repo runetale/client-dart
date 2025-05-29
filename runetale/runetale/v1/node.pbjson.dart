@@ -150,7 +150,7 @@ const NetworkMapResponse$json = {
     {'1': 'jailed', '3': 8, '4': 1, '5': 8, '10': 'jailed'},
     {'1': 'iceTable', '3': 9, '4': 3, '5': 11, '6': '.protos.Node', '10': 'iceTable'},
     {'1': 'dns', '3': 10, '4': 1, '5': 11, '6': '.protos.DNSConfig', '10': 'dns'},
-    {'1': 'appLinker', '3': 11, '4': 1, '5': 11, '6': '.protos.AppLinker', '10': 'appLinker'},
+    {'1': 'appLinker', '3': 11, '4': 3, '5': 11, '6': '.protos.AppLinker', '10': 'appLinker'},
   ],
 };
 
@@ -163,7 +163,7 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'dG9zLkZpbHRlclJ1bGVSDHBhY2tldEZpbHRlchIoCg9hZHZlcnRpc2VkUm91dGUYByABKAlSD2'
     'FkdmVydGlzZWRSb3V0ZRIWCgZqYWlsZWQYCCABKAhSBmphaWxlZBIoCghpY2VUYWJsZRgJIAMo'
     'CzIMLnByb3Rvcy5Ob2RlUghpY2VUYWJsZRIjCgNkbnMYCiABKAsyES5wcm90b3MuRE5TQ29uZm'
-    'lnUgNkbnMSLwoJYXBwTGlua2VyGAsgASgLMhEucHJvdG9zLkFwcExpbmtlclIJYXBwTGlua2Vy');
+    'lnUgNkbnMSLwoJYXBwTGlua2VyGAsgAygLMhEucHJvdG9zLkFwcExpbmtlclIJYXBwTGlua2Vy');
 
 @$core.Deprecated('Use appLinkerDescriptor instead')
 const AppLinker$json = {
