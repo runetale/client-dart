@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/rtc.proto
-//
+// Generated from runetale/runetale/v1/rtc.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -31,20 +31,27 @@ class StunHost extends $pb.GeneratedMessage {
 
   StunHost._();
 
-  factory StunHost.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory StunHost.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory StunHost.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StunHost.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StunHost', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StunHost',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
     ..aOS(2, _omitFieldNames ? '' : 'username')
     ..aOS(3, _omitFieldNames ? '' : 'password')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StunHost clone() => StunHost()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StunHost copyWith(void Function(StunHost) updates) => super.copyWith((message) => updates(message as StunHost)) as StunHost;
+  StunHost copyWith(void Function(StunHost) updates) =>
+      super.copyWith((message) => updates(message as StunHost)) as StunHost;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -55,7 +62,8 @@ class StunHost extends $pb.GeneratedMessage {
   StunHost createEmptyInstance() => create();
   static $pb.PbList<StunHost> createRepeated() => $pb.PbList<StunHost>();
   @$core.pragma('dart2js:noInline')
-  static StunHost getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StunHost>(create);
+  static StunHost getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StunHost>(create);
   static StunHost? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -101,20 +109,27 @@ class TurnHost extends $pb.GeneratedMessage {
 
   TurnHost._();
 
-  factory TurnHost.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory TurnHost.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory TurnHost.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory TurnHost.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TurnHost', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'TurnHost',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
     ..aOS(2, _omitFieldNames ? '' : 'username')
     ..aOS(3, _omitFieldNames ? '' : 'password')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   TurnHost clone() => TurnHost()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TurnHost copyWith(void Function(TurnHost) updates) => super.copyWith((message) => updates(message as TurnHost)) as TurnHost;
+  TurnHost copyWith(void Function(TurnHost) updates) =>
+      super.copyWith((message) => updates(message as TurnHost)) as TurnHost;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -125,7 +140,8 @@ class TurnHost extends $pb.GeneratedMessage {
   TurnHost createEmptyInstance() => create();
   static $pb.PbList<TurnHost> createRepeated() => $pb.PbList<TurnHost>();
   @$core.pragma('dart2js:noInline')
-  static TurnHost getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TurnHost>(create);
+  static TurnHost getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TurnHost>(create);
   static TurnHost? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -169,19 +185,28 @@ class RtcConfig extends $pb.GeneratedMessage {
 
   RtcConfig._();
 
-  factory RtcConfig.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RtcConfig.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RtcConfig.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RtcConfig.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RtcConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOM<TurnHost>(1, _omitFieldNames ? '' : 'turnHost', protoName: 'turnHost', subBuilder: TurnHost.create)
-    ..aOM<StunHost>(2, _omitFieldNames ? '' : 'stunHost', protoName: 'stunHost', subBuilder: StunHost.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RtcConfig',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOM<TurnHost>(1, _omitFieldNames ? '' : 'turnHost',
+        protoName: 'turnHost', subBuilder: TurnHost.create)
+    ..aOM<StunHost>(2, _omitFieldNames ? '' : 'stunHost',
+        protoName: 'stunHost', subBuilder: StunHost.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RtcConfig clone() => RtcConfig()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RtcConfig copyWith(void Function(RtcConfig) updates) => super.copyWith((message) => updates(message as RtcConfig)) as RtcConfig;
+  RtcConfig copyWith(void Function(RtcConfig) updates) =>
+      super.copyWith((message) => updates(message as RtcConfig)) as RtcConfig;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -192,7 +217,8 @@ class RtcConfig extends $pb.GeneratedMessage {
   RtcConfig createEmptyInstance() => create();
   static $pb.PbList<RtcConfig> createRepeated() => $pb.PbList<RtcConfig>();
   @$core.pragma('dart2js:noInline')
-  static RtcConfig getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RtcConfig>(create);
+  static RtcConfig getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RtcConfig>(create);
   static RtcConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -229,18 +255,29 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
 
   GetStunTurnConfigResponse._();
 
-  factory GetStunTurnConfigResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetStunTurnConfigResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetStunTurnConfigResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetStunTurnConfigResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStunTurnConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOM<RtcConfig>(1, _omitFieldNames ? '' : 'rtcConfig', protoName: 'rtcConfig', subBuilder: RtcConfig.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetStunTurnConfigResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOM<RtcConfig>(1, _omitFieldNames ? '' : 'rtcConfig',
+        protoName: 'rtcConfig', subBuilder: RtcConfig.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStunTurnConfigResponse clone() => GetStunTurnConfigResponse()..mergeFromMessage(this);
+  GetStunTurnConfigResponse clone() =>
+      GetStunTurnConfigResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStunTurnConfigResponse copyWith(void Function(GetStunTurnConfigResponse) updates) => super.copyWith((message) => updates(message as GetStunTurnConfigResponse)) as GetStunTurnConfigResponse;
+  GetStunTurnConfigResponse copyWith(
+          void Function(GetStunTurnConfigResponse) updates) =>
+      super.copyWith((message) => updates(message as GetStunTurnConfigResponse))
+          as GetStunTurnConfigResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -249,9 +286,11 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
   static GetStunTurnConfigResponse create() => GetStunTurnConfigResponse._();
   @$core.override
   GetStunTurnConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<GetStunTurnConfigResponse> createRepeated() => $pb.PbList<GetStunTurnConfigResponse>();
+  static $pb.PbList<GetStunTurnConfigResponse> createRepeated() =>
+      $pb.PbList<GetStunTurnConfigResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetStunTurnConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetStunTurnConfigResponse>(create);
+  static GetStunTurnConfigResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetStunTurnConfigResponse>(create);
   static GetStunTurnConfigResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -266,6 +305,7 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
   RtcConfig ensureRtcConfig() => $_ensure(0);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

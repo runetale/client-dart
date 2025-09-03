@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/daemon.proto
-//
+// Generated from runetale/runetale/v1/daemon.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -31,32 +31,46 @@ class DaemonServiceClient extends $grpc.Client {
     '',
   ];
 
-  static final _$connect = $grpc.ClientMethod<$0.Empty, $1.GetConnectionStatusResponse>(
-      '/protos.DaemonService/Connect',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetConnectionStatusResponse.fromBuffer(value));
-  static final _$disconnect = $grpc.ClientMethod<$0.Empty, $1.GetConnectionStatusResponse>(
-      '/protos.DaemonService/Disconnect',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetConnectionStatusResponse.fromBuffer(value));
-  static final _$getConnectionStatus = $grpc.ClientMethod<$0.Empty, $1.GetConnectionStatusResponse>(
-      '/protos.DaemonService/GetConnectionStatus',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.GetConnectionStatusResponse.fromBuffer(value));
-
   DaemonServiceClient(super.channel, {super.options, super.interceptors});
 
-  $grpc.ResponseFuture<$1.GetConnectionStatusResponse> connect($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.GetConnectionStatusResponse> connect(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$connect, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetConnectionStatusResponse> disconnect($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.GetConnectionStatusResponse> disconnect(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$disconnect, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.GetConnectionStatusResponse> getConnectionStatus($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.GetConnectionStatusResponse> getConnectionStatus(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$getConnectionStatus, request, options: options);
   }
+
+  // method descriptors
+
+  static final _$connect =
+      $grpc.ClientMethod<$0.Empty, $1.GetConnectionStatusResponse>(
+          '/protos.DaemonService/Connect',
+          ($0.Empty value) => value.writeToBuffer(),
+          $1.GetConnectionStatusResponse.fromBuffer);
+  static final _$disconnect =
+      $grpc.ClientMethod<$0.Empty, $1.GetConnectionStatusResponse>(
+          '/protos.DaemonService/Disconnect',
+          ($0.Empty value) => value.writeToBuffer(),
+          $1.GetConnectionStatusResponse.fromBuffer);
+  static final _$getConnectionStatus =
+      $grpc.ClientMethod<$0.Empty, $1.GetConnectionStatusResponse>(
+          '/protos.DaemonService/GetConnectionStatus',
+          ($0.Empty value) => value.writeToBuffer(),
+          $1.GetConnectionStatusResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.DaemonService')
@@ -87,19 +101,27 @@ abstract class DaemonServiceBase extends $grpc.Service {
         ($1.GetConnectionStatusResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$1.GetConnectionStatusResponse> connect_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$1.GetConnectionStatusResponse> connect_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return connect($call, await $request);
   }
 
-  $async.Future<$1.GetConnectionStatusResponse> disconnect_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$1.GetConnectionStatusResponse> connect(
+      $grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.GetConnectionStatusResponse> disconnect_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return disconnect($call, await $request);
   }
 
-  $async.Future<$1.GetConnectionStatusResponse> getConnectionStatus_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$1.GetConnectionStatusResponse> disconnect(
+      $grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.GetConnectionStatusResponse> getConnectionStatus_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return getConnectionStatus($call, await $request);
   }
 
-  $async.Future<$1.GetConnectionStatusResponse> connect($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$1.GetConnectionStatusResponse> disconnect($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$1.GetConnectionStatusResponse> getConnectionStatus($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$1.GetConnectionStatusResponse> getConnectionStatus(
+      $grpc.ServiceCall call, $0.Empty request);
 }

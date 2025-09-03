@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/hashi.proto
-//
+// Generated from runetale/runetale/v1/hashi.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -17,7 +17,7 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/empty.pb.dart' as $0;
-import 'hashi.pb.dart' as $2;
+import 'hashi.pb.dart' as $1;
 
 export 'hashi.pb.dart';
 
@@ -33,80 +33,111 @@ class HashiServiceClient extends $grpc.Client {
     '',
   ];
 
-  static final _$status = $grpc.ClientMethod<$0.Empty, $2.HashiStatus>(
-      '/protos.HashiService/Status',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.HashiStatus.fromBuffer(value));
-  static final _$ping = $grpc.ClientMethod<$2.PingRequest, $2.PingResult>(
-      '/protos.HashiService/Ping',
-      ($2.PingRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.PingResult.fromBuffer(value));
-  static final _$login = $grpc.ClientMethod<$0.Empty, $2.HashiStatus>(
-      '/protos.HashiService/Login',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.HashiStatus.fromBuffer(value));
-  static final _$compose = $grpc.ClientMethod<$2.ComposeRequest, $2.HashiStatus>(
-      '/protos.HashiService/Compose',
-      ($2.ComposeRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.HashiStatus.fromBuffer(value));
-  static final _$logout = $grpc.ClientMethod<$0.Empty, $2.HashiStatus>(
-      '/protos.HashiService/Logout',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.HashiStatus.fromBuffer(value));
-  static final _$stop = $grpc.ClientMethod<$2.StopRequest, $2.HashiStatus>(
-      '/protos.HashiService/Stop',
-      ($2.StopRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.HashiStatus.fromBuffer(value));
-  static final _$dial = $grpc.ClientMethod<$0.Empty, $2.HashiStatus>(
-      '/protos.HashiService/Dial',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.HashiStatus.fromBuffer(value));
-  static final _$getHashigo = $grpc.ClientMethod<$0.Empty, $2.Hashigo>(
-      '/protos.HashiService/GetHashigo',
-      ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.Hashigo.fromBuffer(value));
-  static final _$patchHashigo = $grpc.ClientMethod<$2.HashigoConfigRequest, $2.Hashigo>(
-      '/protos.HashiService/PatchHashigo',
-      ($2.HashigoConfigRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $2.Hashigo.fromBuffer(value));
-
   HashiServiceClient(super.channel, {super.options, super.interceptors});
 
-  $grpc.ResponseFuture<$2.HashiStatus> status($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.HashiStatus> status(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$status, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.PingResult> ping($2.PingRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.PingResult> ping(
+    $1.PingRequest request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$ping, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.HashiStatus> login($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.HashiStatus> login(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$login, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.HashiStatus> compose($2.ComposeRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.HashiStatus> compose(
+    $1.ComposeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$compose, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.HashiStatus> logout($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.HashiStatus> logout(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$logout, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.HashiStatus> stop($2.StopRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.HashiStatus> stop(
+    $1.StopRequest request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$stop, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.HashiStatus> dial($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.HashiStatus> dial(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$dial, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.Hashigo> getHashigo($0.Empty request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Hashigo> getHashigo(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$getHashigo, request, options: options);
   }
 
-  $grpc.ResponseFuture<$2.Hashigo> patchHashigo($2.HashigoConfigRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$1.Hashigo> patchHashigo(
+    $1.HashigoConfigRequest request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$patchHashigo, request, options: options);
   }
+
+  // method descriptors
+
+  static final _$status = $grpc.ClientMethod<$0.Empty, $1.HashiStatus>(
+      '/protos.HashiService/Status',
+      ($0.Empty value) => value.writeToBuffer(),
+      $1.HashiStatus.fromBuffer);
+  static final _$ping = $grpc.ClientMethod<$1.PingRequest, $1.PingResult>(
+      '/protos.HashiService/Ping',
+      ($1.PingRequest value) => value.writeToBuffer(),
+      $1.PingResult.fromBuffer);
+  static final _$login = $grpc.ClientMethod<$0.Empty, $1.HashiStatus>(
+      '/protos.HashiService/Login',
+      ($0.Empty value) => value.writeToBuffer(),
+      $1.HashiStatus.fromBuffer);
+  static final _$compose =
+      $grpc.ClientMethod<$1.ComposeRequest, $1.HashiStatus>(
+          '/protos.HashiService/Compose',
+          ($1.ComposeRequest value) => value.writeToBuffer(),
+          $1.HashiStatus.fromBuffer);
+  static final _$logout = $grpc.ClientMethod<$0.Empty, $1.HashiStatus>(
+      '/protos.HashiService/Logout',
+      ($0.Empty value) => value.writeToBuffer(),
+      $1.HashiStatus.fromBuffer);
+  static final _$stop = $grpc.ClientMethod<$1.StopRequest, $1.HashiStatus>(
+      '/protos.HashiService/Stop',
+      ($1.StopRequest value) => value.writeToBuffer(),
+      $1.HashiStatus.fromBuffer);
+  static final _$dial = $grpc.ClientMethod<$0.Empty, $1.HashiStatus>(
+      '/protos.HashiService/Dial',
+      ($0.Empty value) => value.writeToBuffer(),
+      $1.HashiStatus.fromBuffer);
+  static final _$getHashigo = $grpc.ClientMethod<$0.Empty, $1.Hashigo>(
+      '/protos.HashiService/GetHashigo',
+      ($0.Empty value) => value.writeToBuffer(),
+      $1.Hashigo.fromBuffer);
+  static final _$patchHashigo =
+      $grpc.ClientMethod<$1.HashigoConfigRequest, $1.Hashigo>(
+          '/protos.HashiService/PatchHashigo',
+          ($1.HashigoConfigRequest value) => value.writeToBuffer(),
+          $1.Hashigo.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.HashiService')
@@ -114,114 +145,139 @@ abstract class HashiServiceBase extends $grpc.Service {
   $core.String get $name => 'protos.HashiService';
 
   HashiServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.Empty, $2.HashiStatus>(
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.HashiStatus>(
         'Status',
         status_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($2.HashiStatus value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$2.PingRequest, $2.PingResult>(
+        ($1.HashiStatus value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.PingRequest, $1.PingResult>(
         'Ping',
         ping_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $2.PingRequest.fromBuffer(value),
-        ($2.PingResult value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $2.HashiStatus>(
+        ($core.List<$core.int> value) => $1.PingRequest.fromBuffer(value),
+        ($1.PingResult value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.HashiStatus>(
         'Login',
         login_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($2.HashiStatus value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$2.ComposeRequest, $2.HashiStatus>(
+        ($1.HashiStatus value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.ComposeRequest, $1.HashiStatus>(
         'Compose',
         compose_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $2.ComposeRequest.fromBuffer(value),
-        ($2.HashiStatus value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $2.HashiStatus>(
+        ($core.List<$core.int> value) => $1.ComposeRequest.fromBuffer(value),
+        ($1.HashiStatus value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.HashiStatus>(
         'Logout',
         logout_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($2.HashiStatus value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$2.StopRequest, $2.HashiStatus>(
+        ($1.HashiStatus value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.StopRequest, $1.HashiStatus>(
         'Stop',
         stop_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $2.StopRequest.fromBuffer(value),
-        ($2.HashiStatus value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $2.HashiStatus>(
+        ($core.List<$core.int> value) => $1.StopRequest.fromBuffer(value),
+        ($1.HashiStatus value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.HashiStatus>(
         'Dial',
         dial_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($2.HashiStatus value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.Empty, $2.Hashigo>(
+        ($1.HashiStatus value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.Hashigo>(
         'GetHashigo',
         getHashigo_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
-        ($2.Hashigo value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$2.HashigoConfigRequest, $2.Hashigo>(
+        ($1.Hashigo value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.HashigoConfigRequest, $1.Hashigo>(
         'PatchHashigo',
         patchHashigo_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $2.HashigoConfigRequest.fromBuffer(value),
-        ($2.Hashigo value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) =>
+            $1.HashigoConfigRequest.fromBuffer(value),
+        ($1.Hashigo value) => value.writeToBuffer()));
   }
 
-  $async.Future<$2.HashiStatus> status_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$1.HashiStatus> status_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return status($call, await $request);
   }
 
-  $async.Future<$2.PingResult> ping_Pre($grpc.ServiceCall $call, $async.Future<$2.PingRequest> $request) async {
+  $async.Future<$1.HashiStatus> status(
+      $grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.PingResult> ping_Pre(
+      $grpc.ServiceCall $call, $async.Future<$1.PingRequest> $request) async {
     return ping($call, await $request);
   }
 
-  $async.Future<$2.HashiStatus> login_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$1.PingResult> ping(
+      $grpc.ServiceCall call, $1.PingRequest request);
+
+  $async.Future<$1.HashiStatus> login_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return login($call, await $request);
   }
 
-  $async.Future<$2.HashiStatus> compose_Pre($grpc.ServiceCall $call, $async.Future<$2.ComposeRequest> $request) async {
+  $async.Future<$1.HashiStatus> login($grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.HashiStatus> compose_Pre($grpc.ServiceCall $call,
+      $async.Future<$1.ComposeRequest> $request) async {
     return compose($call, await $request);
   }
 
-  $async.Future<$2.HashiStatus> logout_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$1.HashiStatus> compose(
+      $grpc.ServiceCall call, $1.ComposeRequest request);
+
+  $async.Future<$1.HashiStatus> logout_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return logout($call, await $request);
   }
 
-  $async.Future<$2.HashiStatus> stop_Pre($grpc.ServiceCall $call, $async.Future<$2.StopRequest> $request) async {
+  $async.Future<$1.HashiStatus> logout(
+      $grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.HashiStatus> stop_Pre(
+      $grpc.ServiceCall $call, $async.Future<$1.StopRequest> $request) async {
     return stop($call, await $request);
   }
 
-  $async.Future<$2.HashiStatus> dial_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$1.HashiStatus> stop(
+      $grpc.ServiceCall call, $1.StopRequest request);
+
+  $async.Future<$1.HashiStatus> dial_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return dial($call, await $request);
   }
 
-  $async.Future<$2.Hashigo> getHashigo_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$1.HashiStatus> dial($grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.Hashigo> getHashigo_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return getHashigo($call, await $request);
   }
 
-  $async.Future<$2.Hashigo> patchHashigo_Pre($grpc.ServiceCall $call, $async.Future<$2.HashigoConfigRequest> $request) async {
+  $async.Future<$1.Hashigo> getHashigo(
+      $grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.Hashigo> patchHashigo_Pre($grpc.ServiceCall $call,
+      $async.Future<$1.HashigoConfigRequest> $request) async {
     return patchHashigo($call, await $request);
   }
 
-  $async.Future<$2.HashiStatus> status($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$2.PingResult> ping($grpc.ServiceCall call, $2.PingRequest request);
-  $async.Future<$2.HashiStatus> login($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$2.HashiStatus> compose($grpc.ServiceCall call, $2.ComposeRequest request);
-  $async.Future<$2.HashiStatus> logout($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$2.HashiStatus> stop($grpc.ServiceCall call, $2.StopRequest request);
-  $async.Future<$2.HashiStatus> dial($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$2.Hashigo> getHashigo($grpc.ServiceCall call, $0.Empty request);
-  $async.Future<$2.Hashigo> patchHashigo($grpc.ServiceCall call, $2.HashigoConfigRequest request);
+  $async.Future<$1.Hashigo> patchHashigo(
+      $grpc.ServiceCall call, $1.HashigoConfigRequest request);
 }

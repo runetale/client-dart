@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/negotiation.proto
-//
+// Generated from runetale/runetale/v1/negotiation.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -34,7 +34,14 @@ final $typed_data.Uint8List negotiationTypeDescriptor = $convert.base64Decode(
 const NegotiationRequest$json = {
   '1': 'NegotiationRequest',
   '2': [
-    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
+    {
+      '1': 'type',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.protos.NegotiationType',
+      '10': 'type'
+    },
     {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
     {'1': 'dstWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'dstWgPubKey'},
     {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
@@ -54,7 +61,14 @@ final $typed_data.Uint8List negotiationRequestDescriptor = $convert.base64Decode
 const NegotiationResponse$json = {
   '1': 'NegotiationResponse',
   '2': [
-    {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.protos.NegotiationType', '10': 'type'},
+    {
+      '1': 'type',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.protos.NegotiationType',
+      '10': 'type'
+    },
     {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
     {'1': 'dstWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'dstWgPubKey'},
     {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
@@ -104,4 +118,3 @@ final $typed_data.Uint8List candidateRequestDescriptor = $convert.base64Decode(
     'ChBDYW5kaWRhdGVSZXF1ZXN0Eh4KCmRzdE5vZGVLZXkYASABKAlSCmRzdE5vZGVLZXkSHgoKc3'
     'JjTm9kZUtleRgCIAEoCVIKc3JjTm9kZUtleRIaCgh3Z1B1YktleRgDIAEoCVIId2dQdWJLZXkS'
     'HAoJY2FuZGlkYXRlGAQgASgJUgljYW5kaWRhdGU=');
-

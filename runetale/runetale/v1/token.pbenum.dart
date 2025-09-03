@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from google/protobuf/empty.proto.
+// Generated from runetale/runetale/v1/token.proto.
 
 // @dart = 3.3
 

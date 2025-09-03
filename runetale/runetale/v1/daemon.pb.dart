@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/daemon.proto
-//
+// Generated from runetale/runetale/v1/daemon.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -27,29 +27,43 @@ class GetConnectionStatusResponse extends $pb.GeneratedMessage {
 
   GetConnectionStatusResponse._();
 
-  factory GetConnectionStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetConnectionStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetConnectionStatusResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetConnectionStatusResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetConnectionStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetConnectionStatusResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'IsConnected', protoName: 'IsConnected')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetConnectionStatusResponse clone() => GetConnectionStatusResponse()..mergeFromMessage(this);
+  GetConnectionStatusResponse clone() =>
+      GetConnectionStatusResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetConnectionStatusResponse copyWith(void Function(GetConnectionStatusResponse) updates) => super.copyWith((message) => updates(message as GetConnectionStatusResponse)) as GetConnectionStatusResponse;
+  GetConnectionStatusResponse copyWith(
+          void Function(GetConnectionStatusResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetConnectionStatusResponse))
+          as GetConnectionStatusResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetConnectionStatusResponse create() => GetConnectionStatusResponse._();
+  static GetConnectionStatusResponse create() =>
+      GetConnectionStatusResponse._();
   @$core.override
   GetConnectionStatusResponse createEmptyInstance() => create();
-  static $pb.PbList<GetConnectionStatusResponse> createRepeated() => $pb.PbList<GetConnectionStatusResponse>();
+  static $pb.PbList<GetConnectionStatusResponse> createRepeated() =>
+      $pb.PbList<GetConnectionStatusResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetConnectionStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetConnectionStatusResponse>(create);
+  static GetConnectionStatusResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetConnectionStatusResponse>(create);
   static GetConnectionStatusResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -62,6 +76,7 @@ class GetConnectionStatusResponse extends $pb.GeneratedMessage {
   void clearIsConnected() => $_clearField(1);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

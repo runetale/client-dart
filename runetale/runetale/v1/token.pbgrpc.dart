@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/token.proto
-//
+// Generated from runetale/runetale/v1/token.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -30,16 +30,21 @@ class TokenServiceClient extends $grpc.Client {
     '',
   ];
 
+  TokenServiceClient(super.channel, {super.options, super.interceptors});
+
+  $grpc.ResponseFuture<$0.Empty> refreshToken(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$refreshToken, request, options: options);
+  }
+
+  // method descriptors
+
   static final _$refreshToken = $grpc.ClientMethod<$0.Empty, $0.Empty>(
       '/protos.TokenService/RefreshToken',
       ($0.Empty value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
-
-  TokenServiceClient(super.channel, {super.options, super.interceptors});
-
-  $grpc.ResponseFuture<$0.Empty> refreshToken($0.Empty request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$refreshToken, request, options: options);
-  }
+      $0.Empty.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.TokenService')
@@ -56,9 +61,11 @@ abstract class TokenServiceBase extends $grpc.Service {
         ($0.Empty value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Empty> refreshToken_Pre($grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+  $async.Future<$0.Empty> refreshToken_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
     return refreshToken($call, await $request);
   }
 
-  $async.Future<$0.Empty> refreshToken($grpc.ServiceCall call, $0.Empty request);
+  $async.Future<$0.Empty> refreshToken(
+      $grpc.ServiceCall call, $0.Empty request);
 }

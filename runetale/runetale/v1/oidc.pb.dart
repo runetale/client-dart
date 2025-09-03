@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/oidc.proto
-//
+// Generated from runetale/runetale/v1/oidc.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -20,7 +20,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   factory LoginResponse({
     $core.String? sub,
     $core.String? tenantID,
-    $core.String? doamin,
+    $core.String? domain,
     $core.String? providerID,
     $core.String? email,
     $core.String? username,
@@ -29,7 +29,7 @@ class LoginResponse extends $pb.GeneratedMessage {
     final result = create();
     if (sub != null) result.sub = sub;
     if (tenantID != null) result.tenantID = tenantID;
-    if (doamin != null) result.doamin = doamin;
+    if (domain != null) result.domain = domain;
     if (providerID != null) result.providerID = providerID;
     if (email != null) result.email = email;
     if (username != null) result.username = username;
@@ -39,24 +39,32 @@ class LoginResponse extends $pb.GeneratedMessage {
 
   LoginResponse._();
 
-  factory LoginResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LoginResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LoginResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LoginResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LoginResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sub')
     ..aOS(2, _omitFieldNames ? '' : 'tenantID', protoName: 'tenantID')
-    ..aOS(3, _omitFieldNames ? '' : 'doamin')
+    ..aOS(3, _omitFieldNames ? '' : 'domain')
     ..aOS(4, _omitFieldNames ? '' : 'providerID', protoName: 'providerID')
     ..aOS(5, _omitFieldNames ? '' : 'email')
     ..aOS(6, _omitFieldNames ? '' : 'username')
     ..aOS(7, _omitFieldNames ? '' : 'picture')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginResponse clone() => LoginResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginResponse copyWith(void Function(LoginResponse) updates) => super.copyWith((message) => updates(message as LoginResponse)) as LoginResponse;
+  LoginResponse copyWith(void Function(LoginResponse) updates) =>
+      super.copyWith((message) => updates(message as LoginResponse))
+          as LoginResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -65,9 +73,11 @@ class LoginResponse extends $pb.GeneratedMessage {
   static LoginResponse create() => LoginResponse._();
   @$core.override
   LoginResponse createEmptyInstance() => create();
-  static $pb.PbList<LoginResponse> createRepeated() => $pb.PbList<LoginResponse>();
+  static $pb.PbList<LoginResponse> createRepeated() =>
+      $pb.PbList<LoginResponse>();
   @$core.pragma('dart2js:noInline')
-  static LoginResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginResponse>(create);
+  static LoginResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LoginResponse>(create);
   static LoginResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -89,13 +99,13 @@ class LoginResponse extends $pb.GeneratedMessage {
   void clearTenantID() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get doamin => $_getSZ(2);
+  $core.String get domain => $_getSZ(2);
   @$pb.TagNumber(3)
-  set doamin($core.String value) => $_setString(2, value);
+  set domain($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasDoamin() => $_has(2);
+  $core.bool hasDomain() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDoamin() => $_clearField(3);
+  void clearDomain() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get providerID => $_getSZ(3);
@@ -138,7 +148,7 @@ class LoginRequest extends $pb.GeneratedMessage {
   factory LoginRequest({
     $core.String? sub,
     $core.String? tenantID,
-    $core.String? doamin,
+    $core.String? domain,
     $core.String? providerID,
     $core.String? email,
     $core.String? username,
@@ -148,7 +158,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     final result = create();
     if (sub != null) result.sub = sub;
     if (tenantID != null) result.tenantID = tenantID;
-    if (doamin != null) result.doamin = doamin;
+    if (domain != null) result.domain = domain;
     if (providerID != null) result.providerID = providerID;
     if (email != null) result.email = email;
     if (username != null) result.username = username;
@@ -159,25 +169,33 @@ class LoginRequest extends $pb.GeneratedMessage {
 
   LoginRequest._();
 
-  factory LoginRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LoginRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LoginRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LoginRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LoginRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sub')
     ..aOS(2, _omitFieldNames ? '' : 'tenantID', protoName: 'tenantID')
-    ..aOS(3, _omitFieldNames ? '' : 'doamin')
+    ..aOS(3, _omitFieldNames ? '' : 'domain')
     ..aOS(4, _omitFieldNames ? '' : 'providerID', protoName: 'providerID')
     ..aOS(5, _omitFieldNames ? '' : 'email')
     ..aOS(6, _omitFieldNames ? '' : 'username')
     ..aOS(7, _omitFieldNames ? '' : 'picture')
     ..aOS(8, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginRequest clone() => LoginRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginRequest copyWith(void Function(LoginRequest) updates) => super.copyWith((message) => updates(message as LoginRequest)) as LoginRequest;
+  LoginRequest copyWith(void Function(LoginRequest) updates) =>
+      super.copyWith((message) => updates(message as LoginRequest))
+          as LoginRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -186,9 +204,11 @@ class LoginRequest extends $pb.GeneratedMessage {
   static LoginRequest create() => LoginRequest._();
   @$core.override
   LoginRequest createEmptyInstance() => create();
-  static $pb.PbList<LoginRequest> createRepeated() => $pb.PbList<LoginRequest>();
+  static $pb.PbList<LoginRequest> createRepeated() =>
+      $pb.PbList<LoginRequest>();
   @$core.pragma('dart2js:noInline')
-  static LoginRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginRequest>(create);
+  static LoginRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LoginRequest>(create);
   static LoginRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -210,13 +230,13 @@ class LoginRequest extends $pb.GeneratedMessage {
   void clearTenantID() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get doamin => $_getSZ(2);
+  $core.String get domain => $_getSZ(2);
   @$pb.TagNumber(3)
-  set doamin($core.String value) => $_setString(2, value);
+  set domain($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasDoamin() => $_has(2);
+  $core.bool hasDomain() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDoamin() => $_clearField(3);
+  void clearDomain() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get providerID => $_getSZ(3);
@@ -266,7 +286,7 @@ class LoginRequest extends $pb.GeneratedMessage {
 
 class AuthenticateResponse extends $pb.GeneratedMessage {
   factory AuthenticateResponse({
-    $core.String? doamin,
+    $core.String? domain,
     $core.String? email,
     $core.String? username,
     $core.String? sub,
@@ -274,7 +294,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     $core.bool? isInvited,
   }) {
     final result = create();
-    if (doamin != null) result.doamin = doamin;
+    if (domain != null) result.domain = domain;
     if (email != null) result.email = email;
     if (username != null) result.username = username;
     if (sub != null) result.sub = sub;
@@ -285,23 +305,32 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
 
   AuthenticateResponse._();
 
-  factory AuthenticateResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AuthenticateResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AuthenticateResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AuthenticateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AuthenticateResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'doamin')
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AuthenticateResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'domain')
     ..aOS(2, _omitFieldNames ? '' : 'email')
     ..aOS(3, _omitFieldNames ? '' : 'username')
     ..aOS(4, _omitFieldNames ? '' : 'sub')
     ..aOB(5, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..aOB(6, _omitFieldNames ? '' : 'isInvited', protoName: 'isInvited')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AuthenticateResponse clone() => AuthenticateResponse()..mergeFromMessage(this);
+  AuthenticateResponse clone() =>
+      AuthenticateResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AuthenticateResponse copyWith(void Function(AuthenticateResponse) updates) => super.copyWith((message) => updates(message as AuthenticateResponse)) as AuthenticateResponse;
+  AuthenticateResponse copyWith(void Function(AuthenticateResponse) updates) =>
+      super.copyWith((message) => updates(message as AuthenticateResponse))
+          as AuthenticateResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -310,19 +339,21 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   static AuthenticateResponse create() => AuthenticateResponse._();
   @$core.override
   AuthenticateResponse createEmptyInstance() => create();
-  static $pb.PbList<AuthenticateResponse> createRepeated() => $pb.PbList<AuthenticateResponse>();
+  static $pb.PbList<AuthenticateResponse> createRepeated() =>
+      $pb.PbList<AuthenticateResponse>();
   @$core.pragma('dart2js:noInline')
-  static AuthenticateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthenticateResponse>(create);
+  static AuthenticateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AuthenticateResponse>(create);
   static AuthenticateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get doamin => $_getSZ(0);
+  $core.String get domain => $_getSZ(0);
   @$pb.TagNumber(1)
-  set doamin($core.String value) => $_setString(0, value);
+  set domain($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
-  $core.bool hasDoamin() => $_has(0);
+  $core.bool hasDomain() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDoamin() => $_clearField(1);
+  void clearDomain() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get email => $_getSZ(1);
@@ -370,6 +401,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   void clearIsInvited() => $_clearField(6);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

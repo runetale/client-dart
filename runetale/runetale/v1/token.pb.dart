@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/token.proto
-//
+// Generated from runetale/runetale/v1/token.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -13,4 +13,3 @@
 import 'dart:core' as $core;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
-

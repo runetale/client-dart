@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/negotiation.proto
-//
+// Generated from runetale/runetale/v1/negotiation.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -41,23 +41,34 @@ class NegotiationRequest extends $pb.GeneratedMessage {
 
   NegotiationRequest._();
 
-  factory NegotiationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory NegotiationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory NegotiationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NegotiationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NegotiationRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
+        defaultOrMaker: NegotiationType.OFFER,
+        valueOf: NegotiationType.valueOf,
+        enumValues: NegotiationType.values)
     ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'dstWgPubKey', protoName: 'dstWgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(5, _omitFieldNames ? '' : 'pwd')
     ..aOS(6, _omitFieldNames ? '' : 'candidate')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NegotiationRequest clone() => NegotiationRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NegotiationRequest copyWith(void Function(NegotiationRequest) updates) => super.copyWith((message) => updates(message as NegotiationRequest)) as NegotiationRequest;
+  NegotiationRequest copyWith(void Function(NegotiationRequest) updates) =>
+      super.copyWith((message) => updates(message as NegotiationRequest))
+          as NegotiationRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -66,9 +77,11 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   static NegotiationRequest create() => NegotiationRequest._();
   @$core.override
   NegotiationRequest createEmptyInstance() => create();
-  static $pb.PbList<NegotiationRequest> createRepeated() => $pb.PbList<NegotiationRequest>();
+  static $pb.PbList<NegotiationRequest> createRepeated() =>
+      $pb.PbList<NegotiationRequest>();
   @$core.pragma('dart2js:noInline')
-  static NegotiationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NegotiationRequest>(create);
+  static NegotiationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NegotiationRequest>(create);
   static NegotiationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -147,23 +160,34 @@ class NegotiationResponse extends $pb.GeneratedMessage {
 
   NegotiationResponse._();
 
-  factory NegotiationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory NegotiationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory NegotiationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NegotiationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NegotiationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: NegotiationType.OFFER, valueOf: NegotiationType.valueOf, enumValues: NegotiationType.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NegotiationResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
+        defaultOrMaker: NegotiationType.OFFER,
+        valueOf: NegotiationType.valueOf,
+        enumValues: NegotiationType.values)
     ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'dstWgPubKey', protoName: 'dstWgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(5, _omitFieldNames ? '' : 'pwd')
     ..aOS(6, _omitFieldNames ? '' : 'candidate')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NegotiationResponse clone() => NegotiationResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NegotiationResponse copyWith(void Function(NegotiationResponse) updates) => super.copyWith((message) => updates(message as NegotiationResponse)) as NegotiationResponse;
+  NegotiationResponse copyWith(void Function(NegotiationResponse) updates) =>
+      super.copyWith((message) => updates(message as NegotiationResponse))
+          as NegotiationResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -172,9 +196,11 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   static NegotiationResponse create() => NegotiationResponse._();
   @$core.override
   NegotiationResponse createEmptyInstance() => create();
-  static $pb.PbList<NegotiationResponse> createRepeated() => $pb.PbList<NegotiationResponse>();
+  static $pb.PbList<NegotiationResponse> createRepeated() =>
+      $pb.PbList<NegotiationResponse>();
   @$core.pragma('dart2js:noInline')
-  static NegotiationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NegotiationResponse>(create);
+  static NegotiationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NegotiationResponse>(create);
   static NegotiationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -251,22 +277,30 @@ class HandshakeRequest extends $pb.GeneratedMessage {
 
   HandshakeRequest._();
 
-  factory HandshakeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory HandshakeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory HandshakeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory HandshakeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HandshakeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'HandshakeRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(5, _omitFieldNames ? '' : 'pwd')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HandshakeRequest clone() => HandshakeRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HandshakeRequest copyWith(void Function(HandshakeRequest) updates) => super.copyWith((message) => updates(message as HandshakeRequest)) as HandshakeRequest;
+  HandshakeRequest copyWith(void Function(HandshakeRequest) updates) =>
+      super.copyWith((message) => updates(message as HandshakeRequest))
+          as HandshakeRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -275,9 +309,11 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   static HandshakeRequest create() => HandshakeRequest._();
   @$core.override
   HandshakeRequest createEmptyInstance() => create();
-  static $pb.PbList<HandshakeRequest> createRepeated() => $pb.PbList<HandshakeRequest>();
+  static $pb.PbList<HandshakeRequest> createRepeated() =>
+      $pb.PbList<HandshakeRequest>();
   @$core.pragma('dart2js:noInline')
-  static HandshakeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HandshakeRequest>(create);
+  static HandshakeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<HandshakeRequest>(create);
   static HandshakeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -343,21 +379,29 @@ class CandidateRequest extends $pb.GeneratedMessage {
 
   CandidateRequest._();
 
-  factory CandidateRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CandidateRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CandidateRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CandidateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CandidateRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CandidateRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'candidate')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CandidateRequest clone() => CandidateRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CandidateRequest copyWith(void Function(CandidateRequest) updates) => super.copyWith((message) => updates(message as CandidateRequest)) as CandidateRequest;
+  CandidateRequest copyWith(void Function(CandidateRequest) updates) =>
+      super.copyWith((message) => updates(message as CandidateRequest))
+          as CandidateRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -366,9 +410,11 @@ class CandidateRequest extends $pb.GeneratedMessage {
   static CandidateRequest create() => CandidateRequest._();
   @$core.override
   CandidateRequest createEmptyInstance() => create();
-  static $pb.PbList<CandidateRequest> createRepeated() => $pb.PbList<CandidateRequest>();
+  static $pb.PbList<CandidateRequest> createRepeated() =>
+      $pb.PbList<CandidateRequest>();
   @$core.pragma('dart2js:noInline')
-  static CandidateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CandidateRequest>(create);
+  static CandidateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CandidateRequest>(create);
   static CandidateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -408,6 +454,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
   void clearCandidate() => $_clearField(4);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

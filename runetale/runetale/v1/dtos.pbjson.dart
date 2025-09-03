@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/dtos.proto
-//
+// Generated from runetale/runetale/v1/dtos.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -135,8 +135,8 @@ const LogoutResponse$json = {
 };
 
 /// Descriptor for `LogoutResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List logoutResponseDescriptor = $convert.base64Decode(
-    'Cg5Mb2dvdXRSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNz');
+final $typed_data.Uint8List logoutResponseDescriptor = $convert
+    .base64Decode('Cg5Mb2dvdXRSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNz');
 
 @$core.Deprecated('Use okResponseDescriptor instead')
 const OkResponse$json = {
@@ -147,8 +147,8 @@ const OkResponse$json = {
 };
 
 /// Descriptor for `OkResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List okResponseDescriptor = $convert.base64Decode(
-    'CgpPa1Jlc3BvbnNlEg4KAm9rGAEgASgIUgJvaw==');
+final $typed_data.Uint8List okResponseDescriptor =
+    $convert.base64Decode('CgpPa1Jlc3BvbnNlEg4KAm9rGAEgASgIUgJvaw==');
 
 @$core.Deprecated('Use verifyLoginSessionRequestDescriptor instead')
 const VerifyLoginSessionRequest$json = {
@@ -159,9 +159,10 @@ const VerifyLoginSessionRequest$json = {
 };
 
 /// Descriptor for `VerifyLoginSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List verifyLoginSessionRequestDescriptor = $convert.base64Decode(
-    'ChlWZXJpZnlMb2dpblNlc3Npb25SZXF1ZXN0Eh0KCnNlc3Npb25faWQYASABKAlSCXNlc3Npb2'
-    '5JZA==');
+final $typed_data.Uint8List verifyLoginSessionRequestDescriptor =
+    $convert.base64Decode(
+        'ChlWZXJpZnlMb2dpblNlc3Npb25SZXF1ZXN0Eh0KCnNlc3Npb25faWQYASABKAlSCXNlc3Npb2'
+        '5JZA==');
 
 @$core.Deprecated('Use verifyLoginSessionResponseDescriptor instead')
 const VerifyLoginSessionResponse$json = {
@@ -172,8 +173,9 @@ const VerifyLoginSessionResponse$json = {
 };
 
 /// Descriptor for `VerifyLoginSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List verifyLoginSessionResponseDescriptor = $convert.base64Decode(
-    'ChpWZXJpZnlMb2dpblNlc3Npb25SZXNwb25zZRIUCgV2YWxpZBgBIAEoCFIFdmFsaWQ=');
+final $typed_data.Uint8List verifyLoginSessionResponseDescriptor =
+    $convert.base64Decode(
+        'ChpWZXJpZnlMb2dpblNlc3Npb25SZXNwb25zZRIUCgV2YWxpZBgBIAEoCFIFdmFsaWQ=');
 
 @$core.Deprecated('Use userRoleDescriptor instead')
 const UserRole$json = {
@@ -200,7 +202,14 @@ const BaseUserNode$json = {
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
     {'1': 'is_online', '3': 7, '4': 1, '5': 8, '10': 'isOnline'},
-    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'lastSeen'},
+    {
+      '1': 'last_seen',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'lastSeen'
+    },
   ],
 };
 
@@ -218,10 +227,38 @@ const BaseUser$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
     {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'role', '3': 4, '4': 1, '5': 11, '6': '.protos.UserRole', '10': 'role'},
-    {'1': 'nodes', '3': 5, '4': 3, '5': 11, '6': '.protos.BaseUserNode', '10': 'nodes'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'role',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.UserRole',
+      '10': 'role'
+    },
+    {
+      '1': 'nodes',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.BaseUserNode',
+      '10': 'nodes'
+    },
+    {
+      '1': 'created_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -244,9 +281,30 @@ const BaseDevice$json = {
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
     {'1': 'is_online', '3': 7, '4': 1, '5': 8, '10': 'isOnline'},
-    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'lastSeen'},
-    {'1': 'created_at', '3': 9, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 10, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'last_seen',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'lastSeen'
+    },
+    {
+      '1': 'created_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -271,8 +329,22 @@ const Policy$json = {
     {'1': 'ports', '3': 6, '4': 3, '5': 9, '10': 'ports'},
     {'1': 'protocols', '3': 7, '4': 3, '5': 9, '10': 'protocols'},
     {'1': 'enabled', '3': 8, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 9, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 10, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'created_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -306,12 +378,33 @@ const Acl$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'nodes', '3': 4, '4': 1, '5': 11, '6': '.protos.BaseAclNodes', '10': 'nodes'},
+    {
+      '1': 'nodes',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.BaseAclNodes',
+      '10': 'nodes'
+    },
     {'1': 'ports', '3': 5, '4': 3, '5': 9, '10': 'ports'},
     {'1': 'protocols', '3': 6, '4': 3, '5': 9, '10': 'protocols'},
     {'1': 'enabled', '3': 7, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 9, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'created_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -334,8 +427,22 @@ const SplitDNS$json = {
     {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
     {'1': 'nodes', '3': 5, '4': 3, '5': 9, '10': 'nodes'},
     {'1': 'enabled', '3': 6, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'created_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -357,8 +464,22 @@ const DNS$json = {
     {'1': 'domain', '3': 4, '4': 1, '5': 9, '10': 'domain'},
     {'1': 'nodes', '3': 5, '4': 3, '5': 9, '10': 'nodes'},
     {'1': 'enabled', '3': 6, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'created_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -378,9 +499,30 @@ const BaseResource$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'type', '3': 4, '4': 1, '5': 9, '10': 'type'},
-    {'1': 'labels', '3': 5, '4': 3, '5': 11, '6': '.protos.BaseResource.LabelsEntry', '10': 'labels'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'labels',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.BaseResource.LabelsEntry',
+      '10': 'labels'
+    },
+    {
+      '1': 'created_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
   '3': [BaseResource_LabelsEntry$json],
 };
@@ -412,9 +554,30 @@ const BaseFleet$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'nodes', '3': 4, '4': 3, '5': 9, '10': 'nodes'},
-    {'1': 'labels', '3': 5, '4': 3, '5': 11, '6': '.protos.BaseFleet.LabelsEntry', '10': 'labels'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'labels',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.BaseFleet.LabelsEntry',
+      '10': 'labels'
+    },
+    {
+      '1': 'created_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
   '3': [BaseFleet_LabelsEntry$json],
 };
@@ -447,8 +610,22 @@ const BaseGroup$json = {
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
     {'1': 'nodes', '3': 4, '4': 3, '5': 9, '10': 'nodes'},
     {'1': 'users', '3': 5, '4': 3, '5': 9, '10': 'users'},
-    {'1': 'created_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'created_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -471,7 +648,14 @@ const GroupNode$json = {
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
     {'1': 'is_online', '3': 7, '4': 1, '5': 8, '10': 'isOnline'},
-    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'lastSeen'},
+    {
+      '1': 'last_seen',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'lastSeen'
+    },
   ],
 };
 
@@ -492,8 +676,22 @@ const Linker$json = {
     {'1': 'subnet', '3': 4, '4': 1, '5': 9, '10': 'subnet'},
     {'1': 'nodes', '3': 5, '4': 3, '5': 9, '10': 'nodes'},
     {'1': 'enabled', '3': 6, '4': 1, '5': 8, '10': 'enabled'},
-    {'1': 'created_at', '3': 7, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'created_at',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -516,7 +714,14 @@ const SubnetLinkerCovertibleNode$json = {
     {'1': 'os', '3': 5, '4': 1, '5': 9, '10': 'os'},
     {'1': 'version', '3': 6, '4': 1, '5': 9, '10': 'version'},
     {'1': 'is_online', '3': 7, '4': 1, '5': 8, '10': 'isOnline'},
-    {'1': 'last_seen', '3': 8, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'lastSeen'},
+    {
+      '1': 'last_seen',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'lastSeen'
+    },
   ],
 };
 
@@ -536,8 +741,22 @@ const ComposeKey$json = {
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'key', '3': 3, '4': 1, '5': 9, '10': 'key'},
     {'1': 'install_script', '3': 4, '4': 1, '5': 9, '10': 'installScript'},
-    {'1': 'created_at', '3': 5, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'createdAt'},
-    {'1': 'updated_at', '3': 6, '4': 1, '5': 11, '6': '.protos.Timestamp', '10': 'updatedAt'},
+    {
+      '1': 'created_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updated_at',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Timestamp',
+      '10': 'updatedAt'
+    },
   ],
 };
 
@@ -591,7 +810,14 @@ final $typed_data.Uint8List updateSplitDNSRequestDescriptor = $convert.base64Dec
 const CreateSplitDNSRequest$json = {
   '1': 'CreateSplitDNSRequest',
   '2': [
-    {'1': 'split_dns', '3': 1, '4': 1, '5': 11, '6': '.protos.SplitDNS', '10': 'splitDns'},
+    {
+      '1': 'split_dns',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.SplitDNS',
+      '10': 'splitDns'
+    },
   ],
 };
 
@@ -622,9 +848,10 @@ const UpdateDNSSearchDomainsRequest$json = {
 };
 
 /// Descriptor for `UpdateDNSSearchDomainsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateDNSSearchDomainsRequestDescriptor = $convert.base64Decode(
-    'Ch1VcGRhdGVETlNTZWFyY2hEb21haW5zUmVxdWVzdBIlCg5zZWFyY2hfZG9tYWlucxgBIAMoCV'
-    'INc2VhcmNoRG9tYWlucw==');
+final $typed_data.Uint8List updateDNSSearchDomainsRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1VcGRhdGVETlNTZWFyY2hEb21haW5zUmVxdWVzdBIlCg5zZWFyY2hfZG9tYWlucxgBIAMoCV'
+        'INc2VhcmNoRG9tYWlucw==');
 
 @$core.Deprecated('Use updateDNSNameServersRequestDescriptor instead')
 const UpdateDNSNameServersRequest$json = {
@@ -635,15 +862,22 @@ const UpdateDNSNameServersRequest$json = {
 };
 
 /// Descriptor for `UpdateDNSNameServersRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateDNSNameServersRequestDescriptor = $convert.base64Decode(
-    'ChtVcGRhdGVETlNOYW1lU2VydmVyc1JlcXVlc3QSIQoMbmFtZV9zZXJ2ZXJzGAEgAygJUgtuYW'
-    '1lU2VydmVycw==');
+final $typed_data.Uint8List updateDNSNameServersRequestDescriptor =
+    $convert.base64Decode(
+        'ChtVcGRhdGVETlNOYW1lU2VydmVyc1JlcXVlc3QSIQoMbmFtZV9zZXJ2ZXJzGAEgAygJUgtuYW'
+        '1lU2VydmVycw==');
 
 @$core.Deprecated('Use baseUpdateDNSRequestDescriptor instead')
 const BaseUpdateDNSRequest$json = {
   '1': 'BaseUpdateDNSRequest',
   '2': [
-    {'1': 'override_local_dns', '3': 1, '4': 1, '5': 8, '10': 'overrideLocalDns'},
+    {
+      '1': 'override_local_dns',
+      '3': 1,
+      '4': 1,
+      '5': 8,
+      '10': 'overrideLocalDns'
+    },
   ],
 };
 
@@ -661,9 +895,10 @@ const UpdateFleetDescriptionRequest$json = {
 };
 
 /// Descriptor for `UpdateFleetDescriptionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateFleetDescriptionRequestDescriptor = $convert.base64Decode(
-    'Ch1VcGRhdGVGbGVldERlc2NyaXB0aW9uUmVxdWVzdBIgCgtkZXNjcmlwdGlvbhgBIAEoCVILZG'
-    'VzY3JpcHRpb24=');
+final $typed_data.Uint8List updateFleetDescriptionRequestDescriptor =
+    $convert.base64Decode(
+        'Ch1VcGRhdGVGbGVldERlc2NyaXB0aW9uUmVxdWVzdBIgCgtkZXNjcmlwdGlvbhgBIAEoCVILZG'
+        'VzY3JpcHRpb24=');
 
 @$core.Deprecated('Use getComposeKeyRequestDescriptor instead')
 const GetComposeKeyRequest$json = {
@@ -706,16 +941,24 @@ const GenerateComposeKeyRequest$json = {
 };
 
 /// Descriptor for `GenerateComposeKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List generateComposeKeyRequestDescriptor = $convert.base64Decode(
-    'ChlHZW5lcmF0ZUNvbXBvc2VLZXlSZXF1ZXN0EhQKBXBvcnRzGAEgASgJUgVwb3J0cxISCgRuYW'
-    '1lGAIgASgJUgRuYW1l');
+final $typed_data.Uint8List generateComposeKeyRequestDescriptor =
+    $convert.base64Decode(
+        'ChlHZW5lcmF0ZUNvbXBvc2VLZXlSZXF1ZXN0EhQKBXBvcnRzGAEgASgJUgVwb3J0cxISCgRuYW'
+        '1lGAIgASgJUgRuYW1l');
 
 @$core.Deprecated('Use inviteTeamMemberDescriptor instead')
 const InviteTeamMember$json = {
   '1': 'InviteTeamMember',
   '2': [
     {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
-    {'1': 'role', '3': 2, '4': 1, '5': 14, '6': '.protos.UserRoles', '10': 'role'},
+    {
+      '1': 'role',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.protos.UserRoles',
+      '10': 'role'
+    },
   ],
 };
 
@@ -728,7 +971,14 @@ final $typed_data.Uint8List inviteTeamMemberDescriptor = $convert.base64Decode(
 const InviteTeamMembersRequest$json = {
   '1': 'InviteTeamMembersRequest',
   '2': [
-    {'1': 'members', '3': 1, '4': 3, '5': 11, '6': '.protos.InviteTeamMember', '10': 'members'},
+    {
+      '1': 'members',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.InviteTeamMember',
+      '10': 'members'
+    },
     {'1': 'redirect_to', '3': 2, '4': 1, '5': 9, '10': 'redirectTo'},
     {'1': 'revalidate_path', '3': 3, '4': 1, '5': 9, '10': 'revalidatePath'},
   ],
@@ -739,4 +989,3 @@ final $typed_data.Uint8List inviteTeamMembersRequestDescriptor = $convert.base64
     'ChhJbnZpdGVUZWFtTWVtYmVyc1JlcXVlc3QSMgoHbWVtYmVycxgBIAMoCzIYLnByb3Rvcy5Jbn'
     'ZpdGVUZWFtTWVtYmVyUgdtZW1iZXJzEh8KC3JlZGlyZWN0X3RvGAIgASgJUgpyZWRpcmVjdFRv'
     'EicKD3JldmFsaWRhdGVfcGF0aBgDIAEoCVIOcmV2YWxpZGF0ZVBhdGg=');
-

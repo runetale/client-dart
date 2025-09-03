@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/hashi.proto
-//
+// Generated from runetale/runetale/v1/hashi.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -33,9 +33,31 @@ const HashiStatus$json = {
   '2': [
     {'1': 'backend_state', '3': 1, '4': 1, '5': 9, '10': 'backendState'},
     {'1': 'runetale_ips', '3': 2, '4': 3, '5': 9, '10': 'runetaleIps'},
-    {'1': 'interactive_login_url', '3': 3, '4': 1, '5': 9, '10': 'interactiveLoginUrl'},
-    {'1': 'self', '3': 4, '4': 1, '5': 11, '6': '.protos.PeerStatus', '9': 0, '10': 'self', '17': true},
-    {'1': 'peer', '3': 5, '4': 3, '5': 11, '6': '.protos.HashiStatus.PeerEntry', '10': 'peer'},
+    {
+      '1': 'interactive_login_url',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'interactiveLoginUrl'
+    },
+    {
+      '1': 'self',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.PeerStatus',
+      '9': 0,
+      '10': 'self',
+      '17': true
+    },
+    {
+      '1': 'peer',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.HashiStatus.PeerEntry',
+      '10': 'peer'
+    },
   ],
   '3': [HashiStatus_PeerEntry$json],
   '8': [
@@ -48,7 +70,14 @@ const HashiStatus_PeerEntry$json = {
   '1': 'PeerEntry',
   '2': [
     {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
-    {'1': 'value', '3': 2, '4': 1, '5': 11, '6': '.protos.PeerStatus', '10': 'value'},
+    {
+      '1': 'value',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.PeerStatus',
+      '10': 'value'
+    },
   ],
   '7': {'7': true},
 };
@@ -75,11 +104,41 @@ const PeerStatus$json = {
     {'1': 'allowed_ips', '3': 7, '4': 3, '5': 9, '10': 'allowedIps'},
     {'1': 'rx_bytes', '3': 8, '4': 1, '5': 3, '10': 'rxBytes'},
     {'1': 'tx_bytes', '3': 9, '4': 1, '5': 3, '10': 'txBytes'},
-    {'1': 'last_handshake', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastHandshake'},
-    {'1': 'last_write', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastWrite'},
+    {
+      '1': 'last_handshake',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastHandshake'
+    },
+    {
+      '1': 'last_write',
+      '3': 11,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastWrite'
+    },
     {'1': 'addrs', '3': 12, '4': 3, '5': 9, '10': 'addrs'},
-    {'1': 'cur_addr', '3': 13, '4': 1, '5': 9, '9': 0, '10': 'curAddr', '17': true},
-    {'1': 'ice_addr', '3': 14, '4': 1, '5': 9, '9': 1, '10': 'iceAddr', '17': true},
+    {
+      '1': 'cur_addr',
+      '3': 13,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'curAddr',
+      '17': true
+    },
+    {
+      '1': 'ice_addr',
+      '3': 14,
+      '4': 1,
+      '5': 9,
+      '9': 1,
+      '10': 'iceAddr',
+      '17': true
+    },
     {'1': 'advertise_routes', '3': 15, '4': 3, '5': 9, '10': 'advertiseRoutes'},
     {'1': 'is_snat_subnet', '3': 16, '4': 1, '5': 8, '10': 'isSnatSubnet'},
   ],
@@ -107,9 +166,30 @@ final $typed_data.Uint8List peerStatusDescriptor = $convert.base64Decode(
 const UserspacePeerEngineStatus$json = {
   '1': 'UserspacePeerEngineStatus',
   '2': [
-    {'1': 'got_at', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'gotAt'},
-    {'1': 'peers', '3': 2, '4': 3, '5': 11, '6': '.protos.CompactPeerStatus', '10': 'peers'},
-    {'1': 'local_addrs', '3': 3, '4': 3, '5': 11, '6': '.protos.Endpoint', '10': 'localAddrs'},
+    {
+      '1': 'got_at',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'gotAt'
+    },
+    {
+      '1': 'peers',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.CompactPeerStatus',
+      '10': 'peers'
+    },
+    {
+      '1': 'local_addrs',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.Endpoint',
+      '10': 'localAddrs'
+    },
   ],
 };
 
@@ -127,7 +207,14 @@ const CompactPeerStatus$json = {
     {'1': 'node_key', '3': 1, '4': 1, '5': 9, '10': 'nodeKey'},
     {'1': 'tx_bytes', '3': 2, '4': 1, '5': 3, '10': 'txBytes'},
     {'1': 'rx_bytes', '3': 3, '4': 1, '5': 3, '10': 'rxBytes'},
-    {'1': 'last_handshake', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastHandshake'},
+    {
+      '1': 'last_handshake',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastHandshake'
+    },
   ],
 };
 
@@ -147,7 +234,13 @@ const Hashigo$json = {
     {'1': 'barricade', '3': 3, '4': 1, '5': 8, '10': 'barricade'},
     {'1': 'advertise_routes', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoutes'},
     {'1': 'accept_routes', '3': 5, '4': 1, '5': 8, '10': 'acceptRoutes'},
-    {'1': 'snat_subnet_routes', '3': 6, '4': 1, '5': 8, '10': 'snatSubnetRoutes'},
+    {
+      '1': 'snat_subnet_routes',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'snatSubnetRoutes'
+    },
     {'1': 'stateful_filter', '3': 7, '4': 1, '5': 8, '10': 'statefulFilter'},
     {'1': 'app_linker', '3': 8, '4': 1, '5': 8, '10': 'appLinker'},
   ],
@@ -195,8 +288,8 @@ const ComposeRequest$json = {
 };
 
 /// Descriptor for `ComposeRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List composeRequestDescriptor = $convert.base64Decode(
-    'Cg5Db21wb3NlUmVxdWVzdBIQCgNrZXkYASABKAlSA2tleQ==');
+final $typed_data.Uint8List composeRequestDescriptor =
+    $convert.base64Decode('Cg5Db21wb3NlUmVxdWVzdBIQCgNrZXkYASABKAlSA2tleQ==');
 
 @$core.Deprecated('Use pingRequestDescriptor instead')
 const PingRequest$json = {
@@ -222,18 +315,37 @@ const StopRequest$json = {
 };
 
 /// Descriptor for `StopRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List stopRequestDescriptor = $convert.base64Decode(
-    'CgtTdG9wUmVxdWVzdBIWCgZyZWFzb24YASABKAlSBnJlYXNvbg==');
+final $typed_data.Uint8List stopRequestDescriptor = $convert
+    .base64Decode('CgtTdG9wUmVxdWVzdBIWCgZyZWFzb24YASABKAlSBnJlYXNvbg==');
 
 @$core.Deprecated('Use hashigoConfigRequestDescriptor instead')
 const HashigoConfigRequest$json = {
   '1': 'HashigoConfigRequest',
   '2': [
-    {'1': 'hashigo', '3': 1, '4': 1, '5': 11, '6': '.protos.Hashigo', '10': 'hashigo'},
+    {
+      '1': 'hashigo',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Hashigo',
+      '10': 'hashigo'
+    },
     {'1': 'barricade_set', '3': 2, '4': 1, '5': 8, '10': 'barricadeSet'},
     {'1': 'accept_routes_set', '3': 3, '4': 1, '5': 8, '10': 'acceptRoutesSet'},
-    {'1': 'snat_subnet_routes_set', '3': 4, '4': 1, '5': 8, '10': 'snatSubnetRoutesSet'},
-    {'1': 'stateful_filter_set', '3': 5, '4': 1, '5': 8, '10': 'statefulFilterSet'},
+    {
+      '1': 'snat_subnet_routes_set',
+      '3': 4,
+      '4': 1,
+      '5': 8,
+      '10': 'snatSubnetRoutesSet'
+    },
+    {
+      '1': 'stateful_filter_set',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'statefulFilterSet'
+    },
     {'1': 'app_linker_set', '3': 6, '4': 1, '5': 8, '10': 'appLinkerSet'},
   ],
 };
@@ -246,4 +358,3 @@ final $typed_data.Uint8List hashigoConfigRequestDescriptor = $convert.base64Deco
     'VzX3NldBgEIAEoCFITc25hdFN1Ym5ldFJvdXRlc1NldBIuChNzdGF0ZWZ1bF9maWx0ZXJfc2V0'
     'GAUgASgIUhFzdGF0ZWZ1bEZpbHRlclNldBIkCg5hcHBfbGlua2VyX3NldBgGIAEoCFIMYXBwTG'
     'lua2VyU2V0');
-

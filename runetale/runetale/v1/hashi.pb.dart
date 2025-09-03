@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/hashi.proto
-//
+// Generated from runetale/runetale/v1/hashi.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -15,7 +15,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $9;
+import '../../../google/protobuf/timestamp.pb.dart' as $2;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -32,19 +32,26 @@ class Endpoint extends $pb.GeneratedMessage {
 
   Endpoint._();
 
-  factory Endpoint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Endpoint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Endpoint.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Endpoint.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Endpoint', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Endpoint',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'addr')
     ..aOS(2, _omitFieldNames ? '' : 'type')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Endpoint clone() => Endpoint()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Endpoint copyWith(void Function(Endpoint) updates) => super.copyWith((message) => updates(message as Endpoint)) as Endpoint;
+  Endpoint copyWith(void Function(Endpoint) updates) =>
+      super.copyWith((message) => updates(message as Endpoint)) as Endpoint;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -55,7 +62,8 @@ class Endpoint extends $pb.GeneratedMessage {
   Endpoint createEmptyInstance() => create();
   static $pb.PbList<Endpoint> createRepeated() => $pb.PbList<Endpoint>();
   @$core.pragma('dart2js:noInline')
-  static Endpoint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Endpoint>(create);
+  static Endpoint getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Endpoint>(create);
   static Endpoint? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -88,7 +96,8 @@ class HashiStatus extends $pb.GeneratedMessage {
     final result = create();
     if (backendState != null) result.backendState = backendState;
     if (runetaleIps != null) result.runetaleIps.addAll(runetaleIps);
-    if (interactiveLoginUrl != null) result.interactiveLoginUrl = interactiveLoginUrl;
+    if (interactiveLoginUrl != null)
+      result.interactiveLoginUrl = interactiveLoginUrl;
     if (self != null) result.self = self;
     if (peer != null) result.peer.addEntries(peer);
     return result;
@@ -96,22 +105,37 @@ class HashiStatus extends $pb.GeneratedMessage {
 
   HashiStatus._();
 
-  factory HashiStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory HashiStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory HashiStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory HashiStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HashiStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'HashiStatus',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'backendState')
     ..pPS(2, _omitFieldNames ? '' : 'runetaleIps')
     ..aOS(3, _omitFieldNames ? '' : 'interactiveLoginUrl')
-    ..aOM<PeerStatus>(4, _omitFieldNames ? '' : 'self', subBuilder: PeerStatus.create)
-    ..m<$core.String, PeerStatus>(5, _omitFieldNames ? '' : 'peer', entryClassName: 'HashiStatus.PeerEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: PeerStatus.create, valueDefaultOrMaker: PeerStatus.getDefault, packageName: const $pb.PackageName('protos'))
-    ..hasRequiredFields = false
-  ;
+    ..aOM<PeerStatus>(4, _omitFieldNames ? '' : 'self',
+        subBuilder: PeerStatus.create)
+    ..m<$core.String, PeerStatus>(5, _omitFieldNames ? '' : 'peer',
+        entryClassName: 'HashiStatus.PeerEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OM,
+        valueCreator: PeerStatus.create,
+        valueDefaultOrMaker: PeerStatus.getDefault,
+        packageName: const $pb.PackageName('protos'))
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HashiStatus clone() => HashiStatus()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HashiStatus copyWith(void Function(HashiStatus) updates) => super.copyWith((message) => updates(message as HashiStatus)) as HashiStatus;
+  HashiStatus copyWith(void Function(HashiStatus) updates) =>
+      super.copyWith((message) => updates(message as HashiStatus))
+          as HashiStatus;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -122,7 +146,8 @@ class HashiStatus extends $pb.GeneratedMessage {
   HashiStatus createEmptyInstance() => create();
   static $pb.PbList<HashiStatus> createRepeated() => $pb.PbList<HashiStatus>();
   @$core.pragma('dart2js:noInline')
-  static HashiStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HashiStatus>(create);
+  static HashiStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<HashiStatus>(create);
   static HashiStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -172,8 +197,8 @@ class PeerStatus extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? allowedIps,
     $fixnum.Int64? rxBytes,
     $fixnum.Int64? txBytes,
-    $9.Timestamp? lastHandshake,
-    $9.Timestamp? lastWrite,
+    $2.Timestamp? lastHandshake,
+    $2.Timestamp? lastWrite,
     $core.Iterable<$core.String>? addrs,
     $core.String? curAddr,
     $core.String? iceAddr,
@@ -202,10 +227,17 @@ class PeerStatus extends $pb.GeneratedMessage {
 
   PeerStatus._();
 
-  factory PeerStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PeerStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PeerStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PeerStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PeerStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PeerStatus',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'publicKey')
     ..aOS(3, _omitFieldNames ? '' : 'os')
@@ -215,20 +247,22 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..pPS(7, _omitFieldNames ? '' : 'allowedIps')
     ..aInt64(8, _omitFieldNames ? '' : 'rxBytes')
     ..aInt64(9, _omitFieldNames ? '' : 'txBytes')
-    ..aOM<$9.Timestamp>(10, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $9.Timestamp.create)
-    ..aOM<$9.Timestamp>(11, _omitFieldNames ? '' : 'lastWrite', subBuilder: $9.Timestamp.create)
+    ..aOM<$2.Timestamp>(10, _omitFieldNames ? '' : 'lastHandshake',
+        subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(11, _omitFieldNames ? '' : 'lastWrite',
+        subBuilder: $2.Timestamp.create)
     ..pPS(12, _omitFieldNames ? '' : 'addrs')
     ..aOS(13, _omitFieldNames ? '' : 'curAddr')
     ..aOS(14, _omitFieldNames ? '' : 'iceAddr')
     ..pPS(15, _omitFieldNames ? '' : 'advertiseRoutes')
     ..aOB(16, _omitFieldNames ? '' : 'isSnatSubnet')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PeerStatus clone() => PeerStatus()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PeerStatus copyWith(void Function(PeerStatus) updates) => super.copyWith((message) => updates(message as PeerStatus)) as PeerStatus;
+  PeerStatus copyWith(void Function(PeerStatus) updates) =>
+      super.copyWith((message) => updates(message as PeerStatus)) as PeerStatus;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -239,7 +273,8 @@ class PeerStatus extends $pb.GeneratedMessage {
   PeerStatus createEmptyInstance() => create();
   static $pb.PbList<PeerStatus> createRepeated() => $pb.PbList<PeerStatus>();
   @$core.pragma('dart2js:noInline')
-  static PeerStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PeerStatus>(create);
+  static PeerStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PeerStatus>(create);
   static PeerStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -306,26 +341,26 @@ class PeerStatus extends $pb.GeneratedMessage {
   void clearTxBytes() => $_clearField(9);
 
   @$pb.TagNumber(10)
-  $9.Timestamp get lastHandshake => $_getN(9);
+  $2.Timestamp get lastHandshake => $_getN(9);
   @$pb.TagNumber(10)
-  set lastHandshake($9.Timestamp value) => $_setField(10, value);
+  set lastHandshake($2.Timestamp value) => $_setField(10, value);
   @$pb.TagNumber(10)
   $core.bool hasLastHandshake() => $_has(9);
   @$pb.TagNumber(10)
   void clearLastHandshake() => $_clearField(10);
   @$pb.TagNumber(10)
-  $9.Timestamp ensureLastHandshake() => $_ensure(9);
+  $2.Timestamp ensureLastHandshake() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $9.Timestamp get lastWrite => $_getN(10);
+  $2.Timestamp get lastWrite => $_getN(10);
   @$pb.TagNumber(11)
-  set lastWrite($9.Timestamp value) => $_setField(11, value);
+  set lastWrite($2.Timestamp value) => $_setField(11, value);
   @$pb.TagNumber(11)
   $core.bool hasLastWrite() => $_has(10);
   @$pb.TagNumber(11)
   void clearLastWrite() => $_clearField(11);
   @$pb.TagNumber(11)
-  $9.Timestamp ensureLastWrite() => $_ensure(10);
+  $2.Timestamp ensureLastWrite() => $_ensure(10);
 
   @$pb.TagNumber(12)
   $pb.PbList<$core.String> get addrs => $_getList(11);
@@ -364,7 +399,7 @@ class PeerStatus extends $pb.GeneratedMessage {
 
 class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   factory UserspacePeerEngineStatus({
-    $9.Timestamp? gotAt,
+    $2.Timestamp? gotAt,
     $core.Iterable<CompactPeerStatus>? peers,
     $core.Iterable<Endpoint>? localAddrs,
   }) {
@@ -377,20 +412,34 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
 
   UserspacePeerEngineStatus._();
 
-  factory UserspacePeerEngineStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UserspacePeerEngineStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UserspacePeerEngineStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UserspacePeerEngineStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserspacePeerEngineStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOM<$9.Timestamp>(1, _omitFieldNames ? '' : 'gotAt', subBuilder: $9.Timestamp.create)
-    ..pc<CompactPeerStatus>(2, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM, subBuilder: CompactPeerStatus.create)
-    ..pc<Endpoint>(3, _omitFieldNames ? '' : 'localAddrs', $pb.PbFieldType.PM, subBuilder: Endpoint.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UserspacePeerEngineStatus',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'gotAt',
+        subBuilder: $2.Timestamp.create)
+    ..pc<CompactPeerStatus>(
+        2, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM,
+        subBuilder: CompactPeerStatus.create)
+    ..pc<Endpoint>(3, _omitFieldNames ? '' : 'localAddrs', $pb.PbFieldType.PM,
+        subBuilder: Endpoint.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UserspacePeerEngineStatus clone() => UserspacePeerEngineStatus()..mergeFromMessage(this);
+  UserspacePeerEngineStatus clone() =>
+      UserspacePeerEngineStatus()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UserspacePeerEngineStatus copyWith(void Function(UserspacePeerEngineStatus) updates) => super.copyWith((message) => updates(message as UserspacePeerEngineStatus)) as UserspacePeerEngineStatus;
+  UserspacePeerEngineStatus copyWith(
+          void Function(UserspacePeerEngineStatus) updates) =>
+      super.copyWith((message) => updates(message as UserspacePeerEngineStatus))
+          as UserspacePeerEngineStatus;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -399,21 +448,23 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   static UserspacePeerEngineStatus create() => UserspacePeerEngineStatus._();
   @$core.override
   UserspacePeerEngineStatus createEmptyInstance() => create();
-  static $pb.PbList<UserspacePeerEngineStatus> createRepeated() => $pb.PbList<UserspacePeerEngineStatus>();
+  static $pb.PbList<UserspacePeerEngineStatus> createRepeated() =>
+      $pb.PbList<UserspacePeerEngineStatus>();
   @$core.pragma('dart2js:noInline')
-  static UserspacePeerEngineStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserspacePeerEngineStatus>(create);
+  static UserspacePeerEngineStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UserspacePeerEngineStatus>(create);
   static UserspacePeerEngineStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $9.Timestamp get gotAt => $_getN(0);
+  $2.Timestamp get gotAt => $_getN(0);
   @$pb.TagNumber(1)
-  set gotAt($9.Timestamp value) => $_setField(1, value);
+  set gotAt($2.Timestamp value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasGotAt() => $_has(0);
   @$pb.TagNumber(1)
   void clearGotAt() => $_clearField(1);
   @$pb.TagNumber(1)
-  $9.Timestamp ensureGotAt() => $_ensure(0);
+  $2.Timestamp ensureGotAt() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $pb.PbList<CompactPeerStatus> get peers => $_getList(1);
@@ -427,7 +478,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
     $core.String? nodeKey,
     $fixnum.Int64? txBytes,
     $fixnum.Int64? rxBytes,
-    $9.Timestamp? lastHandshake,
+    $2.Timestamp? lastHandshake,
   }) {
     final result = create();
     if (nodeKey != null) result.nodeKey = nodeKey;
@@ -439,21 +490,30 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
 
   CompactPeerStatus._();
 
-  factory CompactPeerStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory CompactPeerStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory CompactPeerStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CompactPeerStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CompactPeerStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CompactPeerStatus',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'nodeKey')
     ..aInt64(2, _omitFieldNames ? '' : 'txBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'rxBytes')
-    ..aOM<$9.Timestamp>(4, _omitFieldNames ? '' : 'lastHandshake', subBuilder: $9.Timestamp.create)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'lastHandshake',
+        subBuilder: $2.Timestamp.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CompactPeerStatus clone() => CompactPeerStatus()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CompactPeerStatus copyWith(void Function(CompactPeerStatus) updates) => super.copyWith((message) => updates(message as CompactPeerStatus)) as CompactPeerStatus;
+  CompactPeerStatus copyWith(void Function(CompactPeerStatus) updates) =>
+      super.copyWith((message) => updates(message as CompactPeerStatus))
+          as CompactPeerStatus;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -462,9 +522,11 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   static CompactPeerStatus create() => CompactPeerStatus._();
   @$core.override
   CompactPeerStatus createEmptyInstance() => create();
-  static $pb.PbList<CompactPeerStatus> createRepeated() => $pb.PbList<CompactPeerStatus>();
+  static $pb.PbList<CompactPeerStatus> createRepeated() =>
+      $pb.PbList<CompactPeerStatus>();
   @$core.pragma('dart2js:noInline')
-  static CompactPeerStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompactPeerStatus>(create);
+  static CompactPeerStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CompactPeerStatus>(create);
   static CompactPeerStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -495,15 +557,15 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   void clearRxBytes() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $9.Timestamp get lastHandshake => $_getN(3);
+  $2.Timestamp get lastHandshake => $_getN(3);
   @$pb.TagNumber(4)
-  set lastHandshake($9.Timestamp value) => $_setField(4, value);
+  set lastHandshake($2.Timestamp value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasLastHandshake() => $_has(3);
   @$pb.TagNumber(4)
   void clearLastHandshake() => $_clearField(4);
   @$pb.TagNumber(4)
-  $9.Timestamp ensureLastHandshake() => $_ensure(3);
+  $2.Timestamp ensureLastHandshake() => $_ensure(3);
 }
 
 /// Hashigo struct like, hashigo(梯子) is a bridge in Japanese.
@@ -547,10 +609,17 @@ class Hashigo extends $pb.GeneratedMessage {
 
   Hashigo._();
 
-  factory Hashigo.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Hashigo.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Hashigo.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Hashigo.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Hashigo', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Hashigo',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'serverUrl')
     ..aOS(2, _omitFieldNames ? '' : 'signalUrl')
     ..aOB(3, _omitFieldNames ? '' : 'barricade')
@@ -559,13 +628,13 @@ class Hashigo extends $pb.GeneratedMessage {
     ..aOB(6, _omitFieldNames ? '' : 'snatSubnetRoutes')
     ..aOB(7, _omitFieldNames ? '' : 'statefulFilter')
     ..aOB(8, _omitFieldNames ? '' : 'appLinker')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Hashigo clone() => Hashigo()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Hashigo copyWith(void Function(Hashigo) updates) => super.copyWith((message) => updates(message as Hashigo)) as Hashigo;
+  Hashigo copyWith(void Function(Hashigo) updates) =>
+      super.copyWith((message) => updates(message as Hashigo)) as Hashigo;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -576,7 +645,8 @@ class Hashigo extends $pb.GeneratedMessage {
   Hashigo createEmptyInstance() => create();
   static $pb.PbList<Hashigo> createRepeated() => $pb.PbList<Hashigo>();
   @$core.pragma('dart2js:noInline')
-  static Hashigo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Hashigo>(create);
+  static Hashigo getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Hashigo>(create);
   static Hashigo? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -682,26 +752,34 @@ class PingResult extends $pb.GeneratedMessage {
 
   PingResult._();
 
-  factory PingResult.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PingResult.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PingResult.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PingResult.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PingResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PingResult',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'nodeIp')
     ..aOS(3, _omitFieldNames ? '' : 'nodeName')
     ..aOS(4, _omitFieldNames ? '' : 'err')
-    ..a<$core.double>(5, _omitFieldNames ? '' : 'latencySeconds', $pb.PbFieldType.OD)
+    ..a<$core.double>(
+        5, _omitFieldNames ? '' : 'latencySeconds', $pb.PbFieldType.OD)
     ..aOS(6, _omitFieldNames ? '' : 'endpoint')
     ..a<$core.int>(7, _omitFieldNames ? '' : 'peerApiPort', $pb.PbFieldType.OU3)
     ..aOS(8, _omitFieldNames ? '' : 'peerApiUrl')
     ..aOB(9, _omitFieldNames ? '' : 'isLocalIp')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PingResult clone() => PingResult()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PingResult copyWith(void Function(PingResult) updates) => super.copyWith((message) => updates(message as PingResult)) as PingResult;
+  PingResult copyWith(void Function(PingResult) updates) =>
+      super.copyWith((message) => updates(message as PingResult)) as PingResult;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -712,7 +790,8 @@ class PingResult extends $pb.GeneratedMessage {
   PingResult createEmptyInstance() => create();
   static $pb.PbList<PingResult> createRepeated() => $pb.PbList<PingResult>();
   @$core.pragma('dart2js:noInline')
-  static PingResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PingResult>(create);
+  static PingResult getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PingResult>(create);
   static PingResult? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -808,18 +887,26 @@ class ComposeRequest extends $pb.GeneratedMessage {
 
   ComposeRequest._();
 
-  factory ComposeRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ComposeRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ComposeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ComposeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ComposeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ComposeRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'key')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ComposeRequest clone() => ComposeRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ComposeRequest copyWith(void Function(ComposeRequest) updates) => super.copyWith((message) => updates(message as ComposeRequest)) as ComposeRequest;
+  ComposeRequest copyWith(void Function(ComposeRequest) updates) =>
+      super.copyWith((message) => updates(message as ComposeRequest))
+          as ComposeRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -828,9 +915,11 @@ class ComposeRequest extends $pb.GeneratedMessage {
   static ComposeRequest create() => ComposeRequest._();
   @$core.override
   ComposeRequest createEmptyInstance() => create();
-  static $pb.PbList<ComposeRequest> createRepeated() => $pb.PbList<ComposeRequest>();
+  static $pb.PbList<ComposeRequest> createRepeated() =>
+      $pb.PbList<ComposeRequest>();
   @$core.pragma('dart2js:noInline')
-  static ComposeRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComposeRequest>(create);
+  static ComposeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ComposeRequest>(create);
   static ComposeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -858,20 +947,28 @@ class PingRequest extends $pb.GeneratedMessage {
 
   PingRequest._();
 
-  factory PingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PingRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PingRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PingRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..a<$core.int>(3, _omitFieldNames ? '' : 'size', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PingRequest clone() => PingRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PingRequest copyWith(void Function(PingRequest) updates) => super.copyWith((message) => updates(message as PingRequest)) as PingRequest;
+  PingRequest copyWith(void Function(PingRequest) updates) =>
+      super.copyWith((message) => updates(message as PingRequest))
+          as PingRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -882,7 +979,8 @@ class PingRequest extends $pb.GeneratedMessage {
   PingRequest createEmptyInstance() => create();
   static $pb.PbList<PingRequest> createRepeated() => $pb.PbList<PingRequest>();
   @$core.pragma('dart2js:noInline')
-  static PingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PingRequest>(create);
+  static PingRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PingRequest>(create);
   static PingRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -924,18 +1022,26 @@ class StopRequest extends $pb.GeneratedMessage {
 
   StopRequest._();
 
-  factory StopRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory StopRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory StopRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StopRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StopRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StopRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'reason')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StopRequest clone() => StopRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StopRequest copyWith(void Function(StopRequest) updates) => super.copyWith((message) => updates(message as StopRequest)) as StopRequest;
+  StopRequest copyWith(void Function(StopRequest) updates) =>
+      super.copyWith((message) => updates(message as StopRequest))
+          as StopRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -946,7 +1052,8 @@ class StopRequest extends $pb.GeneratedMessage {
   StopRequest createEmptyInstance() => create();
   static $pb.PbList<StopRequest> createRepeated() => $pb.PbList<StopRequest>();
   @$core.pragma('dart2js:noInline')
-  static StopRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
+  static StopRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
   static StopRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -972,7 +1079,8 @@ class HashigoConfigRequest extends $pb.GeneratedMessage {
     if (hashigo != null) result.hashigo = hashigo;
     if (barricadeSet != null) result.barricadeSet = barricadeSet;
     if (acceptRoutesSet != null) result.acceptRoutesSet = acceptRoutesSet;
-    if (snatSubnetRoutesSet != null) result.snatSubnetRoutesSet = snatSubnetRoutesSet;
+    if (snatSubnetRoutesSet != null)
+      result.snatSubnetRoutesSet = snatSubnetRoutesSet;
     if (statefulFilterSet != null) result.statefulFilterSet = statefulFilterSet;
     if (appLinkerSet != null) result.appLinkerSet = appLinkerSet;
     return result;
@@ -980,23 +1088,33 @@ class HashigoConfigRequest extends $pb.GeneratedMessage {
 
   HashigoConfigRequest._();
 
-  factory HashigoConfigRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory HashigoConfigRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory HashigoConfigRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory HashigoConfigRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HashigoConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
-    ..aOM<Hashigo>(1, _omitFieldNames ? '' : 'hashigo', subBuilder: Hashigo.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'HashigoConfigRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOM<Hashigo>(1, _omitFieldNames ? '' : 'hashigo',
+        subBuilder: Hashigo.create)
     ..aOB(2, _omitFieldNames ? '' : 'barricadeSet')
     ..aOB(3, _omitFieldNames ? '' : 'acceptRoutesSet')
     ..aOB(4, _omitFieldNames ? '' : 'snatSubnetRoutesSet')
     ..aOB(5, _omitFieldNames ? '' : 'statefulFilterSet')
     ..aOB(6, _omitFieldNames ? '' : 'appLinkerSet')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HashigoConfigRequest clone() => HashigoConfigRequest()..mergeFromMessage(this);
+  HashigoConfigRequest clone() =>
+      HashigoConfigRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HashigoConfigRequest copyWith(void Function(HashigoConfigRequest) updates) => super.copyWith((message) => updates(message as HashigoConfigRequest)) as HashigoConfigRequest;
+  HashigoConfigRequest copyWith(void Function(HashigoConfigRequest) updates) =>
+      super.copyWith((message) => updates(message as HashigoConfigRequest))
+          as HashigoConfigRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1005,9 +1123,11 @@ class HashigoConfigRequest extends $pb.GeneratedMessage {
   static HashigoConfigRequest create() => HashigoConfigRequest._();
   @$core.override
   HashigoConfigRequest createEmptyInstance() => create();
-  static $pb.PbList<HashigoConfigRequest> createRepeated() => $pb.PbList<HashigoConfigRequest>();
+  static $pb.PbList<HashigoConfigRequest> createRepeated() =>
+      $pb.PbList<HashigoConfigRequest>();
   @$core.pragma('dart2js:noInline')
-  static HashigoConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HashigoConfigRequest>(create);
+  static HashigoConfigRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<HashigoConfigRequest>(create);
   static HashigoConfigRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1067,6 +1187,7 @@ class HashigoConfigRequest extends $pb.GeneratedMessage {
   void clearAppLinkerSet() => $_clearField(6);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

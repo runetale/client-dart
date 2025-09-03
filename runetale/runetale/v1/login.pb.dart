@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: runetale/runetale/v1/login.proto
-//
+// Generated from runetale/runetale/v1/login.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -38,23 +38,33 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
 
   LoginNodeResponse._();
 
-  factory LoginNodeResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LoginNodeResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LoginNodeResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LoginNodeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginNodeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LoginNodeResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..aOS(2, _omitFieldNames ? '' : 'loginUrl', protoName: 'loginUrl')
     ..pPS(3, _omitFieldNames ? '' : 'ip')
     ..aOS(4, _omitFieldNames ? '' : 'cidr')
     ..aOS(5, _omitFieldNames ? '' : 'signalHost', protoName: 'signalHost')
-    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'signalPort', $pb.PbFieldType.OU6, protoName: 'signalPort', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..hasRequiredFields = false
-  ;
+    ..a<$fixnum.Int64>(
+        6, _omitFieldNames ? '' : 'signalPort', $pb.PbFieldType.OU6,
+        protoName: 'signalPort', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginNodeResponse clone() => LoginNodeResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginNodeResponse copyWith(void Function(LoginNodeResponse) updates) => super.copyWith((message) => updates(message as LoginNodeResponse)) as LoginNodeResponse;
+  LoginNodeResponse copyWith(void Function(LoginNodeResponse) updates) =>
+      super.copyWith((message) => updates(message as LoginNodeResponse))
+          as LoginNodeResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -63,9 +73,11 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   static LoginNodeResponse create() => LoginNodeResponse._();
   @$core.override
   LoginNodeResponse createEmptyInstance() => create();
-  static $pb.PbList<LoginNodeResponse> createRepeated() => $pb.PbList<LoginNodeResponse>();
+  static $pb.PbList<LoginNodeResponse> createRepeated() =>
+      $pb.PbList<LoginNodeResponse>();
   @$core.pragma('dart2js:noInline')
-  static LoginNodeResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginNodeResponse>(create);
+  static LoginNodeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LoginNodeResponse>(create);
   static LoginNodeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -138,23 +150,35 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
 
   LoginSessionResponse._();
 
-  factory LoginSessionResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory LoginSessionResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory LoginSessionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LoginSessionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'LoginSessionResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LoginSessionResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'cidr')
     ..aOS(3, _omitFieldNames ? '' : 'host')
     ..aOS(4, _omitFieldNames ? '' : 'os')
-    ..aOS(5, _omitFieldNames ? '' : 'signalServerHost', protoName: 'signalServerHost')
-    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'signalServerPort', $pb.PbFieldType.OU6, protoName: 'signalServerPort', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..hasRequiredFields = false
-  ;
+    ..aOS(5, _omitFieldNames ? '' : 'signalServerHost',
+        protoName: 'signalServerHost')
+    ..a<$fixnum.Int64>(
+        6, _omitFieldNames ? '' : 'signalServerPort', $pb.PbFieldType.OU6,
+        protoName: 'signalServerPort', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginSessionResponse clone() => LoginSessionResponse()..mergeFromMessage(this);
+  LoginSessionResponse clone() =>
+      LoginSessionResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginSessionResponse copyWith(void Function(LoginSessionResponse) updates) => super.copyWith((message) => updates(message as LoginSessionResponse)) as LoginSessionResponse;
+  LoginSessionResponse copyWith(void Function(LoginSessionResponse) updates) =>
+      super.copyWith((message) => updates(message as LoginSessionResponse))
+          as LoginSessionResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -163,9 +187,11 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   static LoginSessionResponse create() => LoginSessionResponse._();
   @$core.override
   LoginSessionResponse createEmptyInstance() => create();
-  static $pb.PbList<LoginSessionResponse> createRepeated() => $pb.PbList<LoginSessionResponse>();
+  static $pb.PbList<LoginSessionResponse> createRepeated() =>
+      $pb.PbList<LoginSessionResponse>();
   @$core.pragma('dart2js:noInline')
-  static LoginSessionResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginSessionResponse>(create);
+  static LoginSessionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LoginSessionResponse>(create);
   static LoginSessionResponse? _defaultInstance;
 
   /// host ip
@@ -232,18 +258,27 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
 
   GetInvitationRequest._();
 
-  factory GetInvitationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetInvitationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetInvitationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetInvitationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInvitationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetInvitationRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetInvitationRequest clone() => GetInvitationRequest()..mergeFromMessage(this);
+  GetInvitationRequest clone() =>
+      GetInvitationRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetInvitationRequest copyWith(void Function(GetInvitationRequest) updates) => super.copyWith((message) => updates(message as GetInvitationRequest)) as GetInvitationRequest;
+  GetInvitationRequest copyWith(void Function(GetInvitationRequest) updates) =>
+      super.copyWith((message) => updates(message as GetInvitationRequest))
+          as GetInvitationRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -252,9 +287,11 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   static GetInvitationRequest create() => GetInvitationRequest._();
   @$core.override
   GetInvitationRequest createEmptyInstance() => create();
-  static $pb.PbList<GetInvitationRequest> createRepeated() => $pb.PbList<GetInvitationRequest>();
+  static $pb.PbList<GetInvitationRequest> createRepeated() =>
+      $pb.PbList<GetInvitationRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetInvitationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetInvitationRequest>(create);
+  static GetInvitationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetInvitationRequest>(create);
   static GetInvitationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -280,19 +317,29 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
 
   GetInvitationResponse._();
 
-  factory GetInvitationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetInvitationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetInvitationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetInvitationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetInvitationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetInvitationResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'email')
     ..aOS(2, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetInvitationResponse clone() => GetInvitationResponse()..mergeFromMessage(this);
+  GetInvitationResponse clone() =>
+      GetInvitationResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetInvitationResponse copyWith(void Function(GetInvitationResponse) updates) => super.copyWith((message) => updates(message as GetInvitationResponse)) as GetInvitationResponse;
+  GetInvitationResponse copyWith(
+          void Function(GetInvitationResponse) updates) =>
+      super.copyWith((message) => updates(message as GetInvitationResponse))
+          as GetInvitationResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -301,9 +348,11 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   static GetInvitationResponse create() => GetInvitationResponse._();
   @$core.override
   GetInvitationResponse createEmptyInstance() => create();
-  static $pb.PbList<GetInvitationResponse> createRepeated() => $pb.PbList<GetInvitationResponse>();
+  static $pb.PbList<GetInvitationResponse> createRepeated() =>
+      $pb.PbList<GetInvitationResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetInvitationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetInvitationResponse>(create);
+  static GetInvitationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetInvitationResponse>(create);
   static GetInvitationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -325,6 +374,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   void clearInviteCode() => $_clearField(2);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');
