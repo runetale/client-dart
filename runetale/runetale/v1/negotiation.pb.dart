@@ -265,6 +265,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
     $core.String? wgPubKey,
     $core.String? uFlag,
     $core.String? pwd,
+    $core.List<$core.int>? sessionID,
   }) {
     final result = create();
     if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
@@ -272,6 +273,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
     if (wgPubKey != null) result.wgPubKey = wgPubKey;
     if (uFlag != null) result.uFlag = uFlag;
     if (pwd != null) result.pwd = pwd;
+    if (sessionID != null) result.sessionID = sessionID;
     return result;
   }
 
@@ -293,6 +295,9 @@ class HandshakeRequest extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(5, _omitFieldNames ? '' : 'pwd')
+    ..a<$core.List<$core.int>>(
+        6, _omitFieldNames ? '' : 'sessionID', $pb.PbFieldType.OY,
+        protoName: 'sessionID')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -360,6 +365,15 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   $core.bool hasPwd() => $_has(4);
   @$pb.TagNumber(5)
   void clearPwd() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.int> get sessionID => $_getN(5);
+  @$pb.TagNumber(6)
+  set sessionID($core.List<$core.int> value) => $_setBytes(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSessionID() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSessionID() => $_clearField(6);
 }
 
 class CandidateRequest extends $pb.GeneratedMessage {
