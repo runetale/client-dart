@@ -47,6 +47,7 @@ const NegotiationRequest$json = {
     {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
     {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
     {'1': 'candidate', '3': 6, '4': 1, '5': 9, '10': 'candidate'},
+    {'1': 'sessionID', '3': 7, '4': 1, '5': 12, '10': 'sessionID'},
   ],
 };
 
@@ -55,7 +56,8 @@ final $typed_data.Uint8List negotiationRequestDescriptor = $convert.base64Decode
     'ChJOZWdvdGlhdGlvblJlcXVlc3QSKwoEdHlwZRgBIAEoDjIXLnByb3Rvcy5OZWdvdGlhdGlvbl'
     'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIgCgtkc3RXZ1B1Yktl'
     'eRgDIAEoCVILZHN0V2dQdWJLZXkSFAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCV'
-    'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRl');
+    'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRlEhwKCXNlc3Npb25JRBgHIAEoDFIJ'
+    'c2Vzc2lvbklE');
 
 @$core.Deprecated('Use negotiationResponseDescriptor instead')
 const NegotiationResponse$json = {
@@ -74,6 +76,7 @@ const NegotiationResponse$json = {
     {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
     {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
     {'1': 'candidate', '3': 6, '4': 1, '5': 9, '10': 'candidate'},
+    {'1': 'sessionID', '3': 7, '4': 1, '5': 12, '10': 'sessionID'},
   ],
 };
 
@@ -82,7 +85,8 @@ final $typed_data.Uint8List negotiationResponseDescriptor = $convert.base64Decod
     'ChNOZWdvdGlhdGlvblJlc3BvbnNlEisKBHR5cGUYASABKA4yFy5wcm90b3MuTmVnb3RpYXRpb2'
     '5UeXBlUgR0eXBlEh4KCmRzdE5vZGVLZXkYAiABKAlSCmRzdE5vZGVLZXkSIAoLZHN0V2dQdWJL'
     'ZXkYAyABKAlSC2RzdFdnUHViS2V5EhQKBXVGbGFnGAQgASgJUgV1RmxhZxIQCgNwd2QYBSABKA'
-    'lSA3B3ZBIcCgljYW5kaWRhdGUYBiABKAlSCWNhbmRpZGF0ZQ==');
+    'lSA3B3ZBIcCgljYW5kaWRhdGUYBiABKAlSCWNhbmRpZGF0ZRIcCglzZXNzaW9uSUQYByABKAxS'
+    'CXNlc3Npb25JRA==');
 
 @$core.Deprecated('Use handshakeRequestDescriptor instead')
 const HandshakeRequest$json = {

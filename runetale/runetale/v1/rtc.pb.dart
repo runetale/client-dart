@@ -48,7 +48,7 @@ class StunHost extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StunHost clone() => StunHost()..mergeFromMessage(this);
+  StunHost clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StunHost copyWith(void Function(StunHost) updates) =>
       super.copyWith((message) => updates(message as StunHost)) as StunHost;
@@ -126,7 +126,7 @@ class TurnHost extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TurnHost clone() => TurnHost()..mergeFromMessage(this);
+  TurnHost clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   TurnHost copyWith(void Function(TurnHost) updates) =>
       super.copyWith((message) => updates(message as TurnHost)) as TurnHost;
@@ -203,7 +203,7 @@ class RtcConfig extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RtcConfig clone() => RtcConfig()..mergeFromMessage(this);
+  RtcConfig clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RtcConfig copyWith(void Function(RtcConfig) updates) =>
       super.copyWith((message) => updates(message as RtcConfig)) as RtcConfig;
@@ -271,8 +271,7 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStunTurnConfigResponse clone() =>
-      GetStunTurnConfigResponse()..mergeFromMessage(this);
+  GetStunTurnConfigResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetStunTurnConfigResponse copyWith(
           void Function(GetStunTurnConfigResponse) updates) =>

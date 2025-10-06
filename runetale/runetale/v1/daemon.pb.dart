@@ -42,8 +42,7 @@ class GetConnectionStatusResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetConnectionStatusResponse clone() =>
-      GetConnectionStatusResponse()..mergeFromMessage(this);
+  GetConnectionStatusResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetConnectionStatusResponse copyWith(
           void Function(GetConnectionStatusResponse) updates) =>

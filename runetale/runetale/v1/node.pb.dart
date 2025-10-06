@@ -59,23 +59,18 @@ class PacketFlowLogRequest extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'loggedAt', protoName: 'loggedAt')
     ..aOS(3, _omitFieldNames ? '' : 'startedAt', protoName: 'startedAt')
     ..aOS(4, _omitFieldNames ? '' : 'endedAt', protoName: 'endedAt')
-    ..pc<PacketFlowLog>(
-        5, _omitFieldNames ? '' : 'peerTraffic', $pb.PbFieldType.PM,
+    ..pPM<PacketFlowLog>(5, _omitFieldNames ? '' : 'peerTraffic',
         protoName: 'peerTraffic', subBuilder: PacketFlowLog.create)
-    ..pc<PacketFlowLog>(
-        6, _omitFieldNames ? '' : 'lanTraffic', $pb.PbFieldType.PM,
+    ..pPM<PacketFlowLog>(6, _omitFieldNames ? '' : 'lanTraffic',
         protoName: 'lanTraffic', subBuilder: PacketFlowLog.create)
-    ..pc<PacketFlowLog>(
-        7, _omitFieldNames ? '' : 'exitNodeTraffic', $pb.PbFieldType.PM,
+    ..pPM<PacketFlowLog>(7, _omitFieldNames ? '' : 'exitNodeTraffic',
         protoName: 'exitNodeTraffic', subBuilder: PacketFlowLog.create)
-    ..pc<PacketFlowLog>(
-        8, _omitFieldNames ? '' : 'transportTraffic', $pb.PbFieldType.PM,
+    ..pPM<PacketFlowLog>(8, _omitFieldNames ? '' : 'transportTraffic',
         protoName: 'transportTraffic', subBuilder: PacketFlowLog.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PacketFlowLogRequest clone() =>
-      PacketFlowLogRequest()..mergeFromMessage(this);
+  PacketFlowLogRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PacketFlowLogRequest copyWith(void Function(PacketFlowLogRequest) updates) =>
       super.copyWith((message) => updates(message as PacketFlowLogRequest))
@@ -185,8 +180,8 @@ class PacketFlowLog extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'PacketFlowLog',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'Proto', $pb.PbFieldType.OU3,
-        protoName: 'Proto')
+    ..aI(1, _omitFieldNames ? '' : 'Proto',
+        protoName: 'Proto', fieldType: $pb.PbFieldType.OU3)
     ..aOS(2, _omitFieldNames ? '' : 'Src', protoName: 'Src')
     ..aOS(3, _omitFieldNames ? '' : 'Dst', protoName: 'Dst')
     ..a<$fixnum.Int64>(
@@ -202,7 +197,7 @@ class PacketFlowLog extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PacketFlowLog clone() => PacketFlowLog()..mergeFromMessage(this);
+  PacketFlowLog clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PacketFlowLog copyWith(void Function(PacketFlowLog) updates) =>
       super.copyWith((message) => updates(message as PacketFlowLog))
@@ -328,7 +323,7 @@ class Node extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Node clone() => Node()..mergeFromMessage(this);
+  Node clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Node copyWith(void Function(Node) updates) =>
       super.copyWith((message) => updates(message as Node)) as Node;
@@ -419,7 +414,7 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ComposeNodeResponse clone() => ComposeNodeResponse()..mergeFromMessage(this);
+  ComposeNodeResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ComposeNodeResponse copyWith(void Function(ComposeNodeResponse) updates) =>
       super.copyWith((message) => updates(message as ComposeNodeResponse))
@@ -489,8 +484,7 @@ class NetPortRange_portRange extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NetPortRange_portRange clone() =>
-      NetPortRange_portRange()..mergeFromMessage(this);
+  NetPortRange_portRange clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NetPortRange_portRange copyWith(
           void Function(NetPortRange_portRange) updates) =>
@@ -564,7 +558,7 @@ class NetPortRange extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NetPortRange clone() => NetPortRange()..mergeFromMessage(this);
+  NetPortRange clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NetPortRange copyWith(void Function(NetPortRange) updates) =>
       super.copyWith((message) => updates(message as NetPortRange))
@@ -654,14 +648,14 @@ class FilterRule extends $pb.GeneratedMessage {
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..pPS(1, _omitFieldNames ? '' : 'srcIps', protoName: 'srcIps')
-    ..pc<NetPortRange>(2, _omitFieldNames ? '' : 'dsts', $pb.PbFieldType.PM,
+    ..pPM<NetPortRange>(2, _omitFieldNames ? '' : 'dsts',
         subBuilder: NetPortRange.create)
     ..p<$core.int>(3, _omitFieldNames ? '' : 'iPProto', $pb.PbFieldType.KU3,
         protoName: 'iPProto')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FilterRule clone() => FilterRule()..mergeFromMessage(this);
+  FilterRule clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FilterRule copyWith(void Function(FilterRule) updates) =>
       super.copyWith((message) => updates(message as FilterRule)) as FilterRule;
@@ -744,29 +738,27 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'seq', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOM<Node>(2, _omitFieldNames ? '' : 'node', subBuilder: Node.create)
-    ..pc<Node>(3, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM,
-        subBuilder: Node.create)
-    ..pc<Node>(4, _omitFieldNames ? '' : 'peersChanged', $pb.PbFieldType.PM,
+    ..pPM<Node>(3, _omitFieldNames ? '' : 'peers', subBuilder: Node.create)
+    ..pPM<Node>(4, _omitFieldNames ? '' : 'peersChanged',
         protoName: 'peersChanged', subBuilder: Node.create)
     ..p<$fixnum.Int64>(
         5, _omitFieldNames ? '' : 'peersRemoved', $pb.PbFieldType.KU6,
         protoName: 'peersRemoved')
-    ..pc<FilterRule>(
-        6, _omitFieldNames ? '' : 'packetFilter', $pb.PbFieldType.PM,
+    ..pPM<FilterRule>(6, _omitFieldNames ? '' : 'packetFilter',
         protoName: 'packetFilter', subBuilder: FilterRule.create)
     ..aOS(7, _omitFieldNames ? '' : 'advertisedRoute',
         protoName: 'advertisedRoute')
     ..aOB(8, _omitFieldNames ? '' : 'jailed')
-    ..pc<Node>(9, _omitFieldNames ? '' : 'iceTable', $pb.PbFieldType.PM,
+    ..pPM<Node>(9, _omitFieldNames ? '' : 'iceTable',
         protoName: 'iceTable', subBuilder: Node.create)
     ..aOM<DNSConfig>(10, _omitFieldNames ? '' : 'dns',
         subBuilder: DNSConfig.create)
-    ..pc<AppLinker>(11, _omitFieldNames ? '' : 'appLinker', $pb.PbFieldType.PM,
+    ..pPM<AppLinker>(11, _omitFieldNames ? '' : 'appLinker',
         protoName: 'appLinker', subBuilder: AppLinker.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NetworkMapResponse clone() => NetworkMapResponse()..mergeFromMessage(this);
+  NetworkMapResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NetworkMapResponse copyWith(void Function(NetworkMapResponse) updates) =>
       super.copyWith((message) => updates(message as NetworkMapResponse))
@@ -897,7 +889,7 @@ class AppLinker extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AppLinker clone() => AppLinker()..mergeFromMessage(this);
+  AppLinker clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AppLinker copyWith(void Function(AppLinker) updates) =>
       super.copyWith((message) => updates(message as AppLinker)) as AppLinker;
@@ -964,7 +956,7 @@ class Resolver extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Resolver clone() => Resolver()..mergeFromMessage(this);
+  Resolver clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Resolver copyWith(void Function(Resolver) updates) =>
       super.copyWith((message) => updates(message as Resolver)) as Resolver;
@@ -1014,12 +1006,12 @@ class Resolvers extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'Resolvers',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..pc<Resolver>(1, _omitFieldNames ? '' : 'resolvers', $pb.PbFieldType.PM,
+    ..pPM<Resolver>(1, _omitFieldNames ? '' : 'resolvers',
         subBuilder: Resolver.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Resolvers clone() => Resolvers()..mergeFromMessage(this);
+  Resolvers clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Resolvers copyWith(void Function(Resolvers) updates) =>
       super.copyWith((message) => updates(message as Resolvers)) as Resolvers;
@@ -1071,7 +1063,7 @@ class DNSConfig extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'DNSConfig',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..pc<Resolver>(1, _omitFieldNames ? '' : 'resolvers', $pb.PbFieldType.PM,
+    ..pPM<Resolver>(1, _omitFieldNames ? '' : 'resolvers',
         subBuilder: Resolver.create)
     ..m<$core.String, Resolvers>(2, _omitFieldNames ? '' : 'routes',
         entryClassName: 'DNSConfig.RoutesEntry',
@@ -1088,7 +1080,7 @@ class DNSConfig extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DNSConfig clone() => DNSConfig()..mergeFromMessage(this);
+  DNSConfig clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DNSConfig copyWith(void Function(DNSConfig) updates) =>
       super.copyWith((message) => updates(message as DNSConfig)) as DNSConfig;

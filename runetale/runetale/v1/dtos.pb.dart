@@ -47,11 +47,11 @@ class Timestamp extends $pb.GeneratedMessage {
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'seconds')
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'nanos', $pb.PbFieldType.O3)
+    ..aI(2, _omitFieldNames ? '' : 'nanos')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Timestamp clone() => Timestamp()..mergeFromMessage(this);
+  Timestamp clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Timestamp copyWith(void Function(Timestamp) updates) =>
       super.copyWith((message) => updates(message as Timestamp)) as Timestamp;
@@ -114,7 +114,7 @@ class LogoutResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LogoutResponse clone() => LogoutResponse()..mergeFromMessage(this);
+  LogoutResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LogoutResponse copyWith(void Function(LogoutResponse) updates) =>
       super.copyWith((message) => updates(message as LogoutResponse))
@@ -170,7 +170,7 @@ class OkResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  OkResponse clone() => OkResponse()..mergeFromMessage(this);
+  OkResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   OkResponse copyWith(void Function(OkResponse) updates) =>
       super.copyWith((message) => updates(message as OkResponse)) as OkResponse;
@@ -224,8 +224,7 @@ class VerifyLoginSessionRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  VerifyLoginSessionRequest clone() =>
-      VerifyLoginSessionRequest()..mergeFromMessage(this);
+  VerifyLoginSessionRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   VerifyLoginSessionRequest copyWith(
           void Function(VerifyLoginSessionRequest) updates) =>
@@ -282,8 +281,7 @@ class VerifyLoginSessionResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  VerifyLoginSessionResponse clone() =>
-      VerifyLoginSessionResponse()..mergeFromMessage(this);
+  VerifyLoginSessionResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   VerifyLoginSessionResponse copyWith(
           void Function(VerifyLoginSessionResponse) updates) =>
@@ -345,7 +343,7 @@ class UserRole extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UserRole clone() => UserRole()..mergeFromMessage(this);
+  UserRole clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UserRole copyWith(void Function(UserRole) updates) =>
       super.copyWith((message) => updates(message as UserRole)) as UserRole;
@@ -430,7 +428,7 @@ class BaseUserNode extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BaseUserNode clone() => BaseUserNode()..mergeFromMessage(this);
+  BaseUserNode clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BaseUserNode copyWith(void Function(BaseUserNode) updates) =>
       super.copyWith((message) => updates(message as BaseUserNode))
@@ -564,7 +562,7 @@ class BaseUser extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'name')
     ..aOM<UserRole>(4, _omitFieldNames ? '' : 'role',
         subBuilder: UserRole.create)
-    ..pc<BaseUserNode>(5, _omitFieldNames ? '' : 'nodes', $pb.PbFieldType.PM,
+    ..pPM<BaseUserNode>(5, _omitFieldNames ? '' : 'nodes',
         subBuilder: BaseUserNode.create)
     ..aOM<Timestamp>(6, _omitFieldNames ? '' : 'createdAt',
         subBuilder: Timestamp.create)
@@ -573,7 +571,7 @@ class BaseUser extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BaseUser clone() => BaseUser()..mergeFromMessage(this);
+  BaseUser clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BaseUser copyWith(void Function(BaseUser) updates) =>
       super.copyWith((message) => updates(message as BaseUser)) as BaseUser;
@@ -712,7 +710,7 @@ class BaseDevice extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BaseDevice clone() => BaseDevice()..mergeFromMessage(this);
+  BaseDevice clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BaseDevice copyWith(void Function(BaseDevice) updates) =>
       super.copyWith((message) => updates(message as BaseDevice)) as BaseDevice;
@@ -883,7 +881,7 @@ class Policy extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Policy clone() => Policy()..mergeFromMessage(this);
+  Policy clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Policy copyWith(void Function(Policy) updates) =>
       super.copyWith((message) => updates(message as Policy)) as Policy;
@@ -1001,7 +999,7 @@ class BaseAclNodes extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BaseAclNodes clone() => BaseAclNodes()..mergeFromMessage(this);
+  BaseAclNodes clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BaseAclNodes copyWith(void Function(BaseAclNodes) updates) =>
       super.copyWith((message) => updates(message as BaseAclNodes))
@@ -1081,7 +1079,7 @@ class Acl extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Acl clone() => Acl()..mergeFromMessage(this);
+  Acl clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Acl copyWith(void Function(Acl) updates) =>
       super.copyWith((message) => updates(message as Acl)) as Acl;
@@ -1225,7 +1223,7 @@ class SplitDNS extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SplitDNS clone() => SplitDNS()..mergeFromMessage(this);
+  SplitDNS clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SplitDNS copyWith(void Function(SplitDNS) updates) =>
       super.copyWith((message) => updates(message as SplitDNS)) as SplitDNS;
@@ -1363,7 +1361,7 @@ class DNS extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DNS clone() => DNS()..mergeFromMessage(this);
+  DNS clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DNS copyWith(void Function(DNS) updates) =>
       super.copyWith((message) => updates(message as DNS)) as DNS;
@@ -1503,7 +1501,7 @@ class BaseResource extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BaseResource clone() => BaseResource()..mergeFromMessage(this);
+  BaseResource clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BaseResource copyWith(void Function(BaseResource) updates) =>
       super.copyWith((message) => updates(message as BaseResource))
@@ -1636,7 +1634,7 @@ class BaseFleet extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BaseFleet clone() => BaseFleet()..mergeFromMessage(this);
+  BaseFleet clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BaseFleet copyWith(void Function(BaseFleet) updates) =>
       super.copyWith((message) => updates(message as BaseFleet)) as BaseFleet;
@@ -1757,7 +1755,7 @@ class BaseGroup extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BaseGroup clone() => BaseGroup()..mergeFromMessage(this);
+  BaseGroup clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BaseGroup copyWith(void Function(BaseGroup) updates) =>
       super.copyWith((message) => updates(message as BaseGroup)) as BaseGroup;
@@ -1879,7 +1877,7 @@ class GroupNode extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GroupNode clone() => GroupNode()..mergeFromMessage(this);
+  GroupNode clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GroupNode copyWith(void Function(GroupNode) updates) =>
       super.copyWith((message) => updates(message as GroupNode)) as GroupNode;
@@ -2022,7 +2020,7 @@ class Linker extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Linker clone() => Linker()..mergeFromMessage(this);
+  Linker clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Linker copyWith(void Function(Linker) updates) =>
       super.copyWith((message) => updates(message as Linker)) as Linker;
@@ -2159,8 +2157,7 @@ class SubnetLinkerCovertibleNode extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SubnetLinkerCovertibleNode clone() =>
-      SubnetLinkerCovertibleNode()..mergeFromMessage(this);
+  SubnetLinkerCovertibleNode clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SubnetLinkerCovertibleNode copyWith(
           void Function(SubnetLinkerCovertibleNode) updates) =>
@@ -2301,7 +2298,7 @@ class ComposeKey extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ComposeKey clone() => ComposeKey()..mergeFromMessage(this);
+  ComposeKey clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ComposeKey copyWith(void Function(ComposeKey) updates) =>
       super.copyWith((message) => updates(message as ComposeKey)) as ComposeKey;
@@ -2417,20 +2414,19 @@ class OverviewResponse extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'OverviewResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'totalNodes', $pb.PbFieldType.O3)
-    ..a<$core.int>(2, _omitFieldNames ? '' : 'onlineNodes', $pb.PbFieldType.O3)
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'totalUsers', $pb.PbFieldType.O3)
-    ..a<$core.int>(4, _omitFieldNames ? '' : 'totalGroups', $pb.PbFieldType.O3)
-    ..a<$core.int>(5, _omitFieldNames ? '' : 'totalAcls', $pb.PbFieldType.O3)
-    ..a<$core.int>(6, _omitFieldNames ? '' : 'totalDns', $pb.PbFieldType.O3)
-    ..a<$core.int>(7, _omitFieldNames ? '' : 'totalLinkers', $pb.PbFieldType.O3)
-    ..a<$core.int>(8, _omitFieldNames ? '' : 'totalFleets', $pb.PbFieldType.O3)
-    ..a<$core.int>(
-        9, _omitFieldNames ? '' : 'totalResources', $pb.PbFieldType.O3)
+    ..aI(1, _omitFieldNames ? '' : 'totalNodes')
+    ..aI(2, _omitFieldNames ? '' : 'onlineNodes')
+    ..aI(3, _omitFieldNames ? '' : 'totalUsers')
+    ..aI(4, _omitFieldNames ? '' : 'totalGroups')
+    ..aI(5, _omitFieldNames ? '' : 'totalAcls')
+    ..aI(6, _omitFieldNames ? '' : 'totalDns')
+    ..aI(7, _omitFieldNames ? '' : 'totalLinkers')
+    ..aI(8, _omitFieldNames ? '' : 'totalFleets')
+    ..aI(9, _omitFieldNames ? '' : 'totalResources')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  OverviewResponse clone() => OverviewResponse()..mergeFromMessage(this);
+  OverviewResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   OverviewResponse copyWith(void Function(OverviewResponse) updates) =>
       super.copyWith((message) => updates(message as OverviewResponse))
@@ -2562,8 +2558,7 @@ class UpdateSplitDNSRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateSplitDNSRequest clone() =>
-      UpdateSplitDNSRequest()..mergeFromMessage(this);
+  UpdateSplitDNSRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateSplitDNSRequest copyWith(
           void Function(UpdateSplitDNSRequest) updates) =>
@@ -2630,8 +2625,7 @@ class CreateSplitDNSRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateSplitDNSRequest clone() =>
-      CreateSplitDNSRequest()..mergeFromMessage(this);
+  CreateSplitDNSRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateSplitDNSRequest copyWith(
           void Function(CreateSplitDNSRequest) updates) =>
@@ -2686,12 +2680,11 @@ class DeleteSplitDNSRequest extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'DeleteSplitDNSRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'splitDnsId', $pb.PbFieldType.O3)
+    ..aI(1, _omitFieldNames ? '' : 'splitDnsId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteSplitDNSRequest clone() =>
-      DeleteSplitDNSRequest()..mergeFromMessage(this);
+  DeleteSplitDNSRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteSplitDNSRequest copyWith(
           void Function(DeleteSplitDNSRequest) updates) =>
@@ -2748,8 +2741,7 @@ class UpdateDNSSearchDomainsRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateDNSSearchDomainsRequest clone() =>
-      UpdateDNSSearchDomainsRequest()..mergeFromMessage(this);
+  UpdateDNSSearchDomainsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateDNSSearchDomainsRequest copyWith(
           void Function(UpdateDNSSearchDomainsRequest) updates) =>
@@ -2802,8 +2794,7 @@ class UpdateDNSNameServersRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateDNSNameServersRequest clone() =>
-      UpdateDNSNameServersRequest()..mergeFromMessage(this);
+  UpdateDNSNameServersRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateDNSNameServersRequest copyWith(
           void Function(UpdateDNSNameServersRequest) updates) =>
@@ -2856,8 +2847,7 @@ class BaseUpdateDNSRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BaseUpdateDNSRequest clone() =>
-      BaseUpdateDNSRequest()..mergeFromMessage(this);
+  BaseUpdateDNSRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BaseUpdateDNSRequest copyWith(void Function(BaseUpdateDNSRequest) updates) =>
       super.copyWith((message) => updates(message as BaseUpdateDNSRequest))
@@ -2914,8 +2904,7 @@ class UpdateFleetDescriptionRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateFleetDescriptionRequest clone() =>
-      UpdateFleetDescriptionRequest()..mergeFromMessage(this);
+  UpdateFleetDescriptionRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateFleetDescriptionRequest copyWith(
           void Function(UpdateFleetDescriptionRequest) updates) =>
@@ -2984,8 +2973,7 @@ class GetComposeKeyRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetComposeKeyRequest clone() =>
-      GetComposeKeyRequest()..mergeFromMessage(this);
+  GetComposeKeyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetComposeKeyRequest copyWith(void Function(GetComposeKeyRequest) updates) =>
       super.copyWith((message) => updates(message as GetComposeKeyRequest))
@@ -3071,8 +3059,7 @@ class GetComposeKeyResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetComposeKeyResponse clone() =>
-      GetComposeKeyResponse()..mergeFromMessage(this);
+  GetComposeKeyResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetComposeKeyResponse copyWith(
           void Function(GetComposeKeyResponse) updates) =>
@@ -3141,8 +3128,7 @@ class GenerateComposeKeyRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GenerateComposeKeyRequest clone() =>
-      GenerateComposeKeyRequest()..mergeFromMessage(this);
+  GenerateComposeKeyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GenerateComposeKeyRequest copyWith(
           void Function(GenerateComposeKeyRequest) updates) =>
@@ -3208,14 +3194,12 @@ class InviteTeamMember extends $pb.GeneratedMessage {
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'email')
-    ..e<UserRoles>(2, _omitFieldNames ? '' : 'role', $pb.PbFieldType.OE,
-        defaultOrMaker: UserRoles.USER_ROLE_UNSPECIFIED,
-        valueOf: UserRoles.valueOf,
+    ..aE<UserRoles>(2, _omitFieldNames ? '' : 'role',
         enumValues: UserRoles.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  InviteTeamMember clone() => InviteTeamMember()..mergeFromMessage(this);
+  InviteTeamMember clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   InviteTeamMember copyWith(void Function(InviteTeamMember) updates) =>
       super.copyWith((message) => updates(message as InviteTeamMember))
@@ -3280,16 +3264,14 @@ class InviteTeamMembersRequest extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'InviteTeamMembersRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..pc<InviteTeamMember>(
-        1, _omitFieldNames ? '' : 'members', $pb.PbFieldType.PM,
+    ..pPM<InviteTeamMember>(1, _omitFieldNames ? '' : 'members',
         subBuilder: InviteTeamMember.create)
     ..aOS(2, _omitFieldNames ? '' : 'redirectTo')
     ..aOS(3, _omitFieldNames ? '' : 'revalidatePath')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  InviteTeamMembersRequest clone() =>
-      InviteTeamMembersRequest()..mergeFromMessage(this);
+  InviteTeamMembersRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   InviteTeamMembersRequest copyWith(
           void Function(InviteTeamMembersRequest) updates) =>

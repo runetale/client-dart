@@ -60,7 +60,7 @@ class LoginResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginResponse clone() => LoginResponse()..mergeFromMessage(this);
+  LoginResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginResponse copyWith(void Function(LoginResponse) updates) =>
       super.copyWith((message) => updates(message as LoginResponse))
@@ -191,7 +191,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginRequest clone() => LoginRequest()..mergeFromMessage(this);
+  LoginRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginRequest copyWith(void Function(LoginRequest) updates) =>
       super.copyWith((message) => updates(message as LoginRequest))
@@ -325,8 +325,7 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AuthenticateResponse clone() =>
-      AuthenticateResponse()..mergeFromMessage(this);
+  AuthenticateResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AuthenticateResponse copyWith(void Function(AuthenticateResponse) updates) =>
       super.copyWith((message) => updates(message as AuthenticateResponse))

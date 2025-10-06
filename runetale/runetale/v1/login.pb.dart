@@ -60,7 +60,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginNodeResponse clone() => LoginNodeResponse()..mergeFromMessage(this);
+  LoginNodeResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginNodeResponse copyWith(void Function(LoginNodeResponse) updates) =>
       super.copyWith((message) => updates(message as LoginNodeResponse))
@@ -173,8 +173,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  LoginSessionResponse clone() =>
-      LoginSessionResponse()..mergeFromMessage(this);
+  LoginSessionResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   LoginSessionResponse copyWith(void Function(LoginSessionResponse) updates) =>
       super.copyWith((message) => updates(message as LoginSessionResponse))
@@ -273,8 +272,7 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetInvitationRequest clone() =>
-      GetInvitationRequest()..mergeFromMessage(this);
+  GetInvitationRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetInvitationRequest copyWith(void Function(GetInvitationRequest) updates) =>
       super.copyWith((message) => updates(message as GetInvitationRequest))
@@ -333,8 +331,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetInvitationResponse clone() =>
-      GetInvitationResponse()..mergeFromMessage(this);
+  GetInvitationResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetInvitationResponse copyWith(
           void Function(GetInvitationResponse) updates) =>

@@ -42,7 +42,7 @@ class PingResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PingResponse clone() => PingResponse()..mergeFromMessage(this);
+  PingResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PingResponse copyWith(void Function(PingResponse) updates) =>
       super.copyWith((message) => updates(message as PingResponse))

@@ -48,7 +48,7 @@ class Endpoint extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Endpoint clone() => Endpoint()..mergeFromMessage(this);
+  Endpoint clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Endpoint copyWith(void Function(Endpoint) updates) =>
       super.copyWith((message) => updates(message as Endpoint)) as Endpoint;
@@ -131,7 +131,7 @@ class HashiStatus extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HashiStatus clone() => HashiStatus()..mergeFromMessage(this);
+  HashiStatus clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HashiStatus copyWith(void Function(HashiStatus) updates) =>
       super.copyWith((message) => updates(message as HashiStatus))
@@ -259,7 +259,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PeerStatus clone() => PeerStatus()..mergeFromMessage(this);
+  PeerStatus clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PeerStatus copyWith(void Function(PeerStatus) updates) =>
       super.copyWith((message) => updates(message as PeerStatus)) as PeerStatus;
@@ -425,16 +425,14 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'gotAt',
         subBuilder: $2.Timestamp.create)
-    ..pc<CompactPeerStatus>(
-        2, _omitFieldNames ? '' : 'peers', $pb.PbFieldType.PM,
+    ..pPM<CompactPeerStatus>(2, _omitFieldNames ? '' : 'peers',
         subBuilder: CompactPeerStatus.create)
-    ..pc<Endpoint>(3, _omitFieldNames ? '' : 'localAddrs', $pb.PbFieldType.PM,
+    ..pPM<Endpoint>(3, _omitFieldNames ? '' : 'localAddrs',
         subBuilder: Endpoint.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UserspacePeerEngineStatus clone() =>
-      UserspacePeerEngineStatus()..mergeFromMessage(this);
+  UserspacePeerEngineStatus clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UserspacePeerEngineStatus copyWith(
           void Function(UserspacePeerEngineStatus) updates) =>
@@ -509,7 +507,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CompactPeerStatus clone() => CompactPeerStatus()..mergeFromMessage(this);
+  CompactPeerStatus clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CompactPeerStatus copyWith(void Function(CompactPeerStatus) updates) =>
       super.copyWith((message) => updates(message as CompactPeerStatus))
@@ -631,7 +629,7 @@ class Hashigo extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Hashigo clone() => Hashigo()..mergeFromMessage(this);
+  Hashigo clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Hashigo copyWith(void Function(Hashigo) updates) =>
       super.copyWith((message) => updates(message as Hashigo)) as Hashigo;
@@ -767,16 +765,16 @@ class PingResult extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'nodeIp')
     ..aOS(3, _omitFieldNames ? '' : 'nodeName')
     ..aOS(4, _omitFieldNames ? '' : 'err')
-    ..a<$core.double>(
-        5, _omitFieldNames ? '' : 'latencySeconds', $pb.PbFieldType.OD)
+    ..aD(5, _omitFieldNames ? '' : 'latencySeconds')
     ..aOS(6, _omitFieldNames ? '' : 'endpoint')
-    ..a<$core.int>(7, _omitFieldNames ? '' : 'peerApiPort', $pb.PbFieldType.OU3)
+    ..aI(7, _omitFieldNames ? '' : 'peerApiPort',
+        fieldType: $pb.PbFieldType.OU3)
     ..aOS(8, _omitFieldNames ? '' : 'peerApiUrl')
     ..aOB(9, _omitFieldNames ? '' : 'isLocalIp')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PingResult clone() => PingResult()..mergeFromMessage(this);
+  PingResult clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PingResult copyWith(void Function(PingResult) updates) =>
       super.copyWith((message) => updates(message as PingResult)) as PingResult;
@@ -902,7 +900,7 @@ class ComposeRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ComposeRequest clone() => ComposeRequest()..mergeFromMessage(this);
+  ComposeRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ComposeRequest copyWith(void Function(ComposeRequest) updates) =>
       super.copyWith((message) => updates(message as ComposeRequest))
@@ -960,11 +958,11 @@ class PingRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'type')
-    ..a<$core.int>(3, _omitFieldNames ? '' : 'size', $pb.PbFieldType.O3)
+    ..aI(3, _omitFieldNames ? '' : 'size')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PingRequest clone() => PingRequest()..mergeFromMessage(this);
+  PingRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PingRequest copyWith(void Function(PingRequest) updates) =>
       super.copyWith((message) => updates(message as PingRequest))
@@ -1037,7 +1035,7 @@ class StopRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StopRequest clone() => StopRequest()..mergeFromMessage(this);
+  StopRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StopRequest copyWith(void Function(StopRequest) updates) =>
       super.copyWith((message) => updates(message as StopRequest))
@@ -1109,8 +1107,7 @@ class HashigoConfigRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HashigoConfigRequest clone() =>
-      HashigoConfigRequest()..mergeFromMessage(this);
+  HashigoConfigRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HashigoConfigRequest copyWith(void Function(HashigoConfigRequest) updates) =>
       super.copyWith((message) => updates(message as HashigoConfigRequest))

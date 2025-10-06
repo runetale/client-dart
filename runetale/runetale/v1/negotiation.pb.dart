@@ -28,6 +28,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
     $core.String? uFlag,
     $core.String? pwd,
     $core.String? candidate,
+    $core.List<$core.int>? sessionID,
   }) {
     final result = create();
     if (type != null) result.type = type;
@@ -36,6 +37,7 @@ class NegotiationRequest extends $pb.GeneratedMessage {
     if (uFlag != null) result.uFlag = uFlag;
     if (pwd != null) result.pwd = pwd;
     if (candidate != null) result.candidate = candidate;
+    if (sessionID != null) result.sessionID = sessionID;
     return result;
   }
 
@@ -52,19 +54,20 @@ class NegotiationRequest extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'NegotiationRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: NegotiationType.OFFER,
-        valueOf: NegotiationType.valueOf,
+    ..aE<NegotiationType>(1, _omitFieldNames ? '' : 'type',
         enumValues: NegotiationType.values)
     ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'dstWgPubKey', protoName: 'dstWgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(5, _omitFieldNames ? '' : 'pwd')
     ..aOS(6, _omitFieldNames ? '' : 'candidate')
+    ..a<$core.List<$core.int>>(
+        7, _omitFieldNames ? '' : 'sessionID', $pb.PbFieldType.OY,
+        protoName: 'sessionID')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NegotiationRequest clone() => NegotiationRequest()..mergeFromMessage(this);
+  NegotiationRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NegotiationRequest copyWith(void Function(NegotiationRequest) updates) =>
       super.copyWith((message) => updates(message as NegotiationRequest))
@@ -137,6 +140,15 @@ class NegotiationRequest extends $pb.GeneratedMessage {
   $core.bool hasCandidate() => $_has(5);
   @$pb.TagNumber(6)
   void clearCandidate() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get sessionID => $_getN(6);
+  @$pb.TagNumber(7)
+  set sessionID($core.List<$core.int> value) => $_setBytes(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSessionID() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSessionID() => $_clearField(7);
 }
 
 class NegotiationResponse extends $pb.GeneratedMessage {
@@ -147,6 +159,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
     $core.String? uFlag,
     $core.String? pwd,
     $core.String? candidate,
+    $core.List<$core.int>? sessionID,
   }) {
     final result = create();
     if (type != null) result.type = type;
@@ -155,6 +168,7 @@ class NegotiationResponse extends $pb.GeneratedMessage {
     if (uFlag != null) result.uFlag = uFlag;
     if (pwd != null) result.pwd = pwd;
     if (candidate != null) result.candidate = candidate;
+    if (sessionID != null) result.sessionID = sessionID;
     return result;
   }
 
@@ -171,19 +185,20 @@ class NegotiationResponse extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'NegotiationResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..e<NegotiationType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: NegotiationType.OFFER,
-        valueOf: NegotiationType.valueOf,
+    ..aE<NegotiationType>(1, _omitFieldNames ? '' : 'type',
         enumValues: NegotiationType.values)
     ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'dstWgPubKey', protoName: 'dstWgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'uFlag', protoName: 'uFlag')
     ..aOS(5, _omitFieldNames ? '' : 'pwd')
     ..aOS(6, _omitFieldNames ? '' : 'candidate')
+    ..a<$core.List<$core.int>>(
+        7, _omitFieldNames ? '' : 'sessionID', $pb.PbFieldType.OY,
+        protoName: 'sessionID')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NegotiationResponse clone() => NegotiationResponse()..mergeFromMessage(this);
+  NegotiationResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NegotiationResponse copyWith(void Function(NegotiationResponse) updates) =>
       super.copyWith((message) => updates(message as NegotiationResponse))
@@ -256,6 +271,15 @@ class NegotiationResponse extends $pb.GeneratedMessage {
   $core.bool hasCandidate() => $_has(5);
   @$pb.TagNumber(6)
   void clearCandidate() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get sessionID => $_getN(6);
+  @$pb.TagNumber(7)
+  set sessionID($core.List<$core.int> value) => $_setBytes(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSessionID() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSessionID() => $_clearField(7);
 }
 
 class HandshakeRequest extends $pb.GeneratedMessage {
@@ -301,7 +325,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HandshakeRequest clone() => HandshakeRequest()..mergeFromMessage(this);
+  HandshakeRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HandshakeRequest copyWith(void Function(HandshakeRequest) updates) =>
       super.copyWith((message) => updates(message as HandshakeRequest))
@@ -411,7 +435,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CandidateRequest clone() => CandidateRequest()..mergeFromMessage(this);
+  CandidateRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CandidateRequest copyWith(void Function(CandidateRequest) updates) =>
       super.copyWith((message) => updates(message as CandidateRequest))
