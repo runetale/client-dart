@@ -12,6 +12,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'negotiation.pbenum.dart';
@@ -29,6 +30,9 @@ class NegotiationMessage extends $pb.GeneratedMessage {
     $core.String? pwd,
     $core.String? candidate,
     $core.List<$core.int>? sessionID,
+    $core.Iterable<$core.String>? endpoints,
+    $fixnum.Int64? epochTs,
+    $core.List<$core.int>? dedupeId,
   }) {
     final result = create();
     if (type != null) result.type = type;
@@ -38,6 +42,9 @@ class NegotiationMessage extends $pb.GeneratedMessage {
     if (pwd != null) result.pwd = pwd;
     if (candidate != null) result.candidate = candidate;
     if (sessionID != null) result.sessionID = sessionID;
+    if (endpoints != null) result.endpoints.addAll(endpoints);
+    if (epochTs != null) result.epochTs = epochTs;
+    if (dedupeId != null) result.dedupeId = dedupeId;
     return result;
   }
 
@@ -64,6 +71,12 @@ class NegotiationMessage extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(
         7, _omitFieldNames ? '' : 'sessionID', $pb.PbFieldType.OY,
         protoName: 'sessionID')
+    ..pPS(8, _omitFieldNames ? '' : 'endpoints')
+    ..a<$fixnum.Int64>(9, _omitFieldNames ? '' : 'epochTs', $pb.PbFieldType.OU6,
+        protoName: 'epochTs', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.List<$core.int>>(
+        10, _omitFieldNames ? '' : 'dedupeId', $pb.PbFieldType.OY,
+        protoName: 'dedupeId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -149,6 +162,27 @@ class NegotiationMessage extends $pb.GeneratedMessage {
   $core.bool hasSessionID() => $_has(6);
   @$pb.TagNumber(7)
   void clearSessionID() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $pb.PbList<$core.String> get endpoints => $_getList(7);
+
+  @$pb.TagNumber(9)
+  $fixnum.Int64 get epochTs => $_getI64(8);
+  @$pb.TagNumber(9)
+  set epochTs($fixnum.Int64 value) => $_setInt64(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasEpochTs() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearEpochTs() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.List<$core.int> get dedupeId => $_getN(9);
+  @$pb.TagNumber(10)
+  set dedupeId($core.List<$core.int> value) => $_setBytes(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDedupeId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDedupeId() => $_clearField(10);
 }
 
 class HandshakeRequest extends $pb.GeneratedMessage {

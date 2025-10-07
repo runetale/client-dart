@@ -48,6 +48,29 @@ const NegotiationMessage$json = {
     {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
     {'1': 'candidate', '3': 6, '4': 1, '5': 9, '10': 'candidate'},
     {'1': 'sessionID', '3': 7, '4': 1, '5': 12, '10': 'sessionID'},
+    {'1': 'endpoints', '3': 8, '4': 3, '5': 9, '10': 'endpoints'},
+    {
+      '1': 'epochTs',
+      '3': 9,
+      '4': 1,
+      '5': 4,
+      '9': 0,
+      '10': 'epochTs',
+      '17': true
+    },
+    {
+      '1': 'dedupeId',
+      '3': 10,
+      '4': 1,
+      '5': 12,
+      '9': 1,
+      '10': 'dedupeId',
+      '17': true
+    },
+  ],
+  '8': [
+    {'1': '_epochTs'},
+    {'1': '_dedupeId'},
   ],
 };
 
@@ -57,7 +80,9 @@ final $typed_data.Uint8List negotiationMessageDescriptor = $convert.base64Decode
     'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIgCgtkc3RXZ1B1Yktl'
     'eRgDIAEoCVILZHN0V2dQdWJLZXkSFAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCV'
     'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRlEhwKCXNlc3Npb25JRBgHIAEoDFIJ'
-    'c2Vzc2lvbklE');
+    'c2Vzc2lvbklEEhwKCWVuZHBvaW50cxgIIAMoCVIJZW5kcG9pbnRzEh0KB2Vwb2NoVHMYCSABKA'
+    'RIAFIHZXBvY2hUc4gBARIfCghkZWR1cGVJZBgKIAEoDEgBUghkZWR1cGVJZIgBAUIKCghfZXBv'
+    'Y2hUc0ILCglfZGVkdXBlSWQ=');
 
 @$core.Deprecated('Use handshakeRequestDescriptor instead')
 const HandshakeRequest$json = {
