@@ -169,11 +169,17 @@ class NegotiationMessage extends $pb.GeneratedMessage {
 
 class FleaPacketMessage extends $pb.GeneratedMessage {
   factory FleaPacketMessage({
+    $core.String? dstNodeKey,
+    $core.String? srcNodeKey,
+    $core.String? wgPubKey,
     $core.Iterable<$core.String>? endpoints,
     $fixnum.Int64? epochTs,
     $core.List<$core.int>? dedupeId,
   }) {
     final result = create();
+    if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
+    if (srcNodeKey != null) result.srcNodeKey = srcNodeKey;
+    if (wgPubKey != null) result.wgPubKey = wgPubKey;
     if (endpoints != null) result.endpoints.addAll(endpoints);
     if (epochTs != null) result.epochTs = epochTs;
     if (dedupeId != null) result.dedupeId = dedupeId;
@@ -193,11 +199,14 @@ class FleaPacketMessage extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'FleaPacketMessage',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..pPS(1, _omitFieldNames ? '' : 'endpoints')
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'epochTs', $pb.PbFieldType.OU6,
+    ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
+    ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
+    ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
+    ..pPS(4, _omitFieldNames ? '' : 'endpoints')
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'epochTs', $pb.PbFieldType.OU6,
         protoName: 'epochTs', defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.List<$core.int>>(
-        3, _omitFieldNames ? '' : 'dedupeId', $pb.PbFieldType.OY,
+        6, _omitFieldNames ? '' : 'dedupeId', $pb.PbFieldType.OY,
         protoName: 'dedupeId')
     ..hasRequiredFields = false;
 
@@ -223,25 +232,52 @@ class FleaPacketMessage extends $pb.GeneratedMessage {
   static FleaPacketMessage? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $pb.PbList<$core.String> get endpoints => $_getList(0);
+  $core.String get dstNodeKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set dstNodeKey($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDstNodeKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDstNodeKey() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get epochTs => $_getI64(1);
+  $core.String get srcNodeKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set epochTs($fixnum.Int64 value) => $_setInt64(1, value);
+  set srcNodeKey($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasEpochTs() => $_has(1);
+  $core.bool hasSrcNodeKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearEpochTs() => $_clearField(2);
+  void clearSrcNodeKey() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.int> get dedupeId => $_getN(2);
+  $core.String get wgPubKey => $_getSZ(2);
   @$pb.TagNumber(3)
-  set dedupeId($core.List<$core.int> value) => $_setBytes(2, value);
+  set wgPubKey($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasDedupeId() => $_has(2);
+  $core.bool hasWgPubKey() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDedupeId() => $_clearField(3);
+  void clearWgPubKey() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get endpoints => $_getList(3);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get epochTs => $_getI64(4);
+  @$pb.TagNumber(5)
+  set epochTs($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasEpochTs() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearEpochTs() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.int> get dedupeId => $_getN(5);
+  @$pb.TagNumber(6)
+  set dedupeId($core.List<$core.int> value) => $_setBytes(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasDedupeId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDedupeId() => $_clearField(6);
 }
 
 class HandshakeRequest extends $pb.GeneratedMessage {

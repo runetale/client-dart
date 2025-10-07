@@ -72,10 +72,13 @@ final $typed_data.Uint8List negotiationMessageDescriptor = $convert.base64Decode
 const FleaPacketMessage$json = {
   '1': 'FleaPacketMessage',
   '2': [
-    {'1': 'endpoints', '3': 1, '4': 3, '5': 9, '10': 'endpoints'},
+    {'1': 'dstNodeKey', '3': 1, '4': 1, '5': 9, '10': 'dstNodeKey'},
+    {'1': 'srcNodeKey', '3': 2, '4': 1, '5': 9, '10': 'srcNodeKey'},
+    {'1': 'wgPubKey', '3': 3, '4': 1, '5': 9, '10': 'wgPubKey'},
+    {'1': 'endpoints', '3': 4, '4': 3, '5': 9, '10': 'endpoints'},
     {
       '1': 'epochTs',
-      '3': 2,
+      '3': 5,
       '4': 1,
       '5': 4,
       '9': 0,
@@ -84,7 +87,7 @@ const FleaPacketMessage$json = {
     },
     {
       '1': 'dedupeId',
-      '3': 3,
+      '3': 6,
       '4': 1,
       '5': 12,
       '9': 1,
@@ -100,9 +103,11 @@ const FleaPacketMessage$json = {
 
 /// Descriptor for `FleaPacketMessage`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List fleaPacketMessageDescriptor = $convert.base64Decode(
-    'ChFGbGVhUGFja2V0TWVzc2FnZRIcCgllbmRwb2ludHMYASADKAlSCWVuZHBvaW50cxIdCgdlcG'
-    '9jaFRzGAIgASgESABSB2Vwb2NoVHOIAQESHwoIZGVkdXBlSWQYAyABKAxIAVIIZGVkdXBlSWSI'
-    'AQFCCgoIX2Vwb2NoVHNCCwoJX2RlZHVwZUlk');
+    'ChFGbGVhUGFja2V0TWVzc2FnZRIeCgpkc3ROb2RlS2V5GAEgASgJUgpkc3ROb2RlS2V5Eh4KCn'
+    'NyY05vZGVLZXkYAiABKAlSCnNyY05vZGVLZXkSGgoId2dQdWJLZXkYAyABKAlSCHdnUHViS2V5'
+    'EhwKCWVuZHBvaW50cxgEIAMoCVIJZW5kcG9pbnRzEh0KB2Vwb2NoVHMYBSABKARIAFIHZXBvY2'
+    'hUc4gBARIfCghkZWR1cGVJZBgGIAEoDEgBUghkZWR1cGVJZIgBAUIKCghfZXBvY2hUc0ILCglf'
+    'ZGVkdXBlSWQ=');
 
 @$core.Deprecated('Use handshakeRequestDescriptor instead')
 const HandshakeRequest$json = {
