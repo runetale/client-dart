@@ -48,10 +48,34 @@ const NegotiationMessage$json = {
     {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
     {'1': 'candidate', '3': 6, '4': 1, '5': 9, '10': 'candidate'},
     {'1': 'sessionID', '3': 7, '4': 1, '5': 12, '10': 'sessionID'},
-    {'1': 'endpoints', '3': 8, '4': 3, '5': 9, '10': 'endpoints'},
+    {
+      '1': 'fleaPacketMessage',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.FleaPacketMessage',
+      '10': 'fleaPacketMessage'
+    },
+  ],
+};
+
+/// Descriptor for `NegotiationMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List negotiationMessageDescriptor = $convert.base64Decode(
+    'ChJOZWdvdGlhdGlvbk1lc3NhZ2USKwoEdHlwZRgBIAEoDjIXLnByb3Rvcy5OZWdvdGlhdGlvbl'
+    'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIgCgtkc3RXZ1B1Yktl'
+    'eRgDIAEoCVILZHN0V2dQdWJLZXkSFAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCV'
+    'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRlEhwKCXNlc3Npb25JRBgHIAEoDFIJ'
+    'c2Vzc2lvbklEEkcKEWZsZWFQYWNrZXRNZXNzYWdlGAggASgLMhkucHJvdG9zLkZsZWFQYWNrZX'
+    'RNZXNzYWdlUhFmbGVhUGFja2V0TWVzc2FnZQ==');
+
+@$core.Deprecated('Use fleaPacketMessageDescriptor instead')
+const FleaPacketMessage$json = {
+  '1': 'FleaPacketMessage',
+  '2': [
+    {'1': 'endpoints', '3': 1, '4': 3, '5': 9, '10': 'endpoints'},
     {
       '1': 'epochTs',
-      '3': 9,
+      '3': 2,
       '4': 1,
       '5': 4,
       '9': 0,
@@ -60,7 +84,7 @@ const NegotiationMessage$json = {
     },
     {
       '1': 'dedupeId',
-      '3': 10,
+      '3': 3,
       '4': 1,
       '5': 12,
       '9': 1,
@@ -74,15 +98,11 @@ const NegotiationMessage$json = {
   ],
 };
 
-/// Descriptor for `NegotiationMessage`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List negotiationMessageDescriptor = $convert.base64Decode(
-    'ChJOZWdvdGlhdGlvbk1lc3NhZ2USKwoEdHlwZRgBIAEoDjIXLnByb3Rvcy5OZWdvdGlhdGlvbl'
-    'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIgCgtkc3RXZ1B1Yktl'
-    'eRgDIAEoCVILZHN0V2dQdWJLZXkSFAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCV'
-    'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRlEhwKCXNlc3Npb25JRBgHIAEoDFIJ'
-    'c2Vzc2lvbklEEhwKCWVuZHBvaW50cxgIIAMoCVIJZW5kcG9pbnRzEh0KB2Vwb2NoVHMYCSABKA'
-    'RIAFIHZXBvY2hUc4gBARIfCghkZWR1cGVJZBgKIAEoDEgBUghkZWR1cGVJZIgBAUIKCghfZXBv'
-    'Y2hUc0ILCglfZGVkdXBlSWQ=');
+/// Descriptor for `FleaPacketMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List fleaPacketMessageDescriptor = $convert.base64Decode(
+    'ChFGbGVhUGFja2V0TWVzc2FnZRIcCgllbmRwb2ludHMYASADKAlSCWVuZHBvaW50cxIdCgdlcG'
+    '9jaFRzGAIgASgESABSB2Vwb2NoVHOIAQESHwoIZGVkdXBlSWQYAyABKAxIAVIIZGVkdXBlSWSI'
+    'AQFCCgoIX2Vwb2NoVHNCCwoJX2RlZHVwZUlk');
 
 @$core.Deprecated('Use handshakeRequestDescriptor instead')
 const HandshakeRequest$json = {

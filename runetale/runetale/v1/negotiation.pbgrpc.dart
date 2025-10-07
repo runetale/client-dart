@@ -47,6 +47,13 @@ class NegotiationServiceClient extends $grpc.Client {
     return $createUnaryCall(_$answer, request, options: options);
   }
 
+  $grpc.ResponseFuture<$1.Empty> sayHello(
+    $0.FleaPacketMessage request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$sayHello, request, options: options);
+  }
+
   $grpc.ResponseFuture<$1.Empty> candidate(
     $0.CandidateRequest request, {
     $grpc.CallOptions? options,
@@ -70,6 +77,10 @@ class NegotiationServiceClient extends $grpc.Client {
   static final _$answer = $grpc.ClientMethod<$0.HandshakeRequest, $1.Empty>(
       '/protos.NegotiationService/Answer',
       ($0.HandshakeRequest value) => value.writeToBuffer(),
+      $1.Empty.fromBuffer);
+  static final _$sayHello = $grpc.ClientMethod<$0.FleaPacketMessage, $1.Empty>(
+      '/protos.NegotiationService/SayHello',
+      ($0.FleaPacketMessage value) => value.writeToBuffer(),
       $1.Empty.fromBuffer);
   static final _$candidate = $grpc.ClientMethod<$0.CandidateRequest, $1.Empty>(
       '/protos.NegotiationService/Candidate',
@@ -100,6 +111,13 @@ abstract class NegotiationServiceBase extends $grpc.Service {
         false,
         false,
         ($core.List<$core.int> value) => $0.HandshakeRequest.fromBuffer(value),
+        ($1.Empty value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.FleaPacketMessage, $1.Empty>(
+        'SayHello',
+        sayHello_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.FleaPacketMessage.fromBuffer(value),
         ($1.Empty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CandidateRequest, $1.Empty>(
         'Candidate',
@@ -134,6 +152,14 @@ abstract class NegotiationServiceBase extends $grpc.Service {
 
   $async.Future<$1.Empty> answer(
       $grpc.ServiceCall call, $0.HandshakeRequest request);
+
+  $async.Future<$1.Empty> sayHello_Pre($grpc.ServiceCall $call,
+      $async.Future<$0.FleaPacketMessage> $request) async {
+    return sayHello($call, await $request);
+  }
+
+  $async.Future<$1.Empty> sayHello(
+      $grpc.ServiceCall call, $0.FleaPacketMessage request);
 
   $async.Future<$1.Empty> candidate_Pre($grpc.ServiceCall $call,
       $async.Future<$0.CandidateRequest> $request) async {

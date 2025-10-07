@@ -30,9 +30,7 @@ class NegotiationMessage extends $pb.GeneratedMessage {
     $core.String? pwd,
     $core.String? candidate,
     $core.List<$core.int>? sessionID,
-    $core.Iterable<$core.String>? endpoints,
-    $fixnum.Int64? epochTs,
-    $core.List<$core.int>? dedupeId,
+    FleaPacketMessage? fleaPacketMessage,
   }) {
     final result = create();
     if (type != null) result.type = type;
@@ -42,9 +40,7 @@ class NegotiationMessage extends $pb.GeneratedMessage {
     if (pwd != null) result.pwd = pwd;
     if (candidate != null) result.candidate = candidate;
     if (sessionID != null) result.sessionID = sessionID;
-    if (endpoints != null) result.endpoints.addAll(endpoints);
-    if (epochTs != null) result.epochTs = epochTs;
-    if (dedupeId != null) result.dedupeId = dedupeId;
+    if (fleaPacketMessage != null) result.fleaPacketMessage = fleaPacketMessage;
     return result;
   }
 
@@ -71,12 +67,8 @@ class NegotiationMessage extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(
         7, _omitFieldNames ? '' : 'sessionID', $pb.PbFieldType.OY,
         protoName: 'sessionID')
-    ..pPS(8, _omitFieldNames ? '' : 'endpoints')
-    ..a<$fixnum.Int64>(9, _omitFieldNames ? '' : 'epochTs', $pb.PbFieldType.OU6,
-        protoName: 'epochTs', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$core.List<$core.int>>(
-        10, _omitFieldNames ? '' : 'dedupeId', $pb.PbFieldType.OY,
-        protoName: 'dedupeId')
+    ..aOM<FleaPacketMessage>(8, _omitFieldNames ? '' : 'fleaPacketMessage',
+        protoName: 'fleaPacketMessage', subBuilder: FleaPacketMessage.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -164,25 +156,92 @@ class NegotiationMessage extends $pb.GeneratedMessage {
   void clearSessionID() => $_clearField(7);
 
   @$pb.TagNumber(8)
-  $pb.PbList<$core.String> get endpoints => $_getList(7);
+  FleaPacketMessage get fleaPacketMessage => $_getN(7);
+  @$pb.TagNumber(8)
+  set fleaPacketMessage(FleaPacketMessage value) => $_setField(8, value);
+  @$pb.TagNumber(8)
+  $core.bool hasFleaPacketMessage() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearFleaPacketMessage() => $_clearField(8);
+  @$pb.TagNumber(8)
+  FleaPacketMessage ensureFleaPacketMessage() => $_ensure(7);
+}
 
-  @$pb.TagNumber(9)
-  $fixnum.Int64 get epochTs => $_getI64(8);
-  @$pb.TagNumber(9)
-  set epochTs($fixnum.Int64 value) => $_setInt64(8, value);
-  @$pb.TagNumber(9)
-  $core.bool hasEpochTs() => $_has(8);
-  @$pb.TagNumber(9)
-  void clearEpochTs() => $_clearField(9);
+class FleaPacketMessage extends $pb.GeneratedMessage {
+  factory FleaPacketMessage({
+    $core.Iterable<$core.String>? endpoints,
+    $fixnum.Int64? epochTs,
+    $core.List<$core.int>? dedupeId,
+  }) {
+    final result = create();
+    if (endpoints != null) result.endpoints.addAll(endpoints);
+    if (epochTs != null) result.epochTs = epochTs;
+    if (dedupeId != null) result.dedupeId = dedupeId;
+    return result;
+  }
 
-  @$pb.TagNumber(10)
-  $core.List<$core.int> get dedupeId => $_getN(9);
-  @$pb.TagNumber(10)
-  set dedupeId($core.List<$core.int> value) => $_setBytes(9, value);
-  @$pb.TagNumber(10)
-  $core.bool hasDedupeId() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearDedupeId() => $_clearField(10);
+  FleaPacketMessage._();
+
+  factory FleaPacketMessage.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FleaPacketMessage.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FleaPacketMessage',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..pPS(1, _omitFieldNames ? '' : 'endpoints')
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'epochTs', $pb.PbFieldType.OU6,
+        protoName: 'epochTs', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.List<$core.int>>(
+        3, _omitFieldNames ? '' : 'dedupeId', $pb.PbFieldType.OY,
+        protoName: 'dedupeId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FleaPacketMessage clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FleaPacketMessage copyWith(void Function(FleaPacketMessage) updates) =>
+      super.copyWith((message) => updates(message as FleaPacketMessage))
+          as FleaPacketMessage;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FleaPacketMessage create() => FleaPacketMessage._();
+  @$core.override
+  FleaPacketMessage createEmptyInstance() => create();
+  static $pb.PbList<FleaPacketMessage> createRepeated() =>
+      $pb.PbList<FleaPacketMessage>();
+  @$core.pragma('dart2js:noInline')
+  static FleaPacketMessage getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FleaPacketMessage>(create);
+  static FleaPacketMessage? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.String> get endpoints => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get epochTs => $_getI64(1);
+  @$pb.TagNumber(2)
+  set epochTs($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEpochTs() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEpochTs() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get dedupeId => $_getN(2);
+  @$pb.TagNumber(3)
+  set dedupeId($core.List<$core.int> value) => $_setBytes(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDedupeId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDedupeId() => $_clearField(3);
 }
 
 class HandshakeRequest extends $pb.GeneratedMessage {
