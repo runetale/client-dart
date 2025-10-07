@@ -54,8 +54,8 @@ class NegotiationServiceClient extends $grpc.Client {
     return $createUnaryCall(_$candidate, request, options: options);
   }
 
-  $grpc.ResponseStream<$0.NegotiationRequest> connect(
-    $async.Stream<$0.NegotiationRequest> request, {
+  $grpc.ResponseStream<$0.NegotiationMessage> connect(
+    $async.Stream<$0.NegotiationMessage> request, {
     $grpc.CallOptions? options,
   }) {
     return $createStreamingCall(_$connect, request, options: options);
@@ -76,10 +76,10 @@ class NegotiationServiceClient extends $grpc.Client {
       ($0.CandidateRequest value) => value.writeToBuffer(),
       $1.Empty.fromBuffer);
   static final _$connect =
-      $grpc.ClientMethod<$0.NegotiationRequest, $0.NegotiationRequest>(
+      $grpc.ClientMethod<$0.NegotiationMessage, $0.NegotiationMessage>(
           '/protos.NegotiationService/Connect',
-          ($0.NegotiationRequest value) => value.writeToBuffer(),
-          $0.NegotiationRequest.fromBuffer);
+          ($0.NegotiationMessage value) => value.writeToBuffer(),
+          $0.NegotiationMessage.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.NegotiationService')
@@ -109,14 +109,14 @@ abstract class NegotiationServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.CandidateRequest.fromBuffer(value),
         ($1.Empty value) => value.writeToBuffer()));
     $addMethod(
-        $grpc.ServiceMethod<$0.NegotiationRequest, $0.NegotiationRequest>(
+        $grpc.ServiceMethod<$0.NegotiationMessage, $0.NegotiationMessage>(
             'Connect',
             connect,
             true,
             true,
             ($core.List<$core.int> value) =>
-                $0.NegotiationRequest.fromBuffer(value),
-            ($0.NegotiationRequest value) => value.writeToBuffer()));
+                $0.NegotiationMessage.fromBuffer(value),
+            ($0.NegotiationMessage value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.Empty> offer_Pre($grpc.ServiceCall $call,
@@ -143,6 +143,6 @@ abstract class NegotiationServiceBase extends $grpc.Service {
   $async.Future<$1.Empty> candidate(
       $grpc.ServiceCall call, $0.CandidateRequest request);
 
-  $async.Stream<$0.NegotiationRequest> connect(
-      $grpc.ServiceCall call, $async.Stream<$0.NegotiationRequest> request);
+  $async.Stream<$0.NegotiationMessage> connect(
+      $grpc.ServiceCall call, $async.Stream<$0.NegotiationMessage> request);
 }

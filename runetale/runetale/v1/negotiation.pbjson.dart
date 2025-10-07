@@ -21,18 +21,18 @@ const NegotiationType$json = {
     {'1': 'OFFER', '2': 0},
     {'1': 'ANSWER', '2': 1},
     {'1': 'CANDIDATE', '2': 2},
-    {'1': 'JOIN', '2': 3},
+    {'1': 'PEEKABOO', '2': 3},
   ],
 };
 
 /// Descriptor for `NegotiationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List negotiationTypeDescriptor = $convert.base64Decode(
     'Cg9OZWdvdGlhdGlvblR5cGUSCQoFT0ZGRVIQABIKCgZBTlNXRVIQARINCglDQU5ESURBVEUQAh'
-    'IICgRKT0lOEAM=');
+    'IMCghQRUVLQUJPTxAD');
 
-@$core.Deprecated('Use negotiationRequestDescriptor instead')
-const NegotiationRequest$json = {
-  '1': 'NegotiationRequest',
+@$core.Deprecated('Use negotiationMessageDescriptor instead')
+const NegotiationMessage$json = {
+  '1': 'NegotiationMessage',
   '2': [
     {
       '1': 'type',
@@ -51,42 +51,13 @@ const NegotiationRequest$json = {
   ],
 };
 
-/// Descriptor for `NegotiationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List negotiationRequestDescriptor = $convert.base64Decode(
-    'ChJOZWdvdGlhdGlvblJlcXVlc3QSKwoEdHlwZRgBIAEoDjIXLnByb3Rvcy5OZWdvdGlhdGlvbl'
+/// Descriptor for `NegotiationMessage`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List negotiationMessageDescriptor = $convert.base64Decode(
+    'ChJOZWdvdGlhdGlvbk1lc3NhZ2USKwoEdHlwZRgBIAEoDjIXLnByb3Rvcy5OZWdvdGlhdGlvbl'
     'R5cGVSBHR5cGUSHgoKZHN0Tm9kZUtleRgCIAEoCVIKZHN0Tm9kZUtleRIgCgtkc3RXZ1B1Yktl'
     'eRgDIAEoCVILZHN0V2dQdWJLZXkSFAoFdUZsYWcYBCABKAlSBXVGbGFnEhAKA3B3ZBgFIAEoCV'
     'IDcHdkEhwKCWNhbmRpZGF0ZRgGIAEoCVIJY2FuZGlkYXRlEhwKCXNlc3Npb25JRBgHIAEoDFIJ'
     'c2Vzc2lvbklE');
-
-@$core.Deprecated('Use negotiationResponseDescriptor instead')
-const NegotiationResponse$json = {
-  '1': 'NegotiationResponse',
-  '2': [
-    {
-      '1': 'type',
-      '3': 1,
-      '4': 1,
-      '5': 14,
-      '6': '.protos.NegotiationType',
-      '10': 'type'
-    },
-    {'1': 'dstNodeKey', '3': 2, '4': 1, '5': 9, '10': 'dstNodeKey'},
-    {'1': 'dstWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'dstWgPubKey'},
-    {'1': 'uFlag', '3': 4, '4': 1, '5': 9, '10': 'uFlag'},
-    {'1': 'pwd', '3': 5, '4': 1, '5': 9, '10': 'pwd'},
-    {'1': 'candidate', '3': 6, '4': 1, '5': 9, '10': 'candidate'},
-    {'1': 'sessionID', '3': 7, '4': 1, '5': 12, '10': 'sessionID'},
-  ],
-};
-
-/// Descriptor for `NegotiationResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List negotiationResponseDescriptor = $convert.base64Decode(
-    'ChNOZWdvdGlhdGlvblJlc3BvbnNlEisKBHR5cGUYASABKA4yFy5wcm90b3MuTmVnb3RpYXRpb2'
-    '5UeXBlUgR0eXBlEh4KCmRzdE5vZGVLZXkYAiABKAlSCmRzdE5vZGVLZXkSIAoLZHN0V2dQdWJL'
-    'ZXkYAyABKAlSC2RzdFdnUHViS2V5EhQKBXVGbGFnGAQgASgJUgV1RmxhZxIQCgNwd2QYBSABKA'
-    'lSA3B3ZBIcCgljYW5kaWRhdGUYBiABKAlSCWNhbmRpZGF0ZRIcCglzZXNzaW9uSUQYByABKAxS'
-    'CXNlc3Npb25JRA==');
 
 @$core.Deprecated('Use handshakeRequestDescriptor instead')
 const HandshakeRequest$json = {
