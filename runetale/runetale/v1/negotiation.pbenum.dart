@@ -21,14 +21,14 @@ class NegotiationType extends $pb.ProtobufEnum {
       NegotiationType._(1, _omitEnumNames ? '' : 'ANSWER');
   static const NegotiationType CANDIDATE =
       NegotiationType._(2, _omitEnumNames ? '' : 'CANDIDATE');
-  static const NegotiationType PEEKABOO =
-      NegotiationType._(3, _omitEnumNames ? '' : 'PEEKABOO');
+  static const NegotiationType SAYHELLO =
+      NegotiationType._(3, _omitEnumNames ? '' : 'SAYHELLO');
 
   static const $core.List<NegotiationType> values = <NegotiationType>[
     OFFER,
     ANSWER,
     CANDIDATE,
-    PEEKABOO,
+    SAYHELLO,
   ];
 
   static final $core.List<NegotiationType?> _byValue =

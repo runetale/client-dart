@@ -21,14 +21,14 @@ const NegotiationType$json = {
     {'1': 'OFFER', '2': 0},
     {'1': 'ANSWER', '2': 1},
     {'1': 'CANDIDATE', '2': 2},
-    {'1': 'PEEKABOO', '2': 3},
+    {'1': 'SAYHELLO', '2': 3},
   ],
 };
 
 /// Descriptor for `NegotiationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List negotiationTypeDescriptor = $convert.base64Decode(
     'Cg9OZWdvdGlhdGlvblR5cGUSCQoFT0ZGRVIQABIKCgZBTlNXRVIQARINCglDQU5ESURBVEUQAh'
-    'IMCghQRUVLQUJPTxAD');
+    'IMCghTQVlIRUxMTxAD');
 
 @$core.Deprecated('Use negotiationMessageDescriptor instead')
 const NegotiationMessage$json = {
