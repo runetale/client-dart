@@ -47,13 +47,6 @@ class NegotiationServiceClient extends $grpc.Client {
     return $createUnaryCall(_$answer, request, options: options);
   }
 
-  $grpc.ResponseFuture<$1.Empty> fleaMessage(
-    $0.FleaPacketMessage request, {
-    $grpc.CallOptions? options,
-  }) {
-    return $createUnaryCall(_$fleaMessage, request, options: options);
-  }
-
   $grpc.ResponseFuture<$1.Empty> candidate(
     $0.CandidateRequest request, {
     $grpc.CallOptions? options,
@@ -68,6 +61,13 @@ class NegotiationServiceClient extends $grpc.Client {
     return $createStreamingCall(_$connect, request, options: options);
   }
 
+  $grpc.ResponseFuture<$1.Empty> fleaMessage(
+    $0.FleaPacketMessage request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$fleaMessage, request, options: options);
+  }
+
   // method descriptors
 
   static final _$offer = $grpc.ClientMethod<$0.HandshakeRequest, $1.Empty>(
@@ -78,11 +78,6 @@ class NegotiationServiceClient extends $grpc.Client {
       '/protos.NegotiationService/Answer',
       ($0.HandshakeRequest value) => value.writeToBuffer(),
       $1.Empty.fromBuffer);
-  static final _$fleaMessage =
-      $grpc.ClientMethod<$0.FleaPacketMessage, $1.Empty>(
-          '/protos.NegotiationService/FleaMessage',
-          ($0.FleaPacketMessage value) => value.writeToBuffer(),
-          $1.Empty.fromBuffer);
   static final _$candidate = $grpc.ClientMethod<$0.CandidateRequest, $1.Empty>(
       '/protos.NegotiationService/Candidate',
       ($0.CandidateRequest value) => value.writeToBuffer(),
@@ -92,6 +87,11 @@ class NegotiationServiceClient extends $grpc.Client {
           '/protos.NegotiationService/Connect',
           ($0.NegotiationMessage value) => value.writeToBuffer(),
           $0.NegotiationMessage.fromBuffer);
+  static final _$fleaMessage =
+      $grpc.ClientMethod<$0.FleaPacketMessage, $1.Empty>(
+          '/protos.NegotiationService/FleaMessage',
+          ($0.FleaPacketMessage value) => value.writeToBuffer(),
+          $1.Empty.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.NegotiationService')
@@ -113,13 +113,6 @@ abstract class NegotiationServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.HandshakeRequest.fromBuffer(value),
         ($1.Empty value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.FleaPacketMessage, $1.Empty>(
-        'FleaMessage',
-        fleaMessage_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.FleaPacketMessage.fromBuffer(value),
-        ($1.Empty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CandidateRequest, $1.Empty>(
         'Candidate',
         candidate_Pre,
@@ -136,6 +129,13 @@ abstract class NegotiationServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.NegotiationMessage.fromBuffer(value),
             ($0.NegotiationMessage value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.FleaPacketMessage, $1.Empty>(
+        'FleaMessage',
+        fleaMessage_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.FleaPacketMessage.fromBuffer(value),
+        ($1.Empty value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.Empty> offer_Pre($grpc.ServiceCall $call,
@@ -154,14 +154,6 @@ abstract class NegotiationServiceBase extends $grpc.Service {
   $async.Future<$1.Empty> answer(
       $grpc.ServiceCall call, $0.HandshakeRequest request);
 
-  $async.Future<$1.Empty> fleaMessage_Pre($grpc.ServiceCall $call,
-      $async.Future<$0.FleaPacketMessage> $request) async {
-    return fleaMessage($call, await $request);
-  }
-
-  $async.Future<$1.Empty> fleaMessage(
-      $grpc.ServiceCall call, $0.FleaPacketMessage request);
-
   $async.Future<$1.Empty> candidate_Pre($grpc.ServiceCall $call,
       $async.Future<$0.CandidateRequest> $request) async {
     return candidate($call, await $request);
@@ -172,4 +164,12 @@ abstract class NegotiationServiceBase extends $grpc.Service {
 
   $async.Stream<$0.NegotiationMessage> connect(
       $grpc.ServiceCall call, $async.Stream<$0.NegotiationMessage> request);
+
+  $async.Future<$1.Empty> fleaMessage_Pre($grpc.ServiceCall $call,
+      $async.Future<$0.FleaPacketMessage> $request) async {
+    return fleaMessage($call, await $request);
+  }
+
+  $async.Future<$1.Empty> fleaMessage(
+      $grpc.ServiceCall call, $0.FleaPacketMessage request);
 }
