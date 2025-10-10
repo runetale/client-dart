@@ -135,6 +135,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
     $core.String? cidr,
     $core.String? host,
     $core.String? os,
+    $core.String? computerName,
     $core.String? signalServerHost,
     $fixnum.Int64? signalServerPort,
   }) {
@@ -143,6 +144,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
     if (cidr != null) result.cidr = cidr;
     if (host != null) result.host = host;
     if (os != null) result.os = os;
+    if (computerName != null) result.computerName = computerName;
     if (signalServerHost != null) result.signalServerHost = signalServerHost;
     if (signalServerPort != null) result.signalServerPort = signalServerPort;
     return result;
@@ -165,10 +167,11 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'cidr')
     ..aOS(3, _omitFieldNames ? '' : 'host')
     ..aOS(4, _omitFieldNames ? '' : 'os')
-    ..aOS(5, _omitFieldNames ? '' : 'signalServerHost',
+    ..aOS(5, _omitFieldNames ? '' : 'computerName', protoName: 'computerName')
+    ..aOS(6, _omitFieldNames ? '' : 'signalServerHost',
         protoName: 'signalServerHost')
     ..a<$fixnum.Int64>(
-        6, _omitFieldNames ? '' : 'signalServerPort', $pb.PbFieldType.OU6,
+        7, _omitFieldNames ? '' : 'signalServerPort', $pb.PbFieldType.OU6,
         protoName: 'signalServerPort', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false;
 
@@ -227,23 +230,33 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearOs() => $_clearField(4);
 
+  /// host computer name
   @$pb.TagNumber(5)
-  $core.String get signalServerHost => $_getSZ(4);
+  $core.String get computerName => $_getSZ(4);
   @$pb.TagNumber(5)
-  set signalServerHost($core.String value) => $_setString(4, value);
+  set computerName($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
-  $core.bool hasSignalServerHost() => $_has(4);
+  $core.bool hasComputerName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearSignalServerHost() => $_clearField(5);
+  void clearComputerName() => $_clearField(5);
 
   @$pb.TagNumber(6)
-  $fixnum.Int64 get signalServerPort => $_getI64(5);
+  $core.String get signalServerHost => $_getSZ(5);
   @$pb.TagNumber(6)
-  set signalServerPort($fixnum.Int64 value) => $_setInt64(5, value);
+  set signalServerHost($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
-  $core.bool hasSignalServerPort() => $_has(5);
+  $core.bool hasSignalServerHost() => $_has(5);
   @$pb.TagNumber(6)
-  void clearSignalServerPort() => $_clearField(6);
+  void clearSignalServerHost() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get signalServerPort => $_getI64(6);
+  @$pb.TagNumber(7)
+  set signalServerPort($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasSignalServerPort() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearSignalServerPort() => $_clearField(7);
 }
 
 class GetInvitationRequest extends $pb.GeneratedMessage {

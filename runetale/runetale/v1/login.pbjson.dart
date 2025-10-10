@@ -42,17 +42,18 @@ const LoginSessionResponse$json = {
     {'1': 'cidr', '3': 2, '4': 1, '5': 9, '10': 'cidr'},
     {'1': 'host', '3': 3, '4': 1, '5': 9, '10': 'host'},
     {'1': 'os', '3': 4, '4': 1, '5': 9, '10': 'os'},
-    {'1': 'signalServerHost', '3': 5, '4': 1, '5': 9, '10': 'signalServerHost'},
-    {'1': 'signalServerPort', '3': 6, '4': 1, '5': 4, '10': 'signalServerPort'},
+    {'1': 'computerName', '3': 5, '4': 1, '5': 9, '10': 'computerName'},
+    {'1': 'signalServerHost', '3': 6, '4': 1, '5': 9, '10': 'signalServerHost'},
+    {'1': 'signalServerPort', '3': 7, '4': 1, '5': 4, '10': 'signalServerPort'},
   ],
 };
 
 /// Descriptor for `LoginSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List loginSessionResponseDescriptor = $convert.base64Decode(
     'ChRMb2dpblNlc3Npb25SZXNwb25zZRIOCgJpcBgBIAMoCVICaXASEgoEY2lkchgCIAEoCVIEY2'
-    'lkchISCgRob3N0GAMgASgJUgRob3N0Eg4KAm9zGAQgASgJUgJvcxIqChBzaWduYWxTZXJ2ZXJI'
-    'b3N0GAUgASgJUhBzaWduYWxTZXJ2ZXJIb3N0EioKEHNpZ25hbFNlcnZlclBvcnQYBiABKARSEH'
-    'NpZ25hbFNlcnZlclBvcnQ=');
+    'lkchISCgRob3N0GAMgASgJUgRob3N0Eg4KAm9zGAQgASgJUgJvcxIiCgxjb21wdXRlck5hbWUY'
+    'BSABKAlSDGNvbXB1dGVyTmFtZRIqChBzaWduYWxTZXJ2ZXJIb3N0GAYgASgJUhBzaWduYWxTZX'
+    'J2ZXJIb3N0EioKEHNpZ25hbFNlcnZlclBvcnQYByABKARSEHNpZ25hbFNlcnZlclBvcnQ=');
 
 @$core.Deprecated('Use getInvitationRequestDescriptor instead')
 const GetInvitationRequest$json = {
