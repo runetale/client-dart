@@ -225,36 +225,6 @@ final $typed_data.Uint8List compactPeerStatusDescriptor = $convert.base64Decode(
     'bmRzaGFrZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSDWxhc3RIYW5kc2hha2'
     'U=');
 
-@$core.Deprecated('Use hashigoDescriptor instead')
-const Hashigo$json = {
-  '1': 'Hashigo',
-  '2': [
-    {'1': 'server_url', '3': 1, '4': 1, '5': 9, '10': 'serverUrl'},
-    {'1': 'signal_url', '3': 2, '4': 1, '5': 9, '10': 'signalUrl'},
-    {'1': 'barricade', '3': 3, '4': 1, '5': 8, '10': 'barricade'},
-    {'1': 'advertise_routes', '3': 4, '4': 3, '5': 9, '10': 'advertiseRoutes'},
-    {'1': 'accept_routes', '3': 5, '4': 1, '5': 8, '10': 'acceptRoutes'},
-    {
-      '1': 'snat_subnet_routes',
-      '3': 6,
-      '4': 1,
-      '5': 8,
-      '10': 'snatSubnetRoutes'
-    },
-    {'1': 'stateful_filter', '3': 7, '4': 1, '5': 8, '10': 'statefulFilter'},
-    {'1': 'app_linker', '3': 8, '4': 1, '5': 8, '10': 'appLinker'},
-  ],
-};
-
-/// Descriptor for `Hashigo`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List hashigoDescriptor = $convert.base64Decode(
-    'CgdIYXNoaWdvEh0KCnNlcnZlcl91cmwYASABKAlSCXNlcnZlclVybBIdCgpzaWduYWxfdXJsGA'
-    'IgASgJUglzaWduYWxVcmwSHAoJYmFycmljYWRlGAMgASgIUgliYXJyaWNhZGUSKQoQYWR2ZXJ0'
-    'aXNlX3JvdXRlcxgEIAMoCVIPYWR2ZXJ0aXNlUm91dGVzEiMKDWFjY2VwdF9yb3V0ZXMYBSABKA'
-    'hSDGFjY2VwdFJvdXRlcxIsChJzbmF0X3N1Ym5ldF9yb3V0ZXMYBiABKAhSEHNuYXRTdWJuZXRS'
-    'b3V0ZXMSJwoPc3RhdGVmdWxfZmlsdGVyGAcgASgIUg5zdGF0ZWZ1bEZpbHRlchIdCgphcHBfbG'
-    'lua2VyGAggASgIUglhcHBMaW5rZXI=');
-
 @$core.Deprecated('Use pingResultDescriptor instead')
 const PingResult$json = {
   '1': 'PingResult',
@@ -317,44 +287,3 @@ const StopRequest$json = {
 /// Descriptor for `StopRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List stopRequestDescriptor = $convert
     .base64Decode('CgtTdG9wUmVxdWVzdBIWCgZyZWFzb24YASABKAlSBnJlYXNvbg==');
-
-@$core.Deprecated('Use hashigoConfigRequestDescriptor instead')
-const HashigoConfigRequest$json = {
-  '1': 'HashigoConfigRequest',
-  '2': [
-    {
-      '1': 'hashigo',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.protos.Hashigo',
-      '10': 'hashigo'
-    },
-    {'1': 'barricade_set', '3': 2, '4': 1, '5': 8, '10': 'barricadeSet'},
-    {'1': 'accept_routes_set', '3': 3, '4': 1, '5': 8, '10': 'acceptRoutesSet'},
-    {
-      '1': 'snat_subnet_routes_set',
-      '3': 4,
-      '4': 1,
-      '5': 8,
-      '10': 'snatSubnetRoutesSet'
-    },
-    {
-      '1': 'stateful_filter_set',
-      '3': 5,
-      '4': 1,
-      '5': 8,
-      '10': 'statefulFilterSet'
-    },
-    {'1': 'app_linker_set', '3': 6, '4': 1, '5': 8, '10': 'appLinkerSet'},
-  ],
-};
-
-/// Descriptor for `HashigoConfigRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List hashigoConfigRequestDescriptor = $convert.base64Decode(
-    'ChRIYXNoaWdvQ29uZmlnUmVxdWVzdBIpCgdoYXNoaWdvGAEgASgLMg8ucHJvdG9zLkhhc2hpZ2'
-    '9SB2hhc2hpZ28SIwoNYmFycmljYWRlX3NldBgCIAEoCFIMYmFycmljYWRlU2V0EioKEWFjY2Vw'
-    'dF9yb3V0ZXNfc2V0GAMgASgIUg9hY2NlcHRSb3V0ZXNTZXQSMwoWc25hdF9zdWJuZXRfcm91dG'
-    'VzX3NldBgEIAEoCFITc25hdFN1Ym5ldFJvdXRlc1NldBIuChNzdGF0ZWZ1bF9maWx0ZXJfc2V0'
-    'GAUgASgIUhFzdGF0ZWZ1bEZpbHRlclNldBIkCg5hcHBfbGlua2VyX3NldBgGIAEoCFIMYXBwTG'
-    'lua2VyU2V0');
