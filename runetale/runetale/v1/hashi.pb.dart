@@ -60,7 +60,6 @@ class Endpoint extends $pb.GeneratedMessage {
   static Endpoint create() => Endpoint._();
   @$core.override
   Endpoint createEmptyInstance() => create();
-  static $pb.PbList<Endpoint> createRepeated() => $pb.PbList<Endpoint>();
   @$core.pragma('dart2js:noInline')
   static Endpoint getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Endpoint>(create);
@@ -144,7 +143,6 @@ class HashiStatus extends $pb.GeneratedMessage {
   static HashiStatus create() => HashiStatus._();
   @$core.override
   HashiStatus createEmptyInstance() => create();
-  static $pb.PbList<HashiStatus> createRepeated() => $pb.PbList<HashiStatus>();
   @$core.pragma('dart2js:noInline')
   static HashiStatus getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HashiStatus>(create);
@@ -271,7 +269,6 @@ class PeerStatus extends $pb.GeneratedMessage {
   static PeerStatus create() => PeerStatus._();
   @$core.override
   PeerStatus createEmptyInstance() => create();
-  static $pb.PbList<PeerStatus> createRepeated() => $pb.PbList<PeerStatus>();
   @$core.pragma('dart2js:noInline')
   static PeerStatus getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PeerStatus>(create);
@@ -446,8 +443,6 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   static UserspacePeerEngineStatus create() => UserspacePeerEngineStatus._();
   @$core.override
   UserspacePeerEngineStatus createEmptyInstance() => create();
-  static $pb.PbList<UserspacePeerEngineStatus> createRepeated() =>
-      $pb.PbList<UserspacePeerEngineStatus>();
   @$core.pragma('dart2js:noInline')
   static UserspacePeerEngineStatus getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UserspacePeerEngineStatus>(create);
@@ -520,8 +515,6 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   static CompactPeerStatus create() => CompactPeerStatus._();
   @$core.override
   CompactPeerStatus createEmptyInstance() => create();
-  static $pb.PbList<CompactPeerStatus> createRepeated() =>
-      $pb.PbList<CompactPeerStatus>();
   @$core.pragma('dart2js:noInline')
   static CompactPeerStatus getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CompactPeerStatus>(create);
@@ -629,7 +622,6 @@ class PingResult extends $pb.GeneratedMessage {
   static PingResult create() => PingResult._();
   @$core.override
   PingResult createEmptyInstance() => create();
-  static $pb.PbList<PingResult> createRepeated() => $pb.PbList<PingResult>();
   @$core.pragma('dart2js:noInline')
   static PingResult getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PingResult>(create);
@@ -756,8 +748,6 @@ class ComposeRequest extends $pb.GeneratedMessage {
   static ComposeRequest create() => ComposeRequest._();
   @$core.override
   ComposeRequest createEmptyInstance() => create();
-  static $pb.PbList<ComposeRequest> createRepeated() =>
-      $pb.PbList<ComposeRequest>();
   @$core.pragma('dart2js:noInline')
   static ComposeRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ComposeRequest>(create);
@@ -818,7 +808,6 @@ class PingRequest extends $pb.GeneratedMessage {
   static PingRequest create() => PingRequest._();
   @$core.override
   PingRequest createEmptyInstance() => create();
-  static $pb.PbList<PingRequest> createRepeated() => $pb.PbList<PingRequest>();
   @$core.pragma('dart2js:noInline')
   static PingRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PingRequest>(create);
@@ -891,7 +880,6 @@ class StopRequest extends $pb.GeneratedMessage {
   static StopRequest create() => StopRequest._();
   @$core.override
   StopRequest createEmptyInstance() => create();
-  static $pb.PbList<StopRequest> createRepeated() => $pb.PbList<StopRequest>();
   @$core.pragma('dart2js:noInline')
   static StopRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);

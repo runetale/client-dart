@@ -55,8 +55,6 @@ class PingResponse extends $pb.GeneratedMessage {
   static PingResponse create() => PingResponse._();
   @$core.override
   PingResponse createEmptyInstance() => create();
-  static $pb.PbList<PingResponse> createRepeated() =>
-      $pb.PbList<PingResponse>();
   @$core.pragma('dart2js:noInline')
   static PingResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PingResponse>(create);

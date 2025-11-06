@@ -85,8 +85,6 @@ class NegotiationMessage extends $pb.GeneratedMessage {
   static NegotiationMessage create() => NegotiationMessage._();
   @$core.override
   NegotiationMessage createEmptyInstance() => create();
-  static $pb.PbList<NegotiationMessage> createRepeated() =>
-      $pb.PbList<NegotiationMessage>();
   @$core.pragma('dart2js:noInline')
   static NegotiationMessage getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<NegotiationMessage>(create);
@@ -224,8 +222,6 @@ class FleaPacketMessage extends $pb.GeneratedMessage {
   static FleaPacketMessage create() => FleaPacketMessage._();
   @$core.override
   FleaPacketMessage createEmptyInstance() => create();
-  static $pb.PbList<FleaPacketMessage> createRepeated() =>
-      $pb.PbList<FleaPacketMessage>();
   @$core.pragma('dart2js:noInline')
   static FleaPacketMessage getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<FleaPacketMessage>(create);
@@ -336,8 +332,6 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   static HandshakeRequest create() => HandshakeRequest._();
   @$core.override
   HandshakeRequest createEmptyInstance() => create();
-  static $pb.PbList<HandshakeRequest> createRepeated() =>
-      $pb.PbList<HandshakeRequest>();
   @$core.pragma('dart2js:noInline')
   static HandshakeRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HandshakeRequest>(create);
@@ -446,8 +440,6 @@ class CandidateRequest extends $pb.GeneratedMessage {
   static CandidateRequest create() => CandidateRequest._();
   @$core.override
   CandidateRequest createEmptyInstance() => create();
-  static $pb.PbList<CandidateRequest> createRepeated() =>
-      $pb.PbList<CandidateRequest>();
   @$core.pragma('dart2js:noInline')
   static CandidateRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CandidateRequest>(create);

@@ -58,8 +58,6 @@ class GetConnectionStatusResponse extends $pb.GeneratedMessage {
       GetConnectionStatusResponse._();
   @$core.override
   GetConnectionStatusResponse createEmptyInstance() => create();
-  static $pb.PbList<GetConnectionStatusResponse> createRepeated() =>
-      $pb.PbList<GetConnectionStatusResponse>();
   @$core.pragma('dart2js:noInline')
   static GetConnectionStatusResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetConnectionStatusResponse>(create);

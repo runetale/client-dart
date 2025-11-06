@@ -73,8 +73,6 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   static LoginNodeResponse create() => LoginNodeResponse._();
   @$core.override
   LoginNodeResponse createEmptyInstance() => create();
-  static $pb.PbList<LoginNodeResponse> createRepeated() =>
-      $pb.PbList<LoginNodeResponse>();
   @$core.pragma('dart2js:noInline')
   static LoginNodeResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<LoginNodeResponse>(create);
@@ -189,8 +187,6 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   static LoginSessionResponse create() => LoginSessionResponse._();
   @$core.override
   LoginSessionResponse createEmptyInstance() => create();
-  static $pb.PbList<LoginSessionResponse> createRepeated() =>
-      $pb.PbList<LoginSessionResponse>();
   @$core.pragma('dart2js:noInline')
   static LoginSessionResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<LoginSessionResponse>(create);
@@ -298,8 +294,6 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   static GetInvitationRequest create() => GetInvitationRequest._();
   @$core.override
   GetInvitationRequest createEmptyInstance() => create();
-  static $pb.PbList<GetInvitationRequest> createRepeated() =>
-      $pb.PbList<GetInvitationRequest>();
   @$core.pragma('dart2js:noInline')
   static GetInvitationRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetInvitationRequest>(create);
@@ -358,8 +352,6 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   static GetInvitationResponse create() => GetInvitationResponse._();
   @$core.override
   GetInvitationResponse createEmptyInstance() => create();
-  static $pb.PbList<GetInvitationResponse> createRepeated() =>
-      $pb.PbList<GetInvitationResponse>();
   @$core.pragma('dart2js:noInline')
   static GetInvitationResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetInvitationResponse>(create);

@@ -60,7 +60,6 @@ class StunHost extends $pb.GeneratedMessage {
   static StunHost create() => StunHost._();
   @$core.override
   StunHost createEmptyInstance() => create();
-  static $pb.PbList<StunHost> createRepeated() => $pb.PbList<StunHost>();
   @$core.pragma('dart2js:noInline')
   static StunHost getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StunHost>(create);
@@ -138,7 +137,6 @@ class TurnHost extends $pb.GeneratedMessage {
   static TurnHost create() => TurnHost._();
   @$core.override
   TurnHost createEmptyInstance() => create();
-  static $pb.PbList<TurnHost> createRepeated() => $pb.PbList<TurnHost>();
   @$core.pragma('dart2js:noInline')
   static TurnHost getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TurnHost>(create);
@@ -215,7 +213,6 @@ class RtcConfig extends $pb.GeneratedMessage {
   static RtcConfig create() => RtcConfig._();
   @$core.override
   RtcConfig createEmptyInstance() => create();
-  static $pb.PbList<RtcConfig> createRepeated() => $pb.PbList<RtcConfig>();
   @$core.pragma('dart2js:noInline')
   static RtcConfig getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RtcConfig>(create);
@@ -285,8 +282,6 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
   static GetStunTurnConfigResponse create() => GetStunTurnConfigResponse._();
   @$core.override
   GetStunTurnConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<GetStunTurnConfigResponse> createRepeated() =>
-      $pb.PbList<GetStunTurnConfigResponse>();
   @$core.pragma('dart2js:noInline')
   static GetStunTurnConfigResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetStunTurnConfigResponse>(create);

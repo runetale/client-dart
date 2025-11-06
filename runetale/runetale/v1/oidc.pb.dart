@@ -73,8 +73,6 @@ class LoginResponse extends $pb.GeneratedMessage {
   static LoginResponse create() => LoginResponse._();
   @$core.override
   LoginResponse createEmptyInstance() => create();
-  static $pb.PbList<LoginResponse> createRepeated() =>
-      $pb.PbList<LoginResponse>();
   @$core.pragma('dart2js:noInline')
   static LoginResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<LoginResponse>(create);
@@ -204,8 +202,6 @@ class LoginRequest extends $pb.GeneratedMessage {
   static LoginRequest create() => LoginRequest._();
   @$core.override
   LoginRequest createEmptyInstance() => create();
-  static $pb.PbList<LoginRequest> createRepeated() =>
-      $pb.PbList<LoginRequest>();
   @$core.pragma('dart2js:noInline')
   static LoginRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<LoginRequest>(create);
@@ -338,8 +334,6 @@ class AuthenticateResponse extends $pb.GeneratedMessage {
   static AuthenticateResponse create() => AuthenticateResponse._();
   @$core.override
   AuthenticateResponse createEmptyInstance() => create();
-  static $pb.PbList<AuthenticateResponse> createRepeated() =>
-      $pb.PbList<AuthenticateResponse>();
   @$core.pragma('dart2js:noInline')
   static AuthenticateResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<AuthenticateResponse>(create);
