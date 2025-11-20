@@ -40,6 +40,13 @@ class LoginServiceClient extends $grpc.Client {
     return $createUnaryCall(_$loginNode, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.Empty> logout(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$logout, request, options: options);
+  }
+
   $grpc.ResponseStream<$1.LoginSessionResponse> loginSession(
     $async.Stream<$0.Empty> request, {
     $grpc.CallOptions? options,
@@ -60,6 +67,10 @@ class LoginServiceClient extends $grpc.Client {
       '/protos.LoginService/LoginNode',
       ($0.Empty value) => value.writeToBuffer(),
       $1.LoginNodeResponse.fromBuffer);
+  static final _$logout = $grpc.ClientMethod<$0.Empty, $0.Empty>(
+      '/protos.LoginService/Logout',
+      ($0.Empty value) => value.writeToBuffer(),
+      $0.Empty.fromBuffer);
   static final _$loginSession =
       $grpc.ClientMethod<$0.Empty, $1.LoginSessionResponse>(
           '/protos.LoginService/LoginSession',
@@ -84,6 +95,13 @@ abstract class LoginServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.LoginNodeResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $0.Empty>(
+        'Logout',
+        logout_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($0.Empty value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.Empty, $1.LoginSessionResponse>(
         'LoginSession',
         loginSession,
@@ -109,6 +127,13 @@ abstract class LoginServiceBase extends $grpc.Service {
 
   $async.Future<$1.LoginNodeResponse> loginNode(
       $grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$0.Empty> logout_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return logout($call, await $request);
+  }
+
+  $async.Future<$0.Empty> logout($grpc.ServiceCall call, $0.Empty request);
 
   $async.Stream<$1.LoginSessionResponse> loginSession(
       $grpc.ServiceCall call, $async.Stream<$0.Empty> request);
