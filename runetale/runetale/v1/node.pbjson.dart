@@ -119,13 +119,19 @@ const ComposeNodeResponse$json = {
   '2': [
     {'1': 'ip', '3': 1, '4': 1, '5': 9, '10': 'ip'},
     {'1': 'cidr', '3': 2, '4': 1, '5': 9, '10': 'cidr'},
+    {'1': 'userId', '3': 3, '4': 1, '5': 4, '10': 'userId'},
+    {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'displayName', '3': 5, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'loginName', '3': 6, '4': 1, '5': 9, '10': 'loginName'},
   ],
 };
 
 /// Descriptor for `ComposeNodeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List composeNodeResponseDescriptor = $convert.base64Decode(
     'ChNDb21wb3NlTm9kZVJlc3BvbnNlEg4KAmlwGAEgASgJUgJpcBISCgRjaWRyGAIgASgJUgRjaW'
-    'Ry');
+    'RyEhYKBnVzZXJJZBgDIAEoBFIGdXNlcklkEhQKBWVtYWlsGAQgASgJUgVlbWFpbBIgCgtkaXNw'
+    'bGF5TmFtZRgFIAEoCVILZGlzcGxheU5hbWUSHAoJbG9naW5OYW1lGAYgASgJUglsb2dpbk5hbW'
+    'U=');
 
 @$core.Deprecated('Use netPortRangeDescriptor instead')
 const NetPortRange$json = {

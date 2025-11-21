@@ -433,10 +433,18 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   factory ComposeNodeResponse({
     $core.String? ip,
     $core.String? cidr,
+    $fixnum.Int64? userId,
+    $core.String? email,
+    $core.String? displayName,
+    $core.String? loginName,
   }) {
     final result = create();
     if (ip != null) result.ip = ip;
     if (cidr != null) result.cidr = cidr;
+    if (userId != null) result.userId = userId;
+    if (email != null) result.email = email;
+    if (displayName != null) result.displayName = displayName;
+    if (loginName != null) result.loginName = loginName;
     return result;
   }
 
@@ -455,6 +463,11 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'cidr')
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'userId', $pb.PbFieldType.OU6,
+        protoName: 'userId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(4, _omitFieldNames ? '' : 'email')
+    ..aOS(5, _omitFieldNames ? '' : 'displayName', protoName: 'displayName')
+    ..aOS(6, _omitFieldNames ? '' : 'loginName', protoName: 'loginName')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -493,6 +506,42 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   $core.bool hasCidr() => $_has(1);
   @$pb.TagNumber(2)
   void clearCidr() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get userId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set userId($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get email => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set email($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasEmail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEmail() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get displayName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set displayName($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDisplayName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDisplayName() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get loginName => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set loginName($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLoginName() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLoginName() => $_clearField(6);
 }
 
 class NetPortRange_portRange extends $pb.GeneratedMessage {
