@@ -286,6 +286,9 @@ class Node extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? allowedIPs,
     $core.Iterable<$core.String>? addresses,
     $fixnum.Int64? userId,
+    $core.String? email,
+    $core.String? displayName,
+    $core.String? loginName,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -295,6 +298,9 @@ class Node extends $pb.GeneratedMessage {
     if (allowedIPs != null) result.allowedIPs.addAll(allowedIPs);
     if (addresses != null) result.addresses.addAll(addresses);
     if (userId != null) result.userId = userId;
+    if (email != null) result.email = email;
+    if (displayName != null) result.displayName = displayName;
+    if (loginName != null) result.loginName = loginName;
     return result;
   }
 
@@ -320,6 +326,9 @@ class Node extends $pb.GeneratedMessage {
     ..pPS(6, _omitFieldNames ? '' : 'addresses')
     ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'userId', $pb.PbFieldType.OU6,
         protoName: 'userId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(8, _omitFieldNames ? '' : 'email')
+    ..aOS(9, _omitFieldNames ? '' : 'displayName', protoName: 'displayName')
+    ..aOS(10, _omitFieldNames ? '' : 'loginName', protoName: 'loginName')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -391,6 +400,33 @@ class Node extends $pb.GeneratedMessage {
   $core.bool hasUserId() => $_has(6);
   @$pb.TagNumber(7)
   void clearUserId() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get email => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set email($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasEmail() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearEmail() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get displayName => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set displayName($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDisplayName() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDisplayName() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get loginName => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set loginName($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasLoginName() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearLoginName() => $_clearField(10);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {

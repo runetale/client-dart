@@ -99,6 +99,9 @@ const Node$json = {
     {'1': 'allowedIPs', '3': 5, '4': 3, '5': 9, '10': 'allowedIPs'},
     {'1': 'addresses', '3': 6, '4': 3, '5': 9, '10': 'addresses'},
     {'1': 'userId', '3': 7, '4': 1, '5': 4, '10': 'userId'},
+    {'1': 'email', '3': 8, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'displayName', '3': 9, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'loginName', '3': 10, '4': 1, '5': 9, '10': 'loginName'},
   ],
 };
 
@@ -107,7 +110,8 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'CgROb2RlEhIKBG5hbWUYASABKAlSBG5hbWUSFgoGbm9kZUlkGAIgASgEUgZub2RlSWQSGAoHbm'
     '9kZUtleRgDIAEoCVIHbm9kZUtleRIaCgh3Z1B1YktleRgEIAEoCVIId2dQdWJLZXkSHgoKYWxs'
     'b3dlZElQcxgFIAMoCVIKYWxsb3dlZElQcxIcCglhZGRyZXNzZXMYBiADKAlSCWFkZHJlc3Nlcx'
-    'IWCgZ1c2VySWQYByABKARSBnVzZXJJZA==');
+    'IWCgZ1c2VySWQYByABKARSBnVzZXJJZBIUCgVlbWFpbBgIIAEoCVIFZW1haWwSIAoLZGlzcGxh'
+    'eU5hbWUYCSABKAlSC2Rpc3BsYXlOYW1lEhwKCWxvZ2luTmFtZRgKIAEoCVIJbG9naW5OYW1l');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
