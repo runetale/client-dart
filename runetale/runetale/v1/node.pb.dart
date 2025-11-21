@@ -285,6 +285,7 @@ class Node extends $pb.GeneratedMessage {
     $core.String? wgPubKey,
     $core.Iterable<$core.String>? allowedIPs,
     $core.Iterable<$core.String>? addresses,
+    $fixnum.Int64? userId,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -293,6 +294,7 @@ class Node extends $pb.GeneratedMessage {
     if (wgPubKey != null) result.wgPubKey = wgPubKey;
     if (allowedIPs != null) result.allowedIPs.addAll(allowedIPs);
     if (addresses != null) result.addresses.addAll(addresses);
+    if (userId != null) result.userId = userId;
     return result;
   }
 
@@ -316,6 +318,8 @@ class Node extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
     ..pPS(5, _omitFieldNames ? '' : 'allowedIPs', protoName: 'allowedIPs')
     ..pPS(6, _omitFieldNames ? '' : 'addresses')
+    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'userId', $pb.PbFieldType.OU6,
+        protoName: 'userId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -378,6 +382,15 @@ class Node extends $pb.GeneratedMessage {
   /// e.g. 100.x.y.z/16, fe80::/64
   @$pb.TagNumber(6)
   $pb.PbList<$core.String> get addresses => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get userId => $_getI64(6);
+  @$pb.TagNumber(7)
+  set userId($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasUserId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUserId() => $_clearField(7);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
