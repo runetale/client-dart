@@ -24,6 +24,10 @@ const LoginNodeResponse$json = {
     {'1': 'cidr', '3': 4, '4': 1, '5': 9, '10': 'cidr'},
     {'1': 'signalHost', '3': 5, '4': 1, '5': 9, '10': 'signalHost'},
     {'1': 'signalPort', '3': 6, '4': 1, '5': 4, '10': 'signalPort'},
+    {'1': 'userId', '3': 7, '4': 1, '5': 4, '10': 'userId'},
+    {'1': 'email', '3': 8, '4': 1, '5': 9, '10': 'email'},
+    {'1': 'displayName', '3': 9, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'loginName', '3': 10, '4': 1, '5': 9, '10': 'loginName'},
   ],
 };
 
@@ -32,7 +36,9 @@ final $typed_data.Uint8List loginNodeResponseDescriptor = $convert.base64Decode(
     'ChFMb2dpbk5vZGVSZXNwb25zZRIiCgxpc1JlZ2lzdGVyZWQYASABKAhSDGlzUmVnaXN0ZXJlZB'
     'IaCghsb2dpblVybBgCIAEoCVIIbG9naW5VcmwSDgoCaXAYAyADKAlSAmlwEhIKBGNpZHIYBCAB'
     'KAlSBGNpZHISHgoKc2lnbmFsSG9zdBgFIAEoCVIKc2lnbmFsSG9zdBIeCgpzaWduYWxQb3J0GA'
-    'YgASgEUgpzaWduYWxQb3J0');
+    'YgASgEUgpzaWduYWxQb3J0EhYKBnVzZXJJZBgHIAEoBFIGdXNlcklkEhQKBWVtYWlsGAggASgJ'
+    'UgVlbWFpbBIgCgtkaXNwbGF5TmFtZRgJIAEoCVILZGlzcGxheU5hbWUSHAoJbG9naW5OYW1lGA'
+    'ogASgJUglsb2dpbk5hbWU=');
 
 @$core.Deprecated('Use loginSessionResponseDescriptor instead')
 const LoginSessionResponse$json = {
