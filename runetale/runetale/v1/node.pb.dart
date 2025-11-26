@@ -289,6 +289,7 @@ class Node extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? displayName,
     $core.String? loginName,
+    $core.String? hostOS,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -301,6 +302,7 @@ class Node extends $pb.GeneratedMessage {
     if (email != null) result.email = email;
     if (displayName != null) result.displayName = displayName;
     if (loginName != null) result.loginName = loginName;
+    if (hostOS != null) result.hostOS = hostOS;
     return result;
   }
 
@@ -329,6 +331,7 @@ class Node extends $pb.GeneratedMessage {
     ..aOS(8, _omitFieldNames ? '' : 'email')
     ..aOS(9, _omitFieldNames ? '' : 'displayName', protoName: 'displayName')
     ..aOS(10, _omitFieldNames ? '' : 'loginName', protoName: 'loginName')
+    ..aOS(11, _omitFieldNames ? '' : 'hostOS', protoName: 'hostOS')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -427,6 +430,15 @@ class Node extends $pb.GeneratedMessage {
   $core.bool hasLoginName() => $_has(9);
   @$pb.TagNumber(10)
   void clearLoginName() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get hostOS => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set hostOS($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasHostOS() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearHostOS() => $_clearField(11);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
