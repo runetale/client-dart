@@ -8,14 +8,14 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
-
-import '../../../google/protobuf/timestamp.pb.dart' as $2;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $2;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -893,6 +893,185 @@ class StopRequest extends $pb.GeneratedMessage {
   $core.bool hasReason() => $_has(0);
   @$pb.TagNumber(1)
   void clearReason() => $_clearField(1);
+}
+
+class NetCheckReport extends $pb.GeneratedMessage {
+  factory NetCheckReport({
+    $2.Timestamp? now,
+    $core.bool? udp,
+    $core.bool? ipv6,
+    $core.bool? ipv4,
+    $core.bool? ipv6CanSend,
+    $core.bool? ipv4CanSend,
+    $core.bool? osHasIpv6,
+    $core.String? globalV4,
+    $core.String? globalV6,
+    $core.Iterable<$core.MapEntry<$core.String, $fixnum.Int64>>? stunLatency,
+    $core.Iterable<$core.MapEntry<$core.String, $fixnum.Int64>>? turnLatency,
+    $core.Iterable<$core.String>? errors,
+  }) {
+    final result = create();
+    if (now != null) result.now = now;
+    if (udp != null) result.udp = udp;
+    if (ipv6 != null) result.ipv6 = ipv6;
+    if (ipv4 != null) result.ipv4 = ipv4;
+    if (ipv6CanSend != null) result.ipv6CanSend = ipv6CanSend;
+    if (ipv4CanSend != null) result.ipv4CanSend = ipv4CanSend;
+    if (osHasIpv6 != null) result.osHasIpv6 = osHasIpv6;
+    if (globalV4 != null) result.globalV4 = globalV4;
+    if (globalV6 != null) result.globalV6 = globalV6;
+    if (stunLatency != null) result.stunLatency.addEntries(stunLatency);
+    if (turnLatency != null) result.turnLatency.addEntries(turnLatency);
+    if (errors != null) result.errors.addAll(errors);
+    return result;
+  }
+
+  NetCheckReport._();
+
+  factory NetCheckReport.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetCheckReport.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetCheckReport',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'now',
+        subBuilder: $2.Timestamp.create)
+    ..aOB(2, _omitFieldNames ? '' : 'udp')
+    ..aOB(3, _omitFieldNames ? '' : 'ipv6')
+    ..aOB(4, _omitFieldNames ? '' : 'ipv4')
+    ..aOB(5, _omitFieldNames ? '' : 'ipv6CanSend')
+    ..aOB(6, _omitFieldNames ? '' : 'ipv4CanSend')
+    ..aOB(7, _omitFieldNames ? '' : 'osHasIpv6')
+    ..aOS(8, _omitFieldNames ? '' : 'globalV4')
+    ..aOS(9, _omitFieldNames ? '' : 'globalV6')
+    ..m<$core.String, $fixnum.Int64>(10, _omitFieldNames ? '' : 'stunLatency',
+        entryClassName: 'NetCheckReport.StunLatencyEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.O6,
+        packageName: const $pb.PackageName('protos'))
+    ..m<$core.String, $fixnum.Int64>(11, _omitFieldNames ? '' : 'turnLatency',
+        entryClassName: 'NetCheckReport.TurnLatencyEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.O6,
+        packageName: const $pb.PackageName('protos'))
+    ..pPS(12, _omitFieldNames ? '' : 'errors')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetCheckReport clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetCheckReport copyWith(void Function(NetCheckReport) updates) =>
+      super.copyWith((message) => updates(message as NetCheckReport))
+          as NetCheckReport;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetCheckReport create() => NetCheckReport._();
+  @$core.override
+  NetCheckReport createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetCheckReport getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetCheckReport>(create);
+  static NetCheckReport? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $2.Timestamp get now => $_getN(0);
+  @$pb.TagNumber(1)
+  set now($2.Timestamp value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNow() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNow() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $2.Timestamp ensureNow() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get udp => $_getBF(1);
+  @$pb.TagNumber(2)
+  set udp($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUdp() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUdp() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get ipv6 => $_getBF(2);
+  @$pb.TagNumber(3)
+  set ipv6($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasIpv6() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearIpv6() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get ipv4 => $_getBF(3);
+  @$pb.TagNumber(4)
+  set ipv4($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasIpv4() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearIpv4() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get ipv6CanSend => $_getBF(4);
+  @$pb.TagNumber(5)
+  set ipv6CanSend($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasIpv6CanSend() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIpv6CanSend() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get ipv4CanSend => $_getBF(5);
+  @$pb.TagNumber(6)
+  set ipv4CanSend($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIpv4CanSend() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIpv4CanSend() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get osHasIpv6 => $_getBF(6);
+  @$pb.TagNumber(7)
+  set osHasIpv6($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasOsHasIpv6() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearOsHasIpv6() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get globalV4 => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set globalV4($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasGlobalV4() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearGlobalV4() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get globalV6 => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set globalV6($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasGlobalV6() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearGlobalV6() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  $pb.PbMap<$core.String, $fixnum.Int64> get stunLatency => $_getMap(9);
+
+  @$pb.TagNumber(11)
+  $pb.PbMap<$core.String, $fixnum.Int64> get turnLatency => $_getMap(10);
+
+  @$pb.TagNumber(12)
+  $pb.PbList<$core.String> get errors => $_getList(11);
 }
 
 const $core.bool _omitFieldNames =

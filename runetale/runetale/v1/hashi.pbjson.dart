@@ -8,7 +8,8 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names, unused_import
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
+// ignore_for_file: unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -287,3 +288,81 @@ const StopRequest$json = {
 /// Descriptor for `StopRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List stopRequestDescriptor = $convert
     .base64Decode('CgtTdG9wUmVxdWVzdBIWCgZyZWFzb24YASABKAlSBnJlYXNvbg==');
+
+@$core.Deprecated('Use netCheckReportDescriptor instead')
+const NetCheckReport$json = {
+  '1': 'NetCheckReport',
+  '2': [
+    {
+      '1': 'now',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'now'
+    },
+    {'1': 'udp', '3': 2, '4': 1, '5': 8, '10': 'udp'},
+    {'1': 'ipv6', '3': 3, '4': 1, '5': 8, '10': 'ipv6'},
+    {'1': 'ipv4', '3': 4, '4': 1, '5': 8, '10': 'ipv4'},
+    {'1': 'ipv6_can_send', '3': 5, '4': 1, '5': 8, '10': 'ipv6CanSend'},
+    {'1': 'ipv4_can_send', '3': 6, '4': 1, '5': 8, '10': 'ipv4CanSend'},
+    {'1': 'os_has_ipv6', '3': 7, '4': 1, '5': 8, '10': 'osHasIpv6'},
+    {'1': 'global_v4', '3': 8, '4': 1, '5': 9, '10': 'globalV4'},
+    {'1': 'global_v6', '3': 9, '4': 1, '5': 9, '10': 'globalV6'},
+    {
+      '1': 'stun_latency',
+      '3': 10,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.NetCheckReport.StunLatencyEntry',
+      '10': 'stunLatency'
+    },
+    {
+      '1': 'turn_latency',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.NetCheckReport.TurnLatencyEntry',
+      '10': 'turnLatency'
+    },
+    {'1': 'errors', '3': 12, '4': 3, '5': 9, '10': 'errors'},
+  ],
+  '3': [
+    NetCheckReport_StunLatencyEntry$json,
+    NetCheckReport_TurnLatencyEntry$json
+  ],
+};
+
+@$core.Deprecated('Use netCheckReportDescriptor instead')
+const NetCheckReport_StunLatencyEntry$json = {
+  '1': 'StunLatencyEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 3, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+@$core.Deprecated('Use netCheckReportDescriptor instead')
+const NetCheckReport_TurnLatencyEntry$json = {
+  '1': 'TurnLatencyEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 3, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `NetCheckReport`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List netCheckReportDescriptor = $convert.base64Decode(
+    'Cg5OZXRDaGVja1JlcG9ydBIsCgNub3cYASABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW'
+    '1wUgNub3cSEAoDdWRwGAIgASgIUgN1ZHASEgoEaXB2NhgDIAEoCFIEaXB2NhISCgRpcHY0GAQg'
+    'ASgIUgRpcHY0EiIKDWlwdjZfY2FuX3NlbmQYBSABKAhSC2lwdjZDYW5TZW5kEiIKDWlwdjRfY2'
+    'FuX3NlbmQYBiABKAhSC2lwdjRDYW5TZW5kEh4KC29zX2hhc19pcHY2GAcgASgIUglvc0hhc0lw'
+    'djYSGwoJZ2xvYmFsX3Y0GAggASgJUghnbG9iYWxWNBIbCglnbG9iYWxfdjYYCSABKAlSCGdsb2'
+    'JhbFY2EkoKDHN0dW5fbGF0ZW5jeRgKIAMoCzInLnByb3Rvcy5OZXRDaGVja1JlcG9ydC5TdHVu'
+    'TGF0ZW5jeUVudHJ5UgtzdHVuTGF0ZW5jeRJKCgx0dXJuX2xhdGVuY3kYCyADKAsyJy5wcm90b3'
+    'MuTmV0Q2hlY2tSZXBvcnQuVHVybkxhdGVuY3lFbnRyeVILdHVybkxhdGVuY3kSFgoGZXJyb3Jz'
+    'GAwgAygJUgZlcnJvcnMaPgoQU3R1bkxhdGVuY3lFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCg'
+    'V2YWx1ZRgCIAEoA1IFdmFsdWU6AjgBGj4KEFR1cm5MYXRlbmN5RW50cnkSEAoDa2V5GAEgASgJ'
+    'UgNrZXkSFAoFdmFsdWUYAiABKANSBXZhbHVlOgI4AQ==');

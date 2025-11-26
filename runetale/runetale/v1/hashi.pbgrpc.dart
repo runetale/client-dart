@@ -8,15 +8,15 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/empty.pb.dart' as $0;
 
-import '../../../google/protobuf/empty.pb.dart' as $0;
 import 'hashi.pb.dart' as $1;
 
 export 'hashi.pb.dart';
@@ -84,6 +84,13 @@ class HashiServiceClient extends $grpc.Client {
     return $createUnaryCall(_$dial, request, options: options);
   }
 
+  $grpc.ResponseFuture<$1.NetCheckReport> netCheck(
+    $0.Empty request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$netCheck, request, options: options);
+  }
+
   // method descriptors
 
   static final _$status = $grpc.ClientMethod<$0.Empty, $1.HashiStatus>(
@@ -115,6 +122,10 @@ class HashiServiceClient extends $grpc.Client {
       '/protos.HashiService/Dial',
       ($0.Empty value) => value.writeToBuffer(),
       $1.HashiStatus.fromBuffer);
+  static final _$netCheck = $grpc.ClientMethod<$0.Empty, $1.NetCheckReport>(
+      '/protos.HashiService/NetCheck',
+      ($0.Empty value) => value.writeToBuffer(),
+      $1.NetCheckReport.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.HashiService')
@@ -171,6 +182,13 @@ abstract class HashiServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.HashiStatus value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Empty, $1.NetCheckReport>(
+        'NetCheck',
+        netCheck_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
+        ($1.NetCheckReport value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.HashiStatus> status_Pre(
@@ -226,4 +244,12 @@ abstract class HashiServiceBase extends $grpc.Service {
   }
 
   $async.Future<$1.HashiStatus> dial($grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.NetCheckReport> netCheck_Pre(
+      $grpc.ServiceCall $call, $async.Future<$0.Empty> $request) async {
+    return netCheck($call, await $request);
+  }
+
+  $async.Future<$1.NetCheckReport> netCheck(
+      $grpc.ServiceCall call, $0.Empty request);
 }
