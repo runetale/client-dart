@@ -290,6 +290,7 @@ class Node extends $pb.GeneratedMessage {
     $core.String? displayName,
     $core.String? loginName,
     $core.String? hostOS,
+    $core.String? runeKey,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -303,6 +304,7 @@ class Node extends $pb.GeneratedMessage {
     if (displayName != null) result.displayName = displayName;
     if (loginName != null) result.loginName = loginName;
     if (hostOS != null) result.hostOS = hostOS;
+    if (runeKey != null) result.runeKey = runeKey;
     return result;
   }
 
@@ -332,6 +334,7 @@ class Node extends $pb.GeneratedMessage {
     ..aOS(9, _omitFieldNames ? '' : 'displayName', protoName: 'displayName')
     ..aOS(10, _omitFieldNames ? '' : 'loginName', protoName: 'loginName')
     ..aOS(11, _omitFieldNames ? '' : 'hostOS', protoName: 'hostOS')
+    ..aOS(12, _omitFieldNames ? '' : 'runeKey', protoName: 'runeKey')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -439,6 +442,15 @@ class Node extends $pb.GeneratedMessage {
   $core.bool hasHostOS() => $_has(10);
   @$pb.TagNumber(11)
   void clearHostOS() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get runeKey => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set runeKey($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasRuneKey() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearRuneKey() => $_clearField(12);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {

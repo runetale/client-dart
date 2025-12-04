@@ -104,6 +104,7 @@ const Node$json = {
     {'1': 'displayName', '3': 9, '4': 1, '5': 9, '10': 'displayName'},
     {'1': 'loginName', '3': 10, '4': 1, '5': 9, '10': 'loginName'},
     {'1': 'hostOS', '3': 11, '4': 1, '5': 9, '10': 'hostOS'},
+    {'1': 'runeKey', '3': 12, '4': 1, '5': 9, '10': 'runeKey'},
   ],
 };
 
@@ -114,7 +115,7 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'b3dlZElQcxgFIAMoCVIKYWxsb3dlZElQcxIcCglhZGRyZXNzZXMYBiADKAlSCWFkZHJlc3Nlcx'
     'IWCgZ1c2VySWQYByABKARSBnVzZXJJZBIUCgVlbWFpbBgIIAEoCVIFZW1haWwSIAoLZGlzcGxh'
     'eU5hbWUYCSABKAlSC2Rpc3BsYXlOYW1lEhwKCWxvZ2luTmFtZRgKIAEoCVIJbG9naW5OYW1lEh'
-    'YKBmhvc3RPUxgLIAEoCVIGaG9zdE9T');
+    'YKBmhvc3RPUxgLIAEoCVIGaG9zdE9TEhgKB3J1bmVLZXkYDCABKAlSB3J1bmVLZXk=');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
