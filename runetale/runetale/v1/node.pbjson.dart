@@ -105,6 +105,13 @@ const Node$json = {
     {'1': 'loginName', '3': 10, '4': 1, '5': 9, '10': 'loginName'},
     {'1': 'hostOS', '3': 11, '4': 1, '5': 9, '10': 'hostOS'},
     {'1': 'runeKey', '3': 12, '4': 1, '5': 9, '10': 'runeKey'},
+    {
+      '1': 'cerfHomeRegionId',
+      '3': 13,
+      '4': 1,
+      '5': 13,
+      '10': 'cerfHomeRegionId'
+    },
   ],
 };
 
@@ -115,7 +122,8 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'b3dlZElQcxgFIAMoCVIKYWxsb3dlZElQcxIcCglhZGRyZXNzZXMYBiADKAlSCWFkZHJlc3Nlcx'
     'IWCgZ1c2VySWQYByABKARSBnVzZXJJZBIUCgVlbWFpbBgIIAEoCVIFZW1haWwSIAoLZGlzcGxh'
     'eU5hbWUYCSABKAlSC2Rpc3BsYXlOYW1lEhwKCWxvZ2luTmFtZRgKIAEoCVIJbG9naW5OYW1lEh'
-    'YKBmhvc3RPUxgLIAEoCVIGaG9zdE9TEhgKB3J1bmVLZXkYDCABKAlSB3J1bmVLZXk=');
+    'YKBmhvc3RPUxgLIAEoCVIGaG9zdE9TEhgKB3J1bmVLZXkYDCABKAlSB3J1bmVLZXkSKgoQY2Vy'
+    'ZkhvbWVSZWdpb25JZBgNIAEoDVIQY2VyZkhvbWVSZWdpb25JZA==');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
@@ -243,6 +251,21 @@ const NetworkMapResponse$json = {
       '6': '.protos.AppLinker',
       '10': 'appLinker'
     },
+    {
+      '1': 'cerfMap',
+      '3': 20,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.CerfMap',
+      '10': 'cerfMap'
+    },
+    {
+      '1': 'defaultCerfRegionId',
+      '3': 21,
+      '4': 1,
+      '5': 13,
+      '10': 'defaultCerfRegionId'
+    },
   ],
 };
 
@@ -255,7 +278,73 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'dG9zLkZpbHRlclJ1bGVSDHBhY2tldEZpbHRlchIoCg9hZHZlcnRpc2VkUm91dGUYByABKAlSD2'
     'FkdmVydGlzZWRSb3V0ZRIWCgZqYWlsZWQYCCABKAhSBmphaWxlZBIoCghpY2VUYWJsZRgJIAMo'
     'CzIMLnByb3Rvcy5Ob2RlUghpY2VUYWJsZRIjCgNkbnMYCiABKAsyES5wcm90b3MuRE5TQ29uZm'
-    'lnUgNkbnMSLwoJYXBwTGlua2VyGAsgAygLMhEucHJvdG9zLkFwcExpbmtlclIJYXBwTGlua2Vy');
+    'lnUgNkbnMSLwoJYXBwTGlua2VyGAsgAygLMhEucHJvdG9zLkFwcExpbmtlclIJYXBwTGlua2Vy'
+    'EikKB2NlcmZNYXAYFCABKAsyDy5wcm90b3MuQ2VyZk1hcFIHY2VyZk1hcBIwChNkZWZhdWx0Q2'
+    'VyZlJlZ2lvbklkGBUgASgNUhNkZWZhdWx0Q2VyZlJlZ2lvbklk');
+
+@$core.Deprecated('Use cerfMapDescriptor instead')
+const CerfMap$json = {
+  '1': 'CerfMap',
+  '2': [
+    {
+      '1': 'regions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.CerfRegion',
+      '10': 'regions'
+    },
+  ],
+};
+
+/// Descriptor for `CerfMap`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cerfMapDescriptor = $convert.base64Decode(
+    'CgdDZXJmTWFwEiwKB3JlZ2lvbnMYASADKAsyEi5wcm90b3MuQ2VyZlJlZ2lvblIHcmVnaW9ucw'
+    '==');
+
+@$core.Deprecated('Use cerfRegionDescriptor instead')
+const CerfRegion$json = {
+  '1': 'CerfRegion',
+  '2': [
+    {'1': 'regionId', '3': 1, '4': 1, '5': 13, '10': 'regionId'},
+    {'1': 'regionCode', '3': 2, '4': 1, '5': 9, '10': 'regionCode'},
+    {
+      '1': 'nodes',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.CerfNode',
+      '10': 'nodes'
+    },
+  ],
+};
+
+/// Descriptor for `CerfRegion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cerfRegionDescriptor = $convert.base64Decode(
+    'CgpDZXJmUmVnaW9uEhoKCHJlZ2lvbklkGAEgASgNUghyZWdpb25JZBIeCgpyZWdpb25Db2RlGA'
+    'IgASgJUgpyZWdpb25Db2RlEiYKBW5vZGVzGAMgAygLMhAucHJvdG9zLkNlcmZOb2RlUgVub2Rl'
+    'cw==');
+
+@$core.Deprecated('Use cerfNodeDescriptor instead')
+const CerfNode$json = {
+  '1': 'CerfNode',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'hostName', '3': 2, '4': 1, '5': 9, '10': 'hostName'},
+    {'1': 'cerfPort', '3': 3, '4': 1, '5': 13, '10': 'cerfPort'},
+    {'1': 'stunPort', '3': 4, '4': 1, '5': 13, '10': 'stunPort'},
+    {'1': 'websocketOnly', '3': 5, '4': 1, '5': 8, '10': 'websocketOnly'},
+    {'1': 'forceHttp', '3': 6, '4': 1, '5': 8, '10': 'forceHttp'},
+    {'1': 'stunOnly', '3': 7, '4': 1, '5': 8, '10': 'stunOnly'},
+  ],
+};
+
+/// Descriptor for `CerfNode`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List cerfNodeDescriptor = $convert.base64Decode(
+    'CghDZXJmTm9kZRISCgRuYW1lGAEgASgJUgRuYW1lEhoKCGhvc3ROYW1lGAIgASgJUghob3N0Tm'
+    'FtZRIaCghjZXJmUG9ydBgDIAEoDVIIY2VyZlBvcnQSGgoIc3R1blBvcnQYBCABKA1SCHN0dW5Q'
+    'b3J0EiQKDXdlYnNvY2tldE9ubHkYBSABKAhSDXdlYnNvY2tldE9ubHkSHAoJZm9yY2VIdHRwGA'
+    'YgASgIUglmb3JjZUh0dHASGgoIc3R1bk9ubHkYByABKAhSCHN0dW5Pbmx5');
 
 @$core.Deprecated('Use appLinkerDescriptor instead')
 const AppLinker$json = {

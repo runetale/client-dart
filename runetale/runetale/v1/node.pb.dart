@@ -291,6 +291,7 @@ class Node extends $pb.GeneratedMessage {
     $core.String? loginName,
     $core.String? hostOS,
     $core.String? runeKey,
+    $core.int? cerfHomeRegionId,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -305,6 +306,7 @@ class Node extends $pb.GeneratedMessage {
     if (loginName != null) result.loginName = loginName;
     if (hostOS != null) result.hostOS = hostOS;
     if (runeKey != null) result.runeKey = runeKey;
+    if (cerfHomeRegionId != null) result.cerfHomeRegionId = cerfHomeRegionId;
     return result;
   }
 
@@ -335,6 +337,8 @@ class Node extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'loginName', protoName: 'loginName')
     ..aOS(11, _omitFieldNames ? '' : 'hostOS', protoName: 'hostOS')
     ..aOS(12, _omitFieldNames ? '' : 'runeKey', protoName: 'runeKey')
+    ..aI(13, _omitFieldNames ? '' : 'cerfHomeRegionId',
+        protoName: 'cerfHomeRegionId', fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -451,6 +455,17 @@ class Node extends $pb.GeneratedMessage {
   $core.bool hasRuneKey() => $_has(11);
   @$pb.TagNumber(12)
   void clearRuneKey() => $_clearField(12);
+
+  /// cerfHomeRegionId is this node's home CERF region ID.
+  /// The server must always set this (defaulting to NetworkMapResponse.defaultCerfRegionId).
+  @$pb.TagNumber(13)
+  $core.int get cerfHomeRegionId => $_getIZ(12);
+  @$pb.TagNumber(13)
+  set cerfHomeRegionId($core.int value) => $_setUnsignedInt32(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCerfHomeRegionId() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCerfHomeRegionId() => $_clearField(13);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
@@ -816,6 +831,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.Iterable<Node>? iceTable,
     DNSConfig? dns,
     $core.Iterable<AppLinker>? appLinker,
+    CerfMap? cerfMap,
+    $core.int? defaultCerfRegionId,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -829,6 +846,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (iceTable != null) result.iceTable.addAll(iceTable);
     if (dns != null) result.dns = dns;
     if (appLinker != null) result.appLinker.addAll(appLinker);
+    if (cerfMap != null) result.cerfMap = cerfMap;
+    if (defaultCerfRegionId != null)
+      result.defaultCerfRegionId = defaultCerfRegionId;
     return result;
   }
 
@@ -865,6 +885,10 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
         subBuilder: DNSConfig.create)
     ..pPM<AppLinker>(11, _omitFieldNames ? '' : 'appLinker',
         protoName: 'appLinker', subBuilder: AppLinker.create)
+    ..aOM<CerfMap>(20, _omitFieldNames ? '' : 'cerfMap',
+        protoName: 'cerfMap', subBuilder: CerfMap.create)
+    ..aI(21, _omitFieldNames ? '' : 'defaultCerfRegionId',
+        protoName: 'defaultCerfRegionId', fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -963,6 +987,276 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(11)
   $pb.PbList<AppLinker> get appLinker => $_getList(10);
+
+  /// cerfMap describes available CERF relay nodes.
+  @$pb.TagNumber(20)
+  CerfMap get cerfMap => $_getN(11);
+  @$pb.TagNumber(20)
+  set cerfMap(CerfMap value) => $_setField(20, value);
+  @$pb.TagNumber(20)
+  $core.bool hasCerfMap() => $_has(11);
+  @$pb.TagNumber(20)
+  void clearCerfMap() => $_clearField(20);
+  @$pb.TagNumber(20)
+  CerfMap ensureCerfMap() => $_ensure(11);
+
+  /// defaultCerfRegionId is the default region to use when a peer's Node.cerfHomeRegionId is unset.
+  @$pb.TagNumber(21)
+  $core.int get defaultCerfRegionId => $_getIZ(12);
+  @$pb.TagNumber(21)
+  set defaultCerfRegionId($core.int value) => $_setUnsignedInt32(12, value);
+  @$pb.TagNumber(21)
+  $core.bool hasDefaultCerfRegionId() => $_has(12);
+  @$pb.TagNumber(21)
+  void clearDefaultCerfRegionId() => $_clearField(21);
+}
+
+class CerfMap extends $pb.GeneratedMessage {
+  factory CerfMap({
+    $core.Iterable<CerfRegion>? regions,
+  }) {
+    final result = create();
+    if (regions != null) result.regions.addAll(regions);
+    return result;
+  }
+
+  CerfMap._();
+
+  factory CerfMap.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CerfMap.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CerfMap',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..pPM<CerfRegion>(1, _omitFieldNames ? '' : 'regions',
+        subBuilder: CerfRegion.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CerfMap clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CerfMap copyWith(void Function(CerfMap) updates) =>
+      super.copyWith((message) => updates(message as CerfMap)) as CerfMap;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CerfMap create() => CerfMap._();
+  @$core.override
+  CerfMap createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CerfMap getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CerfMap>(create);
+  static CerfMap? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<CerfRegion> get regions => $_getList(0);
+}
+
+class CerfRegion extends $pb.GeneratedMessage {
+  factory CerfRegion({
+    $core.int? regionId,
+    $core.String? regionCode,
+    $core.Iterable<CerfNode>? nodes,
+  }) {
+    final result = create();
+    if (regionId != null) result.regionId = regionId;
+    if (regionCode != null) result.regionCode = regionCode;
+    if (nodes != null) result.nodes.addAll(nodes);
+    return result;
+  }
+
+  CerfRegion._();
+
+  factory CerfRegion.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CerfRegion.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CerfRegion',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'regionId',
+        protoName: 'regionId', fieldType: $pb.PbFieldType.OU3)
+    ..aOS(2, _omitFieldNames ? '' : 'regionCode', protoName: 'regionCode')
+    ..pPM<CerfNode>(3, _omitFieldNames ? '' : 'nodes',
+        subBuilder: CerfNode.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CerfRegion clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CerfRegion copyWith(void Function(CerfRegion) updates) =>
+      super.copyWith((message) => updates(message as CerfRegion)) as CerfRegion;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CerfRegion create() => CerfRegion._();
+  @$core.override
+  CerfRegion createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CerfRegion getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<CerfRegion>(create);
+  static CerfRegion? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get regionId => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set regionId($core.int value) => $_setUnsignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRegionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRegionId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get regionCode => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set regionCode($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRegionCode() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRegionCode() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<CerfNode> get nodes => $_getList(2);
+}
+
+class CerfNode extends $pb.GeneratedMessage {
+  factory CerfNode({
+    $core.String? name,
+    $core.String? hostName,
+    $core.int? cerfPort,
+    $core.int? stunPort,
+    $core.bool? websocketOnly,
+    $core.bool? forceHttp,
+    $core.bool? stunOnly,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (hostName != null) result.hostName = hostName;
+    if (cerfPort != null) result.cerfPort = cerfPort;
+    if (stunPort != null) result.stunPort = stunPort;
+    if (websocketOnly != null) result.websocketOnly = websocketOnly;
+    if (forceHttp != null) result.forceHttp = forceHttp;
+    if (stunOnly != null) result.stunOnly = stunOnly;
+    return result;
+  }
+
+  CerfNode._();
+
+  factory CerfNode.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory CerfNode.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'CerfNode',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'hostName', protoName: 'hostName')
+    ..aI(3, _omitFieldNames ? '' : 'cerfPort',
+        protoName: 'cerfPort', fieldType: $pb.PbFieldType.OU3)
+    ..aI(4, _omitFieldNames ? '' : 'stunPort',
+        protoName: 'stunPort', fieldType: $pb.PbFieldType.OU3)
+    ..aOB(5, _omitFieldNames ? '' : 'websocketOnly', protoName: 'websocketOnly')
+    ..aOB(6, _omitFieldNames ? '' : 'forceHttp', protoName: 'forceHttp')
+    ..aOB(7, _omitFieldNames ? '' : 'stunOnly', protoName: 'stunOnly')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CerfNode clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  CerfNode copyWith(void Function(CerfNode) updates) =>
+      super.copyWith((message) => updates(message as CerfNode)) as CerfNode;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CerfNode create() => CerfNode._();
+  @$core.override
+  CerfNode createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static CerfNode getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CerfNode>(create);
+  static CerfNode? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get hostName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set hostName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHostName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHostName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.int get cerfPort => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set cerfPort($core.int value) => $_setUnsignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasCerfPort() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCerfPort() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.int get stunPort => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set stunPort($core.int value) => $_setUnsignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasStunPort() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearStunPort() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get websocketOnly => $_getBF(4);
+  @$pb.TagNumber(5)
+  set websocketOnly($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWebsocketOnly() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWebsocketOnly() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get forceHttp => $_getBF(5);
+  @$pb.TagNumber(6)
+  set forceHttp($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasForceHttp() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearForceHttp() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get stunOnly => $_getBF(6);
+  @$pb.TagNumber(7)
+  set stunOnly($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasStunOnly() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearStunOnly() => $_clearField(7);
 }
 
 class AppLinker extends $pb.GeneratedMessage {
