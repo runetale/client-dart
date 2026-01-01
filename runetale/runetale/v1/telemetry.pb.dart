@@ -53,8 +53,8 @@ class TelemetryBatchRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
-        defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'sessionId')
+        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
     ..aOS(3, _omitFieldNames ? '' : 'version')
     ..pPM<TelemetryEvent>(4, _omitFieldNames ? '' : 'events',
         subBuilder: TelemetryEvent.create)
@@ -263,8 +263,10 @@ class TelemetryEvent extends $pb.GeneratedMessage {
     ..aOM<$0.Timestamp>(1, _omitFieldNames ? '' : 'at',
         subBuilder: $0.Timestamp.create)
     ..a<$core.List<$core.int>>(
-        2, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY)
-    ..aI(3, _omitFieldNames ? '' : 'regionId', fieldType: $pb.PbFieldType.OU3)
+        2, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY,
+        protoName: 'peerHash')
+    ..aI(3, _omitFieldNames ? '' : 'regionId',
+        protoName: 'regionId', fieldType: $pb.PbFieldType.OU3)
     ..aE<Transport>(4, _omitFieldNames ? '' : 'transport',
         enumValues: Transport.values)
     ..aOM<PathTransition>(10, _omitFieldNames ? '' : 'pathTransition',
@@ -550,7 +552,7 @@ class SendResult extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'ok')
     ..aI(2, _omitFieldNames ? '' : 'bytes', fieldType: $pb.PbFieldType.OU3)
-    ..aOS(3, _omitFieldNames ? '' : 'errCode')
+    ..aOS(3, _omitFieldNames ? '' : 'errCode', protoName: 'errCode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -634,7 +636,7 @@ class RecvResult extends $pb.GeneratedMessage {
     ..aE<RecvKind>(2, _omitFieldNames ? '' : 'kind',
         enumValues: RecvKind.values)
     ..aI(3, _omitFieldNames ? '' : 'bytes', fieldType: $pb.PbFieldType.OU3)
-    ..aOS(4, _omitFieldNames ? '' : 'errCode')
+    ..aOS(4, _omitFieldNames ? '' : 'errCode', protoName: 'errCode')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -719,7 +721,7 @@ class CerfConnEvent extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'CerfConnEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..aI(1, _omitFieldNames ? '' : 'connGen')
+    ..aI(1, _omitFieldNames ? '' : 'connGen', protoName: 'connGen')
     ..aE<CerfConnEvent_CerfConnState>(2, _omitFieldNames ? '' : 'state',
         enumValues: CerfConnEvent_CerfConnState.values)
     ..aOS(3, _omitFieldNames ? '' : 'detail')

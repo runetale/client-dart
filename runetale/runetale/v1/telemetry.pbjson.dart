@@ -66,8 +66,8 @@ final $typed_data.Uint8List recvKindDescriptor = $convert.base64Decode(
 const TelemetryBatchRequest$json = {
   '1': 'TelemetryBatchRequest',
   '2': [
-    {'1': 'node_id', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
-    {'1': 'session_id', '3': 2, '4': 1, '5': 9, '10': 'sessionId'},
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'sessionId', '3': 2, '4': 1, '5': 9, '10': 'sessionId'},
     {'1': 'version', '3': 3, '4': 1, '5': 9, '10': 'version'},
     {
       '1': 'events',
@@ -82,9 +82,9 @@ const TelemetryBatchRequest$json = {
 
 /// Descriptor for `TelemetryBatchRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List telemetryBatchRequestDescriptor = $convert.base64Decode(
-    'ChVUZWxlbWV0cnlCYXRjaFJlcXVlc3QSFwoHbm9kZV9pZBgBIAEoBFIGbm9kZUlkEh0KCnNlc3'
-    'Npb25faWQYAiABKAlSCXNlc3Npb25JZBIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEi4KBmV2'
-    'ZW50cxgEIAMoCzIWLnByb3Rvcy5UZWxlbWV0cnlFdmVudFIGZXZlbnRz');
+    'ChVUZWxlbWV0cnlCYXRjaFJlcXVlc3QSFgoGbm9kZUlkGAEgASgEUgZub2RlSWQSHAoJc2Vzc2'
+    'lvbklkGAIgASgJUglzZXNzaW9uSWQSGAoHdmVyc2lvbhgDIAEoCVIHdmVyc2lvbhIuCgZldmVu'
+    'dHMYBCADKAsyFi5wcm90b3MuVGVsZW1ldHJ5RXZlbnRSBmV2ZW50cw==');
 
 @$core.Deprecated('Use telemetryBatchResponseDescriptor instead')
 const TelemetryBatchResponse$json = {
@@ -114,8 +114,8 @@ const TelemetryEvent$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'at'
     },
-    {'1': 'peer_hash', '3': 2, '4': 1, '5': 12, '10': 'peerHash'},
-    {'1': 'region_id', '3': 3, '4': 1, '5': 13, '10': 'regionId'},
+    {'1': 'peerHash', '3': 2, '4': 1, '5': 12, '10': 'peerHash'},
+    {'1': 'regionId', '3': 3, '4': 1, '5': 13, '10': 'regionId'},
     {
       '1': 'transport',
       '3': 4,
@@ -187,14 +187,14 @@ const TelemetryEvent$json = {
 /// Descriptor for `TelemetryEvent`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List telemetryEventDescriptor = $convert.base64Decode(
     'Cg5UZWxlbWV0cnlFdmVudBIqCgJhdBgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbX'
-    'BSAmF0EhsKCXBlZXJfaGFzaBgCIAEoDFIIcGVlckhhc2gSGwoJcmVnaW9uX2lkGAMgASgNUghy'
-    'ZWdpb25JZBIvCgl0cmFuc3BvcnQYBCABKA4yES5wcm90b3MuVHJhbnNwb3J0Ugl0cmFuc3Bvcn'
-    'QSQQoPcGF0aF90cmFuc2l0aW9uGAogASgLMhYucHJvdG9zLlBhdGhUcmFuc2l0aW9uSABSDnBh'
-    'dGhUcmFuc2l0aW9uEjUKC3NlbmRfcmVzdWx0GAsgASgLMhIucHJvdG9zLlNlbmRSZXN1bHRIAF'
-    'IKc2VuZFJlc3VsdBI1CgtyZWN2X3Jlc3VsdBgMIAEoCzISLnByb3Rvcy5SZWN2UmVzdWx0SABS'
-    'CnJlY3ZSZXN1bHQSNAoJY2VyZl9jb25uGA0gASgLMhUucHJvdG9zLkNlcmZDb25uRXZlbnRIAF'
-    'IIY2VyZkNvbm4SJAoDaWNlGA4gASgLMhAucHJvdG9zLkljZUV2ZW50SABSA2ljZRIwCgZmaWx0'
-    'ZXIYDyABKAsyFi5wcm90b3MuRmlsdGVyRGVjaXNpb25IAFIGZmlsdGVyQgkKB3BheWxvYWQ=');
+    'BSAmF0EhoKCHBlZXJIYXNoGAIgASgMUghwZWVySGFzaBIaCghyZWdpb25JZBgDIAEoDVIIcmVn'
+    'aW9uSWQSLwoJdHJhbnNwb3J0GAQgASgOMhEucHJvdG9zLlRyYW5zcG9ydFIJdHJhbnNwb3J0Ek'
+    'EKD3BhdGhfdHJhbnNpdGlvbhgKIAEoCzIWLnByb3Rvcy5QYXRoVHJhbnNpdGlvbkgAUg5wYXRo'
+    'VHJhbnNpdGlvbhI1CgtzZW5kX3Jlc3VsdBgLIAEoCzISLnByb3Rvcy5TZW5kUmVzdWx0SABSCn'
+    'NlbmRSZXN1bHQSNQoLcmVjdl9yZXN1bHQYDCABKAsyEi5wcm90b3MuUmVjdlJlc3VsdEgAUgpy'
+    'ZWN2UmVzdWx0EjQKCWNlcmZfY29ubhgNIAEoCzIVLnByb3Rvcy5DZXJmQ29ubkV2ZW50SABSCG'
+    'NlcmZDb25uEiQKA2ljZRgOIAEoCzIQLnByb3Rvcy5JY2VFdmVudEgAUgNpY2USMAoGZmlsdGVy'
+    'GA8gASgLMhYucHJvdG9zLkZpbHRlckRlY2lzaW9uSABSBmZpbHRlckIJCgdwYXlsb2Fk');
 
 @$core.Deprecated('Use pathTransitionDescriptor instead')
 const PathTransition$json = {
@@ -226,14 +226,14 @@ const SendResult$json = {
   '2': [
     {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
     {'1': 'bytes', '3': 2, '4': 1, '5': 13, '10': 'bytes'},
-    {'1': 'err_code', '3': 3, '4': 1, '5': 9, '10': 'errCode'},
+    {'1': 'errCode', '3': 3, '4': 1, '5': 9, '10': 'errCode'},
   ],
 };
 
 /// Descriptor for `SendResult`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sendResultDescriptor = $convert.base64Decode(
-    'CgpTZW5kUmVzdWx0Eg4KAm9rGAEgASgIUgJvaxIUCgVieXRlcxgCIAEoDVIFYnl0ZXMSGQoIZX'
-    'JyX2NvZGUYAyABKAlSB2VyckNvZGU=');
+    'CgpTZW5kUmVzdWx0Eg4KAm9rGAEgASgIUgJvaxIUCgVieXRlcxgCIAEoDVIFYnl0ZXMSGAoHZX'
+    'JyQ29kZRgDIAEoCVIHZXJyQ29kZQ==');
 
 @$core.Deprecated('Use recvResultDescriptor instead')
 const RecvResult$json = {
@@ -249,21 +249,21 @@ const RecvResult$json = {
       '10': 'kind'
     },
     {'1': 'bytes', '3': 3, '4': 1, '5': 13, '10': 'bytes'},
-    {'1': 'err_code', '3': 4, '4': 1, '5': 9, '10': 'errCode'},
+    {'1': 'errCode', '3': 4, '4': 1, '5': 9, '10': 'errCode'},
   ],
 };
 
 /// Descriptor for `RecvResult`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List recvResultDescriptor = $convert.base64Decode(
     'CgpSZWN2UmVzdWx0Eg4KAm9rGAEgASgIUgJvaxIkCgRraW5kGAIgASgOMhAucHJvdG9zLlJlY3'
-    'ZLaW5kUgRraW5kEhQKBWJ5dGVzGAMgASgNUgVieXRlcxIZCghlcnJfY29kZRgEIAEoCVIHZXJy'
-    'Q29kZQ==');
+    'ZLaW5kUgRraW5kEhQKBWJ5dGVzGAMgASgNUgVieXRlcxIYCgdlcnJDb2RlGAQgASgJUgdlcnJD'
+    'b2Rl');
 
 @$core.Deprecated('Use cerfConnEventDescriptor instead')
 const CerfConnEvent$json = {
   '1': 'CerfConnEvent',
   '2': [
-    {'1': 'conn_gen', '3': 1, '4': 1, '5': 5, '10': 'connGen'},
+    {'1': 'connGen', '3': 1, '4': 1, '5': 5, '10': 'connGen'},
     {
       '1': 'state',
       '3': 2,
@@ -292,13 +292,13 @@ const CerfConnEvent_CerfConnState$json = {
 
 /// Descriptor for `CerfConnEvent`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List cerfConnEventDescriptor = $convert.base64Decode(
-    'Cg1DZXJmQ29ubkV2ZW50EhkKCGNvbm5fZ2VuGAEgASgFUgdjb25uR2VuEjkKBXN0YXRlGAIgAS'
-    'gOMiMucHJvdG9zLkNlcmZDb25uRXZlbnQuQ2VyZkNvbm5TdGF0ZVIFc3RhdGUSFgoGZGV0YWls'
-    'GAMgASgJUgZkZXRhaWwi1QEKDUNlcmZDb25uU3RhdGUSHwobQ0VSRl9DT05OX1NUQVRFX1VOU1'
-    'BFQ0lGSUVEEAASHQoZQ0VSRl9DT05OX1NUQVRFX0NPTk5FQ1RFRBABEh8KG0NFUkZfQ09OTl9T'
-    'VEFURV9SRUNPTk5FQ1RFRBACEh4KGkNFUkZfQ09OTl9TVEFURV9SRUNWX0VSUk9SEAMSHgoaQ0'
-    'VSRl9DT05OX1NUQVRFX1NFTkRfRVJST1IQBBIjCh9DRVJGX0NPTk5fU1RBVEVfUkVHSU9OX0ZB'
-    'SUxPVkVSEAU=');
+    'Cg1DZXJmQ29ubkV2ZW50EhgKB2Nvbm5HZW4YASABKAVSB2Nvbm5HZW4SOQoFc3RhdGUYAiABKA'
+    '4yIy5wcm90b3MuQ2VyZkNvbm5FdmVudC5DZXJmQ29ublN0YXRlUgVzdGF0ZRIWCgZkZXRhaWwY'
+    'AyABKAlSBmRldGFpbCLVAQoNQ2VyZkNvbm5TdGF0ZRIfChtDRVJGX0NPTk5fU1RBVEVfVU5TUE'
+    'VDSUZJRUQQABIdChlDRVJGX0NPTk5fU1RBVEVfQ09OTkVDVEVEEAESHwobQ0VSRl9DT05OX1NU'
+    'QVRFX1JFQ09OTkVDVEVEEAISHgoaQ0VSRl9DT05OX1NUQVRFX1JFQ1ZfRVJST1IQAxIeChpDRV'
+    'JGX0NPTk5fU1RBVEVfU0VORF9FUlJPUhAEEiMKH0NFUkZfQ09OTl9TVEFURV9SRUdJT05fRkFJ'
+    'TE9WRVIQBQ==');
 
 @$core.Deprecated('Use iceEventDescriptor instead')
 const IceEvent$json = {
