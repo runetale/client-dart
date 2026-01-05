@@ -15,7 +15,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
-    as $0;
+    as $1;
 
 import 'telemetry.pbenum.dart';
 
@@ -211,7 +211,7 @@ enum TelemetryEvent_Payload {
 /// 共通フィールド + oneof(種類別ペイロード) で表現します。
 class TelemetryEvent extends $pb.GeneratedMessage {
   factory TelemetryEvent({
-    $0.Timestamp? at,
+    $1.Timestamp? at,
     $core.List<$core.int>? peerHash,
     $core.int? regionId,
     Transport? transport,
@@ -260,8 +260,8 @@ class TelemetryEvent extends $pb.GeneratedMessage {
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..oo(0, [10, 11, 12, 13, 14, 15])
-    ..aOM<$0.Timestamp>(1, _omitFieldNames ? '' : 'at',
-        subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'at',
+        subBuilder: $1.Timestamp.create)
     ..a<$core.List<$core.int>>(
         2, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY,
         protoName: 'peerHash')
@@ -320,15 +320,15 @@ class TelemetryEvent extends $pb.GeneratedMessage {
 
   /// イベント発生時刻（クライアント側）
   @$pb.TagNumber(1)
-  $0.Timestamp get at => $_getN(0);
+  $1.Timestamp get at => $_getN(0);
   @$pb.TagNumber(1)
-  set at($0.Timestamp value) => $_setField(1, value);
+  set at($1.Timestamp value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasAt() => $_has(0);
   @$pb.TagNumber(1)
   void clearAt() => $_clearField(1);
   @$pb.TagNumber(1)
-  $0.Timestamp ensureAt() => $_ensure(0);
+  $1.Timestamp ensureAt() => $_ensure(0);
 
   /// peer識別子（生鍵を送らない）。HMAC等で匿名化した固定長のハッシュを想定。
   @$pb.TagNumber(2)
