@@ -911,6 +911,701 @@ class FilterDecision extends $pb.GeneratedMessage {
   void clearReason() => $_clearField(2);
 }
 
+/// GetEventsRequest はテレメトリイベントの取得リクエストです。
+class GetEventsRequest extends $pb.GeneratedMessage {
+  factory GetEventsRequest({
+    $fixnum.Int64? nodeId,
+    $core.String? sessionId,
+    $1.Timestamp? from,
+    $1.Timestamp? to,
+    $core.int? limit,
+    $core.int? offset,
+  }) {
+    final result = create();
+    if (nodeId != null) result.nodeId = nodeId;
+    if (sessionId != null) result.sessionId = sessionId;
+    if (from != null) result.from = from;
+    if (to != null) result.to = to;
+    if (limit != null) result.limit = limit;
+    if (offset != null) result.offset = offset;
+    return result;
+  }
+
+  GetEventsRequest._();
+
+  factory GetEventsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEventsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEventsRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'from',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'to',
+        subBuilder: $1.Timestamp.create)
+    ..aI(5, _omitFieldNames ? '' : 'limit')
+    ..aI(6, _omitFieldNames ? '' : 'offset')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEventsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEventsRequest copyWith(void Function(GetEventsRequest) updates) =>
+      super.copyWith((message) => updates(message as GetEventsRequest))
+          as GetEventsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEventsRequest create() => GetEventsRequest._();
+  @$core.override
+  GetEventsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEventsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEventsRequest>(create);
+  static GetEventsRequest? _defaultInstance;
+
+  /// node_id でフィルタ（0 の場合は全ノード）
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get nodeId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set nodeId($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNodeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeId() => $_clearField(1);
+
+  /// session_id でフィルタ（空の場合は全セッション）
+  @$pb.TagNumber(2)
+  $core.String get sessionId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set sessionId($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSessionId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSessionId() => $_clearField(2);
+
+  /// 期間フィルタ（from <= event_day <= to）
+  @$pb.TagNumber(3)
+  $1.Timestamp get from => $_getN(2);
+  @$pb.TagNumber(3)
+  set from($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFrom() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFrom() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureFrom() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get to => $_getN(3);
+  @$pb.TagNumber(4)
+  set to($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTo() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureTo() => $_ensure(3);
+
+  /// ページネーション
+  @$pb.TagNumber(5)
+  $core.int get limit => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set limit($core.int value) => $_setSignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLimit() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLimit() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.int get offset => $_getIZ(5);
+  @$pb.TagNumber(6)
+  set offset($core.int value) => $_setSignedInt32(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasOffset() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOffset() => $_clearField(6);
+}
+
+/// GetEventsResponse はテレメトリイベントの取得レスポンスです。
+class GetEventsResponse extends $pb.GeneratedMessage {
+  factory GetEventsResponse({
+    $core.Iterable<StoredTelemetryEvent>? events,
+    $fixnum.Int64? totalCount,
+  }) {
+    final result = create();
+    if (events != null) result.events.addAll(events);
+    if (totalCount != null) result.totalCount = totalCount;
+    return result;
+  }
+
+  GetEventsResponse._();
+
+  factory GetEventsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetEventsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetEventsResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..pPM<StoredTelemetryEvent>(1, _omitFieldNames ? '' : 'events',
+        subBuilder: StoredTelemetryEvent.create)
+    ..aInt64(2, _omitFieldNames ? '' : 'totalCount', protoName: 'totalCount')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEventsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetEventsResponse copyWith(void Function(GetEventsResponse) updates) =>
+      super.copyWith((message) => updates(message as GetEventsResponse))
+          as GetEventsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetEventsResponse create() => GetEventsResponse._();
+  @$core.override
+  GetEventsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetEventsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetEventsResponse>(create);
+  static GetEventsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<StoredTelemetryEvent> get events => $_getList(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get totalCount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set totalCount($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTotalCount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTotalCount() => $_clearField(2);
+}
+
+/// StoredTelemetryEvent はサーバーに保存されたテレメトリイベントです。
+/// TelemetryEvent に加えて、サーバー側のメタデータを含みます。
+class StoredTelemetryEvent extends $pb.GeneratedMessage {
+  factory StoredTelemetryEvent({
+    $fixnum.Int64? id,
+    $fixnum.Int64? nodeId,
+    $core.String? sessionId,
+    $core.String? clientVersion,
+    $1.Timestamp? receivedAt,
+    $1.Timestamp? eventAt,
+    $1.Timestamp? eventDay,
+    $core.List<$core.int>? peerHash,
+    $core.int? regionId,
+    Transport? transport,
+    $core.String? payloadType,
+    $core.String? payload,
+    $1.Timestamp? createdAt,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (sessionId != null) result.sessionId = sessionId;
+    if (clientVersion != null) result.clientVersion = clientVersion;
+    if (receivedAt != null) result.receivedAt = receivedAt;
+    if (eventAt != null) result.eventAt = eventAt;
+    if (eventDay != null) result.eventDay = eventDay;
+    if (peerHash != null) result.peerHash = peerHash;
+    if (regionId != null) result.regionId = regionId;
+    if (transport != null) result.transport = transport;
+    if (payloadType != null) result.payloadType = payloadType;
+    if (payload != null) result.payload = payload;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  StoredTelemetryEvent._();
+
+  factory StoredTelemetryEvent.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StoredTelemetryEvent.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StoredTelemetryEvent',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
+    ..aOS(4, _omitFieldNames ? '' : 'clientVersion', protoName: 'clientVersion')
+    ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'receivedAt',
+        protoName: 'receivedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'eventAt',
+        protoName: 'eventAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'eventDay',
+        protoName: 'eventDay', subBuilder: $1.Timestamp.create)
+    ..a<$core.List<$core.int>>(
+        8, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY,
+        protoName: 'peerHash')
+    ..aI(9, _omitFieldNames ? '' : 'regionId',
+        protoName: 'regionId', fieldType: $pb.PbFieldType.OU3)
+    ..aE<Transport>(10, _omitFieldNames ? '' : 'transport',
+        enumValues: Transport.values)
+    ..aOS(11, _omitFieldNames ? '' : 'payloadType', protoName: 'payloadType')
+    ..aOS(12, _omitFieldNames ? '' : 'payload')
+    ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
+        protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoredTelemetryEvent clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StoredTelemetryEvent copyWith(void Function(StoredTelemetryEvent) updates) =>
+      super.copyWith((message) => updates(message as StoredTelemetryEvent))
+          as StoredTelemetryEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StoredTelemetryEvent create() => StoredTelemetryEvent._();
+  @$core.override
+  StoredTelemetryEvent createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StoredTelemetryEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StoredTelemetryEvent>(create);
+  static StoredTelemetryEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get id => $_getI64(0);
+  @$pb.TagNumber(1)
+  set id($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get nodeId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set nodeId($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sessionId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sessionId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSessionId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSessionId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get clientVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set clientVersion($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasClientVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearClientVersion() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get receivedAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set receivedAt($1.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasReceivedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearReceivedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureReceivedAt() => $_ensure(4);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get eventAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set eventAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasEventAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEventAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureEventAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get eventDay => $_getN(6);
+  @$pb.TagNumber(7)
+  set eventDay($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasEventDay() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearEventDay() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureEventDay() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $core.List<$core.int> get peerHash => $_getN(7);
+  @$pb.TagNumber(8)
+  set peerHash($core.List<$core.int> value) => $_setBytes(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPeerHash() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPeerHash() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.int get regionId => $_getIZ(8);
+  @$pb.TagNumber(9)
+  set regionId($core.int value) => $_setUnsignedInt32(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRegionId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRegionId() => $_clearField(9);
+
+  @$pb.TagNumber(10)
+  Transport get transport => $_getN(9);
+  @$pb.TagNumber(10)
+  set transport(Transport value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasTransport() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTransport() => $_clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get payloadType => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set payloadType($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasPayloadType() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPayloadType() => $_clearField(11);
+
+  @$pb.TagNumber(12)
+  $core.String get payload => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set payload($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPayload() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPayload() => $_clearField(12);
+
+  @$pb.TagNumber(13)
+  $1.Timestamp get createdAt => $_getN(12);
+  @$pb.TagNumber(13)
+  set createdAt($1.Timestamp value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasCreatedAt() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearCreatedAt() => $_clearField(13);
+  @$pb.TagNumber(13)
+  $1.Timestamp ensureCreatedAt() => $_ensure(12);
+}
+
+/// GetDailyCountsRequest は日次集計の取得リクエストです。
+class GetDailyCountsRequest extends $pb.GeneratedMessage {
+  factory GetDailyCountsRequest({
+    $fixnum.Int64? nodeId,
+    $core.String? metric,
+    $1.Timestamp? from,
+    $1.Timestamp? to,
+  }) {
+    final result = create();
+    if (nodeId != null) result.nodeId = nodeId;
+    if (metric != null) result.metric = metric;
+    if (from != null) result.from = from;
+    if (to != null) result.to = to;
+    return result;
+  }
+
+  GetDailyCountsRequest._();
+
+  factory GetDailyCountsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDailyCountsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDailyCountsRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'metric')
+    ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'from',
+        subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'to',
+        subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDailyCountsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDailyCountsRequest copyWith(
+          void Function(GetDailyCountsRequest) updates) =>
+      super.copyWith((message) => updates(message as GetDailyCountsRequest))
+          as GetDailyCountsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDailyCountsRequest create() => GetDailyCountsRequest._();
+  @$core.override
+  GetDailyCountsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDailyCountsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDailyCountsRequest>(create);
+  static GetDailyCountsRequest? _defaultInstance;
+
+  /// node_id でフィルタ（0 の場合は全ノード）
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get nodeId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set nodeId($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNodeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeId() => $_clearField(1);
+
+  /// metric でフィルタ（空の場合は全メトリクス）
+  @$pb.TagNumber(2)
+  $core.String get metric => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set metric($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMetric() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMetric() => $_clearField(2);
+
+  /// 期間フィルタ（from <= day <= to）
+  @$pb.TagNumber(3)
+  $1.Timestamp get from => $_getN(2);
+  @$pb.TagNumber(3)
+  set from($1.Timestamp value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFrom() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFrom() => $_clearField(3);
+  @$pb.TagNumber(3)
+  $1.Timestamp ensureFrom() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get to => $_getN(3);
+  @$pb.TagNumber(4)
+  set to($1.Timestamp value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTo() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTo() => $_clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureTo() => $_ensure(3);
+}
+
+/// GetDailyCountsResponse は日次集計の取得レスポンスです。
+class GetDailyCountsResponse extends $pb.GeneratedMessage {
+  factory GetDailyCountsResponse({
+    $core.Iterable<DailyCount>? counts,
+  }) {
+    final result = create();
+    if (counts != null) result.counts.addAll(counts);
+    return result;
+  }
+
+  GetDailyCountsResponse._();
+
+  factory GetDailyCountsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDailyCountsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDailyCountsResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..pPM<DailyCount>(1, _omitFieldNames ? '' : 'counts',
+        subBuilder: DailyCount.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDailyCountsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDailyCountsResponse copyWith(
+          void Function(GetDailyCountsResponse) updates) =>
+      super.copyWith((message) => updates(message as GetDailyCountsResponse))
+          as GetDailyCountsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDailyCountsResponse create() => GetDailyCountsResponse._();
+  @$core.override
+  GetDailyCountsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetDailyCountsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDailyCountsResponse>(create);
+  static GetDailyCountsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<DailyCount> get counts => $_getList(0);
+}
+
+/// DailyCount は1日分の集計データです。
+class DailyCount extends $pb.GeneratedMessage {
+  factory DailyCount({
+    $1.Timestamp? day,
+    $fixnum.Int64? nodeId,
+    $core.String? metric,
+    $core.String? labelKey,
+    $fixnum.Int64? count,
+    $1.Timestamp? createdAt,
+    $1.Timestamp? updatedAt,
+  }) {
+    final result = create();
+    if (day != null) result.day = day;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (metric != null) result.metric = metric;
+    if (labelKey != null) result.labelKey = labelKey;
+    if (count != null) result.count = count;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (updatedAt != null) result.updatedAt = updatedAt;
+    return result;
+  }
+
+  DailyCount._();
+
+  factory DailyCount.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DailyCount.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DailyCount',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'day',
+        subBuilder: $1.Timestamp.create)
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'metric')
+    ..aOS(4, _omitFieldNames ? '' : 'labelKey', protoName: 'labelKey')
+    ..aInt64(5, _omitFieldNames ? '' : 'count')
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'createdAt',
+        protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'updatedAt',
+        protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DailyCount clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DailyCount copyWith(void Function(DailyCount) updates) =>
+      super.copyWith((message) => updates(message as DailyCount)) as DailyCount;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DailyCount create() => DailyCount._();
+  @$core.override
+  DailyCount createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DailyCount getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DailyCount>(create);
+  static DailyCount? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $1.Timestamp get day => $_getN(0);
+  @$pb.TagNumber(1)
+  set day($1.Timestamp value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDay() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDay() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $1.Timestamp ensureDay() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get nodeId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set nodeId($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeId() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get metric => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set metric($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMetric() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMetric() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get labelKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set labelKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasLabelKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearLabelKey() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get count => $_getI64(4);
+  @$pb.TagNumber(5)
+  set count($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCount() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCount() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $1.Timestamp get createdAt => $_getN(5);
+  @$pb.TagNumber(6)
+  set createdAt($1.Timestamp value) => $_setField(6, value);
+  @$pb.TagNumber(6)
+  $core.bool hasCreatedAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearCreatedAt() => $_clearField(6);
+  @$pb.TagNumber(6)
+  $1.Timestamp ensureCreatedAt() => $_ensure(5);
+
+  @$pb.TagNumber(7)
+  $1.Timestamp get updatedAt => $_getN(6);
+  @$pb.TagNumber(7)
+  set updatedAt($1.Timestamp value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasUpdatedAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearUpdatedAt() => $_clearField(7);
+  @$pb.TagNumber(7)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(6);
+}
+
 const $core.bool _omitFieldNames =
     $core.bool.fromEnvironment('protobuf.omit_field_names');
 const $core.bool _omitMessageNames =

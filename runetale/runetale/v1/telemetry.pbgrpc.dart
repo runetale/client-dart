@@ -36,11 +36,28 @@ class TelemetryServiceClient extends $grpc.Client {
 
   TelemetryServiceClient(super.channel, {super.options, super.interceptors});
 
+  /// UploadTelemetryBatch receives telemetry events from clients.
   $grpc.ResponseFuture<$0.TelemetryBatchResponse> uploadTelemetryBatch(
     $0.TelemetryBatchRequest request, {
     $grpc.CallOptions? options,
   }) {
     return $createUnaryCall(_$uploadTelemetryBatch, request, options: options);
+  }
+
+  /// GetEvents retrieves stored telemetry events for analysis/debugging.
+  $grpc.ResponseFuture<$0.GetEventsResponse> getEvents(
+    $0.GetEventsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getEvents, request, options: options);
+  }
+
+  /// GetDailyCounts retrieves aggregated daily counts for dashboards/trends.
+  $grpc.ResponseFuture<$0.GetDailyCountsResponse> getDailyCounts(
+    $0.GetDailyCountsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDailyCounts, request, options: options);
   }
 
   // method descriptors
@@ -50,6 +67,16 @@ class TelemetryServiceClient extends $grpc.Client {
           '/protos.TelemetryService/UploadTelemetryBatch',
           ($0.TelemetryBatchRequest value) => value.writeToBuffer(),
           $0.TelemetryBatchResponse.fromBuffer);
+  static final _$getEvents =
+      $grpc.ClientMethod<$0.GetEventsRequest, $0.GetEventsResponse>(
+          '/protos.TelemetryService/GetEvents',
+          ($0.GetEventsRequest value) => value.writeToBuffer(),
+          $0.GetEventsResponse.fromBuffer);
+  static final _$getDailyCounts =
+      $grpc.ClientMethod<$0.GetDailyCountsRequest, $0.GetDailyCountsResponse>(
+          '/protos.TelemetryService/GetDailyCounts',
+          ($0.GetDailyCountsRequest value) => value.writeToBuffer(),
+          $0.GetDailyCountsResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.TelemetryService')
@@ -66,6 +93,22 @@ abstract class TelemetryServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.TelemetryBatchRequest.fromBuffer(value),
         ($0.TelemetryBatchResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetEventsRequest, $0.GetEventsResponse>(
+        'GetEvents',
+        getEvents_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetEventsRequest.fromBuffer(value),
+        ($0.GetEventsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDailyCountsRequest,
+            $0.GetDailyCountsResponse>(
+        'GetDailyCounts',
+        getDailyCounts_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDailyCountsRequest.fromBuffer(value),
+        ($0.GetDailyCountsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.TelemetryBatchResponse> uploadTelemetryBatch_Pre(
@@ -76,4 +119,21 @@ abstract class TelemetryServiceBase extends $grpc.Service {
 
   $async.Future<$0.TelemetryBatchResponse> uploadTelemetryBatch(
       $grpc.ServiceCall call, $0.TelemetryBatchRequest request);
+
+  $async.Future<$0.GetEventsResponse> getEvents_Pre($grpc.ServiceCall $call,
+      $async.Future<$0.GetEventsRequest> $request) async {
+    return getEvents($call, await $request);
+  }
+
+  $async.Future<$0.GetEventsResponse> getEvents(
+      $grpc.ServiceCall call, $0.GetEventsRequest request);
+
+  $async.Future<$0.GetDailyCountsResponse> getDailyCounts_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.GetDailyCountsRequest> $request) async {
+    return getDailyCounts($call, await $request);
+  }
+
+  $async.Future<$0.GetDailyCountsResponse> getDailyCounts(
+      $grpc.ServiceCall call, $0.GetDailyCountsRequest request);
 }

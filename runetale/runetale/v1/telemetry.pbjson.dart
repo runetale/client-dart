@@ -373,3 +373,221 @@ final $typed_data.Uint8List filterDecisionDescriptor = $convert.base64Decode(
     'UmVzdWx0Eh0KGUZJTFRFUl9SRVNVTFRfVU5TUEVDSUZJRUQQABIYChRGSUxURVJfUkVTVUxUX0'
     'FDQ0VQVBABEhYKEkZJTFRFUl9SRVNVTFRfRFJPUBACEh0KGUZJTFRFUl9SRVNVTFRfRFJPUF9T'
     'SUxFTlQQAw==');
+
+@$core.Deprecated('Use getEventsRequestDescriptor instead')
+const GetEventsRequest$json = {
+  '1': 'GetEventsRequest',
+  '2': [
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'sessionId', '3': 2, '4': 1, '5': 9, '10': 'sessionId'},
+    {
+      '1': 'from',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'from'
+    },
+    {
+      '1': 'to',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'to'
+    },
+    {'1': 'limit', '3': 5, '4': 1, '5': 5, '10': 'limit'},
+    {'1': 'offset', '3': 6, '4': 1, '5': 5, '10': 'offset'},
+  ],
+};
+
+/// Descriptor for `GetEventsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEventsRequestDescriptor = $convert.base64Decode(
+    'ChBHZXRFdmVudHNSZXF1ZXN0EhYKBm5vZGVJZBgBIAEoBFIGbm9kZUlkEhwKCXNlc3Npb25JZB'
+    'gCIAEoCVIJc2Vzc2lvbklkEi4KBGZyb20YAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0'
+    'YW1wUgRmcm9tEioKAnRvGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFICdG8SFA'
+    'oFbGltaXQYBSABKAVSBWxpbWl0EhYKBm9mZnNldBgGIAEoBVIGb2Zmc2V0');
+
+@$core.Deprecated('Use getEventsResponseDescriptor instead')
+const GetEventsResponse$json = {
+  '1': 'GetEventsResponse',
+  '2': [
+    {
+      '1': 'events',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.StoredTelemetryEvent',
+      '10': 'events'
+    },
+    {'1': 'totalCount', '3': 2, '4': 1, '5': 3, '10': 'totalCount'},
+  ],
+};
+
+/// Descriptor for `GetEventsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getEventsResponseDescriptor = $convert.base64Decode(
+    'ChFHZXRFdmVudHNSZXNwb25zZRI0CgZldmVudHMYASADKAsyHC5wcm90b3MuU3RvcmVkVGVsZW'
+    '1ldHJ5RXZlbnRSBmV2ZW50cxIeCgp0b3RhbENvdW50GAIgASgDUgp0b3RhbENvdW50');
+
+@$core.Deprecated('Use storedTelemetryEventDescriptor instead')
+const StoredTelemetryEvent$json = {
+  '1': 'StoredTelemetryEvent',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
+    {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'sessionId', '3': 3, '4': 1, '5': 9, '10': 'sessionId'},
+    {'1': 'clientVersion', '3': 4, '4': 1, '5': 9, '10': 'clientVersion'},
+    {
+      '1': 'receivedAt',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'receivedAt'
+    },
+    {
+      '1': 'eventAt',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'eventAt'
+    },
+    {
+      '1': 'eventDay',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'eventDay'
+    },
+    {'1': 'peerHash', '3': 8, '4': 1, '5': 12, '10': 'peerHash'},
+    {'1': 'regionId', '3': 9, '4': 1, '5': 13, '10': 'regionId'},
+    {
+      '1': 'transport',
+      '3': 10,
+      '4': 1,
+      '5': 14,
+      '6': '.protos.Transport',
+      '10': 'transport'
+    },
+    {'1': 'payloadType', '3': 11, '4': 1, '5': 9, '10': 'payloadType'},
+    {'1': 'payload', '3': 12, '4': 1, '5': 9, '10': 'payload'},
+    {
+      '1': 'createdAt',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+  ],
+};
+
+/// Descriptor for `StoredTelemetryEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List storedTelemetryEventDescriptor = $convert.base64Decode(
+    'ChRTdG9yZWRUZWxlbWV0cnlFdmVudBIOCgJpZBgBIAEoBFICaWQSFgoGbm9kZUlkGAIgASgEUg'
+    'Zub2RlSWQSHAoJc2Vzc2lvbklkGAMgASgJUglzZXNzaW9uSWQSJAoNY2xpZW50VmVyc2lvbhgE'
+    'IAEoCVINY2xpZW50VmVyc2lvbhI6CgpyZWNlaXZlZEF0GAUgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcFIKcmVjZWl2ZWRBdBI0CgdldmVudEF0GAYgASgLMhouZ29vZ2xlLnByb3Rv'
+    'YnVmLlRpbWVzdGFtcFIHZXZlbnRBdBI2CghldmVudERheRgHIAEoCzIaLmdvb2dsZS5wcm90b2'
+    'J1Zi5UaW1lc3RhbXBSCGV2ZW50RGF5EhoKCHBlZXJIYXNoGAggASgMUghwZWVySGFzaBIaCghy'
+    'ZWdpb25JZBgJIAEoDVIIcmVnaW9uSWQSLwoJdHJhbnNwb3J0GAogASgOMhEucHJvdG9zLlRyYW'
+    '5zcG9ydFIJdHJhbnNwb3J0EiAKC3BheWxvYWRUeXBlGAsgASgJUgtwYXlsb2FkVHlwZRIYCgdw'
+    'YXlsb2FkGAwgASgJUgdwYXlsb2FkEjgKCWNyZWF0ZWRBdBgNIAEoCzIaLmdvb2dsZS5wcm90b2'
+    'J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+
+@$core.Deprecated('Use getDailyCountsRequestDescriptor instead')
+const GetDailyCountsRequest$json = {
+  '1': 'GetDailyCountsRequest',
+  '2': [
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'metric', '3': 2, '4': 1, '5': 9, '10': 'metric'},
+    {
+      '1': 'from',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'from'
+    },
+    {
+      '1': 'to',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'to'
+    },
+  ],
+};
+
+/// Descriptor for `GetDailyCountsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDailyCountsRequestDescriptor = $convert.base64Decode(
+    'ChVHZXREYWlseUNvdW50c1JlcXVlc3QSFgoGbm9kZUlkGAEgASgEUgZub2RlSWQSFgoGbWV0cm'
+    'ljGAIgASgJUgZtZXRyaWMSLgoEZnJvbRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh'
+    'bXBSBGZyb20SKgoCdG8YBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgJ0bw==');
+
+@$core.Deprecated('Use getDailyCountsResponseDescriptor instead')
+const GetDailyCountsResponse$json = {
+  '1': 'GetDailyCountsResponse',
+  '2': [
+    {
+      '1': 'counts',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.DailyCount',
+      '10': 'counts'
+    },
+  ],
+};
+
+/// Descriptor for `GetDailyCountsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDailyCountsResponseDescriptor =
+    $convert.base64Decode(
+        'ChZHZXREYWlseUNvdW50c1Jlc3BvbnNlEioKBmNvdW50cxgBIAMoCzISLnByb3Rvcy5EYWlseU'
+        'NvdW50UgZjb3VudHM=');
+
+@$core.Deprecated('Use dailyCountDescriptor instead')
+const DailyCount$json = {
+  '1': 'DailyCount',
+  '2': [
+    {
+      '1': 'day',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'day'
+    },
+    {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'metric', '3': 3, '4': 1, '5': 9, '10': 'metric'},
+    {'1': 'labelKey', '3': 4, '4': 1, '5': 9, '10': 'labelKey'},
+    {'1': 'count', '3': 5, '4': 1, '5': 3, '10': 'count'},
+    {
+      '1': 'createdAt',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createdAt'
+    },
+    {
+      '1': 'updatedAt',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updatedAt'
+    },
+  ],
+};
+
+/// Descriptor for `DailyCount`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List dailyCountDescriptor = $convert.base64Decode(
+    'CgpEYWlseUNvdW50EiwKA2RheRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSA2'
+    'RheRIWCgZub2RlSWQYAiABKARSBm5vZGVJZBIWCgZtZXRyaWMYAyABKAlSBm1ldHJpYxIaCghs'
+    'YWJlbEtleRgEIAEoCVIIbGFiZWxLZXkSFAoFY291bnQYBSABKANSBWNvdW50EjgKCWNyZWF0ZW'
+    'RBdBgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI4Cgl1cGRh'
+    'dGVkQXQYByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
