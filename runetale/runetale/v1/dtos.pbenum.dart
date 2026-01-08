@@ -123,29 +123,29 @@ class IPProto extends $pb.ProtobufEnum {
   const IPProto._(super.value, super.name);
 }
 
-class ExpirelyTime extends $pb.ProtobufEnum {
-  static const ExpirelyTime EXPIRELY_TIME_UNSPECIFIED =
-      ExpirelyTime._(0, _omitEnumNames ? '' : 'EXPIRELY_TIME_UNSPECIFIED');
-  static const ExpirelyTime EXPIRELY_TIME_ONE_MONTH =
-      ExpirelyTime._(1, _omitEnumNames ? '' : 'EXPIRELY_TIME_ONE_MONTH');
-  static const ExpirelyTime EXPIRELY_TIME_TWO_MONTH =
-      ExpirelyTime._(2, _omitEnumNames ? '' : 'EXPIRELY_TIME_TWO_MONTH');
-  static const ExpirelyTime EXPIRELY_TIME_THREE_MONTH =
-      ExpirelyTime._(3, _omitEnumNames ? '' : 'EXPIRELY_TIME_THREE_MONTH');
+class ExpiryTime extends $pb.ProtobufEnum {
+  static const ExpiryTime EXPIRY_TIME_UNSPECIFIED =
+      ExpiryTime._(0, _omitEnumNames ? '' : 'EXPIRY_TIME_UNSPECIFIED');
+  static const ExpiryTime EXPIRY_TIME_ONE_MONTH =
+      ExpiryTime._(1, _omitEnumNames ? '' : 'EXPIRY_TIME_ONE_MONTH');
+  static const ExpiryTime EXPIRY_TIME_TWO_MONTH =
+      ExpiryTime._(2, _omitEnumNames ? '' : 'EXPIRY_TIME_TWO_MONTH');
+  static const ExpiryTime EXPIRY_TIME_THREE_MONTH =
+      ExpiryTime._(3, _omitEnumNames ? '' : 'EXPIRY_TIME_THREE_MONTH');
 
-  static const $core.List<ExpirelyTime> values = <ExpirelyTime>[
-    EXPIRELY_TIME_UNSPECIFIED,
-    EXPIRELY_TIME_ONE_MONTH,
-    EXPIRELY_TIME_TWO_MONTH,
-    EXPIRELY_TIME_THREE_MONTH,
+  static const $core.List<ExpiryTime> values = <ExpiryTime>[
+    EXPIRY_TIME_UNSPECIFIED,
+    EXPIRY_TIME_ONE_MONTH,
+    EXPIRY_TIME_TWO_MONTH,
+    EXPIRY_TIME_THREE_MONTH,
   ];
 
-  static final $core.List<ExpirelyTime?> _byValue =
+  static final $core.List<ExpiryTime?> _byValue =
       $pb.ProtobufEnum.$_initByValueList(values, 3);
-  static ExpirelyTime? valueOf($core.int value) =>
+  static ExpiryTime? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const ExpirelyTime._(super.value, super.name);
+  const ExpiryTime._(super.value, super.name);
 }
 
 class UserRoles extends $pb.ProtobufEnum {

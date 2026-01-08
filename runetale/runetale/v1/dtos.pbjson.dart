@@ -81,22 +81,22 @@ final $typed_data.Uint8List iPProtoDescriptor = $convert.base64Decode(
     'oMSVBfUFJPVE9fVENQEAISEAoMSVBfUFJPVE9fVURQEAMSEwoPSVBfUFJPVE9fSUNNUFY0EAQS'
     'EwoPSVBfUFJPVE9fSUNNUFY2EAU=');
 
-@$core.Deprecated('Use expirelyTimeDescriptor instead')
-const ExpirelyTime$json = {
-  '1': 'ExpirelyTime',
+@$core.Deprecated('Use expiryTimeDescriptor instead')
+const ExpiryTime$json = {
+  '1': 'ExpiryTime',
   '2': [
-    {'1': 'EXPIRELY_TIME_UNSPECIFIED', '2': 0},
-    {'1': 'EXPIRELY_TIME_ONE_MONTH', '2': 1},
-    {'1': 'EXPIRELY_TIME_TWO_MONTH', '2': 2},
-    {'1': 'EXPIRELY_TIME_THREE_MONTH', '2': 3},
+    {'1': 'EXPIRY_TIME_UNSPECIFIED', '2': 0},
+    {'1': 'EXPIRY_TIME_ONE_MONTH', '2': 1},
+    {'1': 'EXPIRY_TIME_TWO_MONTH', '2': 2},
+    {'1': 'EXPIRY_TIME_THREE_MONTH', '2': 3},
   ],
 };
 
-/// Descriptor for `ExpirelyTime`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List expirelyTimeDescriptor = $convert.base64Decode(
-    'CgxFeHBpcmVseVRpbWUSHQoZRVhQSVJFTFlfVElNRV9VTlNQRUNJRklFRBAAEhsKF0VYUElSRU'
-    'xZX1RJTUVfT05FX01PTlRIEAESGwoXRVhQSVJFTFlfVElNRV9UV09fTU9OVEgQAhIdChlFWFBJ'
-    'UkVMWV9USU1FX1RIUkVFX01PTlRIEAM=');
+/// Descriptor for `ExpiryTime`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List expiryTimeDescriptor = $convert.base64Decode(
+    'CgpFeHBpcnlUaW1lEhsKF0VYUElSWV9USU1FX1VOU1BFQ0lGSUVEEAASGQoVRVhQSVJZX1RJTU'
+    'VfT05FX01PTlRIEAESGQoVRVhQSVJZX1RJTUVfVFdPX01PTlRIEAISGwoXRVhQSVJZX1RJTUVf'
+    'VEhSRUVfTU9OVEgQAw==');
 
 @$core.Deprecated('Use userRolesDescriptor instead')
 const UserRoles$json = {
