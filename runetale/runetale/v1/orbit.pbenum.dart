@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from runetale/runetale/v1/telemetry.proto.
+// Generated from runetale/runetale/v1/orbit.proto.
 
 // @dart = 3.3
 

@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from runetale/runetale/v1/telemetry.proto.
+// Generated from runetale/runetale/v1/orbit.proto.
 
 // @dart = 3.3
 
@@ -62,9 +62,9 @@ final $typed_data.Uint8List recvKindDescriptor = $convert.base64Decode(
     'CghSZWN2S2luZBIZChVSRUNWX0tJTkRfVU5TUEVDSUZJRUQQABIXChNSRUNWX0tJTkRfV0lSRU'
     'dVQVJEEAESEgoOUkVDVl9LSU5EX1JVTkUQAg==');
 
-@$core.Deprecated('Use telemetryBatchRequestDescriptor instead')
-const TelemetryBatchRequest$json = {
-  '1': 'TelemetryBatchRequest',
+@$core.Deprecated('Use orbitBatchRequestDescriptor instead')
+const OrbitBatchRequest$json = {
+  '1': 'OrbitBatchRequest',
   '2': [
     {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
     {'1': 'sessionId', '3': 2, '4': 1, '5': 9, '10': 'sessionId'},
@@ -74,21 +74,21 @@ const TelemetryBatchRequest$json = {
       '3': 4,
       '4': 3,
       '5': 11,
-      '6': '.protos.TelemetryEvent',
+      '6': '.protos.OrbitEvent',
       '10': 'events'
     },
   ],
 };
 
-/// Descriptor for `TelemetryBatchRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List telemetryBatchRequestDescriptor = $convert.base64Decode(
-    'ChVUZWxlbWV0cnlCYXRjaFJlcXVlc3QSFgoGbm9kZUlkGAEgASgEUgZub2RlSWQSHAoJc2Vzc2'
-    'lvbklkGAIgASgJUglzZXNzaW9uSWQSGAoHdmVyc2lvbhgDIAEoCVIHdmVyc2lvbhIuCgZldmVu'
-    'dHMYBCADKAsyFi5wcm90b3MuVGVsZW1ldHJ5RXZlbnRSBmV2ZW50cw==');
+/// Descriptor for `OrbitBatchRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List orbitBatchRequestDescriptor = $convert.base64Decode(
+    'ChFPcmJpdEJhdGNoUmVxdWVzdBIWCgZub2RlSWQYASABKARSBm5vZGVJZBIcCglzZXNzaW9uSW'
+    'QYAiABKAlSCXNlc3Npb25JZBIYCgd2ZXJzaW9uGAMgASgJUgd2ZXJzaW9uEioKBmV2ZW50cxgE'
+    'IAMoCzISLnByb3Rvcy5PcmJpdEV2ZW50UgZldmVudHM=');
 
-@$core.Deprecated('Use telemetryBatchResponseDescriptor instead')
-const TelemetryBatchResponse$json = {
-  '1': 'TelemetryBatchResponse',
+@$core.Deprecated('Use orbitBatchResponseDescriptor instead')
+const OrbitBatchResponse$json = {
+  '1': 'OrbitBatchResponse',
   '2': [
     {'1': 'accepted', '3': 1, '4': 1, '5': 13, '10': 'accepted'},
     {'1': 'dropped', '3': 2, '4': 1, '5': 13, '10': 'dropped'},
@@ -96,15 +96,14 @@ const TelemetryBatchResponse$json = {
   ],
 };
 
-/// Descriptor for `TelemetryBatchResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List telemetryBatchResponseDescriptor =
-    $convert.base64Decode(
-        'ChZUZWxlbWV0cnlCYXRjaFJlc3BvbnNlEhoKCGFjY2VwdGVkGAEgASgNUghhY2NlcHRlZBIYCg'
-        'dkcm9wcGVkGAIgASgNUgdkcm9wcGVkEhYKBnJlYXNvbhgDIAEoCVIGcmVhc29u');
+/// Descriptor for `OrbitBatchResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List orbitBatchResponseDescriptor = $convert.base64Decode(
+    'ChJPcmJpdEJhdGNoUmVzcG9uc2USGgoIYWNjZXB0ZWQYASABKA1SCGFjY2VwdGVkEhgKB2Ryb3'
+    'BwZWQYAiABKA1SB2Ryb3BwZWQSFgoGcmVhc29uGAMgASgJUgZyZWFzb24=');
 
-@$core.Deprecated('Use telemetryEventDescriptor instead')
-const TelemetryEvent$json = {
-  '1': 'TelemetryEvent',
+@$core.Deprecated('Use orbitEventDescriptor instead')
+const OrbitEvent$json = {
+  '1': 'OrbitEvent',
   '2': [
     {
       '1': 'at',
@@ -184,17 +183,17 @@ const TelemetryEvent$json = {
   ],
 };
 
-/// Descriptor for `TelemetryEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List telemetryEventDescriptor = $convert.base64Decode(
-    'Cg5UZWxlbWV0cnlFdmVudBIqCgJhdBgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbX'
-    'BSAmF0EhoKCHBlZXJIYXNoGAIgASgMUghwZWVySGFzaBIaCghyZWdpb25JZBgDIAEoDVIIcmVn'
-    'aW9uSWQSLwoJdHJhbnNwb3J0GAQgASgOMhEucHJvdG9zLlRyYW5zcG9ydFIJdHJhbnNwb3J0Ek'
-    'EKD3BhdGhfdHJhbnNpdGlvbhgKIAEoCzIWLnByb3Rvcy5QYXRoVHJhbnNpdGlvbkgAUg5wYXRo'
-    'VHJhbnNpdGlvbhI1CgtzZW5kX3Jlc3VsdBgLIAEoCzISLnByb3Rvcy5TZW5kUmVzdWx0SABSCn'
-    'NlbmRSZXN1bHQSNQoLcmVjdl9yZXN1bHQYDCABKAsyEi5wcm90b3MuUmVjdlJlc3VsdEgAUgpy'
-    'ZWN2UmVzdWx0EjQKCWNlcmZfY29ubhgNIAEoCzIVLnByb3Rvcy5DZXJmQ29ubkV2ZW50SABSCG'
-    'NlcmZDb25uEiQKA2ljZRgOIAEoCzIQLnByb3Rvcy5JY2VFdmVudEgAUgNpY2USMAoGZmlsdGVy'
-    'GA8gASgLMhYucHJvdG9zLkZpbHRlckRlY2lzaW9uSABSBmZpbHRlckIJCgdwYXlsb2Fk');
+/// Descriptor for `OrbitEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List orbitEventDescriptor = $convert.base64Decode(
+    'CgpPcmJpdEV2ZW50EioKAmF0GAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFICYX'
+    'QSGgoIcGVlckhhc2gYAiABKAxSCHBlZXJIYXNoEhoKCHJlZ2lvbklkGAMgASgNUghyZWdpb25J'
+    'ZBIvCgl0cmFuc3BvcnQYBCABKA4yES5wcm90b3MuVHJhbnNwb3J0Ugl0cmFuc3BvcnQSQQoPcG'
+    'F0aF90cmFuc2l0aW9uGAogASgLMhYucHJvdG9zLlBhdGhUcmFuc2l0aW9uSABSDnBhdGhUcmFu'
+    'c2l0aW9uEjUKC3NlbmRfcmVzdWx0GAsgASgLMhIucHJvdG9zLlNlbmRSZXN1bHRIAFIKc2VuZF'
+    'Jlc3VsdBI1CgtyZWN2X3Jlc3VsdBgMIAEoCzISLnByb3Rvcy5SZWN2UmVzdWx0SABSCnJlY3ZS'
+    'ZXN1bHQSNAoJY2VyZl9jb25uGA0gASgLMhUucHJvdG9zLkNlcmZDb25uRXZlbnRIAFIIY2VyZk'
+    'Nvbm4SJAoDaWNlGA4gASgLMhAucHJvdG9zLkljZUV2ZW50SABSA2ljZRIwCgZmaWx0ZXIYDyAB'
+    'KAsyFi5wcm90b3MuRmlsdGVyRGVjaXNpb25IAFIGZmlsdGVyQgkKB3BheWxvYWQ=');
 
 @$core.Deprecated('Use pathTransitionDescriptor instead')
 const PathTransition$json = {
@@ -417,7 +416,7 @@ const GetEventsResponse$json = {
       '3': 1,
       '4': 3,
       '5': 11,
-      '6': '.protos.StoredTelemetryEvent',
+      '6': '.protos.StoredOrbitEvent',
       '10': 'events'
     },
     {'1': 'totalCount', '3': 2, '4': 1, '5': 3, '10': 'totalCount'},
@@ -426,12 +425,12 @@ const GetEventsResponse$json = {
 
 /// Descriptor for `GetEventsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getEventsResponseDescriptor = $convert.base64Decode(
-    'ChFHZXRFdmVudHNSZXNwb25zZRI0CgZldmVudHMYASADKAsyHC5wcm90b3MuU3RvcmVkVGVsZW'
-    '1ldHJ5RXZlbnRSBmV2ZW50cxIeCgp0b3RhbENvdW50GAIgASgDUgp0b3RhbENvdW50');
+    'ChFHZXRFdmVudHNSZXNwb25zZRIwCgZldmVudHMYASADKAsyGC5wcm90b3MuU3RvcmVkT3JiaX'
+    'RFdmVudFIGZXZlbnRzEh4KCnRvdGFsQ291bnQYAiABKANSCnRvdGFsQ291bnQ=');
 
-@$core.Deprecated('Use storedTelemetryEventDescriptor instead')
-const StoredTelemetryEvent$json = {
-  '1': 'StoredTelemetryEvent',
+@$core.Deprecated('Use storedOrbitEventDescriptor instead')
+const StoredOrbitEvent$json = {
+  '1': 'StoredOrbitEvent',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 4, '10': 'id'},
     {'1': 'nodeId', '3': 2, '4': 1, '5': 4, '10': 'nodeId'},
@@ -484,18 +483,18 @@ const StoredTelemetryEvent$json = {
   ],
 };
 
-/// Descriptor for `StoredTelemetryEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List storedTelemetryEventDescriptor = $convert.base64Decode(
-    'ChRTdG9yZWRUZWxlbWV0cnlFdmVudBIOCgJpZBgBIAEoBFICaWQSFgoGbm9kZUlkGAIgASgEUg'
-    'Zub2RlSWQSHAoJc2Vzc2lvbklkGAMgASgJUglzZXNzaW9uSWQSJAoNY2xpZW50VmVyc2lvbhgE'
-    'IAEoCVINY2xpZW50VmVyc2lvbhI6CgpyZWNlaXZlZEF0GAUgASgLMhouZ29vZ2xlLnByb3RvYn'
-    'VmLlRpbWVzdGFtcFIKcmVjZWl2ZWRBdBI0CgdldmVudEF0GAYgASgLMhouZ29vZ2xlLnByb3Rv'
-    'YnVmLlRpbWVzdGFtcFIHZXZlbnRBdBI2CghldmVudERheRgHIAEoCzIaLmdvb2dsZS5wcm90b2'
-    'J1Zi5UaW1lc3RhbXBSCGV2ZW50RGF5EhoKCHBlZXJIYXNoGAggASgMUghwZWVySGFzaBIaCghy'
-    'ZWdpb25JZBgJIAEoDVIIcmVnaW9uSWQSLwoJdHJhbnNwb3J0GAogASgOMhEucHJvdG9zLlRyYW'
-    '5zcG9ydFIJdHJhbnNwb3J0EiAKC3BheWxvYWRUeXBlGAsgASgJUgtwYXlsb2FkVHlwZRIYCgdw'
-    'YXlsb2FkGAwgASgJUgdwYXlsb2FkEjgKCWNyZWF0ZWRBdBgNIAEoCzIaLmdvb2dsZS5wcm90b2'
-    'J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdA==');
+/// Descriptor for `StoredOrbitEvent`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List storedOrbitEventDescriptor = $convert.base64Decode(
+    'ChBTdG9yZWRPcmJpdEV2ZW50Eg4KAmlkGAEgASgEUgJpZBIWCgZub2RlSWQYAiABKARSBm5vZG'
+    'VJZBIcCglzZXNzaW9uSWQYAyABKAlSCXNlc3Npb25JZBIkCg1jbGllbnRWZXJzaW9uGAQgASgJ'
+    'Ug1jbGllbnRWZXJzaW9uEjoKCnJlY2VpdmVkQXQYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVG'
+    'ltZXN0YW1wUgpyZWNlaXZlZEF0EjQKB2V2ZW50QXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYu'
+    'VGltZXN0YW1wUgdldmVudEF0EjYKCGV2ZW50RGF5GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFIIZXZlbnREYXkSGgoIcGVlckhhc2gYCCABKAxSCHBlZXJIYXNoEhoKCHJlZ2lv'
+    'bklkGAkgASgNUghyZWdpb25JZBIvCgl0cmFuc3BvcnQYCiABKA4yES5wcm90b3MuVHJhbnNwb3'
+    'J0Ugl0cmFuc3BvcnQSIAoLcGF5bG9hZFR5cGUYCyABKAlSC3BheWxvYWRUeXBlEhgKB3BheWxv'
+    'YWQYDCABKAlSB3BheWxvYWQSOAoJY3JlYXRlZEF0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
+    'RpbWVzdGFtcFIJY3JlYXRlZEF0');
 
 @$core.Deprecated('Use getDailyCountsRequestDescriptor instead')
 const GetDailyCountsRequest$json = {

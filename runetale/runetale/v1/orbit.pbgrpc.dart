@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from runetale/runetale/v1/telemetry.proto.
+// Generated from runetale/runetale/v1/orbit.proto.
 
 // @dart = 3.3
 
@@ -16,16 +16,16 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'telemetry.pb.dart' as $0;
+import 'orbit.pb.dart' as $0;
 
-export 'telemetry.pb.dart';
+export 'orbit.pb.dart';
 
-/// TelemetryService ingests low-cardinality client telemetry batches.
+/// OrbitService ingests low-cardinality client orbit batches.
 ///
 /// Auth is performed out-of-band (e.g. gRPC metadata headers like node-key/wg-pub-key/rune-key),
 /// consistent with other node/daemon RPCs.
-@$pb.GrpcServiceName('protos.TelemetryService')
-class TelemetryServiceClient extends $grpc.Client {
+@$pb.GrpcServiceName('protos.OrbitService')
+class OrbitServiceClient extends $grpc.Client {
   /// The hostname for this service.
   static const $core.String defaultHost = '';
 
@@ -34,17 +34,17 @@ class TelemetryServiceClient extends $grpc.Client {
     '',
   ];
 
-  TelemetryServiceClient(super.channel, {super.options, super.interceptors});
+  OrbitServiceClient(super.channel, {super.options, super.interceptors});
 
-  /// UploadTelemetryBatch receives telemetry events from clients.
-  $grpc.ResponseFuture<$0.TelemetryBatchResponse> uploadTelemetryBatch(
-    $0.TelemetryBatchRequest request, {
+  /// UploadOrbitBatch receives orbit events from clients.
+  $grpc.ResponseFuture<$0.OrbitBatchResponse> uploadOrbitBatch(
+    $0.OrbitBatchRequest request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$uploadTelemetryBatch, request, options: options);
+    return $createUnaryCall(_$uploadOrbitBatch, request, options: options);
   }
 
-  /// GetEvents retrieves stored telemetry events for analysis/debugging.
+  /// GetEvents retrieves stored orbit events for analysis/debugging.
   $grpc.ResponseFuture<$0.GetEventsResponse> getEvents(
     $0.GetEventsRequest request, {
     $grpc.CallOptions? options,
@@ -62,37 +62,35 @@ class TelemetryServiceClient extends $grpc.Client {
 
   // method descriptors
 
-  static final _$uploadTelemetryBatch =
-      $grpc.ClientMethod<$0.TelemetryBatchRequest, $0.TelemetryBatchResponse>(
-          '/protos.TelemetryService/UploadTelemetryBatch',
-          ($0.TelemetryBatchRequest value) => value.writeToBuffer(),
-          $0.TelemetryBatchResponse.fromBuffer);
+  static final _$uploadOrbitBatch =
+      $grpc.ClientMethod<$0.OrbitBatchRequest, $0.OrbitBatchResponse>(
+          '/protos.OrbitService/UploadOrbitBatch',
+          ($0.OrbitBatchRequest value) => value.writeToBuffer(),
+          $0.OrbitBatchResponse.fromBuffer);
   static final _$getEvents =
       $grpc.ClientMethod<$0.GetEventsRequest, $0.GetEventsResponse>(
-          '/protos.TelemetryService/GetEvents',
+          '/protos.OrbitService/GetEvents',
           ($0.GetEventsRequest value) => value.writeToBuffer(),
           $0.GetEventsResponse.fromBuffer);
   static final _$getDailyCounts =
       $grpc.ClientMethod<$0.GetDailyCountsRequest, $0.GetDailyCountsResponse>(
-          '/protos.TelemetryService/GetDailyCounts',
+          '/protos.OrbitService/GetDailyCounts',
           ($0.GetDailyCountsRequest value) => value.writeToBuffer(),
           $0.GetDailyCountsResponse.fromBuffer);
 }
 
-@$pb.GrpcServiceName('protos.TelemetryService')
-abstract class TelemetryServiceBase extends $grpc.Service {
-  $core.String get $name => 'protos.TelemetryService';
+@$pb.GrpcServiceName('protos.OrbitService')
+abstract class OrbitServiceBase extends $grpc.Service {
+  $core.String get $name => 'protos.OrbitService';
 
-  TelemetryServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.TelemetryBatchRequest,
-            $0.TelemetryBatchResponse>(
-        'UploadTelemetryBatch',
-        uploadTelemetryBatch_Pre,
+  OrbitServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.OrbitBatchRequest, $0.OrbitBatchResponse>(
+        'UploadOrbitBatch',
+        uploadOrbitBatch_Pre,
         false,
         false,
-        ($core.List<$core.int> value) =>
-            $0.TelemetryBatchRequest.fromBuffer(value),
-        ($0.TelemetryBatchResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $0.OrbitBatchRequest.fromBuffer(value),
+        ($0.OrbitBatchResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.GetEventsRequest, $0.GetEventsResponse>(
         'GetEvents',
         getEvents_Pre,
@@ -111,14 +109,14 @@ abstract class TelemetryServiceBase extends $grpc.Service {
         ($0.GetDailyCountsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.TelemetryBatchResponse> uploadTelemetryBatch_Pre(
+  $async.Future<$0.OrbitBatchResponse> uploadOrbitBatch_Pre(
       $grpc.ServiceCall $call,
-      $async.Future<$0.TelemetryBatchRequest> $request) async {
-    return uploadTelemetryBatch($call, await $request);
+      $async.Future<$0.OrbitBatchRequest> $request) async {
+    return uploadOrbitBatch($call, await $request);
   }
 
-  $async.Future<$0.TelemetryBatchResponse> uploadTelemetryBatch(
-      $grpc.ServiceCall call, $0.TelemetryBatchRequest request);
+  $async.Future<$0.OrbitBatchResponse> uploadOrbitBatch(
+      $grpc.ServiceCall call, $0.OrbitBatchRequest request);
 
   $async.Future<$0.GetEventsResponse> getEvents_Pre($grpc.ServiceCall $call,
       $async.Future<$0.GetEventsRequest> $request) async {

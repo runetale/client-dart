@@ -1,6 +1,6 @@
 // This is a generated file - do not edit.
 //
-// Generated from runetale/runetale/v1/telemetry.proto.
+// Generated from runetale/runetale/v1/orbit.proto.
 
 // @dart = 3.3
 
@@ -17,19 +17,19 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
     as $1;
 
-import 'telemetry.pbenum.dart';
+import 'orbit.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
-export 'telemetry.pbenum.dart';
+export 'orbit.pbenum.dart';
 
-/// TelemetryBatchRequest はクライアントから server へイベントをまとめて送るリクエストです。
-class TelemetryBatchRequest extends $pb.GeneratedMessage {
-  factory TelemetryBatchRequest({
+/// OrbitBatchRequest はクライアントから server へイベントをまとめて送るリクエストです。
+class OrbitBatchRequest extends $pb.GeneratedMessage {
+  factory OrbitBatchRequest({
     $fixnum.Int64? nodeId,
     $core.String? sessionId,
     $core.String? version,
-    $core.Iterable<TelemetryEvent>? events,
+    $core.Iterable<OrbitEvent>? events,
   }) {
     final result = create();
     if (nodeId != null) result.nodeId = nodeId;
@@ -39,46 +39,45 @@ class TelemetryBatchRequest extends $pb.GeneratedMessage {
     return result;
   }
 
-  TelemetryBatchRequest._();
+  OrbitBatchRequest._();
 
-  factory TelemetryBatchRequest.fromBuffer($core.List<$core.int> data,
+  factory OrbitBatchRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory TelemetryBatchRequest.fromJson($core.String json,
+  factory OrbitBatchRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'TelemetryBatchRequest',
+      _omitMessageNames ? '' : 'OrbitBatchRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
         protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
     ..aOS(3, _omitFieldNames ? '' : 'version')
-    ..pPM<TelemetryEvent>(4, _omitFieldNames ? '' : 'events',
-        subBuilder: TelemetryEvent.create)
+    ..pPM<OrbitEvent>(4, _omitFieldNames ? '' : 'events',
+        subBuilder: OrbitEvent.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TelemetryBatchRequest clone() => deepCopy();
+  OrbitBatchRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TelemetryBatchRequest copyWith(
-          void Function(TelemetryBatchRequest) updates) =>
-      super.copyWith((message) => updates(message as TelemetryBatchRequest))
-          as TelemetryBatchRequest;
+  OrbitBatchRequest copyWith(void Function(OrbitBatchRequest) updates) =>
+      super.copyWith((message) => updates(message as OrbitBatchRequest))
+          as OrbitBatchRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static TelemetryBatchRequest create() => TelemetryBatchRequest._();
+  static OrbitBatchRequest create() => OrbitBatchRequest._();
   @$core.override
-  TelemetryBatchRequest createEmptyInstance() => create();
+  OrbitBatchRequest createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static TelemetryBatchRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<TelemetryBatchRequest>(create);
-  static TelemetryBatchRequest? _defaultInstance;
+  static OrbitBatchRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OrbitBatchRequest>(create);
+  static OrbitBatchRequest? _defaultInstance;
 
   /// runetale node id
   @$pb.TagNumber(1)
@@ -112,11 +111,11 @@ class TelemetryBatchRequest extends $pb.GeneratedMessage {
 
   /// イベント本体
   @$pb.TagNumber(4)
-  $pb.PbList<TelemetryEvent> get events => $_getList(3);
+  $pb.PbList<OrbitEvent> get events => $_getList(3);
 }
 
-class TelemetryBatchResponse extends $pb.GeneratedMessage {
-  factory TelemetryBatchResponse({
+class OrbitBatchResponse extends $pb.GeneratedMessage {
+  factory OrbitBatchResponse({
     $core.int? accepted,
     $core.int? dropped,
     $core.String? reason,
@@ -128,17 +127,17 @@ class TelemetryBatchResponse extends $pb.GeneratedMessage {
     return result;
   }
 
-  TelemetryBatchResponse._();
+  OrbitBatchResponse._();
 
-  factory TelemetryBatchResponse.fromBuffer($core.List<$core.int> data,
+  factory OrbitBatchResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory TelemetryBatchResponse.fromJson($core.String json,
+  factory OrbitBatchResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'TelemetryBatchResponse',
+      _omitMessageNames ? '' : 'OrbitBatchResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..aI(1, _omitFieldNames ? '' : 'accepted', fieldType: $pb.PbFieldType.OU3)
@@ -147,24 +146,23 @@ class TelemetryBatchResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TelemetryBatchResponse clone() => deepCopy();
+  OrbitBatchResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TelemetryBatchResponse copyWith(
-          void Function(TelemetryBatchResponse) updates) =>
-      super.copyWith((message) => updates(message as TelemetryBatchResponse))
-          as TelemetryBatchResponse;
+  OrbitBatchResponse copyWith(void Function(OrbitBatchResponse) updates) =>
+      super.copyWith((message) => updates(message as OrbitBatchResponse))
+          as OrbitBatchResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static TelemetryBatchResponse create() => TelemetryBatchResponse._();
+  static OrbitBatchResponse create() => OrbitBatchResponse._();
   @$core.override
-  TelemetryBatchResponse createEmptyInstance() => create();
+  OrbitBatchResponse createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static TelemetryBatchResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<TelemetryBatchResponse>(create);
-  static TelemetryBatchResponse? _defaultInstance;
+  static OrbitBatchResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OrbitBatchResponse>(create);
+  static OrbitBatchResponse? _defaultInstance;
 
   /// server が受理したイベント数
   @$pb.TagNumber(1)
@@ -197,7 +195,7 @@ class TelemetryBatchResponse extends $pb.GeneratedMessage {
   void clearReason() => $_clearField(3);
 }
 
-enum TelemetryEvent_Payload {
+enum OrbitEvent_Payload {
   pathTransition,
   sendResult,
   recvResult,
@@ -207,10 +205,10 @@ enum TelemetryEvent_Payload {
   notSet
 }
 
-/// TelemetryEvent は1レコードのイベントです。
+/// OrbitEvent は1レコードのイベントです。
 /// 共通フィールド + oneof(種類別ペイロード) で表現します。
-class TelemetryEvent extends $pb.GeneratedMessage {
-  factory TelemetryEvent({
+class OrbitEvent extends $pb.GeneratedMessage {
+  factory OrbitEvent({
     $1.Timestamp? at,
     $core.List<$core.int>? peerHash,
     $core.int? regionId,
@@ -236,27 +234,27 @@ class TelemetryEvent extends $pb.GeneratedMessage {
     return result;
   }
 
-  TelemetryEvent._();
+  OrbitEvent._();
 
-  factory TelemetryEvent.fromBuffer($core.List<$core.int> data,
+  factory OrbitEvent.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory TelemetryEvent.fromJson($core.String json,
+  factory OrbitEvent.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
-  static const $core.Map<$core.int, TelemetryEvent_Payload>
-      _TelemetryEvent_PayloadByTag = {
-    10: TelemetryEvent_Payload.pathTransition,
-    11: TelemetryEvent_Payload.sendResult,
-    12: TelemetryEvent_Payload.recvResult,
-    13: TelemetryEvent_Payload.cerfConn,
-    14: TelemetryEvent_Payload.ice,
-    15: TelemetryEvent_Payload.filter,
-    0: TelemetryEvent_Payload.notSet
+  static const $core.Map<$core.int, OrbitEvent_Payload>
+      _OrbitEvent_PayloadByTag = {
+    10: OrbitEvent_Payload.pathTransition,
+    11: OrbitEvent_Payload.sendResult,
+    12: OrbitEvent_Payload.recvResult,
+    13: OrbitEvent_Payload.cerfConn,
+    14: OrbitEvent_Payload.ice,
+    15: OrbitEvent_Payload.filter,
+    0: OrbitEvent_Payload.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'TelemetryEvent',
+      _omitMessageNames ? '' : 'OrbitEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..oo(0, [10, 11, 12, 13, 14, 15])
@@ -284,23 +282,22 @@ class TelemetryEvent extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TelemetryEvent clone() => deepCopy();
+  OrbitEvent clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TelemetryEvent copyWith(void Function(TelemetryEvent) updates) =>
-      super.copyWith((message) => updates(message as TelemetryEvent))
-          as TelemetryEvent;
+  OrbitEvent copyWith(void Function(OrbitEvent) updates) =>
+      super.copyWith((message) => updates(message as OrbitEvent)) as OrbitEvent;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static TelemetryEvent create() => TelemetryEvent._();
+  static OrbitEvent create() => OrbitEvent._();
   @$core.override
-  TelemetryEvent createEmptyInstance() => create();
+  OrbitEvent createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static TelemetryEvent getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<TelemetryEvent>(create);
-  static TelemetryEvent? _defaultInstance;
+  static OrbitEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OrbitEvent>(create);
+  static OrbitEvent? _defaultInstance;
 
   @$pb.TagNumber(10)
   @$pb.TagNumber(11)
@@ -308,8 +305,8 @@ class TelemetryEvent extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   @$pb.TagNumber(14)
   @$pb.TagNumber(15)
-  TelemetryEvent_Payload whichPayload() =>
-      _TelemetryEvent_PayloadByTag[$_whichOneof(0)]!;
+  OrbitEvent_Payload whichPayload() =>
+      _OrbitEvent_PayloadByTag[$_whichOneof(0)]!;
   @$pb.TagNumber(10)
   @$pb.TagNumber(11)
   @$pb.TagNumber(12)
@@ -911,7 +908,7 @@ class FilterDecision extends $pb.GeneratedMessage {
   void clearReason() => $_clearField(2);
 }
 
-/// GetEventsRequest はテレメトリイベントの取得リクエストです。
+/// GetEventsRequest はOrbitイベントの取得リクエストです。
 class GetEventsRequest extends $pb.GeneratedMessage {
   factory GetEventsRequest({
     $fixnum.Int64? nodeId,
@@ -1037,10 +1034,10 @@ class GetEventsRequest extends $pb.GeneratedMessage {
   void clearOffset() => $_clearField(6);
 }
 
-/// GetEventsResponse はテレメトリイベントの取得レスポンスです。
+/// GetEventsResponse はOrbitイベントの取得レスポンスです。
 class GetEventsResponse extends $pb.GeneratedMessage {
   factory GetEventsResponse({
-    $core.Iterable<StoredTelemetryEvent>? events,
+    $core.Iterable<StoredOrbitEvent>? events,
     $fixnum.Int64? totalCount,
   }) {
     final result = create();
@@ -1062,8 +1059,8 @@ class GetEventsResponse extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'GetEventsResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..pPM<StoredTelemetryEvent>(1, _omitFieldNames ? '' : 'events',
-        subBuilder: StoredTelemetryEvent.create)
+    ..pPM<StoredOrbitEvent>(1, _omitFieldNames ? '' : 'events',
+        subBuilder: StoredOrbitEvent.create)
     ..aInt64(2, _omitFieldNames ? '' : 'totalCount', protoName: 'totalCount')
     ..hasRequiredFields = false;
 
@@ -1087,7 +1084,7 @@ class GetEventsResponse extends $pb.GeneratedMessage {
   static GetEventsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $pb.PbList<StoredTelemetryEvent> get events => $_getList(0);
+  $pb.PbList<StoredOrbitEvent> get events => $_getList(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get totalCount => $_getI64(1);
@@ -1099,10 +1096,10 @@ class GetEventsResponse extends $pb.GeneratedMessage {
   void clearTotalCount() => $_clearField(2);
 }
 
-/// StoredTelemetryEvent はサーバーに保存されたテレメトリイベントです。
-/// TelemetryEvent に加えて、サーバー側のメタデータを含みます。
-class StoredTelemetryEvent extends $pb.GeneratedMessage {
-  factory StoredTelemetryEvent({
+/// StoredOrbitEvent はサーバーに保存されたOrbitイベントです。
+/// OrbitEvent に加えて、サーバー側のメタデータを含みます。
+class StoredOrbitEvent extends $pb.GeneratedMessage {
+  factory StoredOrbitEvent({
     $fixnum.Int64? id,
     $fixnum.Int64? nodeId,
     $core.String? sessionId,
@@ -1134,17 +1131,17 @@ class StoredTelemetryEvent extends $pb.GeneratedMessage {
     return result;
   }
 
-  StoredTelemetryEvent._();
+  StoredOrbitEvent._();
 
-  factory StoredTelemetryEvent.fromBuffer($core.List<$core.int> data,
+  factory StoredOrbitEvent.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory StoredTelemetryEvent.fromJson($core.String json,
+  factory StoredOrbitEvent.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'StoredTelemetryEvent',
+      _omitMessageNames ? '' : 'StoredOrbitEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6,
@@ -1173,23 +1170,23 @@ class StoredTelemetryEvent extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StoredTelemetryEvent clone() => deepCopy();
+  StoredOrbitEvent clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StoredTelemetryEvent copyWith(void Function(StoredTelemetryEvent) updates) =>
-      super.copyWith((message) => updates(message as StoredTelemetryEvent))
-          as StoredTelemetryEvent;
+  StoredOrbitEvent copyWith(void Function(StoredOrbitEvent) updates) =>
+      super.copyWith((message) => updates(message as StoredOrbitEvent))
+          as StoredOrbitEvent;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static StoredTelemetryEvent create() => StoredTelemetryEvent._();
+  static StoredOrbitEvent create() => StoredOrbitEvent._();
   @$core.override
-  StoredTelemetryEvent createEmptyInstance() => create();
+  StoredOrbitEvent createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static StoredTelemetryEvent getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<StoredTelemetryEvent>(create);
-  static StoredTelemetryEvent? _defaultInstance;
+  static StoredOrbitEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StoredOrbitEvent>(create);
+  static StoredOrbitEvent? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
