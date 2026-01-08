@@ -20,10 +20,9 @@ import 'orbit.pb.dart' as $0;
 
 export 'orbit.pb.dart';
 
-/// OrbitService ingests low-cardinality client orbit batches.
-///
-/// Auth is performed out-of-band (e.g. gRPC metadata headers like node-key/wg-pub-key/rune-key),
-/// consistent with other node/daemon RPCs.
+/// OrbitService ingests low-cardinality client telemetry batches.
+/// This service is used for operational metrics like path transitions,
+/// send/receive results, CERF connection events, and filter decisions.
 @$pb.GrpcServiceName('protos.OrbitService')
 class OrbitServiceClient extends $grpc.Client {
   /// The hostname for this service.
@@ -36,7 +35,8 @@ class OrbitServiceClient extends $grpc.Client {
 
   OrbitServiceClient(super.channel, {super.options, super.interceptors});
 
-  /// UploadOrbitBatch receives orbit events from clients.
+  /// UploadOrbitBatch receives a batch of telemetry events from a client node.
+  /// Authentication is done via node identity headers (node-key/wg-pub-key/rune-key).
   $grpc.ResponseFuture<$0.OrbitBatchResponse> uploadOrbitBatch(
     $0.OrbitBatchRequest request, {
     $grpc.CallOptions? options,
@@ -44,7 +44,7 @@ class OrbitServiceClient extends $grpc.Client {
     return $createUnaryCall(_$uploadOrbitBatch, request, options: options);
   }
 
-  /// GetEvents retrieves stored orbit events for analysis/debugging.
+  /// GetEvents retrieves stored events for a node or session (admin/debug use).
   $grpc.ResponseFuture<$0.GetEventsResponse> getEvents(
     $0.GetEventsRequest request, {
     $grpc.CallOptions? options,
@@ -52,7 +52,7 @@ class OrbitServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getEvents, request, options: options);
   }
 
-  /// GetDailyCounts retrieves aggregated daily counts for dashboards/trends.
+  /// GetDailyCounts retrieves aggregated daily counts for metrics.
   $grpc.ResponseFuture<$0.GetDailyCountsResponse> getDailyCounts(
     $0.GetDailyCountsRequest request, {
     $grpc.CallOptions? options,

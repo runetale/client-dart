@@ -23,18 +23,18 @@ export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'orbit.pbenum.dart';
 
-/// OrbitBatchRequest はクライアントから server へイベントをまとめて送るリクエストです。
+/// OrbitBatchRequest contains a batch of telemetry events from a client.
 class OrbitBatchRequest extends $pb.GeneratedMessage {
   factory OrbitBatchRequest({
-    $fixnum.Int64? nodeId,
-    $core.String? sessionId,
     $core.String? version,
+    $core.String? sessionId,
+    $fixnum.Int64? nodeId,
     $core.Iterable<OrbitEvent>? events,
   }) {
     final result = create();
-    if (nodeId != null) result.nodeId = nodeId;
-    if (sessionId != null) result.sessionId = sessionId;
     if (version != null) result.version = version;
+    if (sessionId != null) result.sessionId = sessionId;
+    if (nodeId != null) result.nodeId = nodeId;
     if (events != null) result.events.addAll(events);
     return result;
   }
@@ -52,10 +52,10 @@ class OrbitBatchRequest extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'OrbitBatchRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
-        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
-    ..aOS(3, _omitFieldNames ? '' : 'version')
+    ..aOS(1, _omitFieldNames ? '' : 'version')
+    ..aOS(2, _omitFieldNames ? '' : 'sessionId')
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
     ..pPM<OrbitEvent>(4, _omitFieldNames ? '' : 'events',
         subBuilder: OrbitEvent.create)
     ..hasRequiredFields = false;
@@ -79,17 +79,17 @@ class OrbitBatchRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<OrbitBatchRequest>(create);
   static OrbitBatchRequest? _defaultInstance;
 
-  /// runetale node id
+  /// version is the client version string (e.g. "1.2.3").
   @$pb.TagNumber(1)
-  $fixnum.Int64 get nodeId => $_getI64(0);
+  $core.String get version => $_getSZ(0);
   @$pb.TagNumber(1)
-  set nodeId($fixnum.Int64 value) => $_setInt64(0, value);
+  set version($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
-  $core.bool hasNodeId() => $_has(0);
+  $core.bool hasVersion() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNodeId() => $_clearField(1);
+  void clearVersion() => $_clearField(1);
 
-  /// 1プロセス/1接続期間の識別子（クライアント側で生成）
+  /// session_id is a unique identifier for the client session.
   @$pb.TagNumber(2)
   $core.String get sessionId => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -99,21 +99,22 @@ class OrbitBatchRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSessionId() => $_clearField(2);
 
-  /// client build/version 情報（任意）
+  /// node_id is the node ID (optional, for backward compatibility).
   @$pb.TagNumber(3)
-  $core.String get version => $_getSZ(2);
+  $fixnum.Int64 get nodeId => $_getI64(2);
   @$pb.TagNumber(3)
-  set version($core.String value) => $_setString(2, value);
+  set nodeId($fixnum.Int64 value) => $_setInt64(2, value);
   @$pb.TagNumber(3)
-  $core.bool hasVersion() => $_has(2);
+  $core.bool hasNodeId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearVersion() => $_clearField(3);
+  void clearNodeId() => $_clearField(3);
 
-  /// イベント本体
+  /// events is the list of telemetry events to upload.
   @$pb.TagNumber(4)
   $pb.PbList<OrbitEvent> get events => $_getList(3);
 }
 
+/// OrbitBatchResponse is returned after processing a batch.
 class OrbitBatchResponse extends $pb.GeneratedMessage {
   factory OrbitBatchResponse({
     $core.int? accepted,
@@ -164,7 +165,7 @@ class OrbitBatchResponse extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<OrbitBatchResponse>(create);
   static OrbitBatchResponse? _defaultInstance;
 
-  /// server が受理したイベント数
+  /// accepted is the number of events successfully stored.
   @$pb.TagNumber(1)
   $core.int get accepted => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -174,7 +175,7 @@ class OrbitBatchResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearAccepted() => $_clearField(1);
 
-  /// server 側で破棄したイベント数（サイズ/レート/検証失敗など）
+  /// dropped is the number of events dropped (rate limit, size limit, etc.).
   @$pb.TagNumber(2)
   $core.int get dropped => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -184,7 +185,7 @@ class OrbitBatchResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDropped() => $_clearField(2);
 
-  /// 代表的な理由（任意）
+  /// reason is set if any events were dropped.
   @$pb.TagNumber(3)
   $core.String get reason => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -196,41 +197,40 @@ class OrbitBatchResponse extends $pb.GeneratedMessage {
 }
 
 enum OrbitEvent_Payload {
-  pathTransition,
   sendResult,
   recvResult,
   cerfConn,
   ice,
   filter,
+  pathTransition,
   notSet
 }
 
-/// OrbitEvent は1レコードのイベントです。
-/// 共通フィールド + oneof(種類別ペイロード) で表現します。
+/// OrbitEvent is a single telemetry event.
 class OrbitEvent extends $pb.GeneratedMessage {
   factory OrbitEvent({
     $1.Timestamp? at,
     $core.List<$core.int>? peerHash,
     $core.int? regionId,
     Transport? transport,
-    PathTransition? pathTransition,
-    SendResult? sendResult,
-    RecvResult? recvResult,
+    SendResultEvent? sendResult,
+    RecvResultEvent? recvResult,
     CerfConnEvent? cerfConn,
     IceEvent? ice,
-    FilterDecision? filter,
+    FilterEvent? filter,
+    PathTransitionEvent? pathTransition,
   }) {
     final result = create();
     if (at != null) result.at = at;
     if (peerHash != null) result.peerHash = peerHash;
     if (regionId != null) result.regionId = regionId;
     if (transport != null) result.transport = transport;
-    if (pathTransition != null) result.pathTransition = pathTransition;
     if (sendResult != null) result.sendResult = sendResult;
     if (recvResult != null) result.recvResult = recvResult;
     if (cerfConn != null) result.cerfConn = cerfConn;
     if (ice != null) result.ice = ice;
     if (filter != null) result.filter = filter;
+    if (pathTransition != null) result.pathTransition = pathTransition;
     return result;
   }
 
@@ -245,12 +245,12 @@ class OrbitEvent extends $pb.GeneratedMessage {
 
   static const $core.Map<$core.int, OrbitEvent_Payload>
       _OrbitEvent_PayloadByTag = {
-    10: OrbitEvent_Payload.pathTransition,
-    11: OrbitEvent_Payload.sendResult,
-    12: OrbitEvent_Payload.recvResult,
-    13: OrbitEvent_Payload.cerfConn,
-    14: OrbitEvent_Payload.ice,
-    15: OrbitEvent_Payload.filter,
+    10: OrbitEvent_Payload.sendResult,
+    11: OrbitEvent_Payload.recvResult,
+    12: OrbitEvent_Payload.cerfConn,
+    13: OrbitEvent_Payload.ice,
+    14: OrbitEvent_Payload.filter,
+    15: OrbitEvent_Payload.pathTransition,
     0: OrbitEvent_Payload.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
@@ -261,24 +261,22 @@ class OrbitEvent extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'at',
         subBuilder: $1.Timestamp.create)
     ..a<$core.List<$core.int>>(
-        2, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY,
-        protoName: 'peerHash')
-    ..aI(3, _omitFieldNames ? '' : 'regionId',
-        protoName: 'regionId', fieldType: $pb.PbFieldType.OU3)
+        2, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY)
+    ..aI(3, _omitFieldNames ? '' : 'regionId', fieldType: $pb.PbFieldType.OU3)
     ..aE<Transport>(4, _omitFieldNames ? '' : 'transport',
         enumValues: Transport.values)
-    ..aOM<PathTransition>(10, _omitFieldNames ? '' : 'pathTransition',
-        subBuilder: PathTransition.create)
-    ..aOM<SendResult>(11, _omitFieldNames ? '' : 'sendResult',
-        subBuilder: SendResult.create)
-    ..aOM<RecvResult>(12, _omitFieldNames ? '' : 'recvResult',
-        subBuilder: RecvResult.create)
-    ..aOM<CerfConnEvent>(13, _omitFieldNames ? '' : 'cerfConn',
+    ..aOM<SendResultEvent>(10, _omitFieldNames ? '' : 'sendResult',
+        subBuilder: SendResultEvent.create)
+    ..aOM<RecvResultEvent>(11, _omitFieldNames ? '' : 'recvResult',
+        subBuilder: RecvResultEvent.create)
+    ..aOM<CerfConnEvent>(12, _omitFieldNames ? '' : 'cerfConn',
         subBuilder: CerfConnEvent.create)
-    ..aOM<IceEvent>(14, _omitFieldNames ? '' : 'ice',
+    ..aOM<IceEvent>(13, _omitFieldNames ? '' : 'ice',
         subBuilder: IceEvent.create)
-    ..aOM<FilterDecision>(15, _omitFieldNames ? '' : 'filter',
-        subBuilder: FilterDecision.create)
+    ..aOM<FilterEvent>(14, _omitFieldNames ? '' : 'filter',
+        subBuilder: FilterEvent.create)
+    ..aOM<PathTransitionEvent>(15, _omitFieldNames ? '' : 'pathTransition',
+        subBuilder: PathTransitionEvent.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -315,7 +313,7 @@ class OrbitEvent extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   void clearPayload() => $_clearField($_whichOneof(0));
 
-  /// イベント発生時刻（クライアント側）
+  /// at is the client-side timestamp when the event occurred.
   @$pb.TagNumber(1)
   $1.Timestamp get at => $_getN(0);
   @$pb.TagNumber(1)
@@ -327,7 +325,8 @@ class OrbitEvent extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.Timestamp ensureAt() => $_ensure(0);
 
-  /// peer識別子（生鍵を送らない）。HMAC等で匿名化した固定長のハッシュを想定。
+  /// peer_hash is the first 8 bytes of SHA256(peer_public_key).
+  /// Used for correlation without exposing full keys.
   @$pb.TagNumber(2)
   $core.List<$core.int> get peerHash => $_getN(1);
   @$pb.TagNumber(2)
@@ -337,7 +336,7 @@ class OrbitEvent extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPeerHash() => $_clearField(2);
 
-  /// CERF のリージョンID（該当する場合のみ）。unknown は 0。
+  /// region_id is the CERF region ID (if applicable).
   @$pb.TagNumber(3)
   $core.int get regionId => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -347,7 +346,7 @@ class OrbitEvent extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearRegionId() => $_clearField(3);
 
-  /// このイベントに紐づくトランスポート（該当する場合のみ）
+  /// transport is the transport type used.
   @$pb.TagNumber(4)
   Transport get transport => $_getN(3);
   @$pb.TagNumber(4)
@@ -358,217 +357,119 @@ class OrbitEvent extends $pb.GeneratedMessage {
   void clearTransport() => $_clearField(4);
 
   @$pb.TagNumber(10)
-  PathTransition get pathTransition => $_getN(4);
+  SendResultEvent get sendResult => $_getN(4);
   @$pb.TagNumber(10)
-  set pathTransition(PathTransition value) => $_setField(10, value);
+  set sendResult(SendResultEvent value) => $_setField(10, value);
   @$pb.TagNumber(10)
-  $core.bool hasPathTransition() => $_has(4);
+  $core.bool hasSendResult() => $_has(4);
   @$pb.TagNumber(10)
-  void clearPathTransition() => $_clearField(10);
+  void clearSendResult() => $_clearField(10);
   @$pb.TagNumber(10)
-  PathTransition ensurePathTransition() => $_ensure(4);
+  SendResultEvent ensureSendResult() => $_ensure(4);
 
   @$pb.TagNumber(11)
-  SendResult get sendResult => $_getN(5);
+  RecvResultEvent get recvResult => $_getN(5);
   @$pb.TagNumber(11)
-  set sendResult(SendResult value) => $_setField(11, value);
+  set recvResult(RecvResultEvent value) => $_setField(11, value);
   @$pb.TagNumber(11)
-  $core.bool hasSendResult() => $_has(5);
+  $core.bool hasRecvResult() => $_has(5);
   @$pb.TagNumber(11)
-  void clearSendResult() => $_clearField(11);
+  void clearRecvResult() => $_clearField(11);
   @$pb.TagNumber(11)
-  SendResult ensureSendResult() => $_ensure(5);
+  RecvResultEvent ensureRecvResult() => $_ensure(5);
 
   @$pb.TagNumber(12)
-  RecvResult get recvResult => $_getN(6);
+  CerfConnEvent get cerfConn => $_getN(6);
   @$pb.TagNumber(12)
-  set recvResult(RecvResult value) => $_setField(12, value);
+  set cerfConn(CerfConnEvent value) => $_setField(12, value);
   @$pb.TagNumber(12)
-  $core.bool hasRecvResult() => $_has(6);
+  $core.bool hasCerfConn() => $_has(6);
   @$pb.TagNumber(12)
-  void clearRecvResult() => $_clearField(12);
+  void clearCerfConn() => $_clearField(12);
   @$pb.TagNumber(12)
-  RecvResult ensureRecvResult() => $_ensure(6);
+  CerfConnEvent ensureCerfConn() => $_ensure(6);
 
   @$pb.TagNumber(13)
-  CerfConnEvent get cerfConn => $_getN(7);
+  IceEvent get ice => $_getN(7);
   @$pb.TagNumber(13)
-  set cerfConn(CerfConnEvent value) => $_setField(13, value);
+  set ice(IceEvent value) => $_setField(13, value);
   @$pb.TagNumber(13)
-  $core.bool hasCerfConn() => $_has(7);
+  $core.bool hasIce() => $_has(7);
   @$pb.TagNumber(13)
-  void clearCerfConn() => $_clearField(13);
+  void clearIce() => $_clearField(13);
   @$pb.TagNumber(13)
-  CerfConnEvent ensureCerfConn() => $_ensure(7);
+  IceEvent ensureIce() => $_ensure(7);
 
   @$pb.TagNumber(14)
-  IceEvent get ice => $_getN(8);
+  FilterEvent get filter => $_getN(8);
   @$pb.TagNumber(14)
-  set ice(IceEvent value) => $_setField(14, value);
+  set filter(FilterEvent value) => $_setField(14, value);
   @$pb.TagNumber(14)
-  $core.bool hasIce() => $_has(8);
+  $core.bool hasFilter() => $_has(8);
   @$pb.TagNumber(14)
-  void clearIce() => $_clearField(14);
+  void clearFilter() => $_clearField(14);
   @$pb.TagNumber(14)
-  IceEvent ensureIce() => $_ensure(8);
+  FilterEvent ensureFilter() => $_ensure(8);
 
   @$pb.TagNumber(15)
-  FilterDecision get filter => $_getN(9);
+  PathTransitionEvent get pathTransition => $_getN(9);
   @$pb.TagNumber(15)
-  set filter(FilterDecision value) => $_setField(15, value);
+  set pathTransition(PathTransitionEvent value) => $_setField(15, value);
   @$pb.TagNumber(15)
-  $core.bool hasFilter() => $_has(9);
+  $core.bool hasPathTransition() => $_has(9);
   @$pb.TagNumber(15)
-  void clearFilter() => $_clearField(15);
+  void clearPathTransition() => $_clearField(15);
   @$pb.TagNumber(15)
-  FilterDecision ensureFilter() => $_ensure(9);
+  PathTransitionEvent ensurePathTransition() => $_ensure(9);
 }
 
-/// PathTransition は経路の選択/切替を表します。
-class PathTransition extends $pb.GeneratedMessage {
-  factory PathTransition({
-    PathState? from,
-    PathState? to,
-    $core.String? reason,
-    $core.String? detail,
-  }) {
-    final result = create();
-    if (from != null) result.from = from;
-    if (to != null) result.to = to;
-    if (reason != null) result.reason = reason;
-    if (detail != null) result.detail = detail;
-    return result;
-  }
-
-  PathTransition._();
-
-  factory PathTransition.fromBuffer($core.List<$core.int> data,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
-  factory PathTransition.fromJson($core.String json,
-          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'PathTransition',
-      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
-    ..aE<PathState>(1, _omitFieldNames ? '' : 'from',
-        enumValues: PathState.values)
-    ..aE<PathState>(2, _omitFieldNames ? '' : 'to',
-        enumValues: PathState.values)
-    ..aOS(3, _omitFieldNames ? '' : 'reason')
-    ..aOS(4, _omitFieldNames ? '' : 'detail')
-    ..hasRequiredFields = false;
-
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PathTransition clone() => deepCopy();
-  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PathTransition copyWith(void Function(PathTransition) updates) =>
-      super.copyWith((message) => updates(message as PathTransition))
-          as PathTransition;
-
-  @$core.override
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static PathTransition create() => PathTransition._();
-  @$core.override
-  PathTransition createEmptyInstance() => create();
-  @$core.pragma('dart2js:noInline')
-  static PathTransition getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PathTransition>(create);
-  static PathTransition? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  PathState get from => $_getN(0);
-  @$pb.TagNumber(1)
-  set from(PathState value) => $_setField(1, value);
-  @$pb.TagNumber(1)
-  $core.bool hasFrom() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearFrom() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  PathState get to => $_getN(1);
-  @$pb.TagNumber(2)
-  set to(PathState value) => $_setField(2, value);
-  @$pb.TagNumber(2)
-  $core.bool hasTo() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearTo() => $_clearField(2);
-
-  /// 切替理由（機械集計可能な短い文字列を推奨）
-  /// 例: "force_cerf", "recv_confirmed", "no_recvwg_timeout", "trial_prefer_ice", "cerf_fail_fallback"
-  @$pb.TagNumber(3)
-  $core.String get reason => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set reason($core.String value) => $_setString(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasReason() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearReason() => $_clearField(3);
-
-  /// 追加情報（任意）
-  @$pb.TagNumber(4)
-  $core.String get detail => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set detail($core.String value) => $_setString(3, value);
-  @$pb.TagNumber(4)
-  $core.bool hasDetail() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearDetail() => $_clearField(4);
-}
-
-/// SendResult は送信の結果（成功/失敗）を表します。
-class SendResult extends $pb.GeneratedMessage {
-  factory SendResult({
+/// SendResultEvent records the result of sending a packet.
+class SendResultEvent extends $pb.GeneratedMessage {
+  factory SendResultEvent({
     $core.bool? ok,
-    $core.int? bytes,
-    $core.String? errCode,
+    $core.String? error,
   }) {
     final result = create();
     if (ok != null) result.ok = ok;
-    if (bytes != null) result.bytes = bytes;
-    if (errCode != null) result.errCode = errCode;
+    if (error != null) result.error = error;
     return result;
   }
 
-  SendResult._();
+  SendResultEvent._();
 
-  factory SendResult.fromBuffer($core.List<$core.int> data,
+  factory SendResultEvent.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory SendResult.fromJson($core.String json,
+  factory SendResultEvent.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'SendResult',
+      _omitMessageNames ? '' : 'SendResultEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'ok')
-    ..aI(2, _omitFieldNames ? '' : 'bytes', fieldType: $pb.PbFieldType.OU3)
-    ..aOS(3, _omitFieldNames ? '' : 'errCode', protoName: 'errCode')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SendResult clone() => deepCopy();
+  SendResultEvent clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SendResult copyWith(void Function(SendResult) updates) =>
-      super.copyWith((message) => updates(message as SendResult)) as SendResult;
+  SendResultEvent copyWith(void Function(SendResultEvent) updates) =>
+      super.copyWith((message) => updates(message as SendResultEvent))
+          as SendResultEvent;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static SendResult create() => SendResult._();
+  static SendResultEvent create() => SendResultEvent._();
   @$core.override
-  SendResult createEmptyInstance() => create();
+  SendResultEvent createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static SendResult getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<SendResult>(create);
-  static SendResult? _defaultInstance;
+  static SendResultEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SendResultEvent>(create);
+  static SendResultEvent? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get ok => $_getBF(0);
@@ -579,129 +480,93 @@ class SendResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearOk() => $_clearField(1);
 
-  /// 送信したバイト数（payload長）
   @$pb.TagNumber(2)
-  $core.int get bytes => $_getIZ(1);
+  $core.String get error => $_getSZ(1);
   @$pb.TagNumber(2)
-  set bytes($core.int value) => $_setUnsignedInt32(1, value);
+  set error($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasBytes() => $_has(1);
+  $core.bool hasError() => $_has(1);
   @$pb.TagNumber(2)
-  void clearBytes() => $_clearField(2);
-
-  /// エラー分類（任意）
-  @$pb.TagNumber(3)
-  $core.String get errCode => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set errCode($core.String value) => $_setString(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasErrCode() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearErrCode() => $_clearField(3);
+  void clearError() => $_clearField(2);
 }
 
-/// RecvResult は受信処理の結果を表します。
-class RecvResult extends $pb.GeneratedMessage {
-  factory RecvResult({
-    $core.bool? ok,
-    RecvKind? kind,
-    $core.int? bytes,
-    $core.String? errCode,
+/// RecvResultEvent records the result of receiving a packet.
+class RecvResultEvent extends $pb.GeneratedMessage {
+  factory RecvResultEvent({
+    $core.int? kind,
+    $core.int? size,
   }) {
     final result = create();
-    if (ok != null) result.ok = ok;
     if (kind != null) result.kind = kind;
-    if (bytes != null) result.bytes = bytes;
-    if (errCode != null) result.errCode = errCode;
+    if (size != null) result.size = size;
     return result;
   }
 
-  RecvResult._();
+  RecvResultEvent._();
 
-  factory RecvResult.fromBuffer($core.List<$core.int> data,
+  factory RecvResultEvent.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory RecvResult.fromJson($core.String json,
+  factory RecvResultEvent.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'RecvResult',
+      _omitMessageNames ? '' : 'RecvResultEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..aOB(1, _omitFieldNames ? '' : 'ok')
-    ..aE<RecvKind>(2, _omitFieldNames ? '' : 'kind',
-        enumValues: RecvKind.values)
-    ..aI(3, _omitFieldNames ? '' : 'bytes', fieldType: $pb.PbFieldType.OU3)
-    ..aOS(4, _omitFieldNames ? '' : 'errCode', protoName: 'errCode')
+    ..aI(1, _omitFieldNames ? '' : 'kind')
+    ..aI(2, _omitFieldNames ? '' : 'size', fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecvResult clone() => deepCopy();
+  RecvResultEvent clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecvResult copyWith(void Function(RecvResult) updates) =>
-      super.copyWith((message) => updates(message as RecvResult)) as RecvResult;
+  RecvResultEvent copyWith(void Function(RecvResultEvent) updates) =>
+      super.copyWith((message) => updates(message as RecvResultEvent))
+          as RecvResultEvent;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RecvResult create() => RecvResult._();
+  static RecvResultEvent create() => RecvResultEvent._();
   @$core.override
-  RecvResult createEmptyInstance() => create();
+  RecvResultEvent createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static RecvResult getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<RecvResult>(create);
-  static RecvResult? _defaultInstance;
+  static RecvResultEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecvResultEvent>(create);
+  static RecvResultEvent? _defaultInstance;
 
+  /// kind: 0=data, 1=keepalive, 2=handshake, etc.
   @$pb.TagNumber(1)
-  $core.bool get ok => $_getBF(0);
+  $core.int get kind => $_getIZ(0);
   @$pb.TagNumber(1)
-  set ok($core.bool value) => $_setBool(0, value);
+  set kind($core.int value) => $_setSignedInt32(0, value);
   @$pb.TagNumber(1)
-  $core.bool hasOk() => $_has(0);
+  $core.bool hasKind() => $_has(0);
   @$pb.TagNumber(1)
-  void clearOk() => $_clearField(1);
+  void clearKind() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  RecvKind get kind => $_getN(1);
+  $core.int get size => $_getIZ(1);
   @$pb.TagNumber(2)
-  set kind(RecvKind value) => $_setField(2, value);
+  set size($core.int value) => $_setUnsignedInt32(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasKind() => $_has(1);
+  $core.bool hasSize() => $_has(1);
   @$pb.TagNumber(2)
-  void clearKind() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.int get bytes => $_getIZ(2);
-  @$pb.TagNumber(3)
-  set bytes($core.int value) => $_setUnsignedInt32(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasBytes() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearBytes() => $_clearField(3);
-
-  @$pb.TagNumber(4)
-  $core.String get errCode => $_getSZ(3);
-  @$pb.TagNumber(4)
-  set errCode($core.String value) => $_setString(3, value);
-  @$pb.TagNumber(4)
-  $core.bool hasErrCode() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearErrCode() => $_clearField(4);
+  void clearSize() => $_clearField(2);
 }
 
-/// CerfConnEvent は CERF の接続/再接続/エラー等の状態変化を表します。
+/// CerfConnEvent records CERF connection state changes.
 class CerfConnEvent extends $pb.GeneratedMessage {
   factory CerfConnEvent({
-    $core.int? connGen,
-    CerfConnEvent_CerfConnState? state,
-    $core.String? detail,
+    CerfConnEvent_State? state,
+    $core.String? error,
   }) {
     final result = create();
-    if (connGen != null) result.connGen = connGen;
     if (state != null) result.state = state;
-    if (detail != null) result.detail = detail;
+    if (error != null) result.error = error;
     return result;
   }
 
@@ -718,10 +583,9 @@ class CerfConnEvent extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'CerfConnEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..aI(1, _omitFieldNames ? '' : 'connGen', protoName: 'connGen')
-    ..aE<CerfConnEvent_CerfConnState>(2, _omitFieldNames ? '' : 'state',
-        enumValues: CerfConnEvent_CerfConnState.values)
-    ..aOS(3, _omitFieldNames ? '' : 'detail')
+    ..aE<CerfConnEvent_State>(1, _omitFieldNames ? '' : 'state',
+        enumValues: CerfConnEvent_State.values)
+    ..aOS(2, _omitFieldNames ? '' : 'error')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -743,44 +607,34 @@ class CerfConnEvent extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<CerfConnEvent>(create);
   static CerfConnEvent? _defaultInstance;
 
-  /// cerfhttp.Client の connGen（再接続ごとに増える）
   @$pb.TagNumber(1)
-  $core.int get connGen => $_getIZ(0);
+  CerfConnEvent_State get state => $_getN(0);
   @$pb.TagNumber(1)
-  set connGen($core.int value) => $_setSignedInt32(0, value);
+  set state(CerfConnEvent_State value) => $_setField(1, value);
   @$pb.TagNumber(1)
-  $core.bool hasConnGen() => $_has(0);
+  $core.bool hasState() => $_has(0);
   @$pb.TagNumber(1)
-  void clearConnGen() => $_clearField(1);
+  void clearState() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  CerfConnEvent_CerfConnState get state => $_getN(1);
+  $core.String get error => $_getSZ(1);
   @$pb.TagNumber(2)
-  set state(CerfConnEvent_CerfConnState value) => $_setField(2, value);
+  set error($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasState() => $_has(1);
+  $core.bool hasError() => $_has(1);
   @$pb.TagNumber(2)
-  void clearState() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get detail => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set detail($core.String value) => $_setString(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasDetail() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearDetail() => $_clearField(3);
+  void clearError() => $_clearField(2);
 }
 
-/// IceEvent は ICE の状態変化（候補更新/接続確立/エラー等）を表します。
+/// IceEvent records ICE negotiation state changes.
 class IceEvent extends $pb.GeneratedMessage {
   factory IceEvent({
-    IceEvent_IceState? state,
-    $core.String? detail,
+    IceEvent_State? state,
+    $core.String? candidateType,
   }) {
     final result = create();
     if (state != null) result.state = state;
-    if (detail != null) result.detail = detail;
+    if (candidateType != null) result.candidateType = candidateType;
     return result;
   }
 
@@ -797,9 +651,9 @@ class IceEvent extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'IceEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..aE<IceEvent_IceState>(1, _omitFieldNames ? '' : 'state',
-        enumValues: IceEvent_IceState.values)
-    ..aOS(2, _omitFieldNames ? '' : 'detail')
+    ..aE<IceEvent_State>(1, _omitFieldNames ? '' : 'state',
+        enumValues: IceEvent_State.values)
+    ..aOS(2, _omitFieldNames ? '' : 'candidateType')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -821,29 +675,28 @@ class IceEvent extends $pb.GeneratedMessage {
   static IceEvent? _defaultInstance;
 
   @$pb.TagNumber(1)
-  IceEvent_IceState get state => $_getN(0);
+  IceEvent_State get state => $_getN(0);
   @$pb.TagNumber(1)
-  set state(IceEvent_IceState value) => $_setField(1, value);
+  set state(IceEvent_State value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasState() => $_has(0);
   @$pb.TagNumber(1)
   void clearState() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get detail => $_getSZ(1);
+  $core.String get candidateType => $_getSZ(1);
   @$pb.TagNumber(2)
-  set detail($core.String value) => $_setString(1, value);
+  set candidateType($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasDetail() => $_has(1);
+  $core.bool hasCandidateType() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDetail() => $_clearField(2);
+  void clearCandidateType() => $_clearField(2);
 }
 
-/// FilterDecision は packet filter の判定（accept/drop）を表します。
-/// Phase A では最小情報のみ（ルール名/理由/方向）を想定。
-class FilterDecision extends $pb.GeneratedMessage {
-  factory FilterDecision({
-    FilterDecision_FilterResult? result,
+/// FilterEvent records packet filter decisions.
+class FilterEvent extends $pb.GeneratedMessage {
+  factory FilterEvent({
+    FilterEvent_Result? result,
     $core.String? reason,
   }) {
     final result$ = create();
@@ -852,47 +705,47 @@ class FilterDecision extends $pb.GeneratedMessage {
     return result$;
   }
 
-  FilterDecision._();
+  FilterEvent._();
 
-  factory FilterDecision.fromBuffer($core.List<$core.int> data,
+  factory FilterEvent.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory FilterDecision.fromJson($core.String json,
+  factory FilterEvent.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'FilterDecision',
+      _omitMessageNames ? '' : 'FilterEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..aE<FilterDecision_FilterResult>(1, _omitFieldNames ? '' : 'result',
-        enumValues: FilterDecision_FilterResult.values)
+    ..aE<FilterEvent_Result>(1, _omitFieldNames ? '' : 'result',
+        enumValues: FilterEvent_Result.values)
     ..aOS(2, _omitFieldNames ? '' : 'reason')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FilterDecision clone() => deepCopy();
+  FilterEvent clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FilterDecision copyWith(void Function(FilterDecision) updates) =>
-      super.copyWith((message) => updates(message as FilterDecision))
-          as FilterDecision;
+  FilterEvent copyWith(void Function(FilterEvent) updates) =>
+      super.copyWith((message) => updates(message as FilterEvent))
+          as FilterEvent;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static FilterDecision create() => FilterDecision._();
+  static FilterEvent create() => FilterEvent._();
   @$core.override
-  FilterDecision createEmptyInstance() => create();
+  FilterEvent createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static FilterDecision getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<FilterDecision>(create);
-  static FilterDecision? _defaultInstance;
+  static FilterEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FilterEvent>(create);
+  static FilterEvent? _defaultInstance;
 
   @$pb.TagNumber(1)
-  FilterDecision_FilterResult get result => $_getN(0);
+  FilterEvent_Result get result => $_getN(0);
   @$pb.TagNumber(1)
-  set result(FilterDecision_FilterResult value) => $_setField(1, value);
+  set result(FilterEvent_Result value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasResult() => $_has(0);
   @$pb.TagNumber(1)
@@ -908,7 +761,88 @@ class FilterDecision extends $pb.GeneratedMessage {
   void clearReason() => $_clearField(2);
 }
 
-/// GetEventsRequest はOrbitイベントの取得リクエストです。
+/// PathTransitionEvent records when the active path changes.
+class PathTransitionEvent extends $pb.GeneratedMessage {
+  factory PathTransitionEvent({
+    Transport? from,
+    Transport? to,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (from != null) result.from = from;
+    if (to != null) result.to = to;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  PathTransitionEvent._();
+
+  factory PathTransitionEvent.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PathTransitionEvent.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PathTransitionEvent',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aE<Transport>(1, _omitFieldNames ? '' : 'from',
+        enumValues: Transport.values)
+    ..aE<Transport>(2, _omitFieldNames ? '' : 'to',
+        enumValues: Transport.values)
+    ..aOS(3, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PathTransitionEvent clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PathTransitionEvent copyWith(void Function(PathTransitionEvent) updates) =>
+      super.copyWith((message) => updates(message as PathTransitionEvent))
+          as PathTransitionEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PathTransitionEvent create() => PathTransitionEvent._();
+  @$core.override
+  PathTransitionEvent createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PathTransitionEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PathTransitionEvent>(create);
+  static PathTransitionEvent? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Transport get from => $_getN(0);
+  @$pb.TagNumber(1)
+  set from(Transport value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFrom() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFrom() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  Transport get to => $_getN(1);
+  @$pb.TagNumber(2)
+  set to(Transport value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTo() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get reason => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set reason($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasReason() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearReason() => $_clearField(3);
+}
+
+/// GetEventsRequest is used to retrieve stored events.
 class GetEventsRequest extends $pb.GeneratedMessage {
   factory GetEventsRequest({
     $fixnum.Int64? nodeId,
@@ -942,8 +876,8 @@ class GetEventsRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
-        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(2, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'sessionId')
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'from',
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'to',
@@ -971,7 +905,6 @@ class GetEventsRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<GetEventsRequest>(create);
   static GetEventsRequest? _defaultInstance;
 
-  /// node_id でフィルタ（0 の場合は全ノード）
   @$pb.TagNumber(1)
   $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -981,7 +914,6 @@ class GetEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearNodeId() => $_clearField(1);
 
-  /// session_id でフィルタ（空の場合は全セッション）
   @$pb.TagNumber(2)
   $core.String get sessionId => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -991,7 +923,6 @@ class GetEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSessionId() => $_clearField(2);
 
-  /// 期間フィルタ（from <= event_day <= to）
   @$pb.TagNumber(3)
   $1.Timestamp get from => $_getN(2);
   @$pb.TagNumber(3)
@@ -1014,7 +945,6 @@ class GetEventsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $1.Timestamp ensureTo() => $_ensure(3);
 
-  /// ページネーション
   @$pb.TagNumber(5)
   $core.int get limit => $_getIZ(4);
   @$pb.TagNumber(5)
@@ -1034,7 +964,7 @@ class GetEventsRequest extends $pb.GeneratedMessage {
   void clearOffset() => $_clearField(6);
 }
 
-/// GetEventsResponse はOrbitイベントの取得レスポンスです。
+/// GetEventsResponse contains the retrieved events.
 class GetEventsResponse extends $pb.GeneratedMessage {
   factory GetEventsResponse({
     $core.Iterable<StoredOrbitEvent>? events,
@@ -1061,7 +991,7 @@ class GetEventsResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..pPM<StoredOrbitEvent>(1, _omitFieldNames ? '' : 'events',
         subBuilder: StoredOrbitEvent.create)
-    ..aInt64(2, _omitFieldNames ? '' : 'totalCount', protoName: 'totalCount')
+    ..aInt64(2, _omitFieldNames ? '' : 'totalCount')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1096,8 +1026,7 @@ class GetEventsResponse extends $pb.GeneratedMessage {
   void clearTotalCount() => $_clearField(2);
 }
 
-/// StoredOrbitEvent はサーバーに保存されたOrbitイベントです。
-/// OrbitEvent に加えて、サーバー側のメタデータを含みます。
+/// StoredOrbitEvent is an event as stored in the database.
 class StoredOrbitEvent extends $pb.GeneratedMessage {
   factory StoredOrbitEvent({
     $fixnum.Int64? id,
@@ -1147,26 +1076,24 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
-        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOS(3, _omitFieldNames ? '' : 'sessionId', protoName: 'sessionId')
-    ..aOS(4, _omitFieldNames ? '' : 'clientVersion', protoName: 'clientVersion')
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'sessionId')
+    ..aOS(4, _omitFieldNames ? '' : 'clientVersion')
     ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'receivedAt',
-        protoName: 'receivedAt', subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'eventAt',
-        protoName: 'eventAt', subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'eventDay',
-        protoName: 'eventDay', subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.create)
     ..a<$core.List<$core.int>>(
-        8, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY,
-        protoName: 'peerHash')
-    ..aI(9, _omitFieldNames ? '' : 'regionId',
-        protoName: 'regionId', fieldType: $pb.PbFieldType.OU3)
+        8, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY)
+    ..aI(9, _omitFieldNames ? '' : 'regionId', fieldType: $pb.PbFieldType.OU3)
     ..aE<Transport>(10, _omitFieldNames ? '' : 'transport',
         enumValues: Transport.values)
-    ..aOS(11, _omitFieldNames ? '' : 'payloadType', protoName: 'payloadType')
+    ..aOS(11, _omitFieldNames ? '' : 'payloadType')
     ..aOS(12, _omitFieldNames ? '' : 'payload')
     ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
-        protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1314,7 +1241,7 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
   $1.Timestamp ensureCreatedAt() => $_ensure(12);
 }
 
-/// GetDailyCountsRequest は日次集計の取得リクエストです。
+/// GetDailyCountsRequest is used to retrieve aggregated daily counts.
 class GetDailyCountsRequest extends $pb.GeneratedMessage {
   factory GetDailyCountsRequest({
     $fixnum.Int64? nodeId,
@@ -1344,7 +1271,7 @@ class GetDailyCountsRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
-        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+        defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'metric')
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'from',
         subBuilder: $1.Timestamp.create)
@@ -1372,7 +1299,6 @@ class GetDailyCountsRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<GetDailyCountsRequest>(create);
   static GetDailyCountsRequest? _defaultInstance;
 
-  /// node_id でフィルタ（0 の場合は全ノード）
   @$pb.TagNumber(1)
   $fixnum.Int64 get nodeId => $_getI64(0);
   @$pb.TagNumber(1)
@@ -1382,7 +1308,6 @@ class GetDailyCountsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearNodeId() => $_clearField(1);
 
-  /// metric でフィルタ（空の場合は全メトリクス）
   @$pb.TagNumber(2)
   $core.String get metric => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1392,7 +1317,6 @@ class GetDailyCountsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearMetric() => $_clearField(2);
 
-  /// 期間フィルタ（from <= day <= to）
   @$pb.TagNumber(3)
   $1.Timestamp get from => $_getN(2);
   @$pb.TagNumber(3)
@@ -1416,7 +1340,7 @@ class GetDailyCountsRequest extends $pb.GeneratedMessage {
   $1.Timestamp ensureTo() => $_ensure(3);
 }
 
-/// GetDailyCountsResponse は日次集計の取得レスポンスです。
+/// GetDailyCountsResponse contains the aggregated counts.
 class GetDailyCountsResponse extends $pb.GeneratedMessage {
   factory GetDailyCountsResponse({
     $core.Iterable<DailyCount>? counts,
@@ -1467,7 +1391,7 @@ class GetDailyCountsResponse extends $pb.GeneratedMessage {
   $pb.PbList<DailyCount> get counts => $_getList(0);
 }
 
-/// DailyCount は1日分の集計データです。
+/// DailyCount represents an aggregated count for a day.
 class DailyCount extends $pb.GeneratedMessage {
   factory DailyCount({
     $1.Timestamp? day,
@@ -1505,14 +1429,14 @@ class DailyCount extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'day',
         subBuilder: $1.Timestamp.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
-        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+        defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, _omitFieldNames ? '' : 'metric')
-    ..aOS(4, _omitFieldNames ? '' : 'labelKey', protoName: 'labelKey')
+    ..aOS(4, _omitFieldNames ? '' : 'labelKey')
     ..aInt64(5, _omitFieldNames ? '' : 'count')
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'createdAt',
-        protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'updatedAt',
-        protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
