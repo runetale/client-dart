@@ -833,6 +833,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.Iterable<AppLinker>? appLinker,
     CerfMap? cerfMap,
     $core.int? defaultCerfRegionId,
+    $core.String? telemetryLogId,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -849,6 +850,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (cerfMap != null) result.cerfMap = cerfMap;
     if (defaultCerfRegionId != null)
       result.defaultCerfRegionId = defaultCerfRegionId;
+    if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
     return result;
   }
 
@@ -889,6 +891,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
         protoName: 'cerfMap', subBuilder: CerfMap.create)
     ..aI(21, _omitFieldNames ? '' : 'defaultCerfRegionId',
         protoName: 'defaultCerfRegionId', fieldType: $pb.PbFieldType.OU3)
+    ..aOS(22, _omitFieldNames ? '' : 'telemetryLogId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1009,6 +1012,15 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   $core.bool hasDefaultCerfRegionId() => $_has(12);
   @$pb.TagNumber(21)
   void clearDefaultCerfRegionId() => $_clearField(21);
+
+  @$pb.TagNumber(22)
+  $core.String get telemetryLogId => $_getSZ(13);
+  @$pb.TagNumber(22)
+  set telemetryLogId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(22)
+  $core.bool hasTelemetryLogId() => $_has(13);
+  @$pb.TagNumber(22)
+  void clearTelemetryLogId() => $_clearField(22);
 }
 
 class CerfMap extends $pb.GeneratedMessage {

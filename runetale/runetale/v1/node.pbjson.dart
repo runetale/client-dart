@@ -266,6 +266,7 @@ const NetworkMapResponse$json = {
       '5': 13,
       '10': 'defaultCerfRegionId'
     },
+    {'1': 'telemetry_log_id', '3': 22, '4': 1, '5': 9, '10': 'telemetryLogId'},
   ],
 };
 
@@ -280,7 +281,8 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'CzIMLnByb3Rvcy5Ob2RlUghpY2VUYWJsZRIjCgNkbnMYCiABKAsyES5wcm90b3MuRE5TQ29uZm'
     'lnUgNkbnMSLwoJYXBwTGlua2VyGAsgAygLMhEucHJvdG9zLkFwcExpbmtlclIJYXBwTGlua2Vy'
     'EikKB2NlcmZNYXAYFCABKAsyDy5wcm90b3MuQ2VyZk1hcFIHY2VyZk1hcBIwChNkZWZhdWx0Q2'
-    'VyZlJlZ2lvbklkGBUgASgNUhNkZWZhdWx0Q2VyZlJlZ2lvbklk');
+    'VyZlJlZ2lvbklkGBUgASgNUhNkZWZhdWx0Q2VyZlJlZ2lvbklkEigKEHRlbGVtZXRyeV9sb2df'
+    'aWQYFiABKAlSDnRlbGVtZXRyeUxvZ0lk');
 
 @$core.Deprecated('Use cerfMapDescriptor instead')
 const CerfMap$json = {
