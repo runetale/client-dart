@@ -834,6 +834,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     CerfMap? cerfMap,
     $core.int? defaultCerfRegionId,
     $core.String? telemetryLogId,
+    $core.String? domainTelemetryLogId,
+    $core.Iterable<$core.String>? capabilities,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -851,6 +853,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (defaultCerfRegionId != null)
       result.defaultCerfRegionId = defaultCerfRegionId;
     if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
+    if (domainTelemetryLogId != null)
+      result.domainTelemetryLogId = domainTelemetryLogId;
+    if (capabilities != null) result.capabilities.addAll(capabilities);
     return result;
   }
 
@@ -892,6 +897,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..aI(21, _omitFieldNames ? '' : 'defaultCerfRegionId',
         protoName: 'defaultCerfRegionId', fieldType: $pb.PbFieldType.OU3)
     ..aOS(22, _omitFieldNames ? '' : 'telemetryLogId')
+    ..aOS(23, _omitFieldNames ? '' : 'domainTelemetryLogId')
+    ..pPS(24, _omitFieldNames ? '' : 'capabilities')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1013,6 +1020,9 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(21)
   void clearDefaultCerfRegionId() => $_clearField(21);
 
+  /// telemetry_log_id is a server-generated ID for Orbit telemetry logging (per-node).
+  /// If empty, the client should not collect or upload Orbit telemetry.
+  /// This is used to control telemetry collection based on the user's plan.
   @$pb.TagNumber(22)
   $core.String get telemetryLogId => $_getSZ(13);
   @$pb.TagNumber(22)
@@ -1021,6 +1031,24 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   $core.bool hasTelemetryLogId() => $_has(13);
   @$pb.TagNumber(22)
   void clearTelemetryLogId() => $_clearField(22);
+
+  /// domain_telemetry_log_id is a server-generated ID for NetworkFlowLogs (per-tenant).
+  /// If empty, the client should not collect or upload NetworkFlowLogs.
+  /// All nodes in the same tenant share this ID for unified log streaming.
+  @$pb.TagNumber(23)
+  $core.String get domainTelemetryLogId => $_getSZ(14);
+  @$pb.TagNumber(23)
+  set domainTelemetryLogId($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(23)
+  $core.bool hasDomainTelemetryLogId() => $_has(14);
+  @$pb.TagNumber(23)
+  void clearDomainTelemetryLogId() => $_clearField(23);
+
+  /// capabilities is a list of server-granted capabilities that control feature availability.
+  /// Examples: "runetale:telemetry", "runetale:network-logs", "runetale:log-exit-flows"
+  /// The client checks these capabilities to enable/disable features.
+  @$pb.TagNumber(24)
+  $pb.PbList<$core.String> get capabilities => $_getList(15);
 }
 
 class CerfMap extends $pb.GeneratedMessage {
