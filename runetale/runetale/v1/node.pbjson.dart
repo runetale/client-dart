@@ -112,6 +112,15 @@ const Node$json = {
       '5': 13,
       '10': 'cerfHomeRegionId'
     },
+    {'1': 'online', '3': 14, '4': 1, '5': 8, '10': 'online'},
+    {
+      '1': 'lastSeen',
+      '3': 15,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastSeen'
+    },
   ],
 };
 
@@ -123,7 +132,9 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'IWCgZ1c2VySWQYByABKARSBnVzZXJJZBIUCgVlbWFpbBgIIAEoCVIFZW1haWwSIAoLZGlzcGxh'
     'eU5hbWUYCSABKAlSC2Rpc3BsYXlOYW1lEhwKCWxvZ2luTmFtZRgKIAEoCVIJbG9naW5OYW1lEh'
     'YKBmhvc3RPUxgLIAEoCVIGaG9zdE9TEhgKB3J1bmVLZXkYDCABKAlSB3J1bmVLZXkSKgoQY2Vy'
-    'ZkhvbWVSZWdpb25JZBgNIAEoDVIQY2VyZkhvbWVSZWdpb25JZA==');
+    'ZkhvbWVSZWdpb25JZBgNIAEoDVIQY2VyZkhvbWVSZWdpb25JZBIWCgZvbmxpbmUYDiABKAhSBm'
+    '9ubGluZRI2CghsYXN0U2VlbhgPIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCGxh'
+    'c3RTZWVu');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {

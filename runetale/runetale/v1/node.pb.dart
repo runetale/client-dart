@@ -14,6 +14,8 @@ import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $2;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -292,6 +294,8 @@ class Node extends $pb.GeneratedMessage {
     $core.String? hostOS,
     $core.String? runeKey,
     $core.int? cerfHomeRegionId,
+    $core.bool? online,
+    $2.Timestamp? lastSeen,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -307,6 +311,8 @@ class Node extends $pb.GeneratedMessage {
     if (hostOS != null) result.hostOS = hostOS;
     if (runeKey != null) result.runeKey = runeKey;
     if (cerfHomeRegionId != null) result.cerfHomeRegionId = cerfHomeRegionId;
+    if (online != null) result.online = online;
+    if (lastSeen != null) result.lastSeen = lastSeen;
     return result;
   }
 
@@ -339,6 +345,9 @@ class Node extends $pb.GeneratedMessage {
     ..aOS(12, _omitFieldNames ? '' : 'runeKey', protoName: 'runeKey')
     ..aI(13, _omitFieldNames ? '' : 'cerfHomeRegionId',
         protoName: 'cerfHomeRegionId', fieldType: $pb.PbFieldType.OU3)
+    ..aOB(14, _omitFieldNames ? '' : 'online')
+    ..aOM<$2.Timestamp>(15, _omitFieldNames ? '' : 'lastSeen',
+        protoName: 'lastSeen', subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -466,6 +475,28 @@ class Node extends $pb.GeneratedMessage {
   $core.bool hasCerfHomeRegionId() => $_has(12);
   @$pb.TagNumber(13)
   void clearCerfHomeRegionId() => $_clearField(13);
+
+  /// online indicates whether the node is connected to the server
+  @$pb.TagNumber(14)
+  $core.bool get online => $_getBF(13);
+  @$pb.TagNumber(14)
+  set online($core.bool value) => $_setBool(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasOnline() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearOnline() => $_clearField(14);
+
+  /// lastSeen is when the node was last online (only set when offline)
+  @$pb.TagNumber(15)
+  $2.Timestamp get lastSeen => $_getN(14);
+  @$pb.TagNumber(15)
+  set lastSeen($2.Timestamp value) => $_setField(15, value);
+  @$pb.TagNumber(15)
+  $core.bool hasLastSeen() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearLastSeen() => $_clearField(15);
+  @$pb.TagNumber(15)
+  $2.Timestamp ensureLastSeen() => $_ensure(14);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
