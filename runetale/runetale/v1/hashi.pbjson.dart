@@ -142,6 +142,16 @@ const PeerStatus$json = {
     },
     {'1': 'advertise_routes', '3': 15, '4': 3, '5': 9, '10': 'advertiseRoutes'},
     {'1': 'is_snat_subnet', '3': 16, '4': 1, '5': 8, '10': 'isSnatSubnet'},
+    {'1': 'active', '3': 17, '4': 1, '5': 8, '10': 'active'},
+    {'1': 'online', '3': 18, '4': 1, '5': 8, '10': 'online'},
+    {
+      '1': 'last_seen',
+      '3': 19,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'lastSeen'
+    },
   ],
   '8': [
     {'1': '_cur_addr'},
@@ -160,8 +170,10 @@ final $typed_data.Uint8List peerStatusDescriptor = $convert.base64Decode(
     'c3Rfd3JpdGUYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUglsYXN0V3JpdGUSFA'
     'oFYWRkcnMYDCADKAlSBWFkZHJzEh4KCGN1cl9hZGRyGA0gASgJSABSB2N1ckFkZHKIAQESHgoI'
     'aWNlX2FkZHIYDiABKAlIAVIHaWNlQWRkcogBARIpChBhZHZlcnRpc2Vfcm91dGVzGA8gAygJUg'
-    '9hZHZlcnRpc2VSb3V0ZXMSJAoOaXNfc25hdF9zdWJuZXQYECABKAhSDGlzU25hdFN1Ym5ldEIL'
-    'CglfY3VyX2FkZHJCCwoJX2ljZV9hZGRy');
+    '9hZHZlcnRpc2VSb3V0ZXMSJAoOaXNfc25hdF9zdWJuZXQYECABKAhSDGlzU25hdFN1Ym5ldBIW'
+    'CgZhY3RpdmUYESABKAhSBmFjdGl2ZRIWCgZvbmxpbmUYEiABKAhSBm9ubGluZRI3CglsYXN0X3'
+    'NlZW4YEyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUghsYXN0U2VlbkILCglfY3Vy'
+    'X2FkZHJCCwoJX2ljZV9hZGRy');
 
 @$core.Deprecated('Use userspacePeerEngineStatusDescriptor instead')
 const UserspacePeerEngineStatus$json = {

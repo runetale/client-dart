@@ -202,6 +202,9 @@ class PeerStatus extends $pb.GeneratedMessage {
     $core.String? iceAddr,
     $core.Iterable<$core.String>? advertiseRoutes,
     $core.bool? isSnatSubnet,
+    $core.bool? active,
+    $core.bool? online,
+    $2.Timestamp? lastSeen,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -220,6 +223,9 @@ class PeerStatus extends $pb.GeneratedMessage {
     if (iceAddr != null) result.iceAddr = iceAddr;
     if (advertiseRoutes != null) result.advertiseRoutes.addAll(advertiseRoutes);
     if (isSnatSubnet != null) result.isSnatSubnet = isSnatSubnet;
+    if (active != null) result.active = active;
+    if (online != null) result.online = online;
+    if (lastSeen != null) result.lastSeen = lastSeen;
     return result;
   }
 
@@ -254,6 +260,10 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..aOS(14, _omitFieldNames ? '' : 'iceAddr')
     ..pPS(15, _omitFieldNames ? '' : 'advertiseRoutes')
     ..aOB(16, _omitFieldNames ? '' : 'isSnatSubnet')
+    ..aOB(17, _omitFieldNames ? '' : 'active')
+    ..aOB(18, _omitFieldNames ? '' : 'online')
+    ..aOM<$2.Timestamp>(19, _omitFieldNames ? '' : 'lastSeen',
+        subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -392,6 +402,38 @@ class PeerStatus extends $pb.GeneratedMessage {
   $core.bool hasIsSnatSubnet() => $_has(15);
   @$pb.TagNumber(16)
   void clearIsSnatSubnet() => $_clearField(16);
+
+  /// active: 最後のパケット送信から45秒以内か（wonderwallで設定）
+  @$pb.TagNumber(17)
+  $core.bool get active => $_getBF(16);
+  @$pb.TagNumber(17)
+  set active($core.bool value) => $_setBool(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasActive() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearActive() => $_clearField(17);
+
+  /// online: サーバーに接続しているか (wonderwallで設定)
+  @$pb.TagNumber(18)
+  $core.bool get online => $_getBF(17);
+  @$pb.TagNumber(18)
+  set online($core.bool value) => $_setBool(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasOnline() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearOnline() => $_clearField(18);
+
+  /// last_seen: 最後にオンラインだった時刻（オフライン時のみ設定）
+  @$pb.TagNumber(19)
+  $2.Timestamp get lastSeen => $_getN(18);
+  @$pb.TagNumber(19)
+  set lastSeen($2.Timestamp value) => $_setField(19, value);
+  @$pb.TagNumber(19)
+  $core.bool hasLastSeen() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearLastSeen() => $_clearField(19);
+  @$pb.TagNumber(19)
+  $2.Timestamp ensureLastSeen() => $_ensure(18);
 }
 
 class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
