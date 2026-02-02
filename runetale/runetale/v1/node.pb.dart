@@ -614,6 +614,79 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   void clearLoginName() => $_clearField(6);
 }
 
+/// NetworkMapRequest is sent from client to server in the ConnectNetworkMapTable stream.
+/// It contains the client's VPN state and is used for keepalive.
+class NetworkMapRequest extends $pb.GeneratedMessage {
+  factory NetworkMapRequest({
+    $core.bool? vpnRunning,
+    $core.bool? isKeepalive,
+  }) {
+    final result = create();
+    if (vpnRunning != null) result.vpnRunning = vpnRunning;
+    if (isKeepalive != null) result.isKeepalive = isKeepalive;
+    return result;
+  }
+
+  NetworkMapRequest._();
+
+  factory NetworkMapRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkMapRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkMapRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'vpnRunning')
+    ..aOB(2, _omitFieldNames ? '' : 'isKeepalive')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkMapRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkMapRequest copyWith(void Function(NetworkMapRequest) updates) =>
+      super.copyWith((message) => updates(message as NetworkMapRequest))
+          as NetworkMapRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkMapRequest create() => NetworkMapRequest._();
+  @$core.override
+  NetworkMapRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkMapRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkMapRequest>(create);
+  static NetworkMapRequest? _defaultInstance;
+
+  /// vpn_running indicates whether the VPN is currently active (up=true, down=false).
+  /// This is different from the stream connection status - the stream stays connected
+  /// even when VPN is down, allowing for faster reconnection.
+  @$pb.TagNumber(1)
+  $core.bool get vpnRunning => $_getBF(0);
+  @$pb.TagNumber(1)
+  set vpnRunning($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasVpnRunning() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearVpnRunning() => $_clearField(1);
+
+  /// is_keepalive indicates if this is a periodic keepalive message.
+  /// When false, it's a state change notification.
+  @$pb.TagNumber(2)
+  $core.bool get isKeepalive => $_getBF(1);
+  @$pb.TagNumber(2)
+  set isKeepalive($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIsKeepalive() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIsKeepalive() => $_clearField(2);
+}
+
 class NetPortRange_portRange extends $pb.GeneratedMessage {
   factory NetPortRange_portRange({
     $fixnum.Int64? first,

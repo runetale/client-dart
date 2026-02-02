@@ -156,6 +156,41 @@ final $typed_data.Uint8List composeNodeResponseDescriptor = $convert.base64Decod
     'bGF5TmFtZRgFIAEoCVILZGlzcGxheU5hbWUSHAoJbG9naW5OYW1lGAYgASgJUglsb2dpbk5hbW'
     'U=');
 
+@$core.Deprecated('Use networkMapRequestDescriptor instead')
+const NetworkMapRequest$json = {
+  '1': 'NetworkMapRequest',
+  '2': [
+    {
+      '1': 'vpn_running',
+      '3': 1,
+      '4': 1,
+      '5': 8,
+      '9': 0,
+      '10': 'vpnRunning',
+      '17': true
+    },
+    {
+      '1': 'is_keepalive',
+      '3': 2,
+      '4': 1,
+      '5': 8,
+      '9': 1,
+      '10': 'isKeepalive',
+      '17': true
+    },
+  ],
+  '8': [
+    {'1': '_vpn_running'},
+    {'1': '_is_keepalive'},
+  ],
+};
+
+/// Descriptor for `NetworkMapRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkMapRequestDescriptor = $convert.base64Decode(
+    'ChFOZXR3b3JrTWFwUmVxdWVzdBIkCgt2cG5fcnVubmluZxgBIAEoCEgAUgp2cG5SdW5uaW5niA'
+    'EBEiYKDGlzX2tlZXBhbGl2ZRgCIAEoCEgBUgtpc0tlZXBhbGl2ZYgBAUIOCgxfdnBuX3J1bm5p'
+    'bmdCDwoNX2lzX2tlZXBhbGl2ZQ==');
+
 @$core.Deprecated('Use netPortRangeDescriptor instead')
 const NetPortRange$json = {
   '1': 'NetPortRange',
