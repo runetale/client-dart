@@ -15,6 +15,19 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use networkMapRequestDescriptor instead')
+const NetworkMapRequest$json = {
+  '1': 'NetworkMapRequest',
+  '2': [
+    {'1': 'backend_state', '3': 1, '4': 1, '5': 5, '10': 'backendState'},
+  ],
+};
+
+/// Descriptor for `NetworkMapRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkMapRequestDescriptor = $convert.base64Decode(
+    'ChFOZXR3b3JrTWFwUmVxdWVzdBIjCg1iYWNrZW5kX3N0YXRlGAEgASgFUgxiYWNrZW5kU3RhdG'
+    'U=');
+
 @$core.Deprecated('Use packetFlowLogRequestDescriptor instead')
 const PacketFlowLogRequest$json = {
   '1': 'PacketFlowLogRequest',

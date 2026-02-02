@@ -48,7 +48,7 @@ class NodeServiceClient extends $grpc.Client {
   }
 
   $grpc.ResponseStream<$1.NetworkMapResponse> connectNetworkMapTable(
-    $async.Stream<$1.NetworkMapResponse> request, {
+    $async.Stream<$1.NetworkMapRequest> request, {
     $grpc.CallOptions? options,
   }) {
     return $createStreamingCall(_$connectNetworkMapTable, request,
@@ -75,9 +75,9 @@ class NodeServiceClient extends $grpc.Client {
           ($0.Empty value) => value.writeToBuffer(),
           $1.NetworkMapResponse.fromBuffer);
   static final _$connectNetworkMapTable =
-      $grpc.ClientMethod<$1.NetworkMapResponse, $1.NetworkMapResponse>(
+      $grpc.ClientMethod<$1.NetworkMapRequest, $1.NetworkMapResponse>(
           '/protos.NodeService/ConnectNetworkMapTable',
-          ($1.NetworkMapResponse value) => value.writeToBuffer(),
+          ($1.NetworkMapRequest value) => value.writeToBuffer(),
           $1.NetworkMapResponse.fromBuffer);
   static final _$uploadPacketFlowLog =
       $grpc.ClientMethod<$1.PacketFlowLogRequest, $0.Empty>(
@@ -105,15 +105,13 @@ abstract class NodeServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.NetworkMapResponse value) => value.writeToBuffer()));
-    $addMethod(
-        $grpc.ServiceMethod<$1.NetworkMapResponse, $1.NetworkMapResponse>(
-            'ConnectNetworkMapTable',
-            connectNetworkMapTable,
-            true,
-            true,
-            ($core.List<$core.int> value) =>
-                $1.NetworkMapResponse.fromBuffer(value),
-            ($1.NetworkMapResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.NetworkMapRequest, $1.NetworkMapResponse>(
+        'ConnectNetworkMapTable',
+        connectNetworkMapTable,
+        true,
+        true,
+        ($core.List<$core.int> value) => $1.NetworkMapRequest.fromBuffer(value),
+        ($1.NetworkMapResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.PacketFlowLogRequest, $0.Empty>(
         'UploadPacketFlowLog',
         uploadPacketFlowLog_Pre,
@@ -141,7 +139,7 @@ abstract class NodeServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.Empty request);
 
   $async.Stream<$1.NetworkMapResponse> connectNetworkMapTable(
-      $grpc.ServiceCall call, $async.Stream<$1.NetworkMapResponse> request);
+      $grpc.ServiceCall call, $async.Stream<$1.NetworkMapRequest> request);
 
   $async.Future<$0.Empty> uploadPacketFlowLog_Pre($grpc.ServiceCall $call,
       $async.Future<$1.PacketFlowLogRequest> $request) async {
