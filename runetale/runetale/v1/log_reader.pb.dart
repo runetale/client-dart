@@ -29,6 +29,7 @@ class GetLoglyphRequest extends $pb.GeneratedMessage {
     $core.int? offset,
     $core.String? sessionId,
     $core.String? level,
+    $core.String? telemetryLogId,
   }) {
     final result = create();
     if (logStreamId != null) result.logStreamId = logStreamId;
@@ -38,6 +39,7 @@ class GetLoglyphRequest extends $pb.GeneratedMessage {
     if (offset != null) result.offset = offset;
     if (sessionId != null) result.sessionId = sessionId;
     if (level != null) result.level = level;
+    if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
     return result;
   }
 
@@ -63,6 +65,7 @@ class GetLoglyphRequest extends $pb.GeneratedMessage {
     ..aI(5, _omitFieldNames ? '' : 'offset')
     ..aOS(6, _omitFieldNames ? '' : 'sessionId')
     ..aOS(7, _omitFieldNames ? '' : 'level')
+    ..aOS(8, _omitFieldNames ? '' : 'telemetryLogId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -157,6 +160,17 @@ class GetLoglyphRequest extends $pb.GeneratedMessage {
   $core.bool hasLevel() => $_has(6);
   @$pb.TagNumber(7)
   void clearLevel() => $_clearField(7);
+
+  /// telemetry_log_id is the server-provided node-level telemetry ID for admin queries.
+  /// If set, queries entries by this ID instead of log_stream_id.
+  @$pb.TagNumber(8)
+  $core.String get telemetryLogId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set telemetryLogId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTelemetryLogId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTelemetryLogId() => $_clearField(8);
 }
 
 /// GetLoglyphResponse contains the queried log entries.
@@ -236,6 +250,7 @@ class StoredLoglyphEntry extends $pb.GeneratedMessage {
     $core.String? text,
     $core.String? payload,
     $1.Timestamp? createdAt,
+    $core.String? telemetryLogId,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -248,6 +263,7 @@ class StoredLoglyphEntry extends $pb.GeneratedMessage {
     if (text != null) result.text = text;
     if (payload != null) result.payload = payload;
     if (createdAt != null) result.createdAt = createdAt;
+    if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
     return result;
   }
 
@@ -278,6 +294,7 @@ class StoredLoglyphEntry extends $pb.GeneratedMessage {
     ..aOS(9, _omitFieldNames ? '' : 'payload')
     ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(11, _omitFieldNames ? '' : 'telemetryLogId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -394,6 +411,16 @@ class StoredLoglyphEntry extends $pb.GeneratedMessage {
   void clearCreatedAt() => $_clearField(10);
   @$pb.TagNumber(10)
   $1.Timestamp ensureCreatedAt() => $_ensure(9);
+
+  /// telemetry_log_id is the server-provided node-level ID for admin correlation.
+  @$pb.TagNumber(11)
+  $core.String get telemetryLogId => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set telemetryLogId($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasTelemetryLogId() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearTelemetryLogId() => $_clearField(11);
 }
 
 /// GetOrbitEventsRequest queries stored telemetry events.
@@ -406,6 +433,7 @@ class GetOrbitEventsRequest extends $pb.GeneratedMessage {
     $core.int? limit,
     $core.int? offset,
     $core.String? payloadType,
+    $core.String? telemetryLogId,
   }) {
     final result = create();
     if (logStreamId != null) result.logStreamId = logStreamId;
@@ -415,6 +443,7 @@ class GetOrbitEventsRequest extends $pb.GeneratedMessage {
     if (limit != null) result.limit = limit;
     if (offset != null) result.offset = offset;
     if (payloadType != null) result.payloadType = payloadType;
+    if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
     return result;
   }
 
@@ -440,6 +469,7 @@ class GetOrbitEventsRequest extends $pb.GeneratedMessage {
     ..aI(5, _omitFieldNames ? '' : 'limit')
     ..aI(6, _omitFieldNames ? '' : 'offset')
     ..aOS(7, _omitFieldNames ? '' : 'payloadType')
+    ..aOS(8, _omitFieldNames ? '' : 'telemetryLogId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -535,6 +565,17 @@ class GetOrbitEventsRequest extends $pb.GeneratedMessage {
   $core.bool hasPayloadType() => $_has(6);
   @$pb.TagNumber(7)
   void clearPayloadType() => $_clearField(7);
+
+  /// telemetry_log_id is the server-provided node-level telemetry ID for admin queries.
+  /// If set, queries events by this ID instead of log_stream_id.
+  @$pb.TagNumber(8)
+  $core.String get telemetryLogId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set telemetryLogId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTelemetryLogId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTelemetryLogId() => $_clearField(8);
 }
 
 /// GetOrbitEventsResponse contains the queried events.
@@ -618,6 +659,7 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
     $core.String? payloadType,
     $core.String? payload,
     $1.Timestamp? createdAt,
+    $core.String? telemetryLogId,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -633,6 +675,7 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
     if (payloadType != null) result.payloadType = payloadType;
     if (payload != null) result.payload = payload;
     if (createdAt != null) result.createdAt = createdAt;
+    if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
     return result;
   }
 
@@ -668,6 +711,7 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
     ..aOS(12, _omitFieldNames ? '' : 'payload')
     ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(14, _omitFieldNames ? '' : 'telemetryLogId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -813,6 +857,16 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
   void clearCreatedAt() => $_clearField(13);
   @$pb.TagNumber(13)
   $1.Timestamp ensureCreatedAt() => $_ensure(12);
+
+  /// telemetry_log_id is the server-provided node-level ID for admin correlation.
+  @$pb.TagNumber(14)
+  $core.String get telemetryLogId => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set telemetryLogId($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasTelemetryLogId() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearTelemetryLogId() => $_clearField(14);
 }
 
 /// GetOrbitDailyCountsRequest queries aggregated daily telemetry counts.
@@ -1116,6 +1170,7 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
     $core.int? limit,
     $core.int? offset,
     $core.String? nodeType,
+    $core.String? domainTelemetryLogId,
   }) {
     final result = create();
     if (logStreamId != null) result.logStreamId = logStreamId;
@@ -1124,6 +1179,8 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
     if (limit != null) result.limit = limit;
     if (offset != null) result.offset = offset;
     if (nodeType != null) result.nodeType = nodeType;
+    if (domainTelemetryLogId != null)
+      result.domainTelemetryLogId = domainTelemetryLogId;
     return result;
   }
 
@@ -1148,6 +1205,7 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
     ..aI(4, _omitFieldNames ? '' : 'limit')
     ..aI(5, _omitFieldNames ? '' : 'offset')
     ..aOS(6, _omitFieldNames ? '' : 'nodeType')
+    ..aOS(7, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1233,6 +1291,17 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
   $core.bool hasNodeType() => $_has(5);
   @$pb.TagNumber(6)
   void clearNodeType() => $_clearField(6);
+
+  /// domain_telemetry_log_id is the server-provided tenant-level telemetry ID for admin queries.
+  /// If set, queries logs by this ID instead of log_stream_id.
+  @$pb.TagNumber(7)
+  $core.String get domainTelemetryLogId => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set domainTelemetryLogId($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasDomainTelemetryLogId() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearDomainTelemetryLogId() => $_clearField(7);
 }
 
 /// GetPacketFlowLogsResponse contains the queried flow logs.
@@ -1317,6 +1386,7 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
     $1.Timestamp? endedAt,
     $1.Timestamp? loggedAt,
     $1.Timestamp? createdAt,
+    $core.String? domainTelemetryLogId,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1333,6 +1403,8 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
     if (endedAt != null) result.endedAt = endedAt;
     if (loggedAt != null) result.loggedAt = loggedAt;
     if (createdAt != null) result.createdAt = createdAt;
+    if (domainTelemetryLogId != null)
+      result.domainTelemetryLogId = domainTelemetryLogId;
     return result;
   }
 
@@ -1375,6 +1447,7 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
+    ..aOS(15, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1529,6 +1602,16 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
   void clearCreatedAt() => $_clearField(14);
   @$pb.TagNumber(14)
   $1.Timestamp ensureCreatedAt() => $_ensure(13);
+
+  /// domain_telemetry_log_id is the server-provided tenant-level ID for admin correlation.
+  @$pb.TagNumber(15)
+  $core.String get domainTelemetryLogId => $_getSZ(14);
+  @$pb.TagNumber(15)
+  set domainTelemetryLogId($core.String value) => $_setString(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasDomainTelemetryLogId() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearDomainTelemetryLogId() => $_clearField(15);
 }
 
 const $core.bool _omitFieldNames =

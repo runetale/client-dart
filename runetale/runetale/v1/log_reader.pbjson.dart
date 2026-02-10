@@ -40,6 +40,7 @@ const GetLoglyphRequest$json = {
     {'1': 'offset', '3': 5, '4': 1, '5': 5, '10': 'offset'},
     {'1': 'session_id', '3': 6, '4': 1, '5': 9, '10': 'sessionId'},
     {'1': 'level', '3': 7, '4': 1, '5': 9, '10': 'level'},
+    {'1': 'telemetry_log_id', '3': 8, '4': 1, '5': 9, '10': 'telemetryLogId'},
   ],
 };
 
@@ -49,7 +50,8 @@ final $typed_data.Uint8List getLoglyphRequestDescriptor = $convert.base64Decode(
     'IuCgRmcm9tGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIEZnJvbRIqCgJ0bxgD'
     'IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSAnRvEhQKBWxpbWl0GAQgASgFUgVsaW'
     '1pdBIWCgZvZmZzZXQYBSABKAVSBm9mZnNldBIdCgpzZXNzaW9uX2lkGAYgASgJUglzZXNzaW9u'
-    'SWQSFAoFbGV2ZWwYByABKAlSBWxldmVs');
+    'SWQSFAoFbGV2ZWwYByABKAlSBWxldmVsEigKEHRlbGVtZXRyeV9sb2dfaWQYCCABKAlSDnRlbG'
+    'VtZXRyeUxvZ0lk');
 
 @$core.Deprecated('Use getLoglyphResponseDescriptor instead')
 const GetLoglyphResponse$json = {
@@ -107,6 +109,7 @@ const StoredLoglyphEntry$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'createdAt'
     },
+    {'1': 'telemetry_log_id', '3': 11, '4': 1, '5': 9, '10': 'telemetryLogId'},
   ],
 };
 
@@ -119,7 +122,7 @@ final $typed_data.Uint8List storedLoglyphEntryDescriptor = $convert.base64Decode
     'KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpyZWNlaXZlZEF0EhQKBWxldmVsGAcgAS'
     'gJUgVsZXZlbBISCgR0ZXh0GAggASgJUgR0ZXh0EhgKB3BheWxvYWQYCSABKAlSB3BheWxvYWQS'
     'OQoKY3JlYXRlZF9hdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZW'
-    'RBdA==');
+    'RBdBIoChB0ZWxlbWV0cnlfbG9nX2lkGAsgASgJUg50ZWxlbWV0cnlMb2dJZA==');
 
 @$core.Deprecated('Use getOrbitEventsRequestDescriptor instead')
 const GetOrbitEventsRequest$json = {
@@ -146,6 +149,7 @@ const GetOrbitEventsRequest$json = {
     {'1': 'limit', '3': 5, '4': 1, '5': 5, '10': 'limit'},
     {'1': 'offset', '3': 6, '4': 1, '5': 5, '10': 'offset'},
     {'1': 'payload_type', '3': 7, '4': 1, '5': 9, '10': 'payloadType'},
+    {'1': 'telemetry_log_id', '3': 8, '4': 1, '5': 9, '10': 'telemetryLogId'},
   ],
 };
 
@@ -155,7 +159,8 @@ final $typed_data.Uint8List getOrbitEventsRequestDescriptor = $convert.base64Dec
     'FtSWQSHQoKc2Vzc2lvbl9pZBgCIAEoCVIJc2Vzc2lvbklkEi4KBGZyb20YAyABKAsyGi5nb29n'
     'bGUucHJvdG9idWYuVGltZXN0YW1wUgRmcm9tEioKAnRvGAQgASgLMhouZ29vZ2xlLnByb3RvYn'
     'VmLlRpbWVzdGFtcFICdG8SFAoFbGltaXQYBSABKAVSBWxpbWl0EhYKBm9mZnNldBgGIAEoBVIG'
-    'b2Zmc2V0EiEKDHBheWxvYWRfdHlwZRgHIAEoCVILcGF5bG9hZFR5cGU=');
+    'b2Zmc2V0EiEKDHBheWxvYWRfdHlwZRgHIAEoCVILcGF5bG9hZFR5cGUSKAoQdGVsZW1ldHJ5X2'
+    'xvZ19pZBgIIAEoCVIOdGVsZW1ldHJ5TG9nSWQ=');
 
 @$core.Deprecated('Use getOrbitEventsResponseDescriptor instead')
 const GetOrbitEventsResponse$json = {
@@ -223,6 +228,7 @@ const StoredOrbitEvent$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'createdAt'
     },
+    {'1': 'telemetry_log_id', '3': 14, '4': 1, '5': 9, '10': 'telemetryLogId'},
   ],
 };
 
@@ -237,7 +243,8 @@ final $typed_data.Uint8List storedOrbitEventDescriptor = $convert.base64Decode(
     'CHBlZXJIYXNoEhsKCXJlZ2lvbl9pZBgJIAEoDVIIcmVnaW9uSWQSHAoJdHJhbnNwb3J0GAogAS'
     'gFUgl0cmFuc3BvcnQSIQoMcGF5bG9hZF90eXBlGAsgASgJUgtwYXlsb2FkVHlwZRIYCgdwYXls'
     'b2FkGAwgASgJUgdwYXlsb2FkEjkKCmNyZWF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idW'
-    'YuVGltZXN0YW1wUgljcmVhdGVkQXQ=');
+    'YuVGltZXN0YW1wUgljcmVhdGVkQXQSKAoQdGVsZW1ldHJ5X2xvZ19pZBgOIAEoCVIOdGVsZW1l'
+    'dHJ5TG9nSWQ=');
 
 @$core.Deprecated('Use getOrbitDailyCountsRequestDescriptor instead')
 const GetOrbitDailyCountsRequest$json = {
@@ -360,6 +367,13 @@ const GetPacketFlowLogsRequest$json = {
     {'1': 'limit', '3': 4, '4': 1, '5': 5, '10': 'limit'},
     {'1': 'offset', '3': 5, '4': 1, '5': 5, '10': 'offset'},
     {'1': 'node_type', '3': 6, '4': 1, '5': 9, '10': 'nodeType'},
+    {
+      '1': 'domain_telemetry_log_id',
+      '3': 7,
+      '4': 1,
+      '5': 9,
+      '10': 'domainTelemetryLogId'
+    },
   ],
 };
 
@@ -369,7 +383,8 @@ final $typed_data.Uint8List getPacketFlowLogsRequestDescriptor = $convert.base64
     'RyZWFtSWQSLgoEZnJvbRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSBGZyb20S'
     'KgoCdG8YAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgJ0bxIUCgVsaW1pdBgEIA'
     'EoBVIFbGltaXQSFgoGb2Zmc2V0GAUgASgFUgZvZmZzZXQSGwoJbm9kZV90eXBlGAYgASgJUghu'
-    'b2RlVHlwZQ==');
+    'b2RlVHlwZRI1Chdkb21haW5fdGVsZW1ldHJ5X2xvZ19pZBgHIAEoCVIUZG9tYWluVGVsZW1ldH'
+    'J5TG9nSWQ=');
 
 @$core.Deprecated('Use getPacketFlowLogsResponseDescriptor instead')
 const GetPacketFlowLogsResponse$json = {
@@ -439,6 +454,13 @@ const StoredPacketFlowLog$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'createdAt'
     },
+    {
+      '1': 'domain_telemetry_log_id',
+      '3': 15,
+      '4': 1,
+      '5': 9,
+      '10': 'domainTelemetryLogId'
+    },
   ],
 };
 
@@ -453,4 +475,5 @@ final $typed_data.Uint8List storedPacketFlowLogDescriptor = $convert.base64Decod
     'bWVzdGFtcFIJc3RhcnRlZEF0EjUKCGVuZGVkX2F0GAwgASgLMhouZ29vZ2xlLnByb3RvYnVmLl'
     'RpbWVzdGFtcFIHZW5kZWRBdBI3Cglsb2dnZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYu'
     'VGltZXN0YW1wUghsb2dnZWRBdBI5CgpjcmVhdGVkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYn'
-    'VmLlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+    'VmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjUKF2RvbWFpbl90ZWxlbWV0cnlfbG9nX2lkGA8gASgJ'
+    'UhRkb21haW5UZWxlbWV0cnlMb2dJZA==');
