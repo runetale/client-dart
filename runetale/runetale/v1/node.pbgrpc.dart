@@ -55,13 +55,6 @@ class NodeServiceClient extends $grpc.Client {
         options: options);
   }
 
-  $grpc.ResponseFuture<$0.Empty> uploadPacketFlowLog(
-    $1.PacketFlowLogRequest request, {
-    $grpc.CallOptions? options,
-  }) {
-    return $createUnaryCall(_$uploadPacketFlowLog, request, options: options);
-  }
-
   // method descriptors
 
   static final _$composeNode =
@@ -79,11 +72,6 @@ class NodeServiceClient extends $grpc.Client {
           '/protos.NodeService/ConnectNetworkMapTable',
           ($1.NetworkMapRequest value) => value.writeToBuffer(),
           $1.NetworkMapResponse.fromBuffer);
-  static final _$uploadPacketFlowLog =
-      $grpc.ClientMethod<$1.PacketFlowLogRequest, $0.Empty>(
-          '/protos.NodeService/UploadPacketFlowLog',
-          ($1.PacketFlowLogRequest value) => value.writeToBuffer(),
-          $0.Empty.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.NodeService')
@@ -112,14 +100,6 @@ abstract class NodeServiceBase extends $grpc.Service {
         true,
         ($core.List<$core.int> value) => $1.NetworkMapRequest.fromBuffer(value),
         ($1.NetworkMapResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.PacketFlowLogRequest, $0.Empty>(
-        'UploadPacketFlowLog',
-        uploadPacketFlowLog_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $1.PacketFlowLogRequest.fromBuffer(value),
-        ($0.Empty value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.ComposeNodeResponse> composeNode_Pre(
@@ -140,12 +120,4 @@ abstract class NodeServiceBase extends $grpc.Service {
 
   $async.Stream<$1.NetworkMapResponse> connectNetworkMapTable(
       $grpc.ServiceCall call, $async.Stream<$1.NetworkMapRequest> request);
-
-  $async.Future<$0.Empty> uploadPacketFlowLog_Pre($grpc.ServiceCall $call,
-      $async.Future<$1.PacketFlowLogRequest> $request) async {
-    return uploadPacketFlowLog($call, await $request);
-  }
-
-  $async.Future<$0.Empty> uploadPacketFlowLog(
-      $grpc.ServiceCall call, $1.PacketFlowLogRequest request);
 }
