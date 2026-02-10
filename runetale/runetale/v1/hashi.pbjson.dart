@@ -338,10 +338,33 @@ const NetCheckReport$json = {
       '10': 'turnLatency'
     },
     {'1': 'errors', '3': 12, '4': 3, '5': 9, '10': 'errors'},
+    {
+      '1': 'cerf_latency',
+      '3': 13,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.NetCheckReport.CerfLatencyEntry',
+      '10': 'cerfLatency'
+    },
+    {
+      '1': 'preferred_cerf_region',
+      '3': 14,
+      '4': 1,
+      '5': 9,
+      '10': 'preferredCerfRegion'
+    },
+    {
+      '1': 'preferred_cerf_region_id',
+      '3': 15,
+      '4': 1,
+      '5': 13,
+      '10': 'preferredCerfRegionId'
+    },
   ],
   '3': [
     NetCheckReport_StunLatencyEntry$json,
-    NetCheckReport_TurnLatencyEntry$json
+    NetCheckReport_TurnLatencyEntry$json,
+    NetCheckReport_CerfLatencyEntry$json
   ],
 };
 
@@ -365,6 +388,16 @@ const NetCheckReport_TurnLatencyEntry$json = {
   '7': {'7': true},
 };
 
+@$core.Deprecated('Use netCheckReportDescriptor instead')
+const NetCheckReport_CerfLatencyEntry$json = {
+  '1': 'CerfLatencyEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 3, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
 /// Descriptor for `NetCheckReport`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List netCheckReportDescriptor = $convert.base64Decode(
     'Cg5OZXRDaGVja1JlcG9ydBIsCgNub3cYASABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW'
@@ -375,6 +408,11 @@ final $typed_data.Uint8List netCheckReportDescriptor = $convert.base64Decode(
     'JhbFY2EkoKDHN0dW5fbGF0ZW5jeRgKIAMoCzInLnByb3Rvcy5OZXRDaGVja1JlcG9ydC5TdHVu'
     'TGF0ZW5jeUVudHJ5UgtzdHVuTGF0ZW5jeRJKCgx0dXJuX2xhdGVuY3kYCyADKAsyJy5wcm90b3'
     'MuTmV0Q2hlY2tSZXBvcnQuVHVybkxhdGVuY3lFbnRyeVILdHVybkxhdGVuY3kSFgoGZXJyb3Jz'
-    'GAwgAygJUgZlcnJvcnMaPgoQU3R1bkxhdGVuY3lFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCg'
-    'V2YWx1ZRgCIAEoA1IFdmFsdWU6AjgBGj4KEFR1cm5MYXRlbmN5RW50cnkSEAoDa2V5GAEgASgJ'
-    'UgNrZXkSFAoFdmFsdWUYAiABKANSBXZhbHVlOgI4AQ==');
+    'GAwgAygJUgZlcnJvcnMSSgoMY2VyZl9sYXRlbmN5GA0gAygLMicucHJvdG9zLk5ldENoZWNrUm'
+    'Vwb3J0LkNlcmZMYXRlbmN5RW50cnlSC2NlcmZMYXRlbmN5EjIKFXByZWZlcnJlZF9jZXJmX3Jl'
+    'Z2lvbhgOIAEoCVITcHJlZmVycmVkQ2VyZlJlZ2lvbhI3ChhwcmVmZXJyZWRfY2VyZl9yZWdpb2'
+    '5faWQYDyABKA1SFXByZWZlcnJlZENlcmZSZWdpb25JZBo+ChBTdHVuTGF0ZW5jeUVudHJ5EhAK'
+    'A2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgDUgV2YWx1ZToCOAEaPgoQVHVybkxhdGVuY3'
+    'lFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoA1IFdmFsdWU6AjgBGj4KEENl'
+    'cmZMYXRlbmN5RW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKANSBXZhbHVlOg'
+    'I4AQ==');

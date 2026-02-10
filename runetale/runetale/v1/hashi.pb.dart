@@ -951,6 +951,9 @@ class NetCheckReport extends $pb.GeneratedMessage {
     $core.Iterable<$core.MapEntry<$core.String, $fixnum.Int64>>? stunLatency,
     $core.Iterable<$core.MapEntry<$core.String, $fixnum.Int64>>? turnLatency,
     $core.Iterable<$core.String>? errors,
+    $core.Iterable<$core.MapEntry<$core.String, $fixnum.Int64>>? cerfLatency,
+    $core.String? preferredCerfRegion,
+    $core.int? preferredCerfRegionId,
   }) {
     final result = create();
     if (now != null) result.now = now;
@@ -965,6 +968,11 @@ class NetCheckReport extends $pb.GeneratedMessage {
     if (stunLatency != null) result.stunLatency.addEntries(stunLatency);
     if (turnLatency != null) result.turnLatency.addEntries(turnLatency);
     if (errors != null) result.errors.addAll(errors);
+    if (cerfLatency != null) result.cerfLatency.addEntries(cerfLatency);
+    if (preferredCerfRegion != null)
+      result.preferredCerfRegion = preferredCerfRegion;
+    if (preferredCerfRegionId != null)
+      result.preferredCerfRegionId = preferredCerfRegionId;
     return result;
   }
 
@@ -1002,6 +1010,14 @@ class NetCheckReport extends $pb.GeneratedMessage {
         valueFieldType: $pb.PbFieldType.O6,
         packageName: const $pb.PackageName('protos'))
     ..pPS(12, _omitFieldNames ? '' : 'errors')
+    ..m<$core.String, $fixnum.Int64>(13, _omitFieldNames ? '' : 'cerfLatency',
+        entryClassName: 'NetCheckReport.CerfLatencyEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.O6,
+        packageName: const $pb.PackageName('protos'))
+    ..aOS(14, _omitFieldNames ? '' : 'preferredCerfRegion')
+    ..aI(15, _omitFieldNames ? '' : 'preferredCerfRegionId',
+        fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1114,6 +1130,31 @@ class NetCheckReport extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(12)
   $pb.PbList<$core.String> get errors => $_getList(11);
+
+  /// CERF relay latency per region. Key is "regionCode" (e.g. "tokyo"), value is latency in milliseconds.
+  /// Until client-go is regenerated, CERF data is encoded into stun_latency with "cerf:<regionCode>" keys.
+  @$pb.TagNumber(13)
+  $pb.PbMap<$core.String, $fixnum.Int64> get cerfLatency => $_getMap(12);
+
+  /// preferred_cerf_region is the region code of the nearest (lowest latency) CERF relay.
+  @$pb.TagNumber(14)
+  $core.String get preferredCerfRegion => $_getSZ(13);
+  @$pb.TagNumber(14)
+  set preferredCerfRegion($core.String value) => $_setString(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasPreferredCerfRegion() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearPreferredCerfRegion() => $_clearField(14);
+
+  /// preferred_cerf_region_id is the region ID of the nearest CERF relay.
+  @$pb.TagNumber(15)
+  $core.int get preferredCerfRegionId => $_getIZ(14);
+  @$pb.TagNumber(15)
+  set preferredCerfRegionId($core.int value) => $_setUnsignedInt32(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasPreferredCerfRegionId() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearPreferredCerfRegionId() => $_clearField(15);
 }
 
 const $core.bool _omitFieldNames =
