@@ -940,7 +940,6 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.String? telemetryLogId,
     $core.String? domainTelemetryLogId,
     $core.Iterable<$core.String>? capabilities,
-    $core.String? logToken,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -961,7 +960,6 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (domainTelemetryLogId != null)
       result.domainTelemetryLogId = domainTelemetryLogId;
     if (capabilities != null) result.capabilities.addAll(capabilities);
-    if (logToken != null) result.logToken = logToken;
     return result;
   }
 
@@ -1005,7 +1003,6 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..aOS(22, _omitFieldNames ? '' : 'telemetryLogId')
     ..aOS(23, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..pPS(24, _omitFieldNames ? '' : 'capabilities')
-    ..aOS(25, _omitFieldNames ? '' : 'logToken')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1156,20 +1153,6 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   /// The client checks these capabilities to enable/disable features.
   @$pb.TagNumber(24)
   $pb.PbList<$core.String> get capabilities => $_getList(15);
-
-  /// log_token is a signed token for authenticating with the log server.
-  /// Contains { public_id, node_id, issued_at, expires_at } signed with HMAC-SHA256.
-  /// The client sends this token along with its private-id when uploading logs.
-  /// The log server verifies the signature and checks that SHA-256(private-id) == token.public_id.
-  /// Refreshed with every NetworkMap update. If empty, the client should not upload logs.
-  @$pb.TagNumber(25)
-  $core.String get logToken => $_getSZ(16);
-  @$pb.TagNumber(25)
-  set logToken($core.String value) => $_setString(16, value);
-  @$pb.TagNumber(25)
-  $core.bool hasLogToken() => $_has(16);
-  @$pb.TagNumber(25)
-  void clearLogToken() => $_clearField(25);
 }
 
 class CerfMap extends $pb.GeneratedMessage {
