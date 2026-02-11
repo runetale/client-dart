@@ -1132,7 +1132,6 @@ class NetCheckReport extends $pb.GeneratedMessage {
   $pb.PbList<$core.String> get errors => $_getList(11);
 
   /// CERF relay latency per region. Key is "regionCode" (e.g. "tokyo"), value is latency in milliseconds.
-  /// Until client-go is regenerated, CERF data is encoded into stun_latency with "cerf:<regionCode>" keys.
   @$pb.TagNumber(13)
   $pb.PbMap<$core.String, $fixnum.Int64> get cerfLatency => $_getMap(12);
 
