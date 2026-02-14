@@ -374,6 +374,7 @@ const GetPacketFlowLogsRequest$json = {
       '5': 9,
       '10': 'domainTelemetryLogId'
     },
+    {'1': 'telemetry_log_id', '3': 8, '4': 1, '5': 9, '10': 'telemetryLogId'},
   ],
 };
 
@@ -384,7 +385,7 @@ final $typed_data.Uint8List getPacketFlowLogsRequestDescriptor = $convert.base64
     'KgoCdG8YAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgJ0bxIUCgVsaW1pdBgEIA'
     'EoBVIFbGltaXQSFgoGb2Zmc2V0GAUgASgFUgZvZmZzZXQSGwoJbm9kZV90eXBlGAYgASgJUghu'
     'b2RlVHlwZRI1Chdkb21haW5fdGVsZW1ldHJ5X2xvZ19pZBgHIAEoCVIUZG9tYWluVGVsZW1ldH'
-    'J5TG9nSWQ=');
+    'J5TG9nSWQSKAoQdGVsZW1ldHJ5X2xvZ19pZBgIIAEoCVIOdGVsZW1ldHJ5TG9nSWQ=');
 
 @$core.Deprecated('Use getPacketFlowLogsResponseDescriptor instead')
 const GetPacketFlowLogsResponse$json = {
@@ -461,6 +462,12 @@ const StoredPacketFlowLog$json = {
       '5': 9,
       '10': 'domainTelemetryLogId'
     },
+    {'1': 'telemetry_log_id', '3': 16, '4': 1, '5': 9, '10': 'telemetryLogId'},
+    {'1': 'node_name', '3': 17, '4': 1, '5': 9, '10': 'nodeName'},
+    {'1': 'user_email', '3': 18, '4': 1, '5': 9, '10': 'userEmail'},
+    {'1': 'dst_node_name', '3': 19, '4': 1, '5': 9, '10': 'dstNodeName'},
+    {'1': 'dst_user_email', '3': 20, '4': 1, '5': 9, '10': 'dstUserEmail'},
+    {'1': 'dst_node_id', '3': 21, '4': 1, '5': 9, '10': 'dstNodeId'},
   ],
 };
 
@@ -476,4 +483,8 @@ final $typed_data.Uint8List storedPacketFlowLogDescriptor = $convert.base64Decod
     'RpbWVzdGFtcFIHZW5kZWRBdBI3Cglsb2dnZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYu'
     'VGltZXN0YW1wUghsb2dnZWRBdBI5CgpjcmVhdGVkX2F0GA4gASgLMhouZ29vZ2xlLnByb3RvYn'
     'VmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjUKF2RvbWFpbl90ZWxlbWV0cnlfbG9nX2lkGA8gASgJ'
-    'UhRkb21haW5UZWxlbWV0cnlMb2dJZA==');
+    'UhRkb21haW5UZWxlbWV0cnlMb2dJZBIoChB0ZWxlbWV0cnlfbG9nX2lkGBAgASgJUg50ZWxlbW'
+    'V0cnlMb2dJZBIbCglub2RlX25hbWUYESABKAlSCG5vZGVOYW1lEh0KCnVzZXJfZW1haWwYEiAB'
+    'KAlSCXVzZXJFbWFpbBIiCg1kc3Rfbm9kZV9uYW1lGBMgASgJUgtkc3ROb2RlTmFtZRIkCg5kc3'
+    'RfdXNlcl9lbWFpbBgUIAEoCVIMZHN0VXNlckVtYWlsEh4KC2RzdF9ub2RlX2lkGBUgASgJUglk'
+    'c3ROb2RlSWQ=');

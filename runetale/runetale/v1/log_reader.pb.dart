@@ -1171,6 +1171,7 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
     $core.int? offset,
     $core.String? nodeType,
     $core.String? domainTelemetryLogId,
+    $core.String? telemetryLogId,
   }) {
     final result = create();
     if (logStreamId != null) result.logStreamId = logStreamId;
@@ -1181,6 +1182,7 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
     if (nodeType != null) result.nodeType = nodeType;
     if (domainTelemetryLogId != null)
       result.domainTelemetryLogId = domainTelemetryLogId;
+    if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
     return result;
   }
 
@@ -1206,6 +1208,7 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
     ..aI(5, _omitFieldNames ? '' : 'offset')
     ..aOS(6, _omitFieldNames ? '' : 'nodeType')
     ..aOS(7, _omitFieldNames ? '' : 'domainTelemetryLogId')
+    ..aOS(8, _omitFieldNames ? '' : 'telemetryLogId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1302,6 +1305,17 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
   $core.bool hasDomainTelemetryLogId() => $_has(6);
   @$pb.TagNumber(7)
   void clearDomainTelemetryLogId() => $_clearField(7);
+
+  /// telemetry_log_id is the server-provided node-level telemetry ID for per-node queries.
+  /// Priority: domain_telemetry_log_id > telemetry_log_id > log_stream_id.
+  @$pb.TagNumber(8)
+  $core.String get telemetryLogId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set telemetryLogId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTelemetryLogId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTelemetryLogId() => $_clearField(8);
 }
 
 /// GetPacketFlowLogsResponse contains the queried flow logs.
@@ -1387,6 +1401,12 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
     $1.Timestamp? loggedAt,
     $1.Timestamp? createdAt,
     $core.String? domainTelemetryLogId,
+    $core.String? telemetryLogId,
+    $core.String? nodeName,
+    $core.String? userEmail,
+    $core.String? dstNodeName,
+    $core.String? dstUserEmail,
+    $core.String? dstNodeId,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -1405,6 +1425,12 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
     if (createdAt != null) result.createdAt = createdAt;
     if (domainTelemetryLogId != null)
       result.domainTelemetryLogId = domainTelemetryLogId;
+    if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
+    if (nodeName != null) result.nodeName = nodeName;
+    if (userEmail != null) result.userEmail = userEmail;
+    if (dstNodeName != null) result.dstNodeName = dstNodeName;
+    if (dstUserEmail != null) result.dstUserEmail = dstUserEmail;
+    if (dstNodeId != null) result.dstNodeId = dstNodeId;
     return result;
   }
 
@@ -1448,6 +1474,12 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'createdAt',
         subBuilder: $1.Timestamp.create)
     ..aOS(15, _omitFieldNames ? '' : 'domainTelemetryLogId')
+    ..aOS(16, _omitFieldNames ? '' : 'telemetryLogId')
+    ..aOS(17, _omitFieldNames ? '' : 'nodeName')
+    ..aOS(18, _omitFieldNames ? '' : 'userEmail')
+    ..aOS(19, _omitFieldNames ? '' : 'dstNodeName')
+    ..aOS(20, _omitFieldNames ? '' : 'dstUserEmail')
+    ..aOS(21, _omitFieldNames ? '' : 'dstNodeId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1612,6 +1644,63 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
   $core.bool hasDomainTelemetryLogId() => $_has(14);
   @$pb.TagNumber(15)
   void clearDomainTelemetryLogId() => $_clearField(15);
+
+  /// Source node identity (A-plan: embedded in payload for self-contained SIEM export).
+  @$pb.TagNumber(16)
+  $core.String get telemetryLogId => $_getSZ(15);
+  @$pb.TagNumber(16)
+  set telemetryLogId($core.String value) => $_setString(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasTelemetryLogId() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearTelemetryLogId() => $_clearField(16);
+
+  @$pb.TagNumber(17)
+  $core.String get nodeName => $_getSZ(16);
+  @$pb.TagNumber(17)
+  set nodeName($core.String value) => $_setString(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasNodeName() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearNodeName() => $_clearField(17);
+
+  @$pb.TagNumber(18)
+  $core.String get userEmail => $_getSZ(17);
+  @$pb.TagNumber(18)
+  set userEmail($core.String value) => $_setString(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasUserEmail() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearUserEmail() => $_clearField(18);
+
+  /// Destination node identity (resolved from dst_peers, Tailscale-style deduplication).
+  /// Only populated for peer traffic (Runetale IP <-> Runetale IP).
+  @$pb.TagNumber(19)
+  $core.String get dstNodeName => $_getSZ(18);
+  @$pb.TagNumber(19)
+  set dstNodeName($core.String value) => $_setString(18, value);
+  @$pb.TagNumber(19)
+  $core.bool hasDstNodeName() => $_has(18);
+  @$pb.TagNumber(19)
+  void clearDstNodeName() => $_clearField(19);
+
+  @$pb.TagNumber(20)
+  $core.String get dstUserEmail => $_getSZ(19);
+  @$pb.TagNumber(20)
+  set dstUserEmail($core.String value) => $_setString(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasDstUserEmail() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearDstUserEmail() => $_clearField(20);
+
+  @$pb.TagNumber(21)
+  $core.String get dstNodeId => $_getSZ(20);
+  @$pb.TagNumber(21)
+  set dstNodeId($core.String value) => $_setString(20, value);
+  @$pb.TagNumber(21)
+  $core.bool hasDstNodeId() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearDstNodeId() => $_clearField(21);
 }
 
 const $core.bool _omitFieldNames =
