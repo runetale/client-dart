@@ -1133,6 +1133,13 @@ class PathTransitionEvent extends $pb.GeneratedMessage {
 /// PacketFlowLogUploadRequest contains network flow statistics from a client.
 /// Unlike the legacy PacketFlowLogRequest, this does not include nodeId;
 /// the log server identifies the stream via log_stream_id (derived from private-id).
+///
+/// Fields 8-11 embed node/tenant identity directly in the payload (A-plan).
+/// This makes each log self-contained for SIEM export without requiring
+/// server-side JOIN to resolve IPs to node names.
+/// These values are sourced from NetworkMapResponse on the client side.
+/// Older clients that don't send these fields are backward-compatible
+/// (fields default to empty string, log-server stores them as-is).
 class PacketFlowLogUploadRequest extends $pb.GeneratedMessage {
   factory PacketFlowLogUploadRequest({
     $core.String? loggedAt,
@@ -1142,6 +1149,11 @@ class PacketFlowLogUploadRequest extends $pb.GeneratedMessage {
     $core.Iterable<PacketFlowEntry>? lanTraffic,
     $core.Iterable<PacketFlowEntry>? exitNodeTraffic,
     $core.Iterable<PacketFlowEntry>? transportTraffic,
+    $core.String? telemetryLogId,
+    $core.String? domainTelemetryLogId,
+    $core.String? nodeName,
+    $core.String? userEmail,
+    $core.Iterable<FlowPeerInfo>? dstPeers,
   }) {
     final result = create();
     if (loggedAt != null) result.loggedAt = loggedAt;
@@ -1152,6 +1164,12 @@ class PacketFlowLogUploadRequest extends $pb.GeneratedMessage {
     if (exitNodeTraffic != null) result.exitNodeTraffic.addAll(exitNodeTraffic);
     if (transportTraffic != null)
       result.transportTraffic.addAll(transportTraffic);
+    if (telemetryLogId != null) result.telemetryLogId = telemetryLogId;
+    if (domainTelemetryLogId != null)
+      result.domainTelemetryLogId = domainTelemetryLogId;
+    if (nodeName != null) result.nodeName = nodeName;
+    if (userEmail != null) result.userEmail = userEmail;
+    if (dstPeers != null) result.dstPeers.addAll(dstPeers);
     return result;
   }
 
@@ -1179,6 +1197,12 @@ class PacketFlowLogUploadRequest extends $pb.GeneratedMessage {
         subBuilder: PacketFlowEntry.create)
     ..pPM<PacketFlowEntry>(7, _omitFieldNames ? '' : 'transportTraffic',
         subBuilder: PacketFlowEntry.create)
+    ..aOS(8, _omitFieldNames ? '' : 'telemetryLogId')
+    ..aOS(9, _omitFieldNames ? '' : 'domainTelemetryLogId')
+    ..aOS(10, _omitFieldNames ? '' : 'nodeName')
+    ..aOS(11, _omitFieldNames ? '' : 'userEmail')
+    ..pPM<FlowPeerInfo>(12, _omitFieldNames ? '' : 'dstPeers',
+        subBuilder: FlowPeerInfo.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1248,6 +1272,156 @@ class PacketFlowLogUploadRequest extends $pb.GeneratedMessage {
   /// transport_traffic records physical WireGuard layer traffic.
   @$pb.TagNumber(7)
   $pb.PbList<PacketFlowEntry> get transportTraffic => $_getList(6);
+
+  /// telemetry_log_id is the per-node UUID assigned by runetale-server
+  /// (stored in nodes.telemetry_log_id, delivered via NetworkMapResponse).
+  @$pb.TagNumber(8)
+  $core.String get telemetryLogId => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set telemetryLogId($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasTelemetryLogId() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTelemetryLogId() => $_clearField(8);
+
+  /// domain_telemetry_log_id is the per-tenant UUID assigned by runeauth
+  /// (stored in tenant_specs.domain_telemetry_log_id, delivered via NetworkMapResponse).
+  @$pb.TagNumber(9)
+  $core.String get domainTelemetryLogId => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set domainTelemetryLogId($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasDomainTelemetryLogId() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearDomainTelemetryLogId() => $_clearField(9);
+
+  /// node_name is the hostname of the reporting node (e.g. "alice-macbook").
+  @$pb.TagNumber(10)
+  $core.String get nodeName => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set nodeName($core.String value) => $_setString(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasNodeName() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearNodeName() => $_clearField(10);
+
+  /// user_email is the email of the user who owns the reporting node.
+  @$pb.TagNumber(11)
+  $core.String get userEmail => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set userEmail($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasUserEmail() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUserEmail() => $_clearField(11);
+
+  /// One entry per unique destination Runetale IP seen in peer_traffic entries.
+  /// Traffic entries reference these by matching PacketFlowEntry.dst IP prefix
+  /// against FlowPeerInfo.runetale_ip. This avoids duplicating node info
+  /// across multiple traffic entries to the same destination.
+  /// Only populated for peer_traffic (Runetale IP <-> Runetale IP).
+  /// The client resolves this from NetworkMap.PeerByRunetaleIP(dst_ip).
+  @$pb.TagNumber(12)
+  $pb.PbList<FlowPeerInfo> get dstPeers => $_getList(11);
+}
+
+/// FlowPeerInfo describes a peer node involved in traffic.
+/// Used in PacketFlowLogUploadRequest.dst_peers:
+/// node info appears once per unique destination, and PacketFlowEntry.dst IP
+/// references into this list. This keeps payload size ~8% larger instead of ~57%.
+class FlowPeerInfo extends $pb.GeneratedMessage {
+  factory FlowPeerInfo({
+    $core.String? runetaleIp,
+    $core.String? nodeName,
+    $core.String? userEmail,
+    $core.String? nodeId,
+  }) {
+    final result = create();
+    if (runetaleIp != null) result.runetaleIp = runetaleIp;
+    if (nodeName != null) result.nodeName = nodeName;
+    if (userEmail != null) result.userEmail = userEmail;
+    if (nodeId != null) result.nodeId = nodeId;
+    return result;
+  }
+
+  FlowPeerInfo._();
+
+  factory FlowPeerInfo.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FlowPeerInfo.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FlowPeerInfo',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'runetaleIp')
+    ..aOS(2, _omitFieldNames ? '' : 'nodeName')
+    ..aOS(3, _omitFieldNames ? '' : 'userEmail')
+    ..aOS(4, _omitFieldNames ? '' : 'nodeId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FlowPeerInfo clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FlowPeerInfo copyWith(void Function(FlowPeerInfo) updates) =>
+      super.copyWith((message) => updates(message as FlowPeerInfo))
+          as FlowPeerInfo;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FlowPeerInfo create() => FlowPeerInfo._();
+  @$core.override
+  FlowPeerInfo createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FlowPeerInfo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FlowPeerInfo>(create);
+  static FlowPeerInfo? _defaultInstance;
+
+  /// runetale_ip is the Runetale CGNAT IP (e.g. "100.112.0.7").
+  /// Used as the join key with PacketFlowEntry.dst (strip port to match).
+  @$pb.TagNumber(1)
+  $core.String get runetaleIp => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set runetaleIp($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRunetaleIp() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRunetaleIp() => $_clearField(1);
+
+  /// node_name is the hostname (e.g. "db-server.rune54494.rt.net.").
+  @$pb.TagNumber(2)
+  $core.String get nodeName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nodeName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeName() => $_clearField(2);
+
+  /// user_email is the email of the user who owns this node.
+  @$pb.TagNumber(3)
+  $core.String get userEmail => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set userEmail($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUserEmail() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserEmail() => $_clearField(3);
+
+  /// node_id is the telemetry_log_id UUID of the destination node.
+  @$pb.TagNumber(4)
+  $core.String get nodeId => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set nodeId($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNodeId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNodeId() => $_clearField(4);
 }
 
 /// PacketFlowEntry is a single 5-tuple flow record.

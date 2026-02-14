@@ -441,6 +441,24 @@ const PacketFlowLogUploadRequest$json = {
       '6': '.logserver.PacketFlowEntry',
       '10': 'transportTraffic'
     },
+    {'1': 'telemetry_log_id', '3': 8, '4': 1, '5': 9, '10': 'telemetryLogId'},
+    {
+      '1': 'domain_telemetry_log_id',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'domainTelemetryLogId'
+    },
+    {'1': 'node_name', '3': 10, '4': 1, '5': 9, '10': 'nodeName'},
+    {'1': 'user_email', '3': 11, '4': 1, '5': 9, '10': 'userEmail'},
+    {
+      '1': 'dst_peers',
+      '3': 12,
+      '4': 3,
+      '5': 11,
+      '6': '.logserver.FlowPeerInfo',
+      '10': 'dstPeers'
+    },
   ],
 };
 
@@ -452,7 +470,28 @@ final $typed_data.Uint8List packetFlowLogUploadRequestDescriptor = $convert.base
     'twZWVyVHJhZmZpYxI7CgtsYW5fdHJhZmZpYxgFIAMoCzIaLmxvZ3NlcnZlci5QYWNrZXRGbG93'
     'RW50cnlSCmxhblRyYWZmaWMSRgoRZXhpdF9ub2RlX3RyYWZmaWMYBiADKAsyGi5sb2dzZXJ2ZX'
     'IuUGFja2V0Rmxvd0VudHJ5Ug9leGl0Tm9kZVRyYWZmaWMSRwoRdHJhbnNwb3J0X3RyYWZmaWMY'
-    'ByADKAsyGi5sb2dzZXJ2ZXIuUGFja2V0Rmxvd0VudHJ5UhB0cmFuc3BvcnRUcmFmZmlj');
+    'ByADKAsyGi5sb2dzZXJ2ZXIuUGFja2V0Rmxvd0VudHJ5UhB0cmFuc3BvcnRUcmFmZmljEigKEH'
+    'RlbGVtZXRyeV9sb2dfaWQYCCABKAlSDnRlbGVtZXRyeUxvZ0lkEjUKF2RvbWFpbl90ZWxlbWV0'
+    'cnlfbG9nX2lkGAkgASgJUhRkb21haW5UZWxlbWV0cnlMb2dJZBIbCglub2RlX25hbWUYCiABKA'
+    'lSCG5vZGVOYW1lEh0KCnVzZXJfZW1haWwYCyABKAlSCXVzZXJFbWFpbBI0Cglkc3RfcGVlcnMY'
+    'DCADKAsyFy5sb2dzZXJ2ZXIuRmxvd1BlZXJJbmZvUghkc3RQZWVycw==');
+
+@$core.Deprecated('Use flowPeerInfoDescriptor instead')
+const FlowPeerInfo$json = {
+  '1': 'FlowPeerInfo',
+  '2': [
+    {'1': 'runetale_ip', '3': 1, '4': 1, '5': 9, '10': 'runetaleIp'},
+    {'1': 'node_name', '3': 2, '4': 1, '5': 9, '10': 'nodeName'},
+    {'1': 'user_email', '3': 3, '4': 1, '5': 9, '10': 'userEmail'},
+    {'1': 'node_id', '3': 4, '4': 1, '5': 9, '10': 'nodeId'},
+  ],
+};
+
+/// Descriptor for `FlowPeerInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List flowPeerInfoDescriptor = $convert.base64Decode(
+    'CgxGbG93UGVlckluZm8SHwoLcnVuZXRhbGVfaXAYASABKAlSCnJ1bmV0YWxlSXASGwoJbm9kZV'
+    '9uYW1lGAIgASgJUghub2RlTmFtZRIdCgp1c2VyX2VtYWlsGAMgASgJUgl1c2VyRW1haWwSFwoH'
+    'bm9kZV9pZBgEIAEoCVIGbm9kZUlk');
 
 @$core.Deprecated('Use packetFlowEntryDescriptor instead')
 const PacketFlowEntry$json = {
