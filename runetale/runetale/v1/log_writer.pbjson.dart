@@ -527,3 +527,132 @@ final $typed_data.Uint8List packetFlowLogUploadResponseDescriptor =
     $convert.base64Decode(
         'ChtQYWNrZXRGbG93TG9nVXBsb2FkUmVzcG9uc2USGgoIYWNjZXB0ZWQYASABKA1SCGFjY2VwdG'
         'Vk');
+
+@$core.Deprecated('Use streamLogRequestDescriptor instead')
+const StreamLogRequest$json = {
+  '1': 'StreamLogRequest',
+  '2': [
+    {
+      '1': 'packet_flow',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.logserver.PacketFlowLogUploadRequest',
+      '9': 0,
+      '10': 'packetFlow'
+    },
+    {
+      '1': 'orbit',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.logserver.OrbitBatchUploadRequest',
+      '9': 0,
+      '10': 'orbit'
+    },
+    {
+      '1': 'loglyph',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.logserver.LoglyphUploadRequest',
+      '9': 0,
+      '10': 'loglyph'
+    },
+    {'1': 'sequence', '3': 10, '4': 1, '5': 4, '10': 'sequence'},
+  ],
+  '8': [
+    {'1': 'payload'},
+  ],
+};
+
+/// Descriptor for `StreamLogRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamLogRequestDescriptor = $convert.base64Decode(
+    'ChBTdHJlYW1Mb2dSZXF1ZXN0EkgKC3BhY2tldF9mbG93GAEgASgLMiUubG9nc2VydmVyLlBhY2'
+    'tldEZsb3dMb2dVcGxvYWRSZXF1ZXN0SABSCnBhY2tldEZsb3cSOgoFb3JiaXQYAiABKAsyIi5s'
+    'b2dzZXJ2ZXIuT3JiaXRCYXRjaFVwbG9hZFJlcXVlc3RIAFIFb3JiaXQSOwoHbG9nbHlwaBgDIA'
+    'EoCzIfLmxvZ3NlcnZlci5Mb2dseXBoVXBsb2FkUmVxdWVzdEgAUgdsb2dseXBoEhoKCHNlcXVl'
+    'bmNlGAogASgEUghzZXF1ZW5jZUIJCgdwYXlsb2Fk');
+
+@$core.Deprecated('Use streamLogResponseDescriptor instead')
+const StreamLogResponse$json = {
+  '1': 'StreamLogResponse',
+  '2': [
+    {
+      '1': 'config',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.logserver.LogConfigUpdate',
+      '9': 0,
+      '10': 'config'
+    },
+    {
+      '1': 'ack',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.logserver.StreamAck',
+      '9': 0,
+      '10': 'ack'
+    },
+  ],
+  '8': [
+    {'1': 'directive'},
+  ],
+};
+
+/// Descriptor for `StreamLogResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamLogResponseDescriptor = $convert.base64Decode(
+    'ChFTdHJlYW1Mb2dSZXNwb25zZRI0CgZjb25maWcYASABKAsyGi5sb2dzZXJ2ZXIuTG9nQ29uZm'
+    'lnVXBkYXRlSABSBmNvbmZpZxIoCgNhY2sYAiABKAsyFC5sb2dzZXJ2ZXIuU3RyZWFtQWNrSABS'
+    'A2Fja0ILCglkaXJlY3RpdmU=');
+
+@$core.Deprecated('Use logConfigUpdateDescriptor instead')
+const LogConfigUpdate$json = {
+  '1': 'LogConfigUpdate',
+  '2': [
+    {
+      '1': 'poll_period_seconds',
+      '3': 1,
+      '4': 1,
+      '5': 13,
+      '10': 'pollPeriodSeconds'
+    },
+    {
+      '1': 'min_bytes_threshold',
+      '3': 2,
+      '4': 1,
+      '5': 4,
+      '10': 'minBytesThreshold'
+    },
+    {'1': 'netflow_enabled', '3': 3, '4': 1, '5': 8, '10': 'netflowEnabled'},
+    {'1': 'orbit_enabled', '3': 4, '4': 1, '5': 8, '10': 'orbitEnabled'},
+    {'1': 'loglyph_enabled', '3': 5, '4': 1, '5': 8, '10': 'loglyphEnabled'},
+  ],
+};
+
+/// Descriptor for `LogConfigUpdate`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List logConfigUpdateDescriptor = $convert.base64Decode(
+    'Cg9Mb2dDb25maWdVcGRhdGUSLgoTcG9sbF9wZXJpb2Rfc2Vjb25kcxgBIAEoDVIRcG9sbFBlcm'
+    'lvZFNlY29uZHMSLgoTbWluX2J5dGVzX3RocmVzaG9sZBgCIAEoBFIRbWluQnl0ZXNUaHJlc2hv'
+    'bGQSJwoPbmV0Zmxvd19lbmFibGVkGAMgASgIUg5uZXRmbG93RW5hYmxlZBIjCg1vcmJpdF9lbm'
+    'FibGVkGAQgASgIUgxvcmJpdEVuYWJsZWQSJwoPbG9nbHlwaF9lbmFibGVkGAUgASgIUg5sb2ds'
+    'eXBoRW5hYmxlZA==');
+
+@$core.Deprecated('Use streamAckDescriptor instead')
+const StreamAck$json = {
+  '1': 'StreamAck',
+  '2': [
+    {'1': 'sequence', '3': 1, '4': 1, '5': 4, '10': 'sequence'},
+    {'1': 'accepted', '3': 2, '4': 1, '5': 13, '10': 'accepted'},
+    {'1': 'dropped', '3': 3, '4': 1, '5': 13, '10': 'dropped'},
+    {'1': 'reason', '3': 4, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `StreamAck`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List streamAckDescriptor = $convert.base64Decode(
+    'CglTdHJlYW1BY2sSGgoIc2VxdWVuY2UYASABKARSCHNlcXVlbmNlEhoKCGFjY2VwdGVkGAIgAS'
+    'gNUghhY2NlcHRlZBIYCgdkcm9wcGVkGAMgASgNUgdkcm9wcGVkEhYKBnJlYXNvbhgEIAEoCVIG'
+    'cmVhc29u');

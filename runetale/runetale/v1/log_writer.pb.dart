@@ -24,6 +24,7 @@ export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 export 'log_writer.pbenum.dart';
 
 /// LoglyphUploadRequest contains a batch of client debug log entries.
+/// Used inside StreamLogRequest.loglyph.
 class LoglyphUploadRequest extends $pb.GeneratedMessage {
   factory LoglyphUploadRequest({
     $core.String? sessionId,
@@ -238,7 +239,8 @@ class LoglyphEntry extends $pb.GeneratedMessage {
   void clearV() => $_clearField(7);
 }
 
-/// LoglyphUploadResponse is returned after processing a loglyph upload.
+/// LoglyphUploadResponse is returned inside StreamLogResponse.ack
+/// when processing loglyph entries. Kept for structured per-type feedback.
 class LoglyphUploadResponse extends $pb.GeneratedMessage {
   factory LoglyphUploadResponse({
     $core.int? accepted,
@@ -322,8 +324,8 @@ class LoglyphUploadResponse extends $pb.GeneratedMessage {
 }
 
 /// OrbitBatchUploadRequest contains a batch of telemetry events from a client.
-/// Unlike the legacy OrbitBatchRequest, this does not include node_id;
-/// the log server identifies the stream via log_stream_id (derived from private-id).
+/// Used inside StreamLogRequest.orbit.
+/// The log server identifies the stream via log_stream_id (derived from private-id).
 class OrbitBatchUploadRequest extends $pb.GeneratedMessage {
   factory OrbitBatchUploadRequest({
     $core.String? version,
@@ -401,7 +403,8 @@ class OrbitBatchUploadRequest extends $pb.GeneratedMessage {
   $pb.PbList<OrbitEvent> get events => $_getList(2);
 }
 
-/// OrbitBatchUploadResponse is returned after processing a batch.
+/// OrbitBatchUploadResponse is returned inside StreamLogResponse.ack
+/// when processing orbit events. Kept for structured per-type feedback.
 class OrbitBatchUploadResponse extends $pb.GeneratedMessage {
   factory OrbitBatchUploadResponse({
     $core.int? accepted,
@@ -1131,8 +1134,8 @@ class PathTransitionEvent extends $pb.GeneratedMessage {
 }
 
 /// PacketFlowLogUploadRequest contains network flow statistics from a client.
-/// Unlike the legacy PacketFlowLogRequest, this does not include nodeId;
-/// the log server identifies the stream via log_stream_id (derived from private-id).
+/// Used inside StreamLogRequest.packet_flow.
+/// The log server identifies the stream via log_stream_id (derived from private-id).
 ///
 /// Fields 8-11 embed node/tenant identity directly in the payload (A-plan).
 /// This makes each log self-contained for SIEM export without requiring
@@ -1564,7 +1567,8 @@ class PacketFlowEntry extends $pb.GeneratedMessage {
   void clearRxBytes() => $_clearField(7);
 }
 
-/// PacketFlowLogUploadResponse is returned after processing flow logs.
+/// PacketFlowLogUploadResponse is returned inside StreamLogResponse.ack
+/// when processing flow logs.
 class PacketFlowLogUploadResponse extends $pb.GeneratedMessage {
   factory PacketFlowLogUploadResponse({
     $core.int? accepted,
@@ -1621,6 +1625,438 @@ class PacketFlowLogUploadResponse extends $pb.GeneratedMessage {
   $core.bool hasAccepted() => $_has(0);
   @$pb.TagNumber(1)
   void clearAccepted() => $_clearField(1);
+}
+
+enum StreamLogRequest_Payload { packetFlow, orbit, loglyph, notSet }
+
+/// StreamLogRequest is sent by the client on the StreamLogs bidirectional stream.
+/// Each message carries exactly one log payload via the oneof field.
+class StreamLogRequest extends $pb.GeneratedMessage {
+  factory StreamLogRequest({
+    PacketFlowLogUploadRequest? packetFlow,
+    OrbitBatchUploadRequest? orbit,
+    LoglyphUploadRequest? loglyph,
+    $fixnum.Int64? sequence,
+  }) {
+    final result = create();
+    if (packetFlow != null) result.packetFlow = packetFlow;
+    if (orbit != null) result.orbit = orbit;
+    if (loglyph != null) result.loglyph = loglyph;
+    if (sequence != null) result.sequence = sequence;
+    return result;
+  }
+
+  StreamLogRequest._();
+
+  factory StreamLogRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StreamLogRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static const $core.Map<$core.int, StreamLogRequest_Payload>
+      _StreamLogRequest_PayloadByTag = {
+    1: StreamLogRequest_Payload.packetFlow,
+    2: StreamLogRequest_Payload.orbit,
+    3: StreamLogRequest_Payload.loglyph,
+    0: StreamLogRequest_Payload.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StreamLogRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
+      createEmptyInstance: create)
+    ..oo(0, [1, 2, 3])
+    ..aOM<PacketFlowLogUploadRequest>(1, _omitFieldNames ? '' : 'packetFlow',
+        subBuilder: PacketFlowLogUploadRequest.create)
+    ..aOM<OrbitBatchUploadRequest>(2, _omitFieldNames ? '' : 'orbit',
+        subBuilder: OrbitBatchUploadRequest.create)
+    ..aOM<LoglyphUploadRequest>(3, _omitFieldNames ? '' : 'loglyph',
+        subBuilder: LoglyphUploadRequest.create)
+    ..a<$fixnum.Int64>(
+        10, _omitFieldNames ? '' : 'sequence', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StreamLogRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StreamLogRequest copyWith(void Function(StreamLogRequest) updates) =>
+      super.copyWith((message) => updates(message as StreamLogRequest))
+          as StreamLogRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StreamLogRequest create() => StreamLogRequest._();
+  @$core.override
+  StreamLogRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StreamLogRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StreamLogRequest>(create);
+  static StreamLogRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  @$pb.TagNumber(2)
+  @$pb.TagNumber(3)
+  StreamLogRequest_Payload whichPayload() =>
+      _StreamLogRequest_PayloadByTag[$_whichOneof(0)]!;
+  @$pb.TagNumber(1)
+  @$pb.TagNumber(2)
+  @$pb.TagNumber(3)
+  void clearPayload() => $_clearField($_whichOneof(0));
+
+  /// packet_flow carries network flow statistics (60s summaries).
+  @$pb.TagNumber(1)
+  PacketFlowLogUploadRequest get packetFlow => $_getN(0);
+  @$pb.TagNumber(1)
+  set packetFlow(PacketFlowLogUploadRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPacketFlow() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPacketFlow() => $_clearField(1);
+  @$pb.TagNumber(1)
+  PacketFlowLogUploadRequest ensurePacketFlow() => $_ensure(0);
+
+  /// orbit carries a batch of telemetry events.
+  @$pb.TagNumber(2)
+  OrbitBatchUploadRequest get orbit => $_getN(1);
+  @$pb.TagNumber(2)
+  set orbit(OrbitBatchUploadRequest value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOrbit() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOrbit() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OrbitBatchUploadRequest ensureOrbit() => $_ensure(1);
+
+  /// loglyph carries a batch of client debug log entries.
+  @$pb.TagNumber(3)
+  LoglyphUploadRequest get loglyph => $_getN(2);
+  @$pb.TagNumber(3)
+  set loglyph(LoglyphUploadRequest value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLoglyph() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLoglyph() => $_clearField(3);
+  @$pb.TagNumber(3)
+  LoglyphUploadRequest ensureLoglyph() => $_ensure(2);
+
+  /// sequence is a client-assigned monotonically increasing number.
+  /// The server echoes it back in StreamAck for delivery confirmation.
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get sequence => $_getI64(3);
+  @$pb.TagNumber(10)
+  set sequence($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(10)
+  $core.bool hasSequence() => $_has(3);
+  @$pb.TagNumber(10)
+  void clearSequence() => $_clearField(10);
+}
+
+enum StreamLogResponse_Directive { config, ack, notSet }
+
+/// StreamLogResponse is sent by the server on the StreamLogs bidirectional stream.
+/// Each message carries either a configuration update or an acknowledgement.
+class StreamLogResponse extends $pb.GeneratedMessage {
+  factory StreamLogResponse({
+    LogConfigUpdate? config,
+    StreamAck? ack,
+  }) {
+    final result = create();
+    if (config != null) result.config = config;
+    if (ack != null) result.ack = ack;
+    return result;
+  }
+
+  StreamLogResponse._();
+
+  factory StreamLogResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StreamLogResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static const $core.Map<$core.int, StreamLogResponse_Directive>
+      _StreamLogResponse_DirectiveByTag = {
+    1: StreamLogResponse_Directive.config,
+    2: StreamLogResponse_Directive.ack,
+    0: StreamLogResponse_Directive.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StreamLogResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
+      createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aOM<LogConfigUpdate>(1, _omitFieldNames ? '' : 'config',
+        subBuilder: LogConfigUpdate.create)
+    ..aOM<StreamAck>(2, _omitFieldNames ? '' : 'ack',
+        subBuilder: StreamAck.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StreamLogResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StreamLogResponse copyWith(void Function(StreamLogResponse) updates) =>
+      super.copyWith((message) => updates(message as StreamLogResponse))
+          as StreamLogResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StreamLogResponse create() => StreamLogResponse._();
+  @$core.override
+  StreamLogResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StreamLogResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StreamLogResponse>(create);
+  static StreamLogResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  @$pb.TagNumber(2)
+  StreamLogResponse_Directive whichDirective() =>
+      _StreamLogResponse_DirectiveByTag[$_whichOneof(0)]!;
+  @$pb.TagNumber(1)
+  @$pb.TagNumber(2)
+  void clearDirective() => $_clearField($_whichOneof(0));
+
+  /// config is a server-pushed configuration update.
+  /// Sent immediately on connection and whenever tenant config changes.
+  @$pb.TagNumber(1)
+  LogConfigUpdate get config => $_getN(0);
+  @$pb.TagNumber(1)
+  set config(LogConfigUpdate value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConfig() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConfig() => $_clearField(1);
+  @$pb.TagNumber(1)
+  LogConfigUpdate ensureConfig() => $_ensure(0);
+
+  /// ack confirms receipt and processing of a client message.
+  @$pb.TagNumber(2)
+  StreamAck get ack => $_getN(1);
+  @$pb.TagNumber(2)
+  set ack(StreamAck value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAck() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAck() => $_clearField(2);
+  @$pb.TagNumber(2)
+  StreamAck ensureAck() => $_ensure(1);
+}
+
+/// LogConfigUpdate carries dynamic configuration from the server to the client.
+/// Allows the server to adjust client logging behavior without binary updates.
+class LogConfigUpdate extends $pb.GeneratedMessage {
+  factory LogConfigUpdate({
+    $core.int? pollPeriodSeconds,
+    $fixnum.Int64? minBytesThreshold,
+    $core.bool? netflowEnabled,
+    $core.bool? orbitEnabled,
+    $core.bool? loglyphEnabled,
+  }) {
+    final result = create();
+    if (pollPeriodSeconds != null) result.pollPeriodSeconds = pollPeriodSeconds;
+    if (minBytesThreshold != null) result.minBytesThreshold = minBytesThreshold;
+    if (netflowEnabled != null) result.netflowEnabled = netflowEnabled;
+    if (orbitEnabled != null) result.orbitEnabled = orbitEnabled;
+    if (loglyphEnabled != null) result.loglyphEnabled = loglyphEnabled;
+    return result;
+  }
+
+  LogConfigUpdate._();
+
+  factory LogConfigUpdate.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory LogConfigUpdate.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'LogConfigUpdate',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
+      createEmptyInstance: create)
+    ..aI(1, _omitFieldNames ? '' : 'pollPeriodSeconds',
+        fieldType: $pb.PbFieldType.OU3)
+    ..a<$fixnum.Int64>(
+        2, _omitFieldNames ? '' : 'minBytesThreshold', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOB(3, _omitFieldNames ? '' : 'netflowEnabled')
+    ..aOB(4, _omitFieldNames ? '' : 'orbitEnabled')
+    ..aOB(5, _omitFieldNames ? '' : 'loglyphEnabled')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogConfigUpdate clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  LogConfigUpdate copyWith(void Function(LogConfigUpdate) updates) =>
+      super.copyWith((message) => updates(message as LogConfigUpdate))
+          as LogConfigUpdate;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static LogConfigUpdate create() => LogConfigUpdate._();
+  @$core.override
+  LogConfigUpdate createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static LogConfigUpdate getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<LogConfigUpdate>(create);
+  static LogConfigUpdate? _defaultInstance;
+
+  /// poll_period_seconds is the interval between flow log collections.
+  /// 0 means use client default (currently 60s).
+  @$pb.TagNumber(1)
+  $core.int get pollPeriodSeconds => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set pollPeriodSeconds($core.int value) => $_setUnsignedInt32(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPollPeriodSeconds() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPollPeriodSeconds() => $_clearField(1);
+
+  /// min_bytes_threshold is the minimum total bytes for a connection to be logged.
+  /// 0 means use client default (currently 256 bytes).
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get minBytesThreshold => $_getI64(1);
+  @$pb.TagNumber(2)
+  set minBytesThreshold($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasMinBytesThreshold() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearMinBytesThreshold() => $_clearField(2);
+
+  /// netflow_enabled controls whether network flow logs are collected.
+  @$pb.TagNumber(3)
+  $core.bool get netflowEnabled => $_getBF(2);
+  @$pb.TagNumber(3)
+  set netflowEnabled($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNetflowEnabled() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNetflowEnabled() => $_clearField(3);
+
+  /// orbit_enabled controls whether orbit telemetry events are collected.
+  @$pb.TagNumber(4)
+  $core.bool get orbitEnabled => $_getBF(3);
+  @$pb.TagNumber(4)
+  set orbitEnabled($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasOrbitEnabled() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOrbitEnabled() => $_clearField(4);
+
+  /// loglyph_enabled controls whether client debug logs are collected.
+  @$pb.TagNumber(5)
+  $core.bool get loglyphEnabled => $_getBF(4);
+  @$pb.TagNumber(5)
+  set loglyphEnabled($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasLoglyphEnabled() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLoglyphEnabled() => $_clearField(5);
+}
+
+/// StreamAck confirms that the server has received and processed a client message.
+class StreamAck extends $pb.GeneratedMessage {
+  factory StreamAck({
+    $fixnum.Int64? sequence,
+    $core.int? accepted,
+    $core.int? dropped,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (sequence != null) result.sequence = sequence;
+    if (accepted != null) result.accepted = accepted;
+    if (dropped != null) result.dropped = dropped;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  StreamAck._();
+
+  factory StreamAck.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StreamAck.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StreamAck',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
+      createEmptyInstance: create)
+    ..a<$fixnum.Int64>(
+        1, _omitFieldNames ? '' : 'sequence', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aI(2, _omitFieldNames ? '' : 'accepted', fieldType: $pb.PbFieldType.OU3)
+    ..aI(3, _omitFieldNames ? '' : 'dropped', fieldType: $pb.PbFieldType.OU3)
+    ..aOS(4, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StreamAck clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  StreamAck copyWith(void Function(StreamAck) updates) =>
+      super.copyWith((message) => updates(message as StreamAck)) as StreamAck;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static StreamAck create() => StreamAck._();
+  @$core.override
+  StreamAck createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static StreamAck getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamAck>(create);
+  static StreamAck? _defaultInstance;
+
+  /// sequence echoes the client's StreamLogRequest.sequence.
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get sequence => $_getI64(0);
+  @$pb.TagNumber(1)
+  set sequence($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSequence() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSequence() => $_clearField(1);
+
+  /// accepted is the number of entries/events/logs successfully stored.
+  @$pb.TagNumber(2)
+  $core.int get accepted => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set accepted($core.int value) => $_setUnsignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasAccepted() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccepted() => $_clearField(2);
+
+  /// dropped is the number of entries/events/logs dropped (if any).
+  @$pb.TagNumber(3)
+  $core.int get dropped => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set dropped($core.int value) => $_setUnsignedInt32(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDropped() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDropped() => $_clearField(3);
+
+  /// reason is set if any entries were dropped (e.g. "rate_limited", "too_large").
+  @$pb.TagNumber(4)
+  $core.String get reason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reason($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReason() => $_clearField(4);
 }
 
 const $core.bool _omitFieldNames =

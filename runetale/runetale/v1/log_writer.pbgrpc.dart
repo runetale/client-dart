@@ -20,10 +20,13 @@ import 'log_writer.pb.dart' as $0;
 
 export 'log_writer.pb.dart';
 
-/// LogWriterService receives log uploads from client nodes.
-/// Authentication: gRPC metadata "private-id" + "log-token" headers.
-/// The log server validates the token signature, checks expiration,
-/// and verifies that SHA-256(private-id) matches the token's public_id.
+/// LogWriterService receives log uploads from client nodes via a single
+/// bidirectional stream. All three log types (Loglyph, Orbit, PacketFlowLog)
+/// are multiplexed over one persistent gRPC stream per client.
+///
+/// Authentication: gRPC metadata "private-id" header.
+/// The log server validates the format, computes log_stream_id = SHA-256(private-id),
+/// and extracts optional telemetry IDs for admin correlation.
 @$pb.GrpcServiceName('logserver.LogWriterService')
 class LogWriterServiceClient extends $grpc.Client {
   /// The hostname for this service.
@@ -36,47 +39,27 @@ class LogWriterServiceClient extends $grpc.Client {
 
   LogWriterServiceClient(super.channel, {super.options, super.interceptors});
 
-  /// UploadLoglyphEntries uploads client debug log entries.
-  $grpc.ResponseFuture<$0.LoglyphUploadResponse> uploadLoglyphEntries(
-    $0.LoglyphUploadRequest request, {
+  /// StreamLogs is a bidirectional stream for uploading all log types.
+  /// The client sends StreamLogRequest messages (containing one of the three
+  /// log payloads) and receives StreamLogResponse messages (config updates
+  /// and acknowledgements) from the server.
+  ///
+  /// On initial connection, the server sends a LogConfigUpdate with the
+  /// current configuration for this client's tenant.
+  $grpc.ResponseStream<$0.StreamLogResponse> streamLogs(
+    $async.Stream<$0.StreamLogRequest> request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$uploadLoglyphEntries, request, options: options);
-  }
-
-  /// UploadOrbitBatch uploads a batch of telemetry events.
-  $grpc.ResponseFuture<$0.OrbitBatchUploadResponse> uploadOrbitBatch(
-    $0.OrbitBatchUploadRequest request, {
-    $grpc.CallOptions? options,
-  }) {
-    return $createUnaryCall(_$uploadOrbitBatch, request, options: options);
-  }
-
-  /// UploadPacketFlowLogs uploads network flow statistics.
-  $grpc.ResponseFuture<$0.PacketFlowLogUploadResponse> uploadPacketFlowLogs(
-    $0.PacketFlowLogUploadRequest request, {
-    $grpc.CallOptions? options,
-  }) {
-    return $createUnaryCall(_$uploadPacketFlowLogs, request, options: options);
+    return $createStreamingCall(_$streamLogs, request, options: options);
   }
 
   // method descriptors
 
-  static final _$uploadLoglyphEntries =
-      $grpc.ClientMethod<$0.LoglyphUploadRequest, $0.LoglyphUploadResponse>(
-          '/logserver.LogWriterService/UploadLoglyphEntries',
-          ($0.LoglyphUploadRequest value) => value.writeToBuffer(),
-          $0.LoglyphUploadResponse.fromBuffer);
-  static final _$uploadOrbitBatch = $grpc.ClientMethod<
-          $0.OrbitBatchUploadRequest, $0.OrbitBatchUploadResponse>(
-      '/logserver.LogWriterService/UploadOrbitBatch',
-      ($0.OrbitBatchUploadRequest value) => value.writeToBuffer(),
-      $0.OrbitBatchUploadResponse.fromBuffer);
-  static final _$uploadPacketFlowLogs = $grpc.ClientMethod<
-          $0.PacketFlowLogUploadRequest, $0.PacketFlowLogUploadResponse>(
-      '/logserver.LogWriterService/UploadPacketFlowLogs',
-      ($0.PacketFlowLogUploadRequest value) => value.writeToBuffer(),
-      $0.PacketFlowLogUploadResponse.fromBuffer);
+  static final _$streamLogs =
+      $grpc.ClientMethod<$0.StreamLogRequest, $0.StreamLogResponse>(
+          '/logserver.LogWriterService/StreamLogs',
+          ($0.StreamLogRequest value) => value.writeToBuffer(),
+          $0.StreamLogResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('logserver.LogWriterService')
@@ -84,59 +67,15 @@ abstract class LogWriterServiceBase extends $grpc.Service {
   $core.String get $name => 'logserver.LogWriterService';
 
   LogWriterServiceBase() {
-    $addMethod(
-        $grpc.ServiceMethod<$0.LoglyphUploadRequest, $0.LoglyphUploadResponse>(
-            'UploadLoglyphEntries',
-            uploadLoglyphEntries_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.LoglyphUploadRequest.fromBuffer(value),
-            ($0.LoglyphUploadResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.OrbitBatchUploadRequest,
-            $0.OrbitBatchUploadResponse>(
-        'UploadOrbitBatch',
-        uploadOrbitBatch_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.OrbitBatchUploadRequest.fromBuffer(value),
-        ($0.OrbitBatchUploadResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PacketFlowLogUploadRequest,
-            $0.PacketFlowLogUploadResponse>(
-        'UploadPacketFlowLogs',
-        uploadPacketFlowLogs_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.PacketFlowLogUploadRequest.fromBuffer(value),
-        ($0.PacketFlowLogUploadResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.StreamLogRequest, $0.StreamLogResponse>(
+        'StreamLogs',
+        streamLogs,
+        true,
+        true,
+        ($core.List<$core.int> value) => $0.StreamLogRequest.fromBuffer(value),
+        ($0.StreamLogResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.LoglyphUploadResponse> uploadLoglyphEntries_Pre(
-      $grpc.ServiceCall $call,
-      $async.Future<$0.LoglyphUploadRequest> $request) async {
-    return uploadLoglyphEntries($call, await $request);
-  }
-
-  $async.Future<$0.LoglyphUploadResponse> uploadLoglyphEntries(
-      $grpc.ServiceCall call, $0.LoglyphUploadRequest request);
-
-  $async.Future<$0.OrbitBatchUploadResponse> uploadOrbitBatch_Pre(
-      $grpc.ServiceCall $call,
-      $async.Future<$0.OrbitBatchUploadRequest> $request) async {
-    return uploadOrbitBatch($call, await $request);
-  }
-
-  $async.Future<$0.OrbitBatchUploadResponse> uploadOrbitBatch(
-      $grpc.ServiceCall call, $0.OrbitBatchUploadRequest request);
-
-  $async.Future<$0.PacketFlowLogUploadResponse> uploadPacketFlowLogs_Pre(
-      $grpc.ServiceCall $call,
-      $async.Future<$0.PacketFlowLogUploadRequest> $request) async {
-    return uploadPacketFlowLogs($call, await $request);
-  }
-
-  $async.Future<$0.PacketFlowLogUploadResponse> uploadPacketFlowLogs(
-      $grpc.ServiceCall call, $0.PacketFlowLogUploadRequest request);
+  $async.Stream<$0.StreamLogResponse> streamLogs(
+      $grpc.ServiceCall call, $async.Stream<$0.StreamLogRequest> request);
 }
