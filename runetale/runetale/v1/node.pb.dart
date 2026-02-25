@@ -36,6 +36,9 @@ class Node extends $pb.GeneratedMessage {
     $core.int? cerfHomeRegionId,
     $core.bool? online,
     $2.Timestamp? lastSeen,
+    $2.Timestamp? keyExpiry,
+    $core.bool? expired,
+    $core.List<$core.int>? keySignature,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -53,6 +56,9 @@ class Node extends $pb.GeneratedMessage {
     if (cerfHomeRegionId != null) result.cerfHomeRegionId = cerfHomeRegionId;
     if (online != null) result.online = online;
     if (lastSeen != null) result.lastSeen = lastSeen;
+    if (keyExpiry != null) result.keyExpiry = keyExpiry;
+    if (expired != null) result.expired = expired;
+    if (keySignature != null) result.keySignature = keySignature;
     return result;
   }
 
@@ -88,6 +94,12 @@ class Node extends $pb.GeneratedMessage {
     ..aOB(14, _omitFieldNames ? '' : 'online')
     ..aOM<$2.Timestamp>(15, _omitFieldNames ? '' : 'lastSeen',
         protoName: 'lastSeen', subBuilder: $2.Timestamp.create)
+    ..aOM<$2.Timestamp>(16, _omitFieldNames ? '' : 'keyExpiry',
+        protoName: 'keyExpiry', subBuilder: $2.Timestamp.create)
+    ..aOB(17, _omitFieldNames ? '' : 'expired')
+    ..a<$core.List<$core.int>>(
+        18, _omitFieldNames ? '' : 'keySignature', $pb.PbFieldType.OY,
+        protoName: 'keySignature')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -237,6 +249,41 @@ class Node extends $pb.GeneratedMessage {
   void clearLastSeen() => $_clearField(15);
   @$pb.TagNumber(15)
   $2.Timestamp ensureLastSeen() => $_ensure(14);
+
+  /// keyExpiry is when this node's key expires. Zero value means no expiry.
+  /// After this time, the node must re-authenticate to continue using the network.
+  @$pb.TagNumber(16)
+  $2.Timestamp get keyExpiry => $_getN(15);
+  @$pb.TagNumber(16)
+  set keyExpiry($2.Timestamp value) => $_setField(16, value);
+  @$pb.TagNumber(16)
+  $core.bool hasKeyExpiry() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearKeyExpiry() => $_clearField(16);
+  @$pb.TagNumber(16)
+  $2.Timestamp ensureKeyExpiry() => $_ensure(15);
+
+  /// expired indicates whether the server has marked this node's key as expired.
+  /// When true, the node should initiate key rotation or re-authentication.
+  @$pb.TagNumber(17)
+  $core.bool get expired => $_getBF(16);
+  @$pb.TagNumber(17)
+  set expired($core.bool value) => $_setBool(16, value);
+  @$pb.TagNumber(17)
+  $core.bool hasExpired() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearExpired() => $_clearField(17);
+
+  /// keySignature is the CBOR-encoded NodeKeySignature for Network Lock (TKA).
+  /// Only set when Network Lock is enabled for the Runetale Network.
+  @$pb.TagNumber(18)
+  $core.List<$core.int> get keySignature => $_getN(17);
+  @$pb.TagNumber(18)
+  set keySignature($core.List<$core.int> value) => $_setBytes(17, value);
+  @$pb.TagNumber(18)
+  $core.bool hasKeySignature() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearKeySignature() => $_clearField(18);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
@@ -1425,6 +1472,977 @@ class DNSConfig extends $pb.GeneratedMessage {
   $core.bool hasEnabledWonderDNS() => $_has(4);
   @$pb.TagNumber(5)
   void clearEnabledWonderDNS() => $_clearField(5);
+}
+
+/// RotateNodeKeyRequest is sent when a node wants to rotate its keys.
+/// The server validates the old keys and updates to the new keys.
+class RotateNodeKeyRequest extends $pb.GeneratedMessage {
+  factory RotateNodeKeyRequest({
+    $core.String? oldNodeKey,
+    $core.String? newNodeKey,
+    $core.String? oldWgPubKey,
+    $core.String? newWgPubKey,
+    $core.String? oldRuneKey,
+    $core.String? newRuneKey,
+    $core.List<$core.int>? nodeKeySignature,
+  }) {
+    final result = create();
+    if (oldNodeKey != null) result.oldNodeKey = oldNodeKey;
+    if (newNodeKey != null) result.newNodeKey = newNodeKey;
+    if (oldWgPubKey != null) result.oldWgPubKey = oldWgPubKey;
+    if (newWgPubKey != null) result.newWgPubKey = newWgPubKey;
+    if (oldRuneKey != null) result.oldRuneKey = oldRuneKey;
+    if (newRuneKey != null) result.newRuneKey = newRuneKey;
+    if (nodeKeySignature != null) result.nodeKeySignature = nodeKeySignature;
+    return result;
+  }
+
+  RotateNodeKeyRequest._();
+
+  factory RotateNodeKeyRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RotateNodeKeyRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RotateNodeKeyRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'oldNodeKey', protoName: 'oldNodeKey')
+    ..aOS(2, _omitFieldNames ? '' : 'newNodeKey', protoName: 'newNodeKey')
+    ..aOS(3, _omitFieldNames ? '' : 'oldWgPubKey', protoName: 'oldWgPubKey')
+    ..aOS(4, _omitFieldNames ? '' : 'newWgPubKey', protoName: 'newWgPubKey')
+    ..aOS(5, _omitFieldNames ? '' : 'oldRuneKey', protoName: 'oldRuneKey')
+    ..aOS(6, _omitFieldNames ? '' : 'newRuneKey', protoName: 'newRuneKey')
+    ..a<$core.List<$core.int>>(
+        7, _omitFieldNames ? '' : 'nodeKeySignature', $pb.PbFieldType.OY,
+        protoName: 'nodeKeySignature')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RotateNodeKeyRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RotateNodeKeyRequest copyWith(void Function(RotateNodeKeyRequest) updates) =>
+      super.copyWith((message) => updates(message as RotateNodeKeyRequest))
+          as RotateNodeKeyRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RotateNodeKeyRequest create() => RotateNodeKeyRequest._();
+  @$core.override
+  RotateNodeKeyRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RotateNodeKeyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RotateNodeKeyRequest>(create);
+  static RotateNodeKeyRequest? _defaultInstance;
+
+  /// oldNodeKey is the current node key (for verification)
+  @$pb.TagNumber(1)
+  $core.String get oldNodeKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set oldNodeKey($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOldNodeKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOldNodeKey() => $_clearField(1);
+
+  /// newNodeKey is the new node key to rotate to
+  @$pb.TagNumber(2)
+  $core.String get newNodeKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set newNodeKey($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNewNodeKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewNodeKey() => $_clearField(2);
+
+  /// oldWgPubKey is the current WireGuard public key (for verification)
+  @$pb.TagNumber(3)
+  $core.String get oldWgPubKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set oldWgPubKey($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOldWgPubKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOldWgPubKey() => $_clearField(3);
+
+  /// newWgPubKey is the new WireGuard public key to rotate to
+  @$pb.TagNumber(4)
+  $core.String get newWgPubKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set newWgPubKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNewWgPubKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNewWgPubKey() => $_clearField(4);
+
+  /// oldRuneKey is the current Rune key (for verification)
+  @$pb.TagNumber(5)
+  $core.String get oldRuneKey => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set oldRuneKey($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasOldRuneKey() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearOldRuneKey() => $_clearField(5);
+
+  /// newRuneKey is the new Rune key to rotate to
+  @$pb.TagNumber(6)
+  $core.String get newRuneKey => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set newRuneKey($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasNewRuneKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearNewRuneKey() => $_clearField(6);
+
+  /// nodeKeySignature is the new NodeKeySignature if Network Lock is enabled.
+  /// This must be signed by the node's rotation key or a trusted NL key.
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get nodeKeySignature => $_getN(6);
+  @$pb.TagNumber(7)
+  set nodeKeySignature($core.List<$core.int> value) => $_setBytes(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasNodeKeySignature() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearNodeKeySignature() => $_clearField(7);
+}
+
+/// RotateNodeKeyResponse is returned after a successful key rotation.
+class RotateNodeKeyResponse extends $pb.GeneratedMessage {
+  factory RotateNodeKeyResponse({
+    $core.bool? success,
+    $2.Timestamp? newKeyExpiry,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (success != null) result.success = success;
+    if (newKeyExpiry != null) result.newKeyExpiry = newKeyExpiry;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  RotateNodeKeyResponse._();
+
+  factory RotateNodeKeyResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RotateNodeKeyResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RotateNodeKeyResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..aOM<$2.Timestamp>(2, _omitFieldNames ? '' : 'newKeyExpiry',
+        protoName: 'newKeyExpiry', subBuilder: $2.Timestamp.create)
+    ..aOS(3, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RotateNodeKeyResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RotateNodeKeyResponse copyWith(
+          void Function(RotateNodeKeyResponse) updates) =>
+      super.copyWith((message) => updates(message as RotateNodeKeyResponse))
+          as RotateNodeKeyResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RotateNodeKeyResponse create() => RotateNodeKeyResponse._();
+  @$core.override
+  RotateNodeKeyResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RotateNodeKeyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RotateNodeKeyResponse>(create);
+  static RotateNodeKeyResponse? _defaultInstance;
+
+  /// success indicates whether the key rotation was successful
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => $_clearField(1);
+
+  /// newKeyExpiry is the new expiry time for the rotated keys
+  @$pb.TagNumber(2)
+  $2.Timestamp get newKeyExpiry => $_getN(1);
+  @$pb.TagNumber(2)
+  set newKeyExpiry($2.Timestamp value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNewKeyExpiry() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewKeyExpiry() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $2.Timestamp ensureNewKeyExpiry() => $_ensure(1);
+
+  /// error is set if success is false
+  @$pb.TagNumber(3)
+  $core.String get error => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set error($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasError() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearError() => $_clearField(3);
+}
+
+/// NetworkLockInitRequest initializes Network Lock for the Runetale Network.
+class NetworkLockInitRequest extends $pb.GeneratedMessage {
+  factory NetworkLockInitRequest({
+    $core.Iterable<NetworkLockKey>? keys,
+    $core.List<$core.int>? disablementSecret,
+  }) {
+    final result = create();
+    if (keys != null) result.keys.addAll(keys);
+    if (disablementSecret != null) result.disablementSecret = disablementSecret;
+    return result;
+  }
+
+  NetworkLockInitRequest._();
+
+  factory NetworkLockInitRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkLockInitRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkLockInitRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..pPM<NetworkLockKey>(1, _omitFieldNames ? '' : 'keys',
+        subBuilder: NetworkLockKey.create)
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'disablementSecret', $pb.PbFieldType.OY,
+        protoName: 'disablementSecret')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockInitRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockInitRequest copyWith(
+          void Function(NetworkLockInitRequest) updates) =>
+      super.copyWith((message) => updates(message as NetworkLockInitRequest))
+          as NetworkLockInitRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockInitRequest create() => NetworkLockInitRequest._();
+  @$core.override
+  NetworkLockInitRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockInitRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkLockInitRequest>(create);
+  static NetworkLockInitRequest? _defaultInstance;
+
+  /// keys are the initial trusted signing keys (NL public keys)
+  @$pb.TagNumber(1)
+  $pb.PbList<NetworkLockKey> get keys => $_getList(0);
+
+  /// disablementSecret is a secret that can be used to disable Network Lock
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get disablementSecret => $_getN(1);
+  @$pb.TagNumber(2)
+  set disablementSecret($core.List<$core.int> value) => $_setBytes(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisablementSecret() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisablementSecret() => $_clearField(2);
+}
+
+/// NetworkLockInitResponse is returned after Network Lock initialization.
+class NetworkLockInitResponse extends $pb.GeneratedMessage {
+  factory NetworkLockInitResponse({
+    $core.bool? success,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (success != null) result.success = success;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  NetworkLockInitResponse._();
+
+  factory NetworkLockInitResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkLockInitResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkLockInitResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockInitResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockInitResponse copyWith(
+          void Function(NetworkLockInitResponse) updates) =>
+      super.copyWith((message) => updates(message as NetworkLockInitResponse))
+          as NetworkLockInitResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockInitResponse create() => NetworkLockInitResponse._();
+  @$core.override
+  NetworkLockInitResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockInitResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkLockInitResponse>(create);
+  static NetworkLockInitResponse? _defaultInstance;
+
+  /// success indicates whether initialization was successful
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => $_clearField(1);
+
+  /// error is set if success is false
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+/// NetworkLockSignRequest requests signing of a node key.
+class NetworkLockSignRequest extends $pb.GeneratedMessage {
+  factory NetworkLockSignRequest({
+    $core.String? nodeKey,
+    $core.List<$core.int>? rotationPublic,
+  }) {
+    final result = create();
+    if (nodeKey != null) result.nodeKey = nodeKey;
+    if (rotationPublic != null) result.rotationPublic = rotationPublic;
+    return result;
+  }
+
+  NetworkLockSignRequest._();
+
+  factory NetworkLockSignRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkLockSignRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkLockSignRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'rotationPublic', $pb.PbFieldType.OY,
+        protoName: 'rotationPublic')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockSignRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockSignRequest copyWith(
+          void Function(NetworkLockSignRequest) updates) =>
+      super.copyWith((message) => updates(message as NetworkLockSignRequest))
+          as NetworkLockSignRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockSignRequest create() => NetworkLockSignRequest._();
+  @$core.override
+  NetworkLockSignRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockSignRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkLockSignRequest>(create);
+  static NetworkLockSignRequest? _defaultInstance;
+
+  /// nodeKey is the public node key to sign
+  @$pb.TagNumber(1)
+  $core.String get nodeKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set nodeKey($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNodeKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeKey() => $_clearField(1);
+
+  /// rotationPublic is an optional ed25519 public key for future key rotations.
+  /// If set, the node can rotate its key by signing with this rotation key.
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get rotationPublic => $_getN(1);
+  @$pb.TagNumber(2)
+  set rotationPublic($core.List<$core.int> value) => $_setBytes(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRotationPublic() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRotationPublic() => $_clearField(2);
+}
+
+/// NetworkLockSignResponse returns the signed node key signature.
+class NetworkLockSignResponse extends $pb.GeneratedMessage {
+  factory NetworkLockSignResponse({
+    $core.List<$core.int>? signature,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (signature != null) result.signature = signature;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  NetworkLockSignResponse._();
+
+  factory NetworkLockSignResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkLockSignResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkLockSignResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'signature', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockSignResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockSignResponse copyWith(
+          void Function(NetworkLockSignResponse) updates) =>
+      super.copyWith((message) => updates(message as NetworkLockSignResponse))
+          as NetworkLockSignResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockSignResponse create() => NetworkLockSignResponse._();
+  @$core.override
+  NetworkLockSignResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockSignResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkLockSignResponse>(create);
+  static NetworkLockSignResponse? _defaultInstance;
+
+  /// signature is the CBOR-encoded NodeKeySignature
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get signature => $_getN(0);
+  @$pb.TagNumber(1)
+  set signature($core.List<$core.int> value) => $_setBytes(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSignature() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSignature() => $_clearField(1);
+
+  /// error is set if signing failed
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+/// NetworkLockDisableRequest disables Network Lock for the Runetale Network.
+class NetworkLockDisableRequest extends $pb.GeneratedMessage {
+  factory NetworkLockDisableRequest({
+    $core.List<$core.int>? disablementSecret,
+  }) {
+    final result = create();
+    if (disablementSecret != null) result.disablementSecret = disablementSecret;
+    return result;
+  }
+
+  NetworkLockDisableRequest._();
+
+  factory NetworkLockDisableRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkLockDisableRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkLockDisableRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'disablementSecret', $pb.PbFieldType.OY,
+        protoName: 'disablementSecret')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockDisableRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockDisableRequest copyWith(
+          void Function(NetworkLockDisableRequest) updates) =>
+      super.copyWith((message) => updates(message as NetworkLockDisableRequest))
+          as NetworkLockDisableRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockDisableRequest create() => NetworkLockDisableRequest._();
+  @$core.override
+  NetworkLockDisableRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockDisableRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkLockDisableRequest>(create);
+  static NetworkLockDisableRequest? _defaultInstance;
+
+  /// disablementSecret is the secret provided during initialization
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get disablementSecret => $_getN(0);
+  @$pb.TagNumber(1)
+  set disablementSecret($core.List<$core.int> value) => $_setBytes(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDisablementSecret() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDisablementSecret() => $_clearField(1);
+}
+
+/// NetworkLockDisableResponse is returned after disabling Network Lock.
+class NetworkLockDisableResponse extends $pb.GeneratedMessage {
+  factory NetworkLockDisableResponse({
+    $core.bool? success,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (success != null) result.success = success;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  NetworkLockDisableResponse._();
+
+  factory NetworkLockDisableResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkLockDisableResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkLockDisableResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockDisableResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockDisableResponse copyWith(
+          void Function(NetworkLockDisableResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as NetworkLockDisableResponse))
+          as NetworkLockDisableResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockDisableResponse create() => NetworkLockDisableResponse._();
+  @$core.override
+  NetworkLockDisableResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockDisableResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkLockDisableResponse>(create);
+  static NetworkLockDisableResponse? _defaultInstance;
+
+  /// success indicates whether disabling was successful
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => $_clearField(1);
+
+  /// error is set if success is false
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+/// NetworkLockStatusResponse returns the current Network Lock status.
+class NetworkLockStatusResponse extends $pb.GeneratedMessage {
+  factory NetworkLockStatusResponse({
+    $core.bool? enabled,
+    $core.List<$core.int>? head,
+    $core.List<$core.int>? publicKey,
+    $core.String? nodeKey,
+    $core.bool? nodeKeySigned,
+    $core.Iterable<NetworkLockKey>? trustedKeys,
+    $core.Iterable<FilteredPeer>? filteredPeers,
+  }) {
+    final result = create();
+    if (enabled != null) result.enabled = enabled;
+    if (head != null) result.head = head;
+    if (publicKey != null) result.publicKey = publicKey;
+    if (nodeKey != null) result.nodeKey = nodeKey;
+    if (nodeKeySigned != null) result.nodeKeySigned = nodeKeySigned;
+    if (trustedKeys != null) result.trustedKeys.addAll(trustedKeys);
+    if (filteredPeers != null) result.filteredPeers.addAll(filteredPeers);
+    return result;
+  }
+
+  NetworkLockStatusResponse._();
+
+  factory NetworkLockStatusResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkLockStatusResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkLockStatusResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'enabled')
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'head', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(
+        3, _omitFieldNames ? '' : 'publicKey', $pb.PbFieldType.OY,
+        protoName: 'publicKey')
+    ..aOS(4, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..aOB(5, _omitFieldNames ? '' : 'nodeKeySigned', protoName: 'nodeKeySigned')
+    ..pPM<NetworkLockKey>(6, _omitFieldNames ? '' : 'trustedKeys',
+        protoName: 'trustedKeys', subBuilder: NetworkLockKey.create)
+    ..pPM<FilteredPeer>(7, _omitFieldNames ? '' : 'filteredPeers',
+        protoName: 'filteredPeers', subBuilder: FilteredPeer.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockStatusResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockStatusResponse copyWith(
+          void Function(NetworkLockStatusResponse) updates) =>
+      super.copyWith((message) => updates(message as NetworkLockStatusResponse))
+          as NetworkLockStatusResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockStatusResponse create() => NetworkLockStatusResponse._();
+  @$core.override
+  NetworkLockStatusResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockStatusResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkLockStatusResponse>(create);
+  static NetworkLockStatusResponse? _defaultInstance;
+
+  /// enabled indicates whether Network Lock is enabled
+  @$pb.TagNumber(1)
+  $core.bool get enabled => $_getBF(0);
+  @$pb.TagNumber(1)
+  set enabled($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnabled() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnabled() => $_clearField(1);
+
+  /// head is the current AUM chain head hash (32 bytes)
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get head => $_getN(1);
+  @$pb.TagNumber(2)
+  set head($core.List<$core.int> value) => $_setBytes(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHead() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHead() => $_clearField(2);
+
+  /// publicKey is this node's Network Lock public key
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get publicKey => $_getN(2);
+  @$pb.TagNumber(3)
+  set publicKey($core.List<$core.int> value) => $_setBytes(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasPublicKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearPublicKey() => $_clearField(3);
+
+  /// nodeKey is this node's current node public key
+  @$pb.TagNumber(4)
+  $core.String get nodeKey => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set nodeKey($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNodeKey() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNodeKey() => $_clearField(4);
+
+  /// nodeKeySigned indicates whether this node's key is properly signed
+  @$pb.TagNumber(5)
+  $core.bool get nodeKeySigned => $_getBF(4);
+  @$pb.TagNumber(5)
+  set nodeKeySigned($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasNodeKeySigned() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNodeKeySigned() => $_clearField(5);
+
+  /// trustedKeys are the currently trusted signing keys
+  @$pb.TagNumber(6)
+  $pb.PbList<NetworkLockKey> get trustedKeys => $_getList(5);
+
+  /// filteredPeers are peers that failed Network Lock verification
+  @$pb.TagNumber(7)
+  $pb.PbList<FilteredPeer> get filteredPeers => $_getList(6);
+}
+
+/// NetworkLockKey represents a trusted Network Lock signing key.
+class NetworkLockKey extends $pb.GeneratedMessage {
+  factory NetworkLockKey({
+    $core.List<$core.int>? keyId,
+    $core.List<$core.int>? publicKey,
+    $core.String? kind,
+    $core.int? votes,
+    $core.String? comment,
+  }) {
+    final result = create();
+    if (keyId != null) result.keyId = keyId;
+    if (publicKey != null) result.publicKey = publicKey;
+    if (kind != null) result.kind = kind;
+    if (votes != null) result.votes = votes;
+    if (comment != null) result.comment = comment;
+    return result;
+  }
+
+  NetworkLockKey._();
+
+  factory NetworkLockKey.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory NetworkLockKey.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NetworkLockKey',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'keyId', $pb.PbFieldType.OY,
+        protoName: 'keyId')
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'publicKey', $pb.PbFieldType.OY,
+        protoName: 'publicKey')
+    ..aOS(3, _omitFieldNames ? '' : 'kind')
+    ..aI(4, _omitFieldNames ? '' : 'votes', fieldType: $pb.PbFieldType.OU3)
+    ..aOS(5, _omitFieldNames ? '' : 'comment')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockKey clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NetworkLockKey copyWith(void Function(NetworkLockKey) updates) =>
+      super.copyWith((message) => updates(message as NetworkLockKey))
+          as NetworkLockKey;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockKey create() => NetworkLockKey._();
+  @$core.override
+  NetworkLockKey createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static NetworkLockKey getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<NetworkLockKey>(create);
+  static NetworkLockKey? _defaultInstance;
+
+  /// keyId is the key identifier (hash of the public key)
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get keyId => $_getN(0);
+  @$pb.TagNumber(1)
+  set keyId($core.List<$core.int> value) => $_setBytes(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasKeyId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearKeyId() => $_clearField(1);
+
+  /// publicKey is the ed25519 public key
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get publicKey => $_getN(1);
+  @$pb.TagNumber(2)
+  set publicKey($core.List<$core.int> value) => $_setBytes(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPublicKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPublicKey() => $_clearField(2);
+
+  /// kind is the key type (e.g., "nl" for Network Lock key)
+  @$pb.TagNumber(3)
+  $core.String get kind => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set kind($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasKind() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearKind() => $_clearField(3);
+
+  /// votes is the voting weight of this key (for threshold signing)
+  @$pb.TagNumber(4)
+  $core.int get votes => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set votes($core.int value) => $_setUnsignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasVotes() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearVotes() => $_clearField(4);
+
+  /// comment is an optional human-readable description
+  @$pb.TagNumber(5)
+  $core.String get comment => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set comment($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasComment() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearComment() => $_clearField(5);
+}
+
+/// FilteredPeer represents a peer that was filtered due to Network Lock.
+class FilteredPeer extends $pb.GeneratedMessage {
+  factory FilteredPeer({
+    $fixnum.Int64? nodeId,
+    $core.String? name,
+    $core.String? nodeKey,
+    $core.String? reason,
+  }) {
+    final result = create();
+    if (nodeId != null) result.nodeId = nodeId;
+    if (name != null) result.name = name;
+    if (nodeKey != null) result.nodeKey = nodeKey;
+    if (reason != null) result.reason = reason;
+    return result;
+  }
+
+  FilteredPeer._();
+
+  factory FilteredPeer.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FilteredPeer.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FilteredPeer',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        protoName: 'nodeId', defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'nodeKey', protoName: 'nodeKey')
+    ..aOS(4, _omitFieldNames ? '' : 'reason')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FilteredPeer clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FilteredPeer copyWith(void Function(FilteredPeer) updates) =>
+      super.copyWith((message) => updates(message as FilteredPeer))
+          as FilteredPeer;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FilteredPeer create() => FilteredPeer._();
+  @$core.override
+  FilteredPeer createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FilteredPeer getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FilteredPeer>(create);
+  static FilteredPeer? _defaultInstance;
+
+  /// nodeId is the peer's node ID
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get nodeId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set nodeId($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNodeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeId() => $_clearField(1);
+
+  /// name is the peer's hostname
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  /// nodeKey is the peer's node public key
+  @$pb.TagNumber(3)
+  $core.String get nodeKey => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set nodeKey($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNodeKey() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNodeKey() => $_clearField(3);
+
+  /// reason is why the peer was filtered
+  @$pb.TagNumber(4)
+  $core.String get reason => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set reason($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasReason() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReason() => $_clearField(4);
 }
 
 const $core.bool _omitFieldNames =

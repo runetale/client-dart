@@ -47,6 +47,16 @@ const Node$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'lastSeen'
     },
+    {
+      '1': 'keyExpiry',
+      '3': 16,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'keyExpiry'
+    },
+    {'1': 'expired', '3': 17, '4': 1, '5': 8, '10': 'expired'},
+    {'1': 'keySignature', '3': 18, '4': 1, '5': 12, '10': 'keySignature'},
   ],
 };
 
@@ -60,7 +70,9 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'YKBmhvc3RPUxgLIAEoCVIGaG9zdE9TEhgKB3J1bmVLZXkYDCABKAlSB3J1bmVLZXkSKgoQY2Vy'
     'ZkhvbWVSZWdpb25JZBgNIAEoDVIQY2VyZkhvbWVSZWdpb25JZBIWCgZvbmxpbmUYDiABKAhSBm'
     '9ubGluZRI2CghsYXN0U2VlbhgPIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCGxh'
-    'c3RTZWVu');
+    'c3RTZWVuEjgKCWtleUV4cGlyeRgQIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCW'
+    'tleUV4cGlyeRIYCgdleHBpcmVkGBEgASgIUgdleHBpcmVkEiIKDGtleVNpZ25hdHVyZRgSIAEo'
+    'DFIMa2V5U2lnbmF0dXJl');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
@@ -429,3 +441,233 @@ final $typed_data.Uint8List dNSConfigDescriptor = $convert.base64Decode(
     'x0ZXJkGAQgAygJUg9leGl0Tm9kZUZpbHRlcmQSKgoQZW5hYmxlZFdvbmRlckROUxgFIAEoCFIQ'
     'ZW5hYmxlZFdvbmRlckROUxpMCgtSb3V0ZXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRInCgV2YW'
     'x1ZRgCIAEoCzIRLnByb3Rvcy5SZXNvbHZlcnNSBXZhbHVlOgI4AQ==');
+
+@$core.Deprecated('Use rotateNodeKeyRequestDescriptor instead')
+const RotateNodeKeyRequest$json = {
+  '1': 'RotateNodeKeyRequest',
+  '2': [
+    {'1': 'oldNodeKey', '3': 1, '4': 1, '5': 9, '10': 'oldNodeKey'},
+    {'1': 'newNodeKey', '3': 2, '4': 1, '5': 9, '10': 'newNodeKey'},
+    {'1': 'oldWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'oldWgPubKey'},
+    {'1': 'newWgPubKey', '3': 4, '4': 1, '5': 9, '10': 'newWgPubKey'},
+    {'1': 'oldRuneKey', '3': 5, '4': 1, '5': 9, '10': 'oldRuneKey'},
+    {'1': 'newRuneKey', '3': 6, '4': 1, '5': 9, '10': 'newRuneKey'},
+    {
+      '1': 'nodeKeySignature',
+      '3': 7,
+      '4': 1,
+      '5': 12,
+      '10': 'nodeKeySignature'
+    },
+  ],
+};
+
+/// Descriptor for `RotateNodeKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rotateNodeKeyRequestDescriptor = $convert.base64Decode(
+    'ChRSb3RhdGVOb2RlS2V5UmVxdWVzdBIeCgpvbGROb2RlS2V5GAEgASgJUgpvbGROb2RlS2V5Eh'
+    '4KCm5ld05vZGVLZXkYAiABKAlSCm5ld05vZGVLZXkSIAoLb2xkV2dQdWJLZXkYAyABKAlSC29s'
+    'ZFdnUHViS2V5EiAKC25ld1dnUHViS2V5GAQgASgJUgtuZXdXZ1B1YktleRIeCgpvbGRSdW5lS2'
+    'V5GAUgASgJUgpvbGRSdW5lS2V5Eh4KCm5ld1J1bmVLZXkYBiABKAlSCm5ld1J1bmVLZXkSKgoQ'
+    'bm9kZUtleVNpZ25hdHVyZRgHIAEoDFIQbm9kZUtleVNpZ25hdHVyZQ==');
+
+@$core.Deprecated('Use rotateNodeKeyResponseDescriptor instead')
+const RotateNodeKeyResponse$json = {
+  '1': 'RotateNodeKeyResponse',
+  '2': [
+    {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+    {
+      '1': 'newKeyExpiry',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'newKeyExpiry'
+    },
+    {'1': 'error', '3': 3, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `RotateNodeKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rotateNodeKeyResponseDescriptor = $convert.base64Decode(
+    'ChVSb3RhdGVOb2RlS2V5UmVzcG9uc2USGAoHc3VjY2VzcxgBIAEoCFIHc3VjY2VzcxI+CgxuZX'
+    'dLZXlFeHBpcnkYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgxuZXdLZXlFeHBp'
+    'cnkSFAoFZXJyb3IYAyABKAlSBWVycm9y');
+
+@$core.Deprecated('Use networkLockInitRequestDescriptor instead')
+const NetworkLockInitRequest$json = {
+  '1': 'NetworkLockInitRequest',
+  '2': [
+    {
+      '1': 'keys',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.NetworkLockKey',
+      '10': 'keys'
+    },
+    {
+      '1': 'disablementSecret',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '10': 'disablementSecret'
+    },
+  ],
+};
+
+/// Descriptor for `NetworkLockInitRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkLockInitRequestDescriptor = $convert.base64Decode(
+    'ChZOZXR3b3JrTG9ja0luaXRSZXF1ZXN0EioKBGtleXMYASADKAsyFi5wcm90b3MuTmV0d29ya0'
+    'xvY2tLZXlSBGtleXMSLAoRZGlzYWJsZW1lbnRTZWNyZXQYAiABKAxSEWRpc2FibGVtZW50U2Vj'
+    'cmV0');
+
+@$core.Deprecated('Use networkLockInitResponseDescriptor instead')
+const NetworkLockInitResponse$json = {
+  '1': 'NetworkLockInitResponse',
+  '2': [
+    {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `NetworkLockInitResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkLockInitResponseDescriptor =
+    $convert.base64Decode(
+        'ChdOZXR3b3JrTG9ja0luaXRSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNzEhQKBW'
+        'Vycm9yGAIgASgJUgVlcnJvcg==');
+
+@$core.Deprecated('Use networkLockSignRequestDescriptor instead')
+const NetworkLockSignRequest$json = {
+  '1': 'NetworkLockSignRequest',
+  '2': [
+    {'1': 'nodeKey', '3': 1, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'rotationPublic', '3': 2, '4': 1, '5': 12, '10': 'rotationPublic'},
+  ],
+};
+
+/// Descriptor for `NetworkLockSignRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkLockSignRequestDescriptor =
+    $convert.base64Decode(
+        'ChZOZXR3b3JrTG9ja1NpZ25SZXF1ZXN0EhgKB25vZGVLZXkYASABKAlSB25vZGVLZXkSJgoOcm'
+        '90YXRpb25QdWJsaWMYAiABKAxSDnJvdGF0aW9uUHVibGlj');
+
+@$core.Deprecated('Use networkLockSignResponseDescriptor instead')
+const NetworkLockSignResponse$json = {
+  '1': 'NetworkLockSignResponse',
+  '2': [
+    {'1': 'signature', '3': 1, '4': 1, '5': 12, '10': 'signature'},
+    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `NetworkLockSignResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkLockSignResponseDescriptor =
+    $convert.base64Decode(
+        'ChdOZXR3b3JrTG9ja1NpZ25SZXNwb25zZRIcCglzaWduYXR1cmUYASABKAxSCXNpZ25hdHVyZR'
+        'IUCgVlcnJvchgCIAEoCVIFZXJyb3I=');
+
+@$core.Deprecated('Use networkLockDisableRequestDescriptor instead')
+const NetworkLockDisableRequest$json = {
+  '1': 'NetworkLockDisableRequest',
+  '2': [
+    {
+      '1': 'disablementSecret',
+      '3': 1,
+      '4': 1,
+      '5': 12,
+      '10': 'disablementSecret'
+    },
+  ],
+};
+
+/// Descriptor for `NetworkLockDisableRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkLockDisableRequestDescriptor =
+    $convert.base64Decode(
+        'ChlOZXR3b3JrTG9ja0Rpc2FibGVSZXF1ZXN0EiwKEWRpc2FibGVtZW50U2VjcmV0GAEgASgMUh'
+        'FkaXNhYmxlbWVudFNlY3JldA==');
+
+@$core.Deprecated('Use networkLockDisableResponseDescriptor instead')
+const NetworkLockDisableResponse$json = {
+  '1': 'NetworkLockDisableResponse',
+  '2': [
+    {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
+  ],
+};
+
+/// Descriptor for `NetworkLockDisableResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkLockDisableResponseDescriptor =
+    $convert.base64Decode(
+        'ChpOZXR3b3JrTG9ja0Rpc2FibGVSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNzEh'
+        'QKBWVycm9yGAIgASgJUgVlcnJvcg==');
+
+@$core.Deprecated('Use networkLockStatusResponseDescriptor instead')
+const NetworkLockStatusResponse$json = {
+  '1': 'NetworkLockStatusResponse',
+  '2': [
+    {'1': 'enabled', '3': 1, '4': 1, '5': 8, '10': 'enabled'},
+    {'1': 'head', '3': 2, '4': 1, '5': 12, '10': 'head'},
+    {'1': 'publicKey', '3': 3, '4': 1, '5': 12, '10': 'publicKey'},
+    {'1': 'nodeKey', '3': 4, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'nodeKeySigned', '3': 5, '4': 1, '5': 8, '10': 'nodeKeySigned'},
+    {
+      '1': 'trustedKeys',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.NetworkLockKey',
+      '10': 'trustedKeys'
+    },
+    {
+      '1': 'filteredPeers',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.FilteredPeer',
+      '10': 'filteredPeers'
+    },
+  ],
+};
+
+/// Descriptor for `NetworkLockStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkLockStatusResponseDescriptor = $convert.base64Decode(
+    'ChlOZXR3b3JrTG9ja1N0YXR1c1Jlc3BvbnNlEhgKB2VuYWJsZWQYASABKAhSB2VuYWJsZWQSEg'
+    'oEaGVhZBgCIAEoDFIEaGVhZBIcCglwdWJsaWNLZXkYAyABKAxSCXB1YmxpY0tleRIYCgdub2Rl'
+    'S2V5GAQgASgJUgdub2RlS2V5EiQKDW5vZGVLZXlTaWduZWQYBSABKAhSDW5vZGVLZXlTaWduZW'
+    'QSOAoLdHJ1c3RlZEtleXMYBiADKAsyFi5wcm90b3MuTmV0d29ya0xvY2tLZXlSC3RydXN0ZWRL'
+    'ZXlzEjoKDWZpbHRlcmVkUGVlcnMYByADKAsyFC5wcm90b3MuRmlsdGVyZWRQZWVyUg1maWx0ZX'
+    'JlZFBlZXJz');
+
+@$core.Deprecated('Use networkLockKeyDescriptor instead')
+const NetworkLockKey$json = {
+  '1': 'NetworkLockKey',
+  '2': [
+    {'1': 'keyId', '3': 1, '4': 1, '5': 12, '10': 'keyId'},
+    {'1': 'publicKey', '3': 2, '4': 1, '5': 12, '10': 'publicKey'},
+    {'1': 'kind', '3': 3, '4': 1, '5': 9, '10': 'kind'},
+    {'1': 'votes', '3': 4, '4': 1, '5': 13, '10': 'votes'},
+    {'1': 'comment', '3': 5, '4': 1, '5': 9, '10': 'comment'},
+  ],
+};
+
+/// Descriptor for `NetworkLockKey`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List networkLockKeyDescriptor = $convert.base64Decode(
+    'Cg5OZXR3b3JrTG9ja0tleRIUCgVrZXlJZBgBIAEoDFIFa2V5SWQSHAoJcHVibGljS2V5GAIgAS'
+    'gMUglwdWJsaWNLZXkSEgoEa2luZBgDIAEoCVIEa2luZBIUCgV2b3RlcxgEIAEoDVIFdm90ZXMS'
+    'GAoHY29tbWVudBgFIAEoCVIHY29tbWVudA==');
+
+@$core.Deprecated('Use filteredPeerDescriptor instead')
+const FilteredPeer$json = {
+  '1': 'FilteredPeer',
+  '2': [
+    {'1': 'nodeId', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'nodeKey', '3': 3, '4': 1, '5': 9, '10': 'nodeKey'},
+    {'1': 'reason', '3': 4, '4': 1, '5': 9, '10': 'reason'},
+  ],
+};
+
+/// Descriptor for `FilteredPeer`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List filteredPeerDescriptor = $convert.base64Decode(
+    'CgxGaWx0ZXJlZFBlZXISFgoGbm9kZUlkGAEgASgEUgZub2RlSWQSEgoEbmFtZRgCIAEoCVIEbm'
+    'FtZRIYCgdub2RlS2V5GAMgASgJUgdub2RlS2V5EhYKBnJlYXNvbhgEIAEoCVIGcmVhc29u');
