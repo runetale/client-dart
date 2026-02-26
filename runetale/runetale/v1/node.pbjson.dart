@@ -259,6 +259,14 @@ const NetworkMapResponse$json = {
       '10': 'domainTelemetryLogId'
     },
     {'1': 'capabilities', '3': 24, '4': 3, '5': 9, '10': 'capabilities'},
+    {
+      '1': 'server_time',
+      '3': 25,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'serverTime'
+    },
   ],
 };
 
@@ -276,7 +284,8 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'VyZlJlZ2lvbklkGBUgASgNUhNkZWZhdWx0Q2VyZlJlZ2lvbklkEigKEHRlbGVtZXRyeV9sb2df'
     'aWQYFiABKAlSDnRlbGVtZXRyeUxvZ0lkEjUKF2RvbWFpbl90ZWxlbWV0cnlfbG9nX2lkGBcgAS'
     'gJUhRkb21haW5UZWxlbWV0cnlMb2dJZBIiCgxjYXBhYmlsaXRpZXMYGCADKAlSDGNhcGFiaWxp'
-    'dGllcw==');
+    'dGllcxI7CgtzZXJ2ZXJfdGltZRgZIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCn'
+    'NlcnZlclRpbWU=');
 
 @$core.Deprecated('Use cerfMapDescriptor instead')
 const CerfMap$json = {

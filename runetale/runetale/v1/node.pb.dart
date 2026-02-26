@@ -727,6 +727,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.String? telemetryLogId,
     $core.String? domainTelemetryLogId,
     $core.Iterable<$core.String>? capabilities,
+    $2.Timestamp? serverTime,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -747,6 +748,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (domainTelemetryLogId != null)
       result.domainTelemetryLogId = domainTelemetryLogId;
     if (capabilities != null) result.capabilities.addAll(capabilities);
+    if (serverTime != null) result.serverTime = serverTime;
     return result;
   }
 
@@ -790,6 +792,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..aOS(22, _omitFieldNames ? '' : 'telemetryLogId')
     ..aOS(23, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..pPS(24, _omitFieldNames ? '' : 'capabilities')
+    ..aOM<$2.Timestamp>(25, _omitFieldNames ? '' : 'serverTime',
+        subBuilder: $2.Timestamp.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -940,6 +944,20 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   /// The client checks these capabilities to enable/disable features.
   @$pb.TagNumber(24)
   $pb.PbList<$core.String> get capabilities => $_getList(15);
+
+  /// server_time is the current timestamp according to the server.
+  /// The client uses this to detect clock skew between local and server time,
+  /// which is critical for accurate key expiry evaluation.
+  @$pb.TagNumber(25)
+  $2.Timestamp get serverTime => $_getN(16);
+  @$pb.TagNumber(25)
+  set serverTime($2.Timestamp value) => $_setField(25, value);
+  @$pb.TagNumber(25)
+  $core.bool hasServerTime() => $_has(16);
+  @$pb.TagNumber(25)
+  void clearServerTime() => $_clearField(25);
+  @$pb.TagNumber(25)
+  $2.Timestamp ensureServerTime() => $_ensure(16);
 }
 
 class CerfMap extends $pb.GeneratedMessage {
