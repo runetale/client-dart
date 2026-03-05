@@ -451,16 +451,12 @@ final $typed_data.Uint8List dNSConfigDescriptor = $convert.base64Decode(
     'ZW5hYmxlZFdvbmRlckROUxpMCgtSb3V0ZXNFbnRyeRIQCgNrZXkYASABKAlSA2tleRInCgV2YW'
     'x1ZRgCIAEoCzIRLnByb3Rvcy5SZXNvbHZlcnNSBXZhbHVlOgI4AQ==');
 
-@$core.Deprecated('Use rotateNodeKeyRequestDescriptor instead')
-const RotateNodeKeyRequest$json = {
-  '1': 'RotateNodeKeyRequest',
+@$core.Deprecated('Use rotateWgKeyRequestDescriptor instead')
+const RotateWgKeyRequest$json = {
+  '1': 'RotateWgKeyRequest',
   '2': [
-    {'1': 'oldNodeKey', '3': 1, '4': 1, '5': 9, '10': 'oldNodeKey'},
-    {'1': 'newNodeKey', '3': 2, '4': 1, '5': 9, '10': 'newNodeKey'},
     {'1': 'oldWgPubKey', '3': 3, '4': 1, '5': 9, '10': 'oldWgPubKey'},
     {'1': 'newWgPubKey', '3': 4, '4': 1, '5': 9, '10': 'newWgPubKey'},
-    {'1': 'oldRuneKey', '3': 5, '4': 1, '5': 9, '10': 'oldRuneKey'},
-    {'1': 'newRuneKey', '3': 6, '4': 1, '5': 9, '10': 'newRuneKey'},
     {
       '1': 'nodeKeySignature',
       '3': 7,
@@ -469,19 +465,25 @@ const RotateNodeKeyRequest$json = {
       '10': 'nodeKeySignature'
     },
   ],
+  '9': [
+    {'1': 1, '2': 2},
+    {'1': 2, '2': 3},
+    {'1': 5, '2': 6},
+    {'1': 6, '2': 7},
+  ],
+  '10': ['oldNodeKey', 'newNodeKey', 'oldRuneKey', 'newRuneKey'],
 };
 
-/// Descriptor for `RotateNodeKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List rotateNodeKeyRequestDescriptor = $convert.base64Decode(
-    'ChRSb3RhdGVOb2RlS2V5UmVxdWVzdBIeCgpvbGROb2RlS2V5GAEgASgJUgpvbGROb2RlS2V5Eh'
-    '4KCm5ld05vZGVLZXkYAiABKAlSCm5ld05vZGVLZXkSIAoLb2xkV2dQdWJLZXkYAyABKAlSC29s'
-    'ZFdnUHViS2V5EiAKC25ld1dnUHViS2V5GAQgASgJUgtuZXdXZ1B1YktleRIeCgpvbGRSdW5lS2'
-    'V5GAUgASgJUgpvbGRSdW5lS2V5Eh4KCm5ld1J1bmVLZXkYBiABKAlSCm5ld1J1bmVLZXkSKgoQ'
-    'bm9kZUtleVNpZ25hdHVyZRgHIAEoDFIQbm9kZUtleVNpZ25hdHVyZQ==');
+/// Descriptor for `RotateWgKeyRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rotateWgKeyRequestDescriptor = $convert.base64Decode(
+    'ChJSb3RhdGVXZ0tleVJlcXVlc3QSIAoLb2xkV2dQdWJLZXkYAyABKAlSC29sZFdnUHViS2V5Ei'
+    'AKC25ld1dnUHViS2V5GAQgASgJUgtuZXdXZ1B1YktleRIqChBub2RlS2V5U2lnbmF0dXJlGAcg'
+    'ASgMUhBub2RlS2V5U2lnbmF0dXJlSgQIARACSgQIAhADSgQIBRAGSgQIBhAHUgpvbGROb2RlS2'
+    'V5UgpuZXdOb2RlS2V5UgpvbGRSdW5lS2V5UgpuZXdSdW5lS2V5');
 
-@$core.Deprecated('Use rotateNodeKeyResponseDescriptor instead')
-const RotateNodeKeyResponse$json = {
-  '1': 'RotateNodeKeyResponse',
+@$core.Deprecated('Use rotateWgKeyResponseDescriptor instead')
+const RotateWgKeyResponse$json = {
+  '1': 'RotateWgKeyResponse',
   '2': [
     {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
     {
@@ -496,11 +498,11 @@ const RotateNodeKeyResponse$json = {
   ],
 };
 
-/// Descriptor for `RotateNodeKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List rotateNodeKeyResponseDescriptor = $convert.base64Decode(
-    'ChVSb3RhdGVOb2RlS2V5UmVzcG9uc2USGAoHc3VjY2VzcxgBIAEoCFIHc3VjY2VzcxI+CgxuZX'
-    'dLZXlFeHBpcnkYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgxuZXdLZXlFeHBp'
-    'cnkSFAoFZXJyb3IYAyABKAlSBWVycm9y');
+/// Descriptor for `RotateWgKeyResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List rotateWgKeyResponseDescriptor = $convert.base64Decode(
+    'ChNSb3RhdGVXZ0tleVJlc3BvbnNlEhgKB3N1Y2Nlc3MYASABKAhSB3N1Y2Nlc3MSPgoMbmV3S2'
+    'V5RXhwaXJ5GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIMbmV3S2V5RXhwaXJ5'
+    'EhQKBWVycm9yGAMgASgJUgVlcnJvcg==');
 
 @$core.Deprecated('Use networkLockInitRequestDescriptor instead')
 const NetworkLockInitRequest$json = {

@@ -55,13 +55,14 @@ class NodeServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// RotateNodeKey rotates the node's keys (NodeKey and WgPubKey) to new values.
+  /// RotateWgKey rotates the node's WireGuard key pair.
+  /// NodeKey remains unchanged; only WgPubKey is rotated.
   /// This is used for seamless key renewal without disconnecting the VPN.
-  $grpc.ResponseFuture<$1.RotateNodeKeyResponse> rotateNodeKey(
-    $1.RotateNodeKeyRequest request, {
+  $grpc.ResponseFuture<$1.RotateWgKeyResponse> rotateWgKey(
+    $1.RotateWgKeyRequest request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$rotateNodeKey, request, options: options);
+    return $createUnaryCall(_$rotateWgKey, request, options: options);
   }
 
   /// Network Lock (TKA) RPCs
@@ -114,11 +115,11 @@ class NodeServiceClient extends $grpc.Client {
           '/protos.NodeService/ConnectNetworkMapTable',
           ($1.NetworkMapRequest value) => value.writeToBuffer(),
           $1.NetworkMapResponse.fromBuffer);
-  static final _$rotateNodeKey =
-      $grpc.ClientMethod<$1.RotateNodeKeyRequest, $1.RotateNodeKeyResponse>(
-          '/protos.NodeService/RotateNodeKey',
-          ($1.RotateNodeKeyRequest value) => value.writeToBuffer(),
-          $1.RotateNodeKeyResponse.fromBuffer);
+  static final _$rotateWgKey =
+      $grpc.ClientMethod<$1.RotateWgKeyRequest, $1.RotateWgKeyResponse>(
+          '/protos.NodeService/RotateWgKey',
+          ($1.RotateWgKeyRequest value) => value.writeToBuffer(),
+          $1.RotateWgKeyResponse.fromBuffer);
   static final _$networkLockInit =
       $grpc.ClientMethod<$1.NetworkLockInitRequest, $1.NetworkLockInitResponse>(
           '/protos.NodeService/NetworkLockInit',
@@ -168,14 +169,14 @@ abstract class NodeServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $1.NetworkMapRequest.fromBuffer(value),
         ($1.NetworkMapResponse value) => value.writeToBuffer()));
     $addMethod(
-        $grpc.ServiceMethod<$1.RotateNodeKeyRequest, $1.RotateNodeKeyResponse>(
-            'RotateNodeKey',
-            rotateNodeKey_Pre,
+        $grpc.ServiceMethod<$1.RotateWgKeyRequest, $1.RotateWgKeyResponse>(
+            'RotateWgKey',
+            rotateWgKey_Pre,
             false,
             false,
             ($core.List<$core.int> value) =>
-                $1.RotateNodeKeyRequest.fromBuffer(value),
-            ($1.RotateNodeKeyResponse value) => value.writeToBuffer()));
+                $1.RotateWgKeyRequest.fromBuffer(value),
+            ($1.RotateWgKeyResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.NetworkLockInitRequest,
             $1.NetworkLockInitResponse>(
         'NetworkLockInit',
@@ -231,14 +232,13 @@ abstract class NodeServiceBase extends $grpc.Service {
   $async.Stream<$1.NetworkMapResponse> connectNetworkMapTable(
       $grpc.ServiceCall call, $async.Stream<$1.NetworkMapRequest> request);
 
-  $async.Future<$1.RotateNodeKeyResponse> rotateNodeKey_Pre(
-      $grpc.ServiceCall $call,
-      $async.Future<$1.RotateNodeKeyRequest> $request) async {
-    return rotateNodeKey($call, await $request);
+  $async.Future<$1.RotateWgKeyResponse> rotateWgKey_Pre($grpc.ServiceCall $call,
+      $async.Future<$1.RotateWgKeyRequest> $request) async {
+    return rotateWgKey($call, await $request);
   }
 
-  $async.Future<$1.RotateNodeKeyResponse> rotateNodeKey(
-      $grpc.ServiceCall call, $1.RotateNodeKeyRequest request);
+  $async.Future<$1.RotateWgKeyResponse> rotateWgKey(
+      $grpc.ServiceCall call, $1.RotateWgKeyRequest request);
 
   $async.Future<$1.NetworkLockInitResponse> networkLockInit_Pre(
       $grpc.ServiceCall $call,

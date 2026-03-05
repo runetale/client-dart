@@ -1492,147 +1492,95 @@ class DNSConfig extends $pb.GeneratedMessage {
   void clearEnabledWonderDNS() => $_clearField(5);
 }
 
-/// RotateNodeKeyRequest is sent when a node wants to rotate its keys.
-/// The server validates the old keys and updates to the new keys.
-class RotateNodeKeyRequest extends $pb.GeneratedMessage {
-  factory RotateNodeKeyRequest({
-    $core.String? oldNodeKey,
-    $core.String? newNodeKey,
+/// RotateWgKeyRequest is sent when a node wants to rotate its WireGuard key.
+/// NodeKey is not rotated; the server identifies the node via gRPC metadata.
+class RotateWgKeyRequest extends $pb.GeneratedMessage {
+  factory RotateWgKeyRequest({
     $core.String? oldWgPubKey,
     $core.String? newWgPubKey,
-    $core.String? oldRuneKey,
-    $core.String? newRuneKey,
     $core.List<$core.int>? nodeKeySignature,
   }) {
     final result = create();
-    if (oldNodeKey != null) result.oldNodeKey = oldNodeKey;
-    if (newNodeKey != null) result.newNodeKey = newNodeKey;
     if (oldWgPubKey != null) result.oldWgPubKey = oldWgPubKey;
     if (newWgPubKey != null) result.newWgPubKey = newWgPubKey;
-    if (oldRuneKey != null) result.oldRuneKey = oldRuneKey;
-    if (newRuneKey != null) result.newRuneKey = newRuneKey;
     if (nodeKeySignature != null) result.nodeKeySignature = nodeKeySignature;
     return result;
   }
 
-  RotateNodeKeyRequest._();
+  RotateWgKeyRequest._();
 
-  factory RotateNodeKeyRequest.fromBuffer($core.List<$core.int> data,
+  factory RotateWgKeyRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory RotateNodeKeyRequest.fromJson($core.String json,
+  factory RotateWgKeyRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'RotateNodeKeyRequest',
+      _omitMessageNames ? '' : 'RotateWgKeyRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'oldNodeKey', protoName: 'oldNodeKey')
-    ..aOS(2, _omitFieldNames ? '' : 'newNodeKey', protoName: 'newNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'oldWgPubKey', protoName: 'oldWgPubKey')
     ..aOS(4, _omitFieldNames ? '' : 'newWgPubKey', protoName: 'newWgPubKey')
-    ..aOS(5, _omitFieldNames ? '' : 'oldRuneKey', protoName: 'oldRuneKey')
-    ..aOS(6, _omitFieldNames ? '' : 'newRuneKey', protoName: 'newRuneKey')
     ..a<$core.List<$core.int>>(
         7, _omitFieldNames ? '' : 'nodeKeySignature', $pb.PbFieldType.OY,
         protoName: 'nodeKeySignature')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RotateNodeKeyRequest clone() => deepCopy();
+  RotateWgKeyRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RotateNodeKeyRequest copyWith(void Function(RotateNodeKeyRequest) updates) =>
-      super.copyWith((message) => updates(message as RotateNodeKeyRequest))
-          as RotateNodeKeyRequest;
+  RotateWgKeyRequest copyWith(void Function(RotateWgKeyRequest) updates) =>
+      super.copyWith((message) => updates(message as RotateWgKeyRequest))
+          as RotateWgKeyRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RotateNodeKeyRequest create() => RotateNodeKeyRequest._();
+  static RotateWgKeyRequest create() => RotateWgKeyRequest._();
   @$core.override
-  RotateNodeKeyRequest createEmptyInstance() => create();
+  RotateWgKeyRequest createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static RotateNodeKeyRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<RotateNodeKeyRequest>(create);
-  static RotateNodeKeyRequest? _defaultInstance;
-
-  /// oldNodeKey is the current node key (for verification)
-  @$pb.TagNumber(1)
-  $core.String get oldNodeKey => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set oldNodeKey($core.String value) => $_setString(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasOldNodeKey() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearOldNodeKey() => $_clearField(1);
-
-  /// newNodeKey is the new node key to rotate to
-  @$pb.TagNumber(2)
-  $core.String get newNodeKey => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set newNodeKey($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasNewNodeKey() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearNewNodeKey() => $_clearField(2);
+  static RotateWgKeyRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RotateWgKeyRequest>(create);
+  static RotateWgKeyRequest? _defaultInstance;
 
   /// oldWgPubKey is the current WireGuard public key (for verification)
   @$pb.TagNumber(3)
-  $core.String get oldWgPubKey => $_getSZ(2);
+  $core.String get oldWgPubKey => $_getSZ(0);
   @$pb.TagNumber(3)
-  set oldWgPubKey($core.String value) => $_setString(2, value);
+  set oldWgPubKey($core.String value) => $_setString(0, value);
   @$pb.TagNumber(3)
-  $core.bool hasOldWgPubKey() => $_has(2);
+  $core.bool hasOldWgPubKey() => $_has(0);
   @$pb.TagNumber(3)
   void clearOldWgPubKey() => $_clearField(3);
 
   /// newWgPubKey is the new WireGuard public key to rotate to
   @$pb.TagNumber(4)
-  $core.String get newWgPubKey => $_getSZ(3);
+  $core.String get newWgPubKey => $_getSZ(1);
   @$pb.TagNumber(4)
-  set newWgPubKey($core.String value) => $_setString(3, value);
+  set newWgPubKey($core.String value) => $_setString(1, value);
   @$pb.TagNumber(4)
-  $core.bool hasNewWgPubKey() => $_has(3);
+  $core.bool hasNewWgPubKey() => $_has(1);
   @$pb.TagNumber(4)
   void clearNewWgPubKey() => $_clearField(4);
-
-  /// oldRuneKey is the current Rune key (for verification)
-  @$pb.TagNumber(5)
-  $core.String get oldRuneKey => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set oldRuneKey($core.String value) => $_setString(4, value);
-  @$pb.TagNumber(5)
-  $core.bool hasOldRuneKey() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearOldRuneKey() => $_clearField(5);
-
-  /// newRuneKey is the new Rune key to rotate to
-  @$pb.TagNumber(6)
-  $core.String get newRuneKey => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set newRuneKey($core.String value) => $_setString(5, value);
-  @$pb.TagNumber(6)
-  $core.bool hasNewRuneKey() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearNewRuneKey() => $_clearField(6);
 
   /// nodeKeySignature is the new NodeKeySignature if Network Lock is enabled.
   /// This must be signed by the node's rotation key or a trusted NL key.
   @$pb.TagNumber(7)
-  $core.List<$core.int> get nodeKeySignature => $_getN(6);
+  $core.List<$core.int> get nodeKeySignature => $_getN(2);
   @$pb.TagNumber(7)
-  set nodeKeySignature($core.List<$core.int> value) => $_setBytes(6, value);
+  set nodeKeySignature($core.List<$core.int> value) => $_setBytes(2, value);
   @$pb.TagNumber(7)
-  $core.bool hasNodeKeySignature() => $_has(6);
+  $core.bool hasNodeKeySignature() => $_has(2);
   @$pb.TagNumber(7)
   void clearNodeKeySignature() => $_clearField(7);
 }
 
-/// RotateNodeKeyResponse is returned after a successful key rotation.
-class RotateNodeKeyResponse extends $pb.GeneratedMessage {
-  factory RotateNodeKeyResponse({
+/// RotateWgKeyResponse is returned after a successful WireGuard key rotation.
+class RotateWgKeyResponse extends $pb.GeneratedMessage {
+  factory RotateWgKeyResponse({
     $core.bool? success,
     $2.Timestamp? newKeyExpiry,
     $core.String? error,
@@ -1644,17 +1592,17 @@ class RotateNodeKeyResponse extends $pb.GeneratedMessage {
     return result;
   }
 
-  RotateNodeKeyResponse._();
+  RotateWgKeyResponse._();
 
-  factory RotateNodeKeyResponse.fromBuffer($core.List<$core.int> data,
+  factory RotateWgKeyResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory RotateNodeKeyResponse.fromJson($core.String json,
+  factory RotateWgKeyResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'RotateNodeKeyResponse',
+      _omitMessageNames ? '' : 'RotateWgKeyResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'success')
@@ -1664,24 +1612,23 @@ class RotateNodeKeyResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RotateNodeKeyResponse clone() => deepCopy();
+  RotateWgKeyResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RotateNodeKeyResponse copyWith(
-          void Function(RotateNodeKeyResponse) updates) =>
-      super.copyWith((message) => updates(message as RotateNodeKeyResponse))
-          as RotateNodeKeyResponse;
+  RotateWgKeyResponse copyWith(void Function(RotateWgKeyResponse) updates) =>
+      super.copyWith((message) => updates(message as RotateWgKeyResponse))
+          as RotateWgKeyResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RotateNodeKeyResponse create() => RotateNodeKeyResponse._();
+  static RotateWgKeyResponse create() => RotateWgKeyResponse._();
   @$core.override
-  RotateNodeKeyResponse createEmptyInstance() => create();
+  RotateWgKeyResponse createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static RotateNodeKeyResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<RotateNodeKeyResponse>(create);
-  static RotateNodeKeyResponse? _defaultInstance;
+  static RotateWgKeyResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RotateWgKeyResponse>(create);
+  static RotateWgKeyResponse? _defaultInstance;
 
   /// success indicates whether the key rotation was successful
   @$pb.TagNumber(1)
@@ -1693,7 +1640,7 @@ class RotateNodeKeyResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSuccess() => $_clearField(1);
 
-  /// newKeyExpiry is the new expiry time for the rotated keys
+  /// newKeyExpiry is the new expiry time for the rotated key
   @$pb.TagNumber(2)
   $2.Timestamp get newKeyExpiry => $_getN(1);
   @$pb.TagNumber(2)
