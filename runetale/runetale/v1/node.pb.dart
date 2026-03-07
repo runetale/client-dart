@@ -1090,6 +1090,8 @@ class CerfNode extends $pb.GeneratedMessage {
     $core.bool? websocketOnly,
     $core.bool? forceHttp,
     $core.bool? stunOnly,
+    $core.String? ipv4,
+    $core.String? ipv6,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -1099,6 +1101,8 @@ class CerfNode extends $pb.GeneratedMessage {
     if (websocketOnly != null) result.websocketOnly = websocketOnly;
     if (forceHttp != null) result.forceHttp = forceHttp;
     if (stunOnly != null) result.stunOnly = stunOnly;
+    if (ipv4 != null) result.ipv4 = ipv4;
+    if (ipv6 != null) result.ipv6 = ipv6;
     return result;
   }
 
@@ -1124,6 +1128,8 @@ class CerfNode extends $pb.GeneratedMessage {
     ..aOB(5, _omitFieldNames ? '' : 'websocketOnly', protoName: 'websocketOnly')
     ..aOB(6, _omitFieldNames ? '' : 'forceHttp', protoName: 'forceHttp')
     ..aOB(7, _omitFieldNames ? '' : 'stunOnly', protoName: 'stunOnly')
+    ..aOS(8, _omitFieldNames ? '' : 'ipv4')
+    ..aOS(9, _omitFieldNames ? '' : 'ipv6')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1206,6 +1212,24 @@ class CerfNode extends $pb.GeneratedMessage {
   $core.bool hasStunOnly() => $_has(6);
   @$pb.TagNumber(7)
   void clearStunOnly() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get ipv4 => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set ipv4($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasIpv4() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearIpv4() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get ipv6 => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set ipv6($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasIpv6() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearIpv6() => $_clearField(9);
 }
 
 class AppLinker extends $pb.GeneratedMessage {

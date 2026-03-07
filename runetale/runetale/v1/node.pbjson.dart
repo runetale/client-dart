@@ -341,6 +341,8 @@ const CerfNode$json = {
     {'1': 'websocketOnly', '3': 5, '4': 1, '5': 8, '10': 'websocketOnly'},
     {'1': 'forceHttp', '3': 6, '4': 1, '5': 8, '10': 'forceHttp'},
     {'1': 'stunOnly', '3': 7, '4': 1, '5': 8, '10': 'stunOnly'},
+    {'1': 'ipv4', '3': 8, '4': 1, '5': 9, '10': 'ipv4'},
+    {'1': 'ipv6', '3': 9, '4': 1, '5': 9, '10': 'ipv6'},
   ],
 };
 
@@ -349,7 +351,8 @@ final $typed_data.Uint8List cerfNodeDescriptor = $convert.base64Decode(
     'CghDZXJmTm9kZRISCgRuYW1lGAEgASgJUgRuYW1lEhoKCGhvc3ROYW1lGAIgASgJUghob3N0Tm'
     'FtZRIaCghjZXJmUG9ydBgDIAEoDVIIY2VyZlBvcnQSGgoIc3R1blBvcnQYBCABKA1SCHN0dW5Q'
     'b3J0EiQKDXdlYnNvY2tldE9ubHkYBSABKAhSDXdlYnNvY2tldE9ubHkSHAoJZm9yY2VIdHRwGA'
-    'YgASgIUglmb3JjZUh0dHASGgoIc3R1bk9ubHkYByABKAhSCHN0dW5Pbmx5');
+    'YgASgIUglmb3JjZUh0dHASGgoIc3R1bk9ubHkYByABKAhSCHN0dW5Pbmx5EhIKBGlwdjQYCCAB'
+    'KAlSBGlwdjQSEgoEaXB2NhgJIAEoCVIEaXB2Ng==');
 
 @$core.Deprecated('Use appLinkerDescriptor instead')
 const AppLinker$json = {
