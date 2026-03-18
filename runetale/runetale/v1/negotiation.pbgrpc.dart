@@ -54,11 +54,11 @@ class NegotiationServiceClient extends $grpc.Client {
     return $createUnaryCall(_$candidate, request, options: options);
   }
 
-  $grpc.ResponseStream<$0.NegotiationMessage> connect(
+  $grpc.ResponseStream<$0.NegotiationMessage> negotiate(
     $async.Stream<$0.NegotiationMessage> request, {
     $grpc.CallOptions? options,
   }) {
-    return $createStreamingCall(_$connect, request, options: options);
+    return $createStreamingCall(_$negotiate, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.Empty> fleaMessage(
@@ -82,9 +82,9 @@ class NegotiationServiceClient extends $grpc.Client {
       '/protos.NegotiationService/Candidate',
       ($0.CandidateRequest value) => value.writeToBuffer(),
       $1.Empty.fromBuffer);
-  static final _$connect =
+  static final _$negotiate =
       $grpc.ClientMethod<$0.NegotiationMessage, $0.NegotiationMessage>(
-          '/protos.NegotiationService/Connect',
+          '/protos.NegotiationService/Negotiate',
           ($0.NegotiationMessage value) => value.writeToBuffer(),
           $0.NegotiationMessage.fromBuffer);
   static final _$fleaMessage =
@@ -122,8 +122,8 @@ abstract class NegotiationServiceBase extends $grpc.Service {
         ($1.Empty value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.NegotiationMessage, $0.NegotiationMessage>(
-            'Connect',
-            connect,
+            'Negotiate',
+            negotiate,
             true,
             true,
             ($core.List<$core.int> value) =>
@@ -162,7 +162,7 @@ abstract class NegotiationServiceBase extends $grpc.Service {
   $async.Future<$1.Empty> candidate(
       $grpc.ServiceCall call, $0.CandidateRequest request);
 
-  $async.Stream<$0.NegotiationMessage> connect(
+  $async.Stream<$0.NegotiationMessage> negotiate(
       $grpc.ServiceCall call, $async.Stream<$0.NegotiationMessage> request);
 
   $async.Future<$1.Empty> fleaMessage_Pre($grpc.ServiceCall $call,
