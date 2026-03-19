@@ -98,6 +98,63 @@ class NodeServiceClient extends $grpc.Client {
     return $createUnaryCall(_$networkLockStatus, request, options: options);
   }
 
+  /// SSH Session Management RPCs
+  /// RegisterSession registers a new SSH session with the server.
+  $grpc.ResponseFuture<$1.RegisterSessionResponse> registerSession(
+    $1.RegisterSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$registerSession, request, options: options);
+  }
+
+  /// UpdateSessionState updates the state of an SSH session.
+  $grpc.ResponseFuture<$1.UpdateSessionStateResponse> updateSessionState(
+    $1.UpdateSessionStateRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$updateSessionState, request, options: options);
+  }
+
+  /// GetSession retrieves an SSH session by ID.
+  $grpc.ResponseFuture<$1.GetSessionResponse> getSession(
+    $1.GetSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getSession, request, options: options);
+  }
+
+  /// ListSessions lists SSH sessions for the current node.
+  $grpc.ResponseFuture<$1.ListSessionsResponse> listSessions(
+    $1.ListSessionsRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$listSessions, request, options: options);
+  }
+
+  /// ResumeSession resumes a suspended SSH session.
+  $grpc.ResponseFuture<$1.ResumeSessionResponse> resumeSession(
+    $1.ResumeSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$resumeSession, request, options: options);
+  }
+
+  /// ShareSession creates a share token for an SSH session.
+  $grpc.ResponseFuture<$1.ShareSessionResponse> shareSession(
+    $1.ShareSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$shareSession, request, options: options);
+  }
+
+  /// PublishSession publishes an SSH session to rune.host.
+  $grpc.ResponseFuture<$1.PublishSessionResponse> publishSession(
+    $1.PublishSessionRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$publishSession, request, options: options);
+  }
+
   // method descriptors
 
   static final _$composeNode =
@@ -140,6 +197,41 @@ class NodeServiceClient extends $grpc.Client {
           '/protos.NodeService/NetworkLockStatus',
           ($0.Empty value) => value.writeToBuffer(),
           $1.NetworkLockStatusResponse.fromBuffer);
+  static final _$registerSession =
+      $grpc.ClientMethod<$1.RegisterSessionRequest, $1.RegisterSessionResponse>(
+          '/protos.NodeService/RegisterSession',
+          ($1.RegisterSessionRequest value) => value.writeToBuffer(),
+          $1.RegisterSessionResponse.fromBuffer);
+  static final _$updateSessionState = $grpc.ClientMethod<
+          $1.UpdateSessionStateRequest, $1.UpdateSessionStateResponse>(
+      '/protos.NodeService/UpdateSessionState',
+      ($1.UpdateSessionStateRequest value) => value.writeToBuffer(),
+      $1.UpdateSessionStateResponse.fromBuffer);
+  static final _$getSession =
+      $grpc.ClientMethod<$1.GetSessionRequest, $1.GetSessionResponse>(
+          '/protos.NodeService/GetSession',
+          ($1.GetSessionRequest value) => value.writeToBuffer(),
+          $1.GetSessionResponse.fromBuffer);
+  static final _$listSessions =
+      $grpc.ClientMethod<$1.ListSessionsRequest, $1.ListSessionsResponse>(
+          '/protos.NodeService/ListSessions',
+          ($1.ListSessionsRequest value) => value.writeToBuffer(),
+          $1.ListSessionsResponse.fromBuffer);
+  static final _$resumeSession =
+      $grpc.ClientMethod<$1.ResumeSessionRequest, $1.ResumeSessionResponse>(
+          '/protos.NodeService/ResumeSession',
+          ($1.ResumeSessionRequest value) => value.writeToBuffer(),
+          $1.ResumeSessionResponse.fromBuffer);
+  static final _$shareSession =
+      $grpc.ClientMethod<$1.ShareSessionRequest, $1.ShareSessionResponse>(
+          '/protos.NodeService/ShareSession',
+          ($1.ShareSessionRequest value) => value.writeToBuffer(),
+          $1.ShareSessionResponse.fromBuffer);
+  static final _$publishSession =
+      $grpc.ClientMethod<$1.PublishSessionRequest, $1.PublishSessionResponse>(
+          '/protos.NodeService/PublishSession',
+          ($1.PublishSessionRequest value) => value.writeToBuffer(),
+          $1.PublishSessionResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.NodeService')
@@ -211,6 +303,67 @@ abstract class NodeServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Empty.fromBuffer(value),
         ($1.NetworkLockStatusResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.RegisterSessionRequest,
+            $1.RegisterSessionResponse>(
+        'RegisterSession',
+        registerSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.RegisterSessionRequest.fromBuffer(value),
+        ($1.RegisterSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.UpdateSessionStateRequest,
+            $1.UpdateSessionStateResponse>(
+        'UpdateSessionState',
+        updateSessionState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.UpdateSessionStateRequest.fromBuffer(value),
+        ($1.UpdateSessionStateResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetSessionRequest, $1.GetSessionResponse>(
+        'GetSession',
+        getSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetSessionRequest.fromBuffer(value),
+        ($1.GetSessionResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$1.ListSessionsRequest, $1.ListSessionsResponse>(
+            'ListSessions',
+            listSessions_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.ListSessionsRequest.fromBuffer(value),
+            ($1.ListSessionsResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$1.ResumeSessionRequest, $1.ResumeSessionResponse>(
+            'ResumeSession',
+            resumeSession_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.ResumeSessionRequest.fromBuffer(value),
+            ($1.ResumeSessionResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$1.ShareSessionRequest, $1.ShareSessionResponse>(
+            'ShareSession',
+            shareSession_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.ShareSessionRequest.fromBuffer(value),
+            ($1.ShareSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.PublishSessionRequest,
+            $1.PublishSessionResponse>(
+        'PublishSession',
+        publishSession_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.PublishSessionRequest.fromBuffer(value),
+        ($1.PublishSessionResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.ComposeNodeResponse> composeNode_Pre(
@@ -274,4 +427,66 @@ abstract class NodeServiceBase extends $grpc.Service {
 
   $async.Future<$1.NetworkLockStatusResponse> networkLockStatus(
       $grpc.ServiceCall call, $0.Empty request);
+
+  $async.Future<$1.RegisterSessionResponse> registerSession_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$1.RegisterSessionRequest> $request) async {
+    return registerSession($call, await $request);
+  }
+
+  $async.Future<$1.RegisterSessionResponse> registerSession(
+      $grpc.ServiceCall call, $1.RegisterSessionRequest request);
+
+  $async.Future<$1.UpdateSessionStateResponse> updateSessionState_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$1.UpdateSessionStateRequest> $request) async {
+    return updateSessionState($call, await $request);
+  }
+
+  $async.Future<$1.UpdateSessionStateResponse> updateSessionState(
+      $grpc.ServiceCall call, $1.UpdateSessionStateRequest request);
+
+  $async.Future<$1.GetSessionResponse> getSession_Pre($grpc.ServiceCall $call,
+      $async.Future<$1.GetSessionRequest> $request) async {
+    return getSession($call, await $request);
+  }
+
+  $async.Future<$1.GetSessionResponse> getSession(
+      $grpc.ServiceCall call, $1.GetSessionRequest request);
+
+  $async.Future<$1.ListSessionsResponse> listSessions_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$1.ListSessionsRequest> $request) async {
+    return listSessions($call, await $request);
+  }
+
+  $async.Future<$1.ListSessionsResponse> listSessions(
+      $grpc.ServiceCall call, $1.ListSessionsRequest request);
+
+  $async.Future<$1.ResumeSessionResponse> resumeSession_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$1.ResumeSessionRequest> $request) async {
+    return resumeSession($call, await $request);
+  }
+
+  $async.Future<$1.ResumeSessionResponse> resumeSession(
+      $grpc.ServiceCall call, $1.ResumeSessionRequest request);
+
+  $async.Future<$1.ShareSessionResponse> shareSession_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$1.ShareSessionRequest> $request) async {
+    return shareSession($call, await $request);
+  }
+
+  $async.Future<$1.ShareSessionResponse> shareSession(
+      $grpc.ServiceCall call, $1.ShareSessionRequest request);
+
+  $async.Future<$1.PublishSessionResponse> publishSession_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$1.PublishSessionRequest> $request) async {
+    return publishSession($call, await $request);
+  }
+
+  $async.Future<$1.PublishSessionResponse> publishSession(
+      $grpc.ServiceCall call, $1.PublishSessionRequest request);
 }
