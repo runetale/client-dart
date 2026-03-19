@@ -267,6 +267,14 @@ const NetworkMapResponse$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'serverTime'
     },
+    {
+      '1': 'ssh_policy',
+      '3': 26,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.SSHPolicy',
+      '10': 'sshPolicy'
+    },
   ],
 };
 
@@ -285,7 +293,8 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'aWQYFiABKAlSDnRlbGVtZXRyeUxvZ0lkEjUKF2RvbWFpbl90ZWxlbWV0cnlfbG9nX2lkGBcgAS'
     'gJUhRkb21haW5UZWxlbWV0cnlMb2dJZBIiCgxjYXBhYmlsaXRpZXMYGCADKAlSDGNhcGFiaWxp'
     'dGllcxI7CgtzZXJ2ZXJfdGltZRgZIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCn'
-    'NlcnZlclRpbWU=');
+    'NlcnZlclRpbWUSMAoKc3NoX3BvbGljeRgaIAEoCzIRLnByb3Rvcy5TU0hQb2xpY3lSCXNzaFBv'
+    'bGljeQ==');
 
 @$core.Deprecated('Use cerfMapDescriptor instead')
 const CerfMap$json = {
@@ -685,3 +694,181 @@ const FilteredPeer$json = {
 final $typed_data.Uint8List filteredPeerDescriptor = $convert.base64Decode(
     'CgxGaWx0ZXJlZFBlZXISFgoGbm9kZUlkGAEgASgEUgZub2RlSWQSEgoEbmFtZRgCIAEoCVIEbm'
     'FtZRIYCgdub2RlS2V5GAMgASgJUgdub2RlS2V5EhYKBnJlYXNvbhgEIAEoCVIGcmVhc29u');
+
+@$core.Deprecated('Use sSHPolicyDescriptor instead')
+const SSHPolicy$json = {
+  '1': 'SSHPolicy',
+  '2': [
+    {
+      '1': 'rules',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.SSHRule',
+      '10': 'rules'
+    },
+  ],
+};
+
+/// Descriptor for `SSHPolicy`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sSHPolicyDescriptor = $convert.base64Decode(
+    'CglTU0hQb2xpY3kSJQoFcnVsZXMYASADKAsyDy5wcm90b3MuU1NIUnVsZVIFcnVsZXM=');
+
+@$core.Deprecated('Use sSHRuleDescriptor instead')
+const SSHRule$json = {
+  '1': 'SSHRule',
+  '2': [
+    {'1': 'rule_id', '3': 1, '4': 1, '5': 9, '10': 'ruleId'},
+    {'1': 'rule_expires', '3': 2, '4': 1, '5': 3, '10': 'ruleExpires'},
+    {
+      '1': 'principals',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.SSHPrincipal',
+      '10': 'principals'
+    },
+    {
+      '1': 'ssh_users',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.SSHRule.SshUsersEntry',
+      '10': 'sshUsers'
+    },
+    {
+      '1': 'action',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.SSHAction',
+      '10': 'action'
+    },
+    {'1': 'accept_env', '3': 6, '4': 3, '5': 9, '10': 'acceptEnv'},
+    {'1': 'created_by', '3': 7, '4': 1, '5': 9, '10': 'createdBy'},
+    {'1': 'created_at', '3': 8, '4': 1, '5': 3, '10': 'createdAt'},
+  ],
+  '3': [SSHRule_SshUsersEntry$json],
+};
+
+@$core.Deprecated('Use sSHRuleDescriptor instead')
+const SSHRule_SshUsersEntry$json = {
+  '1': 'SshUsersEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `SSHRule`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sSHRuleDescriptor = $convert.base64Decode(
+    'CgdTU0hSdWxlEhcKB3J1bGVfaWQYASABKAlSBnJ1bGVJZBIhCgxydWxlX2V4cGlyZXMYAiABKA'
+    'NSC3J1bGVFeHBpcmVzEjQKCnByaW5jaXBhbHMYAyADKAsyFC5wcm90b3MuU1NIUHJpbmNpcGFs'
+    'UgpwcmluY2lwYWxzEjoKCXNzaF91c2VycxgEIAMoCzIdLnByb3Rvcy5TU0hSdWxlLlNzaFVzZX'
+    'JzRW50cnlSCHNzaFVzZXJzEikKBmFjdGlvbhgFIAEoCzIRLnByb3Rvcy5TU0hBY3Rpb25SBmFj'
+    'dGlvbhIdCgphY2NlcHRfZW52GAYgAygJUglhY2NlcHRFbnYSHQoKY3JlYXRlZF9ieRgHIAEoCV'
+    'IJY3JlYXRlZEJ5Eh0KCmNyZWF0ZWRfYXQYCCABKANSCWNyZWF0ZWRBdBo7Cg1Tc2hVc2Vyc0Vu'
+    'dHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAE=');
+
+@$core.Deprecated('Use sSHPrincipalDescriptor instead')
+const SSHPrincipal$json = {
+  '1': 'SSHPrincipal',
+  '2': [
+    {'1': 'node_id', '3': 1, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'node_ip', '3': 2, '4': 1, '5': 9, '10': 'nodeIp'},
+    {'1': 'user_id', '3': 3, '4': 1, '5': 4, '10': 'userId'},
+    {'1': 'user_login', '3': 4, '4': 1, '5': 9, '10': 'userLogin'},
+    {'1': 'any', '3': 5, '4': 1, '5': 8, '10': 'any'},
+    {'1': 'fleet_ids', '3': 6, '4': 3, '5': 9, '10': 'fleetIds'},
+    {'1': 'group_ids', '3': 7, '4': 3, '5': 9, '10': 'groupIds'},
+    {'1': 'pub_keys', '3': 8, '4': 3, '5': 9, '10': 'pubKeys'},
+  ],
+};
+
+/// Descriptor for `SSHPrincipal`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sSHPrincipalDescriptor = $convert.base64Decode(
+    'CgxTU0hQcmluY2lwYWwSFwoHbm9kZV9pZBgBIAEoBFIGbm9kZUlkEhcKB25vZGVfaXAYAiABKA'
+    'lSBm5vZGVJcBIXCgd1c2VyX2lkGAMgASgEUgZ1c2VySWQSHQoKdXNlcl9sb2dpbhgEIAEoCVIJ'
+    'dXNlckxvZ2luEhAKA2FueRgFIAEoCFIDYW55EhsKCWZsZWV0X2lkcxgGIAMoCVIIZmxlZXRJZH'
+    'MSGwoJZ3JvdXBfaWRzGAcgAygJUghncm91cElkcxIZCghwdWJfa2V5cxgIIAMoCVIHcHViS2V5'
+    'cw==');
+
+@$core.Deprecated('Use sSHActionDescriptor instead')
+const SSHAction$json = {
+  '1': 'SSHAction',
+  '2': [
+    {'1': 'message', '3': 1, '4': 1, '5': 9, '10': 'message'},
+    {'1': 'reject', '3': 2, '4': 1, '5': 8, '10': 'reject'},
+    {'1': 'accept', '3': 3, '4': 1, '5': 8, '10': 'accept'},
+    {'1': 'session_duration', '3': 4, '4': 1, '5': 13, '10': 'sessionDuration'},
+    {
+      '1': 'allow_agent_forwarding',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'allowAgentForwarding'
+    },
+    {
+      '1': 'allow_local_port_forwarding',
+      '3': 6,
+      '4': 1,
+      '5': 8,
+      '10': 'allowLocalPortForwarding'
+    },
+    {
+      '1': 'allow_remote_port_forwarding',
+      '3': 7,
+      '4': 1,
+      '5': 8,
+      '10': 'allowRemotePortForwarding'
+    },
+    {'1': 'recorders', '3': 8, '4': 3, '5': 9, '10': 'recorders'},
+    {
+      '1': 'on_recording_failure',
+      '3': 9,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.SSHRecorderFailureAction',
+      '10': 'onRecordingFailure'
+    },
+  ],
+};
+
+/// Descriptor for `SSHAction`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sSHActionDescriptor = $convert.base64Decode(
+    'CglTU0hBY3Rpb24SGAoHbWVzc2FnZRgBIAEoCVIHbWVzc2FnZRIWCgZyZWplY3QYAiABKAhSBn'
+    'JlamVjdBIWCgZhY2NlcHQYAyABKAhSBmFjY2VwdBIpChBzZXNzaW9uX2R1cmF0aW9uGAQgASgN'
+    'Ug9zZXNzaW9uRHVyYXRpb24SNAoWYWxsb3dfYWdlbnRfZm9yd2FyZGluZxgFIAEoCFIUYWxsb3'
+    'dBZ2VudEZvcndhcmRpbmcSPQobYWxsb3dfbG9jYWxfcG9ydF9mb3J3YXJkaW5nGAYgASgIUhhh'
+    'bGxvd0xvY2FsUG9ydEZvcndhcmRpbmcSPwocYWxsb3dfcmVtb3RlX3BvcnRfZm9yd2FyZGluZx'
+    'gHIAEoCFIZYWxsb3dSZW1vdGVQb3J0Rm9yd2FyZGluZxIcCglyZWNvcmRlcnMYCCADKAlSCXJl'
+    'Y29yZGVycxJSChRvbl9yZWNvcmRpbmdfZmFpbHVyZRgJIAEoCzIgLnByb3Rvcy5TU0hSZWNvcm'
+    'RlckZhaWx1cmVBY3Rpb25SEm9uUmVjb3JkaW5nRmFpbHVyZQ==');
+
+@$core.Deprecated('Use sSHRecorderFailureActionDescriptor instead')
+const SSHRecorderFailureAction$json = {
+  '1': 'SSHRecorderFailureAction',
+  '2': [
+    {
+      '1': 'reject_session_with_message',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '10': 'rejectSessionWithMessage'
+    },
+    {
+      '1': 'terminate_session_with_message',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'terminateSessionWithMessage'
+    },
+  ],
+};
+
+/// Descriptor for `SSHRecorderFailureAction`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sSHRecorderFailureActionDescriptor = $convert.base64Decode(
+    'ChhTU0hSZWNvcmRlckZhaWx1cmVBY3Rpb24SPQobcmVqZWN0X3Nlc3Npb25fd2l0aF9tZXNzYW'
+    'dlGAEgASgJUhhyZWplY3RTZXNzaW9uV2l0aE1lc3NhZ2USQwoedGVybWluYXRlX3Nlc3Npb25f'
+    'd2l0aF9tZXNzYWdlGAIgASgJUht0ZXJtaW5hdGVTZXNzaW9uV2l0aE1lc3NhZ2U=');

@@ -728,6 +728,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.String? domainTelemetryLogId,
     $core.Iterable<$core.String>? capabilities,
     $2.Timestamp? serverTime,
+    SSHPolicy? sshPolicy,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -749,6 +750,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
       result.domainTelemetryLogId = domainTelemetryLogId;
     if (capabilities != null) result.capabilities.addAll(capabilities);
     if (serverTime != null) result.serverTime = serverTime;
+    if (sshPolicy != null) result.sshPolicy = sshPolicy;
     return result;
   }
 
@@ -794,6 +796,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..pPS(24, _omitFieldNames ? '' : 'capabilities')
     ..aOM<$2.Timestamp>(25, _omitFieldNames ? '' : 'serverTime',
         subBuilder: $2.Timestamp.create)
+    ..aOM<SSHPolicy>(26, _omitFieldNames ? '' : 'sshPolicy',
+        subBuilder: SSHPolicy.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -958,6 +962,19 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   void clearServerTime() => $_clearField(25);
   @$pb.TagNumber(25)
   $2.Timestamp ensureServerTime() => $_ensure(16);
+
+  /// ssh_policy defines SSH access control rules for this node.
+  /// If set, the node should run an SSH server with these rules.
+  @$pb.TagNumber(26)
+  SSHPolicy get sshPolicy => $_getN(17);
+  @$pb.TagNumber(26)
+  set sshPolicy(SSHPolicy value) => $_setField(26, value);
+  @$pb.TagNumber(26)
+  $core.bool hasSshPolicy() => $_has(17);
+  @$pb.TagNumber(26)
+  void clearSshPolicy() => $_clearField(26);
+  @$pb.TagNumber(26)
+  SSHPolicy ensureSshPolicy() => $_ensure(17);
 }
 
 class CerfMap extends $pb.GeneratedMessage {
@@ -2432,6 +2449,554 @@ class FilteredPeer extends $pb.GeneratedMessage {
   $core.bool hasReason() => $_has(3);
   @$pb.TagNumber(4)
   void clearReason() => $_clearField(4);
+}
+
+/// SSHPolicy defines SSH access control rules for a node.
+/// Rules are evaluated in order; the first matching rule determines the action.
+class SSHPolicy extends $pb.GeneratedMessage {
+  factory SSHPolicy({
+    $core.Iterable<SSHRule>? rules,
+  }) {
+    final result = create();
+    if (rules != null) result.rules.addAll(rules);
+    return result;
+  }
+
+  SSHPolicy._();
+
+  factory SSHPolicy.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SSHPolicy.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SSHPolicy',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..pPM<SSHRule>(1, _omitFieldNames ? '' : 'rules',
+        subBuilder: SSHRule.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHPolicy clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHPolicy copyWith(void Function(SSHPolicy) updates) =>
+      super.copyWith((message) => updates(message as SSHPolicy)) as SSHPolicy;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SSHPolicy create() => SSHPolicy._();
+  @$core.override
+  SSHPolicy createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SSHPolicy getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SSHPolicy>(create);
+  static SSHPolicy? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<SSHRule> get rules => $_getList(0);
+}
+
+/// SSHRule defines a single SSH access control rule.
+class SSHRule extends $pb.GeneratedMessage {
+  factory SSHRule({
+    $core.String? ruleId,
+    $fixnum.Int64? ruleExpires,
+    $core.Iterable<SSHPrincipal>? principals,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? sshUsers,
+    SSHAction? action,
+    $core.Iterable<$core.String>? acceptEnv,
+    $core.String? createdBy,
+    $fixnum.Int64? createdAt,
+  }) {
+    final result = create();
+    if (ruleId != null) result.ruleId = ruleId;
+    if (ruleExpires != null) result.ruleExpires = ruleExpires;
+    if (principals != null) result.principals.addAll(principals);
+    if (sshUsers != null) result.sshUsers.addEntries(sshUsers);
+    if (action != null) result.action = action;
+    if (acceptEnv != null) result.acceptEnv.addAll(acceptEnv);
+    if (createdBy != null) result.createdBy = createdBy;
+    if (createdAt != null) result.createdAt = createdAt;
+    return result;
+  }
+
+  SSHRule._();
+
+  factory SSHRule.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SSHRule.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SSHRule',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'ruleId')
+    ..aInt64(2, _omitFieldNames ? '' : 'ruleExpires')
+    ..pPM<SSHPrincipal>(3, _omitFieldNames ? '' : 'principals',
+        subBuilder: SSHPrincipal.create)
+    ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'sshUsers',
+        entryClassName: 'SSHRule.SshUsersEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('protos'))
+    ..aOM<SSHAction>(5, _omitFieldNames ? '' : 'action',
+        subBuilder: SSHAction.create)
+    ..pPS(6, _omitFieldNames ? '' : 'acceptEnv')
+    ..aOS(7, _omitFieldNames ? '' : 'createdBy')
+    ..aInt64(8, _omitFieldNames ? '' : 'createdAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHRule clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHRule copyWith(void Function(SSHRule) updates) =>
+      super.copyWith((message) => updates(message as SSHRule)) as SSHRule;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SSHRule create() => SSHRule._();
+  @$core.override
+  SSHRule createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SSHRule getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SSHRule>(create);
+  static SSHRule? _defaultInstance;
+
+  /// rule_id is a unique identifier for this rule (for auditing)
+  @$pb.TagNumber(1)
+  $core.String get ruleId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ruleId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRuleId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRuleId() => $_clearField(1);
+
+  /// rule_expires is when this rule expires (Unix timestamp, 0 = no expiry)
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get ruleExpires => $_getI64(1);
+  @$pb.TagNumber(2)
+  set ruleExpires($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRuleExpires() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRuleExpires() => $_clearField(2);
+
+  /// principals defines who can connect (evaluated with OR logic)
+  @$pb.TagNumber(3)
+  $pb.PbList<SSHPrincipal> get principals => $_getList(2);
+
+  /// ssh_users maps SSH usernames to local usernames
+  /// Key: SSH username or "*" (wildcard)
+  /// Value: local username, "=" (same as SSH user), or "" (deny)
+  @$pb.TagNumber(4)
+  $pb.PbMap<$core.String, $core.String> get sshUsers => $_getMap(3);
+
+  /// action defines what happens when this rule matches
+  @$pb.TagNumber(5)
+  SSHAction get action => $_getN(4);
+  @$pb.TagNumber(5)
+  set action(SSHAction value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAction() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAction() => $_clearField(5);
+  @$pb.TagNumber(5)
+  SSHAction ensureAction() => $_ensure(4);
+
+  /// accept_env is a list of environment variable patterns to allow
+  /// Supports wildcards: * (any chars) and ? (single char)
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.String> get acceptEnv => $_getList(5);
+
+  /// Audit fields
+  @$pb.TagNumber(7)
+  $core.String get createdBy => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set createdBy($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasCreatedBy() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCreatedBy() => $_clearField(7);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get createdAt => $_getI64(7);
+  @$pb.TagNumber(8)
+  set createdAt($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasCreatedAt() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCreatedAt() => $_clearField(8);
+}
+
+/// SSHPrincipal defines conditions for matching SSH connection sources.
+/// Multiple fields are evaluated with OR logic within a principal,
+/// but all non-empty fields must match.
+class SSHPrincipal extends $pb.GeneratedMessage {
+  factory SSHPrincipal({
+    $fixnum.Int64? nodeId,
+    $core.String? nodeIp,
+    $fixnum.Int64? userId,
+    $core.String? userLogin,
+    $core.bool? any,
+    $core.Iterable<$core.String>? fleetIds,
+    $core.Iterable<$core.String>? groupIds,
+    $core.Iterable<$core.String>? pubKeys,
+  }) {
+    final result = create();
+    if (nodeId != null) result.nodeId = nodeId;
+    if (nodeIp != null) result.nodeIp = nodeIp;
+    if (userId != null) result.userId = userId;
+    if (userLogin != null) result.userLogin = userLogin;
+    if (any != null) result.any = any;
+    if (fleetIds != null) result.fleetIds.addAll(fleetIds);
+    if (groupIds != null) result.groupIds.addAll(groupIds);
+    if (pubKeys != null) result.pubKeys.addAll(pubKeys);
+    return result;
+  }
+
+  SSHPrincipal._();
+
+  factory SSHPrincipal.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SSHPrincipal.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SSHPrincipal',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, _omitFieldNames ? '' : 'nodeIp')
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'userId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(4, _omitFieldNames ? '' : 'userLogin')
+    ..aOB(5, _omitFieldNames ? '' : 'any')
+    ..pPS(6, _omitFieldNames ? '' : 'fleetIds')
+    ..pPS(7, _omitFieldNames ? '' : 'groupIds')
+    ..pPS(8, _omitFieldNames ? '' : 'pubKeys')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHPrincipal clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHPrincipal copyWith(void Function(SSHPrincipal) updates) =>
+      super.copyWith((message) => updates(message as SSHPrincipal))
+          as SSHPrincipal;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SSHPrincipal create() => SSHPrincipal._();
+  @$core.override
+  SSHPrincipal createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SSHPrincipal getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SSHPrincipal>(create);
+  static SSHPrincipal? _defaultInstance;
+
+  /// Basic match conditions (OR logic)
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get nodeId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set nodeId($fixnum.Int64 value) => $_setInt64(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasNodeId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearNodeId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get nodeIp => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nodeIp($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeIp() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeIp() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get userId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set userId($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearUserId() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get userLogin => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set userLogin($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasUserLogin() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearUserLogin() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get any => $_getBF(4);
+  @$pb.TagNumber(5)
+  set any($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAny() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAny() => $_clearField(5);
+
+  /// runetale-specific: Match by group/fleet membership
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.String> get fleetIds => $_getList(5);
+
+  @$pb.TagNumber(7)
+  $pb.PbList<$core.String> get groupIds => $_getList(6);
+
+  /// Additional authentication requirements
+  /// If set, one of these public keys must be presented
+  /// Supports URL format (e.g., https://github.com/username.keys)
+  @$pb.TagNumber(8)
+  $pb.PbList<$core.String> get pubKeys => $_getList(7);
+}
+
+/// SSHAction defines what happens when an SSH rule matches.
+class SSHAction extends $pb.GeneratedMessage {
+  factory SSHAction({
+    $core.String? message,
+    $core.bool? reject,
+    $core.bool? accept,
+    $core.int? sessionDuration,
+    $core.bool? allowAgentForwarding,
+    $core.bool? allowLocalPortForwarding,
+    $core.bool? allowRemotePortForwarding,
+    $core.Iterable<$core.String>? recorders,
+    SSHRecorderFailureAction? onRecordingFailure,
+  }) {
+    final result = create();
+    if (message != null) result.message = message;
+    if (reject != null) result.reject = reject;
+    if (accept != null) result.accept = accept;
+    if (sessionDuration != null) result.sessionDuration = sessionDuration;
+    if (allowAgentForwarding != null)
+      result.allowAgentForwarding = allowAgentForwarding;
+    if (allowLocalPortForwarding != null)
+      result.allowLocalPortForwarding = allowLocalPortForwarding;
+    if (allowRemotePortForwarding != null)
+      result.allowRemotePortForwarding = allowRemotePortForwarding;
+    if (recorders != null) result.recorders.addAll(recorders);
+    if (onRecordingFailure != null)
+      result.onRecordingFailure = onRecordingFailure;
+    return result;
+  }
+
+  SSHAction._();
+
+  factory SSHAction.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SSHAction.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SSHAction',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'message')
+    ..aOB(2, _omitFieldNames ? '' : 'reject')
+    ..aOB(3, _omitFieldNames ? '' : 'accept')
+    ..aI(4, _omitFieldNames ? '' : 'sessionDuration',
+        fieldType: $pb.PbFieldType.OU3)
+    ..aOB(5, _omitFieldNames ? '' : 'allowAgentForwarding')
+    ..aOB(6, _omitFieldNames ? '' : 'allowLocalPortForwarding')
+    ..aOB(7, _omitFieldNames ? '' : 'allowRemotePortForwarding')
+    ..pPS(8, _omitFieldNames ? '' : 'recorders')
+    ..aOM<SSHRecorderFailureAction>(
+        9, _omitFieldNames ? '' : 'onRecordingFailure',
+        subBuilder: SSHRecorderFailureAction.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHAction clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHAction copyWith(void Function(SSHAction) updates) =>
+      super.copyWith((message) => updates(message as SSHAction)) as SSHAction;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SSHAction create() => SSHAction._();
+  @$core.override
+  SSHAction createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SSHAction getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SSHAction>(create);
+  static SSHAction? _defaultInstance;
+
+  /// message is displayed to the user before the action
+  @$pb.TagNumber(1)
+  $core.String get message => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set message($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMessage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMessage() => $_clearField(1);
+
+  /// Action type (reject takes priority over accept)
+  @$pb.TagNumber(2)
+  $core.bool get reject => $_getBF(1);
+  @$pb.TagNumber(2)
+  set reject($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasReject() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearReject() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get accept => $_getBF(2);
+  @$pb.TagNumber(3)
+  set accept($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasAccept() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAccept() => $_clearField(3);
+
+  /// Session settings
+  @$pb.TagNumber(4)
+  $core.int get sessionDuration => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set sessionDuration($core.int value) => $_setUnsignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasSessionDuration() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSessionDuration() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get allowAgentForwarding => $_getBF(4);
+  @$pb.TagNumber(5)
+  set allowAgentForwarding($core.bool value) => $_setBool(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasAllowAgentForwarding() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearAllowAgentForwarding() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get allowLocalPortForwarding => $_getBF(5);
+  @$pb.TagNumber(6)
+  set allowLocalPortForwarding($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasAllowLocalPortForwarding() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearAllowLocalPortForwarding() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.bool get allowRemotePortForwarding => $_getBF(6);
+  @$pb.TagNumber(7)
+  set allowRemotePortForwarding($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAllowRemotePortForwarding() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAllowRemotePortForwarding() => $_clearField(7);
+
+  /// Session recording
+  @$pb.TagNumber(8)
+  $pb.PbList<$core.String> get recorders => $_getList(7);
+
+  @$pb.TagNumber(9)
+  SSHRecorderFailureAction get onRecordingFailure => $_getN(8);
+  @$pb.TagNumber(9)
+  set onRecordingFailure(SSHRecorderFailureAction value) =>
+      $_setField(9, value);
+  @$pb.TagNumber(9)
+  $core.bool hasOnRecordingFailure() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearOnRecordingFailure() => $_clearField(9);
+  @$pb.TagNumber(9)
+  SSHRecorderFailureAction ensureOnRecordingFailure() => $_ensure(8);
+}
+
+/// SSHRecorderFailureAction defines behavior when session recording fails.
+class SSHRecorderFailureAction extends $pb.GeneratedMessage {
+  factory SSHRecorderFailureAction({
+    $core.String? rejectSessionWithMessage,
+    $core.String? terminateSessionWithMessage,
+  }) {
+    final result = create();
+    if (rejectSessionWithMessage != null)
+      result.rejectSessionWithMessage = rejectSessionWithMessage;
+    if (terminateSessionWithMessage != null)
+      result.terminateSessionWithMessage = terminateSessionWithMessage;
+    return result;
+  }
+
+  SSHRecorderFailureAction._();
+
+  factory SSHRecorderFailureAction.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SSHRecorderFailureAction.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SSHRecorderFailureAction',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'rejectSessionWithMessage')
+    ..aOS(2, _omitFieldNames ? '' : 'terminateSessionWithMessage')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHRecorderFailureAction clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHRecorderFailureAction copyWith(
+          void Function(SSHRecorderFailureAction) updates) =>
+      super.copyWith((message) => updates(message as SSHRecorderFailureAction))
+          as SSHRecorderFailureAction;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SSHRecorderFailureAction create() => SSHRecorderFailureAction._();
+  @$core.override
+  SSHRecorderFailureAction createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SSHRecorderFailureAction getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SSHRecorderFailureAction>(create);
+  static SSHRecorderFailureAction? _defaultInstance;
+
+  /// reject_session_with_message rejects the session if recording fails to start
+  @$pb.TagNumber(1)
+  $core.String get rejectSessionWithMessage => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set rejectSessionWithMessage($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRejectSessionWithMessage() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRejectSessionWithMessage() => $_clearField(1);
+
+  /// terminate_session_with_message terminates the session if recording fails mid-session
+  @$pb.TagNumber(2)
+  $core.String get terminateSessionWithMessage => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set terminateSessionWithMessage($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTerminateSessionWithMessage() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTerminateSessionWithMessage() => $_clearField(2);
 }
 
 const $core.bool _omitFieldNames =
