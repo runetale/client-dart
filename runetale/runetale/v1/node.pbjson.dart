@@ -1118,6 +1118,7 @@ const UpdateSessionStateRequest$json = {
       '6': '.protos.SSHSessionState',
       '10': 'newState'
     },
+    {'1': 'scrollback', '3': 3, '4': 1, '5': 12, '10': 'scrollback'},
   ],
 };
 
@@ -1125,7 +1126,7 @@ const UpdateSessionStateRequest$json = {
 final $typed_data.Uint8List updateSessionStateRequestDescriptor = $convert.base64Decode(
     'ChlVcGRhdGVTZXNzaW9uU3RhdGVSZXF1ZXN0Eh0KCnNlc3Npb25faWQYASABKAlSCXNlc3Npb2'
     '5JZBI0CgluZXdfc3RhdGUYAiABKA4yFy5wcm90b3MuU1NIU2Vzc2lvblN0YXRlUghuZXdTdGF0'
-    'ZQ==');
+    'ZRIeCgpzY3JvbGxiYWNrGAMgASgMUgpzY3JvbGxiYWNr');
 
 @$core.Deprecated('Use updateSessionStateResponseDescriptor instead')
 const UpdateSessionStateResponse$json = {

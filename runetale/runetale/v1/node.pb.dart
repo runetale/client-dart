@@ -3694,10 +3694,12 @@ class UpdateSessionStateRequest extends $pb.GeneratedMessage {
   factory UpdateSessionStateRequest({
     $core.String? sessionId,
     SSHSessionState? newState,
+    $core.List<$core.int>? scrollback,
   }) {
     final result = create();
     if (sessionId != null) result.sessionId = sessionId;
     if (newState != null) result.newState = newState;
+    if (scrollback != null) result.scrollback = scrollback;
     return result;
   }
 
@@ -3717,6 +3719,8 @@ class UpdateSessionStateRequest extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'sessionId')
     ..aE<SSHSessionState>(2, _omitFieldNames ? '' : 'newState',
         enumValues: SSHSessionState.values)
+    ..a<$core.List<$core.int>>(
+        3, _omitFieldNames ? '' : 'scrollback', $pb.PbFieldType.OY)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -3758,6 +3762,16 @@ class UpdateSessionStateRequest extends $pb.GeneratedMessage {
   $core.bool hasNewState() => $_has(1);
   @$pb.TagNumber(2)
   void clearNewState() => $_clearField(2);
+
+  /// scrollback is the terminal scrollback buffer (only used when suspending)
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get scrollback => $_getN(2);
+  @$pb.TagNumber(3)
+  set scrollback($core.List<$core.int> value) => $_setBytes(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasScrollback() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearScrollback() => $_clearField(3);
 }
 
 /// UpdateSessionStateResponse is returned after updating session state.
