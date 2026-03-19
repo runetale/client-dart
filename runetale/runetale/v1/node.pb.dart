@@ -17,7 +17,11 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
     as $2;
 
+import 'node.pbenum.dart';
+
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
+export 'node.pbenum.dart';
 
 class Node extends $pb.GeneratedMessage {
   factory Node({
@@ -2997,6 +3001,1567 @@ class SSHRecorderFailureAction extends $pb.GeneratedMessage {
   $core.bool hasTerminateSessionWithMessage() => $_has(1);
   @$pb.TagNumber(2)
   void clearTerminateSessionWithMessage() => $_clearField(2);
+}
+
+/// SSHSession represents a managed SSH session that can be resumed/shared/published.
+class SSHSession extends $pb.GeneratedMessage {
+  factory SSHSession({
+    $core.String? sessionId,
+    $fixnum.Int64? nodeId,
+    $fixnum.Int64? ownerUserId,
+    SSHSessionState? state,
+    $fixnum.Int64? createdAt,
+    $fixnum.Int64? lastActiveAt,
+    $fixnum.Int64? expiresAt,
+    $core.String? localUser,
+    $core.String? remoteUser,
+    $fixnum.Int64? remoteNodeId,
+    $core.String? shareToken,
+    $core.String? publishSlug,
+    SSHSessionVisibility? publishVisibility,
+    $core.Iterable<SSHSessionACLEntry>? acl,
+    $core.int? terminalCols,
+    $core.int? terminalRows,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (ownerUserId != null) result.ownerUserId = ownerUserId;
+    if (state != null) result.state = state;
+    if (createdAt != null) result.createdAt = createdAt;
+    if (lastActiveAt != null) result.lastActiveAt = lastActiveAt;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    if (localUser != null) result.localUser = localUser;
+    if (remoteUser != null) result.remoteUser = remoteUser;
+    if (remoteNodeId != null) result.remoteNodeId = remoteNodeId;
+    if (shareToken != null) result.shareToken = shareToken;
+    if (publishSlug != null) result.publishSlug = publishSlug;
+    if (publishVisibility != null) result.publishVisibility = publishVisibility;
+    if (acl != null) result.acl.addAll(acl);
+    if (terminalCols != null) result.terminalCols = terminalCols;
+    if (terminalRows != null) result.terminalRows = terminalRows;
+    return result;
+  }
+
+  SSHSession._();
+
+  factory SSHSession.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SSHSession.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SSHSession',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(
+        3, _omitFieldNames ? '' : 'ownerUserId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aE<SSHSessionState>(4, _omitFieldNames ? '' : 'state',
+        enumValues: SSHSessionState.values)
+    ..aInt64(5, _omitFieldNames ? '' : 'createdAt')
+    ..aInt64(6, _omitFieldNames ? '' : 'lastActiveAt')
+    ..aInt64(7, _omitFieldNames ? '' : 'expiresAt')
+    ..aOS(8, _omitFieldNames ? '' : 'localUser')
+    ..aOS(9, _omitFieldNames ? '' : 'remoteUser')
+    ..a<$fixnum.Int64>(
+        10, _omitFieldNames ? '' : 'remoteNodeId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(11, _omitFieldNames ? '' : 'shareToken')
+    ..aOS(12, _omitFieldNames ? '' : 'publishSlug')
+    ..aE<SSHSessionVisibility>(13, _omitFieldNames ? '' : 'publishVisibility',
+        enumValues: SSHSessionVisibility.values)
+    ..pPM<SSHSessionACLEntry>(14, _omitFieldNames ? '' : 'acl',
+        subBuilder: SSHSessionACLEntry.create)
+    ..aI(15, _omitFieldNames ? '' : 'terminalCols',
+        fieldType: $pb.PbFieldType.OU3)
+    ..aI(16, _omitFieldNames ? '' : 'terminalRows',
+        fieldType: $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHSession clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHSession copyWith(void Function(SSHSession) updates) =>
+      super.copyWith((message) => updates(message as SSHSession)) as SSHSession;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SSHSession create() => SSHSession._();
+  @$core.override
+  SSHSession createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SSHSession getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SSHSession>(create);
+  static SSHSession? _defaultInstance;
+
+  /// session_id is the unique identifier for this session
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+
+  /// node_id is the node where the SSH server is running
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get nodeId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set nodeId($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNodeId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNodeId() => $_clearField(2);
+
+  /// owner_user_id is the user who created the session
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get ownerUserId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set ownerUserId($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasOwnerUserId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOwnerUserId() => $_clearField(3);
+
+  /// state is the current session state
+  @$pb.TagNumber(4)
+  SSHSessionState get state => $_getN(3);
+  @$pb.TagNumber(4)
+  set state(SSHSessionState value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasState() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearState() => $_clearField(4);
+
+  /// created_at is when the session was created (Unix timestamp)
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get createdAt => $_getI64(4);
+  @$pb.TagNumber(5)
+  set createdAt($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasCreatedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearCreatedAt() => $_clearField(5);
+
+  /// last_active_at is when the session was last active (Unix timestamp)
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get lastActiveAt => $_getI64(5);
+  @$pb.TagNumber(6)
+  set lastActiveAt($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasLastActiveAt() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastActiveAt() => $_clearField(6);
+
+  /// expires_at is when the session expires (Unix timestamp, 0 = no expiry)
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get expiresAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set expiresAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExpiresAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExpiresAt() => $_clearField(7);
+
+  /// local_user is the local Unix user for the session
+  @$pb.TagNumber(8)
+  $core.String get localUser => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set localUser($core.String value) => $_setString(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasLocalUser() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearLocalUser() => $_clearField(8);
+
+  /// remote_user is the connecting user's login
+  @$pb.TagNumber(9)
+  $core.String get remoteUser => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set remoteUser($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasRemoteUser() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearRemoteUser() => $_clearField(9);
+
+  /// remote_node_id is the node the user connected from
+  @$pb.TagNumber(10)
+  $fixnum.Int64 get remoteNodeId => $_getI64(9);
+  @$pb.TagNumber(10)
+  set remoteNodeId($fixnum.Int64 value) => $_setInt64(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRemoteNodeId() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRemoteNodeId() => $_clearField(10);
+
+  /// share_token is the token for sharing this session (if shared)
+  @$pb.TagNumber(11)
+  $core.String get shareToken => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set shareToken($core.String value) => $_setString(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasShareToken() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearShareToken() => $_clearField(11);
+
+  /// publish_slug is the URL slug for publishing (if published)
+  @$pb.TagNumber(12)
+  $core.String get publishSlug => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set publishSlug($core.String value) => $_setString(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPublishSlug() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPublishSlug() => $_clearField(12);
+
+  /// publish_visibility is the visibility level when published
+  @$pb.TagNumber(13)
+  SSHSessionVisibility get publishVisibility => $_getN(12);
+  @$pb.TagNumber(13)
+  set publishVisibility(SSHSessionVisibility value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasPublishVisibility() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearPublishVisibility() => $_clearField(13);
+
+  /// acl is the access control list for this session
+  @$pb.TagNumber(14)
+  $pb.PbList<SSHSessionACLEntry> get acl => $_getList(13);
+
+  /// terminal_cols is the terminal width
+  @$pb.TagNumber(15)
+  $core.int get terminalCols => $_getIZ(14);
+  @$pb.TagNumber(15)
+  set terminalCols($core.int value) => $_setUnsignedInt32(14, value);
+  @$pb.TagNumber(15)
+  $core.bool hasTerminalCols() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearTerminalCols() => $_clearField(15);
+
+  /// terminal_rows is the terminal height
+  @$pb.TagNumber(16)
+  $core.int get terminalRows => $_getIZ(15);
+  @$pb.TagNumber(16)
+  set terminalRows($core.int value) => $_setUnsignedInt32(15, value);
+  @$pb.TagNumber(16)
+  $core.bool hasTerminalRows() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearTerminalRows() => $_clearField(16);
+}
+
+/// SSHSessionACLEntry represents an access control entry for a session.
+class SSHSessionACLEntry extends $pb.GeneratedMessage {
+  factory SSHSessionACLEntry({
+    $core.String? entryId,
+    $fixnum.Int64? userId,
+    $core.String? groupId,
+    SSHSessionRole? role,
+    $fixnum.Int64? grantedAt,
+    $fixnum.Int64? grantedBy,
+    $fixnum.Int64? expiresAt,
+  }) {
+    final result = create();
+    if (entryId != null) result.entryId = entryId;
+    if (userId != null) result.userId = userId;
+    if (groupId != null) result.groupId = groupId;
+    if (role != null) result.role = role;
+    if (grantedAt != null) result.grantedAt = grantedAt;
+    if (grantedBy != null) result.grantedBy = grantedBy;
+    if (expiresAt != null) result.expiresAt = expiresAt;
+    return result;
+  }
+
+  SSHSessionACLEntry._();
+
+  factory SSHSessionACLEntry.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SSHSessionACLEntry.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SSHSessionACLEntry',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'entryId')
+    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'userId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, _omitFieldNames ? '' : 'groupId')
+    ..aE<SSHSessionRole>(4, _omitFieldNames ? '' : 'role',
+        enumValues: SSHSessionRole.values)
+    ..aInt64(5, _omitFieldNames ? '' : 'grantedAt')
+    ..a<$fixnum.Int64>(
+        6, _omitFieldNames ? '' : 'grantedBy', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aInt64(7, _omitFieldNames ? '' : 'expiresAt')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHSessionACLEntry clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHSessionACLEntry copyWith(void Function(SSHSessionACLEntry) updates) =>
+      super.copyWith((message) => updates(message as SSHSessionACLEntry))
+          as SSHSessionACLEntry;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SSHSessionACLEntry create() => SSHSessionACLEntry._();
+  @$core.override
+  SSHSessionACLEntry createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SSHSessionACLEntry getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SSHSessionACLEntry>(create);
+  static SSHSessionACLEntry? _defaultInstance;
+
+  /// entry_id is the unique identifier for this ACL entry
+  @$pb.TagNumber(1)
+  $core.String get entryId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set entryId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEntryId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEntryId() => $_clearField(1);
+
+  /// user_id is the user this entry applies to (0 for group-based)
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get userId => $_getI64(1);
+  @$pb.TagNumber(2)
+  set userId($fixnum.Int64 value) => $_setInt64(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => $_clearField(2);
+
+  /// group_id is the group this entry applies to (empty for user-based)
+  @$pb.TagNumber(3)
+  $core.String get groupId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set groupId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasGroupId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGroupId() => $_clearField(3);
+
+  /// role is the role granted by this entry
+  @$pb.TagNumber(4)
+  SSHSessionRole get role => $_getN(3);
+  @$pb.TagNumber(4)
+  set role(SSHSessionRole value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasRole() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRole() => $_clearField(4);
+
+  /// granted_at is when this entry was created (Unix timestamp)
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get grantedAt => $_getI64(4);
+  @$pb.TagNumber(5)
+  set grantedAt($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasGrantedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearGrantedAt() => $_clearField(5);
+
+  /// granted_by is the user who created this entry
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get grantedBy => $_getI64(5);
+  @$pb.TagNumber(6)
+  set grantedBy($fixnum.Int64 value) => $_setInt64(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasGrantedBy() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearGrantedBy() => $_clearField(6);
+
+  /// expires_at is when this entry expires (Unix timestamp, 0 = no expiry)
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get expiresAt => $_getI64(6);
+  @$pb.TagNumber(7)
+  set expiresAt($fixnum.Int64 value) => $_setInt64(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasExpiresAt() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearExpiresAt() => $_clearField(7);
+}
+
+/// SSHSessionEvent represents an event in a session's lifecycle.
+class SSHSessionEvent extends $pb.GeneratedMessage {
+  factory SSHSessionEvent({
+    $core.String? sessionId,
+    SSHSessionEventType? eventType,
+    $fixnum.Int64? timestamp,
+    $fixnum.Int64? actorUserId,
+    $core.String? details,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    if (eventType != null) result.eventType = eventType;
+    if (timestamp != null) result.timestamp = timestamp;
+    if (actorUserId != null) result.actorUserId = actorUserId;
+    if (details != null) result.details = details;
+    return result;
+  }
+
+  SSHSessionEvent._();
+
+  factory SSHSessionEvent.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SSHSessionEvent.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SSHSessionEvent',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..aE<SSHSessionEventType>(2, _omitFieldNames ? '' : 'eventType',
+        enumValues: SSHSessionEventType.values)
+    ..aInt64(3, _omitFieldNames ? '' : 'timestamp')
+    ..a<$fixnum.Int64>(
+        4, _omitFieldNames ? '' : 'actorUserId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(5, _omitFieldNames ? '' : 'details')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHSessionEvent clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SSHSessionEvent copyWith(void Function(SSHSessionEvent) updates) =>
+      super.copyWith((message) => updates(message as SSHSessionEvent))
+          as SSHSessionEvent;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SSHSessionEvent create() => SSHSessionEvent._();
+  @$core.override
+  SSHSessionEvent createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SSHSessionEvent getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SSHSessionEvent>(create);
+  static SSHSessionEvent? _defaultInstance;
+
+  /// session_id is the session this event belongs to
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+
+  /// event_type is the type of event
+  @$pb.TagNumber(2)
+  SSHSessionEventType get eventType => $_getN(1);
+  @$pb.TagNumber(2)
+  set eventType(SSHSessionEventType value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEventType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEventType() => $_clearField(2);
+
+  /// timestamp is when the event occurred (Unix timestamp)
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get timestamp => $_getI64(2);
+  @$pb.TagNumber(3)
+  set timestamp($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasTimestamp() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearTimestamp() => $_clearField(3);
+
+  /// actor_user_id is the user who triggered the event
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get actorUserId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set actorUserId($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasActorUserId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearActorUserId() => $_clearField(4);
+
+  /// details contains event-specific information
+  @$pb.TagNumber(5)
+  $core.String get details => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set details($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasDetails() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearDetails() => $_clearField(5);
+}
+
+/// RegisterSessionRequest is sent when a new SSH session starts.
+class RegisterSessionRequest extends $pb.GeneratedMessage {
+  factory RegisterSessionRequest({
+    $core.String? localUser,
+    $core.String? remoteUser,
+    $fixnum.Int64? remoteNodeId,
+    $core.int? terminalCols,
+    $core.int? terminalRows,
+  }) {
+    final result = create();
+    if (localUser != null) result.localUser = localUser;
+    if (remoteUser != null) result.remoteUser = remoteUser;
+    if (remoteNodeId != null) result.remoteNodeId = remoteNodeId;
+    if (terminalCols != null) result.terminalCols = terminalCols;
+    if (terminalRows != null) result.terminalRows = terminalRows;
+    return result;
+  }
+
+  RegisterSessionRequest._();
+
+  factory RegisterSessionRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterSessionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterSessionRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'localUser')
+    ..aOS(2, _omitFieldNames ? '' : 'remoteUser')
+    ..a<$fixnum.Int64>(
+        3, _omitFieldNames ? '' : 'remoteNodeId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aI(4, _omitFieldNames ? '' : 'terminalCols',
+        fieldType: $pb.PbFieldType.OU3)
+    ..aI(5, _omitFieldNames ? '' : 'terminalRows',
+        fieldType: $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterSessionRequest copyWith(
+          void Function(RegisterSessionRequest) updates) =>
+      super.copyWith((message) => updates(message as RegisterSessionRequest))
+          as RegisterSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterSessionRequest create() => RegisterSessionRequest._();
+  @$core.override
+  RegisterSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterSessionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterSessionRequest>(create);
+  static RegisterSessionRequest? _defaultInstance;
+
+  /// local_user is the local Unix user for the session
+  @$pb.TagNumber(1)
+  $core.String get localUser => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set localUser($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasLocalUser() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearLocalUser() => $_clearField(1);
+
+  /// remote_user is the connecting user's login
+  @$pb.TagNumber(2)
+  $core.String get remoteUser => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set remoteUser($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRemoteUser() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRemoteUser() => $_clearField(2);
+
+  /// remote_node_id is the node the user connected from
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get remoteNodeId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set remoteNodeId($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasRemoteNodeId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearRemoteNodeId() => $_clearField(3);
+
+  /// terminal_cols is the initial terminal width
+  @$pb.TagNumber(4)
+  $core.int get terminalCols => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set terminalCols($core.int value) => $_setUnsignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasTerminalCols() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTerminalCols() => $_clearField(4);
+
+  /// terminal_rows is the initial terminal height
+  @$pb.TagNumber(5)
+  $core.int get terminalRows => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set terminalRows($core.int value) => $_setUnsignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTerminalRows() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTerminalRows() => $_clearField(5);
+}
+
+/// RegisterSessionResponse is returned after registering a session.
+class RegisterSessionResponse extends $pb.GeneratedMessage {
+  factory RegisterSessionResponse({
+    $core.String? sessionId,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  RegisterSessionResponse._();
+
+  factory RegisterSessionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RegisterSessionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RegisterSessionResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  RegisterSessionResponse copyWith(
+          void Function(RegisterSessionResponse) updates) =>
+      super.copyWith((message) => updates(message as RegisterSessionResponse))
+          as RegisterSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static RegisterSessionResponse create() => RegisterSessionResponse._();
+  @$core.override
+  RegisterSessionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static RegisterSessionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RegisterSessionResponse>(create);
+  static RegisterSessionResponse? _defaultInstance;
+
+  /// session_id is the assigned session ID
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+
+  /// error is set if registration failed
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+/// UpdateSessionStateRequest updates a session's state.
+class UpdateSessionStateRequest extends $pb.GeneratedMessage {
+  factory UpdateSessionStateRequest({
+    $core.String? sessionId,
+    SSHSessionState? newState,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    if (newState != null) result.newState = newState;
+    return result;
+  }
+
+  UpdateSessionStateRequest._();
+
+  factory UpdateSessionStateRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateSessionStateRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateSessionStateRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..aE<SSHSessionState>(2, _omitFieldNames ? '' : 'newState',
+        enumValues: SSHSessionState.values)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSessionStateRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSessionStateRequest copyWith(
+          void Function(UpdateSessionStateRequest) updates) =>
+      super.copyWith((message) => updates(message as UpdateSessionStateRequest))
+          as UpdateSessionStateRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSessionStateRequest create() => UpdateSessionStateRequest._();
+  @$core.override
+  UpdateSessionStateRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSessionStateRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateSessionStateRequest>(create);
+  static UpdateSessionStateRequest? _defaultInstance;
+
+  /// session_id is the session to update
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+
+  /// new_state is the new state
+  @$pb.TagNumber(2)
+  SSHSessionState get newState => $_getN(1);
+  @$pb.TagNumber(2)
+  set newState(SSHSessionState value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNewState() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNewState() => $_clearField(2);
+}
+
+/// UpdateSessionStateResponse is returned after updating session state.
+class UpdateSessionStateResponse extends $pb.GeneratedMessage {
+  factory UpdateSessionStateResponse({
+    $core.bool? success,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (success != null) result.success = success;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  UpdateSessionStateResponse._();
+
+  factory UpdateSessionStateResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateSessionStateResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateSessionStateResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSessionStateResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  UpdateSessionStateResponse copyWith(
+          void Function(UpdateSessionStateResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateSessionStateResponse))
+          as UpdateSessionStateResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateSessionStateResponse create() => UpdateSessionStateResponse._();
+  @$core.override
+  UpdateSessionStateResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static UpdateSessionStateResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateSessionStateResponse>(create);
+  static UpdateSessionStateResponse? _defaultInstance;
+
+  /// success indicates whether the update was successful
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => $_clearField(1);
+
+  /// error is set if the update failed
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+/// GetSessionRequest retrieves a session by ID.
+class GetSessionRequest extends $pb.GeneratedMessage {
+  factory GetSessionRequest({
+    $core.String? sessionId,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    return result;
+  }
+
+  GetSessionRequest._();
+
+  factory GetSessionRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSessionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSessionRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSessionRequest copyWith(void Function(GetSessionRequest) updates) =>
+      super.copyWith((message) => updates(message as GetSessionRequest))
+          as GetSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSessionRequest create() => GetSessionRequest._();
+  @$core.override
+  GetSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSessionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSessionRequest>(create);
+  static GetSessionRequest? _defaultInstance;
+
+  /// session_id is the session to retrieve
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+}
+
+/// GetSessionResponse returns the requested session.
+class GetSessionResponse extends $pb.GeneratedMessage {
+  factory GetSessionResponse({
+    SSHSession? session,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (session != null) result.session = session;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  GetSessionResponse._();
+
+  factory GetSessionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetSessionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetSessionResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOM<SSHSession>(1, _omitFieldNames ? '' : 'session',
+        subBuilder: SSHSession.create)
+    ..aOS(2, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetSessionResponse copyWith(void Function(GetSessionResponse) updates) =>
+      super.copyWith((message) => updates(message as GetSessionResponse))
+          as GetSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetSessionResponse create() => GetSessionResponse._();
+  @$core.override
+  GetSessionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetSessionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetSessionResponse>(create);
+  static GetSessionResponse? _defaultInstance;
+
+  /// session is the requested session
+  @$pb.TagNumber(1)
+  SSHSession get session => $_getN(0);
+  @$pb.TagNumber(1)
+  set session(SSHSession value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSession() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSession() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SSHSession ensureSession() => $_ensure(0);
+
+  /// error is set if retrieval failed
+  @$pb.TagNumber(2)
+  $core.String get error => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set error($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => $_clearField(2);
+}
+
+/// ListSessionsRequest lists sessions for the current node.
+class ListSessionsRequest extends $pb.GeneratedMessage {
+  factory ListSessionsRequest({
+    $core.bool? includeTerminated,
+  }) {
+    final result = create();
+    if (includeTerminated != null) result.includeTerminated = includeTerminated;
+    return result;
+  }
+
+  ListSessionsRequest._();
+
+  factory ListSessionsRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSessionsRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSessionsRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'includeTerminated')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSessionsRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSessionsRequest copyWith(void Function(ListSessionsRequest) updates) =>
+      super.copyWith((message) => updates(message as ListSessionsRequest))
+          as ListSessionsRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSessionsRequest create() => ListSessionsRequest._();
+  @$core.override
+  ListSessionsRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListSessionsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSessionsRequest>(create);
+  static ListSessionsRequest? _defaultInstance;
+
+  /// include_terminated includes terminated sessions
+  @$pb.TagNumber(1)
+  $core.bool get includeTerminated => $_getBF(0);
+  @$pb.TagNumber(1)
+  set includeTerminated($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasIncludeTerminated() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearIncludeTerminated() => $_clearField(1);
+}
+
+/// ListSessionsResponse returns the list of sessions.
+class ListSessionsResponse extends $pb.GeneratedMessage {
+  factory ListSessionsResponse({
+    $core.Iterable<SSHSession>? sessions,
+  }) {
+    final result = create();
+    if (sessions != null) result.sessions.addAll(sessions);
+    return result;
+  }
+
+  ListSessionsResponse._();
+
+  factory ListSessionsResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ListSessionsResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ListSessionsResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..pPM<SSHSession>(1, _omitFieldNames ? '' : 'sessions',
+        subBuilder: SSHSession.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSessionsResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ListSessionsResponse copyWith(void Function(ListSessionsResponse) updates) =>
+      super.copyWith((message) => updates(message as ListSessionsResponse))
+          as ListSessionsResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListSessionsResponse create() => ListSessionsResponse._();
+  @$core.override
+  ListSessionsResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ListSessionsResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListSessionsResponse>(create);
+  static ListSessionsResponse? _defaultInstance;
+
+  /// sessions is the list of sessions
+  @$pb.TagNumber(1)
+  $pb.PbList<SSHSession> get sessions => $_getList(0);
+}
+
+/// ResumeSessionRequest requests to resume a suspended session.
+class ResumeSessionRequest extends $pb.GeneratedMessage {
+  factory ResumeSessionRequest({
+    $core.String? sessionId,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    return result;
+  }
+
+  ResumeSessionRequest._();
+
+  factory ResumeSessionRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResumeSessionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResumeSessionRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResumeSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResumeSessionRequest copyWith(void Function(ResumeSessionRequest) updates) =>
+      super.copyWith((message) => updates(message as ResumeSessionRequest))
+          as ResumeSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResumeSessionRequest create() => ResumeSessionRequest._();
+  @$core.override
+  ResumeSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResumeSessionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResumeSessionRequest>(create);
+  static ResumeSessionRequest? _defaultInstance;
+
+  /// session_id is the session to resume
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+}
+
+/// ResumeSessionResponse is returned after attempting to resume.
+class ResumeSessionResponse extends $pb.GeneratedMessage {
+  factory ResumeSessionResponse({
+    $core.bool? success,
+    $core.List<$core.int>? scrollback,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (success != null) result.success = success;
+    if (scrollback != null) result.scrollback = scrollback;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  ResumeSessionResponse._();
+
+  factory ResumeSessionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ResumeSessionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ResumeSessionResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'scrollback', $pb.PbFieldType.OY)
+    ..aOS(3, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResumeSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ResumeSessionResponse copyWith(
+          void Function(ResumeSessionResponse) updates) =>
+      super.copyWith((message) => updates(message as ResumeSessionResponse))
+          as ResumeSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ResumeSessionResponse create() => ResumeSessionResponse._();
+  @$core.override
+  ResumeSessionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ResumeSessionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ResumeSessionResponse>(create);
+  static ResumeSessionResponse? _defaultInstance;
+
+  /// success indicates whether resume was successful
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => $_clearField(1);
+
+  /// scrollback is the terminal scrollback buffer to restore
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get scrollback => $_getN(1);
+  @$pb.TagNumber(2)
+  set scrollback($core.List<$core.int> value) => $_setBytes(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasScrollback() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearScrollback() => $_clearField(2);
+
+  /// error is set if resume failed
+  @$pb.TagNumber(3)
+  $core.String get error => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set error($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasError() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearError() => $_clearField(3);
+}
+
+/// ShareSessionRequest creates a share token for a session.
+class ShareSessionRequest extends $pb.GeneratedMessage {
+  factory ShareSessionRequest({
+    $core.String? sessionId,
+    SSHSessionRole? role,
+    $fixnum.Int64? expiresInSeconds,
+    $core.int? maxUses,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    if (role != null) result.role = role;
+    if (expiresInSeconds != null) result.expiresInSeconds = expiresInSeconds;
+    if (maxUses != null) result.maxUses = maxUses;
+    return result;
+  }
+
+  ShareSessionRequest._();
+
+  factory ShareSessionRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ShareSessionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ShareSessionRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..aE<SSHSessionRole>(2, _omitFieldNames ? '' : 'role',
+        enumValues: SSHSessionRole.values)
+    ..aInt64(3, _omitFieldNames ? '' : 'expiresInSeconds')
+    ..aI(4, _omitFieldNames ? '' : 'maxUses')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ShareSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ShareSessionRequest copyWith(void Function(ShareSessionRequest) updates) =>
+      super.copyWith((message) => updates(message as ShareSessionRequest))
+          as ShareSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ShareSessionRequest create() => ShareSessionRequest._();
+  @$core.override
+  ShareSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ShareSessionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ShareSessionRequest>(create);
+  static ShareSessionRequest? _defaultInstance;
+
+  /// session_id is the session to share
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+
+  /// role is the role to grant via the share link
+  @$pb.TagNumber(2)
+  SSHSessionRole get role => $_getN(1);
+  @$pb.TagNumber(2)
+  set role(SSHSessionRole value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRole() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRole() => $_clearField(2);
+
+  /// expires_in_seconds is how long the share token is valid (0 = no expiry)
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get expiresInSeconds => $_getI64(2);
+  @$pb.TagNumber(3)
+  set expiresInSeconds($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasExpiresInSeconds() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExpiresInSeconds() => $_clearField(3);
+
+  /// max_uses is the maximum number of times the token can be used (0 = unlimited)
+  @$pb.TagNumber(4)
+  $core.int get maxUses => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set maxUses($core.int value) => $_setSignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasMaxUses() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearMaxUses() => $_clearField(4);
+}
+
+/// ShareSessionResponse returns the share token.
+class ShareSessionResponse extends $pb.GeneratedMessage {
+  factory ShareSessionResponse({
+    $core.String? shareToken,
+    $core.String? shareUrl,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (shareToken != null) result.shareToken = shareToken;
+    if (shareUrl != null) result.shareUrl = shareUrl;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  ShareSessionResponse._();
+
+  factory ShareSessionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ShareSessionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ShareSessionResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'shareToken')
+    ..aOS(2, _omitFieldNames ? '' : 'shareUrl')
+    ..aOS(3, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ShareSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ShareSessionResponse copyWith(void Function(ShareSessionResponse) updates) =>
+      super.copyWith((message) => updates(message as ShareSessionResponse))
+          as ShareSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ShareSessionResponse create() => ShareSessionResponse._();
+  @$core.override
+  ShareSessionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ShareSessionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ShareSessionResponse>(create);
+  static ShareSessionResponse? _defaultInstance;
+
+  /// share_token is the generated share token
+  @$pb.TagNumber(1)
+  $core.String get shareToken => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set shareToken($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasShareToken() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearShareToken() => $_clearField(1);
+
+  /// share_url is the full URL for sharing
+  @$pb.TagNumber(2)
+  $core.String get shareUrl => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set shareUrl($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasShareUrl() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearShareUrl() => $_clearField(2);
+
+  /// error is set if sharing failed
+  @$pb.TagNumber(3)
+  $core.String get error => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set error($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasError() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearError() => $_clearField(3);
+}
+
+/// PublishSessionRequest publishes a session to rune.host.
+class PublishSessionRequest extends $pb.GeneratedMessage {
+  factory PublishSessionRequest({
+    $core.String? sessionId,
+    $core.String? slug,
+    SSHSessionVisibility? visibility,
+    $core.bool? allowInput,
+  }) {
+    final result = create();
+    if (sessionId != null) result.sessionId = sessionId;
+    if (slug != null) result.slug = slug;
+    if (visibility != null) result.visibility = visibility;
+    if (allowInput != null) result.allowInput = allowInput;
+    return result;
+  }
+
+  PublishSessionRequest._();
+
+  factory PublishSessionRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PublishSessionRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PublishSessionRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'sessionId')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aE<SSHSessionVisibility>(3, _omitFieldNames ? '' : 'visibility',
+        enumValues: SSHSessionVisibility.values)
+    ..aOB(4, _omitFieldNames ? '' : 'allowInput')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PublishSessionRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PublishSessionRequest copyWith(
+          void Function(PublishSessionRequest) updates) =>
+      super.copyWith((message) => updates(message as PublishSessionRequest))
+          as PublishSessionRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PublishSessionRequest create() => PublishSessionRequest._();
+  @$core.override
+  PublishSessionRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PublishSessionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PublishSessionRequest>(create);
+  static PublishSessionRequest? _defaultInstance;
+
+  /// session_id is the session to publish
+  @$pb.TagNumber(1)
+  $core.String get sessionId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set sessionId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasSessionId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSessionId() => $_clearField(1);
+
+  /// slug is the desired URL slug (optional, auto-generated if empty)
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  /// visibility is the visibility level
+  @$pb.TagNumber(3)
+  SSHSessionVisibility get visibility => $_getN(2);
+  @$pb.TagNumber(3)
+  set visibility(SSHSessionVisibility value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasVisibility() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVisibility() => $_clearField(3);
+
+  /// allow_input allows viewers to send input
+  @$pb.TagNumber(4)
+  $core.bool get allowInput => $_getBF(3);
+  @$pb.TagNumber(4)
+  set allowInput($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAllowInput() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAllowInput() => $_clearField(4);
+}
+
+/// PublishSessionResponse returns the publish URL.
+class PublishSessionResponse extends $pb.GeneratedMessage {
+  factory PublishSessionResponse({
+    $core.String? publishUrl,
+    $core.String? slug,
+    $core.String? error,
+  }) {
+    final result = create();
+    if (publishUrl != null) result.publishUrl = publishUrl;
+    if (slug != null) result.slug = slug;
+    if (error != null) result.error = error;
+    return result;
+  }
+
+  PublishSessionResponse._();
+
+  factory PublishSessionResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PublishSessionResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PublishSessionResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'publishUrl')
+    ..aOS(2, _omitFieldNames ? '' : 'slug')
+    ..aOS(3, _omitFieldNames ? '' : 'error')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PublishSessionResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PublishSessionResponse copyWith(
+          void Function(PublishSessionResponse) updates) =>
+      super.copyWith((message) => updates(message as PublishSessionResponse))
+          as PublishSessionResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PublishSessionResponse create() => PublishSessionResponse._();
+  @$core.override
+  PublishSessionResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PublishSessionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PublishSessionResponse>(create);
+  static PublishSessionResponse? _defaultInstance;
+
+  /// publish_url is the full URL for the published session
+  @$pb.TagNumber(1)
+  $core.String get publishUrl => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set publishUrl($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPublishUrl() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPublishUrl() => $_clearField(1);
+
+  /// slug is the assigned slug
+  @$pb.TagNumber(2)
+  $core.String get slug => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set slug($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSlug() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSlug() => $_clearField(2);
+
+  /// error is set if publishing failed
+  @$pb.TagNumber(3)
+  $core.String get error => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set error($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasError() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearError() => $_clearField(3);
 }
 
 const $core.bool _omitFieldNames =
