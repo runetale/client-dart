@@ -2785,6 +2785,8 @@ class SSHAction extends $pb.GeneratedMessage {
     $core.bool? allowRemotePortForwarding,
     $core.Iterable<$core.String>? recorders,
     SSHRecorderFailureAction? onRecordingFailure,
+    $core.Iterable<$core.int>? allowedLocalPorts,
+    $core.Iterable<$core.int>? allowedRemotePorts,
   }) {
     final result = create();
     if (message != null) result.message = message;
@@ -2800,6 +2802,10 @@ class SSHAction extends $pb.GeneratedMessage {
     if (recorders != null) result.recorders.addAll(recorders);
     if (onRecordingFailure != null)
       result.onRecordingFailure = onRecordingFailure;
+    if (allowedLocalPorts != null)
+      result.allowedLocalPorts.addAll(allowedLocalPorts);
+    if (allowedRemotePorts != null)
+      result.allowedRemotePorts.addAll(allowedRemotePorts);
     return result;
   }
 
@@ -2828,6 +2834,10 @@ class SSHAction extends $pb.GeneratedMessage {
     ..aOM<SSHRecorderFailureAction>(
         9, _omitFieldNames ? '' : 'onRecordingFailure',
         subBuilder: SSHRecorderFailureAction.create)
+    ..p<$core.int>(
+        11, _omitFieldNames ? '' : 'allowedLocalPorts', $pb.PbFieldType.KU3)
+    ..p<$core.int>(
+        12, _omitFieldNames ? '' : 'allowedRemotePorts', $pb.PbFieldType.KU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -2929,6 +2939,13 @@ class SSHAction extends $pb.GeneratedMessage {
   void clearOnRecordingFailure() => $_clearField(9);
   @$pb.TagNumber(9)
   SSHRecorderFailureAction ensureOnRecordingFailure() => $_ensure(8);
+
+  /// Port forwarding restrictions (empty = all ports allowed when forwarding is enabled)
+  @$pb.TagNumber(11)
+  $pb.PbList<$core.int> get allowedLocalPorts => $_getList(9);
+
+  @$pb.TagNumber(12)
+  $pb.PbList<$core.int> get allowedRemotePorts => $_getList(10);
 }
 
 /// SSHRecorderFailureAction defines behavior when session recording fails.

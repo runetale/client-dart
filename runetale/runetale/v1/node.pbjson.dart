@@ -916,6 +916,20 @@ const SSHAction$json = {
       '6': '.protos.SSHRecorderFailureAction',
       '10': 'onRecordingFailure'
     },
+    {
+      '1': 'allowed_local_ports',
+      '3': 11,
+      '4': 3,
+      '5': 13,
+      '10': 'allowedLocalPorts'
+    },
+    {
+      '1': 'allowed_remote_ports',
+      '3': 12,
+      '4': 3,
+      '5': 13,
+      '10': 'allowedRemotePorts'
+    },
   ],
 };
 
@@ -928,7 +942,9 @@ final $typed_data.Uint8List sSHActionDescriptor = $convert.base64Decode(
     'bGxvd0xvY2FsUG9ydEZvcndhcmRpbmcSPwocYWxsb3dfcmVtb3RlX3BvcnRfZm9yd2FyZGluZx'
     'gHIAEoCFIZYWxsb3dSZW1vdGVQb3J0Rm9yd2FyZGluZxIcCglyZWNvcmRlcnMYCCADKAlSCXJl'
     'Y29yZGVycxJSChRvbl9yZWNvcmRpbmdfZmFpbHVyZRgJIAEoCzIgLnByb3Rvcy5TU0hSZWNvcm'
-    'RlckZhaWx1cmVBY3Rpb25SEm9uUmVjb3JkaW5nRmFpbHVyZQ==');
+    'RlckZhaWx1cmVBY3Rpb25SEm9uUmVjb3JkaW5nRmFpbHVyZRIuChNhbGxvd2VkX2xvY2FsX3Bv'
+    'cnRzGAsgAygNUhFhbGxvd2VkTG9jYWxQb3J0cxIwChRhbGxvd2VkX3JlbW90ZV9wb3J0cxgMIA'
+    'MoDVISYWxsb3dlZFJlbW90ZVBvcnRz');
 
 @$core.Deprecated('Use sSHRecorderFailureActionDescriptor instead')
 const SSHRecorderFailureAction$json = {
