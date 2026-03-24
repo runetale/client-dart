@@ -205,6 +205,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     $core.bool? active,
     $core.bool? online,
     $2.Timestamp? lastSeen,
+    $core.Iterable<$core.String>? sshHostKeys,
   }) {
     final result = create();
     if (id != null) result.id = id;
@@ -226,6 +227,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     if (active != null) result.active = active;
     if (online != null) result.online = online;
     if (lastSeen != null) result.lastSeen = lastSeen;
+    if (sshHostKeys != null) result.sshHostKeys.addAll(sshHostKeys);
     return result;
   }
 
@@ -264,6 +266,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..aOB(18, _omitFieldNames ? '' : 'online')
     ..aOM<$2.Timestamp>(19, _omitFieldNames ? '' : 'lastSeen',
         subBuilder: $2.Timestamp.create)
+    ..pPS(20, _omitFieldNames ? '' : 'sshHostKeys')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -434,6 +437,12 @@ class PeerStatus extends $pb.GeneratedMessage {
   void clearLastSeen() => $_clearField(19);
   @$pb.TagNumber(19)
   $2.Timestamp ensureLastSeen() => $_ensure(18);
+
+  /// ssh_host_keys are the SSH host public keys for this node.
+  /// Each entry is in authorized_keys format (e.g. "ssh-ed25519 AAAA...").
+  /// Used by `runetale ssh` to build a per-node known_hosts file.
+  @$pb.TagNumber(20)
+  $pb.PbList<$core.String> get sshHostKeys => $_getList(19);
 }
 
 class UserspacePeerEngineStatus extends $pb.GeneratedMessage {

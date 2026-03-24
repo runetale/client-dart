@@ -152,6 +152,7 @@ const PeerStatus$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'lastSeen'
     },
+    {'1': 'ssh_host_keys', '3': 20, '4': 3, '5': 9, '10': 'sshHostKeys'},
   ],
   '8': [
     {'1': '_cur_addr'},
@@ -172,8 +173,8 @@ final $typed_data.Uint8List peerStatusDescriptor = $convert.base64Decode(
     'aWNlX2FkZHIYDiABKAlIAVIHaWNlQWRkcogBARIpChBhZHZlcnRpc2Vfcm91dGVzGA8gAygJUg'
     '9hZHZlcnRpc2VSb3V0ZXMSJAoOaXNfc25hdF9zdWJuZXQYECABKAhSDGlzU25hdFN1Ym5ldBIW'
     'CgZhY3RpdmUYESABKAhSBmFjdGl2ZRIWCgZvbmxpbmUYEiABKAhSBm9ubGluZRI3CglsYXN0X3'
-    'NlZW4YEyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUghsYXN0U2VlbkILCglfY3Vy'
-    'X2FkZHJCCwoJX2ljZV9hZGRy');
+    'NlZW4YEyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUghsYXN0U2VlbhIiCg1zc2hf'
+    'aG9zdF9rZXlzGBQgAygJUgtzc2hIb3N0S2V5c0ILCglfY3VyX2FkZHJCCwoJX2ljZV9hZGRy');
 
 @$core.Deprecated('Use userspacePeerEngineStatusDescriptor instead')
 const UserspacePeerEngineStatus$json = {

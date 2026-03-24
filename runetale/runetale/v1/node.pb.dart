@@ -43,6 +43,7 @@ class Node extends $pb.GeneratedMessage {
     $2.Timestamp? keyExpiry,
     $core.bool? expired,
     $core.List<$core.int>? keySignature,
+    $core.Iterable<$core.String>? sshHostKeys,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -63,6 +64,7 @@ class Node extends $pb.GeneratedMessage {
     if (keyExpiry != null) result.keyExpiry = keyExpiry;
     if (expired != null) result.expired = expired;
     if (keySignature != null) result.keySignature = keySignature;
+    if (sshHostKeys != null) result.sshHostKeys.addAll(sshHostKeys);
     return result;
   }
 
@@ -104,6 +106,7 @@ class Node extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(
         18, _omitFieldNames ? '' : 'keySignature', $pb.PbFieldType.OY,
         protoName: 'keySignature')
+    ..pPS(19, _omitFieldNames ? '' : 'sshHostKeys')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -288,6 +291,13 @@ class Node extends $pb.GeneratedMessage {
   $core.bool hasKeySignature() => $_has(17);
   @$pb.TagNumber(18)
   void clearKeySignature() => $_clearField(18);
+
+  /// ssh_host_keys are the SSH host public keys for this node.
+  /// Each entry is in authorized_keys format (e.g. "ssh-ed25519 AAAA...").
+  /// Distributed via NetworkMap so that connecting clients can verify host identity
+  /// without relying on ~/.ssh/known_hosts.
+  @$pb.TagNumber(19)
+  $pb.PbList<$core.String> get sshHostKeys => $_getList(18);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
