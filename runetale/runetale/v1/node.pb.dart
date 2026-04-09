@@ -415,16 +415,131 @@ class ComposeNodeResponse extends $pb.GeneratedMessage {
   void clearLoginName() => $_clearField(6);
 }
 
+/// HostMeta contains metadata about the connecting host.
+/// Sent from client to server to describe the node's current state and capabilities.
+/// This is included in NetworkMapRequest on initial connection and when host state changes.
+class HostMeta extends $pb.GeneratedMessage {
+  factory HostMeta({
+    $core.String? os,
+    $core.String? hostname,
+    $core.String? distro,
+    $core.String? computerName,
+    $core.Iterable<$core.String>? routableIps,
+    $core.Iterable<$core.String>? sshHostKeys,
+  }) {
+    final result = create();
+    if (os != null) result.os = os;
+    if (hostname != null) result.hostname = hostname;
+    if (distro != null) result.distro = distro;
+    if (computerName != null) result.computerName = computerName;
+    if (routableIps != null) result.routableIps.addAll(routableIps);
+    if (sshHostKeys != null) result.sshHostKeys.addAll(sshHostKeys);
+    return result;
+  }
+
+  HostMeta._();
+
+  factory HostMeta.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory HostMeta.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'HostMeta',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'os')
+    ..aOS(2, _omitFieldNames ? '' : 'hostname')
+    ..aOS(3, _omitFieldNames ? '' : 'distro')
+    ..aOS(4, _omitFieldNames ? '' : 'computerName')
+    ..pPS(5, _omitFieldNames ? '' : 'routableIps')
+    ..pPS(6, _omitFieldNames ? '' : 'sshHostKeys')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HostMeta clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HostMeta copyWith(void Function(HostMeta) updates) =>
+      super.copyWith((message) => updates(message as HostMeta)) as HostMeta;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static HostMeta create() => HostMeta._();
+  @$core.override
+  HostMeta createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static HostMeta getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HostMeta>(create);
+  static HostMeta? _defaultInstance;
+
+  /// os is the operating system (e.g., "linux", "darwin", "windows").
+  @$pb.TagNumber(1)
+  $core.String get os => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set os($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOs() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOs() => $_clearField(1);
+
+  /// hostname is the device hostname.
+  @$pb.TagNumber(2)
+  $core.String get hostname => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set hostname($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasHostname() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearHostname() => $_clearField(2);
+
+  /// distro is the Linux distribution name (empty on non-Linux).
+  @$pb.TagNumber(3)
+  $core.String get distro => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set distro($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDistro() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDistro() => $_clearField(3);
+
+  /// computer_name is the human-friendly device name.
+  @$pb.TagNumber(4)
+  $core.String get computerName => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set computerName($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasComputerName() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearComputerName() => $_clearField(4);
+
+  /// routable_ips are the CIDR prefixes this node advertises as reachable through it.
+  /// Subnet routes: e.g., "10.0.0.0/8", "192.168.1.0/24"
+  /// Exit node: "0.0.0.0/0" and "::/0" together indicate exit node capability.
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.String> get routableIps => $_getList(4);
+
+  /// ssh_host_keys are the SSH host public keys for this node.
+  /// Each entry is in authorized_keys format (e.g., "ssh-ed25519 AAAA...").
+  @$pb.TagNumber(6)
+  $pb.PbList<$core.String> get sshHostKeys => $_getList(5);
+}
+
 /// NetworkMapRequest is sent from client to server in the ConnectNetworkMapTable stream.
 /// It contains the client's VPN state and is used for keepalive.
 class NetworkMapRequest extends $pb.GeneratedMessage {
   factory NetworkMapRequest({
     $core.bool? vpnRunning,
     $core.bool? isKeepalive,
+    HostMeta? hostMeta,
   }) {
     final result = create();
     if (vpnRunning != null) result.vpnRunning = vpnRunning;
     if (isKeepalive != null) result.isKeepalive = isKeepalive;
+    if (hostMeta != null) result.hostMeta = hostMeta;
     return result;
   }
 
@@ -443,6 +558,8 @@ class NetworkMapRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'vpnRunning')
     ..aOB(2, _omitFieldNames ? '' : 'isKeepalive')
+    ..aOM<HostMeta>(3, _omitFieldNames ? '' : 'hostMeta',
+        subBuilder: HostMeta.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -486,6 +603,20 @@ class NetworkMapRequest extends $pb.GeneratedMessage {
   $core.bool hasIsKeepalive() => $_has(1);
   @$pb.TagNumber(2)
   void clearIsKeepalive() => $_clearField(2);
+
+  /// host_meta contains metadata about the connecting host.
+  /// Sent on initial connection and when host state changes (e.g., route advertisement).
+  /// May be omitted on keepalive messages.
+  @$pb.TagNumber(3)
+  HostMeta get hostMeta => $_getN(2);
+  @$pb.TagNumber(3)
+  set hostMeta(HostMeta value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHostMeta() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHostMeta() => $_clearField(3);
+  @$pb.TagNumber(3)
+  HostMeta ensureHostMeta() => $_ensure(2);
 }
 
 class NetPortRange_portRange extends $pb.GeneratedMessage {

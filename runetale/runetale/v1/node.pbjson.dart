@@ -179,6 +179,26 @@ final $typed_data.Uint8List composeNodeResponseDescriptor = $convert.base64Decod
     'bGF5TmFtZRgFIAEoCVILZGlzcGxheU5hbWUSHAoJbG9naW5OYW1lGAYgASgJUglsb2dpbk5hbW'
     'U=');
 
+@$core.Deprecated('Use hostMetaDescriptor instead')
+const HostMeta$json = {
+  '1': 'HostMeta',
+  '2': [
+    {'1': 'os', '3': 1, '4': 1, '5': 9, '10': 'os'},
+    {'1': 'hostname', '3': 2, '4': 1, '5': 9, '10': 'hostname'},
+    {'1': 'distro', '3': 3, '4': 1, '5': 9, '10': 'distro'},
+    {'1': 'computer_name', '3': 4, '4': 1, '5': 9, '10': 'computerName'},
+    {'1': 'routable_ips', '3': 5, '4': 3, '5': 9, '10': 'routableIps'},
+    {'1': 'ssh_host_keys', '3': 6, '4': 3, '5': 9, '10': 'sshHostKeys'},
+  ],
+};
+
+/// Descriptor for `HostMeta`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
+    'CghIb3N0TWV0YRIOCgJvcxgBIAEoCVICb3MSGgoIaG9zdG5hbWUYAiABKAlSCGhvc3RuYW1lEh'
+    'YKBmRpc3RybxgDIAEoCVIGZGlzdHJvEiMKDWNvbXB1dGVyX25hbWUYBCABKAlSDGNvbXB1dGVy'
+    'TmFtZRIhCgxyb3V0YWJsZV9pcHMYBSADKAlSC3JvdXRhYmxlSXBzEiIKDXNzaF9ob3N0X2tleX'
+    'MYBiADKAlSC3NzaEhvc3RLZXlz');
+
 @$core.Deprecated('Use networkMapRequestDescriptor instead')
 const NetworkMapRequest$json = {
   '1': 'NetworkMapRequest',
@@ -201,18 +221,30 @@ const NetworkMapRequest$json = {
       '10': 'isKeepalive',
       '17': true
     },
+    {
+      '1': 'host_meta',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.HostMeta',
+      '9': 2,
+      '10': 'hostMeta',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_vpn_running'},
     {'1': '_is_keepalive'},
+    {'1': '_host_meta'},
   ],
 };
 
 /// Descriptor for `NetworkMapRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List networkMapRequestDescriptor = $convert.base64Decode(
     'ChFOZXR3b3JrTWFwUmVxdWVzdBIkCgt2cG5fcnVubmluZxgBIAEoCEgAUgp2cG5SdW5uaW5niA'
-    'EBEiYKDGlzX2tlZXBhbGl2ZRgCIAEoCEgBUgtpc0tlZXBhbGl2ZYgBAUIOCgxfdnBuX3J1bm5p'
-    'bmdCDwoNX2lzX2tlZXBhbGl2ZQ==');
+    'EBEiYKDGlzX2tlZXBhbGl2ZRgCIAEoCEgBUgtpc0tlZXBhbGl2ZYgBARIyCglob3N0X21ldGEY'
+    'AyABKAsyEC5wcm90b3MuSG9zdE1ldGFIAlIIaG9zdE1ldGGIAQFCDgoMX3Zwbl9ydW5uaW5nQg'
+    '8KDV9pc19rZWVwYWxpdmVCDAoKX2hvc3RfbWV0YQ==');
 
 @$core.Deprecated('Use netPortRangeDescriptor instead')
 const NetPortRange$json = {
