@@ -426,6 +426,7 @@ class HostMeta extends $pb.GeneratedMessage {
     $core.String? computerName,
     $core.Iterable<$core.String>? routableIps,
     $core.Iterable<$core.String>? sshHostKeys,
+    $core.bool? appLinker,
   }) {
     final result = create();
     if (os != null) result.os = os;
@@ -434,6 +435,7 @@ class HostMeta extends $pb.GeneratedMessage {
     if (computerName != null) result.computerName = computerName;
     if (routableIps != null) result.routableIps.addAll(routableIps);
     if (sshHostKeys != null) result.sshHostKeys.addAll(sshHostKeys);
+    if (appLinker != null) result.appLinker = appLinker;
     return result;
   }
 
@@ -456,6 +458,7 @@ class HostMeta extends $pb.GeneratedMessage {
     ..aOS(4, _omitFieldNames ? '' : 'computerName')
     ..pPS(5, _omitFieldNames ? '' : 'routableIps')
     ..pPS(6, _omitFieldNames ? '' : 'sshHostKeys')
+    ..aOB(7, _omitFieldNames ? '' : 'appLinker')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -526,6 +529,17 @@ class HostMeta extends $pb.GeneratedMessage {
   /// Each entry is in authorized_keys format (e.g., "ssh-ed25519 AAAA...").
   @$pb.TagNumber(6)
   $pb.PbList<$core.String> get sshHostKeys => $_getList(5);
+
+  /// app_linker indicates whether this node is actively running as an app-linker.
+  /// When true, the node is processing DNS queries and advertising routes for configured domains.
+  @$pb.TagNumber(7)
+  $core.bool get appLinker => $_getBF(6);
+  @$pb.TagNumber(7)
+  set appLinker($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasAppLinker() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAppLinker() => $_clearField(7);
 }
 
 /// NetworkMapRequest is sent from client to server in the ConnectNetworkMapTable stream.

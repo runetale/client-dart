@@ -189,6 +189,7 @@ const HostMeta$json = {
     {'1': 'computer_name', '3': 4, '4': 1, '5': 9, '10': 'computerName'},
     {'1': 'routable_ips', '3': 5, '4': 3, '5': 9, '10': 'routableIps'},
     {'1': 'ssh_host_keys', '3': 6, '4': 3, '5': 9, '10': 'sshHostKeys'},
+    {'1': 'app_linker', '3': 7, '4': 1, '5': 8, '10': 'appLinker'},
   ],
 };
 
@@ -197,7 +198,7 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'CghIb3N0TWV0YRIOCgJvcxgBIAEoCVICb3MSGgoIaG9zdG5hbWUYAiABKAlSCGhvc3RuYW1lEh'
     'YKBmRpc3RybxgDIAEoCVIGZGlzdHJvEiMKDWNvbXB1dGVyX25hbWUYBCABKAlSDGNvbXB1dGVy'
     'TmFtZRIhCgxyb3V0YWJsZV9pcHMYBSADKAlSC3JvdXRhYmxlSXBzEiIKDXNzaF9ob3N0X2tleX'
-    'MYBiADKAlSC3NzaEhvc3RLZXlz');
+    'MYBiADKAlSC3NzaEhvc3RLZXlzEh0KCmFwcF9saW5rZXIYByABKAhSCWFwcExpbmtlcg==');
 
 @$core.Deprecated('Use networkMapRequestDescriptor instead')
 const NetworkMapRequest$json = {
