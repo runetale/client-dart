@@ -21,7 +21,7 @@ import 'log_writer.pb.dart' as $0;
 export 'log_writer.pb.dart';
 
 /// LogWriterService receives log uploads from client nodes via a single
-/// bidirectional stream. All three log types (Loglyph, Orbit, PacketFlowLog)
+/// bidirectional stream. Two log types (Loglyph, PacketFlowLog)
 /// are multiplexed over one persistent gRPC stream per client.
 ///
 /// Authentication: gRPC metadata "private-id" header.

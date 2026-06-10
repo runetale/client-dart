@@ -15,24 +15,6 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use transportDescriptor instead')
-const Transport$json = {
-  '1': 'Transport',
-  '2': [
-    {'1': 'TRANSPORT_UNKNOWN', '2': 0},
-    {'1': 'TRANSPORT_UDP', '2': 1},
-    {'1': 'TRANSPORT_ICE', '2': 2},
-    {'1': 'TRANSPORT_CERF', '2': 3},
-    {'1': 'TRANSPORT_CERF_WS', '2': 4},
-  ],
-};
-
-/// Descriptor for `Transport`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List transportDescriptor = $convert.base64Decode(
-    'CglUcmFuc3BvcnQSFQoRVFJBTlNQT1JUX1VOS05PV04QABIRCg1UUkFOU1BPUlRfVURQEAESEQ'
-    'oNVFJBTlNQT1JUX0lDRRACEhIKDlRSQU5TUE9SVF9DRVJGEAMSFQoRVFJBTlNQT1JUX0NFUkZf'
-    'V1MQBA==');
-
 @$core.Deprecated('Use loglyphUploadRequestDescriptor instead')
 const LoglyphUploadRequest$json = {
   '1': 'LoglyphUploadRequest',
@@ -98,309 +80,6 @@ const LoglyphUploadResponse$json = {
 final $typed_data.Uint8List loglyphUploadResponseDescriptor = $convert.base64Decode(
     'ChVMb2dseXBoVXBsb2FkUmVzcG9uc2USGgoIYWNjZXB0ZWQYASABKA1SCGFjY2VwdGVkEhgKB2'
     'Ryb3BwZWQYAiABKA1SB2Ryb3BwZWQSFgoGcmVhc29uGAMgASgJUgZyZWFzb24=');
-
-@$core.Deprecated('Use orbitBatchUploadRequestDescriptor instead')
-const OrbitBatchUploadRequest$json = {
-  '1': 'OrbitBatchUploadRequest',
-  '2': [
-    {'1': 'version', '3': 1, '4': 1, '5': 9, '10': 'version'},
-    {'1': 'session_id', '3': 2, '4': 1, '5': 9, '10': 'sessionId'},
-    {
-      '1': 'events',
-      '3': 3,
-      '4': 3,
-      '5': 11,
-      '6': '.logserver.OrbitEvent',
-      '10': 'events'
-    },
-  ],
-};
-
-/// Descriptor for `OrbitBatchUploadRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List orbitBatchUploadRequestDescriptor = $convert.base64Decode(
-    'ChdPcmJpdEJhdGNoVXBsb2FkUmVxdWVzdBIYCgd2ZXJzaW9uGAEgASgJUgd2ZXJzaW9uEh0KCn'
-    'Nlc3Npb25faWQYAiABKAlSCXNlc3Npb25JZBItCgZldmVudHMYAyADKAsyFS5sb2dzZXJ2ZXIu'
-    'T3JiaXRFdmVudFIGZXZlbnRz');
-
-@$core.Deprecated('Use orbitBatchUploadResponseDescriptor instead')
-const OrbitBatchUploadResponse$json = {
-  '1': 'OrbitBatchUploadResponse',
-  '2': [
-    {'1': 'accepted', '3': 1, '4': 1, '5': 13, '10': 'accepted'},
-    {'1': 'dropped', '3': 2, '4': 1, '5': 13, '10': 'dropped'},
-    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
-  ],
-};
-
-/// Descriptor for `OrbitBatchUploadResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List orbitBatchUploadResponseDescriptor =
-    $convert.base64Decode(
-        'ChhPcmJpdEJhdGNoVXBsb2FkUmVzcG9uc2USGgoIYWNjZXB0ZWQYASABKA1SCGFjY2VwdGVkEh'
-        'gKB2Ryb3BwZWQYAiABKA1SB2Ryb3BwZWQSFgoGcmVhc29uGAMgASgJUgZyZWFzb24=');
-
-@$core.Deprecated('Use orbitEventDescriptor instead')
-const OrbitEvent$json = {
-  '1': 'OrbitEvent',
-  '2': [
-    {
-      '1': 'at',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.google.protobuf.Timestamp',
-      '10': 'at'
-    },
-    {'1': 'peer_hash', '3': 2, '4': 1, '5': 12, '10': 'peerHash'},
-    {'1': 'region_id', '3': 3, '4': 1, '5': 13, '10': 'regionId'},
-    {
-      '1': 'transport',
-      '3': 4,
-      '4': 1,
-      '5': 14,
-      '6': '.logserver.Transport',
-      '10': 'transport'
-    },
-    {
-      '1': 'send_result',
-      '3': 10,
-      '4': 1,
-      '5': 11,
-      '6': '.logserver.SendResultEvent',
-      '9': 0,
-      '10': 'sendResult'
-    },
-    {
-      '1': 'recv_result',
-      '3': 11,
-      '4': 1,
-      '5': 11,
-      '6': '.logserver.RecvResultEvent',
-      '9': 0,
-      '10': 'recvResult'
-    },
-    {
-      '1': 'cerf_conn',
-      '3': 12,
-      '4': 1,
-      '5': 11,
-      '6': '.logserver.CerfConnEvent',
-      '9': 0,
-      '10': 'cerfConn'
-    },
-    {
-      '1': 'ice',
-      '3': 13,
-      '4': 1,
-      '5': 11,
-      '6': '.logserver.IceEvent',
-      '9': 0,
-      '10': 'ice'
-    },
-    {
-      '1': 'filter',
-      '3': 14,
-      '4': 1,
-      '5': 11,
-      '6': '.logserver.FilterEvent',
-      '9': 0,
-      '10': 'filter'
-    },
-    {
-      '1': 'path_transition',
-      '3': 15,
-      '4': 1,
-      '5': 11,
-      '6': '.logserver.PathTransitionEvent',
-      '9': 0,
-      '10': 'pathTransition'
-    },
-  ],
-  '8': [
-    {'1': 'payload'},
-  ],
-};
-
-/// Descriptor for `OrbitEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List orbitEventDescriptor = $convert.base64Decode(
-    'CgpPcmJpdEV2ZW50EioKAmF0GAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFICYX'
-    'QSGwoJcGVlcl9oYXNoGAIgASgMUghwZWVySGFzaBIbCglyZWdpb25faWQYAyABKA1SCHJlZ2lv'
-    'bklkEjIKCXRyYW5zcG9ydBgEIAEoDjIULmxvZ3NlcnZlci5UcmFuc3BvcnRSCXRyYW5zcG9ydB'
-    'I9CgtzZW5kX3Jlc3VsdBgKIAEoCzIaLmxvZ3NlcnZlci5TZW5kUmVzdWx0RXZlbnRIAFIKc2Vu'
-    'ZFJlc3VsdBI9CgtyZWN2X3Jlc3VsdBgLIAEoCzIaLmxvZ3NlcnZlci5SZWN2UmVzdWx0RXZlbn'
-    'RIAFIKcmVjdlJlc3VsdBI3CgljZXJmX2Nvbm4YDCABKAsyGC5sb2dzZXJ2ZXIuQ2VyZkNvbm5F'
-    'dmVudEgAUghjZXJmQ29ubhInCgNpY2UYDSABKAsyEy5sb2dzZXJ2ZXIuSWNlRXZlbnRIAFIDaW'
-    'NlEjAKBmZpbHRlchgOIAEoCzIWLmxvZ3NlcnZlci5GaWx0ZXJFdmVudEgAUgZmaWx0ZXISSQoP'
-    'cGF0aF90cmFuc2l0aW9uGA8gASgLMh4ubG9nc2VydmVyLlBhdGhUcmFuc2l0aW9uRXZlbnRIAF'
-    'IOcGF0aFRyYW5zaXRpb25CCQoHcGF5bG9hZA==');
-
-@$core.Deprecated('Use sendResultEventDescriptor instead')
-const SendResultEvent$json = {
-  '1': 'SendResultEvent',
-  '2': [
-    {'1': 'ok', '3': 1, '4': 1, '5': 8, '10': 'ok'},
-    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
-  ],
-};
-
-/// Descriptor for `SendResultEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List sendResultEventDescriptor = $convert.base64Decode(
-    'Cg9TZW5kUmVzdWx0RXZlbnQSDgoCb2sYASABKAhSAm9rEhQKBWVycm9yGAIgASgJUgVlcnJvcg'
-    '==');
-
-@$core.Deprecated('Use recvResultEventDescriptor instead')
-const RecvResultEvent$json = {
-  '1': 'RecvResultEvent',
-  '2': [
-    {'1': 'kind', '3': 1, '4': 1, '5': 5, '10': 'kind'},
-    {'1': 'size', '3': 2, '4': 1, '5': 13, '10': 'size'},
-  ],
-};
-
-/// Descriptor for `RecvResultEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List recvResultEventDescriptor = $convert.base64Decode(
-    'Cg9SZWN2UmVzdWx0RXZlbnQSEgoEa2luZBgBIAEoBVIEa2luZBISCgRzaXplGAIgASgNUgRzaX'
-    'pl');
-
-@$core.Deprecated('Use cerfConnEventDescriptor instead')
-const CerfConnEvent$json = {
-  '1': 'CerfConnEvent',
-  '2': [
-    {
-      '1': 'state',
-      '3': 1,
-      '4': 1,
-      '5': 14,
-      '6': '.logserver.CerfConnEvent.State',
-      '10': 'state'
-    },
-    {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
-  ],
-  '4': [CerfConnEvent_State$json],
-};
-
-@$core.Deprecated('Use cerfConnEventDescriptor instead')
-const CerfConnEvent_State$json = {
-  '1': 'State',
-  '2': [
-    {'1': 'CERF_CONN_STATE_UNKNOWN', '2': 0},
-    {'1': 'CERF_CONN_STATE_CONNECTING', '2': 1},
-    {'1': 'CERF_CONN_STATE_CONNECTED', '2': 2},
-    {'1': 'CERF_CONN_STATE_DISCONNECTED', '2': 3},
-    {'1': 'CERF_CONN_STATE_RECV_ERROR', '2': 4},
-  ],
-};
-
-/// Descriptor for `CerfConnEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List cerfConnEventDescriptor = $convert.base64Decode(
-    'Cg1DZXJmQ29ubkV2ZW50EjQKBXN0YXRlGAEgASgOMh4ubG9nc2VydmVyLkNlcmZDb25uRXZlbn'
-    'QuU3RhdGVSBXN0YXRlEhQKBWVycm9yGAIgASgJUgVlcnJvciKlAQoFU3RhdGUSGwoXQ0VSRl9D'
-    'T05OX1NUQVRFX1VOS05PV04QABIeChpDRVJGX0NPTk5fU1RBVEVfQ09OTkVDVElORxABEh0KGU'
-    'NFUkZfQ09OTl9TVEFURV9DT05ORUNURUQQAhIgChxDRVJGX0NPTk5fU1RBVEVfRElTQ09OTkVD'
-    'VEVEEAMSHgoaQ0VSRl9DT05OX1NUQVRFX1JFQ1ZfRVJST1IQBA==');
-
-@$core.Deprecated('Use iceEventDescriptor instead')
-const IceEvent$json = {
-  '1': 'IceEvent',
-  '2': [
-    {
-      '1': 'state',
-      '3': 1,
-      '4': 1,
-      '5': 14,
-      '6': '.logserver.IceEvent.State',
-      '10': 'state'
-    },
-    {'1': 'candidate_type', '3': 2, '4': 1, '5': 9, '10': 'candidateType'},
-  ],
-  '4': [IceEvent_State$json],
-};
-
-@$core.Deprecated('Use iceEventDescriptor instead')
-const IceEvent_State$json = {
-  '1': 'State',
-  '2': [
-    {'1': 'ICE_STATE_UNKNOWN', '2': 0},
-    {'1': 'ICE_STATE_CHECKING', '2': 1},
-    {'1': 'ICE_STATE_CONNECTED', '2': 2},
-    {'1': 'ICE_STATE_COMPLETED', '2': 3},
-    {'1': 'ICE_STATE_FAILED', '2': 4},
-    {'1': 'ICE_STATE_DISCONNECTED', '2': 5},
-    {'1': 'ICE_STATE_CLOSED', '2': 6},
-  ],
-};
-
-/// Descriptor for `IceEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List iceEventDescriptor = $convert.base64Decode(
-    'CghJY2VFdmVudBIvCgVzdGF0ZRgBIAEoDjIZLmxvZ3NlcnZlci5JY2VFdmVudC5TdGF0ZVIFc3'
-    'RhdGUSJQoOY2FuZGlkYXRlX3R5cGUYAiABKAlSDWNhbmRpZGF0ZVR5cGUisAEKBVN0YXRlEhUK'
-    'EUlDRV9TVEFURV9VTktOT1dOEAASFgoSSUNFX1NUQVRFX0NIRUNLSU5HEAESFwoTSUNFX1NUQV'
-    'RFX0NPTk5FQ1RFRBACEhcKE0lDRV9TVEFURV9DT01QTEVURUQQAxIUChBJQ0VfU1RBVEVfRkFJ'
-    'TEVEEAQSGgoWSUNFX1NUQVRFX0RJU0NPTk5FQ1RFRBAFEhQKEElDRV9TVEFURV9DTE9TRUQQBg'
-    '==');
-
-@$core.Deprecated('Use filterEventDescriptor instead')
-const FilterEvent$json = {
-  '1': 'FilterEvent',
-  '2': [
-    {
-      '1': 'result',
-      '3': 1,
-      '4': 1,
-      '5': 14,
-      '6': '.logserver.FilterEvent.Result',
-      '10': 'result'
-    },
-    {'1': 'reason', '3': 2, '4': 1, '5': 9, '10': 'reason'},
-  ],
-  '4': [FilterEvent_Result$json],
-};
-
-@$core.Deprecated('Use filterEventDescriptor instead')
-const FilterEvent_Result$json = {
-  '1': 'Result',
-  '2': [
-    {'1': 'FILTER_RESULT_UNKNOWN', '2': 0},
-    {'1': 'FILTER_RESULT_ACCEPT', '2': 1},
-    {'1': 'FILTER_RESULT_DROP', '2': 2},
-  ],
-};
-
-/// Descriptor for `FilterEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List filterEventDescriptor = $convert.base64Decode(
-    'CgtGaWx0ZXJFdmVudBI1CgZyZXN1bHQYASABKA4yHS5sb2dzZXJ2ZXIuRmlsdGVyRXZlbnQuUm'
-    'VzdWx0UgZyZXN1bHQSFgoGcmVhc29uGAIgASgJUgZyZWFzb24iVQoGUmVzdWx0EhkKFUZJTFRF'
-    'Ul9SRVNVTFRfVU5LTk9XThAAEhgKFEZJTFRFUl9SRVNVTFRfQUNDRVBUEAESFgoSRklMVEVSX1'
-    'JFU1VMVF9EUk9QEAI=');
-
-@$core.Deprecated('Use pathTransitionEventDescriptor instead')
-const PathTransitionEvent$json = {
-  '1': 'PathTransitionEvent',
-  '2': [
-    {
-      '1': 'from',
-      '3': 1,
-      '4': 1,
-      '5': 14,
-      '6': '.logserver.Transport',
-      '10': 'from'
-    },
-    {
-      '1': 'to',
-      '3': 2,
-      '4': 1,
-      '5': 14,
-      '6': '.logserver.Transport',
-      '10': 'to'
-    },
-    {'1': 'reason', '3': 3, '4': 1, '5': 9, '10': 'reason'},
-  ],
-};
-
-/// Descriptor for `PathTransitionEvent`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pathTransitionEventDescriptor = $convert.base64Decode(
-    'ChNQYXRoVHJhbnNpdGlvbkV2ZW50EigKBGZyb20YASABKA4yFC5sb2dzZXJ2ZXIuVHJhbnNwb3'
-    'J0UgRmcm9tEiQKAnRvGAIgASgOMhQubG9nc2VydmVyLlRyYW5zcG9ydFICdG8SFgoGcmVhc29u'
-    'GAMgASgJUgZyZWFzb24=');
 
 @$core.Deprecated('Use packetFlowLogUploadRequestDescriptor instead')
 const PacketFlowLogUploadRequest$json = {
@@ -542,15 +221,6 @@ const StreamLogRequest$json = {
       '10': 'packetFlow'
     },
     {
-      '1': 'orbit',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.logserver.OrbitBatchUploadRequest',
-      '9': 0,
-      '10': 'orbit'
-    },
-    {
       '1': 'loglyph',
       '3': 3,
       '4': 1,
@@ -569,10 +239,9 @@ const StreamLogRequest$json = {
 /// Descriptor for `StreamLogRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List streamLogRequestDescriptor = $convert.base64Decode(
     'ChBTdHJlYW1Mb2dSZXF1ZXN0EkgKC3BhY2tldF9mbG93GAEgASgLMiUubG9nc2VydmVyLlBhY2'
-    'tldEZsb3dMb2dVcGxvYWRSZXF1ZXN0SABSCnBhY2tldEZsb3cSOgoFb3JiaXQYAiABKAsyIi5s'
-    'b2dzZXJ2ZXIuT3JiaXRCYXRjaFVwbG9hZFJlcXVlc3RIAFIFb3JiaXQSOwoHbG9nbHlwaBgDIA'
-    'EoCzIfLmxvZ3NlcnZlci5Mb2dseXBoVXBsb2FkUmVxdWVzdEgAUgdsb2dseXBoEhoKCHNlcXVl'
-    'bmNlGAogASgEUghzZXF1ZW5jZUIJCgdwYXlsb2Fk');
+    'tldEZsb3dMb2dVcGxvYWRSZXF1ZXN0SABSCnBhY2tldEZsb3cSOwoHbG9nbHlwaBgDIAEoCzIf'
+    'LmxvZ3NlcnZlci5Mb2dseXBoVXBsb2FkUmVxdWVzdEgAUgdsb2dseXBoEhoKCHNlcXVlbmNlGA'
+    'ogASgEUghzZXF1ZW5jZUIJCgdwYXlsb2Fk');
 
 @$core.Deprecated('Use streamLogResponseDescriptor instead')
 const StreamLogResponse$json = {
@@ -627,7 +296,6 @@ const LogConfigUpdate$json = {
       '10': 'minBytesThreshold'
     },
     {'1': 'netflow_enabled', '3': 3, '4': 1, '5': 8, '10': 'netflowEnabled'},
-    {'1': 'orbit_enabled', '3': 4, '4': 1, '5': 8, '10': 'orbitEnabled'},
     {'1': 'loglyph_enabled', '3': 5, '4': 1, '5': 8, '10': 'loglyphEnabled'},
   ],
 };
@@ -636,9 +304,8 @@ const LogConfigUpdate$json = {
 final $typed_data.Uint8List logConfigUpdateDescriptor = $convert.base64Decode(
     'Cg9Mb2dDb25maWdVcGRhdGUSLgoTcG9sbF9wZXJpb2Rfc2Vjb25kcxgBIAEoDVIRcG9sbFBlcm'
     'lvZFNlY29uZHMSLgoTbWluX2J5dGVzX3RocmVzaG9sZBgCIAEoBFIRbWluQnl0ZXNUaHJlc2hv'
-    'bGQSJwoPbmV0Zmxvd19lbmFibGVkGAMgASgIUg5uZXRmbG93RW5hYmxlZBIjCg1vcmJpdF9lbm'
-    'FibGVkGAQgASgIUgxvcmJpdEVuYWJsZWQSJwoPbG9nbHlwaF9lbmFibGVkGAUgASgIUg5sb2ds'
-    'eXBoRW5hYmxlZA==');
+    'bGQSJwoPbmV0Zmxvd19lbmFibGVkGAMgASgIUg5uZXRmbG93RW5hYmxlZBInCg9sb2dseXBoX2'
+    'VuYWJsZWQYBSABKAhSDmxvZ2x5cGhFbmFibGVk');
 
 @$core.Deprecated('Use streamAckDescriptor instead')
 const StreamAck$json = {
