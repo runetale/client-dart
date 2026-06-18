@@ -878,7 +878,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.Iterable<FilterRule>? packetFilter,
     $core.String? advertisedRoute,
     $core.bool? jailed,
-    $core.Iterable<Node>? iceTable,
+    $core.Iterable<Node>? potentialPeers,
     DNSConfig? dns,
     $core.Iterable<AppLinker>? appLinker,
     CerfMap? cerfMap,
@@ -898,7 +898,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (packetFilter != null) result.packetFilter.addAll(packetFilter);
     if (advertisedRoute != null) result.advertisedRoute = advertisedRoute;
     if (jailed != null) result.jailed = jailed;
-    if (iceTable != null) result.iceTable.addAll(iceTable);
+    if (potentialPeers != null) result.potentialPeers.addAll(potentialPeers);
     if (dns != null) result.dns = dns;
     if (appLinker != null) result.appLinker.addAll(appLinker);
     if (cerfMap != null) result.cerfMap = cerfMap;
@@ -940,8 +940,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'advertisedRoute',
         protoName: 'advertisedRoute')
     ..aOB(8, _omitFieldNames ? '' : 'jailed')
-    ..pPM<Node>(9, _omitFieldNames ? '' : 'iceTable',
-        protoName: 'iceTable', subBuilder: Node.create)
+    ..pPM<Node>(9, _omitFieldNames ? '' : 'potentialPeers',
+        protoName: 'potentialPeers', subBuilder: Node.create)
     ..aOM<DNSConfig>(10, _omitFieldNames ? '' : 'dns',
         subBuilder: DNSConfig.create)
     ..pPM<AppLinker>(11, _omitFieldNames ? '' : 'appLinker',
@@ -1039,8 +1039,10 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearJailed() => $_clearField(8);
 
+  /// ICE/STUN/TURN による NAT トラバーサルの対象となる全ピア候補。
+  /// Peers (ACL で許可された通信先) とは異なり、接続確立に必要な全ノードを含む。
   @$pb.TagNumber(9)
-  $pb.PbList<Node> get iceTable => $_getList(8);
+  $pb.PbList<Node> get potentialPeers => $_getList(8);
 
   @$pb.TagNumber(10)
   DNSConfig get dns => $_getN(9);

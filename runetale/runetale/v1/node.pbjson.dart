@@ -330,12 +330,12 @@ const NetworkMapResponse$json = {
     {'1': 'advertisedRoute', '3': 7, '4': 1, '5': 9, '10': 'advertisedRoute'},
     {'1': 'jailed', '3': 8, '4': 1, '5': 8, '10': 'jailed'},
     {
-      '1': 'iceTable',
+      '1': 'potentialPeers',
       '3': 9,
       '4': 3,
       '5': 11,
       '6': '.protos.Node',
-      '10': 'iceTable'
+      '10': 'potentialPeers'
     },
     {
       '1': 'dns',
@@ -403,16 +403,16 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'DHBlZXJzQ2hhbmdlZBgEIAMoCzIMLnByb3Rvcy5Ob2RlUgxwZWVyc0NoYW5nZWQSIgoMcGVlcn'
     'NSZW1vdmVkGAUgAygEUgxwZWVyc1JlbW92ZWQSNgoMcGFja2V0RmlsdGVyGAYgAygLMhIucHJv'
     'dG9zLkZpbHRlclJ1bGVSDHBhY2tldEZpbHRlchIoCg9hZHZlcnRpc2VkUm91dGUYByABKAlSD2'
-    'FkdmVydGlzZWRSb3V0ZRIWCgZqYWlsZWQYCCABKAhSBmphaWxlZBIoCghpY2VUYWJsZRgJIAMo'
-    'CzIMLnByb3Rvcy5Ob2RlUghpY2VUYWJsZRIjCgNkbnMYCiABKAsyES5wcm90b3MuRE5TQ29uZm'
-    'lnUgNkbnMSLwoJYXBwTGlua2VyGAsgAygLMhEucHJvdG9zLkFwcExpbmtlclIJYXBwTGlua2Vy'
-    'EikKB2NlcmZNYXAYFCABKAsyDy5wcm90b3MuQ2VyZk1hcFIHY2VyZk1hcBIwChNkZWZhdWx0Q2'
-    'VyZlJlZ2lvbklkGBUgASgNUhNkZWZhdWx0Q2VyZlJlZ2lvbklkEigKEHRlbGVtZXRyeV9sb2df'
-    'aWQYFiABKAlSDnRlbGVtZXRyeUxvZ0lkEjUKF2RvbWFpbl90ZWxlbWV0cnlfbG9nX2lkGBcgAS'
-    'gJUhRkb21haW5UZWxlbWV0cnlMb2dJZBIiCgxjYXBhYmlsaXRpZXMYGCADKAlSDGNhcGFiaWxp'
-    'dGllcxI7CgtzZXJ2ZXJfdGltZRgZIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCn'
-    'NlcnZlclRpbWUSMAoKc3NoX3BvbGljeRgaIAEoCzIRLnByb3Rvcy5TU0hQb2xpY3lSCXNzaFBv'
-    'bGljeQ==');
+    'FkdmVydGlzZWRSb3V0ZRIWCgZqYWlsZWQYCCABKAhSBmphaWxlZBI0Cg5wb3RlbnRpYWxQZWVy'
+    'cxgJIAMoCzIMLnByb3Rvcy5Ob2RlUg5wb3RlbnRpYWxQZWVycxIjCgNkbnMYCiABKAsyES5wcm'
+    '90b3MuRE5TQ29uZmlnUgNkbnMSLwoJYXBwTGlua2VyGAsgAygLMhEucHJvdG9zLkFwcExpbmtl'
+    'clIJYXBwTGlua2VyEikKB2NlcmZNYXAYFCABKAsyDy5wcm90b3MuQ2VyZk1hcFIHY2VyZk1hcB'
+    'IwChNkZWZhdWx0Q2VyZlJlZ2lvbklkGBUgASgNUhNkZWZhdWx0Q2VyZlJlZ2lvbklkEigKEHRl'
+    'bGVtZXRyeV9sb2dfaWQYFiABKAlSDnRlbGVtZXRyeUxvZ0lkEjUKF2RvbWFpbl90ZWxlbWV0cn'
+    'lfbG9nX2lkGBcgASgJUhRkb21haW5UZWxlbWV0cnlMb2dJZBIiCgxjYXBhYmlsaXRpZXMYGCAD'
+    'KAlSDGNhcGFiaWxpdGllcxI7CgtzZXJ2ZXJfdGltZRgZIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
+    '5UaW1lc3RhbXBSCnNlcnZlclRpbWUSMAoKc3NoX3BvbGljeRgaIAEoCzIRLnByb3Rvcy5TU0hQ'
+    'b2xpY3lSCXNzaFBvbGljeQ==');
 
 @$core.Deprecated('Use cerfMapDescriptor instead')
 const CerfMap$json = {
