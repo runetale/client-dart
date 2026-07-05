@@ -1415,11 +1415,15 @@ class AppLinker extends $pb.GeneratedMessage {
     $core.String? name,
     $core.Iterable<$core.String>? domains,
     $core.Iterable<$core.String>? routes,
+    $fixnum.Int64? nodeId,
+    $core.int? peerApiPort,
   }) {
     final result = create();
     if (name != null) result.name = name;
     if (domains != null) result.domains.addAll(domains);
     if (routes != null) result.routes.addAll(routes);
+    if (nodeId != null) result.nodeId = nodeId;
+    if (peerApiPort != null) result.peerApiPort = peerApiPort;
     return result;
   }
 
@@ -1439,6 +1443,10 @@ class AppLinker extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..pPS(2, _omitFieldNames ? '' : 'domains')
     ..pPS(3, _omitFieldNames ? '' : 'routes')
+    ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aI(5, _omitFieldNames ? '' : 'peerApiPort',
+        fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1480,6 +1488,29 @@ class AppLinker extends $pb.GeneratedMessage {
   /// ルートはCIDR表記で表現されます（例：192.168.1.0/24）。
   @$pb.TagNumber(3)
   $pb.PbList<$core.String> get routes => $_getList(2);
+
+  /// node_id is the NodeID of the node running this AppLinker.
+  /// Clients use this to identify which peer's PeerAPI to send DNS queries to.
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get nodeId => $_getI64(3);
+  @$pb.TagNumber(4)
+  set nodeId($fixnum.Int64 value) => $_setInt64(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasNodeId() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNodeId() => $_clearField(4);
+
+  /// peer_api_port is the TCP port on which the AppLinker node's PeerAPI is
+  /// listening. Clients configure Split DNS to forward queries for the
+  /// AppLinker's domains to this port on the AppLinker node's VPN IP.
+  @$pb.TagNumber(5)
+  $core.int get peerApiPort => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set peerApiPort($core.int value) => $_setUnsignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPeerApiPort() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPeerApiPort() => $_clearField(5);
 }
 
 class Resolver extends $pb.GeneratedMessage {

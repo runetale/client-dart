@@ -488,13 +488,16 @@ const AppLinker$json = {
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'domains', '3': 2, '4': 3, '5': 9, '10': 'domains'},
     {'1': 'routes', '3': 3, '4': 3, '5': 9, '10': 'routes'},
+    {'1': 'node_id', '3': 4, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'peer_api_port', '3': 5, '4': 1, '5': 13, '10': 'peerApiPort'},
   ],
 };
 
 /// Descriptor for `AppLinker`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appLinkerDescriptor = $convert.base64Decode(
     'CglBcHBMaW5rZXISEgoEbmFtZRgBIAEoCVIEbmFtZRIYCgdkb21haW5zGAIgAygJUgdkb21haW'
-    '5zEhYKBnJvdXRlcxgDIAMoCVIGcm91dGVz');
+    '5zEhYKBnJvdXRlcxgDIAMoCVIGcm91dGVzEhcKB25vZGVfaWQYBCABKARSBm5vZGVJZBIiCg1w'
+    'ZWVyX2FwaV9wb3J0GAUgASgNUgtwZWVyQXBpUG9ydA==');
 
 @$core.Deprecated('Use resolverDescriptor instead')
 const Resolver$json = {
