@@ -427,6 +427,7 @@ class HostMeta extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? routableIps,
     $core.Iterable<$core.String>? sshHostKeys,
     $core.bool? appLinker,
+    $core.int? peerApiPort,
   }) {
     final result = create();
     if (os != null) result.os = os;
@@ -436,6 +437,7 @@ class HostMeta extends $pb.GeneratedMessage {
     if (routableIps != null) result.routableIps.addAll(routableIps);
     if (sshHostKeys != null) result.sshHostKeys.addAll(sshHostKeys);
     if (appLinker != null) result.appLinker = appLinker;
+    if (peerApiPort != null) result.peerApiPort = peerApiPort;
     return result;
   }
 
@@ -459,6 +461,8 @@ class HostMeta extends $pb.GeneratedMessage {
     ..pPS(5, _omitFieldNames ? '' : 'routableIps')
     ..pPS(6, _omitFieldNames ? '' : 'sshHostKeys')
     ..aOB(7, _omitFieldNames ? '' : 'appLinker')
+    ..aI(8, _omitFieldNames ? '' : 'peerApiPort',
+        fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -540,6 +544,18 @@ class HostMeta extends $pb.GeneratedMessage {
   $core.bool hasAppLinker() => $_has(6);
   @$pb.TagNumber(7)
   void clearAppLinker() => $_clearField(7);
+
+  /// peer_api_port is the TCP port on which this node's PeerAPI HTTP server is
+  /// listening. Only set when app_linker is true. The server stores this and
+  /// distributes it to peers via AppLinker.peer_api_port in the NetworkMap.
+  @$pb.TagNumber(8)
+  $core.int get peerApiPort => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set peerApiPort($core.int value) => $_setUnsignedInt32(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasPeerApiPort() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPeerApiPort() => $_clearField(8);
 }
 
 /// NetworkMapRequest is sent from client to server in the ConnectNetworkMapTable stream.

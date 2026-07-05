@@ -190,6 +190,7 @@ const HostMeta$json = {
     {'1': 'routable_ips', '3': 5, '4': 3, '5': 9, '10': 'routableIps'},
     {'1': 'ssh_host_keys', '3': 6, '4': 3, '5': 9, '10': 'sshHostKeys'},
     {'1': 'app_linker', '3': 7, '4': 1, '5': 8, '10': 'appLinker'},
+    {'1': 'peer_api_port', '3': 8, '4': 1, '5': 13, '10': 'peerApiPort'},
   ],
 };
 
@@ -198,7 +199,8 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'CghIb3N0TWV0YRIOCgJvcxgBIAEoCVICb3MSGgoIaG9zdG5hbWUYAiABKAlSCGhvc3RuYW1lEh'
     'YKBmRpc3RybxgDIAEoCVIGZGlzdHJvEiMKDWNvbXB1dGVyX25hbWUYBCABKAlSDGNvbXB1dGVy'
     'TmFtZRIhCgxyb3V0YWJsZV9pcHMYBSADKAlSC3JvdXRhYmxlSXBzEiIKDXNzaF9ob3N0X2tleX'
-    'MYBiADKAlSC3NzaEhvc3RLZXlzEh0KCmFwcF9saW5rZXIYByABKAhSCWFwcExpbmtlcg==');
+    'MYBiADKAlSC3NzaEhvc3RLZXlzEh0KCmFwcF9saW5rZXIYByABKAhSCWFwcExpbmtlchIiCg1w'
+    'ZWVyX2FwaV9wb3J0GAggASgNUgtwZWVyQXBpUG9ydA==');
 
 @$core.Deprecated('Use networkMapRequestDescriptor instead')
 const NetworkMapRequest$json = {
