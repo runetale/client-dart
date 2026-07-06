@@ -142,6 +142,7 @@ const Node$json = {
     {'1': 'expired', '3': 17, '4': 1, '5': 8, '10': 'expired'},
     {'1': 'keySignature', '3': 18, '4': 1, '5': 12, '10': 'keySignature'},
     {'1': 'ssh_host_keys', '3': 19, '4': 3, '5': 9, '10': 'sshHostKeys'},
+    {'1': 'peer_api_port', '3': 20, '4': 1, '5': 13, '10': 'peerApiPort'},
   ],
 };
 
@@ -157,7 +158,8 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     '9ubGluZRI2CghsYXN0U2VlbhgPIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCGxh'
     'c3RTZWVuEjgKCWtleUV4cGlyeRgQIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCW'
     'tleUV4cGlyeRIYCgdleHBpcmVkGBEgASgIUgdleHBpcmVkEiIKDGtleVNpZ25hdHVyZRgSIAEo'
-    'DFIMa2V5U2lnbmF0dXJlEiIKDXNzaF9ob3N0X2tleXMYEyADKAlSC3NzaEhvc3RLZXlz');
+    'DFIMa2V5U2lnbmF0dXJlEiIKDXNzaF9ob3N0X2tleXMYEyADKAlSC3NzaEhvc3RLZXlzEiIKDX'
+    'BlZXJfYXBpX3BvcnQYFCABKA1SC3BlZXJBcGlQb3J0');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {

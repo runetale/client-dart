@@ -44,6 +44,7 @@ class Node extends $pb.GeneratedMessage {
     $core.bool? expired,
     $core.List<$core.int>? keySignature,
     $core.Iterable<$core.String>? sshHostKeys,
+    $core.int? peerApiPort,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -65,6 +66,7 @@ class Node extends $pb.GeneratedMessage {
     if (expired != null) result.expired = expired;
     if (keySignature != null) result.keySignature = keySignature;
     if (sshHostKeys != null) result.sshHostKeys.addAll(sshHostKeys);
+    if (peerApiPort != null) result.peerApiPort = peerApiPort;
     return result;
   }
 
@@ -107,6 +109,8 @@ class Node extends $pb.GeneratedMessage {
         18, _omitFieldNames ? '' : 'keySignature', $pb.PbFieldType.OY,
         protoName: 'keySignature')
     ..pPS(19, _omitFieldNames ? '' : 'sshHostKeys')
+    ..aI(20, _omitFieldNames ? '' : 'peerApiPort',
+        fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -298,6 +302,18 @@ class Node extends $pb.GeneratedMessage {
   /// without relying on ~/.ssh/known_hosts.
   @$pb.TagNumber(19)
   $pb.PbList<$core.String> get sshHostKeys => $_getList(18);
+
+  /// peer_api_port is the TCP port on which this node's PeerAPI HTTP server is
+  /// listening. Set by the server from the value reported in HostMeta, and
+  /// distributed to peers so they can send DNS queries to AppLinker nodes.
+  @$pb.TagNumber(20)
+  $core.int get peerApiPort => $_getIZ(19);
+  @$pb.TagNumber(20)
+  set peerApiPort($core.int value) => $_setUnsignedInt32(19, value);
+  @$pb.TagNumber(20)
+  $core.bool hasPeerApiPort() => $_has(19);
+  @$pb.TagNumber(20)
+  void clearPeerApiPort() => $_clearField(20);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
