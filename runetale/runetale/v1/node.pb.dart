@@ -444,6 +444,7 @@ class HostMeta extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? sshHostKeys,
     $core.bool? appLinker,
     $core.int? peerApiPort,
+    $core.String? clientVersion,
   }) {
     final result = create();
     if (os != null) result.os = os;
@@ -454,6 +455,7 @@ class HostMeta extends $pb.GeneratedMessage {
     if (sshHostKeys != null) result.sshHostKeys.addAll(sshHostKeys);
     if (appLinker != null) result.appLinker = appLinker;
     if (peerApiPort != null) result.peerApiPort = peerApiPort;
+    if (clientVersion != null) result.clientVersion = clientVersion;
     return result;
   }
 
@@ -479,6 +481,7 @@ class HostMeta extends $pb.GeneratedMessage {
     ..aOB(7, _omitFieldNames ? '' : 'appLinker')
     ..aI(8, _omitFieldNames ? '' : 'peerApiPort',
         fieldType: $pb.PbFieldType.OU3)
+    ..aOS(9, _omitFieldNames ? '' : 'clientVersion')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -572,6 +575,17 @@ class HostMeta extends $pb.GeneratedMessage {
   $core.bool hasPeerApiPort() => $_has(7);
   @$pb.TagNumber(8)
   void clearPeerApiPort() => $_clearField(8);
+
+  /// client_version is the Runetale client software version (e.g., "1.5.0").
+  /// Set by the client from its build-time version variable.
+  @$pb.TagNumber(9)
+  $core.String get clientVersion => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set clientVersion($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasClientVersion() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearClientVersion() => $_clearField(9);
 }
 
 /// NetworkMapRequest is sent from client to server in the ConnectNetworkMapTable stream.
