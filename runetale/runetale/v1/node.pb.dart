@@ -970,6 +970,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? capabilities,
     $2.Timestamp? serverTime,
     SSHPolicy? sshPolicy,
+    PostureChecks? postureChecks,
   }) {
     final result = create();
     if (seq != null) result.seq = seq;
@@ -992,6 +993,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (capabilities != null) result.capabilities.addAll(capabilities);
     if (serverTime != null) result.serverTime = serverTime;
     if (sshPolicy != null) result.sshPolicy = sshPolicy;
+    if (postureChecks != null) result.postureChecks = postureChecks;
     return result;
   }
 
@@ -1039,6 +1041,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
         subBuilder: $2.Timestamp.create)
     ..aOM<SSHPolicy>(26, _omitFieldNames ? '' : 'sshPolicy',
         subBuilder: SSHPolicy.create)
+    ..aOM<PostureChecks>(27, _omitFieldNames ? '' : 'postureChecks',
+        subBuilder: PostureChecks.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1218,6 +1222,19 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   void clearSshPolicy() => $_clearField(26);
   @$pb.TagNumber(26)
   SSHPolicy ensureSshPolicy() => $_ensure(17);
+
+  /// posture_checks defines posture check requirements from the server.
+  /// Client evaluates these and reports results in HostMeta.device_posture.process_results.
+  @$pb.TagNumber(27)
+  PostureChecks get postureChecks => $_getN(18);
+  @$pb.TagNumber(27)
+  set postureChecks(PostureChecks value) => $_setField(27, value);
+  @$pb.TagNumber(27)
+  $core.bool hasPostureChecks() => $_has(18);
+  @$pb.TagNumber(27)
+  void clearPostureChecks() => $_clearField(27);
+  @$pb.TagNumber(27)
+  PostureChecks ensurePostureChecks() => $_ensure(18);
 }
 
 class CerfMap extends $pb.GeneratedMessage {
@@ -4879,6 +4896,7 @@ class DevicePosture extends $pb.GeneratedMessage {
     $fixnum.Int64? uptimeSeconds,
     $core.Iterable<$core.String>? macAddresses,
     $2.Timestamp? collectedAt,
+    $core.Iterable<ProcessCheckResult>? processResults,
   }) {
     final result = create();
     if (osVersion != null) result.osVersion = osVersion;
@@ -4892,6 +4910,7 @@ class DevicePosture extends $pb.GeneratedMessage {
     if (uptimeSeconds != null) result.uptimeSeconds = uptimeSeconds;
     if (macAddresses != null) result.macAddresses.addAll(macAddresses);
     if (collectedAt != null) result.collectedAt = collectedAt;
+    if (processResults != null) result.processResults.addAll(processResults);
     return result;
   }
 
@@ -4927,6 +4946,8 @@ class DevicePosture extends $pb.GeneratedMessage {
     ..pPS(9, _omitFieldNames ? '' : 'macAddresses')
     ..aOM<$2.Timestamp>(10, _omitFieldNames ? '' : 'collectedAt',
         subBuilder: $2.Timestamp.create)
+    ..pPM<ProcessCheckResult>(11, _omitFieldNames ? '' : 'processResults',
+        subBuilder: ProcessCheckResult.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5029,6 +5050,10 @@ class DevicePosture extends $pb.GeneratedMessage {
   void clearCollectedAt() => $_clearField(10);
   @$pb.TagNumber(10)
   $2.Timestamp ensureCollectedAt() => $_ensure(9);
+
+  /// process_results reports whether each server-requested process is running.
+  @$pb.TagNumber(11)
+  $pb.PbList<ProcessCheckResult> get processResults => $_getList(10);
 }
 
 class OSVersion extends $pb.GeneratedMessage {
@@ -5511,6 +5536,254 @@ class ScreenLock extends $pb.GeneratedMessage {
   $core.bool hasIdleTimeoutSeconds() => $_has(1);
   @$pb.TagNumber(2)
   void clearIdleTimeoutSeconds() => $_clearField(2);
+}
+
+/// PostureChecks defines what posture checks the client must evaluate.
+/// Sent from server to client via NetworkMapResponse.
+class PostureChecks extends $pb.GeneratedMessage {
+  factory PostureChecks({
+    $core.Iterable<PostureProcessCheck>? processes,
+  }) {
+    final result = create();
+    if (processes != null) result.processes.addAll(processes);
+    return result;
+  }
+
+  PostureChecks._();
+
+  factory PostureChecks.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PostureChecks.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PostureChecks',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..pPM<PostureProcessCheck>(1, _omitFieldNames ? '' : 'processes',
+        subBuilder: PostureProcessCheck.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostureChecks clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostureChecks copyWith(void Function(PostureChecks) updates) =>
+      super.copyWith((message) => updates(message as PostureChecks))
+          as PostureChecks;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostureChecks create() => PostureChecks._();
+  @$core.override
+  PostureChecks createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PostureChecks getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PostureChecks>(create);
+  static PostureChecks? _defaultInstance;
+
+  /// processes are executable paths the client must verify are running.
+  @$pb.TagNumber(1)
+  $pb.PbList<PostureProcessCheck> get processes => $_getList(0);
+}
+
+/// PostureProcessCheck defines a process check requirement with OS-specific paths.
+/// The client selects the path matching its OS and checks if the process is running.
+class PostureProcessCheck extends $pb.GeneratedMessage {
+  factory PostureProcessCheck({
+    $core.String? id,
+    $core.String? displayName,
+    $core.String? linuxPath,
+    $core.String? darwinPath,
+    $core.String? windowsPath,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    if (displayName != null) result.displayName = displayName;
+    if (linuxPath != null) result.linuxPath = linuxPath;
+    if (darwinPath != null) result.darwinPath = darwinPath;
+    if (windowsPath != null) result.windowsPath = windowsPath;
+    return result;
+  }
+
+  PostureProcessCheck._();
+
+  factory PostureProcessCheck.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PostureProcessCheck.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PostureProcessCheck',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'displayName')
+    ..aOS(3, _omitFieldNames ? '' : 'linuxPath')
+    ..aOS(4, _omitFieldNames ? '' : 'darwinPath')
+    ..aOS(5, _omitFieldNames ? '' : 'windowsPath')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostureProcessCheck clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  PostureProcessCheck copyWith(void Function(PostureProcessCheck) updates) =>
+      super.copyWith((message) => updates(message as PostureProcessCheck))
+          as PostureProcessCheck;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static PostureProcessCheck create() => PostureProcessCheck._();
+  @$core.override
+  PostureProcessCheck createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static PostureProcessCheck getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PostureProcessCheck>(create);
+  static PostureProcessCheck? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get displayName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set displayName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasDisplayName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearDisplayName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get linuxPath => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set linuxPath($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLinuxPath() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLinuxPath() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get darwinPath => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set darwinPath($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasDarwinPath() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearDarwinPath() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get windowsPath => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set windowsPath($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasWindowsPath() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearWindowsPath() => $_clearField(5);
+}
+
+/// ProcessCheckResult is the client's response for a single process check.
+/// Sent from client to server via HostMeta.device_posture.process_results.
+class ProcessCheckResult extends $pb.GeneratedMessage {
+  factory ProcessCheckResult({
+    $core.String? checkId,
+    $core.String? path,
+    $core.bool? fileExists,
+    $core.bool? processRunning,
+  }) {
+    final result = create();
+    if (checkId != null) result.checkId = checkId;
+    if (path != null) result.path = path;
+    if (fileExists != null) result.fileExists = fileExists;
+    if (processRunning != null) result.processRunning = processRunning;
+    return result;
+  }
+
+  ProcessCheckResult._();
+
+  factory ProcessCheckResult.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ProcessCheckResult.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ProcessCheckResult',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'checkId')
+    ..aOS(2, _omitFieldNames ? '' : 'path')
+    ..aOB(3, _omitFieldNames ? '' : 'fileExists')
+    ..aOB(4, _omitFieldNames ? '' : 'processRunning')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProcessCheckResult clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ProcessCheckResult copyWith(void Function(ProcessCheckResult) updates) =>
+      super.copyWith((message) => updates(message as ProcessCheckResult))
+          as ProcessCheckResult;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ProcessCheckResult create() => ProcessCheckResult._();
+  @$core.override
+  ProcessCheckResult createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ProcessCheckResult getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ProcessCheckResult>(create);
+  static ProcessCheckResult? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get checkId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set checkId($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasCheckId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCheckId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get path => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set path($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPath() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPath() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get fileExists => $_getBF(2);
+  @$pb.TagNumber(3)
+  set fileExists($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasFileExists() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFileExists() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get processRunning => $_getBF(3);
+  @$pb.TagNumber(4)
+  set processRunning($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasProcessRunning() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearProcessRunning() => $_clearField(4);
 }
 
 const $core.bool _omitFieldNames =

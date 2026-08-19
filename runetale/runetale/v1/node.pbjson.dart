@@ -417,6 +417,14 @@ const NetworkMapResponse$json = {
       '6': '.protos.SSHPolicy',
       '10': 'sshPolicy'
     },
+    {
+      '1': 'posture_checks',
+      '3': 27,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.PostureChecks',
+      '10': 'postureChecks'
+    },
   ],
 };
 
@@ -436,7 +444,8 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'lfbG9nX2lkGBcgASgJUhRkb21haW5UZWxlbWV0cnlMb2dJZBIiCgxjYXBhYmlsaXRpZXMYGCAD'
     'KAlSDGNhcGFiaWxpdGllcxI7CgtzZXJ2ZXJfdGltZRgZIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
     '5UaW1lc3RhbXBSCnNlcnZlclRpbWUSMAoKc3NoX3BvbGljeRgaIAEoCzIRLnByb3Rvcy5TU0hQ'
-    'b2xpY3lSCXNzaFBvbGljeQ==');
+    'b2xpY3lSCXNzaFBvbGljeRI8Cg5wb3N0dXJlX2NoZWNrcxgbIAEoCzIVLnByb3Rvcy5Qb3N0dX'
+    'JlQ2hlY2tzUg1wb3N0dXJlQ2hlY2tz');
 
 @$core.Deprecated('Use cerfMapDescriptor instead')
 const CerfMap$json = {
@@ -1469,6 +1478,14 @@ const DevicePosture$json = {
       '6': '.google.protobuf.Timestamp',
       '10': 'collectedAt'
     },
+    {
+      '1': 'process_results',
+      '3': 11,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.ProcessCheckResult',
+      '10': 'processResults'
+    },
   ],
 };
 
@@ -1483,7 +1500,9 @@ final $typed_data.Uint8List devicePostureDescriptor = $convert.base64Decode(
     'YmVyGAYgASgJUgxzZXJpYWxOdW1iZXISMwoLc2NyZWVuX2xvY2sYByABKAsyEi5wcm90b3MuU2'
     'NyZWVuTG9ja1IKc2NyZWVuTG9jaxIlCg51cHRpbWVfc2Vjb25kcxgIIAEoBFINdXB0aW1lU2Vj'
     'b25kcxIjCg1tYWNfYWRkcmVzc2VzGAkgAygJUgxtYWNBZGRyZXNzZXMSPQoMY29sbGVjdGVkX2'
-    'F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILY29sbGVjdGVkQXQ=');
+    'F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILY29sbGVjdGVkQXQSQwoPcHJv'
+    'Y2Vzc19yZXN1bHRzGAsgAygLMhoucHJvdG9zLlByb2Nlc3NDaGVja1Jlc3VsdFIOcHJvY2Vzc1'
+    'Jlc3VsdHM=');
 
 @$core.Deprecated('Use oSVersionDescriptor instead')
 const OSVersion$json = {
@@ -1595,3 +1614,59 @@ const ScreenLock$json = {
 final $typed_data.Uint8List screenLockDescriptor = $convert.base64Decode(
     'CgpTY3JlZW5Mb2NrEisKEXBhc3N3b3JkX3JlcXVpcmVkGAEgASgIUhBwYXNzd29yZFJlcXVpcm'
     'VkEjAKFGlkbGVfdGltZW91dF9zZWNvbmRzGAIgASgNUhJpZGxlVGltZW91dFNlY29uZHM=');
+
+@$core.Deprecated('Use postureChecksDescriptor instead')
+const PostureChecks$json = {
+  '1': 'PostureChecks',
+  '2': [
+    {
+      '1': 'processes',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.PostureProcessCheck',
+      '10': 'processes'
+    },
+  ],
+};
+
+/// Descriptor for `PostureChecks`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postureChecksDescriptor = $convert.base64Decode(
+    'Cg1Qb3N0dXJlQ2hlY2tzEjkKCXByb2Nlc3NlcxgBIAMoCzIbLnByb3Rvcy5Qb3N0dXJlUHJvY2'
+    'Vzc0NoZWNrUglwcm9jZXNzZXM=');
+
+@$core.Deprecated('Use postureProcessCheckDescriptor instead')
+const PostureProcessCheck$json = {
+  '1': 'PostureProcessCheck',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'display_name', '3': 2, '4': 1, '5': 9, '10': 'displayName'},
+    {'1': 'linux_path', '3': 3, '4': 1, '5': 9, '10': 'linuxPath'},
+    {'1': 'darwin_path', '3': 4, '4': 1, '5': 9, '10': 'darwinPath'},
+    {'1': 'windows_path', '3': 5, '4': 1, '5': 9, '10': 'windowsPath'},
+  ],
+};
+
+/// Descriptor for `PostureProcessCheck`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List postureProcessCheckDescriptor = $convert.base64Decode(
+    'ChNQb3N0dXJlUHJvY2Vzc0NoZWNrEg4KAmlkGAEgASgJUgJpZBIhCgxkaXNwbGF5X25hbWUYAi'
+    'ABKAlSC2Rpc3BsYXlOYW1lEh0KCmxpbnV4X3BhdGgYAyABKAlSCWxpbnV4UGF0aBIfCgtkYXJ3'
+    'aW5fcGF0aBgEIAEoCVIKZGFyd2luUGF0aBIhCgx3aW5kb3dzX3BhdGgYBSABKAlSC3dpbmRvd3'
+    'NQYXRo');
+
+@$core.Deprecated('Use processCheckResultDescriptor instead')
+const ProcessCheckResult$json = {
+  '1': 'ProcessCheckResult',
+  '2': [
+    {'1': 'check_id', '3': 1, '4': 1, '5': 9, '10': 'checkId'},
+    {'1': 'path', '3': 2, '4': 1, '5': 9, '10': 'path'},
+    {'1': 'file_exists', '3': 3, '4': 1, '5': 8, '10': 'fileExists'},
+    {'1': 'process_running', '3': 4, '4': 1, '5': 8, '10': 'processRunning'},
+  ],
+};
+
+/// Descriptor for `ProcessCheckResult`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List processCheckResultDescriptor = $convert.base64Decode(
+    'ChJQcm9jZXNzQ2hlY2tSZXN1bHQSGQoIY2hlY2tfaWQYASABKAlSB2NoZWNrSWQSEgoEcGF0aB'
+    'gCIAEoCVIEcGF0aBIfCgtmaWxlX2V4aXN0cxgDIAEoCFIKZmlsZUV4aXN0cxInCg9wcm9jZXNz'
+    'X3J1bm5pbmcYBCABKAhSDnByb2Nlc3NSdW5uaW5n');
