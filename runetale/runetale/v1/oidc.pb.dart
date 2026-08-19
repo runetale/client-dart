@@ -152,6 +152,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     $core.String? username,
     $core.String? picture,
     $core.String? inviteCode,
+    $core.String? authProvider,
   }) {
     final result = create();
     if (sub != null) result.sub = sub;
@@ -162,6 +163,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     if (username != null) result.username = username;
     if (picture != null) result.picture = picture;
     if (inviteCode != null) result.inviteCode = inviteCode;
+    if (authProvider != null) result.authProvider = authProvider;
     return result;
   }
 
@@ -186,6 +188,7 @@ class LoginRequest extends $pb.GeneratedMessage {
     ..aOS(6, _omitFieldNames ? '' : 'username')
     ..aOS(7, _omitFieldNames ? '' : 'picture')
     ..aOS(8, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
+    ..aOS(9, _omitFieldNames ? '' : 'authProvider', protoName: 'authProvider')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -278,6 +281,15 @@ class LoginRequest extends $pb.GeneratedMessage {
   $core.bool hasInviteCode() => $_has(7);
   @$pb.TagNumber(8)
   void clearInviteCode() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get authProvider => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set authProvider($core.String value) => $_setString(8, value);
+  @$pb.TagNumber(9)
+  $core.bool hasAuthProvider() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAuthProvider() => $_clearField(9);
 }
 
 class AuthenticateResponse extends $pb.GeneratedMessage {
