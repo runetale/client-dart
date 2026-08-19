@@ -45,6 +45,7 @@ class Node extends $pb.GeneratedMessage {
     $core.List<$core.int>? keySignature,
     $core.Iterable<$core.String>? sshHostKeys,
     $core.int? peerApiPort,
+    DevicePosture? devicePosture,
   }) {
     final result = create();
     if (name != null) result.name = name;
@@ -67,6 +68,7 @@ class Node extends $pb.GeneratedMessage {
     if (keySignature != null) result.keySignature = keySignature;
     if (sshHostKeys != null) result.sshHostKeys.addAll(sshHostKeys);
     if (peerApiPort != null) result.peerApiPort = peerApiPort;
+    if (devicePosture != null) result.devicePosture = devicePosture;
     return result;
   }
 
@@ -111,6 +113,8 @@ class Node extends $pb.GeneratedMessage {
     ..pPS(19, _omitFieldNames ? '' : 'sshHostKeys')
     ..aI(20, _omitFieldNames ? '' : 'peerApiPort',
         fieldType: $pb.PbFieldType.OU3)
+    ..aOM<DevicePosture>(21, _omitFieldNames ? '' : 'devicePosture',
+        subBuilder: DevicePosture.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -314,6 +318,20 @@ class Node extends $pb.GeneratedMessage {
   $core.bool hasPeerApiPort() => $_has(19);
   @$pb.TagNumber(20)
   void clearPeerApiPort() => $_clearField(20);
+
+  /// device_posture contains the device's security posture attributes.
+  /// Populated by the server from HostMeta reports. Distributed to peers
+  /// when the "runetale:device-posture" capability is enabled for the tenant.
+  @$pb.TagNumber(21)
+  DevicePosture get devicePosture => $_getN(20);
+  @$pb.TagNumber(21)
+  set devicePosture(DevicePosture value) => $_setField(21, value);
+  @$pb.TagNumber(21)
+  $core.bool hasDevicePosture() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearDevicePosture() => $_clearField(21);
+  @$pb.TagNumber(21)
+  DevicePosture ensureDevicePosture() => $_ensure(20);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
@@ -445,6 +463,7 @@ class HostMeta extends $pb.GeneratedMessage {
     $core.bool? appLinker,
     $core.int? peerApiPort,
     $core.String? clientVersion,
+    DevicePosture? devicePosture,
   }) {
     final result = create();
     if (os != null) result.os = os;
@@ -456,6 +475,7 @@ class HostMeta extends $pb.GeneratedMessage {
     if (appLinker != null) result.appLinker = appLinker;
     if (peerApiPort != null) result.peerApiPort = peerApiPort;
     if (clientVersion != null) result.clientVersion = clientVersion;
+    if (devicePosture != null) result.devicePosture = devicePosture;
     return result;
   }
 
@@ -482,6 +502,8 @@ class HostMeta extends $pb.GeneratedMessage {
     ..aI(8, _omitFieldNames ? '' : 'peerApiPort',
         fieldType: $pb.PbFieldType.OU3)
     ..aOS(9, _omitFieldNames ? '' : 'clientVersion')
+    ..aOM<DevicePosture>(10, _omitFieldNames ? '' : 'devicePosture',
+        subBuilder: DevicePosture.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -586,6 +608,20 @@ class HostMeta extends $pb.GeneratedMessage {
   $core.bool hasClientVersion() => $_has(8);
   @$pb.TagNumber(9)
   void clearClientVersion() => $_clearField(9);
+
+  /// device_posture contains the device's collected security posture.
+  /// Sent on initial connection and periodically (every 5 minutes) when changed.
+  /// Only populated when the server grants "runetale:device-posture" capability.
+  @$pb.TagNumber(10)
+  DevicePosture get devicePosture => $_getN(9);
+  @$pb.TagNumber(10)
+  set devicePosture(DevicePosture value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasDevicePosture() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearDevicePosture() => $_clearField(10);
+  @$pb.TagNumber(10)
+  DevicePosture ensureDevicePosture() => $_ensure(9);
 }
 
 /// NetworkMapRequest is sent from client to server in the ConnectNetworkMapTable stream.
@@ -4827,6 +4863,654 @@ class PublishSessionResponse extends $pb.GeneratedMessage {
   $core.bool hasError() => $_has(2);
   @$pb.TagNumber(3)
   void clearError() => $_clearField(3);
+}
+
+/// DevicePosture contains device security posture attributes collected from the OS.
+/// Sent from client to server via HostMeta, and from server to peers via Node.
+class DevicePosture extends $pb.GeneratedMessage {
+  factory DevicePosture({
+    OSVersion? osVersion,
+    SystemInfo? systemInfo,
+    $core.Iterable<DiskEncryption>? diskEncryption,
+    FirewallStatus? firewallStatus,
+    $core.Iterable<SecuritySoftware>? securitySoftware,
+    $core.String? serialNumber,
+    ScreenLock? screenLock,
+    $fixnum.Int64? uptimeSeconds,
+    $core.Iterable<$core.String>? macAddresses,
+    $2.Timestamp? collectedAt,
+  }) {
+    final result = create();
+    if (osVersion != null) result.osVersion = osVersion;
+    if (systemInfo != null) result.systemInfo = systemInfo;
+    if (diskEncryption != null) result.diskEncryption.addAll(diskEncryption);
+    if (firewallStatus != null) result.firewallStatus = firewallStatus;
+    if (securitySoftware != null)
+      result.securitySoftware.addAll(securitySoftware);
+    if (serialNumber != null) result.serialNumber = serialNumber;
+    if (screenLock != null) result.screenLock = screenLock;
+    if (uptimeSeconds != null) result.uptimeSeconds = uptimeSeconds;
+    if (macAddresses != null) result.macAddresses.addAll(macAddresses);
+    if (collectedAt != null) result.collectedAt = collectedAt;
+    return result;
+  }
+
+  DevicePosture._();
+
+  factory DevicePosture.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DevicePosture.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DevicePosture',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOM<OSVersion>(1, _omitFieldNames ? '' : 'osVersion',
+        subBuilder: OSVersion.create)
+    ..aOM<SystemInfo>(2, _omitFieldNames ? '' : 'systemInfo',
+        subBuilder: SystemInfo.create)
+    ..pPM<DiskEncryption>(3, _omitFieldNames ? '' : 'diskEncryption',
+        subBuilder: DiskEncryption.create)
+    ..aOM<FirewallStatus>(4, _omitFieldNames ? '' : 'firewallStatus',
+        subBuilder: FirewallStatus.create)
+    ..pPM<SecuritySoftware>(5, _omitFieldNames ? '' : 'securitySoftware',
+        subBuilder: SecuritySoftware.create)
+    ..aOS(6, _omitFieldNames ? '' : 'serialNumber')
+    ..aOM<ScreenLock>(7, _omitFieldNames ? '' : 'screenLock',
+        subBuilder: ScreenLock.create)
+    ..a<$fixnum.Int64>(
+        8, _omitFieldNames ? '' : 'uptimeSeconds', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..pPS(9, _omitFieldNames ? '' : 'macAddresses')
+    ..aOM<$2.Timestamp>(10, _omitFieldNames ? '' : 'collectedAt',
+        subBuilder: $2.Timestamp.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DevicePosture clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DevicePosture copyWith(void Function(DevicePosture) updates) =>
+      super.copyWith((message) => updates(message as DevicePosture))
+          as DevicePosture;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DevicePosture create() => DevicePosture._();
+  @$core.override
+  DevicePosture createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DevicePosture getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DevicePosture>(create);
+  static DevicePosture? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  OSVersion get osVersion => $_getN(0);
+  @$pb.TagNumber(1)
+  set osVersion(OSVersion value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasOsVersion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOsVersion() => $_clearField(1);
+  @$pb.TagNumber(1)
+  OSVersion ensureOsVersion() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  SystemInfo get systemInfo => $_getN(1);
+  @$pb.TagNumber(2)
+  set systemInfo(SystemInfo value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSystemInfo() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSystemInfo() => $_clearField(2);
+  @$pb.TagNumber(2)
+  SystemInfo ensureSystemInfo() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<DiskEncryption> get diskEncryption => $_getList(2);
+
+  @$pb.TagNumber(4)
+  FirewallStatus get firewallStatus => $_getN(3);
+  @$pb.TagNumber(4)
+  set firewallStatus(FirewallStatus value) => $_setField(4, value);
+  @$pb.TagNumber(4)
+  $core.bool hasFirewallStatus() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFirewallStatus() => $_clearField(4);
+  @$pb.TagNumber(4)
+  FirewallStatus ensureFirewallStatus() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<SecuritySoftware> get securitySoftware => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $core.String get serialNumber => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set serialNumber($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasSerialNumber() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSerialNumber() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  ScreenLock get screenLock => $_getN(6);
+  @$pb.TagNumber(7)
+  set screenLock(ScreenLock value) => $_setField(7, value);
+  @$pb.TagNumber(7)
+  $core.bool hasScreenLock() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearScreenLock() => $_clearField(7);
+  @$pb.TagNumber(7)
+  ScreenLock ensureScreenLock() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get uptimeSeconds => $_getI64(7);
+  @$pb.TagNumber(8)
+  set uptimeSeconds($fixnum.Int64 value) => $_setInt64(7, value);
+  @$pb.TagNumber(8)
+  $core.bool hasUptimeSeconds() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearUptimeSeconds() => $_clearField(8);
+
+  @$pb.TagNumber(9)
+  $pb.PbList<$core.String> get macAddresses => $_getList(8);
+
+  @$pb.TagNumber(10)
+  $2.Timestamp get collectedAt => $_getN(9);
+  @$pb.TagNumber(10)
+  set collectedAt($2.Timestamp value) => $_setField(10, value);
+  @$pb.TagNumber(10)
+  $core.bool hasCollectedAt() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearCollectedAt() => $_clearField(10);
+  @$pb.TagNumber(10)
+  $2.Timestamp ensureCollectedAt() => $_ensure(9);
+}
+
+class OSVersion extends $pb.GeneratedMessage {
+  factory OSVersion({
+    $core.String? name,
+    $core.String? version,
+    $core.String? arch,
+    $core.String? platform,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (version != null) result.version = version;
+    if (arch != null) result.arch = arch;
+    if (platform != null) result.platform = platform;
+    return result;
+  }
+
+  OSVersion._();
+
+  factory OSVersion.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OSVersion.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OSVersion',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'version')
+    ..aOS(3, _omitFieldNames ? '' : 'arch')
+    ..aOS(4, _omitFieldNames ? '' : 'platform')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OSVersion clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OSVersion copyWith(void Function(OSVersion) updates) =>
+      super.copyWith((message) => updates(message as OSVersion)) as OSVersion;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OSVersion create() => OSVersion._();
+  @$core.override
+  OSVersion createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OSVersion getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OSVersion>(create);
+  static OSVersion? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get version => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set version($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get arch => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set arch($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasArch() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearArch() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get platform => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set platform($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasPlatform() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearPlatform() => $_clearField(4);
+}
+
+class SystemInfo extends $pb.GeneratedMessage {
+  factory SystemInfo({
+    $core.String? hostname,
+    $core.String? uuid,
+    $core.String? hardwareSerial,
+    $core.String? cpuType,
+    $fixnum.Int64? physicalMemoryBytes,
+  }) {
+    final result = create();
+    if (hostname != null) result.hostname = hostname;
+    if (uuid != null) result.uuid = uuid;
+    if (hardwareSerial != null) result.hardwareSerial = hardwareSerial;
+    if (cpuType != null) result.cpuType = cpuType;
+    if (physicalMemoryBytes != null)
+      result.physicalMemoryBytes = physicalMemoryBytes;
+    return result;
+  }
+
+  SystemInfo._();
+
+  factory SystemInfo.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SystemInfo.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SystemInfo',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'hostname')
+    ..aOS(2, _omitFieldNames ? '' : 'uuid')
+    ..aOS(3, _omitFieldNames ? '' : 'hardwareSerial')
+    ..aOS(4, _omitFieldNames ? '' : 'cpuType')
+    ..a<$fixnum.Int64>(
+        5, _omitFieldNames ? '' : 'physicalMemoryBytes', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SystemInfo clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SystemInfo copyWith(void Function(SystemInfo) updates) =>
+      super.copyWith((message) => updates(message as SystemInfo)) as SystemInfo;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SystemInfo create() => SystemInfo._();
+  @$core.override
+  SystemInfo createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SystemInfo getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SystemInfo>(create);
+  static SystemInfo? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get hostname => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set hostname($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasHostname() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearHostname() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get uuid => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set uuid($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasUuid() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUuid() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get hardwareSerial => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set hardwareSerial($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasHardwareSerial() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearHardwareSerial() => $_clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get cpuType => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set cpuType($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasCpuType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearCpuType() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get physicalMemoryBytes => $_getI64(4);
+  @$pb.TagNumber(5)
+  set physicalMemoryBytes($fixnum.Int64 value) => $_setInt64(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPhysicalMemoryBytes() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPhysicalMemoryBytes() => $_clearField(5);
+}
+
+class DiskEncryption extends $pb.GeneratedMessage {
+  factory DiskEncryption({
+    $core.String? device,
+    $core.bool? encrypted,
+    $core.String? encryptionType,
+  }) {
+    final result = create();
+    if (device != null) result.device = device;
+    if (encrypted != null) result.encrypted = encrypted;
+    if (encryptionType != null) result.encryptionType = encryptionType;
+    return result;
+  }
+
+  DiskEncryption._();
+
+  factory DiskEncryption.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DiskEncryption.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DiskEncryption',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'device')
+    ..aOB(2, _omitFieldNames ? '' : 'encrypted')
+    ..aOS(3, _omitFieldNames ? '' : 'encryptionType')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DiskEncryption clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DiskEncryption copyWith(void Function(DiskEncryption) updates) =>
+      super.copyWith((message) => updates(message as DiskEncryption))
+          as DiskEncryption;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DiskEncryption create() => DiskEncryption._();
+  @$core.override
+  DiskEncryption createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DiskEncryption getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DiskEncryption>(create);
+  static DiskEncryption? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get device => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set device($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDevice() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDevice() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.bool get encrypted => $_getBF(1);
+  @$pb.TagNumber(2)
+  set encrypted($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasEncrypted() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearEncrypted() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get encryptionType => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set encryptionType($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasEncryptionType() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearEncryptionType() => $_clearField(3);
+}
+
+class FirewallStatus extends $pb.GeneratedMessage {
+  factory FirewallStatus({
+    $core.bool? enabled,
+    $core.String? type,
+  }) {
+    final result = create();
+    if (enabled != null) result.enabled = enabled;
+    if (type != null) result.type = type;
+    return result;
+  }
+
+  FirewallStatus._();
+
+  factory FirewallStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FirewallStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FirewallStatus',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'enabled')
+    ..aOS(2, _omitFieldNames ? '' : 'type')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FirewallStatus clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  FirewallStatus copyWith(void Function(FirewallStatus) updates) =>
+      super.copyWith((message) => updates(message as FirewallStatus))
+          as FirewallStatus;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static FirewallStatus create() => FirewallStatus._();
+  @$core.override
+  FirewallStatus createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static FirewallStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FirewallStatus>(create);
+  static FirewallStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get enabled => $_getBF(0);
+  @$pb.TagNumber(1)
+  set enabled($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasEnabled() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEnabled() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get type => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set type($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => $_clearField(2);
+}
+
+class SecuritySoftware extends $pb.GeneratedMessage {
+  factory SecuritySoftware({
+    $core.String? name,
+    $core.String? type,
+    $core.String? state,
+  }) {
+    final result = create();
+    if (name != null) result.name = name;
+    if (type != null) result.type = type;
+    if (state != null) result.state = state;
+    return result;
+  }
+
+  SecuritySoftware._();
+
+  factory SecuritySoftware.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SecuritySoftware.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SecuritySoftware',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'type')
+    ..aOS(3, _omitFieldNames ? '' : 'state')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SecuritySoftware clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SecuritySoftware copyWith(void Function(SecuritySoftware) updates) =>
+      super.copyWith((message) => updates(message as SecuritySoftware))
+          as SecuritySoftware;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static SecuritySoftware create() => SecuritySoftware._();
+  @$core.override
+  SecuritySoftware createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static SecuritySoftware getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SecuritySoftware>(create);
+  static SecuritySoftware? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get type => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set type($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasType() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearType() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get state => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set state($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasState() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearState() => $_clearField(3);
+}
+
+class ScreenLock extends $pb.GeneratedMessage {
+  factory ScreenLock({
+    $core.bool? passwordRequired,
+    $core.int? idleTimeoutSeconds,
+  }) {
+    final result = create();
+    if (passwordRequired != null) result.passwordRequired = passwordRequired;
+    if (idleTimeoutSeconds != null)
+      result.idleTimeoutSeconds = idleTimeoutSeconds;
+    return result;
+  }
+
+  ScreenLock._();
+
+  factory ScreenLock.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ScreenLock.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ScreenLock',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'passwordRequired')
+    ..aI(2, _omitFieldNames ? '' : 'idleTimeoutSeconds',
+        fieldType: $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScreenLock clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ScreenLock copyWith(void Function(ScreenLock) updates) =>
+      super.copyWith((message) => updates(message as ScreenLock)) as ScreenLock;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ScreenLock create() => ScreenLock._();
+  @$core.override
+  ScreenLock createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static ScreenLock getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ScreenLock>(create);
+  static ScreenLock? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get passwordRequired => $_getBF(0);
+  @$pb.TagNumber(1)
+  set passwordRequired($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPasswordRequired() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPasswordRequired() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get idleTimeoutSeconds => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set idleTimeoutSeconds($core.int value) => $_setUnsignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIdleTimeoutSeconds() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIdleTimeoutSeconds() => $_clearField(2);
 }
 
 const $core.bool _omitFieldNames =

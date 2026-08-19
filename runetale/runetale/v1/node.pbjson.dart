@@ -143,6 +143,14 @@ const Node$json = {
     {'1': 'keySignature', '3': 18, '4': 1, '5': 12, '10': 'keySignature'},
     {'1': 'ssh_host_keys', '3': 19, '4': 3, '5': 9, '10': 'sshHostKeys'},
     {'1': 'peer_api_port', '3': 20, '4': 1, '5': 13, '10': 'peerApiPort'},
+    {
+      '1': 'device_posture',
+      '3': 21,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.DevicePosture',
+      '10': 'devicePosture'
+    },
   ],
 };
 
@@ -159,7 +167,8 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'c3RTZWVuEjgKCWtleUV4cGlyeRgQIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCW'
     'tleUV4cGlyeRIYCgdleHBpcmVkGBEgASgIUgdleHBpcmVkEiIKDGtleVNpZ25hdHVyZRgSIAEo'
     'DFIMa2V5U2lnbmF0dXJlEiIKDXNzaF9ob3N0X2tleXMYEyADKAlSC3NzaEhvc3RLZXlzEiIKDX'
-    'BlZXJfYXBpX3BvcnQYFCABKA1SC3BlZXJBcGlQb3J0');
+    'BlZXJfYXBpX3BvcnQYFCABKA1SC3BlZXJBcGlQb3J0EjwKDmRldmljZV9wb3N0dXJlGBUgASgL'
+    'MhUucHJvdG9zLkRldmljZVBvc3R1cmVSDWRldmljZVBvc3R1cmU=');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
@@ -194,6 +203,14 @@ const HostMeta$json = {
     {'1': 'app_linker', '3': 7, '4': 1, '5': 8, '10': 'appLinker'},
     {'1': 'peer_api_port', '3': 8, '4': 1, '5': 13, '10': 'peerApiPort'},
     {'1': 'client_version', '3': 9, '4': 1, '5': 9, '10': 'clientVersion'},
+    {
+      '1': 'device_posture',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.DevicePosture',
+      '10': 'devicePosture'
+    },
   ],
 };
 
@@ -204,7 +221,8 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'TmFtZRIhCgxyb3V0YWJsZV9pcHMYBSADKAlSC3JvdXRhYmxlSXBzEiIKDXNzaF9ob3N0X2tleX'
     'MYBiADKAlSC3NzaEhvc3RLZXlzEh0KCmFwcF9saW5rZXIYByABKAhSCWFwcExpbmtlchIiCg1w'
     'ZWVyX2FwaV9wb3J0GAggASgNUgtwZWVyQXBpUG9ydBIlCg5jbGllbnRfdmVyc2lvbhgJIAEoCV'
-    'INY2xpZW50VmVyc2lvbg==');
+    'INY2xpZW50VmVyc2lvbhI8Cg5kZXZpY2VfcG9zdHVyZRgKIAEoCzIVLnByb3Rvcy5EZXZpY2VQ'
+    'b3N0dXJlUg1kZXZpY2VQb3N0dXJl');
 
 @$core.Deprecated('Use networkMapRequestDescriptor instead')
 const NetworkMapRequest$json = {
@@ -1387,3 +1405,193 @@ final $typed_data.Uint8List publishSessionResponseDescriptor =
     $convert.base64Decode(
         'ChZQdWJsaXNoU2Vzc2lvblJlc3BvbnNlEh8KC3B1Ymxpc2hfdXJsGAEgASgJUgpwdWJsaXNoVX'
         'JsEhIKBHNsdWcYAiABKAlSBHNsdWcSFAoFZXJyb3IYAyABKAlSBWVycm9y');
+
+@$core.Deprecated('Use devicePostureDescriptor instead')
+const DevicePosture$json = {
+  '1': 'DevicePosture',
+  '2': [
+    {
+      '1': 'os_version',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.OSVersion',
+      '10': 'osVersion'
+    },
+    {
+      '1': 'system_info',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.SystemInfo',
+      '10': 'systemInfo'
+    },
+    {
+      '1': 'disk_encryption',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.DiskEncryption',
+      '10': 'diskEncryption'
+    },
+    {
+      '1': 'firewall_status',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.FirewallStatus',
+      '10': 'firewallStatus'
+    },
+    {
+      '1': 'security_software',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.SecuritySoftware',
+      '10': 'securitySoftware'
+    },
+    {'1': 'serial_number', '3': 6, '4': 1, '5': 9, '10': 'serialNumber'},
+    {
+      '1': 'screen_lock',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.ScreenLock',
+      '10': 'screenLock'
+    },
+    {'1': 'uptime_seconds', '3': 8, '4': 1, '5': 4, '10': 'uptimeSeconds'},
+    {'1': 'mac_addresses', '3': 9, '4': 3, '5': 9, '10': 'macAddresses'},
+    {
+      '1': 'collected_at',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'collectedAt'
+    },
+  ],
+};
+
+/// Descriptor for `DevicePosture`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List devicePostureDescriptor = $convert.base64Decode(
+    'Cg1EZXZpY2VQb3N0dXJlEjAKCm9zX3ZlcnNpb24YASABKAsyES5wcm90b3MuT1NWZXJzaW9uUg'
+    'lvc1ZlcnNpb24SMwoLc3lzdGVtX2luZm8YAiABKAsyEi5wcm90b3MuU3lzdGVtSW5mb1IKc3lz'
+    'dGVtSW5mbxI/Cg9kaXNrX2VuY3J5cHRpb24YAyADKAsyFi5wcm90b3MuRGlza0VuY3J5cHRpb2'
+    '5SDmRpc2tFbmNyeXB0aW9uEj8KD2ZpcmV3YWxsX3N0YXR1cxgEIAEoCzIWLnByb3Rvcy5GaXJl'
+    'd2FsbFN0YXR1c1IOZmlyZXdhbGxTdGF0dXMSRQoRc2VjdXJpdHlfc29mdHdhcmUYBSADKAsyGC'
+    '5wcm90b3MuU2VjdXJpdHlTb2Z0d2FyZVIQc2VjdXJpdHlTb2Z0d2FyZRIjCg1zZXJpYWxfbnVt'
+    'YmVyGAYgASgJUgxzZXJpYWxOdW1iZXISMwoLc2NyZWVuX2xvY2sYByABKAsyEi5wcm90b3MuU2'
+    'NyZWVuTG9ja1IKc2NyZWVuTG9jaxIlCg51cHRpbWVfc2Vjb25kcxgIIAEoBFINdXB0aW1lU2Vj'
+    'b25kcxIjCg1tYWNfYWRkcmVzc2VzGAkgAygJUgxtYWNBZGRyZXNzZXMSPQoMY29sbGVjdGVkX2'
+    'F0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILY29sbGVjdGVkQXQ=');
+
+@$core.Deprecated('Use oSVersionDescriptor instead')
+const OSVersion$json = {
+  '1': 'OSVersion',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'version', '3': 2, '4': 1, '5': 9, '10': 'version'},
+    {'1': 'arch', '3': 3, '4': 1, '5': 9, '10': 'arch'},
+    {'1': 'platform', '3': 4, '4': 1, '5': 9, '10': 'platform'},
+  ],
+};
+
+/// Descriptor for `OSVersion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oSVersionDescriptor = $convert.base64Decode(
+    'CglPU1ZlcnNpb24SEgoEbmFtZRgBIAEoCVIEbmFtZRIYCgd2ZXJzaW9uGAIgASgJUgd2ZXJzaW'
+    '9uEhIKBGFyY2gYAyABKAlSBGFyY2gSGgoIcGxhdGZvcm0YBCABKAlSCHBsYXRmb3Jt');
+
+@$core.Deprecated('Use systemInfoDescriptor instead')
+const SystemInfo$json = {
+  '1': 'SystemInfo',
+  '2': [
+    {'1': 'hostname', '3': 1, '4': 1, '5': 9, '10': 'hostname'},
+    {'1': 'uuid', '3': 2, '4': 1, '5': 9, '10': 'uuid'},
+    {'1': 'hardware_serial', '3': 3, '4': 1, '5': 9, '10': 'hardwareSerial'},
+    {'1': 'cpu_type', '3': 4, '4': 1, '5': 9, '10': 'cpuType'},
+    {
+      '1': 'physical_memory_bytes',
+      '3': 5,
+      '4': 1,
+      '5': 4,
+      '10': 'physicalMemoryBytes'
+    },
+  ],
+};
+
+/// Descriptor for `SystemInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List systemInfoDescriptor = $convert.base64Decode(
+    'CgpTeXN0ZW1JbmZvEhoKCGhvc3RuYW1lGAEgASgJUghob3N0bmFtZRISCgR1dWlkGAIgASgJUg'
+    'R1dWlkEicKD2hhcmR3YXJlX3NlcmlhbBgDIAEoCVIOaGFyZHdhcmVTZXJpYWwSGQoIY3B1X3R5'
+    'cGUYBCABKAlSB2NwdVR5cGUSMgoVcGh5c2ljYWxfbWVtb3J5X2J5dGVzGAUgASgEUhNwaHlzaW'
+    'NhbE1lbW9yeUJ5dGVz');
+
+@$core.Deprecated('Use diskEncryptionDescriptor instead')
+const DiskEncryption$json = {
+  '1': 'DiskEncryption',
+  '2': [
+    {'1': 'device', '3': 1, '4': 1, '5': 9, '10': 'device'},
+    {'1': 'encrypted', '3': 2, '4': 1, '5': 8, '10': 'encrypted'},
+    {'1': 'encryption_type', '3': 3, '4': 1, '5': 9, '10': 'encryptionType'},
+  ],
+};
+
+/// Descriptor for `DiskEncryption`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List diskEncryptionDescriptor = $convert.base64Decode(
+    'Cg5EaXNrRW5jcnlwdGlvbhIWCgZkZXZpY2UYASABKAlSBmRldmljZRIcCgllbmNyeXB0ZWQYAi'
+    'ABKAhSCWVuY3J5cHRlZBInCg9lbmNyeXB0aW9uX3R5cGUYAyABKAlSDmVuY3J5cHRpb25UeXBl');
+
+@$core.Deprecated('Use firewallStatusDescriptor instead')
+const FirewallStatus$json = {
+  '1': 'FirewallStatus',
+  '2': [
+    {'1': 'enabled', '3': 1, '4': 1, '5': 8, '10': 'enabled'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
+  ],
+};
+
+/// Descriptor for `FirewallStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List firewallStatusDescriptor = $convert.base64Decode(
+    'Cg5GaXJld2FsbFN0YXR1cxIYCgdlbmFibGVkGAEgASgIUgdlbmFibGVkEhIKBHR5cGUYAiABKA'
+    'lSBHR5cGU=');
+
+@$core.Deprecated('Use securitySoftwareDescriptor instead')
+const SecuritySoftware$json = {
+  '1': 'SecuritySoftware',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'type', '3': 2, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'state', '3': 3, '4': 1, '5': 9, '10': 'state'},
+  ],
+};
+
+/// Descriptor for `SecuritySoftware`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List securitySoftwareDescriptor = $convert.base64Decode(
+    'ChBTZWN1cml0eVNvZnR3YXJlEhIKBG5hbWUYASABKAlSBG5hbWUSEgoEdHlwZRgCIAEoCVIEdH'
+    'lwZRIUCgVzdGF0ZRgDIAEoCVIFc3RhdGU=');
+
+@$core.Deprecated('Use screenLockDescriptor instead')
+const ScreenLock$json = {
+  '1': 'ScreenLock',
+  '2': [
+    {
+      '1': 'password_required',
+      '3': 1,
+      '4': 1,
+      '5': 8,
+      '10': 'passwordRequired'
+    },
+    {
+      '1': 'idle_timeout_seconds',
+      '3': 2,
+      '4': 1,
+      '5': 13,
+      '10': 'idleTimeoutSeconds'
+    },
+  ],
+};
+
+/// Descriptor for `ScreenLock`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List screenLockDescriptor = $convert.base64Decode(
+    'CgpTY3JlZW5Mb2NrEisKEXBhc3N3b3JkX3JlcXVpcmVkGAEgASgIUhBwYXNzd29yZFJlcXVpcm'
+    'VkEjAKFGlkbGVfdGltZW91dF9zZWNvbmRzGAIgASgNUhJpZGxlVGltZW91dFNlY29uZHM=');
