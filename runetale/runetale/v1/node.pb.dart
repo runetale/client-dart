@@ -5543,9 +5543,14 @@ class ScreenLock extends $pb.GeneratedMessage {
 class PostureChecks extends $pb.GeneratedMessage {
   factory PostureChecks({
     $core.Iterable<PostureProcessCheck>? processes,
+    OSVersionCheck? osVersionCheck,
+    DiskEncryptionCheck? diskEncryptionCheck,
   }) {
     final result = create();
     if (processes != null) result.processes.addAll(processes);
+    if (osVersionCheck != null) result.osVersionCheck = osVersionCheck;
+    if (diskEncryptionCheck != null)
+      result.diskEncryptionCheck = diskEncryptionCheck;
     return result;
   }
 
@@ -5564,6 +5569,10 @@ class PostureChecks extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..pPM<PostureProcessCheck>(1, _omitFieldNames ? '' : 'processes',
         subBuilder: PostureProcessCheck.create)
+    ..aOM<OSVersionCheck>(2, _omitFieldNames ? '' : 'osVersionCheck',
+        subBuilder: OSVersionCheck.create)
+    ..aOM<DiskEncryptionCheck>(3, _omitFieldNames ? '' : 'diskEncryptionCheck',
+        subBuilder: DiskEncryptionCheck.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -5588,6 +5597,147 @@ class PostureChecks extends $pb.GeneratedMessage {
   /// processes are executable paths the client must verify are running.
   @$pb.TagNumber(1)
   $pb.PbList<PostureProcessCheck> get processes => $_getList(0);
+
+  /// os_version_check defines minimum OS version requirements.
+  @$pb.TagNumber(2)
+  OSVersionCheck get osVersionCheck => $_getN(1);
+  @$pb.TagNumber(2)
+  set osVersionCheck(OSVersionCheck value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasOsVersionCheck() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearOsVersionCheck() => $_clearField(2);
+  @$pb.TagNumber(2)
+  OSVersionCheck ensureOsVersionCheck() => $_ensure(1);
+
+  /// disk_encryption_check defines disk encryption requirements.
+  @$pb.TagNumber(3)
+  DiskEncryptionCheck get diskEncryptionCheck => $_getN(2);
+  @$pb.TagNumber(3)
+  set diskEncryptionCheck(DiskEncryptionCheck value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasDiskEncryptionCheck() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDiskEncryptionCheck() => $_clearField(3);
+  @$pb.TagNumber(3)
+  DiskEncryptionCheck ensureDiskEncryptionCheck() => $_ensure(2);
+}
+
+/// OSVersionCheck defines the minimum OS version requirement.
+/// Client compares its OS version against min_version using semver.
+class OSVersionCheck extends $pb.GeneratedMessage {
+  factory OSVersionCheck({
+    $core.String? minVersion,
+    $core.Iterable<$core.String>? platforms,
+  }) {
+    final result = create();
+    if (minVersion != null) result.minVersion = minVersion;
+    if (platforms != null) result.platforms.addAll(platforms);
+    return result;
+  }
+
+  OSVersionCheck._();
+
+  factory OSVersionCheck.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory OSVersionCheck.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'OSVersionCheck',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'minVersion')
+    ..pPS(2, _omitFieldNames ? '' : 'platforms')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OSVersionCheck clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  OSVersionCheck copyWith(void Function(OSVersionCheck) updates) =>
+      super.copyWith((message) => updates(message as OSVersionCheck))
+          as OSVersionCheck;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static OSVersionCheck create() => OSVersionCheck._();
+  @$core.override
+  OSVersionCheck createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static OSVersionCheck getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<OSVersionCheck>(create);
+  static OSVersionCheck? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get minVersion => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set minVersion($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasMinVersion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMinVersion() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $pb.PbList<$core.String> get platforms => $_getList(1);
+}
+
+/// DiskEncryptionCheck defines disk encryption requirements.
+class DiskEncryptionCheck extends $pb.GeneratedMessage {
+  factory DiskEncryptionCheck({
+    $core.bool? required,
+  }) {
+    final result = create();
+    if (required != null) result.required = required;
+    return result;
+  }
+
+  DiskEncryptionCheck._();
+
+  factory DiskEncryptionCheck.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DiskEncryptionCheck.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DiskEncryptionCheck',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'required')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DiskEncryptionCheck clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DiskEncryptionCheck copyWith(void Function(DiskEncryptionCheck) updates) =>
+      super.copyWith((message) => updates(message as DiskEncryptionCheck))
+          as DiskEncryptionCheck;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DiskEncryptionCheck create() => DiskEncryptionCheck._();
+  @$core.override
+  DiskEncryptionCheck createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static DiskEncryptionCheck getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DiskEncryptionCheck>(create);
+  static DiskEncryptionCheck? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get required => $_getBF(0);
+  @$pb.TagNumber(1)
+  set required($core.bool value) => $_setBool(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasRequired() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRequired() => $_clearField(1);
 }
 
 /// PostureProcessCheck defines a process check requirement with OS-specific paths.

@@ -1627,13 +1627,58 @@ const PostureChecks$json = {
       '6': '.protos.PostureProcessCheck',
       '10': 'processes'
     },
+    {
+      '1': 'os_version_check',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.OSVersionCheck',
+      '10': 'osVersionCheck'
+    },
+    {
+      '1': 'disk_encryption_check',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.DiskEncryptionCheck',
+      '10': 'diskEncryptionCheck'
+    },
   ],
 };
 
 /// Descriptor for `PostureChecks`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List postureChecksDescriptor = $convert.base64Decode(
     'Cg1Qb3N0dXJlQ2hlY2tzEjkKCXByb2Nlc3NlcxgBIAMoCzIbLnByb3Rvcy5Qb3N0dXJlUHJvY2'
-    'Vzc0NoZWNrUglwcm9jZXNzZXM=');
+    'Vzc0NoZWNrUglwcm9jZXNzZXMSQAoQb3NfdmVyc2lvbl9jaGVjaxgCIAEoCzIWLnByb3Rvcy5P'
+    'U1ZlcnNpb25DaGVja1IOb3NWZXJzaW9uQ2hlY2sSTwoVZGlza19lbmNyeXB0aW9uX2NoZWNrGA'
+    'MgASgLMhsucHJvdG9zLkRpc2tFbmNyeXB0aW9uQ2hlY2tSE2Rpc2tFbmNyeXB0aW9uQ2hlY2s=');
+
+@$core.Deprecated('Use oSVersionCheckDescriptor instead')
+const OSVersionCheck$json = {
+  '1': 'OSVersionCheck',
+  '2': [
+    {'1': 'min_version', '3': 1, '4': 1, '5': 9, '10': 'minVersion'},
+    {'1': 'platforms', '3': 2, '4': 3, '5': 9, '10': 'platforms'},
+  ],
+};
+
+/// Descriptor for `OSVersionCheck`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List oSVersionCheckDescriptor = $convert.base64Decode(
+    'Cg5PU1ZlcnNpb25DaGVjaxIfCgttaW5fdmVyc2lvbhgBIAEoCVIKbWluVmVyc2lvbhIcCglwbG'
+    'F0Zm9ybXMYAiADKAlSCXBsYXRmb3Jtcw==');
+
+@$core.Deprecated('Use diskEncryptionCheckDescriptor instead')
+const DiskEncryptionCheck$json = {
+  '1': 'DiskEncryptionCheck',
+  '2': [
+    {'1': 'required', '3': 1, '4': 1, '5': 8, '10': 'required'},
+  ],
+};
+
+/// Descriptor for `DiskEncryptionCheck`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List diskEncryptionCheckDescriptor =
+    $convert.base64Decode(
+        'ChNEaXNrRW5jcnlwdGlvbkNoZWNrEhoKCHJlcXVpcmVkGAEgASgIUghyZXF1aXJlZA==');
 
 @$core.Deprecated('Use postureProcessCheckDescriptor instead')
 const PostureProcessCheck$json = {
