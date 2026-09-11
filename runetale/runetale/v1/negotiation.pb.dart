@@ -32,7 +32,7 @@ class NegotiationMessage extends $pb.GeneratedMessage {
     $core.List<$core.int>? sessionID,
     FleaPacketMessage? fleaPacketMessage,
   }) {
-    final result = create();
+    final result = NegotiationMessage._();
     if (type != null) result.type = type;
     if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
     if (dstWgPubKey != null) result.dstWgPubKey = dstWgPubKey;
@@ -48,15 +48,15 @@ class NegotiationMessage extends $pb.GeneratedMessage {
 
   factory NegotiationMessage.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      NegotiationMessage()..mergeFromBuffer(data, registry);
   factory NegotiationMessage.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      NegotiationMessage()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'NegotiationMessage',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: NegotiationMessage.$_createMessage)
     ..aE<NegotiationType>(1, _omitFieldNames ? '' : 'type',
         enumValues: NegotiationType.values)
     ..aOS(2, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
@@ -68,7 +68,8 @@ class NegotiationMessage extends $pb.GeneratedMessage {
         7, _omitFieldNames ? '' : 'sessionID', $pb.PbFieldType.OY,
         protoName: 'sessionID')
     ..aOM<FleaPacketMessage>(8, _omitFieldNames ? '' : 'fleaPacketMessage',
-        protoName: 'fleaPacketMessage', subBuilder: FleaPacketMessage.create)
+        protoName: 'fleaPacketMessage',
+        subBuilder: FleaPacketMessage.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -82,12 +83,15 @@ class NegotiationMessage extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use NegotiationMessage() / NegotiationMessage.new instead')
   static NegotiationMessage create() => NegotiationMessage._();
+  static $pb.GeneratedMessage $_createMessage() => NegotiationMessage._();
   @$core.override
-  NegotiationMessage createEmptyInstance() => create();
+  NegotiationMessage createEmptyInstance() => NegotiationMessage._();
   @$core.pragma('dart2js:noInline')
   static NegotiationMessage getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<NegotiationMessage>(create);
+      $pb.GeneratedMessage.$_defaultFor<NegotiationMessage>(
+          NegotiationMessage.$_createMessage);
   static NegotiationMessage? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -174,7 +178,7 @@ class FleaPacketMessage extends $pb.GeneratedMessage {
     $fixnum.Int64? epochTs,
     $core.List<$core.int>? dedupeId,
   }) {
-    final result = create();
+    final result = FleaPacketMessage._();
     if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
     if (srcNodeKey != null) result.srcNodeKey = srcNodeKey;
     if (wgPubKey != null) result.wgPubKey = wgPubKey;
@@ -188,15 +192,15 @@ class FleaPacketMessage extends $pb.GeneratedMessage {
 
   factory FleaPacketMessage.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      FleaPacketMessage()..mergeFromBuffer(data, registry);
   factory FleaPacketMessage.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      FleaPacketMessage()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'FleaPacketMessage',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: FleaPacketMessage.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
@@ -219,12 +223,15 @@ class FleaPacketMessage extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use FleaPacketMessage() / FleaPacketMessage.new instead')
   static FleaPacketMessage create() => FleaPacketMessage._();
+  static $pb.GeneratedMessage $_createMessage() => FleaPacketMessage._();
   @$core.override
-  FleaPacketMessage createEmptyInstance() => create();
+  FleaPacketMessage createEmptyInstance() => FleaPacketMessage._();
   @$core.pragma('dart2js:noInline')
-  static FleaPacketMessage getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<FleaPacketMessage>(create);
+  static FleaPacketMessage getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FleaPacketMessage>(
+          FleaPacketMessage.$_createMessage);
   static FleaPacketMessage? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -285,7 +292,7 @@ class HandshakeRequest extends $pb.GeneratedMessage {
     $core.String? pwd,
     $core.List<$core.int>? sessionID,
   }) {
-    final result = create();
+    final result = HandshakeRequest._();
     if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
     if (srcNodeKey != null) result.srcNodeKey = srcNodeKey;
     if (wgPubKey != null) result.wgPubKey = wgPubKey;
@@ -299,15 +306,15 @@ class HandshakeRequest extends $pb.GeneratedMessage {
 
   factory HandshakeRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      HandshakeRequest()..mergeFromBuffer(data, registry);
   factory HandshakeRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      HandshakeRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'HandshakeRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: HandshakeRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
@@ -329,12 +336,15 @@ class HandshakeRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use HandshakeRequest() / HandshakeRequest.new instead')
   static HandshakeRequest create() => HandshakeRequest._();
+  static $pb.GeneratedMessage $_createMessage() => HandshakeRequest._();
   @$core.override
-  HandshakeRequest createEmptyInstance() => create();
+  HandshakeRequest createEmptyInstance() => HandshakeRequest._();
   @$core.pragma('dart2js:noInline')
-  static HandshakeRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<HandshakeRequest>(create);
+  static HandshakeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HandshakeRequest>(
+          HandshakeRequest.$_createMessage);
   static HandshakeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -399,7 +409,7 @@ class CandidateRequest extends $pb.GeneratedMessage {
     $core.String? wgPubKey,
     $core.String? candidate,
   }) {
-    final result = create();
+    final result = CandidateRequest._();
     if (dstNodeKey != null) result.dstNodeKey = dstNodeKey;
     if (srcNodeKey != null) result.srcNodeKey = srcNodeKey;
     if (wgPubKey != null) result.wgPubKey = wgPubKey;
@@ -411,15 +421,15 @@ class CandidateRequest extends $pb.GeneratedMessage {
 
   factory CandidateRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      CandidateRequest()..mergeFromBuffer(data, registry);
   factory CandidateRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      CandidateRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'CandidateRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: CandidateRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'dstNodeKey', protoName: 'dstNodeKey')
     ..aOS(2, _omitFieldNames ? '' : 'srcNodeKey', protoName: 'srcNodeKey')
     ..aOS(3, _omitFieldNames ? '' : 'wgPubKey', protoName: 'wgPubKey')
@@ -437,12 +447,15 @@ class CandidateRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use CandidateRequest() / CandidateRequest.new instead')
   static CandidateRequest create() => CandidateRequest._();
+  static $pb.GeneratedMessage $_createMessage() => CandidateRequest._();
   @$core.override
-  CandidateRequest createEmptyInstance() => create();
+  CandidateRequest createEmptyInstance() => CandidateRequest._();
   @$core.pragma('dart2js:noInline')
-  static CandidateRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<CandidateRequest>(create);
+  static CandidateRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CandidateRequest>(
+          CandidateRequest.$_createMessage);
   static CandidateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)

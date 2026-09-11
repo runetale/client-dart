@@ -27,7 +27,7 @@ class LoglyphUploadRequest extends $pb.GeneratedMessage {
     $core.String? clientVersion,
     $core.Iterable<LoglyphEntry>? entries,
   }) {
-    final result = create();
+    final result = LoglyphUploadRequest._();
     if (sessionId != null) result.sessionId = sessionId;
     if (clientVersion != null) result.clientVersion = clientVersion;
     if (entries != null) result.entries.addAll(entries);
@@ -38,19 +38,19 @@ class LoglyphUploadRequest extends $pb.GeneratedMessage {
 
   factory LoglyphUploadRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      LoglyphUploadRequest()..mergeFromBuffer(data, registry);
   factory LoglyphUploadRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      LoglyphUploadRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'LoglyphUploadRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: LoglyphUploadRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'sessionId')
     ..aOS(2, _omitFieldNames ? '' : 'clientVersion')
     ..pPM<LoglyphEntry>(3, _omitFieldNames ? '' : 'entries',
-        subBuilder: LoglyphEntry.create)
+        subBuilder: LoglyphEntry.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -64,12 +64,16 @@ class LoglyphUploadRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use LoglyphUploadRequest() / LoglyphUploadRequest.new instead')
   static LoglyphUploadRequest create() => LoglyphUploadRequest._();
+  static $pb.GeneratedMessage $_createMessage() => LoglyphUploadRequest._();
   @$core.override
-  LoglyphUploadRequest createEmptyInstance() => create();
+  LoglyphUploadRequest createEmptyInstance() => LoglyphUploadRequest._();
   @$core.pragma('dart2js:noInline')
   static LoglyphUploadRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LoglyphUploadRequest>(create);
+      $pb.GeneratedMessage.$_defaultFor<LoglyphUploadRequest>(
+          LoglyphUploadRequest.$_createMessage);
   static LoglyphUploadRequest? _defaultInstance;
 
   /// session_id is the ephemeral session identifier.
@@ -108,7 +112,7 @@ class LoglyphEntry extends $pb.GeneratedMessage {
     $fixnum.Int64? procSeq,
     $core.int? v,
   }) {
-    final result = create();
+    final result = LoglyphEntry._();
     if (clientTime != null) result.clientTime = clientTime;
     if (level != null) result.level = level;
     if (text != null) result.text = text;
@@ -123,17 +127,17 @@ class LoglyphEntry extends $pb.GeneratedMessage {
 
   factory LoglyphEntry.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      LoglyphEntry()..mergeFromBuffer(data, registry);
   factory LoglyphEntry.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      LoglyphEntry()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'LoglyphEntry',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: LoglyphEntry.$_createMessage)
     ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'clientTime',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOS(2, _omitFieldNames ? '' : 'level')
     ..aOS(3, _omitFieldNames ? '' : 'text')
     ..aOS(4, _omitFieldNames ? '' : 'payload')
@@ -154,12 +158,15 @@ class LoglyphEntry extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use LoglyphEntry() / LoglyphEntry.new instead')
   static LoglyphEntry create() => LoglyphEntry._();
+  static $pb.GeneratedMessage $_createMessage() => LoglyphEntry._();
   @$core.override
-  LoglyphEntry createEmptyInstance() => create();
+  LoglyphEntry createEmptyInstance() => LoglyphEntry._();
   @$core.pragma('dart2js:noInline')
-  static LoglyphEntry getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LoglyphEntry>(create);
+  static LoglyphEntry getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoglyphEntry>(
+          LoglyphEntry.$_createMessage);
   static LoglyphEntry? _defaultInstance;
 
   /// client_time is when the log was generated on the client (RFC3339Nano).
@@ -243,7 +250,7 @@ class LoglyphUploadResponse extends $pb.GeneratedMessage {
     $core.int? dropped,
     $core.String? reason,
   }) {
-    final result = create();
+    final result = LoglyphUploadResponse._();
     if (accepted != null) result.accepted = accepted;
     if (dropped != null) result.dropped = dropped;
     if (reason != null) result.reason = reason;
@@ -254,15 +261,15 @@ class LoglyphUploadResponse extends $pb.GeneratedMessage {
 
   factory LoglyphUploadResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      LoglyphUploadResponse()..mergeFromBuffer(data, registry);
   factory LoglyphUploadResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      LoglyphUploadResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'LoglyphUploadResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: LoglyphUploadResponse.$_createMessage)
     ..aI(1, _omitFieldNames ? '' : 'accepted', fieldType: $pb.PbFieldType.OU3)
     ..aI(2, _omitFieldNames ? '' : 'dropped', fieldType: $pb.PbFieldType.OU3)
     ..aOS(3, _omitFieldNames ? '' : 'reason')
@@ -280,12 +287,16 @@ class LoglyphUploadResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use LoglyphUploadResponse() / LoglyphUploadResponse.new instead')
   static LoglyphUploadResponse create() => LoglyphUploadResponse._();
+  static $pb.GeneratedMessage $_createMessage() => LoglyphUploadResponse._();
   @$core.override
-  LoglyphUploadResponse createEmptyInstance() => create();
+  LoglyphUploadResponse createEmptyInstance() => LoglyphUploadResponse._();
   @$core.pragma('dart2js:noInline')
   static LoglyphUploadResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LoglyphUploadResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<LoglyphUploadResponse>(
+          LoglyphUploadResponse.$_createMessage);
   static LoglyphUploadResponse? _defaultInstance;
 
   /// accepted is the number of entries successfully stored.
@@ -344,7 +355,7 @@ class PacketFlowLogUploadRequest extends $pb.GeneratedMessage {
     $core.String? userEmail,
     $core.Iterable<FlowPeerInfo>? dstPeers,
   }) {
-    final result = create();
+    final result = PacketFlowLogUploadRequest._();
     if (loggedAt != null) result.loggedAt = loggedAt;
     if (startedAt != null) result.startedAt = startedAt;
     if (endedAt != null) result.endedAt = endedAt;
@@ -366,32 +377,32 @@ class PacketFlowLogUploadRequest extends $pb.GeneratedMessage {
 
   factory PacketFlowLogUploadRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PacketFlowLogUploadRequest()..mergeFromBuffer(data, registry);
   factory PacketFlowLogUploadRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PacketFlowLogUploadRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PacketFlowLogUploadRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: PacketFlowLogUploadRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'loggedAt')
     ..aOS(2, _omitFieldNames ? '' : 'startedAt')
     ..aOS(3, _omitFieldNames ? '' : 'endedAt')
     ..pPM<PacketFlowEntry>(4, _omitFieldNames ? '' : 'peerTraffic',
-        subBuilder: PacketFlowEntry.create)
+        subBuilder: PacketFlowEntry.$_createMessage)
     ..pPM<PacketFlowEntry>(5, _omitFieldNames ? '' : 'lanTraffic',
-        subBuilder: PacketFlowEntry.create)
+        subBuilder: PacketFlowEntry.$_createMessage)
     ..pPM<PacketFlowEntry>(6, _omitFieldNames ? '' : 'exitNodeTraffic',
-        subBuilder: PacketFlowEntry.create)
+        subBuilder: PacketFlowEntry.$_createMessage)
     ..pPM<PacketFlowEntry>(7, _omitFieldNames ? '' : 'transportTraffic',
-        subBuilder: PacketFlowEntry.create)
+        subBuilder: PacketFlowEntry.$_createMessage)
     ..aOS(8, _omitFieldNames ? '' : 'telemetryLogId')
     ..aOS(9, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..aOS(10, _omitFieldNames ? '' : 'nodeName')
     ..aOS(11, _omitFieldNames ? '' : 'userEmail')
     ..pPM<FlowPeerInfo>(12, _omitFieldNames ? '' : 'dstPeers',
-        subBuilder: FlowPeerInfo.create)
+        subBuilder: FlowPeerInfo.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -407,12 +418,18 @@ class PacketFlowLogUploadRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use PacketFlowLogUploadRequest() / PacketFlowLogUploadRequest.new instead')
   static PacketFlowLogUploadRequest create() => PacketFlowLogUploadRequest._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      PacketFlowLogUploadRequest._();
   @$core.override
-  PacketFlowLogUploadRequest createEmptyInstance() => create();
+  PacketFlowLogUploadRequest createEmptyInstance() =>
+      PacketFlowLogUploadRequest._();
   @$core.pragma('dart2js:noInline')
   static PacketFlowLogUploadRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PacketFlowLogUploadRequest>(create);
+      $pb.GeneratedMessage.$_defaultFor<PacketFlowLogUploadRequest>(
+          PacketFlowLogUploadRequest.$_createMessage);
   static PacketFlowLogUploadRequest? _defaultInstance;
 
   /// logged_at is the timestamp when the stats were collected.
@@ -525,7 +542,7 @@ class FlowPeerInfo extends $pb.GeneratedMessage {
     $core.String? userEmail,
     $core.String? nodeId,
   }) {
-    final result = create();
+    final result = FlowPeerInfo._();
     if (runetaleIp != null) result.runetaleIp = runetaleIp;
     if (nodeName != null) result.nodeName = nodeName;
     if (userEmail != null) result.userEmail = userEmail;
@@ -537,15 +554,15 @@ class FlowPeerInfo extends $pb.GeneratedMessage {
 
   factory FlowPeerInfo.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      FlowPeerInfo()..mergeFromBuffer(data, registry);
   factory FlowPeerInfo.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      FlowPeerInfo()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'FlowPeerInfo',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: FlowPeerInfo.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'runetaleIp')
     ..aOS(2, _omitFieldNames ? '' : 'nodeName')
     ..aOS(3, _omitFieldNames ? '' : 'userEmail')
@@ -563,12 +580,15 @@ class FlowPeerInfo extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use FlowPeerInfo() / FlowPeerInfo.new instead')
   static FlowPeerInfo create() => FlowPeerInfo._();
+  static $pb.GeneratedMessage $_createMessage() => FlowPeerInfo._();
   @$core.override
-  FlowPeerInfo createEmptyInstance() => create();
+  FlowPeerInfo createEmptyInstance() => FlowPeerInfo._();
   @$core.pragma('dart2js:noInline')
-  static FlowPeerInfo getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<FlowPeerInfo>(create);
+  static FlowPeerInfo getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FlowPeerInfo>(
+          FlowPeerInfo.$_createMessage);
   static FlowPeerInfo? _defaultInstance;
 
   /// runetale_ip is the Runetale CGNAT IP (e.g. "100.112.0.7").
@@ -624,7 +644,7 @@ class PacketFlowEntry extends $pb.GeneratedMessage {
     $fixnum.Int64? rxPackets,
     $fixnum.Int64? rxBytes,
   }) {
-    final result = create();
+    final result = PacketFlowEntry._();
     if (proto != null) result.proto = proto;
     if (src != null) result.src = src;
     if (dst != null) result.dst = dst;
@@ -639,15 +659,15 @@ class PacketFlowEntry extends $pb.GeneratedMessage {
 
   factory PacketFlowEntry.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PacketFlowEntry()..mergeFromBuffer(data, registry);
   factory PacketFlowEntry.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PacketFlowEntry()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PacketFlowEntry',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: PacketFlowEntry.$_createMessage)
     ..aI(1, _omitFieldNames ? '' : 'proto', fieldType: $pb.PbFieldType.OU3)
     ..aOS(2, _omitFieldNames ? '' : 'src')
     ..aOS(3, _omitFieldNames ? '' : 'dst')
@@ -674,12 +694,15 @@ class PacketFlowEntry extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use PacketFlowEntry() / PacketFlowEntry.new instead')
   static PacketFlowEntry create() => PacketFlowEntry._();
+  static $pb.GeneratedMessage $_createMessage() => PacketFlowEntry._();
   @$core.override
-  PacketFlowEntry createEmptyInstance() => create();
+  PacketFlowEntry createEmptyInstance() => PacketFlowEntry._();
   @$core.pragma('dart2js:noInline')
-  static PacketFlowEntry getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PacketFlowEntry>(create);
+  static PacketFlowEntry getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PacketFlowEntry>(
+          PacketFlowEntry.$_createMessage);
   static PacketFlowEntry? _defaultInstance;
 
   /// proto is the IP protocol number (6=TCP, 17=UDP, 1=ICMPv4, 58=ICMPv6).
@@ -759,7 +782,7 @@ class PacketFlowLogUploadResponse extends $pb.GeneratedMessage {
   factory PacketFlowLogUploadResponse({
     $core.int? accepted,
   }) {
-    final result = create();
+    final result = PacketFlowLogUploadResponse._();
     if (accepted != null) result.accepted = accepted;
     return result;
   }
@@ -768,15 +791,15 @@ class PacketFlowLogUploadResponse extends $pb.GeneratedMessage {
 
   factory PacketFlowLogUploadResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PacketFlowLogUploadResponse()..mergeFromBuffer(data, registry);
   factory PacketFlowLogUploadResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PacketFlowLogUploadResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PacketFlowLogUploadResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: PacketFlowLogUploadResponse.$_createMessage)
     ..aI(1, _omitFieldNames ? '' : 'accepted', fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
@@ -793,13 +816,19 @@ class PacketFlowLogUploadResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use PacketFlowLogUploadResponse() / PacketFlowLogUploadResponse.new instead')
   static PacketFlowLogUploadResponse create() =>
       PacketFlowLogUploadResponse._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      PacketFlowLogUploadResponse._();
   @$core.override
-  PacketFlowLogUploadResponse createEmptyInstance() => create();
+  PacketFlowLogUploadResponse createEmptyInstance() =>
+      PacketFlowLogUploadResponse._();
   @$core.pragma('dart2js:noInline')
   static PacketFlowLogUploadResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PacketFlowLogUploadResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<PacketFlowLogUploadResponse>(
+          PacketFlowLogUploadResponse.$_createMessage);
   static PacketFlowLogUploadResponse? _defaultInstance;
 
   /// accepted is the number of flow entries successfully stored.
@@ -823,7 +852,7 @@ class StreamLogRequest extends $pb.GeneratedMessage {
     LoglyphUploadRequest? loglyph,
     $fixnum.Int64? sequence,
   }) {
-    final result = create();
+    final result = StreamLogRequest._();
     if (packetFlow != null) result.packetFlow = packetFlow;
     if (loglyph != null) result.loglyph = loglyph;
     if (sequence != null) result.sequence = sequence;
@@ -834,10 +863,10 @@ class StreamLogRequest extends $pb.GeneratedMessage {
 
   factory StreamLogRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      StreamLogRequest()..mergeFromBuffer(data, registry);
   factory StreamLogRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      StreamLogRequest()..mergeFromJson(json, registry);
 
   static const $core.Map<$core.int, StreamLogRequest_Payload>
       _StreamLogRequest_PayloadByTag = {
@@ -848,12 +877,12 @@ class StreamLogRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'StreamLogRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: StreamLogRequest.$_createMessage)
     ..oo(0, [1, 3])
     ..aOM<PacketFlowLogUploadRequest>(1, _omitFieldNames ? '' : 'packetFlow',
-        subBuilder: PacketFlowLogUploadRequest.create)
+        subBuilder: PacketFlowLogUploadRequest.$_createMessage)
     ..aOM<LoglyphUploadRequest>(3, _omitFieldNames ? '' : 'loglyph',
-        subBuilder: LoglyphUploadRequest.create)
+        subBuilder: LoglyphUploadRequest.$_createMessage)
     ..a<$fixnum.Int64>(
         10, _omitFieldNames ? '' : 'sequence', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
@@ -870,12 +899,15 @@ class StreamLogRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use StreamLogRequest() / StreamLogRequest.new instead')
   static StreamLogRequest create() => StreamLogRequest._();
+  static $pb.GeneratedMessage $_createMessage() => StreamLogRequest._();
   @$core.override
-  StreamLogRequest createEmptyInstance() => create();
+  StreamLogRequest createEmptyInstance() => StreamLogRequest._();
   @$core.pragma('dart2js:noInline')
-  static StreamLogRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<StreamLogRequest>(create);
+  static StreamLogRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamLogRequest>(
+          StreamLogRequest.$_createMessage);
   static StreamLogRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -931,7 +963,7 @@ class StreamLogResponse extends $pb.GeneratedMessage {
     LogConfigUpdate? config,
     StreamAck? ack,
   }) {
-    final result = create();
+    final result = StreamLogResponse._();
     if (config != null) result.config = config;
     if (ack != null) result.ack = ack;
     return result;
@@ -941,10 +973,10 @@ class StreamLogResponse extends $pb.GeneratedMessage {
 
   factory StreamLogResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      StreamLogResponse()..mergeFromBuffer(data, registry);
   factory StreamLogResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      StreamLogResponse()..mergeFromJson(json, registry);
 
   static const $core.Map<$core.int, StreamLogResponse_Directive>
       _StreamLogResponse_DirectiveByTag = {
@@ -955,12 +987,12 @@ class StreamLogResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'StreamLogResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: StreamLogResponse.$_createMessage)
     ..oo(0, [1, 2])
     ..aOM<LogConfigUpdate>(1, _omitFieldNames ? '' : 'config',
-        subBuilder: LogConfigUpdate.create)
+        subBuilder: LogConfigUpdate.$_createMessage)
     ..aOM<StreamAck>(2, _omitFieldNames ? '' : 'ack',
-        subBuilder: StreamAck.create)
+        subBuilder: StreamAck.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -974,12 +1006,15 @@ class StreamLogResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use StreamLogResponse() / StreamLogResponse.new instead')
   static StreamLogResponse create() => StreamLogResponse._();
+  static $pb.GeneratedMessage $_createMessage() => StreamLogResponse._();
   @$core.override
-  StreamLogResponse createEmptyInstance() => create();
+  StreamLogResponse createEmptyInstance() => StreamLogResponse._();
   @$core.pragma('dart2js:noInline')
-  static StreamLogResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<StreamLogResponse>(create);
+  static StreamLogResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamLogResponse>(
+          StreamLogResponse.$_createMessage);
   static StreamLogResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1025,7 +1060,7 @@ class LogConfigUpdate extends $pb.GeneratedMessage {
     $core.bool? netflowEnabled,
     $core.bool? loglyphEnabled,
   }) {
-    final result = create();
+    final result = LogConfigUpdate._();
     if (pollPeriodSeconds != null) result.pollPeriodSeconds = pollPeriodSeconds;
     if (minBytesThreshold != null) result.minBytesThreshold = minBytesThreshold;
     if (netflowEnabled != null) result.netflowEnabled = netflowEnabled;
@@ -1037,15 +1072,15 @@ class LogConfigUpdate extends $pb.GeneratedMessage {
 
   factory LogConfigUpdate.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      LogConfigUpdate()..mergeFromBuffer(data, registry);
   factory LogConfigUpdate.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      LogConfigUpdate()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'LogConfigUpdate',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: LogConfigUpdate.$_createMessage)
     ..aI(1, _omitFieldNames ? '' : 'pollPeriodSeconds',
         fieldType: $pb.PbFieldType.OU3)
     ..a<$fixnum.Int64>(
@@ -1066,12 +1101,15 @@ class LogConfigUpdate extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use LogConfigUpdate() / LogConfigUpdate.new instead')
   static LogConfigUpdate create() => LogConfigUpdate._();
+  static $pb.GeneratedMessage $_createMessage() => LogConfigUpdate._();
   @$core.override
-  LogConfigUpdate createEmptyInstance() => create();
+  LogConfigUpdate createEmptyInstance() => LogConfigUpdate._();
   @$core.pragma('dart2js:noInline')
-  static LogConfigUpdate getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LogConfigUpdate>(create);
+  static LogConfigUpdate getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogConfigUpdate>(
+          LogConfigUpdate.$_createMessage);
   static LogConfigUpdate? _defaultInstance;
 
   /// poll_period_seconds is the interval between flow log collections.
@@ -1125,7 +1163,7 @@ class StreamAck extends $pb.GeneratedMessage {
     $core.int? dropped,
     $core.String? reason,
   }) {
-    final result = create();
+    final result = StreamAck._();
     if (sequence != null) result.sequence = sequence;
     if (accepted != null) result.accepted = accepted;
     if (dropped != null) result.dropped = dropped;
@@ -1137,15 +1175,15 @@ class StreamAck extends $pb.GeneratedMessage {
 
   factory StreamAck.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      StreamAck()..mergeFromBuffer(data, registry);
   factory StreamAck.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      StreamAck()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'StreamAck',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: StreamAck.$_createMessage)
     ..a<$fixnum.Int64>(
         1, _omitFieldNames ? '' : 'sequence', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
@@ -1164,12 +1202,14 @@ class StreamAck extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use StreamAck() / StreamAck.new instead')
   static StreamAck create() => StreamAck._();
+  static $pb.GeneratedMessage $_createMessage() => StreamAck._();
   @$core.override
-  StreamAck createEmptyInstance() => create();
+  StreamAck createEmptyInstance() => StreamAck._();
   @$core.pragma('dart2js:noInline')
-  static StreamAck getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StreamAck>(create);
+  static StreamAck getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StreamAck>(StreamAck.$_createMessage);
   static StreamAck? _defaultInstance;
 
   /// sequence echoes the client's StreamLogRequest.sequence.

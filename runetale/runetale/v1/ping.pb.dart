@@ -20,7 +20,7 @@ class PingResponse extends $pb.GeneratedMessage {
   factory PingResponse({
     $core.String? message,
   }) {
-    final result = create();
+    final result = PingResponse._();
     if (message != null) result.message = message;
     return result;
   }
@@ -29,15 +29,15 @@ class PingResponse extends $pb.GeneratedMessage {
 
   factory PingResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PingResponse()..mergeFromBuffer(data, registry);
   factory PingResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PingResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PingResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: PingResponse.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'message')
     ..hasRequiredFields = false;
 
@@ -52,12 +52,15 @@ class PingResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use PingResponse() / PingResponse.new instead')
   static PingResponse create() => PingResponse._();
+  static $pb.GeneratedMessage $_createMessage() => PingResponse._();
   @$core.override
-  PingResponse createEmptyInstance() => create();
+  PingResponse createEmptyInstance() => PingResponse._();
   @$core.pragma('dart2js:noInline')
-  static PingResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PingResponse>(create);
+  static PingResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PingResponse>(
+          PingResponse.$_createMessage);
   static PingResponse? _defaultInstance;
 
   @$pb.TagNumber(1)

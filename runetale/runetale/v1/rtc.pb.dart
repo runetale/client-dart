@@ -22,7 +22,7 @@ class StunHost extends $pb.GeneratedMessage {
     $core.String? username,
     $core.String? password,
   }) {
-    final result = create();
+    final result = StunHost._();
     if (url != null) result.url = url;
     if (username != null) result.username = username;
     if (password != null) result.password = password;
@@ -33,15 +33,15 @@ class StunHost extends $pb.GeneratedMessage {
 
   factory StunHost.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      StunHost()..mergeFromBuffer(data, registry);
   factory StunHost.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      StunHost()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'StunHost',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: StunHost.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'url')
     ..aOS(2, _omitFieldNames ? '' : 'username')
     ..aOS(3, _omitFieldNames ? '' : 'password')
@@ -57,12 +57,14 @@ class StunHost extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use StunHost() / StunHost.new instead')
   static StunHost create() => StunHost._();
+  static $pb.GeneratedMessage $_createMessage() => StunHost._();
   @$core.override
-  StunHost createEmptyInstance() => create();
+  StunHost createEmptyInstance() => StunHost._();
   @$core.pragma('dart2js:noInline')
-  static StunHost getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StunHost>(create);
+  static StunHost getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StunHost>(StunHost.$_createMessage);
   static StunHost? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -99,7 +101,7 @@ class TurnHost extends $pb.GeneratedMessage {
     $core.String? username,
     $core.String? password,
   }) {
-    final result = create();
+    final result = TurnHost._();
     if (url != null) result.url = url;
     if (username != null) result.username = username;
     if (password != null) result.password = password;
@@ -110,15 +112,15 @@ class TurnHost extends $pb.GeneratedMessage {
 
   factory TurnHost.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      TurnHost()..mergeFromBuffer(data, registry);
   factory TurnHost.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      TurnHost()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'TurnHost',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: TurnHost.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'url')
     ..aOS(2, _omitFieldNames ? '' : 'username')
     ..aOS(3, _omitFieldNames ? '' : 'password')
@@ -134,12 +136,14 @@ class TurnHost extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use TurnHost() / TurnHost.new instead')
   static TurnHost create() => TurnHost._();
+  static $pb.GeneratedMessage $_createMessage() => TurnHost._();
   @$core.override
-  TurnHost createEmptyInstance() => create();
+  TurnHost createEmptyInstance() => TurnHost._();
   @$core.pragma('dart2js:noInline')
-  static TurnHost getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TurnHost>(create);
+  static TurnHost getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<TurnHost>(TurnHost.$_createMessage);
   static TurnHost? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -175,7 +179,7 @@ class RtcConfig extends $pb.GeneratedMessage {
     TurnHost? turnHost,
     StunHost? stunHost,
   }) {
-    final result = create();
+    final result = RtcConfig._();
     if (turnHost != null) result.turnHost = turnHost;
     if (stunHost != null) result.stunHost = stunHost;
     return result;
@@ -185,19 +189,19 @@ class RtcConfig extends $pb.GeneratedMessage {
 
   factory RtcConfig.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      RtcConfig()..mergeFromBuffer(data, registry);
   factory RtcConfig.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      RtcConfig()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'RtcConfig',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: RtcConfig.$_createMessage)
     ..aOM<TurnHost>(1, _omitFieldNames ? '' : 'turnHost',
-        protoName: 'turnHost', subBuilder: TurnHost.create)
+        protoName: 'turnHost', subBuilder: TurnHost.$_createMessage)
     ..aOM<StunHost>(2, _omitFieldNames ? '' : 'stunHost',
-        protoName: 'stunHost', subBuilder: StunHost.create)
+        protoName: 'stunHost', subBuilder: StunHost.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -210,12 +214,14 @@ class RtcConfig extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use RtcConfig() / RtcConfig.new instead')
   static RtcConfig create() => RtcConfig._();
+  static $pb.GeneratedMessage $_createMessage() => RtcConfig._();
   @$core.override
-  RtcConfig createEmptyInstance() => create();
+  RtcConfig createEmptyInstance() => RtcConfig._();
   @$core.pragma('dart2js:noInline')
-  static RtcConfig getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RtcConfig>(create);
+  static RtcConfig getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RtcConfig>(RtcConfig.$_createMessage);
   static RtcConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -245,7 +251,7 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
   factory GetStunTurnConfigResponse({
     RtcConfig? rtcConfig,
   }) {
-    final result = create();
+    final result = GetStunTurnConfigResponse._();
     if (rtcConfig != null) result.rtcConfig = rtcConfig;
     return result;
   }
@@ -254,17 +260,17 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
 
   factory GetStunTurnConfigResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetStunTurnConfigResponse()..mergeFromBuffer(data, registry);
   factory GetStunTurnConfigResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetStunTurnConfigResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetStunTurnConfigResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetStunTurnConfigResponse.$_createMessage)
     ..aOM<RtcConfig>(1, _omitFieldNames ? '' : 'rtcConfig',
-        protoName: 'rtcConfig', subBuilder: RtcConfig.create)
+        protoName: 'rtcConfig', subBuilder: RtcConfig.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -279,12 +285,18 @@ class GetStunTurnConfigResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetStunTurnConfigResponse() / GetStunTurnConfigResponse.new instead')
   static GetStunTurnConfigResponse create() => GetStunTurnConfigResponse._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      GetStunTurnConfigResponse._();
   @$core.override
-  GetStunTurnConfigResponse createEmptyInstance() => create();
+  GetStunTurnConfigResponse createEmptyInstance() =>
+      GetStunTurnConfigResponse._();
   @$core.pragma('dart2js:noInline')
   static GetStunTurnConfigResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetStunTurnConfigResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetStunTurnConfigResponse>(
+          GetStunTurnConfigResponse.$_createMessage);
   static GetStunTurnConfigResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
