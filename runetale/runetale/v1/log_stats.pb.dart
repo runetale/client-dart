@@ -26,7 +26,7 @@ class GetTenantTrafficSummaryRequest extends $pb.GeneratedMessage {
     $1.Timestamp? from,
     $1.Timestamp? to,
   }) {
-    final result = create();
+    final result = GetTenantTrafficSummaryRequest._();
     if (domainTelemetryLogId != null)
       result.domainTelemetryLogId = domainTelemetryLogId;
     if (from != null) result.from = from;
@@ -38,20 +38,20 @@ class GetTenantTrafficSummaryRequest extends $pb.GeneratedMessage {
 
   factory GetTenantTrafficSummaryRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetTenantTrafficSummaryRequest()..mergeFromBuffer(data, registry);
   factory GetTenantTrafficSummaryRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetTenantTrafficSummaryRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetTenantTrafficSummaryRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetTenantTrafficSummaryRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'from',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'to',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -67,13 +67,19 @@ class GetTenantTrafficSummaryRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetTenantTrafficSummaryRequest() / GetTenantTrafficSummaryRequest.new instead')
   static GetTenantTrafficSummaryRequest create() =>
       GetTenantTrafficSummaryRequest._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      GetTenantTrafficSummaryRequest._();
   @$core.override
-  GetTenantTrafficSummaryRequest createEmptyInstance() => create();
+  GetTenantTrafficSummaryRequest createEmptyInstance() =>
+      GetTenantTrafficSummaryRequest._();
   @$core.pragma('dart2js:noInline')
   static GetTenantTrafficSummaryRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetTenantTrafficSummaryRequest>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetTenantTrafficSummaryRequest>(
+          GetTenantTrafficSummaryRequest.$_createMessage);
   static GetTenantTrafficSummaryRequest? _defaultInstance;
 
   /// domain_telemetry_log_id is the tenant-level telemetry ID (from tenant_specs).
@@ -119,7 +125,7 @@ class GetTenantTrafficSummaryResponse extends $pb.GeneratedMessage {
     $fixnum.Int64? totalRxBytes,
     $fixnum.Int64? totalBytes,
   }) {
-    final result = create();
+    final result = GetTenantTrafficSummaryResponse._();
     if (domainTelemetryLogId != null)
       result.domainTelemetryLogId = domainTelemetryLogId;
     if (totalTxBytes != null) result.totalTxBytes = totalTxBytes;
@@ -132,15 +138,15 @@ class GetTenantTrafficSummaryResponse extends $pb.GeneratedMessage {
 
   factory GetTenantTrafficSummaryResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetTenantTrafficSummaryResponse()..mergeFromBuffer(data, registry);
   factory GetTenantTrafficSummaryResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetTenantTrafficSummaryResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetTenantTrafficSummaryResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetTenantTrafficSummaryResponse.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..aInt64(2, _omitFieldNames ? '' : 'totalTxBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'totalRxBytes')
@@ -160,14 +166,19 @@ class GetTenantTrafficSummaryResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetTenantTrafficSummaryResponse() / GetTenantTrafficSummaryResponse.new instead')
   static GetTenantTrafficSummaryResponse create() =>
       GetTenantTrafficSummaryResponse._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      GetTenantTrafficSummaryResponse._();
   @$core.override
-  GetTenantTrafficSummaryResponse createEmptyInstance() => create();
+  GetTenantTrafficSummaryResponse createEmptyInstance() =>
+      GetTenantTrafficSummaryResponse._();
   @$core.pragma('dart2js:noInline')
   static GetTenantTrafficSummaryResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetTenantTrafficSummaryResponse>(
-          create);
+          GetTenantTrafficSummaryResponse.$_createMessage);
   static GetTenantTrafficSummaryResponse? _defaultInstance;
 
   /// domain_telemetry_log_id is the queried tenant-level telemetry ID.
@@ -218,7 +229,7 @@ class GetTenantTrafficSummariesRequest extends $pb.GeneratedMessage {
     $1.Timestamp? from,
     $1.Timestamp? to,
   }) {
-    final result = create();
+    final result = GetTenantTrafficSummariesRequest._();
     if (domainTelemetryLogIds != null)
       result.domainTelemetryLogIds.addAll(domainTelemetryLogIds);
     if (from != null) result.from = from;
@@ -231,20 +242,20 @@ class GetTenantTrafficSummariesRequest extends $pb.GeneratedMessage {
   factory GetTenantTrafficSummariesRequest.fromBuffer(
           $core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetTenantTrafficSummariesRequest()..mergeFromBuffer(data, registry);
   factory GetTenantTrafficSummariesRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetTenantTrafficSummariesRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetTenantTrafficSummariesRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetTenantTrafficSummariesRequest.$_createMessage)
     ..pPS(1, _omitFieldNames ? '' : 'domainTelemetryLogIds')
     ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'from',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'to',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -260,14 +271,19 @@ class GetTenantTrafficSummariesRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetTenantTrafficSummariesRequest() / GetTenantTrafficSummariesRequest.new instead')
   static GetTenantTrafficSummariesRequest create() =>
       GetTenantTrafficSummariesRequest._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      GetTenantTrafficSummariesRequest._();
   @$core.override
-  GetTenantTrafficSummariesRequest createEmptyInstance() => create();
+  GetTenantTrafficSummariesRequest createEmptyInstance() =>
+      GetTenantTrafficSummariesRequest._();
   @$core.pragma('dart2js:noInline')
   static GetTenantTrafficSummariesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetTenantTrafficSummariesRequest>(
-          create);
+          GetTenantTrafficSummariesRequest.$_createMessage);
   static GetTenantTrafficSummariesRequest? _defaultInstance;
 
   /// domain_telemetry_log_ids is the list of tenant-level telemetry IDs to query.
@@ -304,7 +320,7 @@ class GetTenantTrafficSummariesResponse extends $pb.GeneratedMessage {
   factory GetTenantTrafficSummariesResponse({
     $core.Iterable<TenantTrafficSummary>? summaries,
   }) {
-    final result = create();
+    final result = GetTenantTrafficSummariesResponse._();
     if (summaries != null) result.summaries.addAll(summaries);
     return result;
   }
@@ -314,17 +330,17 @@ class GetTenantTrafficSummariesResponse extends $pb.GeneratedMessage {
   factory GetTenantTrafficSummariesResponse.fromBuffer(
           $core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetTenantTrafficSummariesResponse()..mergeFromBuffer(data, registry);
   factory GetTenantTrafficSummariesResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetTenantTrafficSummariesResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetTenantTrafficSummariesResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetTenantTrafficSummariesResponse.$_createMessage)
     ..pPM<TenantTrafficSummary>(1, _omitFieldNames ? '' : 'summaries',
-        subBuilder: TenantTrafficSummary.create)
+        subBuilder: TenantTrafficSummary.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -340,14 +356,19 @@ class GetTenantTrafficSummariesResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetTenantTrafficSummariesResponse() / GetTenantTrafficSummariesResponse.new instead')
   static GetTenantTrafficSummariesResponse create() =>
       GetTenantTrafficSummariesResponse._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      GetTenantTrafficSummariesResponse._();
   @$core.override
-  GetTenantTrafficSummariesResponse createEmptyInstance() => create();
+  GetTenantTrafficSummariesResponse createEmptyInstance() =>
+      GetTenantTrafficSummariesResponse._();
   @$core.pragma('dart2js:noInline')
   static GetTenantTrafficSummariesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetTenantTrafficSummariesResponse>(
-          create);
+          GetTenantTrafficSummariesResponse.$_createMessage);
   static GetTenantTrafficSummariesResponse? _defaultInstance;
 
   /// summaries is the list of per-tenant traffic summaries.
@@ -363,7 +384,7 @@ class TenantTrafficSummary extends $pb.GeneratedMessage {
     $fixnum.Int64? totalRxBytes,
     $fixnum.Int64? totalBytes,
   }) {
-    final result = create();
+    final result = TenantTrafficSummary._();
     if (domainTelemetryLogId != null)
       result.domainTelemetryLogId = domainTelemetryLogId;
     if (totalTxBytes != null) result.totalTxBytes = totalTxBytes;
@@ -376,15 +397,15 @@ class TenantTrafficSummary extends $pb.GeneratedMessage {
 
   factory TenantTrafficSummary.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      TenantTrafficSummary()..mergeFromBuffer(data, registry);
   factory TenantTrafficSummary.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      TenantTrafficSummary()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'TenantTrafficSummary',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: TenantTrafficSummary.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..aInt64(2, _omitFieldNames ? '' : 'totalTxBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'totalRxBytes')
@@ -402,12 +423,16 @@ class TenantTrafficSummary extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use TenantTrafficSummary() / TenantTrafficSummary.new instead')
   static TenantTrafficSummary create() => TenantTrafficSummary._();
+  static $pb.GeneratedMessage $_createMessage() => TenantTrafficSummary._();
   @$core.override
-  TenantTrafficSummary createEmptyInstance() => create();
+  TenantTrafficSummary createEmptyInstance() => TenantTrafficSummary._();
   @$core.pragma('dart2js:noInline')
   static TenantTrafficSummary getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<TenantTrafficSummary>(create);
+      $pb.GeneratedMessage.$_defaultFor<TenantTrafficSummary>(
+          TenantTrafficSummary.$_createMessage);
   static TenantTrafficSummary? _defaultInstance;
 
   /// domain_telemetry_log_id is the tenant-level telemetry ID.

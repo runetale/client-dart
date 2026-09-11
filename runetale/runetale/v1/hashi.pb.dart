@@ -24,7 +24,7 @@ class Endpoint extends $pb.GeneratedMessage {
     $core.String? addr,
     $core.String? type,
   }) {
-    final result = create();
+    final result = Endpoint._();
     if (addr != null) result.addr = addr;
     if (type != null) result.type = type;
     return result;
@@ -34,15 +34,15 @@ class Endpoint extends $pb.GeneratedMessage {
 
   factory Endpoint.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      Endpoint()..mergeFromBuffer(data, registry);
   factory Endpoint.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      Endpoint()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'Endpoint',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: Endpoint.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'addr')
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..hasRequiredFields = false;
@@ -57,12 +57,14 @@ class Endpoint extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use Endpoint() / Endpoint.new instead')
   static Endpoint create() => Endpoint._();
+  static $pb.GeneratedMessage $_createMessage() => Endpoint._();
   @$core.override
-  Endpoint createEmptyInstance() => create();
+  Endpoint createEmptyInstance() => Endpoint._();
   @$core.pragma('dart2js:noInline')
-  static Endpoint getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Endpoint>(create);
+  static Endpoint getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Endpoint>(Endpoint.$_createMessage);
   static Endpoint? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -92,7 +94,7 @@ class HashiStatus extends $pb.GeneratedMessage {
     PeerStatus? self,
     $core.Iterable<$core.MapEntry<$core.String, PeerStatus>>? peer,
   }) {
-    final result = create();
+    final result = HashiStatus._();
     if (backendState != null) result.backendState = backendState;
     if (runetaleIps != null) result.runetaleIps.addAll(runetaleIps);
     if (interactiveLoginUrl != null)
@@ -106,25 +108,25 @@ class HashiStatus extends $pb.GeneratedMessage {
 
   factory HashiStatus.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      HashiStatus()..mergeFromBuffer(data, registry);
   factory HashiStatus.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      HashiStatus()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'HashiStatus',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: HashiStatus.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'backendState')
     ..pPS(2, _omitFieldNames ? '' : 'runetaleIps')
     ..aOS(3, _omitFieldNames ? '' : 'interactiveLoginUrl')
     ..aOM<PeerStatus>(4, _omitFieldNames ? '' : 'self',
-        subBuilder: PeerStatus.create)
+        subBuilder: PeerStatus.$_createMessage)
     ..m<$core.String, PeerStatus>(5, _omitFieldNames ? '' : 'peer',
         entryClassName: 'HashiStatus.PeerEntry',
         keyFieldType: $pb.PbFieldType.OS,
         valueFieldType: $pb.PbFieldType.OM,
-        valueCreator: PeerStatus.create,
+        valueCreator: PeerStatus.$_createMessage,
         valueDefaultOrMaker: PeerStatus.getDefault,
         packageName: const $pb.PackageName('protos'))
     ..hasRequiredFields = false;
@@ -140,12 +142,15 @@ class HashiStatus extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use HashiStatus() / HashiStatus.new instead')
   static HashiStatus create() => HashiStatus._();
+  static $pb.GeneratedMessage $_createMessage() => HashiStatus._();
   @$core.override
-  HashiStatus createEmptyInstance() => create();
+  HashiStatus createEmptyInstance() => HashiStatus._();
   @$core.pragma('dart2js:noInline')
-  static HashiStatus getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<HashiStatus>(create);
+  static HashiStatus getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HashiStatus>(
+          HashiStatus.$_createMessage);
   static HashiStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -207,7 +212,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     $2.Timestamp? lastSeen,
     $core.Iterable<$core.String>? sshHostKeys,
   }) {
-    final result = create();
+    final result = PeerStatus._();
     if (id != null) result.id = id;
     if (publicKey != null) result.publicKey = publicKey;
     if (os != null) result.os = os;
@@ -235,15 +240,15 @@ class PeerStatus extends $pb.GeneratedMessage {
 
   factory PeerStatus.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PeerStatus()..mergeFromBuffer(data, registry);
   factory PeerStatus.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PeerStatus()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PeerStatus',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: PeerStatus.$_createMessage)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'publicKey')
     ..aOS(3, _omitFieldNames ? '' : 'os')
@@ -254,9 +259,9 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..aInt64(8, _omitFieldNames ? '' : 'rxBytes')
     ..aInt64(9, _omitFieldNames ? '' : 'txBytes')
     ..aOM<$2.Timestamp>(10, _omitFieldNames ? '' : 'lastHandshake',
-        subBuilder: $2.Timestamp.create)
+        subBuilder: $2.Timestamp.$_createMessage)
     ..aOM<$2.Timestamp>(11, _omitFieldNames ? '' : 'lastWrite',
-        subBuilder: $2.Timestamp.create)
+        subBuilder: $2.Timestamp.$_createMessage)
     ..pPS(12, _omitFieldNames ? '' : 'addrs')
     ..aOS(13, _omitFieldNames ? '' : 'curAddr')
     ..aOS(14, _omitFieldNames ? '' : 'iceAddr')
@@ -265,7 +270,7 @@ class PeerStatus extends $pb.GeneratedMessage {
     ..aOB(17, _omitFieldNames ? '' : 'active')
     ..aOB(18, _omitFieldNames ? '' : 'online')
     ..aOM<$2.Timestamp>(19, _omitFieldNames ? '' : 'lastSeen',
-        subBuilder: $2.Timestamp.create)
+        subBuilder: $2.Timestamp.$_createMessage)
     ..pPS(20, _omitFieldNames ? '' : 'sshHostKeys')
     ..hasRequiredFields = false;
 
@@ -279,12 +284,14 @@ class PeerStatus extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use PeerStatus() / PeerStatus.new instead')
   static PeerStatus create() => PeerStatus._();
+  static $pb.GeneratedMessage $_createMessage() => PeerStatus._();
   @$core.override
-  PeerStatus createEmptyInstance() => create();
+  PeerStatus createEmptyInstance() => PeerStatus._();
   @$core.pragma('dart2js:noInline')
   static PeerStatus getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PeerStatus>(create);
+      $pb.GeneratedMessage.$_defaultFor<PeerStatus>(PeerStatus.$_createMessage);
   static PeerStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -451,7 +458,7 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
     $core.Iterable<CompactPeerStatus>? peers,
     $core.Iterable<Endpoint>? localAddrs,
   }) {
-    final result = create();
+    final result = UserspacePeerEngineStatus._();
     if (gotAt != null) result.gotAt = gotAt;
     if (peers != null) result.peers.addAll(peers);
     if (localAddrs != null) result.localAddrs.addAll(localAddrs);
@@ -462,21 +469,21 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
 
   factory UserspacePeerEngineStatus.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      UserspacePeerEngineStatus()..mergeFromBuffer(data, registry);
   factory UserspacePeerEngineStatus.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      UserspacePeerEngineStatus()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'UserspacePeerEngineStatus',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: UserspacePeerEngineStatus.$_createMessage)
     ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'gotAt',
-        subBuilder: $2.Timestamp.create)
+        subBuilder: $2.Timestamp.$_createMessage)
     ..pPM<CompactPeerStatus>(2, _omitFieldNames ? '' : 'peers',
-        subBuilder: CompactPeerStatus.create)
+        subBuilder: CompactPeerStatus.$_createMessage)
     ..pPM<Endpoint>(3, _omitFieldNames ? '' : 'localAddrs',
-        subBuilder: Endpoint.create)
+        subBuilder: Endpoint.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -491,12 +498,18 @@ class UserspacePeerEngineStatus extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use UserspacePeerEngineStatus() / UserspacePeerEngineStatus.new instead')
   static UserspacePeerEngineStatus create() => UserspacePeerEngineStatus._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      UserspacePeerEngineStatus._();
   @$core.override
-  UserspacePeerEngineStatus createEmptyInstance() => create();
+  UserspacePeerEngineStatus createEmptyInstance() =>
+      UserspacePeerEngineStatus._();
   @$core.pragma('dart2js:noInline')
   static UserspacePeerEngineStatus getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<UserspacePeerEngineStatus>(create);
+      $pb.GeneratedMessage.$_defaultFor<UserspacePeerEngineStatus>(
+          UserspacePeerEngineStatus.$_createMessage);
   static UserspacePeerEngineStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -524,7 +537,7 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
     $fixnum.Int64? rxBytes,
     $2.Timestamp? lastHandshake,
   }) {
-    final result = create();
+    final result = CompactPeerStatus._();
     if (nodeKey != null) result.nodeKey = nodeKey;
     if (txBytes != null) result.txBytes = txBytes;
     if (rxBytes != null) result.rxBytes = rxBytes;
@@ -536,20 +549,20 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
 
   factory CompactPeerStatus.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      CompactPeerStatus()..mergeFromBuffer(data, registry);
   factory CompactPeerStatus.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      CompactPeerStatus()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'CompactPeerStatus',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: CompactPeerStatus.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'nodeKey')
     ..aInt64(2, _omitFieldNames ? '' : 'txBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'rxBytes')
     ..aOM<$2.Timestamp>(4, _omitFieldNames ? '' : 'lastHandshake',
-        subBuilder: $2.Timestamp.create)
+        subBuilder: $2.Timestamp.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -563,12 +576,15 @@ class CompactPeerStatus extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use CompactPeerStatus() / CompactPeerStatus.new instead')
   static CompactPeerStatus create() => CompactPeerStatus._();
+  static $pb.GeneratedMessage $_createMessage() => CompactPeerStatus._();
   @$core.override
-  CompactPeerStatus createEmptyInstance() => create();
+  CompactPeerStatus createEmptyInstance() => CompactPeerStatus._();
   @$core.pragma('dart2js:noInline')
-  static CompactPeerStatus getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<CompactPeerStatus>(create);
+  static CompactPeerStatus getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompactPeerStatus>(
+          CompactPeerStatus.$_createMessage);
   static CompactPeerStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -622,7 +638,7 @@ class PingResult extends $pb.GeneratedMessage {
     $core.String? peerApiUrl,
     $core.bool? isLocalIp,
   }) {
-    final result = create();
+    final result = PingResult._();
     if (ip != null) result.ip = ip;
     if (nodeIp != null) result.nodeIp = nodeIp;
     if (nodeName != null) result.nodeName = nodeName;
@@ -639,15 +655,15 @@ class PingResult extends $pb.GeneratedMessage {
 
   factory PingResult.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PingResult()..mergeFromBuffer(data, registry);
   factory PingResult.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PingResult()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PingResult',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: PingResult.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'nodeIp')
     ..aOS(3, _omitFieldNames ? '' : 'nodeName')
@@ -670,12 +686,14 @@ class PingResult extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use PingResult() / PingResult.new instead')
   static PingResult create() => PingResult._();
+  static $pb.GeneratedMessage $_createMessage() => PingResult._();
   @$core.override
-  PingResult createEmptyInstance() => create();
+  PingResult createEmptyInstance() => PingResult._();
   @$core.pragma('dart2js:noInline')
   static PingResult getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PingResult>(create);
+      $pb.GeneratedMessage.$_defaultFor<PingResult>(PingResult.$_createMessage);
   static PingResult? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -764,7 +782,7 @@ class ComposeRequest extends $pb.GeneratedMessage {
   factory ComposeRequest({
     $core.String? key,
   }) {
-    final result = create();
+    final result = ComposeRequest._();
     if (key != null) result.key = key;
     return result;
   }
@@ -773,15 +791,15 @@ class ComposeRequest extends $pb.GeneratedMessage {
 
   factory ComposeRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      ComposeRequest()..mergeFromBuffer(data, registry);
   factory ComposeRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      ComposeRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'ComposeRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: ComposeRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'key')
     ..hasRequiredFields = false;
 
@@ -796,12 +814,15 @@ class ComposeRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use ComposeRequest() / ComposeRequest.new instead')
   static ComposeRequest create() => ComposeRequest._();
+  static $pb.GeneratedMessage $_createMessage() => ComposeRequest._();
   @$core.override
-  ComposeRequest createEmptyInstance() => create();
+  ComposeRequest createEmptyInstance() => ComposeRequest._();
   @$core.pragma('dart2js:noInline')
-  static ComposeRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<ComposeRequest>(create);
+  static ComposeRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ComposeRequest>(
+          ComposeRequest.$_createMessage);
   static ComposeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -820,7 +841,7 @@ class PingRequest extends $pb.GeneratedMessage {
     $core.String? type,
     $core.int? size,
   }) {
-    final result = create();
+    final result = PingRequest._();
     if (ip != null) result.ip = ip;
     if (type != null) result.type = type;
     if (size != null) result.size = size;
@@ -831,15 +852,15 @@ class PingRequest extends $pb.GeneratedMessage {
 
   factory PingRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      PingRequest()..mergeFromBuffer(data, registry);
   factory PingRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      PingRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'PingRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: PingRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'type')
     ..aI(3, _omitFieldNames ? '' : 'size')
@@ -856,12 +877,15 @@ class PingRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use PingRequest() / PingRequest.new instead')
   static PingRequest create() => PingRequest._();
+  static $pb.GeneratedMessage $_createMessage() => PingRequest._();
   @$core.override
-  PingRequest createEmptyInstance() => create();
+  PingRequest createEmptyInstance() => PingRequest._();
   @$core.pragma('dart2js:noInline')
-  static PingRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<PingRequest>(create);
+  static PingRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PingRequest>(
+          PingRequest.$_createMessage);
   static PingRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -896,7 +920,7 @@ class StopRequest extends $pb.GeneratedMessage {
   factory StopRequest({
     $core.String? reason,
   }) {
-    final result = create();
+    final result = StopRequest._();
     if (reason != null) result.reason = reason;
     return result;
   }
@@ -905,15 +929,15 @@ class StopRequest extends $pb.GeneratedMessage {
 
   factory StopRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      StopRequest()..mergeFromBuffer(data, registry);
   factory StopRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      StopRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'StopRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: StopRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'reason')
     ..hasRequiredFields = false;
 
@@ -928,12 +952,15 @@ class StopRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use StopRequest() / StopRequest.new instead')
   static StopRequest create() => StopRequest._();
+  static $pb.GeneratedMessage $_createMessage() => StopRequest._();
   @$core.override
-  StopRequest createEmptyInstance() => create();
+  StopRequest createEmptyInstance() => StopRequest._();
   @$core.pragma('dart2js:noInline')
-  static StopRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<StopRequest>(create);
+  static StopRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StopRequest>(
+          StopRequest.$_createMessage);
   static StopRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -964,7 +991,7 @@ class NetCheckReport extends $pb.GeneratedMessage {
     $core.String? preferredCerfRegion,
     $core.int? preferredCerfRegionId,
   }) {
-    final result = create();
+    final result = NetCheckReport._();
     if (now != null) result.now = now;
     if (udp != null) result.udp = udp;
     if (ipv6 != null) result.ipv6 = ipv6;
@@ -989,17 +1016,17 @@ class NetCheckReport extends $pb.GeneratedMessage {
 
   factory NetCheckReport.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      NetCheckReport()..mergeFromBuffer(data, registry);
   factory NetCheckReport.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      NetCheckReport()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'NetCheckReport',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: NetCheckReport.$_createMessage)
     ..aOM<$2.Timestamp>(1, _omitFieldNames ? '' : 'now',
-        subBuilder: $2.Timestamp.create)
+        subBuilder: $2.Timestamp.$_createMessage)
     ..aOB(2, _omitFieldNames ? '' : 'udp')
     ..aOB(3, _omitFieldNames ? '' : 'ipv6')
     ..aOB(4, _omitFieldNames ? '' : 'ipv4')
@@ -1040,12 +1067,15 @@ class NetCheckReport extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use NetCheckReport() / NetCheckReport.new instead')
   static NetCheckReport create() => NetCheckReport._();
+  static $pb.GeneratedMessage $_createMessage() => NetCheckReport._();
   @$core.override
-  NetCheckReport createEmptyInstance() => create();
+  NetCheckReport createEmptyInstance() => NetCheckReport._();
   @$core.pragma('dart2js:noInline')
-  static NetCheckReport getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<NetCheckReport>(create);
+  static NetCheckReport getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetCheckReport>(
+          NetCheckReport.$_createMessage);
   static NetCheckReport? _defaultInstance;
 
   @$pb.TagNumber(1)

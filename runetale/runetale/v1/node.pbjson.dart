@@ -151,6 +151,7 @@ const Node$json = {
       '6': '.protos.DevicePosture',
       '10': 'devicePosture'
     },
+    {'1': 'wol_macs', '3': 22, '4': 3, '5': 9, '10': 'wolMacs'},
   ],
 };
 
@@ -168,7 +169,8 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'tleUV4cGlyeRIYCgdleHBpcmVkGBEgASgIUgdleHBpcmVkEiIKDGtleVNpZ25hdHVyZRgSIAEo'
     'DFIMa2V5U2lnbmF0dXJlEiIKDXNzaF9ob3N0X2tleXMYEyADKAlSC3NzaEhvc3RLZXlzEiIKDX'
     'BlZXJfYXBpX3BvcnQYFCABKA1SC3BlZXJBcGlQb3J0EjwKDmRldmljZV9wb3N0dXJlGBUgASgL'
-    'MhUucHJvdG9zLkRldmljZVBvc3R1cmVSDWRldmljZVBvc3R1cmU=');
+    'MhUucHJvdG9zLkRldmljZVBvc3R1cmVSDWRldmljZVBvc3R1cmUSGQoId29sX21hY3MYFiADKA'
+    'lSB3dvbE1hY3M=');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
@@ -211,6 +213,7 @@ const HostMeta$json = {
       '6': '.protos.DevicePosture',
       '10': 'devicePosture'
     },
+    {'1': 'wol_macs', '3': 11, '4': 3, '5': 9, '10': 'wolMacs'},
   ],
 };
 
@@ -222,7 +225,7 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'MYBiADKAlSC3NzaEhvc3RLZXlzEh0KCmFwcF9saW5rZXIYByABKAhSCWFwcExpbmtlchIiCg1w'
     'ZWVyX2FwaV9wb3J0GAggASgNUgtwZWVyQXBpUG9ydBIlCg5jbGllbnRfdmVyc2lvbhgJIAEoCV'
     'INY2xpZW50VmVyc2lvbhI8Cg5kZXZpY2VfcG9zdHVyZRgKIAEoCzIVLnByb3Rvcy5EZXZpY2VQ'
-    'b3N0dXJlUg1kZXZpY2VQb3N0dXJl');
+    'b3N0dXJlUg1kZXZpY2VQb3N0dXJlEhkKCHdvbF9tYWNzGAsgAygJUgd3b2xNYWNz');
 
 @$core.Deprecated('Use networkMapRequestDescriptor instead')
 const NetworkMapRequest$json = {

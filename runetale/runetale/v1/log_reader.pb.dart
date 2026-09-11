@@ -31,7 +31,7 @@ class GetLoglyphRequest extends $pb.GeneratedMessage {
     $core.String? level,
     $core.String? telemetryLogId,
   }) {
-    final result = create();
+    final result = GetLoglyphRequest._();
     if (logStreamId != null) result.logStreamId = logStreamId;
     if (from != null) result.from = from;
     if (to != null) result.to = to;
@@ -47,20 +47,20 @@ class GetLoglyphRequest extends $pb.GeneratedMessage {
 
   factory GetLoglyphRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetLoglyphRequest()..mergeFromBuffer(data, registry);
   factory GetLoglyphRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetLoglyphRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetLoglyphRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetLoglyphRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'logStreamId')
     ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'from',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'to',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aI(4, _omitFieldNames ? '' : 'limit')
     ..aI(5, _omitFieldNames ? '' : 'offset')
     ..aOS(6, _omitFieldNames ? '' : 'sessionId')
@@ -79,12 +79,15 @@ class GetLoglyphRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use GetLoglyphRequest() / GetLoglyphRequest.new instead')
   static GetLoglyphRequest create() => GetLoglyphRequest._();
+  static $pb.GeneratedMessage $_createMessage() => GetLoglyphRequest._();
   @$core.override
-  GetLoglyphRequest createEmptyInstance() => create();
+  GetLoglyphRequest createEmptyInstance() => GetLoglyphRequest._();
   @$core.pragma('dart2js:noInline')
-  static GetLoglyphRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetLoglyphRequest>(create);
+  static GetLoglyphRequest getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLoglyphRequest>(
+          GetLoglyphRequest.$_createMessage);
   static GetLoglyphRequest? _defaultInstance;
 
   /// log_stream_id is the PublicID (SHA-256 of PrivateID) to query.
@@ -179,7 +182,7 @@ class GetLoglyphResponse extends $pb.GeneratedMessage {
     $core.Iterable<StoredLoglyphEntry>? entries,
     $fixnum.Int64? totalCount,
   }) {
-    final result = create();
+    final result = GetLoglyphResponse._();
     if (entries != null) result.entries.addAll(entries);
     if (totalCount != null) result.totalCount = totalCount;
     return result;
@@ -189,17 +192,17 @@ class GetLoglyphResponse extends $pb.GeneratedMessage {
 
   factory GetLoglyphResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetLoglyphResponse()..mergeFromBuffer(data, registry);
   factory GetLoglyphResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetLoglyphResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetLoglyphResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetLoglyphResponse.$_createMessage)
     ..pPM<StoredLoglyphEntry>(1, _omitFieldNames ? '' : 'entries',
-        subBuilder: StoredLoglyphEntry.create)
+        subBuilder: StoredLoglyphEntry.$_createMessage)
     ..aInt64(2, _omitFieldNames ? '' : 'totalCount')
     ..hasRequiredFields = false;
 
@@ -214,12 +217,15 @@ class GetLoglyphResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use GetLoglyphResponse() / GetLoglyphResponse.new instead')
   static GetLoglyphResponse create() => GetLoglyphResponse._();
+  static $pb.GeneratedMessage $_createMessage() => GetLoglyphResponse._();
   @$core.override
-  GetLoglyphResponse createEmptyInstance() => create();
+  GetLoglyphResponse createEmptyInstance() => GetLoglyphResponse._();
   @$core.pragma('dart2js:noInline')
   static GetLoglyphResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetLoglyphResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetLoglyphResponse>(
+          GetLoglyphResponse.$_createMessage);
   static GetLoglyphResponse? _defaultInstance;
 
   /// entries is the list of log entries matching the query.
@@ -252,7 +258,7 @@ class StoredLoglyphEntry extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $core.String? telemetryLogId,
   }) {
-    final result = create();
+    final result = StoredLoglyphEntry._();
     if (id != null) result.id = id;
     if (logStreamId != null) result.logStreamId = logStreamId;
     if (sessionId != null) result.sessionId = sessionId;
@@ -271,29 +277,29 @@ class StoredLoglyphEntry extends $pb.GeneratedMessage {
 
   factory StoredLoglyphEntry.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      StoredLoglyphEntry()..mergeFromBuffer(data, registry);
   factory StoredLoglyphEntry.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      StoredLoglyphEntry()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'StoredLoglyphEntry',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: StoredLoglyphEntry.$_createMessage)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'logStreamId')
     ..aOS(3, _omitFieldNames ? '' : 'sessionId')
     ..aOS(4, _omitFieldNames ? '' : 'clientVersion')
     ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'clientTime',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'receivedAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOS(7, _omitFieldNames ? '' : 'level')
     ..aOS(8, _omitFieldNames ? '' : 'text')
     ..aOS(9, _omitFieldNames ? '' : 'payload')
     ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'createdAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOS(11, _omitFieldNames ? '' : 'telemetryLogId')
     ..hasRequiredFields = false;
 
@@ -308,12 +314,15 @@ class StoredLoglyphEntry extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use StoredLoglyphEntry() / StoredLoglyphEntry.new instead')
   static StoredLoglyphEntry create() => StoredLoglyphEntry._();
+  static $pb.GeneratedMessage $_createMessage() => StoredLoglyphEntry._();
   @$core.override
-  StoredLoglyphEntry createEmptyInstance() => create();
+  StoredLoglyphEntry createEmptyInstance() => StoredLoglyphEntry._();
   @$core.pragma('dart2js:noInline')
   static StoredLoglyphEntry getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<StoredLoglyphEntry>(create);
+      $pb.GeneratedMessage.$_defaultFor<StoredLoglyphEntry>(
+          StoredLoglyphEntry.$_createMessage);
   static StoredLoglyphEntry? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -435,7 +444,7 @@ class GetOrbitEventsRequest extends $pb.GeneratedMessage {
     $core.String? payloadType,
     $core.String? telemetryLogId,
   }) {
-    final result = create();
+    final result = GetOrbitEventsRequest._();
     if (logStreamId != null) result.logStreamId = logStreamId;
     if (sessionId != null) result.sessionId = sessionId;
     if (from != null) result.from = from;
@@ -451,21 +460,21 @@ class GetOrbitEventsRequest extends $pb.GeneratedMessage {
 
   factory GetOrbitEventsRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetOrbitEventsRequest()..mergeFromBuffer(data, registry);
   factory GetOrbitEventsRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetOrbitEventsRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetOrbitEventsRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetOrbitEventsRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'logStreamId')
     ..aOS(2, _omitFieldNames ? '' : 'sessionId')
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'from',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'to',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aI(5, _omitFieldNames ? '' : 'limit')
     ..aI(6, _omitFieldNames ? '' : 'offset')
     ..aOS(7, _omitFieldNames ? '' : 'payloadType')
@@ -484,12 +493,16 @@ class GetOrbitEventsRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetOrbitEventsRequest() / GetOrbitEventsRequest.new instead')
   static GetOrbitEventsRequest create() => GetOrbitEventsRequest._();
+  static $pb.GeneratedMessage $_createMessage() => GetOrbitEventsRequest._();
   @$core.override
-  GetOrbitEventsRequest createEmptyInstance() => create();
+  GetOrbitEventsRequest createEmptyInstance() => GetOrbitEventsRequest._();
   @$core.pragma('dart2js:noInline')
   static GetOrbitEventsRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetOrbitEventsRequest>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetOrbitEventsRequest>(
+          GetOrbitEventsRequest.$_createMessage);
   static GetOrbitEventsRequest? _defaultInstance;
 
   /// log_stream_id is the PublicID to query.
@@ -584,7 +597,7 @@ class GetOrbitEventsResponse extends $pb.GeneratedMessage {
     $core.Iterable<StoredOrbitEvent>? events,
     $fixnum.Int64? totalCount,
   }) {
-    final result = create();
+    final result = GetOrbitEventsResponse._();
     if (events != null) result.events.addAll(events);
     if (totalCount != null) result.totalCount = totalCount;
     return result;
@@ -594,17 +607,17 @@ class GetOrbitEventsResponse extends $pb.GeneratedMessage {
 
   factory GetOrbitEventsResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetOrbitEventsResponse()..mergeFromBuffer(data, registry);
   factory GetOrbitEventsResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetOrbitEventsResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetOrbitEventsResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetOrbitEventsResponse.$_createMessage)
     ..pPM<StoredOrbitEvent>(1, _omitFieldNames ? '' : 'events',
-        subBuilder: StoredOrbitEvent.create)
+        subBuilder: StoredOrbitEvent.$_createMessage)
     ..aInt64(2, _omitFieldNames ? '' : 'totalCount')
     ..hasRequiredFields = false;
 
@@ -620,12 +633,16 @@ class GetOrbitEventsResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetOrbitEventsResponse() / GetOrbitEventsResponse.new instead')
   static GetOrbitEventsResponse create() => GetOrbitEventsResponse._();
+  static $pb.GeneratedMessage $_createMessage() => GetOrbitEventsResponse._();
   @$core.override
-  GetOrbitEventsResponse createEmptyInstance() => create();
+  GetOrbitEventsResponse createEmptyInstance() => GetOrbitEventsResponse._();
   @$core.pragma('dart2js:noInline')
   static GetOrbitEventsResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetOrbitEventsResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetOrbitEventsResponse>(
+          GetOrbitEventsResponse.$_createMessage);
   static GetOrbitEventsResponse? _defaultInstance;
 
   /// events is the list of events matching the query.
@@ -661,7 +678,7 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $core.String? telemetryLogId,
   }) {
-    final result = create();
+    final result = StoredOrbitEvent._();
     if (id != null) result.id = id;
     if (logStreamId != null) result.logStreamId = logStreamId;
     if (sessionId != null) result.sessionId = sessionId;
@@ -683,26 +700,26 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
 
   factory StoredOrbitEvent.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      StoredOrbitEvent()..mergeFromBuffer(data, registry);
   factory StoredOrbitEvent.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      StoredOrbitEvent()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'StoredOrbitEvent',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: StoredOrbitEvent.$_createMessage)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'logStreamId')
     ..aOS(3, _omitFieldNames ? '' : 'sessionId')
     ..aOS(4, _omitFieldNames ? '' : 'clientVersion')
     ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'receivedAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'eventAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'eventDay',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..a<$core.List<$core.int>>(
         8, _omitFieldNames ? '' : 'peerHash', $pb.PbFieldType.OY)
     ..aI(9, _omitFieldNames ? '' : 'regionId', fieldType: $pb.PbFieldType.OU3)
@@ -710,7 +727,7 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'payloadType')
     ..aOS(12, _omitFieldNames ? '' : 'payload')
     ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'createdAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOS(14, _omitFieldNames ? '' : 'telemetryLogId')
     ..hasRequiredFields = false;
 
@@ -725,12 +742,15 @@ class StoredOrbitEvent extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use StoredOrbitEvent() / StoredOrbitEvent.new instead')
   static StoredOrbitEvent create() => StoredOrbitEvent._();
+  static $pb.GeneratedMessage $_createMessage() => StoredOrbitEvent._();
   @$core.override
-  StoredOrbitEvent createEmptyInstance() => create();
+  StoredOrbitEvent createEmptyInstance() => StoredOrbitEvent._();
   @$core.pragma('dart2js:noInline')
-  static StoredOrbitEvent getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<StoredOrbitEvent>(create);
+  static StoredOrbitEvent getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoredOrbitEvent>(
+          StoredOrbitEvent.$_createMessage);
   static StoredOrbitEvent? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -877,7 +897,7 @@ class GetOrbitDailyCountsRequest extends $pb.GeneratedMessage {
     $1.Timestamp? from,
     $1.Timestamp? to,
   }) {
-    final result = create();
+    final result = GetOrbitDailyCountsRequest._();
     if (logStreamId != null) result.logStreamId = logStreamId;
     if (metric != null) result.metric = metric;
     if (from != null) result.from = from;
@@ -889,21 +909,21 @@ class GetOrbitDailyCountsRequest extends $pb.GeneratedMessage {
 
   factory GetOrbitDailyCountsRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetOrbitDailyCountsRequest()..mergeFromBuffer(data, registry);
   factory GetOrbitDailyCountsRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetOrbitDailyCountsRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetOrbitDailyCountsRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetOrbitDailyCountsRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'logStreamId')
     ..aOS(2, _omitFieldNames ? '' : 'metric')
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'from',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'to',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -919,12 +939,18 @@ class GetOrbitDailyCountsRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetOrbitDailyCountsRequest() / GetOrbitDailyCountsRequest.new instead')
   static GetOrbitDailyCountsRequest create() => GetOrbitDailyCountsRequest._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      GetOrbitDailyCountsRequest._();
   @$core.override
-  GetOrbitDailyCountsRequest createEmptyInstance() => create();
+  GetOrbitDailyCountsRequest createEmptyInstance() =>
+      GetOrbitDailyCountsRequest._();
   @$core.pragma('dart2js:noInline')
   static GetOrbitDailyCountsRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetOrbitDailyCountsRequest>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetOrbitDailyCountsRequest>(
+          GetOrbitDailyCountsRequest.$_createMessage);
   static GetOrbitDailyCountsRequest? _defaultInstance;
 
   /// log_stream_id is the PublicID to query.
@@ -977,7 +1003,7 @@ class GetOrbitDailyCountsResponse extends $pb.GeneratedMessage {
   factory GetOrbitDailyCountsResponse({
     $core.Iterable<DailyCount>? counts,
   }) {
-    final result = create();
+    final result = GetOrbitDailyCountsResponse._();
     if (counts != null) result.counts.addAll(counts);
     return result;
   }
@@ -986,17 +1012,17 @@ class GetOrbitDailyCountsResponse extends $pb.GeneratedMessage {
 
   factory GetOrbitDailyCountsResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetOrbitDailyCountsResponse()..mergeFromBuffer(data, registry);
   factory GetOrbitDailyCountsResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetOrbitDailyCountsResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetOrbitDailyCountsResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetOrbitDailyCountsResponse.$_createMessage)
     ..pPM<DailyCount>(1, _omitFieldNames ? '' : 'counts',
-        subBuilder: DailyCount.create)
+        subBuilder: DailyCount.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1012,13 +1038,19 @@ class GetOrbitDailyCountsResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetOrbitDailyCountsResponse() / GetOrbitDailyCountsResponse.new instead')
   static GetOrbitDailyCountsResponse create() =>
       GetOrbitDailyCountsResponse._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      GetOrbitDailyCountsResponse._();
   @$core.override
-  GetOrbitDailyCountsResponse createEmptyInstance() => create();
+  GetOrbitDailyCountsResponse createEmptyInstance() =>
+      GetOrbitDailyCountsResponse._();
   @$core.pragma('dart2js:noInline')
   static GetOrbitDailyCountsResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetOrbitDailyCountsResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetOrbitDailyCountsResponse>(
+          GetOrbitDailyCountsResponse.$_createMessage);
   static GetOrbitDailyCountsResponse? _defaultInstance;
 
   /// counts is the list of daily counts matching the query.
@@ -1037,7 +1069,7 @@ class DailyCount extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
   }) {
-    final result = create();
+    final result = DailyCount._();
     if (day != null) result.day = day;
     if (logStreamId != null) result.logStreamId = logStreamId;
     if (metric != null) result.metric = metric;
@@ -1052,25 +1084,25 @@ class DailyCount extends $pb.GeneratedMessage {
 
   factory DailyCount.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      DailyCount()..mergeFromBuffer(data, registry);
   factory DailyCount.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      DailyCount()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'DailyCount',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: DailyCount.$_createMessage)
     ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'day',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOS(2, _omitFieldNames ? '' : 'logStreamId')
     ..aOS(3, _omitFieldNames ? '' : 'metric')
     ..aOS(4, _omitFieldNames ? '' : 'labelKey')
     ..aInt64(5, _omitFieldNames ? '' : 'count')
     ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'createdAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(7, _omitFieldNames ? '' : 'updatedAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1083,12 +1115,14 @@ class DailyCount extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use DailyCount() / DailyCount.new instead')
   static DailyCount create() => DailyCount._();
+  static $pb.GeneratedMessage $_createMessage() => DailyCount._();
   @$core.override
-  DailyCount createEmptyInstance() => create();
+  DailyCount createEmptyInstance() => DailyCount._();
   @$core.pragma('dart2js:noInline')
   static DailyCount getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<DailyCount>(create);
+      $pb.GeneratedMessage.$_defaultFor<DailyCount>(DailyCount.$_createMessage);
   static DailyCount? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1173,7 +1207,7 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
     $core.String? domainTelemetryLogId,
     $core.String? telemetryLogId,
   }) {
-    final result = create();
+    final result = GetPacketFlowLogsRequest._();
     if (logStreamId != null) result.logStreamId = logStreamId;
     if (from != null) result.from = from;
     if (to != null) result.to = to;
@@ -1190,20 +1224,20 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
 
   factory GetPacketFlowLogsRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetPacketFlowLogsRequest()..mergeFromBuffer(data, registry);
   factory GetPacketFlowLogsRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetPacketFlowLogsRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetPacketFlowLogsRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetPacketFlowLogsRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'logStreamId')
     ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'from',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(3, _omitFieldNames ? '' : 'to',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aI(4, _omitFieldNames ? '' : 'limit')
     ..aI(5, _omitFieldNames ? '' : 'offset')
     ..aOS(6, _omitFieldNames ? '' : 'nodeType')
@@ -1223,12 +1257,17 @@ class GetPacketFlowLogsRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetPacketFlowLogsRequest() / GetPacketFlowLogsRequest.new instead')
   static GetPacketFlowLogsRequest create() => GetPacketFlowLogsRequest._();
+  static $pb.GeneratedMessage $_createMessage() => GetPacketFlowLogsRequest._();
   @$core.override
-  GetPacketFlowLogsRequest createEmptyInstance() => create();
+  GetPacketFlowLogsRequest createEmptyInstance() =>
+      GetPacketFlowLogsRequest._();
   @$core.pragma('dart2js:noInline')
   static GetPacketFlowLogsRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetPacketFlowLogsRequest>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetPacketFlowLogsRequest>(
+          GetPacketFlowLogsRequest.$_createMessage);
   static GetPacketFlowLogsRequest? _defaultInstance;
 
   /// log_stream_id is the PublicID to query.
@@ -1324,7 +1363,7 @@ class GetPacketFlowLogsResponse extends $pb.GeneratedMessage {
     $core.Iterable<StoredPacketFlowLog>? logs,
     $fixnum.Int64? totalCount,
   }) {
-    final result = create();
+    final result = GetPacketFlowLogsResponse._();
     if (logs != null) result.logs.addAll(logs);
     if (totalCount != null) result.totalCount = totalCount;
     return result;
@@ -1334,17 +1373,17 @@ class GetPacketFlowLogsResponse extends $pb.GeneratedMessage {
 
   factory GetPacketFlowLogsResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetPacketFlowLogsResponse()..mergeFromBuffer(data, registry);
   factory GetPacketFlowLogsResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetPacketFlowLogsResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetPacketFlowLogsResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetPacketFlowLogsResponse.$_createMessage)
     ..pPM<StoredPacketFlowLog>(1, _omitFieldNames ? '' : 'logs',
-        subBuilder: StoredPacketFlowLog.create)
+        subBuilder: StoredPacketFlowLog.$_createMessage)
     ..aInt64(2, _omitFieldNames ? '' : 'totalCount')
     ..hasRequiredFields = false;
 
@@ -1360,12 +1399,18 @@ class GetPacketFlowLogsResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetPacketFlowLogsResponse() / GetPacketFlowLogsResponse.new instead')
   static GetPacketFlowLogsResponse create() => GetPacketFlowLogsResponse._();
+  static $pb.GeneratedMessage $_createMessage() =>
+      GetPacketFlowLogsResponse._();
   @$core.override
-  GetPacketFlowLogsResponse createEmptyInstance() => create();
+  GetPacketFlowLogsResponse createEmptyInstance() =>
+      GetPacketFlowLogsResponse._();
   @$core.pragma('dart2js:noInline')
   static GetPacketFlowLogsResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetPacketFlowLogsResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetPacketFlowLogsResponse>(
+          GetPacketFlowLogsResponse.$_createMessage);
   static GetPacketFlowLogsResponse? _defaultInstance;
 
   /// logs is the list of flow records matching the query.
@@ -1408,7 +1453,7 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
     $core.String? dstUserEmail,
     $core.String? dstNodeId,
   }) {
-    final result = create();
+    final result = StoredPacketFlowLog._();
     if (id != null) result.id = id;
     if (logStreamId != null) result.logStreamId = logStreamId;
     if (nodeType != null) result.nodeType = nodeType;
@@ -1438,15 +1483,15 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
 
   factory StoredPacketFlowLog.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      StoredPacketFlowLog()..mergeFromBuffer(data, registry);
   factory StoredPacketFlowLog.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      StoredPacketFlowLog()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'StoredPacketFlowLog',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'logserver'),
-      createEmptyInstance: create)
+      createEmptyInstance: StoredPacketFlowLog.$_createMessage)
     ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'id', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(2, _omitFieldNames ? '' : 'logStreamId')
@@ -1466,13 +1511,13 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
         10, _omitFieldNames ? '' : 'rxBytes', $pb.PbFieldType.OU6,
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOM<$1.Timestamp>(11, _omitFieldNames ? '' : 'startedAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'endedAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(13, _omitFieldNames ? '' : 'loggedAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOM<$1.Timestamp>(14, _omitFieldNames ? '' : 'createdAt',
-        subBuilder: $1.Timestamp.create)
+        subBuilder: $1.Timestamp.$_createMessage)
     ..aOS(15, _omitFieldNames ? '' : 'domainTelemetryLogId')
     ..aOS(16, _omitFieldNames ? '' : 'telemetryLogId')
     ..aOS(17, _omitFieldNames ? '' : 'nodeName')
@@ -1493,12 +1538,16 @@ class StoredPacketFlowLog extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core
+      .Deprecated('Use StoredPacketFlowLog() / StoredPacketFlowLog.new instead')
   static StoredPacketFlowLog create() => StoredPacketFlowLog._();
+  static $pb.GeneratedMessage $_createMessage() => StoredPacketFlowLog._();
   @$core.override
-  StoredPacketFlowLog createEmptyInstance() => create();
+  StoredPacketFlowLog createEmptyInstance() => StoredPacketFlowLog._();
   @$core.pragma('dart2js:noInline')
   static StoredPacketFlowLog getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<StoredPacketFlowLog>(create);
+      $pb.GeneratedMessage.$_defaultFor<StoredPacketFlowLog>(
+          StoredPacketFlowLog.$_createMessage);
   static StoredPacketFlowLog? _defaultInstance;
 
   @$pb.TagNumber(1)

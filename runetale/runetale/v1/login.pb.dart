@@ -30,7 +30,7 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
     $core.String? displayName,
     $core.String? loginName,
   }) {
-    final result = create();
+    final result = LoginNodeResponse._();
     if (isRegistered != null) result.isRegistered = isRegistered;
     if (loginUrl != null) result.loginUrl = loginUrl;
     if (ip != null) result.ip.addAll(ip);
@@ -48,15 +48,15 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
 
   factory LoginNodeResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      LoginNodeResponse()..mergeFromBuffer(data, registry);
   factory LoginNodeResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      LoginNodeResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'LoginNodeResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: LoginNodeResponse.$_createMessage)
     ..aOB(1, _omitFieldNames ? '' : 'isRegistered', protoName: 'isRegistered')
     ..aOS(2, _omitFieldNames ? '' : 'loginUrl', protoName: 'loginUrl')
     ..pPS(3, _omitFieldNames ? '' : 'ip')
@@ -83,12 +83,15 @@ class LoginNodeResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use LoginNodeResponse() / LoginNodeResponse.new instead')
   static LoginNodeResponse create() => LoginNodeResponse._();
+  static $pb.GeneratedMessage $_createMessage() => LoginNodeResponse._();
   @$core.override
-  LoginNodeResponse createEmptyInstance() => create();
+  LoginNodeResponse createEmptyInstance() => LoginNodeResponse._();
   @$core.pragma('dart2js:noInline')
-  static LoginNodeResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LoginNodeResponse>(create);
+  static LoginNodeResponse getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginNodeResponse>(
+          LoginNodeResponse.$_createMessage);
   static LoginNodeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -186,7 +189,7 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
     $core.String? signalServerHost,
     $fixnum.Int64? signalServerPort,
   }) {
-    final result = create();
+    final result = LoginSessionResponse._();
     if (ip != null) result.ip.addAll(ip);
     if (cidr != null) result.cidr = cidr;
     if (host != null) result.host = host;
@@ -201,15 +204,15 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
 
   factory LoginSessionResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      LoginSessionResponse()..mergeFromBuffer(data, registry);
   factory LoginSessionResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      LoginSessionResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'LoginSessionResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: LoginSessionResponse.$_createMessage)
     ..pPS(1, _omitFieldNames ? '' : 'ip')
     ..aOS(2, _omitFieldNames ? '' : 'cidr')
     ..aOS(3, _omitFieldNames ? '' : 'host')
@@ -233,12 +236,16 @@ class LoginSessionResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use LoginSessionResponse() / LoginSessionResponse.new instead')
   static LoginSessionResponse create() => LoginSessionResponse._();
+  static $pb.GeneratedMessage $_createMessage() => LoginSessionResponse._();
   @$core.override
-  LoginSessionResponse createEmptyInstance() => create();
+  LoginSessionResponse createEmptyInstance() => LoginSessionResponse._();
   @$core.pragma('dart2js:noInline')
   static LoginSessionResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LoginSessionResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<LoginSessionResponse>(
+          LoginSessionResponse.$_createMessage);
   static LoginSessionResponse? _defaultInstance;
 
   /// host ip
@@ -308,7 +315,7 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   factory GetInvitationRequest({
     $core.String? inviteCode,
   }) {
-    final result = create();
+    final result = GetInvitationRequest._();
     if (inviteCode != null) result.inviteCode = inviteCode;
     return result;
   }
@@ -317,15 +324,15 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
 
   factory GetInvitationRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetInvitationRequest()..mergeFromBuffer(data, registry);
   factory GetInvitationRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetInvitationRequest()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetInvitationRequest',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetInvitationRequest.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
     ..hasRequiredFields = false;
 
@@ -340,12 +347,16 @@ class GetInvitationRequest extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetInvitationRequest() / GetInvitationRequest.new instead')
   static GetInvitationRequest create() => GetInvitationRequest._();
+  static $pb.GeneratedMessage $_createMessage() => GetInvitationRequest._();
   @$core.override
-  GetInvitationRequest createEmptyInstance() => create();
+  GetInvitationRequest createEmptyInstance() => GetInvitationRequest._();
   @$core.pragma('dart2js:noInline')
   static GetInvitationRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetInvitationRequest>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetInvitationRequest>(
+          GetInvitationRequest.$_createMessage);
   static GetInvitationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -363,7 +374,7 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? inviteCode,
   }) {
-    final result = create();
+    final result = GetInvitationResponse._();
     if (email != null) result.email = email;
     if (inviteCode != null) result.inviteCode = inviteCode;
     return result;
@@ -373,15 +384,15 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
 
   factory GetInvitationResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(data, registry);
+      GetInvitationResponse()..mergeFromBuffer(data, registry);
   factory GetInvitationResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(json, registry);
+      GetInvitationResponse()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
       _omitMessageNames ? '' : 'GetInvitationResponse',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
-      createEmptyInstance: create)
+      createEmptyInstance: GetInvitationResponse.$_createMessage)
     ..aOS(1, _omitFieldNames ? '' : 'email')
     ..aOS(2, _omitFieldNames ? '' : 'inviteCode', protoName: 'inviteCode')
     ..hasRequiredFields = false;
@@ -398,12 +409,16 @@ class GetInvitationResponse extends $pb.GeneratedMessage {
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use GetInvitationResponse() / GetInvitationResponse.new instead')
   static GetInvitationResponse create() => GetInvitationResponse._();
+  static $pb.GeneratedMessage $_createMessage() => GetInvitationResponse._();
   @$core.override
-  GetInvitationResponse createEmptyInstance() => create();
+  GetInvitationResponse createEmptyInstance() => GetInvitationResponse._();
   @$core.pragma('dart2js:noInline')
   static GetInvitationResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<GetInvitationResponse>(create);
+      $pb.GeneratedMessage.$_defaultFor<GetInvitationResponse>(
+          GetInvitationResponse.$_createMessage);
   static GetInvitationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
