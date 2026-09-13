@@ -214,6 +214,13 @@ const HostMeta$json = {
       '10': 'devicePosture'
     },
     {'1': 'wol_macs', '3': 11, '4': 3, '5': 9, '10': 'wolMacs'},
+    {
+      '1': 'preferred_cerf_region_id',
+      '3': 12,
+      '4': 1,
+      '5': 13,
+      '10': 'preferredCerfRegionId'
+    },
   ],
 };
 
@@ -225,7 +232,8 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'MYBiADKAlSC3NzaEhvc3RLZXlzEh0KCmFwcF9saW5rZXIYByABKAhSCWFwcExpbmtlchIiCg1w'
     'ZWVyX2FwaV9wb3J0GAggASgNUgtwZWVyQXBpUG9ydBIlCg5jbGllbnRfdmVyc2lvbhgJIAEoCV'
     'INY2xpZW50VmVyc2lvbhI8Cg5kZXZpY2VfcG9zdHVyZRgKIAEoCzIVLnByb3Rvcy5EZXZpY2VQ'
-    'b3N0dXJlUg1kZXZpY2VQb3N0dXJlEhkKCHdvbF9tYWNzGAsgAygJUgd3b2xNYWNz');
+    'b3N0dXJlUg1kZXZpY2VQb3N0dXJlEhkKCHdvbF9tYWNzGAsgAygJUgd3b2xNYWNzEjcKGHByZW'
+    'ZlcnJlZF9jZXJmX3JlZ2lvbl9pZBgMIAEoDVIVcHJlZmVycmVkQ2VyZlJlZ2lvbklk');
 
 @$core.Deprecated('Use networkMapRequestDescriptor instead')
 const NetworkMapRequest$json = {

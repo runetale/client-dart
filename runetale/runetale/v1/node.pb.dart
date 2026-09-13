@@ -480,6 +480,7 @@ class HostMeta extends $pb.GeneratedMessage {
     $core.String? clientVersion,
     DevicePosture? devicePosture,
     $core.Iterable<$core.String>? wolMacs,
+    $core.int? preferredCerfRegionId,
   }) {
     final result = HostMeta._();
     if (os != null) result.os = os;
@@ -493,6 +494,8 @@ class HostMeta extends $pb.GeneratedMessage {
     if (clientVersion != null) result.clientVersion = clientVersion;
     if (devicePosture != null) result.devicePosture = devicePosture;
     if (wolMacs != null) result.wolMacs.addAll(wolMacs);
+    if (preferredCerfRegionId != null)
+      result.preferredCerfRegionId = preferredCerfRegionId;
     return result;
   }
 
@@ -522,6 +525,8 @@ class HostMeta extends $pb.GeneratedMessage {
     ..aOM<DevicePosture>(10, _omitFieldNames ? '' : 'devicePosture',
         subBuilder: DevicePosture.$_createMessage)
     ..pPS(11, _omitFieldNames ? '' : 'wolMacs')
+    ..aI(12, _omitFieldNames ? '' : 'preferredCerfRegionId',
+        fieldType: $pb.PbFieldType.OU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -649,6 +654,25 @@ class HostMeta extends $pb.GeneratedMessage {
   /// address to wake while the node itself is still awake to report it.
   @$pb.TagNumber(11)
   $pb.PbList<$core.String> get wolMacs => $_getList(10);
+
+  /// preferred_cerf_region_id is the CERF region this node measured as nearest,
+  /// by STUN round trip to every region in the CerfMap. Zero means the node has
+  /// not measured one yet, and the server keeps whatever it already had.
+  ///
+  /// Relayed traffic goes through the *destination's* home region, so a node
+  /// reporting the region nearest to itself is what lets a peer reach it over a
+  /// short path. This cannot be decided server-side from the node's public
+  /// address: what matters is the route, not the map. It also cannot be left to
+  /// the connecting party, because a client with no UDP socket - a browser -
+  /// cannot measure at all, and yet is exactly the client that always relays.
+  @$pb.TagNumber(12)
+  $core.int get preferredCerfRegionId => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set preferredCerfRegionId($core.int value) => $_setUnsignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasPreferredCerfRegionId() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearPreferredCerfRegionId() => $_clearField(12);
 }
 
 /// NetworkMapRequest is sent from client to server in the ConnectNetworkMapTable stream.
