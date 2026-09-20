@@ -59,6 +59,8 @@ const HashiStatus$json = {
       '6': '.protos.HashiStatus.PeerEntry',
       '10': 'peer'
     },
+    {'1': 'jailed', '3': 6, '4': 1, '5': 8, '10': 'jailed'},
+    {'1': 'jail_reason', '3': 7, '4': 1, '5': 9, '10': 'jailReason'},
   ],
   '3': [HashiStatus_PeerEntry$json],
   '8': [
@@ -89,8 +91,9 @@ final $typed_data.Uint8List hashiStatusDescriptor = $convert.base64Decode(
     'VuZXRhbGVfaXBzGAIgAygJUgtydW5ldGFsZUlwcxIyChVpbnRlcmFjdGl2ZV9sb2dpbl91cmwY'
     'AyABKAlSE2ludGVyYWN0aXZlTG9naW5VcmwSKwoEc2VsZhgEIAEoCzISLnByb3Rvcy5QZWVyU3'
     'RhdHVzSABSBHNlbGaIAQESMQoEcGVlchgFIAMoCzIdLnByb3Rvcy5IYXNoaVN0YXR1cy5QZWVy'
-    'RW50cnlSBHBlZXIaSwoJUGVlckVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EigKBXZhbHVlGAIgAS'
-    'gLMhIucHJvdG9zLlBlZXJTdGF0dXNSBXZhbHVlOgI4AUIHCgVfc2VsZg==');
+    'RW50cnlSBHBlZXISFgoGamFpbGVkGAYgASgIUgZqYWlsZWQSHwoLamFpbF9yZWFzb24YByABKA'
+    'lSCmphaWxSZWFzb24aSwoJUGVlckVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EigKBXZhbHVlGAIg'
+    'ASgLMhIucHJvdG9zLlBlZXJTdGF0dXNSBXZhbHVlOgI4AUIHCgVfc2VsZg==');
 
 @$core.Deprecated('Use peerStatusDescriptor instead')
 const PeerStatus$json = {

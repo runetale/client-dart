@@ -93,6 +93,8 @@ class HashiStatus extends $pb.GeneratedMessage {
     $core.String? interactiveLoginUrl,
     PeerStatus? self,
     $core.Iterable<$core.MapEntry<$core.String, PeerStatus>>? peer,
+    $core.bool? jailed,
+    $core.String? jailReason,
   }) {
     final result = HashiStatus._();
     if (backendState != null) result.backendState = backendState;
@@ -101,6 +103,8 @@ class HashiStatus extends $pb.GeneratedMessage {
       result.interactiveLoginUrl = interactiveLoginUrl;
     if (self != null) result.self = self;
     if (peer != null) result.peer.addEntries(peer);
+    if (jailed != null) result.jailed = jailed;
+    if (jailReason != null) result.jailReason = jailReason;
     return result;
   }
 
@@ -129,6 +133,8 @@ class HashiStatus extends $pb.GeneratedMessage {
         valueCreator: PeerStatus.$_createMessage,
         valueDefaultOrMaker: PeerStatus.getDefault,
         packageName: const $pb.PackageName('protos'))
+    ..aOB(6, _omitFieldNames ? '' : 'jailed')
+    ..aOS(7, _omitFieldNames ? '' : 'jailReason')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -187,6 +193,35 @@ class HashiStatus extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $pb.PbMap<$core.String, PeerStatus> get peer => $_getMap(4);
+
+  /// jailed is true while the server is blocking this node's traffic. Today the
+  /// only source is device posture enforcement.
+  ///
+  /// A jailed node is handed a network map with no peers, no packet filter and
+  /// no addresses, so everything the user can see is an absence: no peers
+  /// listed, no IP, nothing to connect to. That is indistinguishable from "the
+  /// network map has not arrived yet", and the two call for opposite responses
+  /// - waiting and reconnecting will never clear a jail. This field is what
+  /// lets the CLI and the desktop apps tell them apart and say which one it is.
+  @$pb.TagNumber(6)
+  $core.bool get jailed => $_getBF(5);
+  @$pb.TagNumber(6)
+  set jailed($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasJailed() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearJailed() => $_clearField(6);
+
+  /// jail_reason explains the jail in one line, e.g. "device posture
+  /// non-compliant". Empty while jailed is false.
+  @$pb.TagNumber(7)
+  $core.String get jailReason => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set jailReason($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasJailReason() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearJailReason() => $_clearField(7);
 }
 
 class PeerStatus extends $pb.GeneratedMessage {
