@@ -15,6 +15,29 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use autoUpdateInstallKindDescriptor instead')
+const AutoUpdateInstallKind$json = {
+  '1': 'AutoUpdateInstallKind',
+  '2': [
+    {'1': 'AUTO_UPDATE_INSTALL_KIND_UNSPECIFIED', '2': 0},
+    {'1': 'AUTO_UPDATE_INSTALL_KIND_TARBALL', '2': 1},
+    {'1': 'AUTO_UPDATE_INSTALL_KIND_DEB', '2': 2},
+    {'1': 'AUTO_UPDATE_INSTALL_KIND_HOMEBREW', '2': 3},
+    {'1': 'AUTO_UPDATE_INSTALL_KIND_MAC_DESKTOP', '2': 4},
+    {'1': 'AUTO_UPDATE_INSTALL_KIND_WINDOWS_DESKTOP', '2': 5},
+    {'1': 'AUTO_UPDATE_INSTALL_KIND_DEVELOPMENT', '2': 6},
+  ],
+};
+
+/// Descriptor for `AutoUpdateInstallKind`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List autoUpdateInstallKindDescriptor = $convert.base64Decode(
+    'ChVBdXRvVXBkYXRlSW5zdGFsbEtpbmQSKAokQVVUT19VUERBVEVfSU5TVEFMTF9LSU5EX1VOU1'
+    'BFQ0lGSUVEEAASJAogQVVUT19VUERBVEVfSU5TVEFMTF9LSU5EX1RBUkJBTEwQARIgChxBVVRP'
+    'X1VQREFURV9JTlNUQUxMX0tJTkRfREVCEAISJQohQVVUT19VUERBVEVfSU5TVEFMTF9LSU5EX0'
+    'hPTUVCUkVXEAMSKAokQVVUT19VUERBVEVfSU5TVEFMTF9LSU5EX01BQ19ERVNLVE9QEAQSLAoo'
+    'QVVUT19VUERBVEVfSU5TVEFMTF9LSU5EX1dJTkRPV1NfREVTS1RPUBAFEigKJEFVVE9fVVBEQV'
+    'RFX0lOU1RBTExfS0lORF9ERVZFTE9QTUVOVBAG');
+
 @$core.Deprecated('Use sSHSessionStateDescriptor instead')
 const SSHSessionState$json = {
   '1': 'SSHSessionState',
@@ -221,6 +244,14 @@ const HostMeta$json = {
       '5': 13,
       '10': 'preferredCerfRegionId'
     },
+    {
+      '1': 'auto_update',
+      '3': 13,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.AutoUpdateStatus',
+      '10': 'autoUpdate'
+    },
   ],
 };
 
@@ -233,7 +264,65 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'ZWVyX2FwaV9wb3J0GAggASgNUgtwZWVyQXBpUG9ydBIlCg5jbGllbnRfdmVyc2lvbhgJIAEoCV'
     'INY2xpZW50VmVyc2lvbhI8Cg5kZXZpY2VfcG9zdHVyZRgKIAEoCzIVLnByb3Rvcy5EZXZpY2VQ'
     'b3N0dXJlUg1kZXZpY2VQb3N0dXJlEhkKCHdvbF9tYWNzGAsgAygJUgd3b2xNYWNzEjcKGHByZW'
-    'ZlcnJlZF9jZXJmX3JlZ2lvbl9pZBgMIAEoDVIVcHJlZmVycmVkQ2VyZlJlZ2lvbklk');
+    'ZlcnJlZF9jZXJmX3JlZ2lvbl9pZBgMIAEoDVIVcHJlZmVycmVkQ2VyZlJlZ2lvbklkEjkKC2F1'
+    'dG9fdXBkYXRlGA0gASgLMhgucHJvdG9zLkF1dG9VcGRhdGVTdGF0dXNSCmF1dG9VcGRhdGU=');
+
+@$core.Deprecated('Use autoUpdateStatusDescriptor instead')
+const AutoUpdateStatus$json = {
+  '1': 'AutoUpdateStatus',
+  '2': [
+    {
+      '1': 'install_kind',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.protos.AutoUpdateInstallKind',
+      '10': 'installKind'
+    },
+    {'1': 'supported', '3': 2, '4': 1, '5': 8, '10': 'supported'},
+    {
+      '1': 'last_attempt',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.AutoUpdateAttempt',
+      '10': 'lastAttempt'
+    },
+  ],
+};
+
+/// Descriptor for `AutoUpdateStatus`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List autoUpdateStatusDescriptor = $convert.base64Decode(
+    'ChBBdXRvVXBkYXRlU3RhdHVzEkAKDGluc3RhbGxfa2luZBgBIAEoDjIdLnByb3Rvcy5BdXRvVX'
+    'BkYXRlSW5zdGFsbEtpbmRSC2luc3RhbGxLaW5kEhwKCXN1cHBvcnRlZBgCIAEoCFIJc3VwcG9y'
+    'dGVkEjwKDGxhc3RfYXR0ZW1wdBgDIAEoCzIZLnByb3Rvcy5BdXRvVXBkYXRlQXR0ZW1wdFILbG'
+    'FzdEF0dGVtcHQ=');
+
+@$core.Deprecated('Use autoUpdateAttemptDescriptor instead')
+const AutoUpdateAttempt$json = {
+  '1': 'AutoUpdateAttempt',
+  '2': [
+    {'1': 'from_version', '3': 1, '4': 1, '5': 9, '10': 'fromVersion'},
+    {'1': 'target_version', '3': 2, '4': 1, '5': 9, '10': 'targetVersion'},
+    {'1': 'success', '3': 3, '4': 1, '5': 8, '10': 'success'},
+    {'1': 'error', '3': 4, '4': 1, '5': 9, '10': 'error'},
+    {
+      '1': 'finished_at',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'finishedAt'
+    },
+  ],
+};
+
+/// Descriptor for `AutoUpdateAttempt`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List autoUpdateAttemptDescriptor = $convert.base64Decode(
+    'ChFBdXRvVXBkYXRlQXR0ZW1wdBIhCgxmcm9tX3ZlcnNpb24YASABKAlSC2Zyb21WZXJzaW9uEi'
+    'UKDnRhcmdldF92ZXJzaW9uGAIgASgJUg10YXJnZXRWZXJzaW9uEhgKB3N1Y2Nlc3MYAyABKAhS'
+    'B3N1Y2Nlc3MSFAoFZXJyb3IYBCABKAlSBWVycm9yEjsKC2ZpbmlzaGVkX2F0GAUgASgLMhouZ2'
+    '9vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKZmluaXNoZWRBdA==');
 
 @$core.Deprecated('Use networkMapRequestDescriptor instead')
 const NetworkMapRequest$json = {

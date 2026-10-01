@@ -14,6 +14,51 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// AutoUpdateInstallKind is how the client binaries were installed. It decides
+/// whether the client may replace itself: an installation owned by a package
+/// manager or by the desktop app must be updated through that owner instead.
+class AutoUpdateInstallKind extends $pb.ProtobufEnum {
+  static const AutoUpdateInstallKind AUTO_UPDATE_INSTALL_KIND_UNSPECIFIED =
+      AutoUpdateInstallKind._(
+          0, _omitEnumNames ? '' : 'AUTO_UPDATE_INSTALL_KIND_UNSPECIFIED');
+  static const AutoUpdateInstallKind AUTO_UPDATE_INSTALL_KIND_TARBALL =
+      AutoUpdateInstallKind._(
+          1, _omitEnumNames ? '' : 'AUTO_UPDATE_INSTALL_KIND_TARBALL');
+  static const AutoUpdateInstallKind AUTO_UPDATE_INSTALL_KIND_DEB =
+      AutoUpdateInstallKind._(
+          2, _omitEnumNames ? '' : 'AUTO_UPDATE_INSTALL_KIND_DEB');
+  static const AutoUpdateInstallKind AUTO_UPDATE_INSTALL_KIND_HOMEBREW =
+      AutoUpdateInstallKind._(
+          3, _omitEnumNames ? '' : 'AUTO_UPDATE_INSTALL_KIND_HOMEBREW');
+  static const AutoUpdateInstallKind AUTO_UPDATE_INSTALL_KIND_MAC_DESKTOP =
+      AutoUpdateInstallKind._(
+          4, _omitEnumNames ? '' : 'AUTO_UPDATE_INSTALL_KIND_MAC_DESKTOP');
+  static const AutoUpdateInstallKind AUTO_UPDATE_INSTALL_KIND_WINDOWS_DESKTOP =
+      AutoUpdateInstallKind._(
+          5, _omitEnumNames ? '' : 'AUTO_UPDATE_INSTALL_KIND_WINDOWS_DESKTOP');
+  static const AutoUpdateInstallKind AUTO_UPDATE_INSTALL_KIND_DEVELOPMENT =
+      AutoUpdateInstallKind._(
+          6, _omitEnumNames ? '' : 'AUTO_UPDATE_INSTALL_KIND_DEVELOPMENT');
+
+  static const $core.List<AutoUpdateInstallKind> values =
+      <AutoUpdateInstallKind>[
+    AUTO_UPDATE_INSTALL_KIND_UNSPECIFIED,
+    AUTO_UPDATE_INSTALL_KIND_TARBALL,
+    AUTO_UPDATE_INSTALL_KIND_DEB,
+    AUTO_UPDATE_INSTALL_KIND_HOMEBREW,
+    AUTO_UPDATE_INSTALL_KIND_MAC_DESKTOP,
+    AUTO_UPDATE_INSTALL_KIND_WINDOWS_DESKTOP,
+    AUTO_UPDATE_INSTALL_KIND_DEVELOPMENT,
+  ];
+
+  static final $core.List<AutoUpdateInstallKind?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 6);
+  static AutoUpdateInstallKind? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const AutoUpdateInstallKind._(super.value, super.name);
+}
+
 /// SSHSessionState represents the state of an SSH session.
 class SSHSessionState extends $pb.ProtobufEnum {
   static const SSHSessionState SSH_SESSION_STATE_UNSPECIFIED =

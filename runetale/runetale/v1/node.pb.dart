@@ -481,6 +481,7 @@ class HostMeta extends $pb.GeneratedMessage {
     DevicePosture? devicePosture,
     $core.Iterable<$core.String>? wolMacs,
     $core.int? preferredCerfRegionId,
+    AutoUpdateStatus? autoUpdate,
   }) {
     final result = HostMeta._();
     if (os != null) result.os = os;
@@ -496,6 +497,7 @@ class HostMeta extends $pb.GeneratedMessage {
     if (wolMacs != null) result.wolMacs.addAll(wolMacs);
     if (preferredCerfRegionId != null)
       result.preferredCerfRegionId = preferredCerfRegionId;
+    if (autoUpdate != null) result.autoUpdate = autoUpdate;
     return result;
   }
 
@@ -527,6 +529,8 @@ class HostMeta extends $pb.GeneratedMessage {
     ..pPS(11, _omitFieldNames ? '' : 'wolMacs')
     ..aI(12, _omitFieldNames ? '' : 'preferredCerfRegionId',
         fieldType: $pb.PbFieldType.OU3)
+    ..aOM<AutoUpdateStatus>(13, _omitFieldNames ? '' : 'autoUpdate',
+        subBuilder: AutoUpdateStatus.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -673,6 +677,222 @@ class HostMeta extends $pb.GeneratedMessage {
   $core.bool hasPreferredCerfRegionId() => $_has(11);
   @$pb.TagNumber(12)
   void clearPreferredCerfRegionId() => $_clearField(12);
+
+  /// auto_update reports whether this node can apply server-directed client
+  /// updates and how its most recent attempt ended. The server shows it to
+  /// administrators deciding which nodes to enable auto-update on. Unset means
+  /// the client predates auto-update, which the server treats as unsupported.
+  @$pb.TagNumber(13)
+  AutoUpdateStatus get autoUpdate => $_getN(12);
+  @$pb.TagNumber(13)
+  set autoUpdate(AutoUpdateStatus value) => $_setField(13, value);
+  @$pb.TagNumber(13)
+  $core.bool hasAutoUpdate() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearAutoUpdate() => $_clearField(13);
+  @$pb.TagNumber(13)
+  AutoUpdateStatus ensureAutoUpdate() => $_ensure(12);
+}
+
+class AutoUpdateStatus extends $pb.GeneratedMessage {
+  factory AutoUpdateStatus({
+    AutoUpdateInstallKind? installKind,
+    $core.bool? supported,
+    AutoUpdateAttempt? lastAttempt,
+  }) {
+    final result = AutoUpdateStatus._();
+    if (installKind != null) result.installKind = installKind;
+    if (supported != null) result.supported = supported;
+    if (lastAttempt != null) result.lastAttempt = lastAttempt;
+    return result;
+  }
+
+  AutoUpdateStatus._();
+
+  factory AutoUpdateStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      AutoUpdateStatus()..mergeFromBuffer(data, registry);
+  factory AutoUpdateStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      AutoUpdateStatus()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AutoUpdateStatus',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: AutoUpdateStatus.$_createMessage)
+    ..aE<AutoUpdateInstallKind>(1, _omitFieldNames ? '' : 'installKind',
+        enumValues: AutoUpdateInstallKind.values)
+    ..aOB(2, _omitFieldNames ? '' : 'supported')
+    ..aOM<AutoUpdateAttempt>(3, _omitFieldNames ? '' : 'lastAttempt',
+        subBuilder: AutoUpdateAttempt.$_createMessage)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AutoUpdateStatus clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AutoUpdateStatus copyWith(void Function(AutoUpdateStatus) updates) =>
+      super.copyWith((message) => updates(message as AutoUpdateStatus))
+          as AutoUpdateStatus;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use AutoUpdateStatus() / AutoUpdateStatus.new instead')
+  static AutoUpdateStatus create() => AutoUpdateStatus._();
+  static $pb.GeneratedMessage $_createMessage() => AutoUpdateStatus._();
+  @$core.override
+  AutoUpdateStatus createEmptyInstance() => AutoUpdateStatus._();
+  @$core.pragma('dart2js:noInline')
+  static AutoUpdateStatus getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AutoUpdateStatus>(
+          AutoUpdateStatus.$_createMessage);
+  static AutoUpdateStatus? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AutoUpdateInstallKind get installKind => $_getN(0);
+  @$pb.TagNumber(1)
+  set installKind(AutoUpdateInstallKind value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasInstallKind() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearInstallKind() => $_clearField(1);
+
+  /// supported is true when this client can apply an update on its own.
+  /// False for installations owned by a package manager or the desktop app,
+  /// development builds, and platforms the client does not yet update.
+  @$pb.TagNumber(2)
+  $core.bool get supported => $_getBF(1);
+  @$pb.TagNumber(2)
+  set supported($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasSupported() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSupported() => $_clearField(2);
+
+  /// last_attempt is the most recent update this client tried to apply.
+  /// Unset when it has never attempted one.
+  @$pb.TagNumber(3)
+  AutoUpdateAttempt get lastAttempt => $_getN(2);
+  @$pb.TagNumber(3)
+  set lastAttempt(AutoUpdateAttempt value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasLastAttempt() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastAttempt() => $_clearField(3);
+  @$pb.TagNumber(3)
+  AutoUpdateAttempt ensureLastAttempt() => $_ensure(2);
+}
+
+class AutoUpdateAttempt extends $pb.GeneratedMessage {
+  factory AutoUpdateAttempt({
+    $core.String? fromVersion,
+    $core.String? targetVersion,
+    $core.bool? success,
+    $core.String? error,
+    $2.Timestamp? finishedAt,
+  }) {
+    final result = AutoUpdateAttempt._();
+    if (fromVersion != null) result.fromVersion = fromVersion;
+    if (targetVersion != null) result.targetVersion = targetVersion;
+    if (success != null) result.success = success;
+    if (error != null) result.error = error;
+    if (finishedAt != null) result.finishedAt = finishedAt;
+    return result;
+  }
+
+  AutoUpdateAttempt._();
+
+  factory AutoUpdateAttempt.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      AutoUpdateAttempt()..mergeFromBuffer(data, registry);
+  factory AutoUpdateAttempt.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      AutoUpdateAttempt()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AutoUpdateAttempt',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: AutoUpdateAttempt.$_createMessage)
+    ..aOS(1, _omitFieldNames ? '' : 'fromVersion')
+    ..aOS(2, _omitFieldNames ? '' : 'targetVersion')
+    ..aOB(3, _omitFieldNames ? '' : 'success')
+    ..aOS(4, _omitFieldNames ? '' : 'error')
+    ..aOM<$2.Timestamp>(5, _omitFieldNames ? '' : 'finishedAt',
+        subBuilder: $2.Timestamp.$_createMessage)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AutoUpdateAttempt clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  AutoUpdateAttempt copyWith(void Function(AutoUpdateAttempt) updates) =>
+      super.copyWith((message) => updates(message as AutoUpdateAttempt))
+          as AutoUpdateAttempt;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use AutoUpdateAttempt() / AutoUpdateAttempt.new instead')
+  static AutoUpdateAttempt create() => AutoUpdateAttempt._();
+  static $pb.GeneratedMessage $_createMessage() => AutoUpdateAttempt._();
+  @$core.override
+  AutoUpdateAttempt createEmptyInstance() => AutoUpdateAttempt._();
+  @$core.pragma('dart2js:noInline')
+  static AutoUpdateAttempt getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AutoUpdateAttempt>(
+          AutoUpdateAttempt.$_createMessage);
+  static AutoUpdateAttempt? _defaultInstance;
+
+  /// from_version and target_version are client versions as reported in
+  /// HostMeta.client_version (e.g., "0.0.27-hennge-stg").
+  @$pb.TagNumber(1)
+  $core.String get fromVersion => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set fromVersion($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasFromVersion() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearFromVersion() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get targetVersion => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set targetVersion($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasTargetVersion() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearTargetVersion() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get success => $_getBF(2);
+  @$pb.TagNumber(3)
+  set success($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSuccess() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSuccess() => $_clearField(3);
+
+  /// error describes why the attempt failed. Empty when success is true.
+  @$pb.TagNumber(4)
+  $core.String get error => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set error($core.String value) => $_setString(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasError() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearError() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $2.Timestamp get finishedAt => $_getN(4);
+  @$pb.TagNumber(5)
+  set finishedAt($2.Timestamp value) => $_setField(5, value);
+  @$pb.TagNumber(5)
+  $core.bool hasFinishedAt() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFinishedAt() => $_clearField(5);
+  @$pb.TagNumber(5)
+  $2.Timestamp ensureFinishedAt() => $_ensure(4);
 }
 
 /// NetworkMapRequest is sent from client to server in the ConnectNetworkMapTable stream.
