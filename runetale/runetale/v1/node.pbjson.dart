@@ -122,6 +122,23 @@ final $typed_data.Uint8List sSHSessionEventTypeDescriptor = $convert.base64Decod
     'T05fRVZFTlRfQUNMX0NIQU5HRUQQCRIhCh1TU0hfU0VTU0lPTl9FVkVOVF9VU0VSX0pPSU5FRB'
     'AKEh8KG1NTSF9TRVNTSU9OX0VWRU5UX1VTRVJfTEVGVBAL');
 
+@$core.Deprecated('Use hTTPServiceModeDescriptor instead')
+const HTTPServiceMode$json = {
+  '1': 'HTTPServiceMode',
+  '2': [
+    {'1': 'HTTP_SERVICE_MODE_UNSPECIFIED', '2': 0},
+    {'1': 'HTTP_SERVICE_MODE_INGRESS', '2': 1},
+    {'1': 'HTTP_SERVICE_MODE_GATEWAY', '2': 2},
+    {'1': 'HTTP_SERVICE_MODE_LOCAL', '2': 3},
+  ],
+};
+
+/// Descriptor for `HTTPServiceMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List hTTPServiceModeDescriptor = $convert.base64Decode(
+    'Cg9IVFRQU2VydmljZU1vZGUSIQodSFRUUF9TRVJWSUNFX01PREVfVU5TUEVDSUZJRUQQABIdCh'
+    'lIVFRQX1NFUlZJQ0VfTU9ERV9JTkdSRVNTEAESHQoZSFRUUF9TRVJWSUNFX01PREVfR0FURVdB'
+    'WRACEhsKF0hUVFBfU0VSVklDRV9NT0RFX0xPQ0FMEAM=');
+
 @$core.Deprecated('Use nodeDescriptor instead')
 const Node$json = {
   '1': 'Node',
@@ -525,6 +542,14 @@ const NetworkMapResponse$json = {
       '6': '.protos.PostureChecks',
       '10': 'postureChecks'
     },
+    {
+      '1': 'http_services',
+      '3': 28,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.HTTPService',
+      '10': 'httpServices'
+    },
   ],
 };
 
@@ -545,7 +570,8 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'KAlSDGNhcGFiaWxpdGllcxI7CgtzZXJ2ZXJfdGltZRgZIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi'
     '5UaW1lc3RhbXBSCnNlcnZlclRpbWUSMAoKc3NoX3BvbGljeRgaIAEoCzIRLnByb3Rvcy5TU0hQ'
     'b2xpY3lSCXNzaFBvbGljeRI8Cg5wb3N0dXJlX2NoZWNrcxgbIAEoCzIVLnByb3Rvcy5Qb3N0dX'
-    'JlQ2hlY2tzUg1wb3N0dXJlQ2hlY2tz');
+    'JlQ2hlY2tzUg1wb3N0dXJlQ2hlY2tzEjgKDWh0dHBfc2VydmljZXMYHCADKAsyEy5wcm90b3Mu'
+    'SFRUUFNlcnZpY2VSDGh0dHBTZXJ2aWNlcw==');
 
 @$core.Deprecated('Use cerfMapDescriptor instead')
 const CerfMap$json = {
@@ -1815,3 +1841,87 @@ final $typed_data.Uint8List processCheckResultDescriptor = $convert.base64Decode
     'ChJQcm9jZXNzQ2hlY2tSZXN1bHQSGQoIY2hlY2tfaWQYASABKAlSB2NoZWNrSWQSEgoEcGF0aB'
     'gCIAEoCVIEcGF0aBIfCgtmaWxlX2V4aXN0cxgDIAEoCFIKZmlsZUV4aXN0cxInCg9wcm9jZXNz'
     'X3J1bm5pbmcYBCABKAhSDnByb2Nlc3NSdW5uaW5n');
+
+@$core.Deprecated('Use hTTPServiceDescriptor instead')
+const HTTPService$json = {
+  '1': 'HTTPService',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {
+      '1': 'mode',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.protos.HTTPServiceMode',
+      '10': 'mode'
+    },
+    {'1': 'listen_port', '3': 4, '4': 1, '5': 13, '10': 'listenPort'},
+    {'1': 'target', '3': 5, '4': 1, '5': 9, '10': 'target'},
+    {'1': 'preserve_host', '3': 6, '4': 1, '5': 8, '10': 'preserveHost'},
+    {'1': 'identity_headers', '3': 7, '4': 1, '5': 8, '10': 'identityHeaders'},
+    {
+      '1': 'source_sets',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.SourceSet',
+      '10': 'sourceSets'
+    },
+    {
+      '1': 'headers',
+      '3': 9,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.HTTPHeader',
+      '10': 'headers'
+    },
+    {'1': 'strip_headers', '3': 10, '4': 3, '5': 9, '10': 'stripHeaders'},
+  ],
+};
+
+/// Descriptor for `HTTPService`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hTTPServiceDescriptor = $convert.base64Decode(
+    'CgtIVFRQU2VydmljZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIrCgRtb2'
+    'RlGAMgASgOMhcucHJvdG9zLkhUVFBTZXJ2aWNlTW9kZVIEbW9kZRIfCgtsaXN0ZW5fcG9ydBgE'
+    'IAEoDVIKbGlzdGVuUG9ydBIWCgZ0YXJnZXQYBSABKAlSBnRhcmdldBIjCg1wcmVzZXJ2ZV9ob3'
+    'N0GAYgASgIUgxwcmVzZXJ2ZUhvc3QSKQoQaWRlbnRpdHlfaGVhZGVycxgHIAEoCFIPaWRlbnRp'
+    'dHlIZWFkZXJzEjIKC3NvdXJjZV9zZXRzGAggAygLMhEucHJvdG9zLlNvdXJjZVNldFIKc291cm'
+    'NlU2V0cxIsCgdoZWFkZXJzGAkgAygLMhIucHJvdG9zLkhUVFBIZWFkZXJSB2hlYWRlcnMSIwoN'
+    'c3RyaXBfaGVhZGVycxgKIAMoCVIMc3RyaXBIZWFkZXJz');
+
+@$core.Deprecated('Use sourceSetDescriptor instead')
+const SourceSet$json = {
+  '1': 'SourceSet',
+  '2': [
+    {'1': 'prefixes', '3': 1, '4': 3, '5': 9, '10': 'prefixes'},
+  ],
+};
+
+/// Descriptor for `SourceSet`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List sourceSetDescriptor = $convert
+    .base64Decode('CglTb3VyY2VTZXQSGgoIcHJlZml4ZXMYASADKAlSCHByZWZpeGVz');
+
+@$core.Deprecated('Use hTTPHeaderDescriptor instead')
+const HTTPHeader$json = {
+  '1': 'HTTPHeader',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+    {'1': 'secret', '3': 3, '4': 1, '5': 8, '10': 'secret'},
+    {'1': 'all_sources', '3': 4, '4': 1, '5': 8, '10': 'allSources'},
+    {
+      '1': 'source_set_indexes',
+      '3': 5,
+      '4': 3,
+      '5': 13,
+      '10': 'sourceSetIndexes'
+    },
+  ],
+};
+
+/// Descriptor for `HTTPHeader`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hTTPHeaderDescriptor = $convert.base64Decode(
+    'CgpIVFRQSGVhZGVyEhIKBG5hbWUYASABKAlSBG5hbWUSFAoFdmFsdWUYAiABKAlSBXZhbHVlEh'
+    'YKBnNlY3JldBgDIAEoCFIGc2VjcmV0Eh8KC2FsbF9zb3VyY2VzGAQgASgIUgphbGxTb3VyY2Vz'
+    'EiwKEnNvdXJjZV9zZXRfaW5kZXhlcxgFIAMoDVIQc291cmNlU2V0SW5kZXhlcw==');
