@@ -1254,6 +1254,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     $2.Timestamp? serverTime,
     SSHPolicy? sshPolicy,
     PostureChecks? postureChecks,
+    $core.Iterable<HTTPService>? httpServices,
   }) {
     final result = NetworkMapResponse._();
     if (seq != null) result.seq = seq;
@@ -1277,6 +1278,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (serverTime != null) result.serverTime = serverTime;
     if (sshPolicy != null) result.sshPolicy = sshPolicy;
     if (postureChecks != null) result.postureChecks = postureChecks;
+    if (httpServices != null) result.httpServices.addAll(httpServices);
     return result;
   }
 
@@ -1328,6 +1330,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
         subBuilder: SSHPolicy.$_createMessage)
     ..aOM<PostureChecks>(27, _omitFieldNames ? '' : 'postureChecks',
         subBuilder: PostureChecks.$_createMessage)
+    ..pPM<HTTPService>(28, _omitFieldNames ? '' : 'httpServices',
+        subBuilder: HTTPService.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1523,6 +1527,12 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   void clearPostureChecks() => $_clearField(27);
   @$pb.TagNumber(27)
   PostureChecks ensurePostureChecks() => $_ensure(18);
+
+  /// http_services are the HTTP services this node runs. Only the services
+  /// this node hosts (ingress / gateway) or uses as a sender (local) are
+  /// included, so a node never receives header values meant for others.
+  @$pb.TagNumber(28)
+  $pb.PbList<HTTPService> get httpServices => $_getList(19);
 }
 
 class CerfMap extends $pb.GeneratedMessage {
@@ -6398,6 +6408,328 @@ class ProcessCheckResult extends $pb.GeneratedMessage {
   $core.bool hasProcessRunning() => $_has(3);
   @$pb.TagNumber(4)
   void clearProcessRunning() => $_clearField(4);
+}
+
+/// HTTPService is an HTTP reverse proxy run by runetaled. It forwards requests
+/// to target, adding headers chosen by the sender's runetale IP.
+class HTTPService extends $pb.GeneratedMessage {
+  factory HTTPService({
+    $core.String? id,
+    $core.String? name,
+    HTTPServiceMode? mode,
+    $core.int? listenPort,
+    $core.String? target,
+    $core.bool? preserveHost,
+    $core.bool? identityHeaders,
+    $core.Iterable<SourceSet>? sourceSets,
+    $core.Iterable<HTTPHeader>? headers,
+    $core.Iterable<$core.String>? stripHeaders,
+  }) {
+    final result = HTTPService._();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (mode != null) result.mode = mode;
+    if (listenPort != null) result.listenPort = listenPort;
+    if (target != null) result.target = target;
+    if (preserveHost != null) result.preserveHost = preserveHost;
+    if (identityHeaders != null) result.identityHeaders = identityHeaders;
+    if (sourceSets != null) result.sourceSets.addAll(sourceSets);
+    if (headers != null) result.headers.addAll(headers);
+    if (stripHeaders != null) result.stripHeaders.addAll(stripHeaders);
+    return result;
+  }
+
+  HTTPService._();
+
+  factory HTTPService.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      HTTPService()..mergeFromBuffer(data, registry);
+  factory HTTPService.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      HTTPService()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'HTTPService',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: HTTPService.$_createMessage)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aE<HTTPServiceMode>(3, _omitFieldNames ? '' : 'mode',
+        enumValues: HTTPServiceMode.values)
+    ..aI(4, _omitFieldNames ? '' : 'listenPort', fieldType: $pb.PbFieldType.OU3)
+    ..aOS(5, _omitFieldNames ? '' : 'target')
+    ..aOB(6, _omitFieldNames ? '' : 'preserveHost')
+    ..aOB(7, _omitFieldNames ? '' : 'identityHeaders')
+    ..pPM<SourceSet>(8, _omitFieldNames ? '' : 'sourceSets',
+        subBuilder: SourceSet.$_createMessage)
+    ..pPM<HTTPHeader>(9, _omitFieldNames ? '' : 'headers',
+        subBuilder: HTTPHeader.$_createMessage)
+    ..pPS(10, _omitFieldNames ? '' : 'stripHeaders')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HTTPService clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HTTPService copyWith(void Function(HTTPService) updates) =>
+      super.copyWith((message) => updates(message as HTTPService))
+          as HTTPService;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use HTTPService() / HTTPService.new instead')
+  static HTTPService create() => HTTPService._();
+  static $pb.GeneratedMessage $_createMessage() => HTTPService._();
+  @$core.override
+  HTTPService createEmptyInstance() => HTTPService._();
+  @$core.pragma('dart2js:noInline')
+  static HTTPService getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HTTPService>(
+          HTTPService.$_createMessage);
+  static HTTPService? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  HTTPServiceMode get mode => $_getN(2);
+  @$pb.TagNumber(3)
+  set mode(HTTPServiceMode value) => $_setField(3, value);
+  @$pb.TagNumber(3)
+  $core.bool hasMode() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMode() => $_clearField(3);
+
+  /// listen_port is the port the proxy listens on. Ingress and gateway listen
+  /// on the node's runetale IP; local listens on 127.0.0.1 only.
+  @$pb.TagNumber(4)
+  $core.int get listenPort => $_getIZ(3);
+  @$pb.TagNumber(4)
+  set listenPort($core.int value) => $_setUnsignedInt32(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasListenPort() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearListenPort() => $_clearField(4);
+
+  /// target is where requests are forwarded: http(s)://host[:port][/base].
+  @$pb.TagNumber(5)
+  $core.String get target => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set target($core.String value) => $_setString(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasTarget() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearTarget() => $_clearField(5);
+
+  /// preserve_host keeps the incoming Host header instead of the target's.
+  @$pb.TagNumber(6)
+  $core.bool get preserveHost => $_getBF(5);
+  @$pb.TagNumber(6)
+  set preserveHost($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasPreserveHost() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPreserveHost() => $_clearField(6);
+
+  /// identity_headers adds X-Runetale-User, X-Runetale-User-Display and
+  /// X-Runetale-Node describing the sender.
+  @$pb.TagNumber(7)
+  $core.bool get identityHeaders => $_getBF(6);
+  @$pb.TagNumber(7)
+  set identityHeaders($core.bool value) => $_setBool(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasIdentityHeaders() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearIdentityHeaders() => $_clearField(7);
+
+  /// source_sets are the resolved sender prefixes, referenced by index from
+  /// HTTPHeader.source_set_indexes so that shared sets are sent once.
+  @$pb.TagNumber(8)
+  $pb.PbList<SourceSet> get sourceSets => $_getList(7);
+
+  /// headers are already in evaluation order. For each header name the client
+  /// uses the first header whose sources match the sender and ignores the rest.
+  @$pb.TagNumber(9)
+  $pb.PbList<HTTPHeader> get headers => $_getList(8);
+
+  /// strip_headers are removed from every incoming request before headers are
+  /// added, whether or not any header matches. They include X-Runetale-* and
+  /// every header name in headers. Names are canonical (Go's
+  /// http.CanonicalHeaderKey form, e.g. "X-Api-Key").
+  @$pb.TagNumber(10)
+  $pb.PbList<$core.String> get stripHeaders => $_getList(9);
+}
+
+/// SourceSet is a set of sender prefixes, e.g. "100.64.0.5/32".
+class SourceSet extends $pb.GeneratedMessage {
+  factory SourceSet({
+    $core.Iterable<$core.String>? prefixes,
+  }) {
+    final result = SourceSet._();
+    if (prefixes != null) result.prefixes.addAll(prefixes);
+    return result;
+  }
+
+  SourceSet._();
+
+  factory SourceSet.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      SourceSet()..mergeFromBuffer(data, registry);
+  factory SourceSet.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      SourceSet()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SourceSet',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: SourceSet.$_createMessage)
+    ..pPS(1, _omitFieldNames ? '' : 'prefixes')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SourceSet clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SourceSet copyWith(void Function(SourceSet) updates) =>
+      super.copyWith((message) => updates(message as SourceSet)) as SourceSet;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use SourceSet() / SourceSet.new instead')
+  static SourceSet create() => SourceSet._();
+  static $pb.GeneratedMessage $_createMessage() => SourceSet._();
+  @$core.override
+  SourceSet createEmptyInstance() => SourceSet._();
+  @$core.pragma('dart2js:noInline')
+  static SourceSet getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SourceSet>(SourceSet.$_createMessage);
+  static SourceSet? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.String> get prefixes => $_getList(0);
+}
+
+class HTTPHeader extends $pb.GeneratedMessage {
+  factory HTTPHeader({
+    $core.String? name,
+    $core.String? value,
+    $core.bool? secret,
+    $core.bool? allSources,
+    $core.Iterable<$core.int>? sourceSetIndexes,
+  }) {
+    final result = HTTPHeader._();
+    if (name != null) result.name = name;
+    if (value != null) result.value = value;
+    if (secret != null) result.secret = secret;
+    if (allSources != null) result.allSources = allSources;
+    if (sourceSetIndexes != null)
+      result.sourceSetIndexes.addAll(sourceSetIndexes);
+    return result;
+  }
+
+  HTTPHeader._();
+
+  factory HTTPHeader.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      HTTPHeader()..mergeFromBuffer(data, registry);
+  factory HTTPHeader.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      HTTPHeader()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'HTTPHeader',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: HTTPHeader.$_createMessage)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..aOB(3, _omitFieldNames ? '' : 'secret')
+    ..aOB(4, _omitFieldNames ? '' : 'allSources')
+    ..p<$core.int>(
+        5, _omitFieldNames ? '' : 'sourceSetIndexes', $pb.PbFieldType.KU3)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HTTPHeader clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  HTTPHeader copyWith(void Function(HTTPHeader) updates) =>
+      super.copyWith((message) => updates(message as HTTPHeader)) as HTTPHeader;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use HTTPHeader() / HTTPHeader.new instead')
+  static HTTPHeader create() => HTTPHeader._();
+  static $pb.GeneratedMessage $_createMessage() => HTTPHeader._();
+  @$core.override
+  HTTPHeader createEmptyInstance() => HTTPHeader._();
+  @$core.pragma('dart2js:noInline')
+  static HTTPHeader getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<HTTPHeader>(HTTPHeader.$_createMessage);
+  static HTTPHeader? _defaultInstance;
+
+  /// name is canonical (Go's http.CanonicalHeaderKey form, e.g. "X-Api-Key").
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  /// value is plaintext, including when secret is set.
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => $_clearField(2);
+
+  /// secret marks the value as sensitive. The client must not write it to
+  /// logs, debug output, telemetry or bug reports.
+  @$pb.TagNumber(3)
+  $core.bool get secret => $_getBF(2);
+  @$pb.TagNumber(3)
+  set secret($core.bool value) => $_setBool(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSecret() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSecret() => $_clearField(3);
+
+  /// all_sources applies the header to every sender that can reach the
+  /// service. When false, the header applies only to senders matching one of
+  /// source_set_indexes; an empty list matches no one.
+  @$pb.TagNumber(4)
+  $core.bool get allSources => $_getBF(3);
+  @$pb.TagNumber(4)
+  set allSources($core.bool value) => $_setBool(3, value);
+  @$pb.TagNumber(4)
+  $core.bool hasAllSources() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAllSources() => $_clearField(4);
+
+  @$pb.TagNumber(5)
+  $pb.PbList<$core.int> get sourceSetIndexes => $_getList(4);
 }
 
 const $core.bool _omitFieldNames =

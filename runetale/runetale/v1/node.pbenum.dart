@@ -207,5 +207,39 @@ class SSHSessionEventType extends $pb.ProtobufEnum {
   const SSHSessionEventType._(super.value, super.name);
 }
 
+class HTTPServiceMode extends $pb.ProtobufEnum {
+  static const HTTPServiceMode HTTP_SERVICE_MODE_UNSPECIFIED =
+      HTTPServiceMode._(
+          0, _omitEnumNames ? '' : 'HTTP_SERVICE_MODE_UNSPECIFIED');
+
+  /// INGRESS forwards to an application on the hosting node itself.
+  static const HTTPServiceMode HTTP_SERVICE_MODE_INGRESS =
+      HTTPServiceMode._(1, _omitEnumNames ? '' : 'HTTP_SERVICE_MODE_INGRESS');
+
+  /// GATEWAY forwards to an external API; the header values stay on the
+  /// hosting node.
+  static const HTTPServiceMode HTTP_SERVICE_MODE_GATEWAY =
+      HTTPServiceMode._(2, _omitEnumNames ? '' : 'HTTP_SERVICE_MODE_GATEWAY');
+
+  /// LOCAL runs on the sender's own device. The server sends only the headers
+  /// that apply to that device, each with all_sources set.
+  static const HTTPServiceMode HTTP_SERVICE_MODE_LOCAL =
+      HTTPServiceMode._(3, _omitEnumNames ? '' : 'HTTP_SERVICE_MODE_LOCAL');
+
+  static const $core.List<HTTPServiceMode> values = <HTTPServiceMode>[
+    HTTP_SERVICE_MODE_UNSPECIFIED,
+    HTTP_SERVICE_MODE_INGRESS,
+    HTTP_SERVICE_MODE_GATEWAY,
+    HTTP_SERVICE_MODE_LOCAL,
+  ];
+
+  static final $core.List<HTTPServiceMode?> _byValue =
+      $pb.ProtobufEnum.$_initByValueList(values, 3);
+  static HTTPServiceMode? valueOf($core.int value) =>
+      value < 0 || value >= _byValue.length ? null : _byValue[value];
+
+  const HTTPServiceMode._(super.value, super.name);
+}
+
 const $core.bool _omitEnumNames =
     $core.bool.fromEnvironment('protobuf.omit_enum_names');
