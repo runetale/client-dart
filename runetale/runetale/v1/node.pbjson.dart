@@ -629,6 +629,16 @@ const CerfNode$json = {
     {'1': 'stunOnly', '3': 7, '4': 1, '5': 8, '10': 'stunOnly'},
     {'1': 'ipv4', '3': 8, '4': 1, '5': 9, '10': 'ipv4'},
     {'1': 'ipv6', '3': 9, '4': 1, '5': 9, '10': 'ipv6'},
+    {'1': 'relayPublicKey', '3': 10, '4': 1, '5': 12, '10': 'relayPublicKey'},
+    {
+      '1': 'relayNextPublicKey',
+      '3': 11,
+      '4': 1,
+      '5': 12,
+      '10': 'relayNextPublicKey'
+    },
+    {'1': 'protocolVersion', '3': 12, '4': 1, '5': 13, '10': 'protocolVersion'},
+    {'1': 'waitForUpgrade', '3': 13, '4': 1, '5': 8, '10': 'waitForUpgrade'},
   ],
 };
 
@@ -638,7 +648,10 @@ final $typed_data.Uint8List cerfNodeDescriptor = $convert.base64Decode(
     'FtZRIaCghjZXJmUG9ydBgDIAEoDVIIY2VyZlBvcnQSGgoIc3R1blBvcnQYBCABKA1SCHN0dW5Q'
     'b3J0EiQKDXdlYnNvY2tldE9ubHkYBSABKAhSDXdlYnNvY2tldE9ubHkSHAoJZm9yY2VIdHRwGA'
     'YgASgIUglmb3JjZUh0dHASGgoIc3R1bk9ubHkYByABKAhSCHN0dW5Pbmx5EhIKBGlwdjQYCCAB'
-    'KAlSBGlwdjQSEgoEaXB2NhgJIAEoCVIEaXB2Ng==');
+    'KAlSBGlwdjQSEgoEaXB2NhgJIAEoCVIEaXB2NhImCg5yZWxheVB1YmxpY0tleRgKIAEoDFIOcm'
+    'VsYXlQdWJsaWNLZXkSLgoScmVsYXlOZXh0UHVibGljS2V5GAsgASgMUhJyZWxheU5leHRQdWJs'
+    'aWNLZXkSKAoPcHJvdG9jb2xWZXJzaW9uGAwgASgNUg9wcm90b2NvbFZlcnNpb24SJgoOd2FpdE'
+    'ZvclVwZ3JhZGUYDSABKAhSDndhaXRGb3JVcGdyYWRl');
 
 @$core.Deprecated('Use appLinkerDescriptor instead')
 const AppLinker$json = {

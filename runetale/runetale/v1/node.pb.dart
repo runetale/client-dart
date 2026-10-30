@@ -1671,6 +1671,10 @@ class CerfNode extends $pb.GeneratedMessage {
     $core.bool? stunOnly,
     $core.String? ipv4,
     $core.String? ipv6,
+    $core.List<$core.int>? relayPublicKey,
+    $core.List<$core.int>? relayNextPublicKey,
+    $core.int? protocolVersion,
+    $core.bool? waitForUpgrade,
   }) {
     final result = CerfNode._();
     if (name != null) result.name = name;
@@ -1682,6 +1686,11 @@ class CerfNode extends $pb.GeneratedMessage {
     if (stunOnly != null) result.stunOnly = stunOnly;
     if (ipv4 != null) result.ipv4 = ipv4;
     if (ipv6 != null) result.ipv6 = ipv6;
+    if (relayPublicKey != null) result.relayPublicKey = relayPublicKey;
+    if (relayNextPublicKey != null)
+      result.relayNextPublicKey = relayNextPublicKey;
+    if (protocolVersion != null) result.protocolVersion = protocolVersion;
+    if (waitForUpgrade != null) result.waitForUpgrade = waitForUpgrade;
     return result;
   }
 
@@ -1709,6 +1718,16 @@ class CerfNode extends $pb.GeneratedMessage {
     ..aOB(7, _omitFieldNames ? '' : 'stunOnly', protoName: 'stunOnly')
     ..aOS(8, _omitFieldNames ? '' : 'ipv4')
     ..aOS(9, _omitFieldNames ? '' : 'ipv6')
+    ..a<$core.List<$core.int>>(
+        10, _omitFieldNames ? '' : 'relayPublicKey', $pb.PbFieldType.OY,
+        protoName: 'relayPublicKey')
+    ..a<$core.List<$core.int>>(
+        11, _omitFieldNames ? '' : 'relayNextPublicKey', $pb.PbFieldType.OY,
+        protoName: 'relayNextPublicKey')
+    ..aI(12, _omitFieldNames ? '' : 'protocolVersion',
+        protoName: 'protocolVersion', fieldType: $pb.PbFieldType.OU3)
+    ..aOB(13, _omitFieldNames ? '' : 'waitForUpgrade',
+        protoName: 'waitForUpgrade')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1811,6 +1830,51 @@ class CerfNode extends $pb.GeneratedMessage {
   $core.bool hasIpv6() => $_has(8);
   @$pb.TagNumber(9)
   void clearIpv6() => $_clearField(9);
+
+  /// relayPublicKey is the relay's current static X25519 public key (32 bytes).
+  /// Clients pin it for the v4 handshake. Empty means the node is not v4-capable.
+  @$pb.TagNumber(10)
+  $core.List<$core.int> get relayPublicKey => $_getN(9);
+  @$pb.TagNumber(10)
+  set relayPublicKey($core.List<$core.int> value) => $_setBytes(9, value);
+  @$pb.TagNumber(10)
+  $core.bool hasRelayPublicKey() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearRelayPublicKey() => $_clearField(10);
+
+  /// relayNextPublicKey is the key the relay is rotating to (32 bytes), set only
+  /// during a rotation. The relay accepts handshakes to either key while both are
+  /// published; a client tries relayPublicKey first and this key once if that fails.
+  @$pb.TagNumber(11)
+  $core.List<$core.int> get relayNextPublicKey => $_getN(10);
+  @$pb.TagNumber(11)
+  set relayNextPublicKey($core.List<$core.int> value) => $_setBytes(10, value);
+  @$pb.TagNumber(11)
+  $core.bool hasRelayNextPublicKey() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearRelayNextPublicKey() => $_clearField(11);
+
+  /// protocolVersion is the relay protocol the node speaks: 0 is the legacy v3
+  /// protocol, 4 is v4.
+  @$pb.TagNumber(12)
+  $core.int get protocolVersion => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set protocolVersion($core.int value) => $_setUnsignedInt32(11, value);
+  @$pb.TagNumber(12)
+  $core.bool hasProtocolVersion() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearProtocolVersion() => $_clearField(12);
+
+  /// waitForUpgrade tells the client to wait for the HTTP 101 response before
+  /// sending the v4 Hello. Set when the relay sits behind a proxy that parses HTTP.
+  @$pb.TagNumber(13)
+  $core.bool get waitForUpgrade => $_getBF(12);
+  @$pb.TagNumber(13)
+  set waitForUpgrade($core.bool value) => $_setBool(12, value);
+  @$pb.TagNumber(13)
+  $core.bool hasWaitForUpgrade() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearWaitForUpgrade() => $_clearField(13);
 }
 
 class AppLinker extends $pb.GeneratedMessage {
