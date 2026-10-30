@@ -47,6 +47,7 @@ class Node extends $pb.GeneratedMessage {
     $core.int? peerApiPort,
     DevicePosture? devicePosture,
     $core.Iterable<$core.String>? wolMacs,
+    $core.String? userDisplayName,
   }) {
     final result = Node._();
     if (name != null) result.name = name;
@@ -71,6 +72,7 @@ class Node extends $pb.GeneratedMessage {
     if (peerApiPort != null) result.peerApiPort = peerApiPort;
     if (devicePosture != null) result.devicePosture = devicePosture;
     if (wolMacs != null) result.wolMacs.addAll(wolMacs);
+    if (userDisplayName != null) result.userDisplayName = userDisplayName;
     return result;
   }
 
@@ -118,6 +120,7 @@ class Node extends $pb.GeneratedMessage {
     ..aOM<DevicePosture>(21, _omitFieldNames ? '' : 'devicePosture',
         subBuilder: DevicePosture.$_createMessage)
     ..pPS(22, _omitFieldNames ? '' : 'wolMacs')
+    ..aOS(23, _omitFieldNames ? '' : 'userDisplayName')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -343,6 +346,18 @@ class Node extends $pb.GeneratedMessage {
   /// is asleep and therefore unable to answer for itself.
   @$pb.TagNumber(22)
   $pb.PbList<$core.String> get wolMacs => $_getList(21);
+
+  /// user_display_name is the display name of the user who owns this node.
+  /// Empty for a node without a user. displayName above carries the node's
+  /// own name, not the user's.
+  @$pb.TagNumber(23)
+  $core.String get userDisplayName => $_getSZ(22);
+  @$pb.TagNumber(23)
+  set userDisplayName($core.String value) => $_setString(22, value);
+  @$pb.TagNumber(23)
+  $core.bool hasUserDisplayName() => $_has(22);
+  @$pb.TagNumber(23)
+  void clearUserDisplayName() => $_clearField(23);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {

@@ -192,6 +192,13 @@ const Node$json = {
       '10': 'devicePosture'
     },
     {'1': 'wol_macs', '3': 22, '4': 3, '5': 9, '10': 'wolMacs'},
+    {
+      '1': 'user_display_name',
+      '3': 23,
+      '4': 1,
+      '5': 9,
+      '10': 'userDisplayName'
+    },
   ],
 };
 
@@ -210,7 +217,7 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'DFIMa2V5U2lnbmF0dXJlEiIKDXNzaF9ob3N0X2tleXMYEyADKAlSC3NzaEhvc3RLZXlzEiIKDX'
     'BlZXJfYXBpX3BvcnQYFCABKA1SC3BlZXJBcGlQb3J0EjwKDmRldmljZV9wb3N0dXJlGBUgASgL'
     'MhUucHJvdG9zLkRldmljZVBvc3R1cmVSDWRldmljZVBvc3R1cmUSGQoId29sX21hY3MYFiADKA'
-    'lSB3dvbE1hY3M=');
+    'lSB3dvbE1hY3MSKgoRdXNlcl9kaXNwbGF5X25hbWUYFyABKAlSD3VzZXJEaXNwbGF5TmFtZQ==');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
