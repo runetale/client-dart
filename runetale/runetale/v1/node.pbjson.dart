@@ -276,13 +276,6 @@ const HostMeta$json = {
       '6': '.protos.AutoUpdateStatus',
       '10': 'autoUpdate'
     },
-    {
-      '1': 'app_linker_wonder_ranges',
-      '3': 14,
-      '4': 1,
-      '5': 8,
-      '10': 'appLinkerWonderRanges'
-    },
   ],
 };
 
@@ -296,8 +289,7 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'INY2xpZW50VmVyc2lvbhI8Cg5kZXZpY2VfcG9zdHVyZRgKIAEoCzIVLnByb3Rvcy5EZXZpY2VQ'
     'b3N0dXJlUg1kZXZpY2VQb3N0dXJlEhkKCHdvbF9tYWNzGAsgAygJUgd3b2xNYWNzEjcKGHByZW'
     'ZlcnJlZF9jZXJmX3JlZ2lvbl9pZBgMIAEoDVIVcHJlZmVycmVkQ2VyZlJlZ2lvbklkEjkKC2F1'
-    'dG9fdXBkYXRlGA0gASgLMhgucHJvdG9zLkF1dG9VcGRhdGVTdGF0dXNSCmF1dG9VcGRhdGUSNw'
-    'oYYXBwX2xpbmtlcl93b25kZXJfcmFuZ2VzGA4gASgIUhVhcHBMaW5rZXJXb25kZXJSYW5nZXM=');
+    'dG9fdXBkYXRlGA0gASgLMhgucHJvdG9zLkF1dG9VcGRhdGVTdGF0dXNSCmF1dG9VcGRhdGU=');
 
 @$core.Deprecated('Use autoUpdateStatusDescriptor instead')
 const AutoUpdateStatus$json = {
