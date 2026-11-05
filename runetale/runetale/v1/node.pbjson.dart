@@ -276,6 +276,13 @@ const HostMeta$json = {
       '6': '.protos.AutoUpdateStatus',
       '10': 'autoUpdate'
     },
+    {
+      '1': 'app_linker_wonder_ranges',
+      '3': 14,
+      '4': 1,
+      '5': 8,
+      '10': 'appLinkerWonderRanges'
+    },
   ],
 };
 
@@ -289,7 +296,8 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'INY2xpZW50VmVyc2lvbhI8Cg5kZXZpY2VfcG9zdHVyZRgKIAEoCzIVLnByb3Rvcy5EZXZpY2VQ'
     'b3N0dXJlUg1kZXZpY2VQb3N0dXJlEhkKCHdvbF9tYWNzGAsgAygJUgd3b2xNYWNzEjcKGHByZW'
     'ZlcnJlZF9jZXJmX3JlZ2lvbl9pZBgMIAEoDVIVcHJlZmVycmVkQ2VyZlJlZ2lvbklkEjkKC2F1'
-    'dG9fdXBkYXRlGA0gASgLMhgucHJvdG9zLkF1dG9VcGRhdGVTdGF0dXNSCmF1dG9VcGRhdGU=');
+    'dG9fdXBkYXRlGA0gASgLMhgucHJvdG9zLkF1dG9VcGRhdGVTdGF0dXNSCmF1dG9VcGRhdGUSNw'
+    'oYYXBwX2xpbmtlcl93b25kZXJfcmFuZ2VzGA4gASgIUhVhcHBMaW5rZXJXb25kZXJSYW5nZXM=');
 
 @$core.Deprecated('Use autoUpdateStatusDescriptor instead')
 const AutoUpdateStatus$json = {
@@ -656,6 +664,8 @@ const AppLinker$json = {
     {'1': 'routes', '3': 3, '4': 3, '5': 9, '10': 'routes'},
     {'1': 'node_id', '3': 4, '4': 1, '5': 4, '10': 'nodeId'},
     {'1': 'peer_api_port', '3': 5, '4': 1, '5': 13, '10': 'peerApiPort'},
+    {'1': 'wonder_prefix4', '3': 6, '4': 1, '5': 9, '10': 'wonderPrefix4'},
+    {'1': 'wonder_prefix6', '3': 7, '4': 1, '5': 9, '10': 'wonderPrefix6'},
   ],
 };
 
@@ -663,7 +673,8 @@ const AppLinker$json = {
 final $typed_data.Uint8List appLinkerDescriptor = $convert.base64Decode(
     'CglBcHBMaW5rZXISEgoEbmFtZRgBIAEoCVIEbmFtZRIYCgdkb21haW5zGAIgAygJUgdkb21haW'
     '5zEhYKBnJvdXRlcxgDIAMoCVIGcm91dGVzEhcKB25vZGVfaWQYBCABKARSBm5vZGVJZBIiCg1w'
-    'ZWVyX2FwaV9wb3J0GAUgASgNUgtwZWVyQXBpUG9ydA==');
+    'ZWVyX2FwaV9wb3J0GAUgASgNUgtwZWVyQXBpUG9ydBIlCg53b25kZXJfcHJlZml4NBgGIAEoCV'
+    'INd29uZGVyUHJlZml4NBIlCg53b25kZXJfcHJlZml4NhgHIAEoCVINd29uZGVyUHJlZml4Ng==');
 
 @$core.Deprecated('Use resolverDescriptor instead')
 const Resolver$json = {

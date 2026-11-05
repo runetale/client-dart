@@ -497,6 +497,7 @@ class HostMeta extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? wolMacs,
     $core.int? preferredCerfRegionId,
     AutoUpdateStatus? autoUpdate,
+    $core.bool? appLinkerWonderRanges,
   }) {
     final result = HostMeta._();
     if (os != null) result.os = os;
@@ -513,6 +514,8 @@ class HostMeta extends $pb.GeneratedMessage {
     if (preferredCerfRegionId != null)
       result.preferredCerfRegionId = preferredCerfRegionId;
     if (autoUpdate != null) result.autoUpdate = autoUpdate;
+    if (appLinkerWonderRanges != null)
+      result.appLinkerWonderRanges = appLinkerWonderRanges;
     return result;
   }
 
@@ -546,6 +549,7 @@ class HostMeta extends $pb.GeneratedMessage {
         fieldType: $pb.PbFieldType.OU3)
     ..aOM<AutoUpdateStatus>(13, _omitFieldNames ? '' : 'autoUpdate',
         subBuilder: AutoUpdateStatus.$_createMessage)
+    ..aOB(14, _omitFieldNames ? '' : 'appLinkerWonderRanges')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -707,6 +711,21 @@ class HostMeta extends $pb.GeneratedMessage {
   void clearAutoUpdate() => $_clearField(13);
   @$pb.TagNumber(13)
   AutoUpdateStatus ensureAutoUpdate() => $_ensure(12);
+
+  /// app_linker_wonder_ranges reports that this client uses the wonder
+  /// ranges the server assigns in AppLinker.wonder_prefix4 and
+  /// wonder_prefix6, and, when it serves an AppLinker, takes traffic to them.
+  /// The server sends those ranges for an AppLinker only while the node
+  /// serving it reports this, so that a client never sends traffic to a
+  /// range its AppLinker node does not know.
+  @$pb.TagNumber(14)
+  $core.bool get appLinkerWonderRanges => $_getBF(13);
+  @$pb.TagNumber(14)
+  set appLinkerWonderRanges($core.bool value) => $_setBool(13, value);
+  @$pb.TagNumber(14)
+  $core.bool hasAppLinkerWonderRanges() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearAppLinkerWonderRanges() => $_clearField(14);
 }
 
 class AutoUpdateStatus extends $pb.GeneratedMessage {
@@ -1835,6 +1854,8 @@ class AppLinker extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? routes,
     $fixnum.Int64? nodeId,
     $core.int? peerApiPort,
+    $core.String? wonderPrefix4,
+    $core.String? wonderPrefix6,
   }) {
     final result = AppLinker._();
     if (name != null) result.name = name;
@@ -1842,6 +1863,8 @@ class AppLinker extends $pb.GeneratedMessage {
     if (routes != null) result.routes.addAll(routes);
     if (nodeId != null) result.nodeId = nodeId;
     if (peerApiPort != null) result.peerApiPort = peerApiPort;
+    if (wonderPrefix4 != null) result.wonderPrefix4 = wonderPrefix4;
+    if (wonderPrefix6 != null) result.wonderPrefix6 = wonderPrefix6;
     return result;
   }
 
@@ -1865,6 +1888,8 @@ class AppLinker extends $pb.GeneratedMessage {
         defaultOrMaker: $fixnum.Int64.ZERO)
     ..aI(5, _omitFieldNames ? '' : 'peerApiPort',
         fieldType: $pb.PbFieldType.OU3)
+    ..aOS(6, _omitFieldNames ? '' : 'wonderPrefix4')
+    ..aOS(7, _omitFieldNames ? '' : 'wonderPrefix6')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1931,6 +1956,30 @@ class AppLinker extends $pb.GeneratedMessage {
   $core.bool hasPeerApiPort() => $_has(4);
   @$pb.TagNumber(5)
   void clearPeerApiPort() => $_clearField(5);
+
+  /// wonder_prefix4 and wonder_prefix6 are the wonder ranges of this
+  /// AppLinker, as CIDRs (e.g. 198.18.3.0/24 and 2001:2::300/120). Clients
+  /// answer DNS queries for its domains with addresses in them, and the node
+  /// in node_id takes traffic to them. Each AppLinker keeps its ranges
+  /// whichever node serves it. Empty means clients choose the ranges
+  /// themselves, as clients without app_linker_wonder_ranges always do.
+  @$pb.TagNumber(6)
+  $core.String get wonderPrefix4 => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set wonderPrefix4($core.String value) => $_setString(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasWonderPrefix4() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearWonderPrefix4() => $_clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get wonderPrefix6 => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set wonderPrefix6($core.String value) => $_setString(6, value);
+  @$pb.TagNumber(7)
+  $core.bool hasWonderPrefix6() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearWonderPrefix6() => $_clearField(7);
 }
 
 class Resolver extends $pb.GeneratedMessage {
