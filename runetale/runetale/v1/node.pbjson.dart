@@ -656,6 +656,8 @@ const AppLinker$json = {
     {'1': 'routes', '3': 3, '4': 3, '5': 9, '10': 'routes'},
     {'1': 'node_id', '3': 4, '4': 1, '5': 4, '10': 'nodeId'},
     {'1': 'peer_api_port', '3': 5, '4': 1, '5': 13, '10': 'peerApiPort'},
+    {'1': 'wonder_prefix4', '3': 6, '4': 1, '5': 9, '10': 'wonderPrefix4'},
+    {'1': 'wonder_prefix6', '3': 7, '4': 1, '5': 9, '10': 'wonderPrefix6'},
   ],
 };
 
@@ -663,7 +665,8 @@ const AppLinker$json = {
 final $typed_data.Uint8List appLinkerDescriptor = $convert.base64Decode(
     'CglBcHBMaW5rZXISEgoEbmFtZRgBIAEoCVIEbmFtZRIYCgdkb21haW5zGAIgAygJUgdkb21haW'
     '5zEhYKBnJvdXRlcxgDIAMoCVIGcm91dGVzEhcKB25vZGVfaWQYBCABKARSBm5vZGVJZBIiCg1w'
-    'ZWVyX2FwaV9wb3J0GAUgASgNUgtwZWVyQXBpUG9ydA==');
+    'ZWVyX2FwaV9wb3J0GAUgASgNUgtwZWVyQXBpUG9ydBIlCg53b25kZXJfcHJlZml4NBgGIAEoCV'
+    'INd29uZGVyUHJlZml4NBIlCg53b25kZXJfcHJlZml4NhgHIAEoCVINd29uZGVyUHJlZml4Ng==');
 
 @$core.Deprecated('Use resolverDescriptor instead')
 const Resolver$json = {
