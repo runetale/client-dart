@@ -1270,6 +1270,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     SSHPolicy? sshPolicy,
     PostureChecks? postureChecks,
     $core.Iterable<HTTPService>? httpServices,
+    $core.Iterable<ExitNode>? exitNodes,
   }) {
     final result = NetworkMapResponse._();
     if (seq != null) result.seq = seq;
@@ -1294,6 +1295,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (sshPolicy != null) result.sshPolicy = sshPolicy;
     if (postureChecks != null) result.postureChecks = postureChecks;
     if (httpServices != null) result.httpServices.addAll(httpServices);
+    if (exitNodes != null) result.exitNodes.addAll(exitNodes);
     return result;
   }
 
@@ -1347,6 +1349,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
         subBuilder: PostureChecks.$_createMessage)
     ..pPM<HTTPService>(28, _omitFieldNames ? '' : 'httpServices',
         subBuilder: HTTPService.$_createMessage)
+    ..pPM<ExitNode>(29, _omitFieldNames ? '' : 'exitNodes',
+        subBuilder: ExitNode.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1548,6 +1552,108 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   /// included, so a node never receives header values meant for others.
   @$pb.TagNumber(28)
   $pb.PbList<HTTPService> get httpServices => $_getList(19);
+
+  /// exit_nodes are the ExitNode entries this node may route through. An
+  /// entry can have several member nodes, of which the server picks one to
+  /// carry its traffic; only that node is given the exit routes. A client
+  /// using an entry routes through its node_id, and follows the entry when
+  /// the server picks another member.
+  @$pb.TagNumber(29)
+  $pb.PbList<ExitNode> get exitNodes => $_getList(20);
+}
+
+class ExitNode extends $pb.GeneratedMessage {
+  factory ExitNode({
+    $core.String? id,
+    $core.String? name,
+    $fixnum.Int64? nodeId,
+    $core.Iterable<$fixnum.Int64>? memberNodeIds,
+  }) {
+    final result = ExitNode._();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (memberNodeIds != null) result.memberNodeIds.addAll(memberNodeIds);
+    return result;
+  }
+
+  ExitNode._();
+
+  factory ExitNode.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      ExitNode()..mergeFromBuffer(data, registry);
+  factory ExitNode.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      ExitNode()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ExitNode',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: ExitNode.$_createMessage)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..p<$fixnum.Int64>(
+        4, _omitFieldNames ? '' : 'memberNodeIds', $pb.PbFieldType.KU6)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExitNode clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  ExitNode copyWith(void Function(ExitNode) updates) =>
+      super.copyWith((message) => updates(message as ExitNode)) as ExitNode;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use ExitNode() / ExitNode.new instead')
+  static ExitNode create() => ExitNode._();
+  static $pb.GeneratedMessage $_createMessage() => ExitNode._();
+  @$core.override
+  ExitNode createEmptyInstance() => ExitNode._();
+  @$core.pragma('dart2js:noInline')
+  static ExitNode getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ExitNode>(ExitNode.$_createMessage);
+  static ExitNode? _defaultInstance;
+
+  /// id identifies the entry. It stays the same whichever member serves it.
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+
+  /// name is the entry's name as shown to users.
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => $_clearField(2);
+
+  /// node_id is the member that carries the entry's traffic now. Zero
+  /// means none can.
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get nodeId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set nodeId($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNodeId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNodeId() => $_clearField(3);
+
+  /// member_node_ids are every node that may serve the entry, in the order
+  /// they take over. A client that chose one of them by node ID follows
+  /// the entry.
+  @$pb.TagNumber(4)
+  $pb.PbList<$fixnum.Int64> get memberNodeIds => $_getList(3);
 }
 
 class CerfMap extends $pb.GeneratedMessage {

@@ -557,6 +557,14 @@ const NetworkMapResponse$json = {
       '6': '.protos.HTTPService',
       '10': 'httpServices'
     },
+    {
+      '1': 'exit_nodes',
+      '3': 29,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.ExitNode',
+      '10': 'exitNodes'
+    },
   ],
 };
 
@@ -578,7 +586,24 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     '5UaW1lc3RhbXBSCnNlcnZlclRpbWUSMAoKc3NoX3BvbGljeRgaIAEoCzIRLnByb3Rvcy5TU0hQ'
     'b2xpY3lSCXNzaFBvbGljeRI8Cg5wb3N0dXJlX2NoZWNrcxgbIAEoCzIVLnByb3Rvcy5Qb3N0dX'
     'JlQ2hlY2tzUg1wb3N0dXJlQ2hlY2tzEjgKDWh0dHBfc2VydmljZXMYHCADKAsyEy5wcm90b3Mu'
-    'SFRUUFNlcnZpY2VSDGh0dHBTZXJ2aWNlcw==');
+    'SFRUUFNlcnZpY2VSDGh0dHBTZXJ2aWNlcxIvCgpleGl0X25vZGVzGB0gAygLMhAucHJvdG9zLk'
+    'V4aXROb2RlUglleGl0Tm9kZXM=');
+
+@$core.Deprecated('Use exitNodeDescriptor instead')
+const ExitNode$json = {
+  '1': 'ExitNode',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'node_id', '3': 3, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'member_node_ids', '3': 4, '4': 3, '5': 4, '10': 'memberNodeIds'},
+  ],
+};
+
+/// Descriptor for `ExitNode`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List exitNodeDescriptor = $convert.base64Decode(
+    'CghFeGl0Tm9kZRIOCgJpZBgBIAEoCVICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIXCgdub2RlX2'
+    'lkGAMgASgEUgZub2RlSWQSJgoPbWVtYmVyX25vZGVfaWRzGAQgAygEUg1tZW1iZXJOb2RlSWRz');
 
 @$core.Deprecated('Use cerfMapDescriptor instead')
 const CerfMap$json = {
