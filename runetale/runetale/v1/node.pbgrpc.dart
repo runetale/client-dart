@@ -155,6 +155,16 @@ class NodeServiceClient extends $grpc.Client {
     return $createUnaryCall(_$publishSession, request, options: options);
   }
 
+  /// SetDNSChallenge writes, or with an empty value removes, the ACME DNS-01
+  /// TXT record for one of the calling node's own names, so the node can get
+  /// a certificate for it without holding DNS credentials.
+  $grpc.ResponseFuture<$1.SetDNSChallengeResponse> setDNSChallenge(
+    $1.SetDNSChallengeRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$setDNSChallenge, request, options: options);
+  }
+
   // method descriptors
 
   static final _$composeNode =
@@ -232,6 +242,11 @@ class NodeServiceClient extends $grpc.Client {
           '/protos.NodeService/PublishSession',
           ($1.PublishSessionRequest value) => value.writeToBuffer(),
           $1.PublishSessionResponse.fromBuffer);
+  static final _$setDNSChallenge =
+      $grpc.ClientMethod<$1.SetDNSChallengeRequest, $1.SetDNSChallengeResponse>(
+          '/protos.NodeService/SetDNSChallenge',
+          ($1.SetDNSChallengeRequest value) => value.writeToBuffer(),
+          $1.SetDNSChallengeResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('protos.NodeService')
@@ -364,6 +379,15 @@ abstract class NodeServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $1.PublishSessionRequest.fromBuffer(value),
         ($1.PublishSessionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.SetDNSChallengeRequest,
+            $1.SetDNSChallengeResponse>(
+        'SetDNSChallenge',
+        setDNSChallenge_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $1.SetDNSChallengeRequest.fromBuffer(value),
+        ($1.SetDNSChallengeResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$1.ComposeNodeResponse> composeNode_Pre(
@@ -489,4 +513,13 @@ abstract class NodeServiceBase extends $grpc.Service {
 
   $async.Future<$1.PublishSessionResponse> publishSession(
       $grpc.ServiceCall call, $1.PublishSessionRequest request);
+
+  $async.Future<$1.SetDNSChallengeResponse> setDNSChallenge_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$1.SetDNSChallengeRequest> $request) async {
+    return setDNSChallenge($call, await $request);
+  }
+
+  $async.Future<$1.SetDNSChallengeResponse> setDNSChallenge(
+      $grpc.ServiceCall call, $1.SetDNSChallengeRequest request);
 }

@@ -48,6 +48,7 @@ class Node extends $pb.GeneratedMessage {
     DevicePosture? devicePosture,
     $core.Iterable<$core.String>? wolMacs,
     $core.String? userDisplayName,
+    $core.bool? noroshiRelay,
   }) {
     final result = Node._();
     if (name != null) result.name = name;
@@ -73,6 +74,7 @@ class Node extends $pb.GeneratedMessage {
     if (devicePosture != null) result.devicePosture = devicePosture;
     if (wolMacs != null) result.wolMacs.addAll(wolMacs);
     if (userDisplayName != null) result.userDisplayName = userDisplayName;
+    if (noroshiRelay != null) result.noroshiRelay = noroshiRelay;
     return result;
   }
 
@@ -121,6 +123,7 @@ class Node extends $pb.GeneratedMessage {
         subBuilder: DevicePosture.$_createMessage)
     ..pPS(22, _omitFieldNames ? '' : 'wolMacs')
     ..aOS(23, _omitFieldNames ? '' : 'userDisplayName')
+    ..aOB(24, _omitFieldNames ? '' : 'noroshiRelay')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -358,6 +361,18 @@ class Node extends $pb.GeneratedMessage {
   $core.bool hasUserDisplayName() => $_has(22);
   @$pb.TagNumber(23)
   void clearUserDisplayName() => $_clearField(23);
+
+  /// noroshi_relay marks a peer as a noroshi relay: a server-run node that
+  /// forwards connections from the internet to nodes publishing a port.
+  /// A node accepts noroshi connections only from such peers.
+  @$pb.TagNumber(24)
+  $core.bool get noroshiRelay => $_getBF(23);
+  @$pb.TagNumber(24)
+  set noroshiRelay($core.bool value) => $_setBool(23, value);
+  @$pb.TagNumber(24)
+  $core.bool hasNoroshiRelay() => $_has(23);
+  @$pb.TagNumber(24)
+  void clearNoroshiRelay() => $_clearField(24);
 }
 
 class ComposeNodeResponse extends $pb.GeneratedMessage {
@@ -497,6 +512,7 @@ class HostMeta extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? wolMacs,
     $core.int? preferredCerfRegionId,
     AutoUpdateStatus? autoUpdate,
+    $core.Iterable<$core.int>? noroshiPorts,
   }) {
     final result = HostMeta._();
     if (os != null) result.os = os;
@@ -513,6 +529,7 @@ class HostMeta extends $pb.GeneratedMessage {
     if (preferredCerfRegionId != null)
       result.preferredCerfRegionId = preferredCerfRegionId;
     if (autoUpdate != null) result.autoUpdate = autoUpdate;
+    if (noroshiPorts != null) result.noroshiPorts.addAll(noroshiPorts);
     return result;
   }
 
@@ -546,6 +563,8 @@ class HostMeta extends $pb.GeneratedMessage {
         fieldType: $pb.PbFieldType.OU3)
     ..aOM<AutoUpdateStatus>(13, _omitFieldNames ? '' : 'autoUpdate',
         subBuilder: AutoUpdateStatus.$_createMessage)
+    ..p<$core.int>(
+        14, _omitFieldNames ? '' : 'noroshiPorts', $pb.PbFieldType.KU3)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -707,6 +726,11 @@ class HostMeta extends $pb.GeneratedMessage {
   void clearAutoUpdate() => $_clearField(13);
   @$pb.TagNumber(13)
   AutoUpdateStatus ensureAutoUpdate() => $_ensure(12);
+
+  /// noroshi_ports are the ports this node is publishing to the internet
+  /// through noroshi. The server publishes only those it allows the node.
+  @$pb.TagNumber(14)
+  $pb.PbList<$core.int> get noroshiPorts => $_getList(13);
 }
 
 class AutoUpdateStatus extends $pb.GeneratedMessage {
@@ -1271,6 +1295,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     PostureChecks? postureChecks,
     $core.Iterable<HTTPService>? httpServices,
     $core.Iterable<ExitNode>? exitNodes,
+    Noroshi? noroshi,
   }) {
     final result = NetworkMapResponse._();
     if (seq != null) result.seq = seq;
@@ -1296,6 +1321,7 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
     if (postureChecks != null) result.postureChecks = postureChecks;
     if (httpServices != null) result.httpServices.addAll(httpServices);
     if (exitNodes != null) result.exitNodes.addAll(exitNodes);
+    if (noroshi != null) result.noroshi = noroshi;
     return result;
   }
 
@@ -1351,6 +1377,8 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
         subBuilder: HTTPService.$_createMessage)
     ..pPM<ExitNode>(29, _omitFieldNames ? '' : 'exitNodes',
         subBuilder: ExitNode.$_createMessage)
+    ..aOM<Noroshi>(30, _omitFieldNames ? '' : 'noroshi',
+        subBuilder: Noroshi.$_createMessage)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1560,6 +1588,324 @@ class NetworkMapResponse extends $pb.GeneratedMessage {
   /// the server picks another member.
   @$pb.TagNumber(29)
   $pb.PbList<ExitNode> get exitNodes => $_getList(20);
+
+  /// noroshi is this node's noroshi state: whether it may publish ports to
+  /// the internet and its public name, or, for a noroshi relay, where each
+  /// published name leads. Unset means noroshi is not available.
+  @$pb.TagNumber(30)
+  Noroshi get noroshi => $_getN(21);
+  @$pb.TagNumber(30)
+  set noroshi(Noroshi value) => $_setField(30, value);
+  @$pb.TagNumber(30)
+  $core.bool hasNoroshi() => $_has(21);
+  @$pb.TagNumber(30)
+  void clearNoroshi() => $_clearField(30);
+  @$pb.TagNumber(30)
+  Noroshi ensureNoroshi() => $_ensure(21);
+}
+
+/// Noroshi carries what a node needs to publish ports to the internet, or
+/// what a noroshi relay needs to forward connections to them.
+class Noroshi extends $pb.GeneratedMessage {
+  factory Noroshi({
+    $core.Iterable<$core.int>? allowedPorts,
+    $core.String? publicName,
+    $core.Iterable<NoroshiTarget>? targets,
+  }) {
+    final result = Noroshi._();
+    if (allowedPorts != null) result.allowedPorts.addAll(allowedPorts);
+    if (publicName != null) result.publicName = publicName;
+    if (targets != null) result.targets.addAll(targets);
+    return result;
+  }
+
+  Noroshi._();
+
+  factory Noroshi.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      Noroshi()..mergeFromBuffer(data, registry);
+  factory Noroshi.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      Noroshi()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Noroshi',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: Noroshi.$_createMessage)
+    ..p<$core.int>(
+        1, _omitFieldNames ? '' : 'allowedPorts', $pb.PbFieldType.KU3)
+    ..aOS(2, _omitFieldNames ? '' : 'publicName')
+    ..pPM<NoroshiTarget>(3, _omitFieldNames ? '' : 'targets',
+        subBuilder: NoroshiTarget.$_createMessage)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Noroshi clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  Noroshi copyWith(void Function(Noroshi) updates) =>
+      super.copyWith((message) => updates(message as Noroshi)) as Noroshi;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use Noroshi() / Noroshi.new instead')
+  static Noroshi create() => Noroshi._();
+  static $pb.GeneratedMessage $_createMessage() => Noroshi._();
+  @$core.override
+  Noroshi createEmptyInstance() => Noroshi._();
+  @$core.pragma('dart2js:noInline')
+  static Noroshi getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Noroshi>(Noroshi.$_createMessage);
+  static Noroshi? _defaultInstance;
+
+  /// allowed_ports are the ports this node may publish. Empty means it may
+  /// not publish any.
+  @$pb.TagNumber(1)
+  $pb.PbList<$core.int> get allowedPorts => $_getList(0);
+
+  /// public_name is the name the node is published under, e.g.
+  /// "web.rune1234abcd.rune.host", without a trailing dot.
+  @$pb.TagNumber(2)
+  $core.String get publicName => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set publicName($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPublicName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPublicName() => $_clearField(2);
+
+  /// targets are set only for a noroshi relay: every published name and
+  /// port, across all networks, with the node that serves it.
+  @$pb.TagNumber(3)
+  $pb.PbList<NoroshiTarget> get targets => $_getList(2);
+}
+
+/// NoroshiTarget is one published name and port as a noroshi relay sees it.
+class NoroshiTarget extends $pb.GeneratedMessage {
+  factory NoroshiTarget({
+    $core.String? name,
+    $core.int? port,
+    $fixnum.Int64? nodeId,
+    $core.Iterable<$core.String>? addresses,
+    $core.int? peerApiPort,
+  }) {
+    final result = NoroshiTarget._();
+    if (name != null) result.name = name;
+    if (port != null) result.port = port;
+    if (nodeId != null) result.nodeId = nodeId;
+    if (addresses != null) result.addresses.addAll(addresses);
+    if (peerApiPort != null) result.peerApiPort = peerApiPort;
+    return result;
+  }
+
+  NoroshiTarget._();
+
+  factory NoroshiTarget.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      NoroshiTarget()..mergeFromBuffer(data, registry);
+  factory NoroshiTarget.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      NoroshiTarget()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'NoroshiTarget',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: NoroshiTarget.$_createMessage)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aI(2, _omitFieldNames ? '' : 'port', fieldType: $pb.PbFieldType.OU3)
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'nodeId', $pb.PbFieldType.OU6,
+        defaultOrMaker: $fixnum.Int64.ZERO)
+    ..pPS(4, _omitFieldNames ? '' : 'addresses')
+    ..aI(5, _omitFieldNames ? '' : 'peerApiPort',
+        fieldType: $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NoroshiTarget clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  NoroshiTarget copyWith(void Function(NoroshiTarget) updates) =>
+      super.copyWith((message) => updates(message as NoroshiTarget))
+          as NoroshiTarget;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated('Use NoroshiTarget() / NoroshiTarget.new instead')
+  static NoroshiTarget create() => NoroshiTarget._();
+  static $pb.GeneratedMessage $_createMessage() => NoroshiTarget._();
+  @$core.override
+  NoroshiTarget createEmptyInstance() => NoroshiTarget._();
+  @$core.pragma('dart2js:noInline')
+  static NoroshiTarget getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NoroshiTarget>(
+          NoroshiTarget.$_createMessage);
+  static NoroshiTarget? _defaultInstance;
+
+  /// name is the public name, without a trailing dot.
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  /// port is the public port.
+  @$pb.TagNumber(2)
+  $core.int get port => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set port($core.int value) => $_setUnsignedInt32(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasPort() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPort() => $_clearField(2);
+
+  /// node_id is the node serving it. It is also among the relay's peers.
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get nodeId => $_getI64(2);
+  @$pb.TagNumber(3)
+  set nodeId($fixnum.Int64 value) => $_setInt64(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasNodeId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearNodeId() => $_clearField(3);
+
+  /// addresses are the node's addresses, as in Node.addresses. Addresses
+  /// are unique only within a network, so the relay tells nodes apart by
+  /// node_id, not by address.
+  @$pb.TagNumber(4)
+  $pb.PbList<$core.String> get addresses => $_getList(3);
+
+  /// peer_api_port is the node's peer service port, where the relay sends
+  /// each connection.
+  @$pb.TagNumber(5)
+  $core.int get peerApiPort => $_getIZ(4);
+  @$pb.TagNumber(5)
+  set peerApiPort($core.int value) => $_setUnsignedInt32(4, value);
+  @$pb.TagNumber(5)
+  $core.bool hasPeerApiPort() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPeerApiPort() => $_clearField(5);
+}
+
+class SetDNSChallengeRequest extends $pb.GeneratedMessage {
+  factory SetDNSChallengeRequest({
+    $core.String? name,
+    $core.String? value,
+  }) {
+    final result = SetDNSChallengeRequest._();
+    if (name != null) result.name = name;
+    if (value != null) result.value = value;
+    return result;
+  }
+
+  SetDNSChallengeRequest._();
+
+  factory SetDNSChallengeRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      SetDNSChallengeRequest()..mergeFromBuffer(data, registry);
+  factory SetDNSChallengeRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      SetDNSChallengeRequest()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetDNSChallengeRequest',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: SetDNSChallengeRequest.$_createMessage)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDNSChallengeRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDNSChallengeRequest copyWith(
+          void Function(SetDNSChallengeRequest) updates) =>
+      super.copyWith((message) => updates(message as SetDNSChallengeRequest))
+          as SetDNSChallengeRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use SetDNSChallengeRequest() / SetDNSChallengeRequest.new instead')
+  static SetDNSChallengeRequest create() => SetDNSChallengeRequest._();
+  static $pb.GeneratedMessage $_createMessage() => SetDNSChallengeRequest._();
+  @$core.override
+  SetDNSChallengeRequest createEmptyInstance() => SetDNSChallengeRequest._();
+  @$core.pragma('dart2js:noInline')
+  static SetDNSChallengeRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetDNSChallengeRequest>(
+          SetDNSChallengeRequest.$_createMessage);
+  static SetDNSChallengeRequest? _defaultInstance;
+
+  /// name is the name the certificate is for, without a trailing dot. It
+  /// must be the calling node's own name.
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => $_clearField(1);
+
+  /// value is the TXT record value. Empty removes the record.
+  @$pb.TagNumber(2)
+  $core.String get value => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set value($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasValue() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearValue() => $_clearField(2);
+}
+
+class SetDNSChallengeResponse extends $pb.GeneratedMessage {
+  factory SetDNSChallengeResponse() => SetDNSChallengeResponse._();
+
+  SetDNSChallengeResponse._();
+
+  factory SetDNSChallengeResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      SetDNSChallengeResponse()..mergeFromBuffer(data, registry);
+  factory SetDNSChallengeResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      SetDNSChallengeResponse()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SetDNSChallengeResponse',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'protos'),
+      createEmptyInstance: SetDNSChallengeResponse.$_createMessage)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDNSChallengeResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  SetDNSChallengeResponse copyWith(
+          void Function(SetDNSChallengeResponse) updates) =>
+      super.copyWith((message) => updates(message as SetDNSChallengeResponse))
+          as SetDNSChallengeResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  @$core.Deprecated(
+      'Use SetDNSChallengeResponse() / SetDNSChallengeResponse.new instead')
+  static SetDNSChallengeResponse create() => SetDNSChallengeResponse._();
+  static $pb.GeneratedMessage $_createMessage() => SetDNSChallengeResponse._();
+  @$core.override
+  SetDNSChallengeResponse createEmptyInstance() => SetDNSChallengeResponse._();
+  @$core.pragma('dart2js:noInline')
+  static SetDNSChallengeResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SetDNSChallengeResponse>(
+          SetDNSChallengeResponse.$_createMessage);
+  static SetDNSChallengeResponse? _defaultInstance;
 }
 
 class ExitNode extends $pb.GeneratedMessage {
