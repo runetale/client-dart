@@ -199,6 +199,7 @@ const Node$json = {
       '5': 9,
       '10': 'userDisplayName'
     },
+    {'1': 'noroshi_relay', '3': 24, '4': 1, '5': 8, '10': 'noroshiRelay'},
   ],
 };
 
@@ -217,7 +218,8 @@ final $typed_data.Uint8List nodeDescriptor = $convert.base64Decode(
     'DFIMa2V5U2lnbmF0dXJlEiIKDXNzaF9ob3N0X2tleXMYEyADKAlSC3NzaEhvc3RLZXlzEiIKDX'
     'BlZXJfYXBpX3BvcnQYFCABKA1SC3BlZXJBcGlQb3J0EjwKDmRldmljZV9wb3N0dXJlGBUgASgL'
     'MhUucHJvdG9zLkRldmljZVBvc3R1cmVSDWRldmljZVBvc3R1cmUSGQoId29sX21hY3MYFiADKA'
-    'lSB3dvbE1hY3MSKgoRdXNlcl9kaXNwbGF5X25hbWUYFyABKAlSD3VzZXJEaXNwbGF5TmFtZQ==');
+    'lSB3dvbE1hY3MSKgoRdXNlcl9kaXNwbGF5X25hbWUYFyABKAlSD3VzZXJEaXNwbGF5TmFtZRIj'
+    'Cg1ub3Jvc2hpX3JlbGF5GBggASgIUgxub3Jvc2hpUmVsYXk=');
 
 @$core.Deprecated('Use composeNodeResponseDescriptor instead')
 const ComposeNodeResponse$json = {
@@ -276,6 +278,7 @@ const HostMeta$json = {
       '6': '.protos.AutoUpdateStatus',
       '10': 'autoUpdate'
     },
+    {'1': 'noroshi_ports', '3': 14, '4': 3, '5': 13, '10': 'noroshiPorts'},
   ],
 };
 
@@ -289,7 +292,8 @@ final $typed_data.Uint8List hostMetaDescriptor = $convert.base64Decode(
     'INY2xpZW50VmVyc2lvbhI8Cg5kZXZpY2VfcG9zdHVyZRgKIAEoCzIVLnByb3Rvcy5EZXZpY2VQ'
     'b3N0dXJlUg1kZXZpY2VQb3N0dXJlEhkKCHdvbF9tYWNzGAsgAygJUgd3b2xNYWNzEjcKGHByZW'
     'ZlcnJlZF9jZXJmX3JlZ2lvbl9pZBgMIAEoDVIVcHJlZmVycmVkQ2VyZlJlZ2lvbklkEjkKC2F1'
-    'dG9fdXBkYXRlGA0gASgLMhgucHJvdG9zLkF1dG9VcGRhdGVTdGF0dXNSCmF1dG9VcGRhdGU=');
+    'dG9fdXBkYXRlGA0gASgLMhgucHJvdG9zLkF1dG9VcGRhdGVTdGF0dXNSCmF1dG9VcGRhdGUSIw'
+    'oNbm9yb3NoaV9wb3J0cxgOIAMoDVIMbm9yb3NoaVBvcnRz');
 
 @$core.Deprecated('Use autoUpdateStatusDescriptor instead')
 const AutoUpdateStatus$json = {
@@ -565,6 +569,14 @@ const NetworkMapResponse$json = {
       '6': '.protos.ExitNode',
       '10': 'exitNodes'
     },
+    {
+      '1': 'noroshi',
+      '3': 30,
+      '4': 1,
+      '5': 11,
+      '6': '.protos.Noroshi',
+      '10': 'noroshi'
+    },
   ],
 };
 
@@ -587,7 +599,73 @@ final $typed_data.Uint8List networkMapResponseDescriptor = $convert.base64Decode
     'b2xpY3lSCXNzaFBvbGljeRI8Cg5wb3N0dXJlX2NoZWNrcxgbIAEoCzIVLnByb3Rvcy5Qb3N0dX'
     'JlQ2hlY2tzUg1wb3N0dXJlQ2hlY2tzEjgKDWh0dHBfc2VydmljZXMYHCADKAsyEy5wcm90b3Mu'
     'SFRUUFNlcnZpY2VSDGh0dHBTZXJ2aWNlcxIvCgpleGl0X25vZGVzGB0gAygLMhAucHJvdG9zLk'
-    'V4aXROb2RlUglleGl0Tm9kZXM=');
+    'V4aXROb2RlUglleGl0Tm9kZXMSKQoHbm9yb3NoaRgeIAEoCzIPLnByb3Rvcy5Ob3Jvc2hpUgdu'
+    'b3Jvc2hp');
+
+@$core.Deprecated('Use noroshiDescriptor instead')
+const Noroshi$json = {
+  '1': 'Noroshi',
+  '2': [
+    {'1': 'allowed_ports', '3': 1, '4': 3, '5': 13, '10': 'allowedPorts'},
+    {'1': 'public_name', '3': 2, '4': 1, '5': 9, '10': 'publicName'},
+    {
+      '1': 'targets',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.protos.NoroshiTarget',
+      '10': 'targets'
+    },
+  ],
+};
+
+/// Descriptor for `Noroshi`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List noroshiDescriptor = $convert.base64Decode(
+    'CgdOb3Jvc2hpEiMKDWFsbG93ZWRfcG9ydHMYASADKA1SDGFsbG93ZWRQb3J0cxIfCgtwdWJsaW'
+    'NfbmFtZRgCIAEoCVIKcHVibGljTmFtZRIvCgd0YXJnZXRzGAMgAygLMhUucHJvdG9zLk5vcm9z'
+    'aGlUYXJnZXRSB3RhcmdldHM=');
+
+@$core.Deprecated('Use noroshiTargetDescriptor instead')
+const NoroshiTarget$json = {
+  '1': 'NoroshiTarget',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'port', '3': 2, '4': 1, '5': 13, '10': 'port'},
+    {'1': 'node_id', '3': 3, '4': 1, '5': 4, '10': 'nodeId'},
+    {'1': 'addresses', '3': 4, '4': 3, '5': 9, '10': 'addresses'},
+    {'1': 'peer_api_port', '3': 5, '4': 1, '5': 13, '10': 'peerApiPort'},
+  ],
+};
+
+/// Descriptor for `NoroshiTarget`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List noroshiTargetDescriptor = $convert.base64Decode(
+    'Cg1Ob3Jvc2hpVGFyZ2V0EhIKBG5hbWUYASABKAlSBG5hbWUSEgoEcG9ydBgCIAEoDVIEcG9ydB'
+    'IXCgdub2RlX2lkGAMgASgEUgZub2RlSWQSHAoJYWRkcmVzc2VzGAQgAygJUglhZGRyZXNzZXMS'
+    'IgoNcGVlcl9hcGlfcG9ydBgFIAEoDVILcGVlckFwaVBvcnQ=');
+
+@$core.Deprecated('Use setDNSChallengeRequestDescriptor instead')
+const SetDNSChallengeRequest$json = {
+  '1': 'SetDNSChallengeRequest',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+};
+
+/// Descriptor for `SetDNSChallengeRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setDNSChallengeRequestDescriptor =
+    $convert.base64Decode(
+        'ChZTZXRETlNDaGFsbGVuZ2VSZXF1ZXN0EhIKBG5hbWUYASABKAlSBG5hbWUSFAoFdmFsdWUYAi'
+        'ABKAlSBXZhbHVl');
+
+@$core.Deprecated('Use setDNSChallengeResponseDescriptor instead')
+const SetDNSChallengeResponse$json = {
+  '1': 'SetDNSChallengeResponse',
+};
+
+/// Descriptor for `SetDNSChallengeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List setDNSChallengeResponseDescriptor =
+    $convert.base64Decode('ChdTZXRETlNDaGFsbGVuZ2VSZXNwb25zZQ==');
 
 @$core.Deprecated('Use exitNodeDescriptor instead')
 const ExitNode$json = {
